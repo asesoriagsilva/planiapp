@@ -507,51 +507,6 @@ footer { background: #1a1730; padding: 2rem; display: grid; grid-template-column
     </div>
   </footer>
 </div>
-
-<!-- SEGUIMIENTO PAGE -->
-      <div style="font-size:13px;color:var(--text-muted);">Seguimiento de asesoría</div>
-    </div>
-    <div class="seg-search">
-      <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:0.3rem;">Consulta el estado de tu caso</div>
-      <div style="font-size:13px;color:var(--text-muted);margin-bottom:1rem;">Ingresa el código de seguimiento que recibiste al finalizar tu formulario.</div>
-      <div class="seg-input-row">
-        <input class="seg-input" type="text" id="segInput" placeholder="Ej: PL4K9M" maxlength="6" oninput="this.value=this.value.toUpperCase()"/>
-        <button class="seg-btn" onclick="buscarCaso()">Consultar →</button>
-      </div>
-      <div class="seg-error" id="segError">Código no encontrado. Verifica que ingresaste el código correctamente.</div>
-    </div>
-    <div class="seg-result" id="segResult">
-      <div class="seg-case-header">
-        <div class="seg-case-top">
-          <div><div style="font-size:10px;color:var(--purple-mid);text-transform:uppercase;letter-spacing:0.08em;">Tu código de caso</div><div class="seg-case-code" id="segCode">PL####</div><div class="seg-case-date" id="segDate"></div></div>
-          <div class="seg-case-tipo" id="segTipo">Asesoría avanzada</div>
-        </div>
-      </div>
-      <div class="seg-advisor">
-        <div class="seg-av" id="segAvatar">PA</div>
-        <div class="seg-av-info"><div class="seg-av-name" id="segNombre">Tu asesor Planiapp</div><div class="seg-av-role">Especialista en salud previsional</div></div>
-        <button class="seg-wsp-btn" onclick="window.open('https://wa.me/56966450103','_blank')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.532 5.857L.057 23.882a.5.5 0 00.61.61l6.025-1.475A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.969 0-3.807-.538-5.385-1.472l-.385-.228-3.993.977.997-3.875-.251-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          WhatsApp
-        </button>
-      </div>
-      <div class="seg-timeline">
-        <div class="seg-tl-title">Estado de tu asesoría</div>
-        <div id="segTimeline"></div>
-      </div>
-      <div class="seg-info">
-        <div class="seg-info-row"><span class="seg-info-label">Tipo de asesoría</span><span class="seg-info-value" id="segInfoTipo">—</span></div>
-        <div class="seg-info-row"><span class="seg-info-label">Asesor asignado</span><span class="seg-info-value" id="segInfoAsesor">—</span></div>
-      </div>
-      <div class="seg-new"><button class="seg-new-btn" onclick="resetSeg()">← Buscar otro caso</button></div>
-    </div>
-  </div>
-  <footer>
-    <div><div class="footer-logo">Planiapp</div><div class="footer-slogan">Asesoría profesional, sin sesgos.</div><a class="footer-contact" href="https://wa.me/56966450103">WhatsApp: +56 9 66450103</a></div>
-    <div><div class="footer-col-title">Enlaces rápidos</div><a class="footer-link" onclick="window.scrollTo(0,0)">← Volver al inicio</a></div>
-    <div><div class="footer-col-title">Aviso regulatorio</div><div class="footer-legal">Planiapp es una plataforma de información y asesoría independiente.</div></div>
-  </footer>
-
 <!-- MODAL FORMULARIO SIMPLE -->
 <div class="form-overlay" id="modal-simple">
   <div class="form-modal">
