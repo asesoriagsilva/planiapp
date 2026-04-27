@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planiapp — Asesoría profesional en Isapre</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDUwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGNpcmNsZSBjeD0iOTAiIGN5PSIxMDAiIHI9IjUyIiBmaWxsPSJub25lIiBzdHJva2U9IiM1MzRBQjciIHN0cm9rZS13aWR0aD0iMi44Ii8+CiAgPHBvbHlsaW5lIHBvaW50cz0iNTIsMTAwIDY1LDEwMCA3NCw3NyA4MywxMjMgOTIsODUgMTAxLDExMSAxMDgsMTAwIDEyOCwxMDAiCiAgICBmaWxsPSJub25lIiBzdHJva2U9IiM1MzRBQjciIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSIxMjciIGN5PSI2MSIgcj0iMTYiIGZpbGw9IiMxRDlFNzUiLz4KPC9zdmc+" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjNTM0QUI3Ii8+CiAgPGNpcmNsZSBjeD0iMTQiIGN5PSIxNiIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI3LDE2IDEwLDE2IDExLjUsMTEuNSAxMywyMC41IDE0LjUsMTMgMTYsMTggMTcsMTYgMjEsMTYiCiAgICBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMjMiIGN5PSI5IiByPSI0IiBmaWxsPSIjMUQ5RTc1Ii8+CiAgPHBhdGggZD0iTTIxLjUgOWwxLjIgMS4zIDIuMy0yLjYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&family=Inter:wght@800;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -24,7 +24,7 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+body { overflow-x: hidden; font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
 /* NAV */
 nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0.5rem 2rem; display: flex; align-items: center; justify-content: space-between; }
@@ -87,9 +87,9 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 .opcion-btn.primary:hover { background: var(--purple-deep); }
 
 /* TARJETAS */
-.tarjetas { padding: 2.5rem 2rem; background: var(--white); }
+.tarjetas { padding: 2.5rem 3rem; background: var(--white); }
 .tarjetas-inner { max-width: 1000px; margin: 0 auto; }
-.tarjetas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.tarjetas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .tarjeta { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
 .tarjeta-num { width: 36px; height: 36px; border-radius: 10px; background: var(--purple-light); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; color: var(--purple); margin-bottom: 0.75rem; }
 .tarjeta-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; line-height: 1.3; }
@@ -103,7 +103,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 .priv-pill { background: rgba(255,255,255,0.1); color: #CECBF6; font-size: 13px; padding: 0.45rem 1rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); }
 
 /* FOOTER */
-footer { background: #1a1730; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; width: 100%; box-sizing: border-box; }
 .footer-logo { font-size: 16px; font-weight: 600; color: #CECBF6; margin-bottom: 0.4rem; }
 .footer-slogan { font-size: 11px; color: #7F77DD; margin-bottom: 0.5rem; }
 .footer-contact { font-size: 12px; color: #7F77DD; display: block; margin-bottom: 3px; }
@@ -390,7 +390,7 @@ footer { background: #1a1730; padding: 2rem; display: grid; grid-template-column
 
   <!-- OPCIONES -->
   <div class="opciones" id="opciones">
-    <h2 style="font-family:'Inter',sans-serif;font-size:32px;font-weight:900;color:var(--purple-dark);text-align:center;margin-bottom:0.4rem;letter-spacing:-0.02em;">Vamos, selecciona el servicio que necesitas.</h2>
+    <h2 style="font-family:'Inter',sans-serif;font-size:32px;font-weight:900;color:var(--purple-dark);text-align:center;margin-bottom:0.4rem;letter-spacing:-0.02em;">Selecciona el servicio que necesitas.</h2>
     <p class="section-sub">Tenemos distintas opciones para ayudarte a encontrar la mejor Isapre.</p>
     <div class="opciones-grid">
       <div class="opcion-card">
@@ -423,17 +423,18 @@ footer { background: #1a1730; padding: 2rem; display: grid; grid-template-column
   <!-- TARJETAS -->
   <div class="tarjetas">
     <div class="tarjetas-inner">
-      <h2 class="section-title" style="margin-bottom:0.4rem;">¿Por qué Planiapp?</h2>
-      <p class="section-sub">Lo que nos diferencia de una asesoría tradicional.</p>
-      <div class="tarjetas-grid">
-        <div class="tarjeta"><div class="tarjeta-num">1</div><div class="tarjeta-title">Asesoría integral enfocada en tu perfil</div><div class="tarjeta-desc">Existe mucha desinformación con ejecutivos inexpertos. Analizamos tu situación real antes de recomendarte cualquier cambio.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">2</div><div class="tarjeta-title">Sin el sesgo del ejecutivo de isapre</div><div class="tarjeta-desc">Cada ejecutivo te dirá que su isapre es la mejor. Nosotros comparamos todas, considerando holdings, clínicas propias y convenios.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">3</div><div class="tarjeta-title">Bajar el precio sin afectar tu cobertura</div><div class="tarjeta-desc">Muchos asesores solo buscan bajar el precio, lo que puede dejarte sin cobertura en hospitalizaciones. Buscamos el equilibrio.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">4</div><div class="tarjeta-title">Basados en tus experiencias reales</div><div class="tarjeta-desc">Nuestra orientación considera los eventos que ya has vivido, para mejorar tu situación y evitar que se repitan.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">5</div><div class="tarjeta-title">Te guiamos en el uso de tu plan</div><div class="tarjeta-desc">No solo te ayudamos a elegir. También te orientamos para que saques el máximo provecho a tu plan.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">6</div><div class="tarjeta-title">100% gratuito, siempre</div><div class="tarjeta-desc">Nuestra asesoría no tiene ningún costo para ti. Sin letra chica, sin cobros posteriores.</div></div>
-        <div class="tarjeta" style="grid-column:2;"><div class="tarjeta-num">7</div><div class="tarjeta-title">Datos reales de la Superintendencia de Salud</div><div class="tarjeta-desc">Usamos datos oficiales más experiencia en casos reales para asesorarte en reclamos, licencias y bonificaciones.</div></div>
-      </div>
+      <h2 style="font-family:'Inter',sans-serif;font-size:32px;font-weight:900;color:var(--purple-dark);text-align:center;margin-bottom:0.4rem;letter-spacing:-0.02em;">Mitos y realidades de las Isapres</h2>
+      <p class="section-sub">Las objeciones más comunes y lo que realmente hay detrás de ellas.</p>
+            <div class="tarjetas-grid">
+        <div class="tarjeta"><div class="tarjeta-num">1</div><div class="tarjeta-title">"Si bajo el precio, bajo la calidad del plan"</div><div class="tarjeta-desc">Muchas personas creen que pagar menos significa perder cobertura. Al contrario, las alzas y adecuaciones anuales desde la Ley Corta de 2024 han hecho que muchos paguen de más sin saberlo. Hoy es posible bajar el costo y mantener o mejorar tu cobertura.</div></div>
+        <div class="tarjeta"><div class="tarjeta-num">2</div><div class="tarjeta-title">"Tengo un plan insuperable"</div><div class="tarjeta-desc">En casos específicos puede ser cierto, pero no siempre es una realidad. Los planes antiguos generalmente no están actualizados a los últimos beneficios como maternidad universal, cobertura en psicología, psiquiatría, entre otros.</div></div>
+        <div class="tarjeta"><div class="tarjeta-num">3</div><div class="tarjeta-title">"Pago muy poco en consultas médicas"</div><div class="tarjeta-desc">Muchas Isapres se enfocan en lo ambulatorio, pero lo que realmente endeuda es la hospitalización. Ahí es donde las Isapres colocan los topes más altos, y donde más nos afecta tener un plan deficiente.</div></div>
+        <div class="tarjeta"><div class="tarjeta-num">4</div><div class="tarjeta-title">"No ocupo la Isapre, me da igual"</div><div class="tarjeta-desc">El cliente que no usa su plan parece el ideal, pero si algún día ocurre algo y no tienes una buena cobertura, puedes generar una preexistencia que te impida optar a un mejor plan en el futuro.</div></div>
+        <div class="tarjeta"><div class="tarjeta-num">5</div><div class="tarjeta-title">"Tengo Fonasa y un muy buen seguro complementario"</div><div class="tarjeta-desc">Como opción ambulatoria es bastante buena, pero en casos de hospitalización o urgencia es donde se complica. Fonasa no cubre el mínimo que exige un seguro complementario, dejándote expuesto justo cuando más lo necesitas.</div></div>
+        <div class="tarjeta"><div class="tarjeta-num">6</div><div class="tarjeta-title">"Es muy engorroso cambiarse"</div><div class="tarjeta-desc">Hace años era así. Hoy todo el proceso es digital y no toma mucho tiempo. Te acompañamos en cada paso para que el cambio sea simple y sin complicaciones.</div></div>
+        <div class="tarjeta"><div class="tarjeta-num">7</div><div class="tarjeta-title">"Tengo una preexistencia, no me puedo cambiar"</div><div class="tarjeta-desc">Es cierto que algunas enfermedades pueden ser cuestionadas, pero muchas veces sí es posible cambiarse. Además, el Olvido Oncológico permite que tras 5 años de alta médica, la enfermedad ni siquiera deba ser declarada.</div></div>
+        <div class="tarjeta"><div class="tarjeta-num">8</div><div class="tarjeta-title">"No me gustan los planes cerrados"</div><div class="tarjeta-desc">Actualmente la mayoría de los planes son preferentes, lo que significa que puedes atenderte donde prefieras, con mejor cobertura en la red de la Isapre y cobertura de libre elección fuera de ella.</div></div>
+        <div class="tarjeta"><div class="tarjeta-num">9</div><div class="tarjeta-title">"Me cambié y nunca más supe del ejecutivo"</div><div class="tarjeta-desc">En Planiapp la asesoría no termina con el cambio. Una de las obligaciones del ejecutivo asignado es la post venta — seguimos acompañándote después del proceso para que siempre tengas el respaldo que necesitas.</div></div>
     </div>
   </div>
 
@@ -506,7 +507,6 @@ footer { background: #1a1730; padding: 2rem; display: grid; grid-template-column
       <div class="footer-legal">Planiapp es una plataforma de información y asesoría independiente. No operamos como agentes de ventas de isapres ni corredores de seguros. Toda contratación se realiza directamente entre el usuario y un agente habilitado inscrito en la Superintendencia de Salud.</div>
     </div>
   </footer>
-</div>
 <!-- MODAL FORMULARIO SIMPLE -->
 <div class="form-overlay" id="modal-simple">
   <div class="form-modal">
