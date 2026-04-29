@@ -1090,9 +1090,9 @@ async function sSubmit(){
       fetch(WEBHOOK_SIMPLE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:sD.fecha,codigo:sD.codigo,tipo_asesoria:sD.tipo_asesoria,nombre:sD.nombre,whatsapp:sD.whatsapp,rut:sD.rut,sistema:sD.sistema||'',edad:sD.edad||'',cargas:sD.cargas||'Sin cargas',region:sD.region||'',comuna:sD.comuna||'',clinica:document.getElementById('s-clinica-select')?document.getElementById('s-clinica-select').value||'Sin preferencia':'Sin preferencia',renta:sD.renta||'',tipo_trabajador:sD.trabajo||'',empresa:sD.empresa||'',isapre_actual:sD.isapre_actual||'No aplica'})}),
       sbInsert('leads',{rut:sD.rut,codigo:sD.codigo,tipo_asesoria:sD.tipo_asesoria,estado:'recibido',nombre:sD.nombre,whatsapp:sD.whatsapp,fecha:sD.fecha})
     ]);
-    document.getElementById('s-sending').classList.remove('active');document.getElementById('s-label').textContent='¡Listo!';
-    document.getElementById('s-success').classList.add('active');document.getElementById('s-codigo').textContent=sD.codigo;
-  }catch(e){document.getElementById('s-sending').classList.remove('active');document.getElementById('s-success').classList.add('active');document.getElementById('s-codigo').textContent=sD.codigo;}
+    document.getElementById('s-sending').classList.remove('active');
+    window.location.href = '/gracias.html?codigo=' + sD.codigo;
+  }catch(e){document.getElementById('s-sending').classList.remove('active');window.location.href='/gracias.html?codigo='+sD.codigo;}
 }
 
 // ======= AVANZADO =======
@@ -1246,9 +1246,9 @@ async function aSubmit(){
       fetch(WEBHOOK_AVANZADO,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:aD.fecha,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,nombre:aD.nombre,whatsapp:aD.whatsapp,rut:aD.rut,isapre_actual:aD.isapre_actual||'',edad:aD.edad||'',cargas:aD.cargas||'Sin cargas',tipo_trabajador:aD.tipo_trabajador||'',renta:renta,unidad_renta:'CLP',valor_isapre:valor,unidad_valor:'CLP',empleador:empleador,preexistencias:preexTitular+(preexCargas?' | Cargas: '+preexCargas:''),coberturas:aD.coberturas.join(', ')||'Ninguna',problemas:aD.problemas.join(', ')||'Ninguno',region:aD.region||'',comuna:aD.comuna||'',clinica:aD.clinica||document.getElementById('a-clinica-select').value||'Sin preferencia',codigo_plan:codplan,propuesta_otra:propuesta})}),
       sbInsert('leads',{rut:aD.rut,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,estado:'recibido',nombre:aD.nombre,whatsapp:aD.whatsapp,fecha:aD.fecha})
     ]);
-    document.getElementById('a-sending').classList.remove('active');document.getElementById('a-label').textContent='¡Listo!';
-    document.getElementById('a-success').classList.add('active');document.getElementById('a-codigo').textContent=aD.codigo;
-  }catch(e){document.getElementById('a-sending').classList.remove('active');document.getElementById('a-success').classList.add('active');document.getElementById('a-codigo').textContent=aD.codigo;}
+    document.getElementById('a-sending').classList.remove('active');
+    window.location.href = '/gracias.html?codigo=' + aD.codigo;
+  }catch(e){document.getElementById('a-sending').classList.remove('active');window.location.href='/gracias.html?codigo='+aD.codigo;}
 }
 
 // ======= SEGUIMIENTO =======
