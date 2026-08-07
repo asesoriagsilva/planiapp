@@ -401,7 +401,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
       <div class="opcion-card featured">
         <div class="opcion-badge premium">Asesoría avanzada</div>
         <div class="opcion-title">Evaluación detallada de un nuevo plan de Isapre</div>
-        <div class="opcion-desc">Enfocada a personas que están en Isapre, que necesitan coberturas específicas (psicología, kinesiología, urgencias, etc.), o que quieran consultar condiciones de salud que deban declararse ante un posible cambio.</div>
+        <div class="opcion-desc">Para afiliados a Fonasa o Isapre que necesitan un análisis especializado de coberturas como 🧠 Psiquiatría • 💬 Psicología • 🦴 Kinesiología • 🚑 Urgencias • 🤰 Maternidad y orientación sobre preexistencias.</div>
         <span class="opcion-time">Toma 3 minutos</span>
         <button class="opcion-btn primary" onclick="openForm('avanzado')">Comenzar asesoría avanzada →</button>
       </div>
@@ -752,8 +752,17 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
         <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.3rem;">¿Cuentas con seguro complementario o catastrófico?</div>
         <div class="pf-info-box" style="margin-top:0.5rem;margin-bottom:0.75rem;"><div style="font-size:11px;color:var(--purple);line-height:1.5;">Esto nos ayuda a poder bajar el costo de algunos planes, debido a que los seguros, dependiendo del tipo, para cubrir el total de una cuenta o procedimiento, piden un porcentaje mínimo de cobertura por parte de la isapre (BMI). Por eso nos ayuda a ajustar un plan a tu seguro.</div></div>
         <div class="pf-options cols2">
-          <button class="pf-option" onclick="aOpt(this,'seguro_complementario','Sí, tengo seguro')"><div class="pf-option-title">Sí, tengo seguro</div></button>
-          <button class="pf-option" onclick="aOpt(this,'seguro_complementario','No, no tengo seguro')"><div class="pf-option-title">No, no tengo seguro</div></button>
+          <button class="pf-option" id="a-siseguro" onclick="aSeguro('si')"><div class="pf-option-title">Sí, tengo seguro</div></button>
+          <button class="pf-option" id="a-noseguro" onclick="aSeguro('no')"><div class="pf-option-title">No, no tengo seguro</div></button>
+        </div>
+        <div id="a-segurotipos" style="display:none;margin-top:0.75rem;">
+          <label class="pf-label">¿Qué tipo de seguro tienes?</label>
+          <div class="pf-options cols2" style="margin-top:0.4rem;">
+            <button class="pf-option" onclick="aSeguroTipo(this,'Complementario')"><div class="pf-option-title">Complementario</div></button>
+            <button class="pf-option" onclick="aSeguroTipo(this,'Catastrófico')"><div class="pf-option-title">Catastrófico</div></button>
+            <button class="pf-option" onclick="aSeguroTipo(this,'Oncológico')"><div class="pf-option-title">Oncológico</div></button>
+            <button class="pf-option" onclick="aSeguroTipo(this,'Accidentes')"><div class="pf-option-title">Accidentes</div></button>
+          </div>
         </div>
       </div>
       <div style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:0.75rem;">Si no tienes esta información, tu asesor la solicitará por WhatsApp.</div>
@@ -942,7 +951,7 @@ function resetForm(prefix) {
     if(fill)fill.style.width='11%';
     if(label)label.textContent='Paso 1 de 9';
     if(prefix==='simple'){Object.keys(sD).forEach(k=>delete sD[k]);sCargaCount=0;document.getElementById('s-cargalist').innerHTML='';document.getElementById('s-cargasec').style.display='none';}
-    else{aD.coberturas=[];aD.problemas=[];aCargaCount=0;Object.keys(aD).filter(k=>k!=='coberturas'&&k!=='problemas').forEach(k=>delete aD[k]);document.getElementById('a-cargalist').innerHTML='';document.getElementById('a-cargasec').style.display='none';document.getElementById('a-coberturas').innerHTML='';document.getElementById('a-problemas').innerHTML='';}
+    else{aD.coberturas=[];aD.problemas=[];aD.seguro_tipos=[];aCargaCount=0;Object.keys(aD).filter(k=>k!=='coberturas'&&k!=='problemas'&&k!=='seguro_tipos').forEach(k=>delete aD[k]);document.getElementById('a-cargalist').innerHTML='';document.getElementById('a-cargasec').style.display='none';document.getElementById('a-coberturas').innerHTML='';document.getElementById('a-problemas').innerHTML='';}
   }, 300);
 }
 
@@ -1084,7 +1093,7 @@ async function sSubmit(){
 }
 
 // ======= AVANZADO =======
-const aD={coberturas:[],problemas:[]};
+const aD={coberturas:[],problemas:[],seguro_tipos:[]};
 let aCargaCount=0;
 const A_TOTAL=9;
 
@@ -1122,6 +1131,20 @@ function buildChecklist(items,containerId,arr){
     };
     c.appendChild(div);
   });
+}
+
+function aSeguro(opt){
+  document.getElementById('a-siseguro').classList.toggle('selected',opt==='si');
+  document.getElementById('a-noseguro').classList.toggle('selected',opt==='no');
+  aD.seguro_complementario = opt==='si' ? 'Sí, tengo seguro' : 'No, no tengo seguro';
+  const box=document.getElementById('a-segurotipos');
+  if(opt==='si'){ box.style.display='block'; }
+  else{ box.style.display='none'; aD.seguro_tipos=[]; box.querySelectorAll('.pf-option').forEach(b=>b.classList.remove('selected')); }
+}
+function aSeguroTipo(btn,tipo){
+  btn.classList.toggle('selected');
+  if(btn.classList.contains('selected')){ if(!aD.seguro_tipos.includes(tipo)) aD.seguro_tipos.push(tipo); }
+  else{ const i=aD.seguro_tipos.indexOf(tipo); if(i>-1) aD.seguro_tipos.splice(i,1); }
 }
 
 function aShow(n){
@@ -1230,7 +1253,7 @@ async function aSubmit(){
   aD.codigo=genCode();
   try{
     await Promise.all([
-      fetch(WEBHOOK_AVANZADO,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:aD.fecha,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,nombre:aD.nombre,whatsapp:aD.whatsapp,rut:aD.rut,isapre_actual:aD.isapre_actual||'',edad:aD.edad||'',cargas:aD.cargas||'Sin cargas',tipo_trabajador:aD.tipo_trabajador||'',renta:renta,unidad_renta:'CLP',valor_isapre:valor,unidad_valor:'CLP',empleador:empleador,preexistencias:preexTitular+(preexCargas?' | Cargas: '+preexCargas:''),coberturas:aD.coberturas.join(', ')||'Ninguna',problemas:aD.problemas.join(', ')||'Ninguno',region:aD.region||'',comuna:aD.comuna||'',clinica:aD.clinica||document.getElementById('a-clinica-select').value||'Sin preferencia',codigo_plan:codplan,seguro_complementario:aD.seguro_complementario||'No indicado'})}),
+      fetch(WEBHOOK_AVANZADO,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:aD.fecha,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,nombre:aD.nombre,whatsapp:aD.whatsapp,rut:aD.rut,isapre_actual:aD.isapre_actual||'',edad:aD.edad||'',cargas:aD.cargas||'Sin cargas',tipo_trabajador:aD.tipo_trabajador||'',renta:renta,unidad_renta:'CLP',valor_isapre:valor,unidad_valor:'CLP',empleador:empleador,preexistencias:preexTitular+(preexCargas?' | Cargas: '+preexCargas:''),coberturas:aD.coberturas.join(', ')||'Ninguna',problemas:aD.problemas.join(', ')||'Ninguno',region:aD.region||'',comuna:aD.comuna||'',clinica:aD.clinica||document.getElementById('a-clinica-select').value||'Sin preferencia',codigo_plan:codplan,seguro_complementario:aD.seguro_complementario||'No indicado',seguro_tipos:aD.seguro_tipos.join(', ')||'No aplica'})}),
       sbInsert('leads',{rut:aD.rut,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,estado:'recibido',nombre:aD.nombre,whatsapp:aD.whatsapp,fecha:aD.fecha})
     ]);
     document.getElementById('a-sending').classList.remove('active');
