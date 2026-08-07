@@ -94,15 +94,6 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 .opcion-btn.primary { background: var(--purple); color: #fff; }
 .opcion-btn.primary:hover { background: var(--purple-deep); }
 
-/* TARJETAS */
-.tarjetas { padding: 2.5rem 3rem; background: var(--white); }
-.tarjetas-inner { max-width: 1000px; margin: 0 auto; }
-.tarjetas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-.tarjeta { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
-.tarjeta-num { width: 36px; height: 36px; border-radius: 10px; background: var(--purple-light); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; color: var(--purple); margin-bottom: 0.75rem; }
-.tarjeta-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; line-height: 1.3; }
-.tarjeta-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
-
 /* PRIVACIDAD */
 .privacidad { background: var(--purple-dark); padding: 2.5rem 2rem; text-align: center; }
 .priv-title { font-family: 'DM Serif Display', serif; font-size: 24px; color: #EEEDFE; margin-bottom: 0.75rem; }
@@ -236,7 +227,6 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .hero { flex-direction: column; padding: 2rem 1rem; }
   .hero-right { width: 100%; }
   .opciones-grid { grid-template-columns: 1fr; }
-  .tarjetas-grid { grid-template-columns: 1fr 1fr; }
   footer { grid-template-columns: 1fr; }
   nav { padding: 0.75rem 1rem; }
   .nav-links .nav-link { display: none; }
@@ -335,8 +325,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     </div>
     <div style="flex:1;background:#EEEDFE;border-radius:12px;padding:0.5rem 0.85rem;">
       <div style="font-size:11px;font-weight:600;color:#7F77DD;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 1</div>
-      <div style="font-size:13px;font-weight:600;color:#26215C;margin-bottom:2px;">Revisamos tu perfil con IA</div>
-      <div style="font-size:11px;color:#534AB7;line-height:1.4;">Analizamos tus respuestas para entender tu situación real antes de asignarte un especialista.</div>
+      <div style="font-size:13px;font-weight:600;color:#26215C;margin-bottom:2px;">Escoge qué asesoría quieres</div>
+      <div style="font-size:11px;color:#534AB7;line-height:1.4;">Elige la asesoría simple o avanzada según tu situación.</div>
     </div>
   </div>
 
@@ -347,13 +337,13 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <div class="sc" style="display:flex;align-items:center;gap:12px;">
     <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
       <div class="si" style="width:38px;height:38px;border-radius:50%;background:#E1F5EE;border:2px solid #1D9E75;display:flex;align-items:center;justify-content:center;animation-delay:0.8s;">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="8" r="3.5" stroke="#1D9E75" stroke-width="1.5"/><path d="M4 17c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M10 6.5V4" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="3" r="1" fill="#1D9E75"/><rect x="5" y="6.5" width="10" height="8.5" rx="2" stroke="#1D9E75" stroke-width="1.5"/><circle cx="7.8" cy="10.5" r="1" fill="#1D9E75"/><circle cx="12.2" cy="10.5" r="1" fill="#1D9E75"/><path d="M3 9.5h2M15 9.5h2" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
     </div>
     <div style="flex:1;background:#E1F5EE;border-radius:12px;padding:0.5rem 0.85rem;">
       <div style="font-size:11px;font-weight:600;color:#0F6E56;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 2</div>
-      <div style="font-size:13px;font-weight:600;color:#04342C;margin-bottom:2px;">Un ejecutivo revisa tu caso</div>
-      <div style="font-size:11px;color:#0F6E56;line-height:1.4;">Ejecutivos con más de 10 años de experiencia validan cada caso antes de preparar tu propuesta.</div>
+      <div style="font-size:13px;font-weight:600;color:#04342C;margin-bottom:2px;">Mediante IA evaluamos tu perfil</div>
+      <div style="font-size:11px;color:#0F6E56;line-height:1.4;">Nuestra IA evalúa tu perfil, compara en el mercado las alternativas de planes, y revisa qué planes se adaptan a tu perfil.</div>
     </div>
   </div>
 
@@ -364,13 +354,13 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <div class="sc" style="display:flex;align-items:center;gap:12px;">
     <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
       <div class="si" style="width:38px;height:38px;border-radius:50%;background:#E6F1FB;border:2px solid #185FA5;display:flex;align-items:center;justify-content:center;animation-delay:1.6s;">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#185FA5" stroke-width="1.5"/><path d="M7 8h6M7 11h4" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="8" r="3.5" stroke="#185FA5" stroke-width="1.5"/><path d="M4 17c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
     </div>
     <div style="flex:1;background:#E6F1FB;border-radius:12px;padding:0.5rem 0.85rem;">
       <div style="font-size:11px;font-weight:600;color:#185FA5;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 3</div>
-      <div style="font-size:13px;font-weight:600;color:#042C53;margin-bottom:2px;">Cruzamos con datos oficiales</div>
-      <div style="font-size:11px;color:#185FA5;line-height:1.4;">Cruzamos datos con la Superintendencia de Salud para ofrecerte siempre la mejor opción disponible.</div>
+      <div style="font-size:13px;font-weight:600;color:#042C53;margin-bottom:2px;">Asignación de ejecutivo</div>
+      <div style="font-size:11px;color:#185FA5;line-height:1.4;">Un ejecutivo calificado y certificado revisa en detalle los planes entregados por la IA, para enviar solo propuestas que cumplan con lo solicitado.</div>
     </div>
   </div>
 
@@ -387,7 +377,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     <div style="flex:1;background:#EAF3DE;border-radius:12px;padding:0.5rem 0.85rem;">
       <div style="font-size:11px;font-weight:600;color:#3B6D11;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 4</div>
       <div style="font-size:13px;font-weight:600;color:#173404;margin-bottom:2px;">Te enviamos tu cotización</div>
-      <div style="font-size:11px;color:#3B6D11;line-height:1.4;">Recibes una propuesta personalizada por WhatsApp con comparativa y recomendación final.</div>
+      <div style="font-size:11px;color:#3B6D11;line-height:1.4;">Se te envía la propuesta a tu WhatsApp con un par de alternativas, y donde finalmente tú decides, en base al precio y requerimientos, con qué plan te quedas.</div>
     </div>
   </div>
 
@@ -403,15 +393,15 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     <div class="opciones-grid">
       <div class="opcion-card">
         <div class="opcion-badge">Asesoría simple</div>
-        <div class="opcion-title">Evalúa un plan de Isapre</div>
-        <div class="opcion-desc">Ideal para personas que están en Fonasa y quieren optimizar su 7%, y para quienes están en Isapre y desean mejorar su plan actual.</div>
+        <div class="opcion-title">Cotiza un plan de Isapre de forma rápida</div>
+        <div class="opcion-desc">Enfocada a personas que están en Fonasa y quieren cotizar por primera vez un plan de Isapre pagando solo su 7%.</div>
         <span class="opcion-time">Toma 1 minuto</span>
         <button class="opcion-btn" onclick="openForm('simple')">Comenzar asesoría simple →</button>
       </div>
       <div class="opcion-card featured">
         <div class="opcion-badge premium">Asesoría avanzada</div>
-        <div class="opcion-title">Evaluación completa de Isapre</div>
-        <div class="opcion-desc">Enfocada a personas en Isapre que quieren bajar costos, comparar propuestas entre Isapres y encontrar coberturas específicas para su perfil.</div>
+        <div class="opcion-title">Evaluación detallada de un nuevo plan de Isapre</div>
+        <div class="opcion-desc">Enfocada a personas que están en Isapre, que necesitan coberturas específicas (psicología, kinesiología, urgencias, etc.), o que quieran consultar condiciones de salud que deban declararse ante un posible cambio.</div>
         <span class="opcion-time">Toma 3 minutos</span>
         <button class="opcion-btn primary" onclick="openForm('avanzado')">Comenzar asesoría avanzada →</button>
       </div>
@@ -425,24 +415,6 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
           Escribir por WhatsApp
         </button>
       </div>
-    </div>
-  </div>
-
-  <!-- TARJETAS -->
-  <div class="tarjetas">
-    <div class="tarjetas-inner">
-      <h2 style="font-family:'Inter',sans-serif;font-size:32px;font-weight:900;color:var(--purple-dark);text-align:center;margin-bottom:0.4rem;letter-spacing:-0.02em;">Mitos y realidades de las Isapres</h2>
-      <p class="section-sub">Las objeciones más comunes y lo que realmente hay detrás de ellas.</p>
-            <div class="tarjetas-grid">
-        <div class="tarjeta"><div class="tarjeta-num">1</div><div class="tarjeta-title">"Si bajo el precio, bajo la calidad del plan"</div><div class="tarjeta-desc">Muchas personas creen que pagar menos significa perder cobertura. Al contrario, las alzas y adecuaciones anuales desde la Ley Corta de 2024 han hecho que muchos paguen de más sin saberlo. Hoy es posible bajar el costo y mantener o mejorar tu cobertura.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">2</div><div class="tarjeta-title">"Tengo un plan insuperable"</div><div class="tarjeta-desc">En casos específicos puede ser cierto, pero no siempre es una realidad. Los planes antiguos generalmente no están actualizados a los últimos beneficios como maternidad universal, cobertura en psicología, psiquiatría, entre otros.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">3</div><div class="tarjeta-title">"Pago muy poco en consultas médicas"</div><div class="tarjeta-desc">Muchas Isapres se enfocan en lo ambulatorio, pero lo que realmente endeuda es la hospitalización. Ahí es donde las Isapres colocan los topes más altos, y donde más nos afecta tener un plan deficiente.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">4</div><div class="tarjeta-title">"No ocupo la Isapre, me da igual"</div><div class="tarjeta-desc">El cliente que no usa su plan parece el ideal, pero si algún día ocurre algo y no tienes una buena cobertura, puedes generar una preexistencia que te impida optar a un mejor plan en el futuro.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">5</div><div class="tarjeta-title">"Tengo Fonasa y un muy buen seguro complementario"</div><div class="tarjeta-desc">Como opción ambulatoria es bastante buena, pero en casos de hospitalización o urgencia es donde se complica. Fonasa no cubre el mínimo que exige un seguro complementario, dejándote expuesto justo cuando más lo necesitas.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">6</div><div class="tarjeta-title">"Es muy engorroso cambiarse"</div><div class="tarjeta-desc">Hace años era así. Hoy todo el proceso es digital y no toma mucho tiempo. Te acompañamos en cada paso para que el cambio sea simple y sin complicaciones.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">7</div><div class="tarjeta-title">"Tengo una preexistencia, no me puedo cambiar"</div><div class="tarjeta-desc">Es cierto que algunas enfermedades pueden ser cuestionadas, pero muchas veces sí es posible cambiarse. Además, el Olvido Oncológico permite que tras 5 años de alta médica, la enfermedad ni siquiera deba ser declarada.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">8</div><div class="tarjeta-title">"No me gustan los planes cerrados"</div><div class="tarjeta-desc">Actualmente la mayoría de los planes son preferentes, lo que significa que puedes atenderte donde prefieras, con mejor cobertura en la red de la Isapre y cobertura de libre elección fuera de ella.</div></div>
-        <div class="tarjeta"><div class="tarjeta-num">9</div><div class="tarjeta-title">"Me cambié y nunca más supe del ejecutivo"</div><div class="tarjeta-desc">En Planiapp la asesoría no termina con el cambio. Una de las obligaciones del ejecutivo asignado es la post venta — seguimos acompañándote después del proceso para que siempre tengas el respaldo que necesitas.</div></div>
     </div>
   </div>
 
@@ -770,16 +742,19 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     <div class="pf-step" id="a-step8">
       <div class="pf-question">¿Tienes el código de tu plan?</div>
       <span style="display:inline-block;background:var(--purple-light);color:var(--purple-deep);font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;margin-bottom:0.85rem;">Opcional — no es obligatorio</span>
-      <div class="pf-info-box" style="margin-bottom:1rem;"><div class="pf-info-box-title">¿Para qué sirve compartir esta información?</div><ul class="pf-info-box-list"><li>Comparamos tu plan y verificamos si estás pagando de más</li><li>Evaluamos si podemos igualar o bajar tus costos</li><li>Si tienes propuesta de otra isapre, la analizamos</li></ul></div>
+      <div class="pf-info-box" style="margin-bottom:1rem;"><div class="pf-info-box-title">¿Para qué sirve compartir esta información?</div><ul class="pf-info-box-list"><li>Comparamos tu plan y verificamos si estás pagando de más</li><li>Evaluamos si podemos igualar o bajar tus costos</li></ul></div>
       <div style="margin-bottom:0.85rem;border:1.5px dashed var(--border);border-radius:var(--radius);padding:1rem;">
         <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.3rem;">Código de tu plan actual</div>
         <div style="font-size:11px;color:var(--text-muted);margin-bottom:0.6rem;">Lo encuentras en tu cartola, sucursal virtual o contrato de salud.</div>
         <input class="pf-input" type="text" id="a-codplan" placeholder="Ej: BM-2847-A, CON-1234..."/>
       </div>
       <div style="border:1.5px dashed var(--border);border-radius:var(--radius);padding:1rem;">
-        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.3rem;">Propuesta de otra isapre</div>
-        <div style="font-size:11px;color:var(--text-muted);margin-bottom:0.6rem;">Si ya tienes una oferta de otra isapre, la comparamos.</div>
-        <input class="pf-input" type="text" id="a-propuesta" placeholder="Ej: código o nombre del plan ofrecido..."/>
+        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.3rem;">¿Cuentas con seguro complementario o catastrófico?</div>
+        <div class="pf-info-box" style="margin-top:0.5rem;margin-bottom:0.75rem;"><div style="font-size:11px;color:var(--purple);line-height:1.5;">Esto nos ayuda a poder bajar el costo de algunos planes, debido a que los seguros, dependiendo del tipo, para cubrir el total de una cuenta o procedimiento, piden un porcentaje mínimo de cobertura por parte de la isapre (BMI). Por eso nos ayuda a ajustar un plan a tu seguro.</div></div>
+        <div class="pf-options cols2">
+          <button class="pf-option" onclick="aOpt(this,'seguro_complementario','Sí, tengo seguro')"><div class="pf-option-title">Sí, tengo seguro</div></button>
+          <button class="pf-option" onclick="aOpt(this,'seguro_complementario','No, no tengo seguro')"><div class="pf-option-title">No, no tengo seguro</div></button>
+        </div>
       </div>
       <div style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:0.75rem;">Si no tienes esta información, tu asesor la solicitará por WhatsApp.</div>
       <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(7)">← Atrás</button><button class="pf-btn-next ready" id="a-next8" onclick="aShow(9)">Continuar →</button></div>
@@ -1075,6 +1050,10 @@ function sCheckEmpresa(){
   const v=document.getElementById('s-empresa').value.trim();sD.empresa=v;
   const isIsapre=sD.sistema==='Isapre';
   document.getElementById('s-isapre-wrap').style.display=isIsapre?'block':'none';
+  if(!isIsapre){
+    sD.isapre_actual='';
+    document.querySelectorAll('#s-isapre-wrap .pf-option').forEach(b=>b.classList.remove('selected'));
+  }
   const btn=document.getElementById('s-next8');
   if(!isIsapre||sD.isapre_actual)btn.classList.add('ready');else btn.classList.remove('ready');
 }
@@ -1243,7 +1222,6 @@ async function aSubmit(){
   const preexTitular=document.getElementById('a-preex-titular').value||'Sin preexistencias';
   const preexCargas=document.getElementById('a-preex-cargas').value||'';
   const codplan=document.getElementById('a-codplan').value||'No indicado';
-  const propuesta=document.getElementById('a-propuesta').value||'Sin propuesta';
   document.querySelectorAll('#modal-avanzado .pf-step').forEach(x=>x.classList.remove('active'));
   document.getElementById('a-fill').style.width='100%';document.getElementById('a-label').textContent='Verificando...';
   document.getElementById('a-sending').classList.add('active');
@@ -1252,7 +1230,7 @@ async function aSubmit(){
   aD.codigo=genCode();
   try{
     await Promise.all([
-      fetch(WEBHOOK_AVANZADO,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:aD.fecha,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,nombre:aD.nombre,whatsapp:aD.whatsapp,rut:aD.rut,isapre_actual:aD.isapre_actual||'',edad:aD.edad||'',cargas:aD.cargas||'Sin cargas',tipo_trabajador:aD.tipo_trabajador||'',renta:renta,unidad_renta:'CLP',valor_isapre:valor,unidad_valor:'CLP',empleador:empleador,preexistencias:preexTitular+(preexCargas?' | Cargas: '+preexCargas:''),coberturas:aD.coberturas.join(', ')||'Ninguna',problemas:aD.problemas.join(', ')||'Ninguno',region:aD.region||'',comuna:aD.comuna||'',clinica:aD.clinica||document.getElementById('a-clinica-select').value||'Sin preferencia',codigo_plan:codplan,propuesta_otra:propuesta})}),
+      fetch(WEBHOOK_AVANZADO,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:aD.fecha,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,nombre:aD.nombre,whatsapp:aD.whatsapp,rut:aD.rut,isapre_actual:aD.isapre_actual||'',edad:aD.edad||'',cargas:aD.cargas||'Sin cargas',tipo_trabajador:aD.tipo_trabajador||'',renta:renta,unidad_renta:'CLP',valor_isapre:valor,unidad_valor:'CLP',empleador:empleador,preexistencias:preexTitular+(preexCargas?' | Cargas: '+preexCargas:''),coberturas:aD.coberturas.join(', ')||'Ninguna',problemas:aD.problemas.join(', ')||'Ninguno',region:aD.region||'',comuna:aD.comuna||'',clinica:aD.clinica||document.getElementById('a-clinica-select').value||'Sin preferencia',codigo_plan:codplan,seguro_complementario:aD.seguro_complementario||'No indicado'})}),
       sbInsert('leads',{rut:aD.rut,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,estado:'recibido',nombre:aD.nombre,whatsapp:aD.whatsapp,fecha:aD.fecha})
     ]);
     document.getElementById('a-sending').classList.remove('active');
