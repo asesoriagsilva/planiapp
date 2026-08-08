@@ -297,11 +297,15 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <div class="hero">
     <div class="hero-left">
 
-      <h1 class="hero-title">Planiapp, una nueva forma de elegir tu <span>Isapre.</span></h1>
-      <p class="hero-sub">No siempre cambiarse es la mejor opción, ya que cada ejecutivo de Isapre te hablará de por qué su Isapre es la mejor. Pero, ¿es realmente la mejor para ti?</p>
-      <p class="hero-sub" style="margin-bottom:0.75rem;">Evaluamos tu perfil, tus necesidades y tu situación actual para recomendarte la alternativa que realmente se adapta a ti.</p>
-      <p class="hero-sub" style="margin-bottom:0;">Ejecutivos certificados por la Superintendencia de Salud, con más de 10 años de experiencia.</p>
-      <p style="font-size:15px;font-weight:500;color:var(--purple);margin-top:0.75rem;">100% online · Sin letra chica · Sin costo.</p>
+      <h1 class="hero-title">Encuentra una <span>Isapre</span> que se adapte a ti.</h1>
+      <p class="hero-sub">Cotiza, compara y evalúa tu cambio de Isapre de forma integral, rápida y clara.</p>
+      <p class="hero-sub" style="margin-bottom:0.75rem;">Todos te dirán que su Isapre es la mejor. Nosotros analizamos cuál es la mejor alternativa para ti.</p>
+      <p class="hero-sub" style="margin-bottom:0;">Evaluamos tu situación actual y buscamos alternativas que puedan mejorar tus coberturas, condiciones y/o costo, según tu perfil y necesidades. Antes de recomendar el cambio, revisamos que realmente sea conveniente para ti.</p>
+      <div style="margin-top:0.85rem;display:flex;flex-direction:column;gap:0.35rem;">
+        <div style="font-size:14px;font-weight:500;color:var(--purple);">✓ Ejecutivos certificados por la Superintendencia de Salud</div>
+        <div style="font-size:14px;font-weight:500;color:var(--purple);">✓ Más de 10 años de experiencia</div>
+        <div style="font-size:14px;font-weight:500;color:var(--purple);">✓ 100% online · Sin compromiso · Sin costo</div>
+      </div>
       <div class="hero-guarantee" style="margin-top:0.75rem;"><div class="hero-guarantee-dot"></div>Servicio 100% gratuito. Privacidad garantizada.</div>
     </div>
     <div class="hero-right">
@@ -403,7 +407,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
       <div class="opcion-card featured">
         <div class="opcion-badge premium">Asesoría avanzada</div>
         <div class="opcion-title">Evaluación detallada de un nuevo plan de Isapre</div>
-        <div class="opcion-desc">Para afiliados a Fonasa o Isapre que necesitan un análisis especializado de coberturas como 🧠 Psiquiatría • 💬 Psicología • 🦴 Kinesiología • 🚑 Urgencias • 🤰 Maternidad y orientación sobre preexistencias.</div>
+        <div class="opcion-desc">Para afiliados a Fonasa o Isapre que necesitan un análisis especializado de coberturas como 💬 Psicología • 🦴 Kinesiología • 🚑 Urgencias • 🤰 Maternidad y orientación sobre preexistencias.</div>
         <span class="opcion-time">Toma 3 minutos</span>
         <button class="opcion-btn primary" onclick="openForm('avanzado')">Comenzar asesoría avanzada →</button>
       </div>
@@ -1092,11 +1096,12 @@ const A_TOTAL=9;
 
 const cobItems=[
   {k:'cob_costos',t:'Bajar costos de cotización',d:'Pagar menos por la misma o mejor cobertura'},
-  {k:'cob_kine',t:'Kinesiología o fisioterapia',d:''},
-  {k:'cob_psico',t:'Psicología o psiquiatría',d:''},
+  {k:'cob_kine',t:'Kinesiología o fisioterapia',d:'Cobertura sin tope anual'},
+  {k:'cob_psico',t:'Psicología o psiquiatría',d:'Cobertura sin tope anual en salud mental'},
   {k:'cob_urgencia',t:'Urgencias con copago fijo',d:'Saber exactamente cuánto pagas'},
   {k:'cob_hosp',t:'Hospitalización',d:'Cobertura amplia para internaciones'},
   {k:'cob_exam',t:'Exámenes a costo $0',d:'Laboratorio e imágenes sin costo'},
+  {k:'cob_dental',t:'Cobertura dental',d:'Descuento general'},
   {k:'cob_otra',t:'Otra cobertura',d:'Tu asesor te consultará por WhatsApp'}
 ];
 const probItems=[
