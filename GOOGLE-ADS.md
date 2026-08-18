@@ -20,7 +20,7 @@ datos reales; el resto son las reglas de decisión.
 |---|---|---|
 | Tag global (gtag.js) | ✅ instalado | `gracias.html:6-12`, home |
 | Acción de conversión creada | ✅ 18-08-2026 | `Lead formulario Planiapp` — principal, recuento "Una", ventana 30 días, valor 15.000 CLP |
-| Fragmento de evento de conversión | ✅ instalado (falta deploy) | `gracias.html:392-400` — etiqueta `AW-18388610233/-zYyCKvtweMcELnZr8BE` |
+| Fragmento de evento de conversión | ✅ **verificado en producción** 18-08-2026 | `gracias.html` — etiqueta `AW-18388610233/-zYyCKvtweMcELnZr8BE`, valor y `transaction_id` confirmados con Tag Assistant |
 | Param `?tipo=simple\|avanzado` | ❌ pendiente | redirección de ambos formularios |
 | GCLID en campo oculto | ❌ pendiente | ambos formularios |
 | Conversiones mejoradas | ❌ pendiente | requiere política de privacidad |
