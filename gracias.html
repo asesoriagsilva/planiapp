@@ -10,14 +10,6 @@
   gtag('js', new Date());
   gtag('config', 'AW-18388610233');
 </script>
-<!-- Event snippet for Envío de formulario para clientes potenciales conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18388610233/L2mdCN_NpOEcELnZr8BE',
-      'value': 1.0,
-      'currency': 'CLP'
-  });
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planiapp — ¡Solicitud recibida!</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&family=Inter:wght@800;900&display=swap" rel="stylesheet">
@@ -336,7 +328,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   </div>
 
   <h1 class="gracias-title">¡Gracias por <span>contactarnos!</span></h1>
-  <p class="gracias-sub">Tu solicitud fue recibida correctamente. Un asesor certificado por la Superintendencia de Salud se comunicará contigo por WhatsApp en menos de 30 minutos.</p>
+  <p class="gracias-sub">Tu solicitud fue recibida correctamente. Un ejecutivo inscrito en la Superintendencia de Salud se comunicará contigo por WhatsApp en menos de 30 minutos, dentro del horario de atención (L-V 9:00–21:00).</p>
 
   <div class="gracias-code-box">
     <div class="gracias-code-label">Tu código de solicitud</div>
@@ -389,6 +381,15 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 const params = new URLSearchParams(window.location.search);
 const codigo = params.get('codigo');
 if(codigo) document.getElementById('codigoGracias').textContent = codigo;
+
+/* Google Ads - conversion "Lead formulario Planiapp" */
+const tipo = params.get('tipo') || 'simple';
+gtag('event', 'conversion', {
+  'send_to': 'AW-18388610233/-zYyCKvtweMcELnZr8BE',
+  'value': tipo === 'avanzado' ? 25000 : 15000,
+  'currency': 'CLP',
+  'transaction_id': codigo || ''
+});
 </script>
 </body>
 </html>
