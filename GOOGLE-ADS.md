@@ -378,20 +378,25 @@ Atención: L-V 09:00–21:00.
 El factor dominante no es el CPC sino la **velocidad de respuesta**. En leads de
 WhatsApp, contactar en <5 min vs. 2 horas cambia radicalmente la tasa de contacto.
 
-**Fase 1 — estricto:**
+**Fase 1 — franja amplia para levantar datos:**
 ```
-Lunes a Viernes, 09:00 – 20:30
+Lunes a Viernes, 08:00 – 24:00
 ```
-Media hora de colchón antes del cierre para no dejar leads sin contactar el mismo
-día. Fuera de eso, campaña apagada.
 
-> **Con 10.000/día son ~870 CLP por hora de campaña** — menos de un clic por hora.
-> Google reparte con entrega estándar y la presencia queda muy diluida.
->
-> **Arrancar igual con la franja completa** las primeras 3 semanas: hace falta el
-> informe por hora para saber dónde está el volumen. Recién ahí concentrar en los
-> 5–6 mejores bloques (típicamente media mañana y después de almuerzo). Concentrar
-> antes de tener el dato es adivinar.
+> **Dato del negocio (Gonzalo, 18-08-2026):** no hay una franja definida en que la
+> gente busque asesoría. Las solicitudes llegan de noche y él a veces asesora hasta
+> medianoche. El horario publicado en el sitio (09:00–21:00) es más acotado que la
+> atención real.
+
+Por eso la campaña **no** se corta a las 20:30: eso apagaría justo la franja donde
+hay demanda y donde el CPC suele ser más barato, porque los comparadores grandes
+tienden a concentrarse en horario de oficina.
+
+**A las 3 semanas**, revisar *Estadísticas e informes → Horario y día* y recortar los
+bloques que no traen conversiones. Concentrar antes de tener ese informe es adivinar.
+
+Fin de semana: pendiente de decidir. Sumar sábado y domingo sube el gasto mensual
+~38% a igual presupuesto diario.
 
 **Fase 2 — un experimento a la vez:**
 - Sábado 10:00–14:00 (se investiga salud el fin de semana, CPC suele ser más bajo).
