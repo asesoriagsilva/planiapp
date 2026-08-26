@@ -365,8 +365,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     </div>
     <div style="flex:1;background:#EEEDFE;border-radius:12px;padding:0.5rem 0.85rem;">
       <div style="font-size:11px;font-weight:600;color:#7F77DD;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 1</div>
-      <div style="font-size:13px;font-weight:600;color:#26215C;margin-bottom:2px;">Escoge qué asesoría quieres</div>
-      <div style="font-size:11px;color:#534AB7;line-height:1.4;">Elige entre asesoría simple o avanzada, según tu situación y necesidades.</div>
+      <div style="font-size:13px;font-weight:600;color:#26215C;margin-bottom:2px;">Completa el formulario</div>
+      <div style="font-size:11px;color:#534AB7;line-height:1.4;">Responde algunas preguntas para armar tu perfil de salud.</div>
     </div>
   </div>
 
@@ -382,8 +382,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     </div>
     <div style="flex:1;background:#E1F5EE;border-radius:12px;padding:0.5rem 0.85rem;">
       <div style="font-size:11px;font-weight:600;color:#0F6E56;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 2</div>
-      <div style="font-size:13px;font-weight:600;color:#04342C;margin-bottom:2px;">Evaluamos tu perfil</div>
-      <div style="font-size:11px;color:#0F6E56;line-height:1.4;">Nuestra IA analiza tu información, compara las alternativas disponibles y detecta los planes que mejor se ajustan a tu perfil.</div>
+      <div style="font-size:13px;font-weight:600;color:#04342C;margin-bottom:2px;">Elige cómo te contactamos</div>
+      <div style="font-size:11px;color:#0F6E56;line-height:1.4;">Escoge llamada o WhatsApp, y agenda el horario en que quieres ser contactado.</div>
     </div>
   </div>
 
@@ -399,8 +399,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     </div>
     <div style="flex:1;background:#E6F1FB;border-radius:12px;padding:0.5rem 0.85rem;">
       <div style="font-size:11px;font-weight:600;color:#185FA5;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 3</div>
-      <div style="font-size:13px;font-weight:600;color:#042C53;margin-bottom:2px;">Revisión de un ejecutivo</div>
-      <div style="font-size:11px;color:#185FA5;line-height:1.4;">Un ejecutivo inscrito en la Superintendencia de Salud revisa las alternativas propuestas por la IA y valida que cumplan con lo que necesitas.</div>
+      <div style="font-size:13px;font-weight:600;color:#042C53;margin-bottom:2px;">Recibe tus propuestas</div>
+      <div style="font-size:11px;color:#185FA5;line-height:1.4;">Un ejecutivo inscrito en la Superintendencia de Salud te contacta y te envía los planes a tu WhatsApp, explicando beneficios y detalles.</div>
     </div>
   </div>
 
@@ -416,8 +416,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     </div>
     <div style="flex:1;background:#EAF3DE;border-radius:12px;padding:0.5rem 0.85rem;">
       <div style="font-size:11px;font-weight:600;color:#3B6D11;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 4</div>
-      <div style="font-size:13px;font-weight:600;color:#173404;margin-bottom:2px;">Recibe tu cotización</div>
-      <div style="font-size:11px;color:#3B6D11;line-height:1.4;">Te enviamos las alternativas seleccionadas directamente a tu WhatsApp, para que puedas compararlas y decidir con tranquilidad.</div>
+      <div style="font-size:13px;font-weight:600;color:#173404;margin-bottom:2px;">Elige y gestiona el cambio</div>
+      <div style="font-size:11px;color:#3B6D11;line-height:1.4;">Escoges el plan que más te acomoda y te ayudamos a gestionar el cambio directamente con el ejecutivo de la Isapre.</div>
     </div>
   </div>
 
@@ -426,43 +426,82 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     </div>
     </div>
 
-  <!-- OPCIONES -->
   <div class="opciones" id="opciones">
-    <h2 style="font-family:'Inter',sans-serif;font-size:32px;font-weight:900;color:var(--purple-dark);text-align:center;margin-bottom:0.4rem;letter-spacing:-0.02em;">Selecciona el servicio que necesitas.</h2>
-    <p class="section-sub">Tenemos distintas opciones para ayudarte a encontrar la mejor Isapre.</p>
-    <div class="opciones-grid">
-      <div class="opcion-card" id="asesoria-simple">
-        <div class="opcion-badge">Asesoría simple</div>
+    <h2 style="font-family:'Inter',sans-serif;font-size:32px;font-weight:900;color:var(--purple-dark);text-align:center;margin-bottom:0.4rem;letter-spacing:-0.02em;">Solicita tu asesoría.</h2>
+    <p class="section-sub">Un formulario, un ejecutivo, propuestas a tu medida.</p>
+    <div style="max-width:480px;margin:0 auto;">
+      <div class="opcion-card featured" id="asesoria-simple">
+        <div class="opcion-badge premium">Asesoría personalizada Planiapp</div>
         <div class="opcion-title">Cotiza o mejora tu plan de Isapre de forma rápida</div>
         <div class="opcion-desc">Para personas que están en Fonasa y quieren ingresar a una Isapre utilizando su 7% de cotización, o usuarios de Isapre que buscan mejorar su plan actual, obtener mejor precio, coberturas y convenios.</div>
         <span class="opcion-time">Toma 1 minuto</span>
-        <button class="opcion-btn" onclick="openForm('simple')">Comenzar asesoría simple →</button>
+        <button class="opcion-btn primary" onclick="openForm('simple')">Comenzar asesoría →</button>
         <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:0.75rem;font-size:12px;color:#0F6E56;">
           <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2l6 2.5v4.5c0 4-2.5 7-6 8.5-3.5-1.5-6-4.5-6-8.5V4.5L10 2z" stroke="#1D9E75" stroke-width="1.4" stroke-linejoin="round"/><path d="M7.5 10l1.8 1.8L12.5 8" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Tus datos están protegidos
         </div>
       </div>
-      <div class="opcion-card featured" id="asesoria-avanzada">
-        <div class="opcion-badge premium">Asesoría avanzada</div>
-        <div class="opcion-title">Evaluación detallada de un nuevo plan de Isapre</div>
-        <div class="opcion-desc">Para afiliados a Fonasa o Isapre que necesitan coberturas en 💬 Psicología • 🦴 Kinesiología • 🚑 Urgencias • 🤰 Maternidad y orientación sobre preexistencias.</div>
-        <span class="opcion-time">Toma 3 minutos</span>
-        <button class="opcion-btn primary" onclick="openForm('avanzado')">Comenzar asesoría avanzada →</button>
-        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:0.75rem;font-size:12px;color:#0F6E56;">
-          <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2l6 2.5v4.5c0 4-2.5 7-6 8.5-3.5-1.5-6-4.5-6-8.5V4.5L10 2z" stroke="#1D9E75" stroke-width="1.4" stroke-linejoin="round"/><path d="M7.5 10l1.8 1.8L12.5 8" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Tus datos están protegidos
+    </div>
+  </div>
+
+  <!-- POR QUÉ PLANIAPP -->
+  <style>
+  .porque-wrap { max-width:1100px; margin:0 auto 2.75rem; padding:0 1.5rem; }
+  .porque-title { text-align:center; font-family:'Inter',sans-serif; font-size:30px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.02em; margin-bottom:0.4rem; }
+  .porque-sub { text-align:center; font-size:16px; color:var(--text-muted); margin-bottom:2rem; }
+  .porque-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+  .porque-card { border-radius:16px; padding:1.35rem 1.5rem; }
+  .porque-icon { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem; }
+  .porque-card-title { font-size:15px; font-weight:600; margin-bottom:0.35rem; }
+  .porque-card-desc { font-size:13px; line-height:1.55; }
+  @media (max-width:680px){ .porque-grid{ grid-template-columns:1fr; } }
+  </style>
+  <div class="porque-wrap">
+    <h2 class="porque-title">¿Por qué asesorarte con Planiapp?</h2>
+    <p class="porque-sub">El único que te dice si NO te conviene cambiarte.</p>
+    <div class="porque-grid">
+      <div class="porque-card" style="background:#EEEDFE;">
+        <div class="porque-icon" style="background:#fff;border:2px solid #534AB7;">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="8" r="3.5" stroke="#534AB7" stroke-width="1.5"/><path d="M4 17c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
+        <div class="porque-card-title" style="color:#26215C;">Asesoría integral en tu plan de salud</div>
+        <div class="porque-card-desc" style="color:#534AB7;">Te decimos qué plan te conviene según tu perfil, tus cargas y las clínicas de tu preferencia — no una recomendación genérica.</div>
       </div>
-      <div class="opcion-card" style="border-color:#1D9E75;">
-        <div class="opcion-badge" style="background:#E1F5EE;color:#085041;">Asesoría personalizada</div>
-        <div class="opcion-title">¿Tienes dudas sobre tu plan o necesitas orientación?</div>
-        <div class="opcion-desc">Si tu asesor no te responde, necesitas resolver un trámite o simplemente quieres entender mejor tu plan, estamos aquí para ayudarte. Escríbenos por WhatsApp y recibe orientación de un ejecutivo inscrito en la Superintendencia de Salud.</div>
-        <span class="opcion-time">Lun a Vie · 09:00 – 21:00 hrs</span>
-        <button class="opcion-btn" style="background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;" onclick="window.open('https://wa.me/56933023085?text=Hola%2C%20quiero%20una%20asesor%C3%ADa%20personalizada%20en%20Isapre','_blank')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.532 5.857L.057 23.882a.5.5 0 00.61.61l6.025-1.475A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.969 0-3.807-.538-5.385-1.472l-.385-.228-3.993.977.997-3.875-.251-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          Escribir por WhatsApp
-        </button>
+      <div class="porque-card" style="background:#E6F1FB;">
+        <div class="porque-icon" style="background:#fff;border:2px solid #185FA5;">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M10 3l7 3.5v4c0 4-2.8 6.8-7 8-4.2-1.2-7-4-7-8v-4L10 3z" stroke="#185FA5" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4M10 14.5h.01" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="porque-card-title" style="color:#042C53;">Te instruimos, no solo te vendemos</div>
+        <div class="porque-card-desc" style="color:#185FA5;">Te explicamos cómo funciona el sistema de Isapres y tu propio plan, para que decidas informado y no a ciegas.</div>
       </div>
+      <div class="porque-card" style="background:#E1F5EE;">
+        <div class="porque-icon" style="background:#fff;border:2px solid #1D9E75;">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#1D9E75" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="porque-card-title" style="color:#04342C;">Si no te conviene, te lo decimos</div>
+        <div class="porque-card-desc" style="color:#0F6E56;">Muchas veces se cambian buenos planes por la frustración de algo que nunca quedó claro. Primero revisamos si el problema es el plan o la información que tenías.</div>
+      </div>
+      <div class="porque-card" style="background:#EAF3DE;">
+        <div class="porque-icon" style="background:#fff;border:2px solid #3B6D11;">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M3 10.5C3 7 5.5 4 10 4s7 3 7 6.5c0 2.5-1.5 4.5-3.5 5.5l-3.5 1-3.5-1C4.5 15 3 13 3 10.5z" stroke="#3B6D11" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="porque-card-title" style="color:#173404;">Acompañamiento continuo</div>
+        <div class="porque-card-desc" style="color:#3B6D11;">No termina cuando te cambias. La post venta sigue, con un canal directo para tus consultas y orientación cuando lo necesites.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRANJA WHATSAPP SOPORTE -->
+  <div style="background:#EEFBF6;border-top:1px solid #CFEEE3;border-bottom:1px solid #CFEEE3;padding:1.5rem 2rem;">
+    <div style="max-width:1050px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:15px;font-weight:600;color:#04342C;margin-bottom:2px;">¿Tienes dudas sobre tu plan o necesitas orientación?</div>
+        <div style="font-size:13px;color:#0F6E56;">Escríbenos y recibe orientación de un ejecutivo inscrito en la Superintendencia de Salud · Lun a Vie 09:00–21:00 hrs</div>
+      </div>
+      <button style="background:#25D366;color:#fff;border:none;border-radius:20px;padding:0.7rem 1.4rem;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:500;display:flex;align-items:center;gap:8px;cursor:pointer;flex-shrink:0;" onclick="window.open('https://wa.me/56933023085?text=Hola%2C%20quiero%20una%20asesor%C3%ADa%20personalizada%20en%20Isapre','_blank')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.532 5.857L.057 23.882a.5.5 0 00.61.61l6.025-1.475A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.969 0-3.807-.538-5.385-1.472l-.385-.228-3.993.977.997-3.875-.251-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Escribir por WhatsApp
+      </button>
     </div>
   </div>
 
@@ -539,13 +578,32 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 <div class="form-overlay" id="modal-simple">
   <div class="form-modal">
     <button class="form-close" onclick="closeForm('simple')">×</button>
-    <div class="form-header"><div class="form-logo">Planiapp</div><div class="form-subtitle">Asesoría simple · Optimiza tu salud</div></div>
-    <div class="form-progress"><div class="form-progress-fill" id="s-fill" style="width:11%"></div></div>
-    <div class="form-progress-label" id="s-label">Paso 1 de 9</div>
+    <div class="form-header"><div class="form-logo">Planiapp</div><div class="form-subtitle">3 datos y un ejecutivo te contacta</div></div>
+    <div class="form-progress" style="display:none;"><div class="form-progress-fill" id="s-fill"></div></div>
+    <div class="form-progress-label" id="s-label" style="display:none;"></div>
 
     <div class="pf-step active" id="s-step1">
-      <div class="pf-question">¿En qué sistema de salud estás?</div>
-      <div class="pf-hint">Esto nos ayuda a entender tu situación de partida.</div>
+      <div class="pf-question">Solicita tu asesoría</div>
+      <div class="pf-hint">Completa estos 3 datos y un ejecutivo inscrito te escribe por WhatsApp.</div>
+      <div class="pf-fields" style="margin-bottom:1.25rem;">
+        <div><label class="pf-label">Nombre y apellido</label><input class="pf-input" type="text" id="s-nombre" placeholder="Ej: Juan Pérez" oninput="sChkReq()"/></div>
+        <div><label class="pf-label">WhatsApp</label><div class="pf-input-prefix"><span class="prefix" style="font-size:12px;">+56</span><input class="pf-input" type="tel" id="s-wsp" placeholder="9 XXXX XXXX" oninput="sChkReq()"/></div></div>
+        <div id="s-contacto-pref" style="display:none;">
+          <label class="pf-label">¿Cómo prefieres que te contactemos?</label>
+          <div class="s-chips" id="s-canal" style="margin-bottom:0.9rem;">
+            <button type="button" class="s-chip on" onclick="sPick(this,'canal','WhatsApp')">Por WhatsApp</button>
+            <button type="button" class="s-chip" onclick="sPick(this,'canal','Llamado telefónico')">Prefiero un llamado</button>
+          </div>
+          <label class="pf-label">¿En qué horario te acomoda?</label>
+          <div class="s-chips" id="s-horario">
+            <button type="button" class="s-chip on" onclick="sPick(this,'horario','Lo antes posible')">Lo antes posible</button>
+            <button type="button" class="s-chip" onclick="sPick(this,'horario','09:00 - 13:00')">09:00 - 13:00</button>
+            <button type="button" class="s-chip" onclick="sPick(this,'horario','13:00 - 18:00')">13:00 - 18:00</button>
+            <button type="button" class="s-chip" onclick="sPick(this,'horario','18:00 - 22:00')">18:00 - 22:00</button>
+          </div>
+        </div>
+      </div>
+      <label class="pf-label">¿Cuál es tu previsión actual?</label>
       <div style="background:#FEF3CD;border-left:3px solid #F0A500;border-radius:0 10px 10px 0;padding:0.75rem 1rem;margin-bottom:0.75rem;font-size:12px;color:#7A5200;line-height:1.5;"><strong>Importante:</strong> Esta asesoría es exclusiva para cambio de Isapre. Si deseas cambiarte de plan dentro de tu misma Isapre, debes hacerlo directamente desde su sucursal virtual, ya que ellos ofrecen planes de mantención internos.</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
         <button class="pf-option" onclick="sSistemaIsapre(this,'Fonasa')"><img class="isapre-logo" data-isapre="Fonasa" alt="Fonasa"/></button>
@@ -557,100 +615,72 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
         <button class="pf-option" onclick="sSistemaIsapre(this,'Vida Tres')"><img class="isapre-logo" data-isapre="Vida Tres" alt="Vida Tres"/></button>
         <button class="pf-option" onclick="sSistemaIsapre(this,'Esencial')"><img class="isapre-logo" data-isapre="Esencial" alt="Esencial"/></button>
       </div>
-      <div class="pf-nav"><span></span><button class="pf-btn-next" id="s-next1" onclick="sShow(2)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="s-step2">
-      <div class="pf-question">¿En qué rango de edad estás?</div>
-      <div class="pf-hint">La edad influye directamente en el costo de tu plan.</div>
-      <div class="pf-options cols2">
-        <button class="pf-option" onclick="sEdad(this,'18-24')"><div class="pf-option-title">18 – 24 años</div></button>
-        <button class="pf-option" onclick="sEdad(this,'25-34')"><div class="pf-option-title">25 – 34 años</div></button>
-        <button class="pf-option" onclick="sEdad(this,'35-44')"><div class="pf-option-title">35 – 44 años</div></button>
-        <button class="pf-option" onclick="sEdad(this,'45-54')"><div class="pf-option-title">45 – 54 años</div></button>
-        <button class="pf-option" onclick="sEdad(this,'55-64')"><div class="pf-option-title">55 – 64 años</div></button>
-        <button class="pf-option" onclick="sEdad(this,'65+')"><div class="pf-option-title">65 años o más</div></button>
-      </div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="sShow(1)">← Atrás</button><button class="pf-btn-next" id="s-next2" onclick="sShow(3)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="s-step3">
-      <div class="pf-question">¿Tienes cargas familiares?</div>
-      <div class="pf-hint">Ingresa el tipo y edad de cada carga.</div>
-      <div class="pf-options cols2" style="margin-bottom:1rem;">
-        <button class="pf-option" id="s-nocar" onclick="sCarga('no')"><div class="pf-option-title">No, solo yo</div></button>
-        <button class="pf-option" id="s-sicar" onclick="sCarga('si')"><div class="pf-option-title">Sí, tengo cargas</div></button>
-      </div>
-      <div id="s-cargasec" style="display:none;"><div id="s-cargalist"></div><button class="pf-add-btn" onclick="sAddCarga()">+ Agregar otra carga</button></div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="sShow(2)">← Atrás</button><button class="pf-btn-next" id="s-next3" onclick="sShow(4)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="s-step4">
-      <div class="pf-question">¿En qué región vives?</div>
-      <div class="pf-hint">Para identificar clínicas disponibles en tu zona.</div>
-      <div class="pf-fields">
-        <div><label class="pf-label">Región</label><select class="pf-select" id="s-region" onchange="sRegion()"><option value="">Selecciona tu región...</option><option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option><option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Aysén</option><option>Magallanes</option></select></div>
-        <div id="s-comunawrap" style="display:none;"><label class="pf-label">Comuna</label><select class="pf-select" id="s-comuna-select" onchange="sCheckRegion()"><option value="">Selecciona tu comuna...</option></select></div>
-      </div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="sShow(3)">← Atrás</button><button class="pf-btn-next" id="s-next4" onclick="sShow(5)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="s-step5">
-      <div class="pf-question">¿Tienes clínica de preferencia?</div>
-      <div class="pf-hint">Verificamos qué planes tienen cobertura donde te quieres atender.</div>
-      <label class="pf-label">Clínica o centro médico de preferencia <span style="font-size:10px;color:#7F77DD;background:#EEEDFE;padding:2px 7px;border-radius:8px;margin-left:4px;">Opcional</span></label>
-      <select class="pf-select" id="s-clinica-select" onchange="sOnClinica(this.value)">
-        <option value="">Selecciona una clínica...</option>
-      </select>
-      <div id="s-otra-clinica-wrap" style="display:none;margin-top:0.75rem;">
-        <label class="pf-label">Nombre de la clínica o centro médico</label>
-        <input class="pf-input" type="text" id="s-otra-clinica" placeholder="Ej: Centro Médico San Jorge..." oninput="sD.clinica=this.value"/>
-      </div>
-      <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">Las clínicas se cargan al seleccionar tu región en el paso anterior.</div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="sShow(4)">← Atrás</button><button class="pf-btn-next ready" id="s-next5" onclick="sShow(6)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="s-step6">
-      <div class="pf-question">¿Cuál es tu renta imponible?</div>
-      <div class="pf-hint">El monto sobre el que se calcula tu cotización de salud (7%).</div>
-      <div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" id="s-renta" placeholder="Ej: 800.000" oninput="sFormatRenta(this); sChk(6)"/></div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="sShow(5)">← Atrás</button><button class="pf-btn-next" id="s-next6" onclick="sShow(7)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="s-step7">
-      <div class="pf-question">¿Eres dependiente o independiente?</div>
-      <div class="pf-options cols2">
-        <button class="pf-option" onclick="sOpt(this,'trabajo','Dependiente')"><div class="pf-option-title">Dependiente</div><div class="pf-option-desc">Empleado con contrato</div></button>
-        <button class="pf-option" onclick="sOpt(this,'trabajo','Independiente')"><div class="pf-option-title">Independiente</div><div class="pf-option-desc">Honorarios o cuenta propia</div></button>
-      </div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="sShow(6)">← Atrás</button><button class="pf-btn-next" id="s-next7" onclick="sShow(8)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="s-step8">
-      <div class="pf-question">¿En qué empresa trabajas?</div>
-      <div class="pf-hint">Muchas empresas tienen convenios con isapres con precios preferenciales.</div>
-      <div class="pf-info-box" style="margin-bottom:1rem;">
-        <div class="pf-info-box-title">¿Por qué es importante?</div>
-        <ul class="pf-info-box-list"><li>Convenios con precios más bajos que el mercado</li><li>Planes sin alza anual garantizada</li><li>Beneficios internos exclusivos</li></ul>
-      </div>
-      <input class="pf-input" type="text" id="s-empresa" placeholder="Ej: Falabella, ENAP... (Opcional)" oninput="sCheckEmpresa()"/>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="sShow(7)">← Atrás</button><button class="pf-btn-next ready" id="s-next8" onclick="sShow(9)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="s-step9">
-      <div class="pf-specialist"><div class="pf-spec-av">PA</div><div class="pf-spec-txt"><strong>Un ejecutivo inscrito te contactará</strong>Te escribiremos por WhatsApp en menos de 24 horas.</div></div>
-      <div class="pf-question">Tus datos de contacto</div>
-      <div class="pf-fields">
-        <div><label class="pf-label">Nombre completo</label><input class="pf-input" type="text" id="s-nombre" placeholder="Ej: Juan Pérez" oninput="sCheckContacto()"/></div>
-        <div><label class="pf-label">WhatsApp</label><div class="pf-input-prefix"><span class="prefix" style="font-size:12px;">+56</span><input class="pf-input" type="tel" id="s-wsp" placeholder="9 XXXX XXXX" oninput="sCheckContacto()"/></div></div>
-        <div><label class="pf-label">RUT</label><input class="pf-input" type="text" id="s-rut" placeholder="Ej: 12345678-9 (sin puntos, con guión)" oninput="sCheckContacto()"/>
-          <div class="pf-rut-note">
-            <svg width="13" height="13" viewBox="0 0 20 20" fill="none"><path d="M10 2l6 2.5v4.5c0 4-2.5 7-6 8.5-3.5-1.5-6-4.5-6-8.5V4.5L10 2z" stroke="#1D9E75" stroke-width="1.4" stroke-linejoin="round"/><path d="M7.5 10l1.8 1.8L12.5 8" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Usamos tu RUT solo para verificar que no tengas una solicitud en curso y generar tu código de seguimiento. No consultamos tus datos con ninguna Isapre ni lo compartimos con terceros.</span>
+      <style>
+      .s-extra { margin-top:1.4rem; border:1px solid var(--border); border-radius:12px; background:#FBFAFF; }
+      .s-extra > summary { list-style:none; cursor:pointer; padding:0.85rem 1rem; font-size:14px; font-weight:600; color:var(--purple); display:flex; align-items:center; justify-content:space-between; }
+      .s-extra > summary::-webkit-details-marker { display:none; }
+      .s-extra > summary::after { content:'+'; font-size:18px; font-weight:400; }
+      .s-extra[open] > summary::after { content:'−'; }
+      .s-extra-body { padding:0 1rem 1rem; }
+      .s-extra-note { font-size:12px; color:var(--text-muted); line-height:1.5; margin-bottom:1rem; }
+      .s-chips { display:flex; flex-wrap:wrap; gap:0.4rem; }
+      .s-chip { font-size:12px; padding:6px 11px; border:1px solid var(--border); border-radius:20px; background:#fff; color:var(--text); cursor:pointer; transition:all .15s; }
+      .s-chip.on { background:var(--purple); border-color:var(--purple); color:#fff; }
+      </style>
+      <details class="s-extra">
+        <summary>¿Nos cuentas un poco más? (opcional)</summary>
+        <div class="s-extra-body">
+          <div class="s-extra-note">Con esta información tu ejecutivo prepara las propuestas <strong>antes</strong> de escribirte. El contacto llega más rápido y más ajustado a tu caso.</div>
+          <div class="pf-fields">
+            <div>
+              <label class="pf-label">¿Qué te trae por acá?</label>
+              <select class="pf-select" id="s-motivo" onchange="sD.motivo=this.value">
+                <option value="">Selecciona una opción...</option>
+                <option>Estoy en Fonasa y quiero una Isapre</option>
+                <option>Alzas constantes en el precio del plan</option>
+                <option>Topes muy bajos en atención ambulatoria</option>
+                <option>Sin cobertura preferente en mi clínica</option>
+                <option>Reembolsos que demoran</option>
+                <option>Red GES / CAEC deficiente</option>
+                <option>Falta de médicos en la red</option>
+                <option>Mal servicio en post venta</option>
+                <option>Cuestionamiento de gastos</option>
+                <option>Otro motivo</option>
+              </select>
+            </div>
+            <div>
+              <label class="pf-label">¿Necesitas alguna cobertura específica?</label>
+              <div class="s-chips" id="s-cobs">
+                <button type="button" class="s-chip" onclick="sCob(this)">Bajar costo del plan</button>
+                <button type="button" class="s-chip" onclick="sCob(this)">Kinesiología</button>
+                <button type="button" class="s-chip" onclick="sCob(this)">Psicología o psiquiatría</button>
+                <button type="button" class="s-chip" onclick="sCob(this)">Urgencias con copago fijo</button>
+                <button type="button" class="s-chip" onclick="sCob(this)">Hospitalización</button>
+                <button type="button" class="s-chip" onclick="sCob(this)">Exámenes a costo $0</button>
+                <button type="button" class="s-chip" onclick="sCob(this)">Dental</button>
+                <button type="button" class="s-chip" onclick="sCob(this)">Maternidad</button>
+                <button type="button" class="s-chip" onclick="sCob(this)">Preexistencias</button>
+              </div>
+            </div>
+            <div>
+              <label class="pf-label">Renta imponible</label>
+              <div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" id="s-renta" placeholder="Ej: 800.000" oninput="sFormatRenta(this)"/></div>
+            </div>
+            <div>
+              <label class="pf-label">Cargas familiares</label>
+              <select class="pf-select" id="s-cargas-sel" onchange="sD.cargas=this.value">
+                <option value="">Selecciona...</option>
+                <option>Sin cargas</option>
+                <option>1 carga</option>
+                <option>2 cargas</option>
+                <option>3 cargas</option>
+                <option>4 o más cargas</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="sShow(8)">← Atrás</button><button class="pf-btn-next" id="s-next9" onclick="sSubmit()">Enviar solicitud →</button></div>
+      </details>
+      <button class="pf-btn-next" id="s-submit" onclick="sSubmit()" style="width:100%;margin-top:1.4rem;justify-content:center;">Enviar formulario →</button>
     </div>
 
     <div class="pf-step" id="s-sending"><div class="pf-sending"><div class="pf-sending-title">Enviando tu solicitud...</div><div style="font-size:13px;color:var(--text-muted);">Un momento, estamos registrando tu caso.</div></div></div>
@@ -671,216 +701,9 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   </div>
 </div>
 
-<!-- MODAL FORMULARIO AVANZADO -->
-<div class="form-overlay" id="modal-avanzado">
-  <div class="form-modal">
-    <button class="form-close" onclick="closeForm('avanzado')">×</button>
-    <div class="form-header"><div class="form-logo">Planiapp</div><div class="form-subtitle" style="display:flex;align-items:center;gap:6px;justify-content:center;">Asesoría avanzada <span style="background:var(--purple);color:#fff;font-size:10px;padding:2px 8px;border-radius:10px;">Premium</span></div></div>
-    <div class="form-progress"><div class="form-progress-fill" id="a-fill" style="width:11%"></div></div>
-    <div class="form-progress-label" id="a-label">Paso 1 de 9</div>
-
-    <div class="pf-step active" id="a-step1">
-      <div class="pf-question">¿Con qué isapre estás actualmente?</div>
-      <div class="pf-hint">Este proceso es exclusivo para cambio de isapre.</div>
-      <div class="pf-info-box" style="margin-bottom:1rem;"><div class="pf-info-box-title">¿Por qué solo cambio de isapre?</div><div style="font-size:11px;color:var(--purple);line-height:1.5;">Si deseas cambiar de plan dentro de tu misma isapre, debes hacerlo directamente con ellos. Nosotros evaluamos si existe una mejor opción en el mercado.</div></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
-        <button class="pf-option" onclick="aOpt(this,'isapre_actual','Banmédica')"><img class="isapre-logo" data-isapre="Banmédica" alt="Banmédica"/></button>
-        <button class="pf-option" onclick="aOpt(this,'isapre_actual','Colmena')"><img class="isapre-logo" data-isapre="Colmena" alt="Colmena"/></button>
-        <button class="pf-option" onclick="aOpt(this,'isapre_actual','Consalud')"><img class="isapre-logo" data-isapre="Consalud" alt="Consalud"/></button>
-        <button class="pf-option" onclick="aOpt(this,'isapre_actual','Cruz Blanca')"><img class="isapre-logo" data-isapre="Cruz Blanca" alt="Cruz Blanca"/></button>
-        <button class="pf-option" onclick="aOpt(this,'isapre_actual','Nueva Masvida')"><img class="isapre-logo" data-isapre="Nueva Masvida" alt="Nueva Masvida"/></button>
-        <button class="pf-option" onclick="aOpt(this,'isapre_actual','Vida Tres')"><img class="isapre-logo" data-isapre="Vida Tres" alt="Vida Tres"/></button>
-        <button class="pf-option" onclick="aOpt(this,'isapre_actual','Esencial')"><img class="isapre-logo" data-isapre="Esencial" alt="Esencial"/></button>
-        <button class="pf-option" onclick="aOpt(this,'isapre_actual','Fonasa')"><img class="isapre-logo" data-isapre="Fonasa" alt="Fonasa"/></button>
-      </div>
-      <div class="pf-nav"><span></span><button class="pf-btn-next" id="a-next1" onclick="aShow(2)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-step2">
-      <div class="pf-question">¿En qué rango de edad estás?</div>
-      <div class="pf-options cols2" style="margin-bottom:1rem;">
-        <button class="pf-option" onclick="aEdad(this,'18-24')"><div class="pf-option-title">18 – 24 años</div></button>
-        <button class="pf-option" onclick="aEdad(this,'25-34')"><div class="pf-option-title">25 – 34 años</div></button>
-        <button class="pf-option" onclick="aEdad(this,'35-44')"><div class="pf-option-title">35 – 44 años</div></button>
-        <button class="pf-option" onclick="aEdad(this,'45-54')"><div class="pf-option-title">45 – 54 años</div></button>
-        <button class="pf-option" onclick="aEdad(this,'55-64')"><div class="pf-option-title">55 – 64 años</div></button>
-        <button class="pf-option" onclick="aEdad(this,'65+')"><div class="pf-option-title">65 años o más</div></button>
-      </div>
-      <div class="pf-divider"></div>
-      <div class="pf-question" style="font-size:16px;margin-top:0.75rem;">¿Tienes cargas familiares?</div>
-      <div class="pf-options cols2" style="margin:0.75rem 0;">
-        <button class="pf-option" id="a-nocar" onclick="aCarga('no')"><div class="pf-option-title">No, solo yo</div></button>
-        <button class="pf-option" id="a-sicar" onclick="aCarga('si')"><div class="pf-option-title">Sí, tengo cargas</div></button>
-      </div>
-      <div id="a-cargasec" style="display:none;"><div id="a-cargalist"></div><button class="pf-add-btn" onclick="aAddCarga()">+ Agregar otra carga</button></div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(1)">← Atrás</button><button class="pf-btn-next" id="a-next2" onclick="aShow(3)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-step3">
-      <div class="pf-question">¿Eres dependiente o independiente?</div>
-      <div class="pf-options cols2" style="margin-bottom:1rem;">
-        <button class="pf-option" id="a-dep" onclick="aTrabajo('dependiente')"><div class="pf-option-title">Dependiente</div><div class="pf-option-desc">Empleado con contrato</div></button>
-        <button class="pf-option" id="a-ind" onclick="aTrabajo('independiente')"><div class="pf-option-title">Independiente</div><div class="pf-option-desc">Honorarios o cuenta propia</div></button>
-      </div>
-      <div id="a-secdep" style="display:none;">
-        <div class="pf-divider"></div>
-        <div class="pf-fields" style="margin-top:0.75rem;">
-          <div><label class="pf-label">Renta imponible mensual</label><div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" id="a-renta" placeholder="Ej: 800.000" oninput="aFormatRenta(this); aChk3()"/></div></div>
-          <div><label class="pf-label">Valor que pagas en tu isapre <span style="font-size:10px;color:#7F77DD;background:#EEEDFE;padding:2px 7px;border-radius:8px;margin-left:4px;">Opcional</span></label><div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" id="a-valor" placeholder="Ej: 45.000" oninput="aFormatValor(this); aChk3()"/></div>
-          <div class="pf-info-box"><div class="pf-info-box-title">¿No sabes cuánto pagas?</div><ul class="pf-info-box-list"><li>Revísalo en la sucursal virtual de tu isapre</li><li>En tu liquidación, busca el descuento en salud</li><li>Si hay adicional isapre, súmalo al descuento base</li></ul></div></div>
-          <div><label class="pf-label">Nombre de tu empleador <span style="font-size:10px;color:#7F77DD;background:#EEEDFE;padding:2px 7px;border-radius:8px;margin-left:4px;">Opcional</span></label><input class="pf-input" type="text" id="a-empleador" placeholder="Ej: Falabella, ENAP..." oninput="aChk3()"/>
-          <div class="pf-info-box" style="margin-top:0.5rem;"><div class="pf-info-box-title">¿Para qué necesitamos tu empleador?</div><ul class="pf-info-box-list"><li>Tu empresa puede tener convenio con una isapre</li><li>Acceso a planes con precios más bajos</li><li>Planes sin alza anual garantizada</li></ul></div></div>
-        </div>
-      </div>
-      <div id="a-secind" style="display:none;">
-        <div class="pf-divider"></div>
-        <div class="pf-fields" style="margin-top:0.75rem;">
-          <div><label class="pf-label">Valor que pagas en tu isapre <span style="font-size:10px;color:#7F77DD;background:#EEEDFE;padding:2px 7px;border-radius:8px;margin-left:4px;">Opcional</span></label><div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" id="a-valorind" placeholder="Ej: 45.000" oninput="aFormatValor(this); aChk3()"/></div>
-          <div class="pf-info-box"><div class="pf-info-box-title">¿No sabes cuánto pagas?</div><ul class="pf-info-box-list"><li>Revísalo en la sucursal virtual de tu isapre</li><li>Verifica tu último pago o cobro automático</li></ul></div></div>
-        </div>
-      </div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(2)">← Atrás</button><button class="pf-btn-next" id="a-next3" onclick="aShow(4)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-step4">
-      <div class="pf-question">¿Tienes alguna preexistencia médica?</div>
-      <div style="background:#FAC775;border-left:3px solid #BA7517;border-radius:0 10px 10px 0;padding:0.75rem 1rem;margin-bottom:1rem;">
-        <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:0.3rem;">¿Qué se considera preexistencia?</div>
-        <div style="font-size:11px;color:#854F0B;line-height:1.5;">Solo se considera preexistencia si existe un diagnóstico médico confirmado con tratamiento. Si tienes una dolencia o sospecha sin antecedentes clínicos, <strong>no se considera preexistencia</strong>.</div>
-      </div>
-      <div class="pf-options cols2">
-        <button class="pf-option" id="a-nopreex" onclick="aPreex('no')"><div class="pf-option-title">No tengo</div><div class="pf-option-desc">Sin diagnósticos confirmados</div></button>
-        <button class="pf-option" id="a-sipreex" onclick="aPreex('si')"><div class="pf-option-title">Sí tengo</div><div class="pf-option-desc">Diagnóstico confirmado con tratamiento</div></button>
-      </div>
-      <div id="a-preexbox" style="display:none;margin-top:0.85rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;">
-        <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:0.75rem;">Detalla las preexistencias</div>
-        <div style="margin-bottom:0.75rem;"><label class="pf-label">Tus preexistencias (titular)</label><textarea class="pf-input" id="a-preex-titular" placeholder="Ej: Diabetes tipo 2, hipertensión..." style="min-height:70px;resize:vertical;" oninput="aChk4()"></textarea></div>
-        <div id="a-preex-cargas-wrap" style="display:none;"><label class="pf-label">Preexistencias de tus cargas</label><textarea class="pf-input" id="a-preex-cargas" placeholder="Ej: Hijo (8 años) — asma bronquial..." style="min-height:60px;resize:vertical;"></textarea></div>
-      </div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(3)">← Atrás</button><button class="pf-btn-next" id="a-next4" onclick="aShow(5)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-step5">
-      <div class="pf-question">¿Necesitas alguna cobertura específica?</div>
-      <div class="pf-hint">Selecciona todas las que sean importantes para ti.</div>
-      <div id="a-coberturas"></div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(4)">← Atrás</button><button class="pf-btn-next ready" id="a-next5" onclick="aShow(6)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-step6">
-      <div class="pf-question">¿Qué problemas tiene tu isapre actual?</div>
-      <div class="pf-hint">Selecciona todos los que apliquen.</div>
-      <div id="a-problemas"></div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(5)">← Atrás</button><button class="pf-btn-next ready" id="a-next6" onclick="aShow(7)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-step7">
-      <div class="pf-question">¿Dónde vives y dónde te quieres atender?</div>
-      <div class="pf-fields">
-        <div><label class="pf-label">Región</label><select class="pf-select" id="a-region" onchange="aRegion()"><option value="">Selecciona tu región...</option><option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option><option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Aysén</option><option>Magallanes</option></select></div>
-        <div id="a-comunawrap" style="display:none;"><label class="pf-label">Comuna</label><select class="pf-select" id="a-comuna-select" onchange="aChk7()"><option value="">Selecciona tu comuna...</option></select></div>
-        <div id="a-clinicawrap" style="display:none;"><label class="pf-label">Clínica o centro médico de preferencia <span style="font-size:10px;color:#7F77DD;background:#EEEDFE;padding:2px 7px;border-radius:8px;margin-left:4px;">Opcional</span></label><select class="pf-select" id="a-clinica-select" onchange="aOnClinica(this.value);aChk7()"><option value="">Selecciona una clínica...</option></select>
-<div id="a-otra-clinica-wrap" style="display:none;margin-top:0.75rem;"><label class="pf-label">Nombre de la clínica o centro médico</label><input class="pf-input" type="text" id="a-otra-clinica" placeholder="Ej: Centro Médico San Jorge..." oninput="aD.clinica=this.value"/></div></div>
-      </div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(6)">← Atrás</button><button class="pf-btn-next" id="a-next7" onclick="aShow(8)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-step8">
-      <div class="pf-question">¿Tienes el código de tu plan?</div>
-      <span style="display:inline-block;background:var(--purple-light);color:var(--purple-deep);font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;margin-bottom:0.85rem;">Opcional — no es obligatorio</span>
-      <div class="pf-info-box" style="margin-bottom:1rem;"><div class="pf-info-box-title">¿Para qué sirve compartir esta información?</div><ul class="pf-info-box-list"><li>Comparamos tu plan y verificamos si estás pagando de más</li><li>Evaluamos si podemos igualar o bajar tus costos</li></ul></div>
-      <div style="margin-bottom:0.85rem;border:1.5px dashed var(--border);border-radius:var(--radius);padding:1rem;">
-        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.3rem;">Código de tu plan actual</div>
-        <div style="font-size:11px;color:var(--text-muted);margin-bottom:0.6rem;">Lo encuentras en tu cartola, sucursal virtual o contrato de salud.</div>
-        <input class="pf-input" type="text" id="a-codplan" placeholder="Ej: BM-2847-A, CON-1234..."/>
-      </div>
-      <div style="border:1.5px dashed var(--border);border-radius:var(--radius);padding:1rem;">
-        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:0.3rem;">¿Cuentas con seguro complementario o catastrófico?</div>
-        <div class="pf-info-box" style="margin-top:0.5rem;margin-bottom:0.75rem;"><div style="font-size:11px;color:var(--purple);line-height:1.5;">Esto nos ayuda a poder bajar el costo de algunos planes, debido a que los seguros, dependiendo del tipo, para cubrir el total de una cuenta o procedimiento, piden un porcentaje mínimo de cobertura por parte de la isapre (BMI). Por eso nos ayuda a ajustar un plan a tu seguro.</div></div>
-        <div class="pf-options cols2">
-          <button class="pf-option" onclick="aOpt(this,'seguro_complementario','Sí, tengo seguro')"><div class="pf-option-title">Sí, tengo seguro</div></button>
-          <button class="pf-option" onclick="aOpt(this,'seguro_complementario','No, no tengo seguro')"><div class="pf-option-title">No, no tengo seguro</div></button>
-        </div>
-      </div>
-      <div style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:0.75rem;">Si no tienes esta información, tu asesor la solicitará por WhatsApp.</div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(7)">← Atrás</button><button class="pf-btn-next ready" id="a-next8" onclick="aShow(9)">Continuar →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-step9">
-      <div class="pf-specialist"><div class="pf-spec-av">PA</div><div class="pf-spec-txt"><strong>Un ejecutivo inscrito revisará tu caso</strong>Recibirás propuestas por WhatsApp en máximo 30 minutos.</div></div>
-      <div class="pf-question">Tus datos de contacto</div>
-      <div class="pf-fields">
-        <div><label class="pf-label">Nombre completo</label><input class="pf-input" type="text" id="a-nombre" placeholder="Ej: Juan Pérez" oninput="aCheckContacto()"/></div>
-        <div><label class="pf-label">WhatsApp</label><div class="pf-input-prefix"><span class="prefix" style="font-size:12px;">+56</span><input class="pf-input" type="tel" id="a-wsp" placeholder="9 XXXX XXXX" oninput="aCheckContacto()"/></div></div>
-        <div><label class="pf-label">RUT</label><input class="pf-input" type="text" id="a-rut" placeholder="Ej: 12345678-9 (sin puntos, con guión)" oninput="aCheckContacto()"/>
-          <div class="pf-rut-note">
-            <svg width="13" height="13" viewBox="0 0 20 20" fill="none"><path d="M10 2l6 2.5v4.5c0 4-2.5 7-6 8.5-3.5-1.5-6-4.5-6-8.5V4.5L10 2z" stroke="#1D9E75" stroke-width="1.4" stroke-linejoin="round"/><path d="M7.5 10l1.8 1.8L12.5 8" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Usamos tu RUT solo para verificar que no tengas una solicitud en curso y generar tu código de seguimiento. No consultamos tus datos con ninguna Isapre ni lo compartimos con terceros.</span>
-          </div>
-        </div>
-      </div>
-      <div class="pf-nav"><button class="pf-btn-back" onclick="aShow(8)">← Atrás</button><button class="pf-btn-next" id="a-next9" onclick="aSubmit()">Enviar solicitud →</button></div>
-    </div>
-
-    <div class="pf-step" id="a-sending"><div class="pf-sending"><div class="pf-sending-title">Enviando tu solicitud...</div><div style="font-size:13px;color:var(--text-muted);">Un momento, estamos registrando tu caso.</div></div></div>
-
-    <div class="pf-step" id="a-success">
-      <div class="pf-success">
-        <div class="pf-success-icon"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#534AB7" stroke-width="2"/><path d="M10 16l4 4 8-8" stroke="#534AB7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="pf-success-title">¡Solicitud enviada!</div>
-        <div class="pf-success-sub">Tu asesor analizará tu caso y te enviará propuestas por WhatsApp en máximo 30 minutos.</div>
-        <div class="pf-code-box"><div class="pf-code-label">Tu código de seguimiento</div><div class="pf-code-value" id="a-codigo">PL####</div></div>
-        <button class="pf-wsp-btn" onclick="window.open('https://wa.me/56933023085','_blank')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.532 5.857L.057 23.882a.5.5 0 00.61.61l6.025-1.475A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.969 0-3.807-.538-5.385-1.472l-.385-.228-3.993.977.997-3.875-.251-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          Contactar por WhatsApp
-        </button>
-        <button onclick="resetForm('avanzado')" style="margin-top:0.75rem;width:100%;background:#EEEDFE;color:#534AB7;border:none;border-radius:24px;padding:0.65rem;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;">← Volver al inicio y agregar nuevo formulario</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
-const clinicasPorRegion = {
-  "Arica y Parinacota": ["Clínica San José", "Otra clínica / centro médico"],
-  "Tarapacá": ["Clínica RedSalud Iquique", "Clínica Tarapacá", "Otra clínica / centro médico"],
-  "Antofagasta": ["Clínica La Portada", "Clínica Bupa Antofagasta", "Clínica Andes Salud Loa", "Otra clínica / centro médico"],
-  "Atacama": ["Clínica Atacama ACHS", "Centro Médico RedSalud Copiapó", "Centro Médico Atacama", "Otra clínica / centro médico"],
-  "Coquimbo": ["Clínica RedSalud Elqui", "Otra clínica / centro médico"],
-  "Valparaíso": ["Hospital Clínico Viña del Mar", "Clínica Ciudad del Mar", "Clínica Bupa Reñaca", "Clínica RedSalud Valparaíso", "Clínica Los Leones", "Clínica Los Carrera", "Otra clínica / centro médico"],
-  "Metropolitana": ["Clínica Alemana de Santiago", "Clínica Las Condes", "Clínica Santa María", "Clínica San Carlos de Apoquindo UC", "Clínica Universidad de los Andes", "Clínica Indisa", "Clínica Indisa Maipú", "Clínica Indisa Providencia", "Clínica Dávila Recoleta", "Clínica Dávila Vespucio", "Clínica Bupa Santiago", "Clínica Arauco Salud", "Clínica RedSalud Vitacura", "Clínica RedSalud Providencia", "Clínica RedSalud Santiago", "Centros Médicos RedSalud", "Centros Médicos UC Christus", "Centros Médicos Dávila", "Hospital UC (Marcoleta)", "VidaIntegra", "Clínica Los Coihues (ACHS)", "Clínica Hospital del Profesor", "Integramédica", "Otra clínica / centro médico"],
-  "O'Higgins": ["Hospital Clínico Fusat Rancagua", "Clínica RedSalud Rancagua", "Clínica Isamedica", "Otra clínica / centro médico"],
-  "Maule": ["Clínica Lircay Talca", "Centro Médico RedSalud Talca", "Clínica Curicó ACHS", "Otra clínica / centro médico"],
-  "Ñuble": ["Clínica Andes Salud Chillán", "Centro Médico RedSalud Chillán", "Otra clínica / centro médico"],
-  "Biobío": ["Hospital Clínico del Sur (ACHS)", "Clínica Biobío", "Clínica Andes Los Ángeles", "Clínica Andes Concepción", "Clínica Sanatorio Alemán", "Otra clínica / centro médico"],
-  "La Araucanía": ["Clínica Alemana de Temuco", "Clínica RedSalud Mayor Temuco", "Otra clínica / centro médico"],
-  "Los Ríos": ["Clínica Alemana de Valdivia", "Centro Médico RedSalud", "Otra clínica / centro médico"],
-  "Los Lagos": ["Clínica ACHS Puerto Montt", "Clínica Andes Puerto Montt", "Clínica Alemana de Osorno", "Clínica Puerto Varas", "Otra clínica / centro médico"],
-  "Aysén": ["Hospital Aysén (Libre Elección)", "Otra clínica / centro médico"],
-  "Magallanes": ["Clínica RedSalud Magallanes", "Otra clínica / centro médico"],
-};
-
-const comunasPorRegion = {
-  "Arica y Parinacota": ["Arica", "Camarones", "Putre", "General Lagos"],
-  "Tarapacá": ["Iquique", "Alto Hospicio", "Pozo Almonte", "Camiña", "Colchane", "Huara", "Pica"],
-  "Antofagasta": ["Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollagüe", "San Pedro de Atacama", "Tocopilla", "María Elena"],
-  "Atacama": ["Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco"],
-  "Coquimbo": ["La Serena", "Coquimbo", "Andacollo", "La Higuera", "Paiguano", "Vicuña", "Illapel", "Canela", "Los Vilos", "Salamanca", "Ovalle", "Combarbalá", "Monte Patria", "Punitaqui", "Río Hurtado"],
-  "Valparaíso": ["Valparaíso", "Casablanca", "Concón", "Juan Fernández", "Puchuncaví", "Quintero", "Viña del Mar", "Isla de Pascua", "Los Andes", "Calle Larga", "Rinconada", "San Esteban", "La Ligua", "Cabildo", "Papudo", "Petorca", "Zapallar", "Quillota", "Calera", "Hijuelas", "La Cruz", "Nogales", "San Antonio", "Algarrobo", "Cartagena", "El Quisco", "El Tabo", "Santo Domingo", "San Felipe", "Catemu", "Llaillay", "Panquehue", "Putaendo", "Santa María", "Quilpué", "Limache", "Olmué", "Villa Alemana"],
-  "Metropolitana": ["Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Joaquín", "San Miguel", "San Ramón", "Santiago", "Vitacura", "Puente Alto", "Pirque", "San José de Maipo", "Colina", "Lampa", "Til Til", "San Bernardo", "Buin", "Calera de Tango", "Paine", "Melipilla", "Alhué", "Curacaví", "María Pinto", "San Pedro", "Talagante", "El Monte", "Isla de Maipo", "Padre Hurtado", "Peñaflor"],
-  "O'Higgins": ["Rancagua", "Codegua", "Coinco", "Coltauco", "Doñihue", "Graneros", "Las Cabras", "Machalí", "Malloa", "Mostazal", "Olivar", "Peumo", "Pichidegua", "Quinta de Tilcoco", "Rengo", "Requínoa", "San Vicente", "Pichilemu", "La Estrella", "Litueche", "Marchihue", "Navidad", "Paredones", "San Fernando", "Chépica", "Chimbarongo", "Lolol", "Nancagua", "Palmilla", "Peralillo", "Placilla", "Pumanque", "Santa Cruz"],
-  "Maule": ["Talca", "Constitución", "Curepto", "Empedrado", "Maule", "Pelarco", "Pencahue", "Río Claro", "San Clemente", "San Rafael", "Cauquenes", "Chanco", "Pelluhue", "Curicó", "Hualañé", "Licantén", "Molina", "Rauco", "Romeral", "Sagrada Familia", "Teno", "Vichuquén", "Linares", "Colbún", "Longaví", "Parral", "Retiro", "San Javier", "Villa Alegre", "Yerbas Buenas"],
-  "Ñuble": ["Chillán", "Bulnes", "Chillán Viejo", "El Carmen", "Pemuco", "Pinto", "Quillón", "San Ignacio", "Yungay", "Cobquecura", "Coelemu", "Ninhue", "Portezuelo", "Quirihue", "Ránquil", "Trehuaco", "Coihueco", "Ñiquén", "San Carlos", "San Fabián", "San Nicolás"],
-  "Biobío": ["Concepción", "Coronel", "Chiguayante", "Florida", "Hualqui", "Lota", "Penco", "San Pedro de la Paz", "Santa Juana", "Talcahuano", "Tomé", "Hualpén", "Lebu", "Arauco", "Cañete", "Contulmo", "Curanilahue", "Los Álamos", "Tirúa", "Los Ángeles", "Antuco", "Cabrero", "Laja", "Mulchén", "Nacimiento", "Negrete", "Quilaco", "Quilleco", "San Rosendo", "Santa Bárbara", "Tucapel", "Yumbel", "Alto Biobío"],
-  "La Araucanía": ["Temuco", "Carahue", "Cunco", "Curarrehue", "Freire", "Galvarino", "Gorbea", "Lautaro", "Loncoche", "Melipeuco", "Nueva Imperial", "Padre Las Casas", "Perquenco", "Pitrufquén", "Pucón", "Saavedra", "Teodoro Schmidt", "Toltén", "Vilcún", "Villarrica", "Cholchol", "Angol", "Collipulli", "Curacautín", "Ercilla", "Lonquimay", "Los Sauces", "Lumaco", "Purén", "Renaico", "Traiguén", "Victoria"],
-  "Los Ríos": ["Valdivia", "Corral", "Futrono", "La Unión", "Lago Ranco", "Lanco", "Los Lagos", "Máfil", "Mariquina", "Paillaco", "Panguipulli", "Río Bueno"],
-  "Los Lagos": ["Puerto Montt", "Calbuco", "Cochamó", "Fresia", "Frutillar", "Los Muermos", "Llanquihue", "Maullín", "Puerto Varas", "Castro", "Ancud", "Chonchi", "Curaco de Vélez", "Dalcahue", "Puqueldón", "Queilén", "Quellón", "Quemchi", "Quinchao", "Osorno", "Puerto Octay", "Purranque", "Puyehue", "Río Negro", "San Juan de la Costa", "San Pablo", "Chaitén", "Futaleufú", "Hualaihué", "Palena"],
-  "Aysén": ["Coyhaique", "Lago Verde", "Aysén", "Cisnes", "Guaitecas", "Cochrane", "O'Higgins", "Tortel", "Chile Chico", "Río Ibáñez"],
-  "Magallanes": ["Punta Arenas", "Laguna Blanca", "Río Verde", "San Gregorio", "Cabo de Hornos", "Antártica", "Porvenir", "Primavera", "Timaukel", "Natales", "Torres del Paine"],
-};
-
 const WEBHOOK_SIMPLE = 'https://hook.eu1.make.com/0kmah46kxiwotfaim1s3ua6fqr47pc7u';
-const WEBHOOK_AVANZADO = 'https://hook.eu1.make.com/6l4ang04hugeog20nw57z52bj9n1ip72';
 const WSP_NUMBER = '56966450103';
 const SUPABASE_URL = 'https://nlihfsmnyxqlvvxknhkd.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5saWhmc21ueXhxbHZ2eGtuaGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4OTEyNjQsImV4cCI6MjA5MjQ2NzI2NH0.zM4KGX1s4A7kFk6CfmZgfSmVRoTzZOzil5qQAhBq28M';
@@ -910,100 +733,24 @@ async function sbInsert(table, data) {
   });
 }
 
-async function verificarRUT(rut, modalPrefix) {
-  try {
-    const data = await sbQuery('leads', { rut });
-    if (data && data.length > 0) {
-      const lead = data[0];
-      mostrarRutExistente(lead, modalPrefix);
-      return true;
-    }
-    return false;
-  } catch(e) { return false; }
-}
-
-function mostrarRutExistente(lead, prefix) {
-  document.querySelectorAll(`#modal-${prefix} .pf-step`).forEach(x => x.classList.remove('active'));
-  const estadoNums = {'recibido':1,'asignado':2,'analisis':3,'propuestas':4,'completado':5};
-  const estadoNum = estadoNums[lead.estado] || 1;
-  const pasos = ['Caso recibido','Asesor asignado','En análisis','Propuestas enviadas','Asesoría completada'];
-  let timelineHTML = pasos.map((p,i) => {
-    const sn=i+1,isDone=sn<estadoNum,isActive=sn===estadoNum,isPending=sn>estadoNum,isLast=i===pasos.length-1;
-    return `<div style="display:flex;gap:10px;margin-bottom:0.75rem;">
-      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-        <div style="width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:${isDone?'var(--purple)':isActive?'var(--purple-light)':'var(--bg)'};border:${isActive?'2px solid var(--purple)':isPending?'2px solid var(--border)':'none'};">
-          ${isDone?'<svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5 6.5-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}
-          ${isActive?'<div style="width:8px;height:8px;border-radius:50%;background:var(--purple);"></div>':''}
-        </div>
-        ${!isLast?`<div style="width:2px;flex:1;min-height:14px;margin:3px 0;background:${isDone?'var(--purple)':'var(--border)'};"></div>`:''}
-      </div>
-      <div style="padding-top:2px;">
-        <div style="font-size:13px;font-weight:500;color:${isPending?'var(--text-muted)':'var(--text)'};">${p}</div>
-      </div>
-    </div>`;
-  }).join('');
-
-  const existeDiv = document.createElement('div');
-  existeDiv.className = 'pf-step active';
-  existeDiv.id = `${prefix}-existe`;
-  existeDiv.innerHTML = `
-    <div style="text-align:center;margin-bottom:1.25rem;">
-      <div style="width:56px;height:56px;background:var(--purple-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#534AB7" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#534AB7" stroke-width="2" stroke-linecap="round"/></svg>
-      </div>
-      <div style="font-size:17px;font-weight:600;color:var(--purple-dark);margin-bottom:0.4rem;">Ya tienes una asesoría activa</div>
-      <div style="font-size:13px;color:var(--text-muted);margin-bottom:1.25rem;">Tu RUT ya está registrado. Aquí está el estado de tu caso.</div>
-    </div>
-    <div style="background:var(--purple-light);border-radius:var(--radius);padding:1rem;margin-bottom:1rem;text-align:center;">
-      <div style="font-size:10px;color:var(--purple-mid);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Tu código de seguimiento</div>
-      <div style="font-size:26px;font-weight:600;color:var(--purple);letter-spacing:0.12em;">${lead.codigo}</div>
-      <div style="font-size:11px;color:var(--purple-mid);margin-top:4px;">${lead.tipo_asesoria} · ${lead.fecha}</div>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem;">
-      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.75rem;">Estado de tu asesoría</div>
-      ${timelineHTML}
-    </div>
-    <button class="pf-wsp-btn" style="width:100%;justify-content:center;" onclick="window.open('https://wa.me/56933023085','_blank')">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.532 5.857L.057 23.882a.5.5 0 00.61.61l6.025-1.475A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.969 0-3.807-.538-5.385-1.472l-.385-.228-3.993.977.997-3.875-.251-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      Contactar a mi asesor
-    </button>`;
-  const modal = document.getElementById(`modal-${prefix}`);
-  const oldExiste = document.getElementById(`${prefix}-existe`);
-  if (oldExiste) oldExiste.remove();
-  modal.querySelector('.form-modal').appendChild(existeDiv);
-}
-
-
 function sFormatRenta(input) {
   let val = input.value.replace(/[^0-9]/g,'');
   if(val) input.value = parseInt(val).toLocaleString('es-CL');
   sD.renta = val;
 }
-function aFormatRenta(input) {
-  let val = input.value.replace(/[^0-9]/g,'');
-  if(val) input.value = parseInt(val).toLocaleString('es-CL');
-}
-function aFormatValor(input) {
-  let val = input.value.replace(/[^0-9]/g,'');
-  if(val) input.value = parseInt(val).toLocaleString('es-CL');
-}
 function resetForm(prefix) {
   closeForm(prefix);
-  
   setTimeout(() => {
     const modal = document.getElementById('modal-'+prefix);
     modal.querySelectorAll('.pf-step').forEach(x=>x.classList.remove('active'));
     modal.querySelectorAll('.pf-option').forEach(x=>x.classList.remove('selected'));
     modal.querySelectorAll('input[type=text],input[type=number],input[type=tel],textarea,select').forEach(x=>x.value='');
-    const existe = document.getElementById(prefix+'-existe');
-    if(existe) existe.remove();
-    document.getElementById(prefix==='simple'?'s-step1':'a-step1').classList.add('active');
-    const fill=document.getElementById(prefix==='simple'?'s-fill':'a-fill');
-    const label=document.getElementById(prefix==='simple'?'s-label':'a-label');
-    if(fill)fill.style.width='11%';
-    if(label)label.textContent='Paso 1 de 9';
-    if(prefix==='simple'){Object.keys(sD).forEach(k=>delete sD[k]);sCargaCount=0;document.getElementById('s-cargalist').innerHTML='';document.getElementById('s-cargasec').style.display='none';}
-    else{aD.coberturas=[];aD.problemas=[];aCargaCount=0;Object.keys(aD).filter(k=>k!=='coberturas'&&k!=='problemas').forEach(k=>delete aD[k]);document.getElementById('a-cargalist').innerHTML='';document.getElementById('a-cargasec').style.display='none';document.getElementById('a-coberturas').innerHTML='';document.getElementById('a-problemas').innerHTML='';}
+    document.getElementById('s-step1').classList.add('active');
+    Object.keys(sD).forEach(k=>delete sD[k]);
+    document.querySelectorAll('#s-cobs .s-chip').forEach(b=>b.classList.remove('on'));
+    ['s-canal','s-horario'].forEach(id=>{const g=document.getElementById(id);if(g)g.querySelectorAll('.s-chip').forEach((b,i)=>b.classList.toggle('on',i===0));});
+    const pf=document.getElementById('s-contacto-pref');if(pf)pf.style.display='none';
+    const sb=document.getElementById('s-submit');if(sb)sb.classList.remove('ready');
   }, 300);
 }
 
@@ -1016,6 +763,14 @@ function toggleFaq(btn) {
 function genCode() {
   const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let r='PL';
   for(let i=0;i<4;i++) r+=c[Math.floor(Math.random()*c.length)]; return r;
+}
+async function genCodeUnico() {
+  for(let i=0;i<5;i++){
+    const c=genCode();
+    try{ const existe=await sbQuery('leads',{codigo:c}); if(!existe||existe.length===0) return c; }
+    catch(e){ return c; }
+  }
+  return genCode()+Date.now().toString(36).slice(-2).toUpperCase();
 }
 
 // PAGES
@@ -1033,268 +788,54 @@ function closeForm(t) {
 
 // ======= SIMPLE =======
 const sD={};
-let sCargaCount=0;
-const S_TOTAL=9;
 
-function sShow(n) {
-  document.querySelectorAll('#modal-simple .pf-step').forEach(x=>x.classList.remove('active'));
-  const el=document.getElementById('s-step'+n);
-  if(el){el.classList.add('active');document.getElementById('s-fill').style.width=(n/S_TOTAL*100)+'%';document.getElementById('s-label').textContent='Paso '+n+' de '+S_TOTAL;}
-}
-function sOpt(btn,k,v) {
-  const g=btn.closest('.pf-options')||btn.parentElement;
-  g.querySelectorAll('.pf-option').forEach(b=>b.classList.remove('selected'));
-  btn.classList.add('selected'); sD[k]=v;
-  const st=btn.closest('.pf-step'); if(st){const nb=document.getElementById('s-next'+st.id.replace('s-step',''));if(nb)nb.classList.add('ready');}
-}
 function sSistemaIsapre(btn,isapreName){
   document.querySelectorAll('#s-step1 .pf-option').forEach(b=>b.classList.remove('selected'));
   btn.classList.add('selected');
   if(isapreName==='Fonasa'){ sD.sistema='Fonasa'; sD.isapre_actual=''; }
   else { sD.sistema='Isapre'; sD.isapre_actual=isapreName; }
-  document.getElementById('s-next1').classList.add('ready');
+  sChkReq();
 }
-function sEdad(btn,v){btn.closest('.pf-options').querySelectorAll('.pf-option').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');sD.edad=v;document.getElementById('s-next2').classList.add('ready');}
-function sCarga(opt){
-  document.getElementById('s-nocar').classList.toggle('selected',opt==='no');
-  document.getElementById('s-sicar').classList.toggle('selected',opt==='si');
-  if(opt==='no'){document.getElementById('s-cargasec').style.display='none';sD.cargas='Sin cargas';document.getElementById('s-next3').classList.add('ready');}
-  else{document.getElementById('s-cargasec').style.display='block';if(sCargaCount===0)sAddCarga();sChkCargas();}
+function sChkReq(){
+  const n=document.getElementById('s-nombre').value.trim();
+  const w=document.getElementById('s-wsp').value.replace(/\D/g,'');
+  const pref=document.getElementById('s-contacto-pref');
+  if(w.length>=8){
+    if(pref.style.display==='none'){
+      pref.style.display='block';
+      sD.canal=sD.canal||'WhatsApp';
+      sD.horario=sD.horario||'Lo antes posible';
+    }
+  } else { pref.style.display='none'; }
+  const ok = n.length>2 && w.length>=8 && !!sD.sistema;
+  document.getElementById('s-submit').classList.toggle('ready',ok);
 }
-function sAddCarga(){
-  sCargaCount++; const id=sCargaCount;
-  const c=document.createElement('div');c.className='pf-carga-card';c.id='s-carga'+id;
-  c.innerHTML=`<div class="pf-carga-header"><span class="pf-carga-num">Carga ${id}</span><button class="pf-remove-btn" onclick="sRemCarga(${id})">×</button></div><div class="pf-carga-fields"><div><label class="pf-label" style="font-size:10px;">Tipo</label><select class="pf-carga-select" id="s-ct${id}" onchange="sChkCargas()"><option value="">Selecciona...</option><option>Cónyuge/Conviviente</option><option>Hijo/a</option><option>Carga médica</option></select></div><div><label class="pf-label" style="font-size:10px;">Edad</label><input class="pf-carga-input" type="number" id="s-ce${id}" placeholder="Ej:32" min="0" max="99" oninput="sChkCargas()"/></div></div>`;
-  document.getElementById('s-cargalist').appendChild(c);
+function sPick(btn,key,val){
+  btn.parentElement.querySelectorAll('.s-chip').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on'); sD[key]=val;
 }
-function sRemCarga(id){const e=document.getElementById('s-carga'+id);if(e)e.remove();sChkCargas();}
-function sChkCargas(){
-  const cards=document.querySelectorAll('#s-cargalist .pf-carga-card');let ok=cards.length>0,arr=[];
-  cards.forEach(c=>{const id=c.id.replace('s-carga','');const t=document.getElementById('s-ct'+id).value,e=document.getElementById('s-ce'+id).value;if(!t||!e)ok=false;else arr.push(t+' ('+e+' años)');});
-  sD.cargas=arr.join(', ')||'Sin cargas';document.getElementById('s-next3').classList.toggle('ready',ok);
-}
-function sRegion(){
-  const v=document.getElementById('s-region').value;sD.region=v;
-  document.getElementById('s-comunawrap').style.display=v?'block':'none';
-  document.getElementById('s-next4').classList.remove('ready');
-  const sel=document.getElementById('s-comuna-select');
-  if(sel && comunasPorRegion[v]){
-    sel.innerHTML='<option value="">Selecciona tu comuna...</option>';
-    comunasPorRegion[v].forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
-  }
-  const csel=document.getElementById('s-clinica-select');
-  if(csel && clinicasPorRegion[v]){
-    csel.innerHTML='<option value="">Selecciona una clínica...</option>';
-    clinicasPorRegion[v].forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;csel.appendChild(o);});
-  }
-}
-function sCheckRegion(){const c=document.getElementById('s-comuna-select').value;sD.comuna=c;document.getElementById('s-next4').classList.toggle('ready',sD.region&&c.length>2);}
-function sOnClinica(val) {
-  sD.clinica = val;
-  const otraWrap = document.getElementById('s-otra-clinica-wrap');
-  if(val === 'Otra clínica / centro médico') {
-    otraWrap.style.display = 'block';
-    sD.clinica = '';
-  } else {
-    otraWrap.style.display = 'none';
-  }
-}
-function aOnClinica(val) {
-  aD.clinica = val;
-  const otraWrap = document.getElementById('a-otra-clinica-wrap');
-  if(val === 'Otra clínica / centro médico') {
-    otraWrap.style.display = 'block';
-    aD.clinica = '';
-  } else {
-    otraWrap.style.display = 'none';
-  }
-}
-function sClinica(opt){}
-function sCheckClinica(){}
-function sChk(n){const el=document.getElementById('s-next'+n);if(el){const val=document.getElementById('s-renta').value;el.classList.toggle('ready',val&&parseInt(val)>0);}}
-function sCheckEmpresa(){
-  const v=document.getElementById('s-empresa').value.trim();sD.empresa=v;
-}
-function sCheckContacto(){
-  const n=document.getElementById('s-nombre').value.trim(),w=document.getElementById('s-wsp').value.trim(),r=document.getElementById('s-rut').value.trim();
-  document.getElementById('s-next9').classList.toggle('ready',n.length>2&&w.length>7&&r.length>6);
+function sCob(btn){
+  btn.classList.toggle('on');
+  sD.coberturas=[...document.querySelectorAll('#s-cobs .s-chip.on')].map(b=>b.textContent).join(', ');
 }
 async function sSubmit(){
   sD.nombre=document.getElementById('s-nombre').value.trim();
-  sD.whatsapp='+56'+document.getElementById('s-wsp').value.trim();
-  sD.rut=document.getElementById('s-rut').value.trim();
-  sD.renta=document.getElementById('s-renta').value;
-  sD.fecha=new Date().toLocaleString('es-CL');sD.tipo_asesoria='Asesoría simple';
+  sD.whatsapp='+56'+document.getElementById('s-wsp').value.replace(/\D/g,'');
+  sD.rut='';
+  sD.renta=document.getElementById('s-renta').value||'';
+  sD.fecha=new Date().toLocaleString('es-CL');sD.tipo_asesoria='Asesoría personalizada Planiapp';
   document.querySelectorAll('#modal-simple .pf-step').forEach(x=>x.classList.remove('active'));
   document.getElementById('s-fill').style.width='100%';document.getElementById('s-label').textContent='Verificando...';
   document.getElementById('s-sending').classList.add('active');
-  const rutExiste = await verificarRUT(sD.rut, 'simple');
-  if(rutExiste) { document.getElementById('s-sending').classList.remove('active'); return; }
-  sD.codigo=genCode();
+  sD.codigo=await genCodeUnico();
   try{
     await Promise.all([
-      fetch(WEBHOOK_SIMPLE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:sD.fecha,codigo:sD.codigo,tipo_asesoria:sD.tipo_asesoria,nombre:sD.nombre,whatsapp:sD.whatsapp,rut:sD.rut,sistema:sD.sistema||'',edad:sD.edad||'',cargas:sD.cargas||'Sin cargas',region:sD.region||'',comuna:sD.comuna||'',clinica:document.getElementById('s-clinica-select')?document.getElementById('s-clinica-select').value||'Sin preferencia':'Sin preferencia',renta:sD.renta||'',tipo_trabajador:sD.trabajo||'',empresa:sD.empresa||'',isapre_actual:sD.isapre_actual||'No aplica'})}),
+      fetch(WEBHOOK_SIMPLE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:sD.fecha,codigo:sD.codigo,tipo_asesoria:sD.tipo_asesoria,nombre:sD.nombre,whatsapp:sD.whatsapp,rut:sD.rut,sistema:sD.sistema||'',edad:sD.edad||'',cargas:sD.cargas||'Sin cargas',region:sD.region||'',comuna:sD.comuna||'',clinica:document.getElementById('s-clinica-select')?document.getElementById('s-clinica-select').value||'Sin preferencia':'Sin preferencia',renta:sD.renta||'',tipo_trabajador:sD.trabajo||'',empresa:sD.empresa||'',isapre_actual:sD.isapre_actual||'No aplica',motivo:sD.motivo||'',coberturas:sD.coberturas||'',canal:sD.canal||'WhatsApp',horario:sD.horario||'Lo antes posible'})}),
       sbInsert('leads',{rut:sD.rut,codigo:sD.codigo,tipo_asesoria:sD.tipo_asesoria,estado:'recibido',nombre:sD.nombre,whatsapp:sD.whatsapp,fecha:sD.fecha})
     ]);
     document.getElementById('s-sending').classList.remove('active');
     window.location.href = '/gracias.html?codigo=' + sD.codigo + '&tipo=simple';
   }catch(e){document.getElementById('s-sending').classList.remove('active');window.location.href='/gracias.html?codigo='+sD.codigo+'&tipo=simple';}
-}
-
-// ======= AVANZADO =======
-const aD={coberturas:[],problemas:[]};
-let aCargaCount=0;
-const A_TOTAL=9;
-
-const cobItems=[
-  {k:'cob_costos',t:'Bajar costos de cotización',d:'Pagar menos por la misma o mejor cobertura'},
-  {k:'cob_kine',t:'Kinesiología o fisioterapia',d:'Cobertura sin tope anual'},
-  {k:'cob_psico',t:'Psicología o psiquiatría',d:'Cobertura sin tope anual en salud mental'},
-  {k:'cob_urgencia',t:'Urgencias con copago fijo',d:'Saber exactamente cuánto pagas'},
-  {k:'cob_hosp',t:'Hospitalización',d:'Cobertura amplia para internaciones'},
-  {k:'cob_exam',t:'Exámenes a costo $0',d:'Laboratorio e imágenes sin costo'},
-  {k:'cob_dental',t:'Cobertura dental',d:'Descuento general'},
-  {k:'cob_otra',t:'Otra cobertura',d:'Tu asesor te consultará por WhatsApp'}
-];
-const probItems=[
-  {k:'prob_reembolsos',t:'Reembolsos que demoran',d:''},
-  {k:'prob_clinica',t:'Sin cobertura preferente en mi clínica',d:''},
-  {k:'prob_topes',t:'Topes muy bajos en atención ambulatoria',d:''},
-  {k:'prob_ges',t:'Red GES / CAEC deficiente',d:''},
-  {k:'prob_medicos',t:'Falta de médicos en la red',d:''},
-  {k:'prob_alza',t:'Alzas constantes en el precio del plan',d:''},
-  {k:'prob_servicio',t:'Mal servicio en post venta',d:''},
-  {k:'prob_cuestion',t:'Cuestionamiento de gastos',d:''},
-  {k:'prob_otro',t:'Otro problema',d:'Tu asesor te consultará por WhatsApp'}
-];
-
-function buildChecklist(items,containerId,arr){
-  const c=document.getElementById(containerId);if(!c||c.children.length>0)return;
-  items.forEach(item=>{
-    const div=document.createElement('div');div.className='pf-option';div.style.cssText='display:flex;align-items:flex-start;gap:10px;margin-bottom:0.5rem;cursor:pointer;';
-    div.innerHTML=`<div style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border);background:var(--white);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;" class="chk-box"></div><div><div style="font-size:13px;font-weight:500;color:var(--text);">${item.t}</div>${item.d?`<div style="font-size:11px;color:var(--text-muted);">${item.d}</div>`:''}</div>`;
-    div.onclick=function(){
-      this.classList.toggle('selected');
-      const box=this.querySelector('.chk-box');
-      if(this.classList.contains('selected')){box.style.background='var(--purple)';box.style.borderColor='var(--purple)';box.innerHTML='<svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';if(!arr.includes(item.t))arr.push(item.t);}
-      else{box.style.background='var(--white)';box.style.borderColor='var(--border)';box.innerHTML='';const i=arr.indexOf(item.t);if(i>-1)arr.splice(i,1);}
-    };
-    c.appendChild(div);
-  });
-}
-
-function aShow(n){
-  if(n===5)buildChecklist(cobItems,'a-coberturas',aD.coberturas);
-  if(n===6)buildChecklist(probItems,'a-problemas',aD.problemas);
-  document.querySelectorAll('#modal-avanzado .pf-step').forEach(x=>x.classList.remove('active'));
-  const el=document.getElementById('a-step'+n);
-  if(el){el.classList.add('active');document.getElementById('a-fill').style.width=(n/A_TOTAL*100)+'%';document.getElementById('a-label').textContent='Paso '+n+' de '+A_TOTAL;}
-}
-function aOpt(btn,k,v){
-  const g=btn.closest('.pf-options')||btn.parentElement;g.querySelectorAll('.pf-option').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');aD[k]=v;
-  const st=btn.closest('.pf-step');if(st){const nb=document.getElementById('a-next'+st.id.replace('a-step',''));if(nb)nb.classList.add('ready');}
-}
-function aEdad(btn,v){btn.closest('.pf-options').querySelectorAll('.pf-option').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');aD.edad=v;aChk2();}
-function aCarga(opt){
-  document.getElementById('a-nocar').classList.toggle('selected',opt==='no');
-  document.getElementById('a-sicar').classList.toggle('selected',opt==='si');
-  if(opt==='no'){document.getElementById('a-cargasec').style.display='none';aD.cargas='Sin cargas';aChk2();}
-  else{document.getElementById('a-cargasec').style.display='block';if(aCargaCount===0)aAddCarga();aChkCargas();}
-}
-function aAddCarga(){
-  aCargaCount++;const id=aCargaCount;
-  const c=document.createElement('div');c.className='pf-carga-card';c.id='a-carga'+id;
-  c.innerHTML=`<div class="pf-carga-header"><span class="pf-carga-num">Carga ${id}</span><button class="pf-remove-btn" onclick="aRemCarga(${id})">×</button></div><div class="pf-carga-fields"><div><label class="pf-label" style="font-size:10px;">Tipo</label><select class="pf-carga-select" id="a-ct${id}" onchange="aChkCargas()"><option value="">Selecciona...</option><option>Cónyuge/Conviviente</option><option>Hijo/a</option><option>Carga médica</option></select></div><div><label class="pf-label" style="font-size:10px;">Edad</label><input class="pf-carga-input" type="number" id="a-ce${id}" placeholder="Ej:32" min="0" max="99" oninput="aChkCargas()"/></div></div>`;
-  document.getElementById('a-cargalist').appendChild(c);
-}
-function aRemCarga(id){const e=document.getElementById('a-carga'+id);if(e)e.remove();aChkCargas();}
-function aChkCargas(){
-  const cards=document.querySelectorAll('#a-cargalist .pf-carga-card');let ok=cards.length>0,arr=[];
-  cards.forEach(c=>{const id=c.id.replace('a-carga','');const t=document.getElementById('a-ct'+id).value,e=document.getElementById('a-ce'+id).value;if(!t||!e)ok=false;else arr.push(t+' ('+e+' años)');});
-  aD.cargas=arr.join(', ')||'Sin cargas';aChk2();
-}
-function aChk2(){
-  const nocar=document.getElementById('a-nocar').classList.contains('selected');
-  const sicar=document.getElementById('a-sicar').classList.contains('selected');
-  const cards=document.querySelectorAll('#a-cargalist .pf-carga-card');
-  let cargaOk=nocar||(sicar&&cards.length>0);
-  document.getElementById('a-next2').classList.toggle('ready',!!aD.edad&&cargaOk);
-  if(sicar&&cards.length>0)document.getElementById('a-preex-cargas-wrap').style.display='block';
-}
-function aTrabajo(t){
-  document.getElementById('a-dep').classList.toggle('selected',t==='dependiente');
-  document.getElementById('a-ind').classList.toggle('selected',t==='independiente');
-  aD.tipo_trabajador=t==='dependiente'?'Dependiente':'Independiente';
-  document.getElementById('a-secdep').style.display=t==='dependiente'?'block':'none';
-  document.getElementById('a-secind').style.display=t==='independiente'?'block':'none';
-  aChk3();
-}
-function aChk3(){
-  const t=aD.tipo_trabajador;if(!t)return;let ok=false;
-  if(t==='Dependiente'){const r=document.getElementById('a-renta').value.replace(/[.]/g,'');ok=r&&parseInt(r)>0;}
-  else{ok=true;}
-  document.getElementById('a-next3').classList.toggle('ready',ok);
-}
-function aPreex(opt){
-  document.getElementById('a-nopreex').classList.toggle('selected',opt==='no');
-  document.getElementById('a-sipreex').classList.toggle('selected',opt==='si');
-  aD.preexistencia=opt;
-  document.getElementById('a-preexbox').style.display=opt==='si'?'block':'none';
-  if(opt==='no')document.getElementById('a-next4').classList.add('ready');
-  else aChk4();
-}
-function aChk4(){if(aD.preexistencia==='no'){document.getElementById('a-next4').classList.add('ready');return;}const v=document.getElementById('a-preex-titular').value.trim();document.getElementById('a-next4').classList.toggle('ready',v.length>3);}
-function aRegion(){
-  const v=document.getElementById('a-region').value;aD.region=v;
-  document.getElementById('a-comunawrap').style.display=v?'block':'none';
-  document.getElementById('a-clinicawrap').style.display='none';
-  document.getElementById('a-next7').classList.remove('ready');
-  const sel=document.getElementById('a-comuna-select');
-  if(sel && comunasPorRegion[v]){
-    sel.innerHTML='<option value="">Selecciona tu comuna...</option>';
-    comunasPorRegion[v].forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
-  }
-  const csel=document.getElementById('a-clinica-select');
-  if(csel && clinicasPorRegion[v]){
-    csel.innerHTML='<option value="">Selecciona una clínica (Opcional)...</option>';
-    clinicasPorRegion[v].forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;csel.appendChild(o);});
-    document.getElementById('a-clinicawrap').style.display='block';
-  }
-}
-function aChk7(){
-  const com=document.getElementById('a-comuna-select').value;
-  aD.comuna=com;
-  document.getElementById('a-next7').classList.toggle('ready',aD.region&&com.length>2);
-}
-function aCheckContacto(){
-  const n=document.getElementById('a-nombre').value.trim(),w=document.getElementById('a-wsp').value.trim(),r=document.getElementById('a-rut').value.trim();
-  document.getElementById('a-next9').classList.toggle('ready',n.length>2&&w.length>7&&r.length>6);
-}
-async function aSubmit(){
-  aD.nombre=document.getElementById('a-nombre').value.trim();
-  aD.whatsapp='+56'+document.getElementById('a-wsp').value.trim();
-  aD.rut=document.getElementById('a-rut').value.trim();
-  aD.fecha=new Date().toLocaleString('es-CL');aD.tipo_asesoria='Asesoría avanzada';
-  const renta=(document.getElementById('a-renta').value||'').replace(/\./g,'');
-  const valor=(document.getElementById('a-valor').value||document.getElementById('a-valorind').value||'').replace(/\./g,'');
-  const empleador=document.getElementById('a-empleador').value||'No aplica';
-  const preexTitular=document.getElementById('a-preex-titular').value||'Sin preexistencias';
-  const preexCargas=document.getElementById('a-preex-cargas').value||'';
-  const codplan=document.getElementById('a-codplan').value||'No indicado';
-  document.querySelectorAll('#modal-avanzado .pf-step').forEach(x=>x.classList.remove('active'));
-  document.getElementById('a-fill').style.width='100%';document.getElementById('a-label').textContent='Verificando...';
-  document.getElementById('a-sending').classList.add('active');
-  const rutExiste = await verificarRUT(aD.rut, 'avanzado');
-  if(rutExiste) { document.getElementById('a-sending').classList.remove('active'); return; }
-  aD.codigo=genCode();
-  try{
-    await Promise.all([
-      fetch(WEBHOOK_AVANZADO,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:aD.fecha,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,nombre:aD.nombre,whatsapp:aD.whatsapp,rut:aD.rut,isapre_actual:aD.isapre_actual||'',edad:aD.edad||'',cargas:aD.cargas||'Sin cargas',tipo_trabajador:aD.tipo_trabajador||'',renta:renta,unidad_renta:'CLP',valor_isapre:valor,unidad_valor:'CLP',empleador:empleador,preexistencias:preexTitular+(preexCargas?' | Cargas: '+preexCargas:''),coberturas:aD.coberturas.join(', ')||'Ninguna',problemas:aD.problemas.join(', ')||'Ninguno',region:aD.region||'',comuna:aD.comuna||'',clinica:aD.clinica||document.getElementById('a-clinica-select').value||'Sin preferencia',codigo_plan:codplan,seguro_complementario:aD.seguro_complementario||'No indicado'})}),
-      sbInsert('leads',{rut:aD.rut,codigo:aD.codigo,tipo_asesoria:aD.tipo_asesoria,estado:'recibido',nombre:aD.nombre,whatsapp:aD.whatsapp,fecha:aD.fecha})
-    ]);
-    document.getElementById('a-sending').classList.remove('active');
-    window.location.href = '/gracias.html?codigo=' + aD.codigo + '&tipo=avanzado';
-  }catch(e){document.getElementById('a-sending').classList.remove('active');window.location.href='/gracias.html?codigo='+aD.codigo+'&tipo=avanzado';}
 }
 
 // ======= SEGUIMIENTO =======
