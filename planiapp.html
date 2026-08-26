@@ -792,8 +792,7 @@ const sD={};
 function sSistemaIsapre(btn,isapreName){
   document.querySelectorAll('#s-step1 .pf-option').forEach(b=>b.classList.remove('selected'));
   btn.classList.add('selected');
-  if(isapreName==='Fonasa'){ sD.sistema='Fonasa'; sD.isapre_actual=''; }
-  else { sD.sistema='Isapre'; sD.isapre_actual=isapreName; }
+  sD.sistema=isapreName;
   sChkReq();
 }
 function sChkReq(){
@@ -830,7 +829,20 @@ async function sSubmit(){
   sD.codigo=await genCodeUnico();
   try{
     await Promise.all([
-      fetch(WEBHOOK_SIMPLE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fecha:sD.fecha,codigo:sD.codigo,tipo_asesoria:sD.tipo_asesoria,nombre:sD.nombre,whatsapp:sD.whatsapp,rut:sD.rut,sistema:sD.sistema||'',edad:sD.edad||'',cargas:sD.cargas||'Sin cargas',region:sD.region||'',comuna:sD.comuna||'',clinica:document.getElementById('s-clinica-select')?document.getElementById('s-clinica-select').value||'Sin preferencia':'Sin preferencia',renta:sD.renta||'',tipo_trabajador:sD.trabajo||'',empresa:sD.empresa||'',isapre_actual:sD.isapre_actual||'No aplica',motivo:sD.motivo||'',coberturas:sD.coberturas||'',canal:sD.canal||'WhatsApp',horario:sD.horario||'Lo antes posible'})}),
+      fetch(WEBHOOK_SIMPLE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+        fecha:sD.fecha,
+        codigo:sD.codigo,
+        tipo_asesoria:sD.tipo_asesoria,
+        nombre:sD.nombre,
+        whatsapp:sD.whatsapp,
+        canal:sD.canal||'WhatsApp',
+        horario:sD.horario||'Lo antes posible',
+        sistema:sD.sistema||'',
+        motivo:sD.motivo||'',
+        coberturas:sD.coberturas||'',
+        renta:sD.renta||'',
+        cargas:sD.cargas||''
+      })}),
       sbInsert('leads',{rut:sD.rut,codigo:sD.codigo,tipo_asesoria:sD.tipo_asesoria,estado:'recibido',nombre:sD.nombre,whatsapp:sD.whatsapp,fecha:sD.fecha})
     ]);
     document.getElementById('s-sending').classList.remove('active');
