@@ -9,6 +9,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18388610233');
+  gtag('config', 'G-L8TDJPFVRM');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planiapp — ¡Solicitud recibida!</title>
@@ -390,6 +391,13 @@ gtag('event', 'conversion', {
   'value': tipo === 'avanzado' ? 25000 : 15000,
   'currency': 'CLP',
   'transaction_id': codigo || ''
+});
+
+/* GA4 - lead generado */
+gtag('event', 'generate_lead', {
+  currency: 'CLP',
+  value: tipo === 'avanzado' ? 25000 : 15000,
+  transaction_id: codigo || ''
 });
 </script>
 </body>

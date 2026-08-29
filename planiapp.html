@@ -9,6 +9,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18388610233');
+  gtag('config', 'G-L8TDJPFVRM');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planiapp — Asesoría profesional en Isapre</title>
@@ -789,6 +790,7 @@ async function genCodeUnico() {
 function openForm(t) {
   document.getElementById('modal-'+t).classList.add('active');
   document.body.style.overflow='hidden';
+  if(typeof gtag==='function') gtag('event','form_open',{form_name:'asesoria_planiapp'});
 }
 function closeForm(t) {
   document.getElementById('modal-'+t).classList.remove('active');
