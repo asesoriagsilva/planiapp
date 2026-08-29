@@ -384,11 +384,14 @@ const params = new URLSearchParams(window.location.search);
 const codigo = params.get('codigo');
 if(codigo) document.getElementById('codigoGracias').textContent = codigo;
 
+/* Valor estimado por lead. Ajustar cuando se conozca la comision real
+   por cierre y la tasa de cierre (ver GOOGLE-ADS.md, seccion 4). */
+const VALOR_LEAD = 15000;
+
 /* Google Ads - conversion "Lead formulario Planiapp" */
-const tipo = params.get('tipo') || 'simple';
 gtag('event', 'conversion', {
   'send_to': 'AW-18388610233/-zYyCKvtweMcELnZr8BE',
-  'value': tipo === 'avanzado' ? 25000 : 15000,
+  'value': VALOR_LEAD,
   'currency': 'CLP',
   'transaction_id': codigo || ''
 });
@@ -396,7 +399,7 @@ gtag('event', 'conversion', {
 /* GA4 - lead generado */
 gtag('event', 'generate_lead', {
   currency: 'CLP',
-  value: tipo === 'avanzado' ? 25000 : 15000,
+  value: VALOR_LEAD,
   transaction_id: codigo || ''
 });
 </script>
