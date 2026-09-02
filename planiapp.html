@@ -45,10 +45,6 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 .nav-link:hover { color: var(--purple); }
 .nav-btn { background: var(--purple); color: #fff; border: none; border-radius: 24px; padding: 0.5rem 1.25rem; font-size: 14px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.2s; }
 .nav-btn:hover { background: var(--purple-deep); }
-.nav-horario { display: flex; flex-direction: column; align-items: center; gap: 1px; }
-.nav-horario-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.nav-horario-value { font-size: 13px; font-weight: 500; color: var(--purple); }
-.nav-horario-dias { font-size: 10px; color: var(--text-muted); }
 .nav-estado-btn { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; background: var(--purple); color: #fff; border-radius: 20px; padding: 0.4rem 0.9rem; font-size: 12px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
 .nav-estado-btn:hover { background: var(--purple-deep); }
 .nav-dot { width: 7px; height: 7px; border-radius: 50%; background: #1D9E75; display: inline-block; margin-right: 4px; animation: pulse-dot 2s infinite; }
@@ -320,10 +316,11 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .opcion-card { padding: 1.25rem; }
   footer { grid-template-columns: 1fr; padding: 2rem 1.25rem; }
   nav { padding: 0.5rem 1rem; }
-  .nav-logo-img { height: 56px; }
   .nav-links .nav-link { display: none; }
-  .nav-horario-dias { display: none; }
   .nav-estado-btn { margin-top: 4px; padding: 0.35rem 0.75rem; font-size: 11px; }
+  /* Sin el horario al lado, el carrusel de Isapres ocupa todo el ancho que sobra */
+  .nav-logo-img { height: 46px; }
+  .nav-carrusel { margin: 0 0 0 0.6rem !important; padding: 0 0 0 0.6rem !important; border-right: none !important; }
   .form-overlay { padding: 0; align-items: flex-start; }
   .form-modal { padding: 1.25rem 1.1rem 1.75rem; max-height: 100vh; min-height: 100vh; border-radius: 0; }
   @supports (height: 100dvh) {
@@ -351,36 +348,27 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   </div>
 
   <!-- CARRUSEL ISAPRES -->
-  <div style="flex:1;overflow:hidden;margin:0 1.5rem;border-left:1px solid rgba(83,74,183,0.15);border-right:1px solid rgba(83,74,183,0.15);padding:0 1rem;">
+  <div class="nav-carrusel" style="flex:1;overflow:hidden;margin:0 1.5rem;border-left:1px solid rgba(83,74,183,0.15);border-right:1px solid rgba(83,74,183,0.15);padding:0 1rem;">
     <div style="overflow:hidden;">
       <div id="nav-ticker" style="display:inline-flex;align-items:center;gap:2rem;animation:ticker 22s linear infinite;">
-        <img src="/logos/banmedica.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Banmedica" loading="lazy" decoding="async"//>
-        <img src="/logos/colmena.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Colmena" loading="lazy" decoding="async"//>
-        <img src="/logos/consalud.png" style="height:38px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Consalud" loading="lazy" decoding="async"//>
-        <img src="/logos/cruz-blanca.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Cruz Blanca" loading="lazy" decoding="async"//>
-        <img src="/logos/nueva-masvida.png" style="height:38px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Nueva Masvida" loading="lazy" decoding="async"//>
-        <img src="/logos/vida-tres.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Vida Tres" loading="lazy" decoding="async"//>
-        <img src="/logos/esencial.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Esencial" loading="lazy" decoding="async"//>
-        <img src="/logos/banmedica.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Banmedica" loading="lazy" decoding="async"//>
-        <img src="/logos/colmena.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Colmena" loading="lazy" decoding="async"//>
-        <img src="/logos/consalud.png" style="height:38px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Consalud" loading="lazy" decoding="async"//>
-        <img src="/logos/cruz-blanca.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Cruz Blanca" loading="lazy" decoding="async"//>
-        <img src="/logos/nueva-masvida.png" style="height:38px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Nueva Masvida" loading="lazy" decoding="async"//>
-        <img src="/logos/vida-tres.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Vida Tres" loading="lazy" decoding="async"//>
-        <img src="/logos/esencial.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Esencial" loading="lazy" decoding="async"//>
+        <img src="/logos/banmedica.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Banmedica" loading="lazy" decoding="async"/>
+        <img src="/logos/colmena.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Colmena" loading="lazy" decoding="async"/>
+        <img src="/logos/consalud.png" style="height:38px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Consalud" loading="lazy" decoding="async"/>
+        <img src="/logos/cruz-blanca.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Cruz Blanca" loading="lazy" decoding="async"/>
+        <img src="/logos/nueva-masvida.png" style="height:38px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Nueva Masvida" loading="lazy" decoding="async"/>
+        <img src="/logos/vida-tres.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Vida Tres" loading="lazy" decoding="async"/>
+        <img src="/logos/esencial.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Esencial" loading="lazy" decoding="async"/>
+        <img src="/logos/banmedica.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Banmedica" loading="lazy" decoding="async"/>
+        <img src="/logos/colmena.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Colmena" loading="lazy" decoding="async"/>
+        <img src="/logos/consalud.png" style="height:38px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Consalud" loading="lazy" decoding="async"/>
+        <img src="/logos/cruz-blanca.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Cruz Blanca" loading="lazy" decoding="async"/>
+        <img src="/logos/nueva-masvida.png" style="height:38px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Nueva Masvida" loading="lazy" decoding="async"/>
+        <img src="/logos/vida-tres.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Vida Tres" loading="lazy" decoding="async"/>
+        <img src="/logos/esencial.png" style="height:26px;object-fit:contain;opacity:0.8;flex-shrink:0;" alt="Esencial" loading="lazy" decoding="async"/>
       </div>
     </div>
   </div>
 
-  <!-- DERECHA -->
-  <div class="nav-links">
-    
-    <div class="nav-horario">
-      <div class="nav-horario-label"><span class="nav-dot"></span>Atención</div>
-      <div class="nav-horario-value">09:00 – 21:00 hrs</div>
-      <div class="nav-horario-dias">Lunes a Viernes</div>
-    </div>
-  </div>
 </nav>
 
 <!-- HOME -->
