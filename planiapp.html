@@ -173,15 +173,17 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   /* Acortamos el trecho hasta el formulario: fuera el segundo parrafo y los
      4 pasos en dos columnas, sin los conectores verticales. */
   .hero-sub2 { display: none; }
-  .pasos-flow { display: grid !important; grid-template-columns: 1fr 1fr; gap: 0.5rem !important; padding: 0 !important; }
-  .pasos-flow > :not(.sc) { display: none; }
-  .pasos-flow .sc { gap: 8px !important; align-items: flex-start !important; }
-  .pasos-flow .si { width: 30px !important; height: 30px !important; }
-  .pasos-flow .si svg { width: 13px; height: 13px; }
-  .pasos-flow .sc > div:last-child { padding: 0.45rem 0.6rem !important; }
+  /* Una sola columna, sin los conectores. El display:flex va escrito en el
+     propio elemento, asi que ocultarlos necesita !important. */
+  .pasos-flow { gap: 7px !important; padding: 0 !important; }
+  .pasos-flow > :not(.sc) { display: none !important; }
+  .pasos-flow .sc { gap: 10px !important; }
+  .pasos-flow .si { width: 32px !important; height: 32px !important; }
+  .pasos-flow .si svg { width: 14px; height: 14px; }
+  .pasos-flow .sc > div:last-child { padding: 0.5rem 0.75rem !important; }
   .pasos-flow .sc > div:last-child > div:nth-child(1) { font-size: 10px !important; margin-bottom: 1px !important; }
-  .pasos-flow .sc > div:last-child > div:nth-child(2) { font-size: 12px !important; line-height: 1.25 !important; }
-  .pasos-flow .sc > div:last-child > div:nth-child(3) { font-size: 10.5px !important; line-height: 1.35 !important; }
+  .pasos-flow .sc > div:last-child > div:nth-child(2) { font-size: 13px !important; line-height: 1.25 !important; }
+  .pasos-flow .sc > div:last-child > div:nth-child(3) { font-size: 11px !important; line-height: 1.4 !important; }
 }
 @media (max-width: 600px) { .pf-row2 { grid-template-columns: 1fr; } }
 .pf-step { display: none; }
