@@ -14,6 +14,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planiapp — Asesoría profesional en Isapre</title>
 <link rel="canonical" href="https://planiapp.cl/">
+<meta property="og:title" content="Planiapp | Asesoría profesional en Isapre">
+<meta property="og:url" content="https://planiapp.cl/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://planiapp.cl/img/fonasa-o-isapre-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mujer revisando un documento en la mesa de su cocina">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjNTM0QUI3Ii8+CiAgPGNpcmNsZSBjeD0iMTQiIGN5PSIxNiIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI3LDE2IDEwLDE2IDExLjUsMTEuNSAxMywyMC41IDE0LjUsMTMgMTYsMTggMTcsMTYgMjEsMTYiCiAgICBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMjMiIGN5PSI5IiByPSI0IiBmaWxsPSIjMUQ5RTc1Ii8+CiAgPHBhdGggZD0iTTIxLjUgOWwxLjIgMS4zIDIuMy0yLjYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&family=Inter:wght@800;900&display=swap" rel="stylesheet">
 <style>
@@ -641,10 +649,14 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .fvi-p { font-size:15px; color:var(--text-muted); line-height:1.55; max-width:560px; }
   .fvi-btn { background:var(--purple); color:#fff; text-decoration:none; border-radius:24px; padding:0.8rem 1.5rem; font-size:15px; font-weight:500; white-space:nowrap; transition:background .2s; }
   .fvi-btn:hover { background:var(--purple-deep); }
+  .fvi-img { display:block; width:150px; height:94px; object-fit:cover; border-radius:12px; flex-shrink:0; background:var(--purple-light); }
+  .fvi > div { flex:1; min-width:220px; }
+  @media (max-width:680px){ .fvi-img{ width:100%; height:auto; aspect-ratio:16 / 10; } }
   @media (max-width:680px){ .fvi-wrap{ margin-top:2rem; padding:0 1rem; } .fvi{ padding:1.25rem 1.1rem; } .fvi-t{ font-size:20px; } .fvi-btn{ width:100%; text-align:center; } }
   </style>
   <div class="fvi-wrap">
     <div class="fvi">
+      <img class="fvi-img" src="img/fonasa-o-isapre-card.webp" alt="Mujer revisando un documento en la mesa de su cocina" width="480" height="300" loading="lazy" decoding="async">
       <div>
         <div class="fvi-t">¿Fonasa o Isapre? ¿Qué conviene más?</div>
         <div class="fvi-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</div>
@@ -682,6 +694,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   </style>
   <div class="fvi-wrap" id="errores">
     <div class="fvi">
+      <img class="fvi-img" src="img/errores-al-contratar-isapre-card.webp" alt="Hombre revisando un documento en la mesa de su cocina" width="480" height="300" loading="lazy" decoding="async">
       <div>
         <div class="fvi-t">Los 8 errores más comunes al contratar una Isapre</div>
         <div class="fvi-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</div>
@@ -693,6 +706,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <!-- TIPS (enlace al articulo) -->
   <div class="fvi-wrap" id="tips">
     <div class="fvi">
+      <img class="fvi-img" src="img/tips-fonasa-a-isapre-card.webp" alt="Familia jugando en el sofá de su casa" width="480" height="300" loading="lazy" decoding="async">
       <div>
         <div class="fvi-t">De Fonasa a Isapre: tips para elegir un buen plan</div>
         <div class="fvi-p">Seis consejos para contratar bien y tener una buena experiencia con tu Isapre.</div>
@@ -703,6 +717,11 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 
   <!-- CÓMO ES CADA ISAPRE -->
   <style>
+  .isa-badge { display:table; margin:0 auto 0.6rem; font-size:12px; font-weight:600; color:#0F6E56; background:#E1F5EE; border:1px solid #CFEEE3; border-radius:20px; padding:3px 12px; }
+  .isa-pronto { margin-top:1.4rem; text-align:center; }
+  .isa-pronto-t { font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.7rem; }
+  .isa-pronto-logos { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:1rem 1.6rem; }
+  .isa-pronto-logos img { height:22px; width:auto; filter:grayscale(1); opacity:0.5; }
   .isa-wrap { max-width:900px; margin:3rem auto 0; padding:0 1.5rem; }
   .isa-title { font-family:'Inter',sans-serif; font-size:30px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.02em; text-align:center; margin-bottom:0.4rem; line-height:1.25; }
   .isa-sub { text-align:center; font-size:16px; color:var(--text-muted); margin:0 auto 1.8rem; max-width:620px; line-height:1.55; }
@@ -736,6 +755,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   }
   </style>
   <div class="isa-wrap" id="isapres">
+    <div class="isa-badge">En actualización</div>
     <h2 class="isa-title">Cómo es cada Isapre</h2>
     <p class="isa-sub">Lo que hace bien cada una y también dónde se queda corta. Toca la que te interese.</p>
 
@@ -789,6 +809,16 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
       </div>
     </div>
 
+    <div class="isa-pronto">
+      <div class="isa-pronto-t">Próximamente</div>
+      <div class="isa-pronto-logos">
+        <img src="/logos/colmena.png" alt="Colmena" loading="lazy" decoding="async"/>
+        <img src="/logos/cruz-blanca.png" alt="Cruz Blanca" loading="lazy" decoding="async"/>
+        <img src="/logos/esencial.png" alt="Esencial" loading="lazy" decoding="async"/>
+        <img src="/logos/nueva-masvida.png" alt="Nueva Masvida" loading="lazy" decoding="async"/>
+        <img src="/logos/vida-tres.png" alt="Vida Tres" loading="lazy" decoding="async"/>
+      </div>
+    </div>
   </div>
 
   <!-- FRANJA WHATSAPP SOPORTE -->
