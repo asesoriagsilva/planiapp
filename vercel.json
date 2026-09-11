@@ -1,5 +1,7 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/planiapp.html" }
+    { "source": "/", "destination": "/planiapp.html" },
+    { "source": "/fonasa-o-isapre", "destination": "/fonasa-o-isapre.html" },
+    { "source": "/errores-al-contratar-isapre", "destination": "/errores-al-contratar-isapre.html" }
   ]
 }
