@@ -718,110 +718,70 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <!-- CÓMO ES CADA ISAPRE -->
   <style>
   .isa-badge { display:table; margin:0 auto 0.6rem; font-size:12px; font-weight:600; color:#0F6E56; background:#E1F5EE; border:1px solid #CFEEE3; border-radius:20px; padding:3px 12px; }
-  .isa-pronto { margin-top:1.4rem; text-align:center; }
-  .isa-pronto-t { font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.7rem; }
-  .isa-pronto-logos { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:1rem 1.6rem; }
-  .isa-pronto-logos img { height:22px; width:auto; filter:grayscale(1); opacity:0.5; }
+  .isa-aviso { font-size:12px; color:var(--text-muted); text-align:center; line-height:1.5; margin:1.1rem auto 0; max-width:640px; }
   .isa-wrap { max-width:900px; margin:3rem auto 0; padding:0 1.5rem; }
   .isa-title { font-family:'Inter',sans-serif; font-size:30px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.02em; text-align:center; margin-bottom:0.4rem; line-height:1.25; }
   .isa-sub { text-align:center; font-size:16px; color:var(--text-muted); margin:0 auto 1.8rem; max-width:620px; line-height:1.55; }
-  .isa-item { border:1px solid var(--border); border-radius:14px; background:var(--white); margin-bottom:0.7rem; overflow:hidden; }
-  .isa-btn { width:100%; display:flex; align-items:center; gap:1rem; padding:0.9rem 1.1rem; background:none; border:none; cursor:pointer; text-align:left; font-family:'DM Sans',sans-serif; }
+  .isa-link { display:flex; align-items:center; gap:1rem; padding:0.9rem 1.1rem; margin-bottom:0.7rem; background:var(--white); border:1px solid var(--border); border-radius:14px; text-decoration:none; color:inherit; transition:border-color .2s, box-shadow .2s; }
+  .isa-link:hover { border-color:var(--purple-mid); box-shadow:0 6px 18px -10px rgba(38,33,92,.35); }
   .isa-logo { height:26px; width:88px; object-fit:contain; flex-shrink:0; }
   .isa-line { flex:1; font-size:13.5px; color:var(--text); line-height:1.45; }
-  .isa-chev { flex-shrink:0; transition:transform .3s ease; }
-  .isa-btn.open .isa-chev { transform:rotate(180deg); }
-  .isa-body { max-height:0; overflow:hidden; transition:max-height .35s ease; }
-  .isa-body.open { max-height:900px; }
-  .isa-inner { padding:0 1.1rem 1.1rem; }
-  .isa-row { display:grid; grid-template-columns:150px 1fr; gap:0.5rem 1rem; padding:0.55rem 0; border-top:1px solid #F1F0F9; font-size:13px; line-height:1.5; }
-  .isa-k { font-weight:600; color:var(--purple); }
-  .isa-v { color:var(--text-muted); }
-  .isa-v.pendiente { color:#C2565B; font-style:italic; }
-  .isa-nota { font-size:12px; font-weight:600; color:var(--purple-mid); text-transform:uppercase; letter-spacing:0.08em; padding-top:0.9rem; }
-  .isa-contra { margin-top:0.9rem; background:#FBECEC; border-left:3px solid #C2565B; border-radius:0 10px 10px 0; padding:0.7rem 0.9rem; font-size:13px; line-height:1.5; color:#8A3B40; }
-  .isa-contra strong { color:#7A2E33; }
-  .isa-cta { margin-top:1rem; width:100%; background:var(--purple); color:#fff; border:none; border-radius:24px; padding:0.75rem 1.4rem; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:500; cursor:pointer; transition:background .2s; }
-  .isa-cta:hover { background:var(--purple-deep); }
+  .isa-mas { flex-shrink:0; font-size:13.5px; font-weight:600; color:var(--purple); white-space:nowrap; }
   @media (max-width:680px){
     .isa-wrap { margin-top:2.25rem; padding:0 1rem; }
     .isa-title { font-size:23px; }
     .isa-sub { font-size:15px; margin-bottom:1.3rem; }
-    .isa-btn { flex-wrap:wrap; gap:0.6rem 0.8rem; padding:0.85rem 0.9rem; }
+    .isa-link { flex-wrap:wrap; gap:0.55rem 0.8rem; padding:0.85rem 0.9rem; }
     .isa-logo { height:22px; width:74px; }
+    .isa-mas { margin-left:auto; }
     .isa-line { flex:1 1 100%; order:3; font-size:13px; }
-    .isa-row { grid-template-columns:1fr; gap:2px; }
-    .isa-inner { padding:0 0.9rem 1rem; }
   }
   </style>
   <div class="isa-wrap" id="isapres">
-    <div class="isa-badge">En actualización</div>
+    <div class="isa-badge">Actualizado a septiembre de 2026</div>
     <h2 class="isa-title">Cómo es cada Isapre</h2>
     <p class="isa-sub">Lo que hace bien cada una y también dónde se queda corta. Toca la que te interese.</p>
 
-    <div class="isa-item">
-      <button class="isa-btn" onclick="toggleIsapre(this)">
-        <img class="isa-logo" src="/logos/banmedica.png" alt="Banmédica" loading="lazy" decoding="async"/>
-        <span class="isa-line">Ideal si te atiendes en Clínica Santa María o Dávila: son del mismo holding que Banmédica.</span>
-        <svg class="isa-chev" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 7l5 5 5-5" stroke="#534AB7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="isa-body">
-        <div class="isa-inner">
-          <div class="isa-nota">Estas son las clínicas donde ser Banmédica más te rinde.</div>
-          <div class="isa-row"><div class="isa-k">Clínicas del holding</div><div class="isa-v">Clínica Santa María, Clínica Dávila, Dávila Vespucio y Vida Integra.</div></div>
-          <div class="isa-row"><div class="isa-k">En regiones</div><div class="isa-v">Es dueña de la Clínica Ciudad del Mar (Viña del Mar). En el resto de las regiones, la cobertura depende de cada clínica.</div></div>
-          <div class="isa-row"><div class="isa-k">Sucursales</div><div class="isa-v">31 a lo largo del país.</div></div>
-          <div class="isa-row"><div class="isa-k">Cobertura preferente</div><div class="isa-v">Convenio preferente con casi todas las clínicas, salvo el Hospital del Profesor y la Clínica Bupa Santiago.</div></div>
-          <div class="isa-row"><div class="isa-k">Urgencias</div><div class="isa-v">Copago de urgencia en Clínica Dávila y Clínica Santa María, y en algunos planes también en Las Condes y la U. de los Andes.</div></div>
-          <div class="isa-row"><div class="isa-k">Kinesiología</div><div class="isa-v">Con un seguro adicional puede quedar sin tope.</div></div>
-          <div class="isa-row"><div class="isa-k">Topes</div><div class="isa-v">Planes con topes sólidos en el segmento alto.</div></div>
-          <div class="isa-row"><div class="isa-k">Coberturas especiales</div><div class="isa-v">Prótesis y órtesis sin tope en el plan.</div></div>
-          <div class="isa-row"><div class="isa-k">Red GES y CAEC</div><div class="isa-v">Generalmente Clínica Dávila y Clínica Santa María, aunque para algunas patologías designa centros especializados.</div></div>
-          <div class="isa-row"><div class="isa-k">Precio de entrada</div><div class="isa-v">Planes de entrada accesibles, aunque en un principio solo con Clínica Dávila y Dávila Vespucio.</div></div>
-          <div class="isa-contra"><strong>Dónde se queda corta:</strong> la psicología tiene tope anual. En regiones tiene pocas clínicas con convenio preferente, así que tampoco hay copagos de urgencia: muchas veces pagas la cuenta y después esperas el reembolso, y por eso mucha gente en regiones prefiere quedarse en Fonasa. Y en el segmento alto, llegar a una cobertura del 100% sale caro.</div>
-          <button class="isa-cta" onclick="cotizarCon('Banmédica')">Cotizar un plan de Banmédica →</button>
-        </div>
-      </div>
-    </div>
+    <a class="isa-link" href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica'})">
+      <img class="isa-logo" src="/logos/banmedica.png" alt="Banmédica" loading="lazy" decoding="async"/>
+      <span class="isa-line">Ideal si te atiendes en Clínica Santa María o Dávila: son del mismo holding que Banmédica.</span>
+      <span class="isa-mas">Ver más →</span>
+    </a>
+    <a class="isa-link" href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena'})">
+      <img class="isa-logo" src="/logos/colmena.png" alt="Colmena" loading="lazy" decoding="async"/>
+      <span class="isa-line">Sin clínicas propias, pero muy buena opción si buscas psicología sin tope anual y convenios internos, como exámenes a costo $0.</span>
+      <span class="isa-mas">Ver más →</span>
+    </a>
+    <a class="isa-link" href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud'})">
+      <img class="isa-logo" src="/logos/consalud.png" alt="Consalud" loading="lazy" decoding="async"/>
+      <span class="isa-line">Ideal si te atiendes en clínicas y centros médicos RedSalud: la Cámara Chilena de la Construcción es el holding detrás de Consalud y de RedSalud.</span>
+      <span class="isa-mas">Ver más →</span>
+    </a>
+    <a class="isa-link" href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca'})">
+      <img class="isa-logo" src="/logos/cruz-blanca.png" alt="Cruz Blanca" loading="lazy" decoding="async"/>
+      <span class="isa-line">Ideal si buscas un plan con Clínicas Bupa e Integramédica: Cruz Blanca pertenece al holding Bupa.</span>
+      <span class="isa-mas">Ver más →</span>
+    </a>
+    <a class="isa-link" href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial'})">
+      <img class="isa-logo" src="/logos/esencial.png" alt="Esencial" loading="lazy" decoding="async"/>
+      <span class="isa-line">Ideal si te atiendes en Clínica Alemana y tienes a todos tus médicos ahí.</span>
+      <span class="isa-mas">Ver más →</span>
+    </a>
+    <a class="isa-link" href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida'})">
+      <img class="isa-logo" src="/logos/nueva-masvida.png" alt="Nueva Masvida" loading="lazy" decoding="async"/>
+      <span class="isa-line">Ideal si buscas psicología sin tope anual o entrar a una Isapre pagando poco: tiene los planes más accesibles del mercado.</span>
+      <span class="isa-mas">Ver más →</span>
+    </a>
+    <a class="isa-link" href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres'})">
+      <img class="isa-logo" src="/logos/vida-tres.png" alt="Vida Tres" loading="lazy" decoding="async"/>
+      <span class="isa-line">Del mismo holding que Banmédica, con Santa María y Dávila, pero cubre procedimientos sin código Fonasa: ideal si usas clínicas del segmento alto.</span>
+      <span class="isa-mas">Ver más →</span>
+    </a>
 
-    <div class="isa-item">
-      <button class="isa-btn" onclick="toggleIsapre(this)">
-        <img class="isa-logo" src="/logos/consalud.png" alt="Consalud" loading="lazy" decoding="async"/>
-        <span class="isa-line">Ideal si te atiendes en clínicas y centros médicos RedSalud: la Cámara Chilena de la Construcción es el holding detrás de Consalud y de RedSalud.</span>
-        <svg class="isa-chev" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 7l5 5 5-5" stroke="#534AB7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="isa-body">
-        <div class="isa-inner">
-          <div class="isa-nota">Estas son las clínicas donde ser Consalud más te rinde.</div>
-          <div class="isa-row"><div class="isa-k">Clínicas del holding</div><div class="isa-v">RedSalud Santiago, RedSalud Providencia y RedSalud Vitacura.</div></div>
-          <div class="isa-row"><div class="isa-k">En regiones</div><div class="isa-v">Clínica RedSalud Iquique, Elqui, Valparaíso, Rancagua, Mayor Temuco, Magallanes y Sanatorio Alemán.</div></div>
-          <div class="isa-row"><div class="isa-k">Sucursales</div><div class="isa-v">44 a lo largo de todo el país.</div></div>
-          <div class="isa-row"><div class="isa-k">Cobertura preferente</div><div class="isa-v">Convenio preferente con casi todas las clínicas del país.</div></div>
-          <div class="isa-row"><div class="isa-k">Urgencias</div><div class="isa-v">RedSalud, Dávila, Dávila Vespucio, Santa María, UC Christus, U. de los Andes, Las Condes, Indisa y Meds.</div></div>
-          <div class="isa-row"><div class="isa-k">Kinesiología</div><div class="isa-v">Sin tope anual en prestadores preferentes, en todos sus planes.</div></div>
-          <div class="isa-row"><div class="isa-k">Topes</div><div class="isa-v">Prótesis y órtesis hasta 150 UF, que es de los ítems donde más se nota la diferencia entre una Isapre y otra.</div></div>
-          <div class="isa-row"><div class="isa-k">Coberturas especiales</div><div class="isa-v">Cirugías paquetizadas con copago fijo, en todos los planes. Instrumental robótico con 24 UF anuales.</div></div>
-          <div class="isa-row"><div class="isa-k">Red GES y CAEC</div><div class="isa-v">Mayoritariamente clínicas RedSalud. Ahí es donde te atenderías si aparece algo grave.</div></div>
-          <div class="isa-row"><div class="isa-k">Precio de entrada</div><div class="isa-v">Planes accesibles, con alternativas que funcionan para perfiles muy distintos.</div></div>
-          <div class="isa-contra"><strong>Dónde se queda corta:</strong> la psicología tiene tope anual, y los planes del segmento alto, los que incluyen Las Condes y Alemana, salen bastante más caros. Si esas son tus clínicas, probablemente haya mejores opciones y te lo vamos a decir.</div>
-          <button class="isa-cta" onclick="cotizarCon('Consalud')">Cotizar un plan de Consalud →</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="isa-pronto">
-      <div class="isa-pronto-t">Próximamente</div>
-      <div class="isa-pronto-logos">
-        <img src="/logos/colmena.png" alt="Colmena" loading="lazy" decoding="async"/>
-        <img src="/logos/cruz-blanca.png" alt="Cruz Blanca" loading="lazy" decoding="async"/>
-        <img src="/logos/esencial.png" alt="Esencial" loading="lazy" decoding="async"/>
-        <img src="/logos/nueva-masvida.png" alt="Nueva Masvida" loading="lazy" decoding="async"/>
-        <img src="/logos/vida-tres.png" alt="Vida Tres" loading="lazy" decoding="async"/>
-      </div>
-    </div>
+    <p class="isa-aviso">La información de cada Isapre es referencial y corresponde a la oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan, y se confirman al momento de cotizar.</p>
   </div>
 
-  <!-- FRANJA WHATSAPP SOPORTE -->
+<!-- FRANJA WHATSAPP SOPORTE -->
   <div id="orientacion" style="scroll-margin-top:90px;background:#EEFBF6;border-top:1px solid #CFEEE3;border-bottom:1px solid #CFEEE3;padding:1.5rem 2rem;">
     <div style="max-width:1050px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
       <div>
@@ -959,32 +919,6 @@ function sFormatRenta(input) {
   if(val) input.value = parseInt(val).toLocaleString('es-CL');
   sD.renta = val;
 }
-// Acordeon de "Como es cada Isapre": abre una y cierra las demas.
-function toggleIsapre(btn) {
-  const body = btn.nextElementSibling;
-  const abierto = btn.classList.contains('open');
-  document.querySelectorAll('.isa-btn').forEach(b => b.classList.remove('open'));
-  document.querySelectorAll('.isa-body').forEach(b => b.classList.remove('open'));
-  if (!abierto) {
-    btn.classList.add('open');
-    body.classList.add('open');
-    if (typeof gtag === 'function') {
-      gtag('event', 'isapre_ver', { isapre: btn.querySelector('.isa-logo').alt });
-    }
-  }
-}
-
-// Lleva al formulario con la Isapre ya elegida en "Cobertura actual".
-function cotizarCon(isapre) {
-  const sel = document.getElementById('s-sistema');
-  if (sel) { sel.value = isapre; sSistema(isapre); }
-  const box = document.getElementById('form-inline');
-  if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  const n = document.getElementById('s-nombre');
-  if (n) setTimeout(() => n.focus({ preventScroll: true }), 600);
-  if (typeof gtag === 'function') gtag('event', 'cotizar_isapre', { isapre: isapre });
-}
-
 function resetForm(prefix) {
   closeForm(prefix);
   setTimeout(() => {
@@ -1109,6 +1043,15 @@ async function sSubmit(){
     window.location.href = '/gracias.html?codigo=' + sD.codigo + '&tipo=simple';
   }catch(e){document.getElementById('s-sending').classList.remove('active');window.location.href='/gracias.html?codigo='+sD.codigo+'&tipo=simple';}
 }
+
+
+// Si llega desde la pagina de una Isapre (?isapre=Consalud), la deja elegida en "Cobertura actual".
+// No llama a sChkReq para no disparar form_start sin que la persona haya escrito nada.
+(function () {
+  const v = new URLSearchParams(location.search).get('isapre');
+  const sel = document.getElementById('s-sistema');
+  if (v && sel && [...sel.options].some(o => o.value === v)) { sel.value = v; sD.sistema = v; }
+})();
 
 </script>
 <!-- deploy check -->

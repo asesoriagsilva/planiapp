@@ -3,6 +3,13 @@
     { "source": "/", "destination": "/planiapp.html" },
     { "source": "/fonasa-o-isapre", "destination": "/fonasa-o-isapre.html" },
     { "source": "/errores-al-contratar-isapre", "destination": "/errores-al-contratar-isapre.html" },
-    { "source": "/tips-fonasa-a-isapre", "destination": "/tips-fonasa-a-isapre.html" }
+    { "source": "/tips-fonasa-a-isapre", "destination": "/tips-fonasa-a-isapre.html" },
+    { "source": "/isapre-banmedica", "destination": "/isapre-banmedica.html" },
+    { "source": "/isapre-colmena", "destination": "/isapre-colmena.html" },
+    { "source": "/isapre-consalud", "destination": "/isapre-consalud.html" },
+    { "source": "/isapre-cruz-blanca", "destination": "/isapre-cruz-blanca.html" },
+    { "source": "/isapre-esencial", "destination": "/isapre-esencial.html" },
+    { "source": "/isapre-nueva-masvida", "destination": "/isapre-nueva-masvida.html" },
+    { "source": "/isapre-vida-tres", "destination": "/isapre-vida-tres.html" }
   ]
 }
