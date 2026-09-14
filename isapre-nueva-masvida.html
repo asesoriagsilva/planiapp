@@ -125,6 +125,34 @@ footer a { color: var(--text-muted); }
 .otras a { display: inline-block; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 0.55rem 0.95rem; font-size: 14px; font-weight: 600; text-decoration: none; }
 .otras a:hover { border-color: var(--purple-mid); }
 
+/* Datos de la Superintendencia */
+.rb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0.9rem; margin: 1rem 0 0.6rem; }
+.rb { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1rem 1rem 0.95rem; margin: 0; }
+.rb-cap { display: block; margin-bottom: 0.85rem; }
+.rb-cap strong { display: block; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.rb-cap span { display: block; font-size: 12.5px; color: var(--text-muted); margin-top: 3px; line-height: 1.45; }
+.rb-rows { display: flex; flex-direction: column; gap: 8px; }
+.rb-row { display: grid; grid-template-columns: 94px 1fr 40px; align-items: center; gap: 0.5rem; }
+.rb-name { font-size: 13px; color: var(--text-muted); text-align: right; line-height: 1.15; }
+.rb-track { display: block; height: 14px; border-left: 1px solid #E1E0D9; }
+.rb-bar { display: block; height: 100%; background: #B4B0C8; border-radius: 0 4px 4px 0; transition: filter .15s; }
+.rb-val { font-size: 13px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.rb-row:hover .rb-bar { filter: brightness(0.9); }
+.rb-row.sel .rb-name, .rb-row.sel .rb-val { color: var(--text); font-weight: 700; }
+.rb-row.sel .rb-bar { background: #534AB7; }
+.rb-fuente { font-size: 12px; color: var(--text-muted); margin: 0.2rem 0 0.5rem; }
+.rb-tabla { margin-bottom: 1rem; }
+.rb-tabla summary { font-size: 13px; color: var(--purple); cursor: pointer; }
+.rb-scroll { overflow-x: auto; }
+.rb-tabla table { width: 100%; min-width: 520px; border-collapse: collapse; margin-top: 0.6rem; font-size: 13px; }
+.rb-tabla th, .rb-tabla td { text-align: right; padding: 0.45rem 0.4rem; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+.rb-tabla th:first-child, .rb-tabla td:first-child { text-align: left; }
+.rb-tabla th { color: var(--text-muted); font-weight: 600; line-height: 1.3; vertical-align: bottom; }
+.rb-tabla tr.sel td { font-weight: 700; }
+.analisis { background: var(--purple-light); border-radius: 14px; padding: 1.1rem 1.25rem; margin: 0.25rem 0 0.5rem; }
+.analisis p { font-size: 15.5px; line-height: 1.6; margin: 0; }
+.analisis strong { color: var(--purple-dark); }
+
 @media (max-width: 680px) {
   nav { padding: 0.6rem 1rem; }
   .nav-logo img { height: 46px; }
@@ -146,6 +174,8 @@ footer a { color: var(--text-muted); }
   .ficha-k { padding-bottom: 0.15rem !important; }
   .ficha-row > div { font-size: 14px; padding: 0.6rem 0.9rem; }
   .isa-logo-h { height: 36px; }
+  .rb-grid { grid-template-columns: 1fr; }
+  .analisis { padding: 1rem 1rem; }
 }
 </style>
 </head>
@@ -184,6 +214,80 @@ footer a { color: var(--text-muted); }
     <p>Por sus topes bajos, muchas prestaciones quedan con poca cobertura. Suele pedir más antecedentes antes de cubrir una hospitalización, es la segunda Isapre con más reclamos según la Superintendencia de Salud, y hay varios especialistas que no atienden con la Isapre. Si buscas pagar poco para estar en una Isapre es una opción, pero en segmentos altos conviene mirar otras.</p>
   </div>
   <p class="cmp-nota">La información es referencial y corresponde a la oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan, y se confirman al momento de cotizar. Tasa de reclamos: Superintendencia de Salud, segundo trimestre de 2025.</p>
+
+  <h2>¿Qué dicen los datos de la Superintendencia sobre Nueva Masvida?</h2>
+  <p>La Superintendencia de Salud publica cada trimestre indicadores de todas las Isapres abiertas en su plataforma Radiografía de Isapres. Elegimos cuatro que sirven para decidir: los reclamos, las licencias médicas rechazadas, cuánta gente se va por decisión propia y cuánto de lo que recibe cada Isapre vuelve a sus afiliados en bonificaciones. En cada gráfico Nueva Masvida aparece destacada, y las Isapres están ordenadas de mejor a peor resultado para el afiliado.</p>
+
+  <div class="rb-grid">
+    <figure class="rb" aria-label="Reclamos por Isapre, Nueva Masvida destacada">
+      <figcaption class="rb-cap"><strong>Reclamos</strong><span>Reclamos recibidos por la Superintendencia por cada 1.000 cotizantes, segundo trimestre de 2025</span></figcaption>
+      <div class="rb-rows">
+        <div class="rb-row" title="Vida Tres: 8,5 reclamos por cada 1.000 cotizantes"><span class="rb-name">Vida Tres</span><span class="rb-track"><span class="rb-bar" style="width:53.1%"></span></span><span class="rb-val">8,5</span></div>
+        <div class="rb-row" title="Esencial: 10,0 reclamos por cada 1.000 cotizantes"><span class="rb-name">Esencial</span><span class="rb-track"><span class="rb-bar" style="width:62.5%"></span></span><span class="rb-val">10,0</span></div>
+        <div class="rb-row" title="Banmédica: 10,4 reclamos por cada 1.000 cotizantes"><span class="rb-name">Banmédica</span><span class="rb-track"><span class="rb-bar" style="width:65.0%"></span></span><span class="rb-val">10,4</span></div>
+        <div class="rb-row" title="Colmena: 10,7 reclamos por cada 1.000 cotizantes"><span class="rb-name">Colmena</span><span class="rb-track"><span class="rb-bar" style="width:66.9%"></span></span><span class="rb-val">10,7</span></div>
+        <div class="rb-row" title="Consalud: 11,3 reclamos por cada 1.000 cotizantes"><span class="rb-name">Consalud</span><span class="rb-track"><span class="rb-bar" style="width:70.6%"></span></span><span class="rb-val">11,3</span></div>
+        <div class="rb-row sel" title="Nueva Masvida: 12,5 reclamos por cada 1.000 cotizantes"><span class="rb-name">Nueva Masvida</span><span class="rb-track"><span class="rb-bar" style="width:78.1%"></span></span><span class="rb-val">12,5</span></div>
+        <div class="rb-row" title="Cruz Blanca: 14,6 reclamos por cada 1.000 cotizantes"><span class="rb-name">Cruz Blanca</span><span class="rb-track"><span class="rb-bar" style="width:91.3%"></span></span><span class="rb-val">14,6</span></div>
+      </div>
+    </figure>
+    <figure class="rb" aria-label="Licencias médicas rechazadas por Isapre, Nueva Masvida destacada">
+      <figcaption class="rb-cap"><strong>Licencias médicas rechazadas</strong><span>Porcentaje de licencias médicas curativas rechazadas, segundo trimestre de 2025</span></figcaption>
+      <div class="rb-rows">
+        <div class="rb-row" title="Esencial: 5% de licencias médicas rechazadas"><span class="rb-name">Esencial</span><span class="rb-track"><span class="rb-bar" style="width:12.5%"></span></span><span class="rb-val">5%</span></div>
+        <div class="rb-row" title="Vida Tres: 15% de licencias médicas rechazadas"><span class="rb-name">Vida Tres</span><span class="rb-track"><span class="rb-bar" style="width:37.5%"></span></span><span class="rb-val">15%</span></div>
+        <div class="rb-row" title="Banmédica: 16% de licencias médicas rechazadas"><span class="rb-name">Banmédica</span><span class="rb-track"><span class="rb-bar" style="width:40.0%"></span></span><span class="rb-val">16%</span></div>
+        <div class="rb-row" title="Consalud: 19% de licencias médicas rechazadas"><span class="rb-name">Consalud</span><span class="rb-track"><span class="rb-bar" style="width:47.5%"></span></span><span class="rb-val">19%</span></div>
+        <div class="rb-row" title="Colmena: 21% de licencias médicas rechazadas"><span class="rb-name">Colmena</span><span class="rb-track"><span class="rb-bar" style="width:52.5%"></span></span><span class="rb-val">21%</span></div>
+        <div class="rb-row sel" title="Nueva Masvida: 24% de licencias médicas rechazadas"><span class="rb-name">Nueva Masvida</span><span class="rb-track"><span class="rb-bar" style="width:60.0%"></span></span><span class="rb-val">24%</span></div>
+        <div class="rb-row" title="Cruz Blanca: 34% de licencias médicas rechazadas"><span class="rb-name">Cruz Blanca</span><span class="rb-track"><span class="rb-bar" style="width:85.0%"></span></span><span class="rb-val">34%</span></div>
+      </div>
+    </figure>
+    <figure class="rb" aria-label="Desafiliaciones voluntarias por Isapre, Nueva Masvida destacada">
+      <figcaption class="rb-cap"><strong>Desafiliaciones voluntarias</strong><span>Cotizantes que dejaron la Isapre por decisión propia, por cada 1.000 cotizantes, segundo trimestre de 2025</span></figcaption>
+      <div class="rb-rows">
+        <div class="rb-row" title="Vida Tres: 5,4 desafiliaciones voluntarias por cada 1.000 cotizantes"><span class="rb-name">Vida Tres</span><span class="rb-track"><span class="rb-bar" style="width:45.0%"></span></span><span class="rb-val">5,4</span></div>
+        <div class="rb-row" title="Esencial: 5,7 desafiliaciones voluntarias por cada 1.000 cotizantes"><span class="rb-name">Esencial</span><span class="rb-track"><span class="rb-bar" style="width:47.5%"></span></span><span class="rb-val">5,7</span></div>
+        <div class="rb-row" title="Banmédica: 8,8 desafiliaciones voluntarias por cada 1.000 cotizantes"><span class="rb-name">Banmédica</span><span class="rb-track"><span class="rb-bar" style="width:73.3%"></span></span><span class="rb-val">8,8</span></div>
+        <div class="rb-row" title="Colmena: 9,5 desafiliaciones voluntarias por cada 1.000 cotizantes"><span class="rb-name">Colmena</span><span class="rb-track"><span class="rb-bar" style="width:79.2%"></span></span><span class="rb-val">9,5</span></div>
+        <div class="rb-row" title="Consalud: 10,3 desafiliaciones voluntarias por cada 1.000 cotizantes"><span class="rb-name">Consalud</span><span class="rb-track"><span class="rb-bar" style="width:85.8%"></span></span><span class="rb-val">10,3</span></div>
+        <div class="rb-row" title="Cruz Blanca: 10,5 desafiliaciones voluntarias por cada 1.000 cotizantes"><span class="rb-name">Cruz Blanca</span><span class="rb-track"><span class="rb-bar" style="width:87.5%"></span></span><span class="rb-val">10,5</span></div>
+        <div class="rb-row sel" title="Nueva Masvida: 10,9 desafiliaciones voluntarias por cada 1.000 cotizantes"><span class="rb-name">Nueva Masvida</span><span class="rb-track"><span class="rb-bar" style="width:90.8%"></span></span><span class="rb-val">10,9</span></div>
+      </div>
+    </figure>
+    <figure class="rb" aria-label="Bonificación por cada $1.000 de ingreso por Isapre, Nueva Masvida destacada">
+      <figcaption class="rb-cap"><strong>Bonificación por cada $1.000 de ingreso</strong><span>Lo que la Isapre destinó a bonificar prestaciones y licencias médicas por cada $1.000 que recibió, enero a junio de 2025</span></figcaption>
+      <div class="rb-rows">
+        <div class="rb-row" title="Banmédica: $950 en bonificaciones por cada $1.000 de ingreso"><span class="rb-name">Banmédica</span><span class="rb-track"><span class="rb-bar" style="width:95.0%"></span></span><span class="rb-val">$950</span></div>
+        <div class="rb-row" title="Vida Tres: $889 en bonificaciones por cada $1.000 de ingreso"><span class="rb-name">Vida Tres</span><span class="rb-track"><span class="rb-bar" style="width:88.9%"></span></span><span class="rb-val">$889</span></div>
+        <div class="rb-row" title="Cruz Blanca: $884 en bonificaciones por cada $1.000 de ingreso"><span class="rb-name">Cruz Blanca</span><span class="rb-track"><span class="rb-bar" style="width:88.4%"></span></span><span class="rb-val">$884</span></div>
+        <div class="rb-row" title="Colmena: $878 en bonificaciones por cada $1.000 de ingreso"><span class="rb-name">Colmena</span><span class="rb-track"><span class="rb-bar" style="width:87.8%"></span></span><span class="rb-val">$878</span></div>
+        <div class="rb-row" title="Consalud: $876 en bonificaciones por cada $1.000 de ingreso"><span class="rb-name">Consalud</span><span class="rb-track"><span class="rb-bar" style="width:87.6%"></span></span><span class="rb-val">$876</span></div>
+        <div class="rb-row" title="Esencial: $857 en bonificaciones por cada $1.000 de ingreso"><span class="rb-name">Esencial</span><span class="rb-track"><span class="rb-bar" style="width:85.7%"></span></span><span class="rb-val">$857</span></div>
+        <div class="rb-row sel" title="Nueva Masvida: $788 en bonificaciones por cada $1.000 de ingreso"><span class="rb-name">Nueva Masvida</span><span class="rb-track"><span class="rb-bar" style="width:78.8%"></span></span><span class="rb-val">$788</span></div>
+      </div>
+    </figure>
+  </div>
+  <p class="rb-fuente">Fuente: Superintendencia de Salud, Radiografía de Isapres.</p>
+  <details class="rb-tabla">
+    <summary>Ver todos los datos en tabla</summary>
+    <div class="rb-scroll">
+      <table>
+        <thead><tr><th>Isapre</th><th>Reclamos por 1.000 cotizantes</th><th>Licencias rechazadas</th><th>Desafiliaciones por 1.000 cotizantes</th><th>Bonificación por $1.000</th></tr></thead>
+        <tbody>
+            <tr><td>Banmédica</td><td>10,4</td><td>16%</td><td>8,8</td><td>$950</td></tr>
+            <tr><td>Colmena</td><td>10,7</td><td>21%</td><td>9,5</td><td>$878</td></tr>
+            <tr><td>Consalud</td><td>11,3</td><td>19%</td><td>10,3</td><td>$876</td></tr>
+            <tr><td>Cruz Blanca</td><td>14,6</td><td>34%</td><td>10,5</td><td>$884</td></tr>
+            <tr><td>Esencial</td><td>10,0</td><td>5%</td><td>5,7</td><td>$857</td></tr>
+            <tr class="sel"><td>Nueva Masvida</td><td>12,5</td><td>24%</td><td>10,9</td><td>$788</td></tr>
+            <tr><td>Vida Tres</td><td>8,5</td><td>15%</td><td>5,4</td><td>$889</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="analisis"><p><strong>Nuestro análisis:</strong> Los datos de la Superintendencia coinciden con lo que vemos en las asesorías. Nueva Masvida es la Isapre que menos destina a bonificar a sus afiliados, $788 de cada $1.000, y la que tiene más desafiliaciones voluntarias (10,9 por cada 1.000 cotizantes). Además está penúltima en reclamos (12,5) y en licencias médicas rechazadas (24%). Es coherente con planes muy accesibles pero con topes bajos. Si buscas pagar poco puede servirte, pero si esperas usar mucho tu plan, revisa bien antes de contratar.</p></div>
 
   <div class="cierre">
     <h2>¿Te conviene Nueva Masvida?</h2>
