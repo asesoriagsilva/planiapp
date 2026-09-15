@@ -16,7 +16,8 @@
   var BEN = {
     D: [5.5, 'Es de su mismo holding'], U: [2.5, 'Tiene copago de urgencia'], UA: [1, 'Tiene copago de urgencia en algunos planes'],
     PR: [1, 'Tiene convenio preferente'], G: [1, 'Está en su red GES y CAEC'],
-    SP: [-4, 'No tiene convenio preferente'], SU: [0, 'No tiene copago de urgencia']
+    SP: [-4, 'No tiene convenio preferente'], SU: [0, 'No tiene copago de urgencia'],
+    SC: [1.5, 'Cubre procedimientos sin código Fonasa, muy usados en clínicas como esta']
   };
   var TODAS_PR = { banmedica: ['PR'], 'vida-tres': ['PR'], colmena: ['PR'], consalud: ['PR'], 'cruz-blanca': ['PR'], esencial: ['PR'], 'nueva-masvida': ['PR'] };
   function stgo(extra) { var o = {}; CLAVES.forEach(function (k) { o[k] = extra[k] || TODAS_PR[k]; }); return o; }
@@ -24,15 +25,15 @@
   var CLINICAS = [
     { id: 'redsalud-stgo', n: 'RedSalud Santiago o Providencia', z: 's', i: stgo({ consalud: ['D', 'U', 'PR', 'G'], 'cruz-blanca': ['SP'] }) },
     { id: 'redsalud-vitacura', n: 'RedSalud Vitacura', z: 's', i: stgo({ consalud: ['D', 'U', 'PR', 'G'], colmena: ['U', 'PR'] }) },
-    { id: 'santa-maria', n: 'Clínica Santa María', z: 's', i: stgo({ banmedica: ['D', 'U', 'PR', 'G'], 'vida-tres': ['D', 'U', 'PR', 'G'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], esencial: ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
+    { id: 'santa-maria', n: 'Clínica Santa María', z: 's', i: stgo({ banmedica: ['D', 'U', 'PR', 'G'], 'vida-tres': ['D', 'U', 'PR', 'G', 'SC'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], esencial: ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
     { id: 'davila', n: 'Clínica Dávila o Dávila Vespucio', z: 's', i: stgo({ banmedica: ['D', 'U', 'PR', 'G'], 'vida-tres': ['D', 'U', 'PR', 'G'], consalud: ['U', 'PR'], colmena: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
-    { id: 'alemana', n: 'Clínica Alemana', z: 's', i: stgo({ esencial: ['D', 'U', 'PR', 'G'], 'nueva-masvida': ['SP'] }), x: { 'nueva-masvida': 'Solo tiene libre elección, con topes muy bajos' } },
-    { id: 'las-condes', n: 'Clínica Las Condes', z: 's', i: stgo({ consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], 'nueva-masvida': ['U', 'PR'], banmedica: ['UA', 'PR'], 'vida-tres': ['UA', 'PR'], esencial: ['SP'] }) },
+    { id: 'alemana', n: 'Clínica Alemana', z: 's', i: stgo({ esencial: ['D', 'U', 'PR', 'G'], 'vida-tres': ['PR', 'SC'], 'nueva-masvida': ['SP'] }), x: { 'nueva-masvida': 'Solo tiene libre elección, con topes muy bajos' } },
+    { id: 'las-condes', n: 'Clínica Las Condes', z: 's', i: stgo({ consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], 'nueva-masvida': ['U', 'PR'], banmedica: ['UA', 'PR'], 'vida-tres': ['UA', 'PR', 'SC'], esencial: ['SP'] }) },
     { id: 'uc-christus', n: 'UC Christus', z: 's', i: stgo({ colmena: ['U', 'PR', 'G'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], 'nueva-masvida': ['U', 'PR'], esencial: ['PR', 'G'] }) },
     { id: 'bupa-stgo', n: 'Clínica Bupa Santiago', z: 's', i: stgo({ 'cruz-blanca': ['D', 'U', 'PR', 'G'], 'nueva-masvida': ['U', 'PR'], banmedica: ['SP'], 'vida-tres': ['SP'] }) },
     { id: 'indisa', n: 'Clínica Indisa', z: 's', i: stgo({ colmena: ['U', 'PR'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], esencial: ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
     { id: 'meds', n: 'Clínica Meds', z: 's', i: stgo({ colmena: ['U', 'PR'], consalud: ['U', 'PR'] }) },
-    { id: 'uandes', n: 'Clínica Universidad de los Andes', z: 's', i: stgo({ consalud: ['U', 'PR'], 'vida-tres': ['UA', 'PR', 'G'], banmedica: ['UA', 'PR'] }) },
+    { id: 'uandes', n: 'Clínica Universidad de los Andes', z: 's', i: stgo({ consalud: ['U', 'PR'], 'vida-tres': ['UA', 'PR', 'G', 'SC'], banmedica: ['UA', 'PR'] }) },
 
     { id: 'san-jose-arica', n: 'Clínica San José', c: 'Arica', z: 'r', i: { consalud: ['U', 'PR'], colmena: ['U'] } },
     { id: 'redsalud-iquique', n: 'RedSalud Iquique', c: 'Iquique', z: 'r', i: { consalud: ['D', 'U', 'PR'] } },
@@ -161,6 +162,9 @@
         Object.keys(tabla).forEach(function (k) { sumar(k, tabla[k]); });
       });
     });
+    // En Santa María, Vida Tres va siempre antes que Banmédica: mismo holding, precio parecido y cubre
+    // procedimientos sin código Fonasa (Banmédica es la masiva y Vida Tres la de nicho)
+    if (c && c.id === 'santa-maria' && pts['vida-tres'] <= pts.banmedica) pts['vida-tres'] = pts.banmedica + 0.5;
     // En empate, primero la Isapre que tiene algo en la clinica elegida
     var enClinica = function (k) { return c && c.i[k] ? c.i[k].reduce(function (s, cod) { return s + BEN[cod][0]; }, 0) : -1; };
     var orden = CLAVES.slice().sort(function (a, b) { return (pts[b] - pts[a]) || (enClinica(b) - enClinica(a)); });
@@ -205,7 +209,11 @@
     '.qz-main-h{display:flex;align-items:center;gap:.9rem;margin-bottom:.7rem;}' +
     '.qz-main-h img{flex-shrink:0;}' +
     '.qz-main-t{font-family:"Inter",sans-serif;font-size:22px;font-weight:900;color:var(--qz-pd);line-height:1.15;}' +
-    '.qz-main-s{font-size:13px;color:var(--qz-m);}' +
+    '.qz-main.dos{border-color:var(--qz-b);background:#fff;margin-top:.8rem;}' +
+    '.qz-rank{font-size:11.5px;font-weight:700;color:#0F6E56;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.1rem;}' +
+    '.qz-main.dos .qz-rank{color:var(--qz-m);}' +
+    '.qz-main.dos .qz-main-t{font-size:19px;}' +
+    '.qz-why li.info::before{content:"i";background:var(--purple-mid,#7F77DD);font-style:italic;font-family:Georgia,serif;}' +
     '.qz-en{font-size:13px;font-weight:700;color:var(--qz-pd);text-transform:uppercase;letter-spacing:.04em;margin:.4rem 0 .15rem;}' +
     '.qz-why{list-style:none;margin:0 0 .7rem;padding:0;}' +
     '.qz-why li{position:relative;padding:.3rem 0 .3rem 1.6rem;font-size:14.5px;line-height:1.5;}' +
@@ -303,24 +311,24 @@
     function resultado() {
       var c = calcular(resp), a = c.orden[0], b = c.orden[1];
       var cl = clinica(resp.clinica), nomCl = cl ? nombreClinica(cl) : '';
-      var benA = beneficios(a, resp.clinica), benB = beneficios(b, resp.clinica);
-      var otras = c.raz[a].slice(0, benA.length ? 2 : 3);
-      var bloqueA = '';
-      if (benA.length) {
-        bloqueA += '<div class="qz-en">En ' + esc(nomCl) + '</div><ul class="qz-why">' +
-          benA.map(function (x) { return '<li' + (x.bueno ? '' : ' class="mal"') + '>' + x.texto + '</li>'; }).join('') + '</ul>';
-        if (otras.length) bloqueA += '<div class="qz-en">Además</div>';
-      }
-      if (otras.length) bloqueA += '<ul class="qz-why">' + otras.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>';
-      if (!benA.length && !otras.length) bloqueA = '<ul class="qz-why"><li>Es la que mejor equilibra lo que respondiste</li></ul>';
 
-      var buenosB = benB.filter(function (x) { return x.bueno && x.cod !== 'PR'; }).map(function (x) { return minus(x.texto); });
-      if (!buenosB.length) buenosB = benB.filter(function (x) { return x.bueno; }).map(function (x) { return minus(x.texto); });
-      var altTxt = buenosB.length ? ' En ' + esc(nomCl) + ': ' + lista(buenosB) + '.' : (c.raz[b][0] ? ' ' + c.raz[b][0] + '.' : '');
-      var sinOtra = cl && cl.z === 'r' && !cl.i[b];
-      var alt = sinOtra
-        ? '<p class="qz-alt">En ' + esc(nomCl) + ' no tenemos registrados beneficios de otras Isapres. En la asesoría lo revisamos con tu caso.</p>'
-        : '<p class="qz-alt">También te puede servir: <a href="/isapre-' + b + '">' + nombre(b) + '</a>.' + altTxt + '</p>';
+      function tarjeta(k, n) {
+        var ben = beneficios(k, resp.clinica), otras = c.raz[k].slice(0, ben.length ? 2 : 3);
+        var li = function (x) { return '<li' + (x.clase ? ' class="' + x.clase + '"' : '') + '>' + x.texto + '</li>'; };
+        var h = '<div class="qz-main' + (n === 2 ? ' dos' : '') + '"><div class="qz-main-h">' + logo(k, n === 1 ? 2400 : 1900) + '<div>' +
+          '<div class="qz-rank">' + (n === 1 ? 'Opción 1 · La que mejor calza' : 'Opción 2') + '</div>' +
+          '<div class="qz-main-t">' + nombre(k) + '</div></div></div>';
+        if (cl) {
+          var items = ben.length
+            ? ben.map(function (x) { return { texto: x.texto, clase: x.bueno ? '' : 'mal' }; })
+            : [{ texto: 'Sin copago de urgencia, pero puede tener cobertura preferente ambulatoria según el plan', clase: 'info' }];
+          h += '<div class="qz-en">En ' + esc(nomCl) + '</div><ul class="qz-why">' + items.map(li).join('') + '</ul>';
+        }
+        if (otras.length) h += (cl ? '<div class="qz-en">Además</div>' : '') + '<ul class="qz-why">' + otras.map(function (t) { return li({ texto: t }); }).join('') + '</ul>';
+        if (!cl && !otras.length) h += '<ul class="qz-why"><li>Calza con lo que respondiste</li></ul>';
+        return h + '<p class="qz-ojo"><strong>Ojo:</strong> ' + minus(ojo(k, c.zona)) + '</p>' +
+          '<a class="qz-link" href="/isapre-' + k + '">Ver la ficha completa de ' + nombre(k) + ' →</a></div>';
+      }
 
       var extra = '';
       if (cl) {
@@ -332,14 +340,10 @@
           (duenos.length > 1 ? ': son' : ': es') + ' de su mismo holding.</p>';
       }
 
-      return '<div class="qz-card"><span class="qz-kicker">Tu resultado</span>' +
-        '<div class="qz-main"><div class="qz-main-h">' + logo(a, 2400) + '<div><div class="qz-main-t">' + nombre(a) + '</div>' +
-        '<div class="qz-main-s">Es la que mejor calza con tu perfil</div></div></div>' + bloqueA +
-        '<p class="qz-ojo"><strong>Ojo:</strong> ' + minus(ojo(a, c.zona)) + '</p>' +
-        '<a class="qz-link" href="/isapre-' + a + '">Ver la ficha completa de ' + nombre(a) + ' →</a></div>' +
-        alt + extra +
+      return '<div class="qz-card"><span class="qz-kicker">Tus dos mejores opciones</span>' +
+        tarjeta(a, 1) + tarjeta(b, 2) + extra +
         '<div class="qz-cta"><div class="qz-cta-t">¿Quieres que te armemos el plan?</div>' +
-        '<p>Con lo que respondiste, tu ejecutivo prepara propuestas de ' + nombre(a) + ' y de otras opciones que calcen contigo' + (cl ? ' en ' + esc(cl.n) : '') + '. Gratis y sin compromiso.</p>' +
+        '<p>Con lo que respondiste, tu ejecutivo prepara propuestas de ' + nombre(a) + ' y ' + nombre(b) + (cl ? ' para atenderte en ' + esc(cl.n) : '') + ', y te dice cuál te conviene más. Gratis y sin compromiso.</p>' +
         '<button type="button" class="qz-btn qz-go">Quiero mi asesoría gratis →</button></div>' +
         '<button type="button" class="qz-reset">Volver a hacer el test</button>' +
         '<p class="qz-aviso">Orientación referencial según la oferta vigente a septiembre de 2026. No reemplaza una cotización: coberturas, convenios y precios dependen de cada plan, de tu edad y de tu declaración de salud.</p></div>';
@@ -350,8 +354,7 @@
       var cobs = (resp.prioridad || []).map(function (v) {
         return PREGUNTAS[1].op.filter(function (o) { return o.v === v; })[0].cob;
       }).filter(Boolean);
-      var sugeridas = (cl && cl.z === 'r' && !cl.i[b]) ? nombre(a) : nombre(a) + ', ' + nombre(b);
-      var datos = { cob: cobs.join('|'), cargas: resp.cargas || '', sug: sugeridas + (cl ? ' · Clínica: ' + nombreClinica(cl) : '') };
+      var datos = { cob: cobs.join('|'), cargas: resp.cargas || '', sug: nombre(a) + ', ' + nombre(b) + (cl ? ' · Clínica: ' + nombreClinica(cl) : '') };
       ga('quiz_cta', { resultado: nombre(a), clinica: cl ? cl.n : 'Me da lo mismo', ubicacion: ubicacion });
       var destino = document.getElementById('opciones');
       if (destino && typeof window.prefillDesdeTest === 'function') {
