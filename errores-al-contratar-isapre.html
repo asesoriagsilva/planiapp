@@ -45,6 +45,16 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .nav-cta { background: var(--purple); color: #fff; text-decoration: none; border-radius: 24px; padding: 0.55rem 1.2rem; font-size: 14px; font-weight: 500; white-space: nowrap; }
 .nav-cta:hover { background: var(--purple-deep); }
 
+/* Carrusel de logos de Isapres en la barra superior */
+.nav-carrusel { flex: 1; min-width: 0; overflow: hidden; margin: 0 1.5rem; padding: 0 1rem; border-left: 1px solid rgba(83,74,183,0.15); border-right: 1px solid rgba(83,74,183,0.15); }
+.nav-tk { display: inline-flex; align-items: center; animation: ticker 24s linear infinite; }
+.nav-tk img { flex-shrink: 0; margin-right: 2rem; opacity: 0.85; }
+.nav-carrusel:hover .nav-tk { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .nav-tk { animation: none; } }
+@media (max-width: 680px) { .nav-carrusel { margin: 0 0.6rem; padding: 0 0.6rem; } .nav-tk img { margin-right: 1.25rem; } }
+@media (max-width: 420px) { .nav-cta-extra { display: none; } }
+
 .art { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
 .miga { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
 .miga a { color: var(--text-muted); text-decoration: none; }
@@ -130,7 +140,25 @@ footer a { color: var(--text-muted); }
 
 <nav>
   <a class="nav-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp"/></a>
-  <a class="nav-cta" href="/#opciones">Cotizar gratis</a>
+  <div class="nav-carrusel" aria-hidden="true">
+    <div class="nav-tk">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+    </div>
+  </div>
+  <a class="nav-cta" href="/#opciones">Cotizar<span class="nav-cta-extra"> gratis</span></a>
 </nav>
 
 <article class="art">
@@ -203,7 +231,7 @@ footer a { color: var(--text-muted); }
     </div>
   </div>
 
-  <div class="relacionado">También te puede interesar:<br><a href="/fonasa-o-isapre">¿Fonasa o Isapre? Qué conviene más →</a><br><a href="/tips-fonasa-a-isapre">De Fonasa a Isapre: tips para elegir un buen plan →</a></div>
+  <div class="relacionado">También te puede interesar:<br><a href="/mejor-isapre">¿Cuál es la mejor Isapre en 2026? Tabla comparativa →</a><br><a href="/fonasa-o-isapre">¿Fonasa o Isapre? Qué conviene más →</a><br><a href="/tips-fonasa-a-isapre">De Fonasa a Isapre: tips para elegir un buen plan →</a></div>
 
   <div class="cierre">
     <h2>Evita estos errores con una asesoría gratis</h2>

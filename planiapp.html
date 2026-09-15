@@ -642,25 +642,26 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <!-- FONASA O ISAPRE (enlace al articulo) -->
   <style>
   .fvi-wrap { max-width:1100px; margin:3rem auto 0; padding:0 1.5rem; }
-  .fvi { display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; background:var(--white); border:1px solid var(--border); border-radius:18px; padding:1.5rem 1.75rem; }
+  .fvi { display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; background:var(--white); border:1px solid var(--border); border-radius:18px; padding:1.5rem 1.75rem; text-decoration:none; color:inherit; transition:border-color .2s, box-shadow .2s, transform .2s; }
+  .fvi:hover { border-color:var(--purple-mid); box-shadow:0 12px 26px -16px rgba(38,33,92,.45); transform:translateY(-2px); }
+  .fvi:focus-visible { outline:3px solid var(--purple-mid); outline-offset:3px; }
+  .fvi-flecha { display:inline-block; color:var(--purple); transition:transform .2s; }
+  .fvi:hover .fvi-flecha { transform:translateX(4px); }
   .fvi-t { font-family:'Inter',sans-serif; font-size:24px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.02em; line-height:1.2; margin-bottom:0.3rem; }
   .fvi-p { font-size:15px; color:var(--text-muted); line-height:1.55; max-width:560px; }
-  .fvi-btn { background:var(--purple); color:#fff; text-decoration:none; border-radius:24px; padding:0.8rem 1.5rem; font-size:15px; font-weight:500; white-space:nowrap; transition:background .2s; }
-  .fvi-btn:hover { background:var(--purple-deep); }
   .fvi-img { display:block; width:150px; height:94px; object-fit:cover; border-radius:12px; flex-shrink:0; background:var(--purple-light); }
   .fvi > div { flex:1; min-width:220px; }
   @media (max-width:680px){ .fvi-img{ width:100%; height:auto; aspect-ratio:16 / 10; } }
-  @media (max-width:680px){ .fvi-wrap{ margin-top:2rem; padding:0 1rem; } .fvi{ padding:1.25rem 1.1rem; } .fvi-t{ font-size:20px; } .fvi-btn{ width:100%; text-align:center; } }
+  @media (max-width:680px){ .fvi-wrap{ margin-top:2rem; padding:0 1rem; } .fvi{ padding:1.25rem 1.1rem; } .fvi-t{ font-size:20px; } }
   </style>
   <div class="fvi-wrap">
-    <div class="fvi">
+    <a class="fvi" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre'})">
       <img class="fvi-img" src="img/fonasa-o-isapre-card.webp" alt="Mujer revisando un documento en la mesa de su cocina" width="480" height="300" loading="lazy" decoding="async">
       <div>
-        <div class="fvi-t">¿Fonasa o Isapre? ¿Qué conviene más?</div>
+        <div class="fvi-t">¿Fonasa o Isapre? ¿Qué conviene más? <span class="fvi-flecha" aria-hidden="true">→</span></div>
         <div class="fvi-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</div>
       </div>
-      <a class="fvi-btn" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre'})">Leer la comparación →</a>
-    </div>
+    </a>
   </div>
 
   <!-- EL ERROR MÁS COMÚN -->
@@ -691,26 +692,24 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   }
   </style>
   <div class="fvi-wrap" id="errores">
-    <div class="fvi">
+    <a class="fvi" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores'})">
       <img class="fvi-img" src="img/errores-al-contratar-isapre-card.webp" alt="Hombre revisando un documento en la mesa de su cocina" width="480" height="300" loading="lazy" decoding="async">
       <div>
-        <div class="fvi-t">Los 8 errores más comunes al contratar una Isapre</div>
+        <div class="fvi-t">Los 8 errores más comunes al contratar una Isapre <span class="fvi-flecha" aria-hidden="true">→</span></div>
         <div class="fvi-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</div>
       </div>
-      <a class="fvi-btn" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores'})">Ver los 8 errores →</a>
-    </div>
+    </a>
   </div>
 
   <!-- TIPS (enlace al articulo) -->
   <div class="fvi-wrap" id="tips">
-    <div class="fvi">
+    <a class="fvi" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips'})">
       <img class="fvi-img" src="img/tips-fonasa-a-isapre-card.webp" alt="Familia jugando en el sofá de su casa" width="480" height="300" loading="lazy" decoding="async">
       <div>
-        <div class="fvi-t">De Fonasa a Isapre: tips para elegir un buen plan</div>
+        <div class="fvi-t">De Fonasa a Isapre: tips para elegir un buen plan <span class="fvi-flecha" aria-hidden="true">→</span></div>
         <div class="fvi-p">Seis consejos para contratar bien y tener una buena experiencia con tu Isapre.</div>
       </div>
-      <a class="fvi-btn" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips'})">Ver los tips →</a>
-    </div>
+    </a>
   </div>
 
   <!-- CÓMO ES CADA ISAPRE -->
@@ -779,9 +778,11 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     <p class="isa-aviso">La información de cada Isapre es referencial y corresponde a la oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan, y se confirman al momento de cotizar.</p>
   </div>
 
-  <!-- TABLA COMPARATIVA -->
+  <!-- TABLA COMPARATIVA (version corta; la completa esta en /mejor-isapre) -->
   <style>
   .cmp-wrap { max-width:1100px; margin:3.5rem auto 0; padding:0 1.5rem; }
+  .cmp-leyenda { display:flex; flex-wrap:wrap; gap:0.4rem 1rem; font-size:12.5px; color:var(--text-muted); margin:0 0 0.7rem; }
+  .cmp-leyenda span { display:inline-flex; align-items:center; gap:0.35rem; }
   .cmp-hint { display:none; font-size:12px; color:var(--text-muted); text-align:right; margin:0 0 0.4rem; }
   .cmp-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--border); border-radius:16px; background:var(--white); }
   .cmp-t { border-collapse:separate; border-spacing:0; width:100%; min-width:1000px; font-size:13px; line-height:1.4; color:var(--text); }
@@ -792,167 +793,106 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .cmp-t th[scope="row"] { position:sticky; left:0; z-index:1; background:#FAFAFD; font-weight:600; color:var(--purple-dark); width:150px; min-width:150px; border-right:1px solid var(--border); }
   .cmp-t thead th:first-child { position:sticky; left:0; z-index:2; border-right:1px solid var(--border); }
   .cmp-t tbody tr:last-child th, .cmp-t tbody tr:last-child td { border-bottom:none; }
-  .cmp-k { font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; }
-  .cmp-pend { color:var(--text-muted); font-style:italic; }
+  .cmp-t td.bien { background:#E6F5EE; color:#0B4A38; }
+  .cmp-t td.mal { background:#FBECEC; color:#7A2E33; }
+  .cmp-ico { display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border-radius:50%; font-size:10px; font-weight:700; color:#fff; line-height:1; vertical-align:-3px; margin-right:0.3rem; flex-shrink:0; }
+  .cmp-ico.bien { background:#1D9E75; }
+  .cmp-ico.mal { background:#C2565B; }
+  .cmp-kh { font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; }
   @media (max-width:680px){
-    .cmp-wrap { margin-top:2.5rem; padding:0 1rem; }
     .cmp-hint { display:block; }
     .cmp-t { font-size:12.5px; min-width:900px; }
     .cmp-t th[scope="row"] { width:112px; min-width:112px; }
   }
+  .cmp-mas { text-align:center; margin:1.1rem 0 0; }
+  .cmp-btn { display:inline-block; background:var(--purple); color:#fff; text-decoration:none; border-radius:24px; padding:0.8rem 1.5rem; font-size:15px; font-weight:500; transition:background .2s; }
+  .cmp-btn:hover { background:var(--purple-deep); }
+  @media (max-width:680px){ .cmp-wrap { margin-top:2.5rem; padding:0 1rem; } .cmp-btn { display:block; } }
   </style>
   <div class="cmp-wrap" id="tabla-comparativa">
     <h2 class="isa-title">Tabla comparativa definitiva de Isapres 2026</h2>
-    <p class="isa-sub">Actualizada a septiembre de 2026. Las principales coberturas de las 7 Isapres abiertas, lado a lado.</p>
+    <p class="isa-sub">Actualizada a septiembre de 2026. Las coberturas que más pesan al elegir, lado a lado: en verde, donde cada Isapre cubre bien, y en rojo, donde se queda corta.</p>
+    <div class="cmp-leyenda"><span><span class="cmp-ico bien" aria-hidden="true">✓</span>Cubre bien</span><span><span class="cmp-ico mal" aria-hidden="true">!</span>Cubre poco o con límites</span><span>Sin color: intermedio o dato informativo</span></div>
     <p class="cmp-hint">Desliza la tabla para ver todas las Isapres →</p>
     <div class="cmp-scroll">
       <table class="cmp-t" aria-label="Tabla comparativa de Isapres 2026">
         <thead>
         <tr>
-          <th scope="col" class="cmp-k">Cobertura</th>
-          <th scope="col"><a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'tabla'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="80" height="21" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'tabla'})"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="90" height="19" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'tabla'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="72" height="24" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'tabla'})"><img src="/logos/mini/cruz-blanca.png" alt="Isapre Cruz Blanca" width="91" height="19" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'tabla'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="89" height="19" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'tabla'})"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="76" height="22" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'tabla'})"><img src="/logos/mini/vida-tres.png" alt="Isapre Vida Tres" width="94" height="18" loading="lazy" decoding="async"></a></th>
+          <th scope="col" class="cmp-kh">Cobertura</th>
+          <th scope="col"><a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'tabla_home'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="80" height="21" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'tabla_home'})"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="90" height="19" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'tabla_home'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="72" height="24" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'tabla_home'})"><img src="/logos/mini/cruz-blanca.png" alt="Isapre Cruz Blanca" width="91" height="19" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'tabla_home'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="89" height="19" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'tabla_home'})"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="76" height="22" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'tabla_home'})"><img src="/logos/mini/vida-tres.png" alt="Isapre Vida Tres" width="94" height="18" loading="lazy" decoding="async"></a></th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <th scope="row">Clínicas propias en Santiago</th>
-          <td>Santa María, Dávila y Dávila Vespucio</td>
-          <td>No tiene</td>
-          <td>RedSalud Santiago, Providencia y Vitacura</td>
-          <td>Bupa Santiago</td>
-          <td>Clínica Alemana</td>
-          <td>No tiene</td>
-          <td>Santa María, Dávila y Dávila Vespucio</td>
-        </tr>
-        <tr>
-          <th scope="row">Clínicas propias en regiones</th>
-          <td>2: Ciudad del Mar (Viña del Mar) y Biobío (Concepción)</td>
-          <td>No tiene</td>
-          <td>7 clínicas RedSalud, de Iquique a Punta Arenas</td>
-          <td>2: Bupa Antofagasta y Bupa Reñaca (Viña del Mar)</td>
-          <td>3: Alemana de Temuco, Valdivia y Osorno</td>
-          <td>No tiene</td>
-          <td>2: Ciudad del Mar (Viña del Mar) y Biobío (Concepción)</td>
-        </tr>
-        <tr>
-          <th scope="row">Sucursales</th>
-          <td>31</td>
-          <td>40</td>
-          <td>44</td>
-          <td>34</td>
-          <td>1</td>
-          <td>33</td>
-          <td>31</td>
-        </tr>
-        <tr>
-          <th scope="row">Convenio preferente</th>
-          <td>Casi todas las clínicas, salvo Hospital del Profesor y Bupa Santiago</td>
-          <td>Todas las clínicas de Santiago</td>
-          <td>Todas las clínicas del país</td>
-          <td>Santiago, salvo RedSalud Santiago y Providencia</td>
-          <td>Santiago, salvo Clínica Las Condes</td>
-          <td>Santiago, salvo Clínica Alemana</td>
-          <td>Casi todas las clínicas, salvo Hospital del Profesor y Bupa Santiago</td>
-        </tr>
-        <tr>
-          <th scope="row">Copago de urgencia en Santiago</th>
-          <td>Dávila y Santa María. En algunos planes, también Las Condes y U. de los Andes</td>
-          <td>Indisa, UC Christus, RedSalud Vitacura, Meds y Dávila</td>
-          <td>RedSalud, Dávila, Dávila Vespucio, Santa María, UC Christus, U. de los Andes, Las Condes, Indisa y Meds</td>
-          <td>Clínicas Bupa, Santa María, Dávila, Las Condes, UC Christus e Indisa</td>
-          <td>Alemana (incluida Chicureo), Indisa y Santa María</td>
-          <td>Indisa, Las Condes, Santa María, Clínicas Bupa, Dávila y UC Christus</td>
-          <td>Dávila y Santa María. En algunos planes, también Las Condes y U. de los Andes</td>
-        </tr>
-        <tr>
           <th scope="row">Copago de urgencia en regiones</th>
-          <td>No tiene</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
           <td>4 clínicas: Arica, Antofagasta, Atacama y Talca</td>
-          <td>17 clínicas, de Arica a Punta Arenas</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>17 clínicas, de Arica a Punta Arenas</td>
           <td>2 clínicas: Antofagasta y Viña del Mar</td>
-          <td>No tiene</td>
-          <td>No tiene</td>
-          <td>No tiene</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
         </tr>
         <tr>
           <th scope="row">Kinesiología</th>
           <td>Con tope. Sin tope con un seguro adicional</td>
-          <td>Tope anual muy bajo</td>
-          <td>Sin tope en prestadores preferentes</td>
-          <td>Sin bono: pagas y te reembolsa como libre elección</td>
-          <td>Sin tope</td>
-          <td>Tope anual muy bajo</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en prestadores preferentes</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin bono: pagas y te reembolsa como libre elección</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
           <td>Con tope. Sin tope con un seguro adicional</td>
         </tr>
         <tr>
           <th scope="row">Psicología</th>
           <td>Con tope anual</td>
-          <td>Sin tope anual</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope anual</td>
           <td>Con tope anual</td>
           <td>Con tope anual</td>
           <td>Con tope anual</td>
-          <td>Sin tope anual</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope anual</td>
           <td>Con tope anual</td>
         </tr>
         <tr>
           <th scope="row">Prótesis y órtesis</th>
-          <td>Sin tope</td>
-          <td>Hasta 50 UF</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 50 UF</td>
           <td>Hasta 150 UF</td>
-          <td>Tope en veces arancel, muy bajo</td>
-          <td>Sin tope, salvo algunas líneas de planes con topes altos</td>
-          <td>Hasta 10 UF</td>
-          <td>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope en veces arancel, muy bajo</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope, salvo algunas líneas de planes con topes altos</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 10 UF</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
         </tr>
         <tr>
           <th scope="row">Quimioterapia</th>
-          <td>Sin tope</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
           <td>Hasta 1.000 UF</td>
           <td>Hasta 700 UF</td>
-          <td>Sin cobertura preferente</td>
-          <td>Sin tope, salvo algunas líneas de planes con topes altos</td>
-          <td>Sin cobertura preferente</td>
-          <td>Sin tope</td>
-        </tr>
-        <tr>
-          <th scope="row">Red GES y CAEC</th>
-          <td>Principalmente Dávila y Santa María</td>
-          <td>La más amplia del sistema, incluida la Red UC</td>
-          <td>Principalmente clínicas RedSalud</td>
-          <td>Principalmente Clínicas Bupa</td>
-          <td>Principalmente Alemana y UC Christus</td>
-          <td>La que ofrece menos prestadores</td>
-          <td>Dávila, Santa María y U. de los Andes</td>
-        </tr>
-        <tr>
-          <th scope="row">Precio de entrada</th>
-          <td>Accesible, con Dávila y Dávila Vespucio</td>
-          <td>Bajo, pero con cobertura cercana al 40%</td>
-          <td>Accesible, para perfiles muy distintos</td>
-          <td>Accesible, con Bupa y Dávila</td>
-          <td>Algo más caro que el resto</td>
-          <td>Accesible, con poca diferencia de precio y más topes</td>
-          <td>Accesible, con Dávila y Dávila Vespucio</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope, salvo algunas líneas de planes con topes altos</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
         </tr>
         <tr>
           <th scope="row">Reembolsos</th>
           <td>Hasta 5 días</td>
-          <td>24 a 48 horas</td>
-          <td>48 a 72 horas</td>
-          <td>Hasta 45 días</td>
-          <td>30 días</td>
-          <td>48 a 72 horas</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>24 a 48 horas</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>48 a 72 horas</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 45 días</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>30 días</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>48 a 72 horas</td>
           <td>Hasta 5 días</td>
         </tr>
         </tbody>
       </table>
     </div>
+    <div class="cmp-mas"><a class="cmp-btn" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','tabla_completa',{origen:'home'})">Ver la tabla completa y la mejor Isapre según tu perfil →</a></div>
     <p class="isa-aviso">La información es referencial y corresponde a la oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan, y se confirman al momento de cotizar.</p>
   </div>
 
