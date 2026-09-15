@@ -44,7 +44,7 @@
         'nueva-masvida': [1.5, 'Tiene copago de urgencia en 6 clínicas de Santiago'],
         colmena: [1, 'Tiene copago de urgencia en 5 clínicas de Santiago'] },
         // En regiones cuentan las urgencias de regiones (la razon ya sale en la pregunta de zona)
-        pReg: { consalud: [2.5], colmena: [1], 'cruz-blanca': [1] } },
+        pReg: { consalud: [1.5], colmena: [1], 'cruz-blanca': [1] } },
       { v: 'kine', l: 'Kinesiología', cob: 'Kinesiología', p: {
         consalud: [3, 'Kinesiología sin tope en prestadores preferentes'], esencial: [3, 'Kinesiología sin tope'],
         colmena: [-2], 'nueva-masvida': [-2], 'cruz-blanca': [-2] } },
@@ -59,16 +59,16 @@
         colmena: [3, 'Reembolsa en 24 a 48 horas'], consalud: [2, 'Reembolsa en 48 a 72 horas'], 'nueva-masvida': [2, 'Reembolsa en 48 a 72 horas'],
         banmedica: [1, 'Reembolsa en hasta 5 días'], 'vida-tres': [1, 'Reembolsa en hasta 5 días'], 'cruz-blanca': [-3], esencial: [-2] } },
       { v: 'precio', l: 'Pagar lo menos posible', cob: 'Bajar costo del plan', p: {
-        'nueva-masvida': [2, 'Tiene planes accesibles'], colmena: [2, 'Tiene planes de entrada de bajo precio'],
-        banmedica: [1, 'Tiene planes de entrada accesibles'],
-        'cruz-blanca': [1], esencial: [-2], 'vida-tres': [-1] } }
+        banmedica: [2.5, 'Tiene el plan de entrada más barato en todas las edades'],
+        consalud: [1, 'Tiene el segundo plan de entrada más barato en todas las edades'],
+        esencial: [-2], 'vida-tres': [-1], colmena: [-0.5] } }
     ] },
     { id: 'cargas', t: '¿Tienes cargas?', op: [
       { v: 'Sin cargas', l: 'Sin cargas' }, { v: '1 carga', l: '1 carga' },
       { v: '2 cargas', l: '2 cargas' }, { v: '3 cargas', l: '3 cargas' }, { v: '4 o más cargas', l: '4 o más' }
     ] },
     { id: 'renta', t: '¿En qué rango está tu renta imponible?', sub: 'Es solo para orientarte. No la guardamos.', op: [
-      { v: 'baja', l: 'Menos de $900.000', p: { 'nueva-masvida': [2], colmena: [2], banmedica: [0.5], esencial: [-3], 'vida-tres': [-2] } },
+      { v: 'baja', l: 'Menos de $900.000', p: { banmedica: [1], esencial: [-3], 'vida-tres': [-2] } },
       { v: 'media', l: '$900.000 a $1.800.000', p: { esencial: [-1], 'vida-tres': [-0.5] } },
       { v: 'alta', l: '$1.800.000 a $3.500.000', p: { banmedica: [1], 'vida-tres': [1], esencial: [1] } },
       { v: 'tope', l: 'Más de $3.500.000', p: {
