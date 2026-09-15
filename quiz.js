@@ -17,7 +17,8 @@
     D: [5.5, 'Es de su mismo holding'], U: [2.5, 'Tiene copago de urgencia'], UA: [1, 'Tiene copago de urgencia en algunos planes'],
     PR: [1, 'Tiene convenio preferente'], G: [1, 'Está en su red GES y CAEC'],
     SP: [-4, 'No tiene convenio preferente'], SU: [0, 'No tiene copago de urgencia'],
-    SC: [1.5, 'Cubre procedimientos sin código Fonasa, muy usados en clínicas como esta']
+    SC: [1.5, 'Cubre procedimientos sin código Fonasa, muy usados en clínicas como esta'],
+    U0: [0.5, 'En algunas líneas de planes, la urgencia es a costo $0']
   };
   var TODAS_PR = { banmedica: ['PR'], 'vida-tres': ['PR'], colmena: ['PR'], consalud: ['PR'], 'cruz-blanca': ['PR'], esencial: ['PR'], 'nueva-masvida': ['PR'] };
   function stgo(extra) { var o = {}; CLAVES.forEach(function (k) { o[k] = extra[k] || TODAS_PR[k]; }); return o; }
@@ -25,24 +26,24 @@
   var CLINICAS = [
     { id: 'redsalud-stgo', n: 'RedSalud Santiago o Providencia', z: 's', i: stgo({ consalud: ['D', 'U', 'PR', 'G'], 'cruz-blanca': ['SP'] }) },
     { id: 'redsalud-vitacura', n: 'RedSalud Vitacura', z: 's', i: stgo({ consalud: ['D', 'U', 'PR', 'G'], colmena: ['U', 'PR'] }) },
-    { id: 'santa-maria', n: 'Clínica Santa María', z: 's', i: stgo({ banmedica: ['D', 'U', 'PR', 'G'], 'vida-tres': ['D', 'U', 'PR', 'G', 'SC'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], esencial: ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
-    { id: 'davila', n: 'Clínica Dávila o Dávila Vespucio', z: 's', i: stgo({ banmedica: ['D', 'U', 'PR', 'G'], 'vida-tres': ['D', 'U', 'PR', 'G'], consalud: ['U', 'PR'], colmena: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
+    { id: 'santa-maria', n: 'Clínica Santa María', z: 's', i: stgo({ banmedica: ['D', 'U', 'PR', 'G'], 'vida-tres': ['D', 'U', 'PR', 'G', 'SC'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'U0', 'PR'], esencial: ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
+    { id: 'davila', n: 'Clínica Dávila o Dávila Vespucio', z: 's', i: stgo({ banmedica: ['D', 'U', 'PR', 'G'], 'vida-tres': ['D', 'U', 'PR', 'G'], consalud: ['U', 'PR'], colmena: ['U', 'PR'], 'cruz-blanca': ['U', 'U0', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
     { id: 'alemana', n: 'Clínica Alemana', z: 's', i: stgo({ esencial: ['D', 'U', 'PR', 'G'], 'vida-tres': ['PR', 'SC'], 'nueva-masvida': ['SP'] }), x: { 'nueva-masvida': 'Solo tiene libre elección, con topes muy bajos' } },
-    { id: 'las-condes', n: 'Clínica Las Condes', z: 's', i: stgo({ consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], 'nueva-masvida': ['U', 'PR'], banmedica: ['UA', 'PR'], 'vida-tres': ['UA', 'PR', 'SC'], esencial: ['SP'] }) },
-    { id: 'uc-christus', n: 'UC Christus', z: 's', i: stgo({ colmena: ['U', 'PR', 'G'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], 'nueva-masvida': ['U', 'PR'], esencial: ['PR', 'G'] }) },
-    { id: 'bupa-stgo', n: 'Clínica Bupa Santiago', z: 's', i: stgo({ 'cruz-blanca': ['D', 'U', 'PR', 'G'], 'nueva-masvida': ['U', 'PR'], banmedica: ['SP'], 'vida-tres': ['SP'] }) },
-    { id: 'indisa', n: 'Clínica Indisa', z: 's', i: stgo({ colmena: ['U', 'PR'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'PR'], esencial: ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
+    { id: 'las-condes', n: 'Clínica Las Condes', z: 's', i: stgo({ consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'U0', 'PR'], 'nueva-masvida': ['U', 'PR'], banmedica: ['UA', 'PR'], 'vida-tres': ['UA', 'PR', 'SC'], esencial: ['SP'] }) },
+    { id: 'uc-christus', n: 'UC Christus', z: 's', i: stgo({ colmena: ['U', 'PR', 'G'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'U0', 'PR'], 'nueva-masvida': ['U', 'PR'], esencial: ['PR', 'G'] }) },
+    { id: 'bupa-stgo', n: 'Clínica Bupa Santiago', z: 's', i: stgo({ 'cruz-blanca': ['D', 'U', 'U0', 'PR', 'G'], 'nueva-masvida': ['U', 'PR'], banmedica: ['SP'], 'vida-tres': ['SP'] }) },
+    { id: 'indisa', n: 'Clínica Indisa', z: 's', i: stgo({ colmena: ['U', 'PR'], consalud: ['U', 'PR'], 'cruz-blanca': ['U', 'U0', 'PR'], esencial: ['U', 'PR'], 'nueva-masvida': ['U', 'PR'] }) },
     { id: 'meds', n: 'Clínica Meds', z: 's', i: stgo({ colmena: ['U', 'PR'], consalud: ['U', 'PR'] }) },
     { id: 'uandes', n: 'Clínica Universidad de los Andes', z: 's', i: stgo({ consalud: ['U', 'PR'], 'vida-tres': ['UA', 'PR', 'G', 'SC'], banmedica: ['UA', 'PR'] }) },
 
     { id: 'san-jose-arica', n: 'Clínica San José', c: 'Arica', z: 'r', i: { consalud: ['U', 'PR'], colmena: ['U'] } },
     { id: 'redsalud-iquique', n: 'RedSalud Iquique', c: 'Iquique', z: 'r', i: { consalud: ['D', 'U', 'PR'] } },
     { id: 'andes-calama', n: 'Andes Salud Calama', c: 'Calama', z: 'r', i: { consalud: ['U', 'PR'] } },
-    { id: 'bupa-antofagasta', n: 'Clínica Bupa Antofagasta', c: 'Antofagasta', z: 'r', i: { 'cruz-blanca': ['D', 'U', 'PR'], consalud: ['U', 'PR'] } },
+    { id: 'bupa-antofagasta', n: 'Clínica Bupa Antofagasta', c: 'Antofagasta', z: 'r', i: { 'cruz-blanca': ['D', 'U', 'U0', 'PR'], consalud: ['U', 'PR'] } },
     { id: 'achs-la-portada', n: 'ACHS La Portada', c: 'Antofagasta', z: 'r', i: { consalud: ['U', 'PR'], colmena: ['U'] } },
     { id: 'achs-atacama', n: 'ACHS Atacama', c: 'Copiapó', z: 'r', i: { colmena: ['U'], consalud: ['PR'] } },
     { id: 'redsalud-elqui', n: 'RedSalud Elqui', c: 'La Serena', z: 'r', i: { consalud: ['D', 'U', 'PR'] } },
-    { id: 'bupa-renaca', n: 'Clínica Bupa Reñaca', c: 'Viña del Mar', z: 'r', i: { 'cruz-blanca': ['D', 'U', 'PR'], consalud: ['U', 'PR'] } },
+    { id: 'bupa-renaca', n: 'Clínica Bupa Reñaca', c: 'Viña del Mar', z: 'r', i: { 'cruz-blanca': ['D', 'U', 'U0', 'PR'], consalud: ['U', 'PR'] } },
     { id: 'ciudad-del-mar', n: 'Clínica Ciudad del Mar', c: 'Viña del Mar', z: 'r', i: { banmedica: ['D', 'PR', 'SU'], 'vida-tres': ['D', 'PR', 'SU'], consalud: ['PR'] } },
     { id: 'redsalud-valparaiso', n: 'RedSalud Valparaíso', c: 'Valparaíso', z: 'r', i: { consalud: ['D', 'U', 'PR'] } },
     { id: 'redsalud-rancagua', n: 'RedSalud Rancagua', c: 'Rancagua', z: 'r', i: { consalud: ['D', 'U', 'PR'] } },
@@ -128,6 +129,16 @@
     })[k];
   }
 
+  var DESTACA = {
+    consalud: 'Kinesiología sin tope en prestadores preferentes',
+    banmedica: 'Sin tope en prótesis, órtesis y quimioterapia',
+    'vida-tres': 'Cubre procedimientos sin código Fonasa',
+    esencial: 'Kinesiología sin tope',
+    colmena: 'Psicología sin tope anual y reembolsos en 24 a 48 horas',
+    'cruz-blanca': 'Cirugías prepagadas',
+    'nueva-masvida': 'Psicología sin tope anual'
+  };
+
   // Beneficios de una Isapre en la clinica elegida: [{bueno, texto}]
   function beneficios(k, idClinica) {
     var c = clinica(idClinica);
@@ -168,6 +179,14 @@
     // En empate, primero la Isapre que tiene algo en la clinica elegida
     var enClinica = function (k) { return c && c.i[k] ? c.i[k].reduce(function (s, cod) { return s + BEN[cod][0]; }, 0) : -1; };
     var orden = CLAVES.slice().sort(function (a, b) { return (pts[b] - pts[a]) || (enClinica(b) - enClinica(a)); });
+    // Si marca psicología, Colmena y Nueva Masvida aparecen siempre: son las únicas sin tope anual
+    if ((r.prioridad || []).indexOf('psico') > -1) {
+      var psico = ['colmena', 'nueva-masvida'].sort(function (a, b) { return pts[b] - pts[a]; });
+      var resto = orden.filter(function (k) { return psico.indexOf(k) === -1; });
+      orden = psico.indexOf(orden[0]) > -1
+        ? [orden[0], psico[orden[0] === psico[0] ? 1 : 0]].concat(resto)
+        : [orden[0]].concat(psico, resto.slice(1));
+    }
     Object.keys(raz).forEach(function (k) { raz[k] = raz[k].sort(function (a, b) { return b[0] - a[0]; }).map(function (x) { return x[1]; }); });
     return { orden: orden, pts: pts, raz: raz, zona: zona };
   }
@@ -209,10 +228,10 @@
     '.qz-main-h{display:flex;align-items:center;gap:.9rem;margin-bottom:.7rem;}' +
     '.qz-main-h img{flex-shrink:0;}' +
     '.qz-main-t{font-family:"Inter",sans-serif;font-size:22px;font-weight:900;color:var(--qz-pd);line-height:1.15;}' +
-    '.qz-main.dos{border-color:var(--qz-b);background:#fff;margin-top:.8rem;}' +
+    '.qz-main.dos,.qz-main.tres{border-color:var(--qz-b);background:#fff;margin-top:.8rem;}' +
     '.qz-rank{font-size:11.5px;font-weight:700;color:#0F6E56;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.1rem;}' +
-    '.qz-main.dos .qz-rank{color:var(--qz-m);}' +
-    '.qz-main.dos .qz-main-t{font-size:19px;}' +
+    '.qz-main.dos .qz-rank,.qz-main.tres .qz-rank{color:var(--qz-m);}' +
+    '.qz-main.dos .qz-main-t,.qz-main.tres .qz-main-t{font-size:19px;}' +
     '.qz-why li.info::before{content:"i";background:var(--purple-mid,#7F77DD);font-style:italic;font-family:Georgia,serif;}' +
     '.qz-en{font-size:13px;font-weight:700;color:var(--qz-pd);text-transform:uppercase;letter-spacing:.04em;margin:.4rem 0 .15rem;}' +
     '.qz-why{list-style:none;margin:0 0 .7rem;padding:0;}' +
@@ -309,14 +328,16 @@
     }
 
     function resultado() {
-      var c = calcular(resp), a = c.orden[0], b = c.orden[1];
+      var c = calcular(resp), a = c.orden[0], b = c.orden[1], d = c.orden[2];
       var cl = clinica(resp.clinica), nomCl = cl ? nombreClinica(cl) : '';
 
       function tarjeta(k, n) {
         var ben = beneficios(k, resp.clinica), otras = c.raz[k].slice(0, ben.length ? 2 : 3);
+        var dest = DESTACA[k], clave = dest.slice(0, 18);
+        if (otras.length < 2 && !otras.some(function (o) { return o.indexOf(clave) > -1; }) && !ben.some(function (x) { return x.texto.indexOf(clave) > -1; })) otras = otras.concat([dest]);
         var li = function (x) { return '<li' + (x.clase ? ' class="' + x.clase + '"' : '') + '>' + x.texto + '</li>'; };
-        var h = '<div class="qz-main' + (n === 2 ? ' dos' : '') + '"><div class="qz-main-h">' + logo(k, n === 1 ? 2400 : 1900) + '<div>' +
-          '<div class="qz-rank">' + (n === 1 ? 'Opción 1 · La que mejor calza' : 'Opción 2') + '</div>' +
+        var h = '<div class="qz-main' + (n === 2 ? ' dos' : n === 3 ? ' tres' : '') + '"><div class="qz-main-h">' + logo(k, n === 1 ? 2400 : 1800) + '<div>' +
+          '<div class="qz-rank">' + (n === 1 ? 'Opción 1 · La que mejor calza' : 'Opción ' + n) + '</div>' +
           '<div class="qz-main-t">' + nombre(k) + '</div></div></div>';
         if (cl) {
           var items = ben.length
@@ -332,29 +353,29 @@
 
       var extra = '';
       if (cl) {
-        var conUrg = CLAVES.filter(function (k) { return k !== a && k !== b && cl.i[k] && cl.i[k].indexOf('U') > -1; }).map(nombre);
+        var conUrg = CLAVES.filter(function (k) { return k !== a && k !== b && k !== d && cl.i[k] && cl.i[k].indexOf('U') > -1; }).map(nombre);
         if (conUrg.length) extra += '<p class="qz-nota">En ' + esc(nomCl) + ' también ' + (conUrg.length > 1 ? 'tienen' : 'tiene') + ' copago de urgencia: ' + lista(conUrg) + '.</p>';
-        var duenos = CLAVES.filter(function (k) { return cl.i[k] && cl.i[k].indexOf('D') > -1 && k !== a && k !== b; });
+        var duenos = CLAVES.filter(function (k) { return cl.i[k] && cl.i[k].indexOf('D') > -1 && k !== a && k !== b && k !== d; });
         if (duenos.length) extra += '<p class="qz-nota">Si ' + esc(cl.n) + ' es imprescindible para ti, mira también ' +
           duenos.map(function (k) { return '<a class="qz-link" href="/isapre-' + k + '">' + nombre(k) + '</a>'; }).join(' y ') +
           (duenos.length > 1 ? ': son' : ': es') + ' de su mismo holding.</p>';
       }
 
-      return '<div class="qz-card"><span class="qz-kicker">Tus dos mejores opciones</span>' +
-        tarjeta(a, 1) + tarjeta(b, 2) + extra +
+      return '<div class="qz-card"><span class="qz-kicker">Tus tres mejores opciones</span>' +
+        tarjeta(a, 1) + tarjeta(b, 2) + tarjeta(d, 3) +
         '<div class="qz-cta"><div class="qz-cta-t">¿Quieres que te armemos el plan?</div>' +
-        '<p>Con lo que respondiste, tu ejecutivo prepara propuestas de ' + nombre(a) + ' y ' + nombre(b) + (cl ? ' para atenderte en ' + esc(cl.n) : '') + ', y te dice cuál te conviene más. Gratis y sin compromiso.</p>' +
+        '<p>Con lo que respondiste, tu ejecutivo prepara propuestas de ' + nombre(a) + ', ' + nombre(b) + ' y ' + nombre(d) + (cl ? ' para atenderte en ' + esc(cl.n) : '') + ', y te dice cuál te conviene más. Gratis y sin compromiso.</p>' +
         '<button type="button" class="qz-btn qz-go">Quiero mi asesoría gratis →</button></div>' +
         '<button type="button" class="qz-reset">Volver a hacer el test</button>' +
         '<p class="qz-aviso">Orientación referencial según la oferta vigente a septiembre de 2026. No reemplaza una cotización: coberturas, convenios y precios dependen de cada plan, de tu edad y de tu declaración de salud.</p></div>';
     }
 
     function irAlFormulario() {
-      var c = calcular(resp), a = c.orden[0], b = c.orden[1], cl = clinica(resp.clinica);
+      var c = calcular(resp), a = c.orden[0], b = c.orden[1], d = c.orden[2], cl = clinica(resp.clinica);
       var cobs = (resp.prioridad || []).map(function (v) {
         return PREGUNTAS[1].op.filter(function (o) { return o.v === v; })[0].cob;
       }).filter(Boolean);
-      var datos = { cob: cobs.join('|'), cargas: resp.cargas || '', sug: nombre(a) + ', ' + nombre(b) + (cl ? ' · Clínica: ' + nombreClinica(cl) : '') };
+      var datos = { cob: cobs.join('|'), cargas: resp.cargas || '', sug: nombre(a) + ', ' + nombre(b) + ', ' + nombre(d) + (cl ? ' · Clínica: ' + nombreClinica(cl) : '') };
       ga('quiz_cta', { resultado: nombre(a), clinica: cl ? cl.n : 'Me da lo mismo', ubicacion: ubicacion });
       var destino = document.getElementById('opciones');
       if (destino && typeof window.prefillDesdeTest === 'function') {
