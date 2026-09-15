@@ -475,6 +475,10 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   </div>
 </div>
 
+  <!-- TEST: QUE ISAPRE CALZA CONTIGO (logica en /quiz.js) -->
+  <style>.qz-wrap{max-width:1100px;margin:2rem auto 0;padding:0 1.5rem;} @media (max-width:680px){.qz-wrap{margin-top:1.5rem;padding:0 1rem;}}</style>
+  <div class="qz-wrap" id="test"><div data-quiz data-ubicacion="home" data-modo="compacto"></div></div>
+
   <!-- FORMULARIO -->
   <div class="form-section">
       <div class="form-inline" id="form-inline">
@@ -1127,7 +1131,7 @@ async function sSubmit(){
         horario:sD.horario||'Lo antes posible',
         sistema:sD.sistema||'',
         motivo:sD.motivo||'',
-        coberturas:sD.coberturas||'',
+        coberturas:[sD.coberturas, sD.quiz ? 'Test sugirió: ' + sD.quiz : '', sD.interes ? 'Quiere cotizar: ' + sD.interes : ''].filter(Boolean).join(' | '),
         renta:sD.renta||'',
         cargas:sD.cargas||''
       })})
@@ -1138,15 +1142,33 @@ async function sSubmit(){
 }
 
 
-// Si llega desde la pagina de una Isapre (?isapre=Consalud), la deja elegida en "Cobertura actual".
-// No llama a sChkReq para no disparar form_start sin que la persona haya escrito nada.
+// Si llega desde la ficha de una Isapre (?isapre=Consalud), guarda que quiere cotizar esa Isapre.
+// No la deja en "Cobertura actual": quien la quiere cotizar no necesariamente esta en ella.
 (function () {
   const v = new URLSearchParams(location.search).get('isapre');
   const sel = document.getElementById('s-sistema');
-  if (v && sel && [...sel.options].some(o => o.value === v)) { sel.value = v; sD.sistema = v; }
+  if (v && v !== 'Fonasa' && sel && [...sel.options].some(o => o.value === v)) sD.interes = v;
+})();
+
+// Si viene del test "¿Qué Isapre calza contigo?", deja marcadas sus prioridades y cargas,
+// y guarda las Isapres sugeridas para que el ejecutivo las vea junto a las coberturas.
+function prefillDesdeTest(p){
+  if(!p) return;
+  const cobs=(p.cob||'').split('|').filter(Boolean);
+  document.querySelectorAll('#s-cobs .s-chip').forEach(b=>{ if(cobs.includes(b.textContent) && !b.classList.contains('on')) sCob(b); });
+  const sel=document.getElementById('s-cargas-sel');
+  if(p.cargas && sel && [...sel.options].some(o=>o.value===p.cargas)){ sel.value=p.cargas; sD.cargas=p.cargas; }
+  if(p.sug) sD.quiz=p.sug;
+  const d=document.querySelector('#form-inline details.s-extra');
+  if(d && (cobs.length || p.cargas)) d.open=true;
+}
+(function(){
+  const q=new URLSearchParams(location.search);
+  if(q.get('sug')) prefillDesdeTest({cob:q.get('cob')||'', cargas:q.get('cargas')||'', sug:q.get('sug')});
 })();
 
 </script>
+<script src="/quiz.js" defer></script>
 <!-- deploy check -->
 </body>
 </html>
