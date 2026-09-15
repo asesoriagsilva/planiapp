@@ -1,4 +1,18 @@
 {
+  "redirects": [
+    { "source": "/planiapp.html", "destination": "/", "permanent": true },
+    { "source": "/fonasa-o-isapre.html", "destination": "/fonasa-o-isapre", "permanent": true },
+    { "source": "/errores-al-contratar-isapre.html", "destination": "/errores-al-contratar-isapre", "permanent": true },
+    { "source": "/tips-fonasa-a-isapre.html", "destination": "/tips-fonasa-a-isapre", "permanent": true },
+    { "source": "/mejor-isapre.html", "destination": "/mejor-isapre", "permanent": true },
+    { "source": "/isapre-banmedica.html", "destination": "/isapre-banmedica", "permanent": true },
+    { "source": "/isapre-colmena.html", "destination": "/isapre-colmena", "permanent": true },
+    { "source": "/isapre-consalud.html", "destination": "/isapre-consalud", "permanent": true },
+    { "source": "/isapre-cruz-blanca.html", "destination": "/isapre-cruz-blanca", "permanent": true },
+    { "source": "/isapre-esencial.html", "destination": "/isapre-esencial", "permanent": true },
+    { "source": "/isapre-nueva-masvida.html", "destination": "/isapre-nueva-masvida", "permanent": true },
+    { "source": "/isapre-vida-tres.html", "destination": "/isapre-vida-tres", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/planiapp.html" },
     { "source": "/fonasa-o-isapre", "destination": "/fonasa-o-isapre.html" },
