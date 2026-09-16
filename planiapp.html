@@ -345,6 +345,78 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .seg-wrap { padding: 1.5rem 1.25rem; }
 }
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://planiapp.cl/#organizacion",
+   "name": "Planiapp",
+   "url": "https://planiapp.cl/",
+   "description": "Asesoría gratuita para elegir plan de Isapre en Chile.",
+   "areaServed": "CL"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://planiapp.cl/#sitio",
+   "name": "Planiapp",
+   "url": "https://planiapp.cl/",
+   "inLanguage": "es-CL",
+   "publisher": {
+    "@id": "https://planiapp.cl/#organizacion"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://planiapp.cl/#preguntas",
+   "url": "https://planiapp.cl/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Qué es Planiapp y cómo funciona?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Planiapp es una plataforma de asesoría digital especializada en planes de Isapre. Funciona de forma simple: completas un formulario con tu situación actual, un ejecutivo inscrito en la Superintendencia de Salud analiza tu perfil y te contacta por WhatsApp en menos de 30 minutos, dentro del horario de atención, con una propuesta personalizada. Sin llamadas no solicitadas, sin presiones y sin costo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué diferencia a la asesoría de Planiapp de otras páginas web?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A diferencia de los comparadores online que muestran resultados genéricos, en Planiapp cada caso es analizado por un ejecutivo con más de 10 años de experiencia. No te ofrecemos el plan más barato del mercado: te ofrecemos el plan que mejor se adapta a tu perfil, considerando tus cargas, preexistencias, clínicas de preferencia y experiencias previas."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué pasa con los datos que ingreso al formulario?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tu información personal y de salud es tratada con absoluta confidencialidad. Planiapp almacena tus datos de forma segura y en línea con la Ley N° 21.719 de Protección de Datos Personales. Tu información nunca será vendida, cedida ni transferida a terceros. El acceso está restringido únicamente a los ejecutivos que gestionan tu asesoría, y puedes solicitar la eliminación de tus datos en cualquier momento escribiéndonos por WhatsApp. Toda la información que ingresas viaja cifrada a través de conexiones seguras HTTPS, lo que garantiza que nadie más pueda interceptarla."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿El servicio tiene algún costo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. La asesoría de Planiapp es completamente gratuita. Pero más allá del costo cero, la ventaja real de asesorarte con nosotros es el acompañamiento continuo. Una vez que trabajamos contigo, te mantenemos informado de todos los cambios en el sistema de Isapres: alzas, cambios de cobertura y nuevas normativas, para que puedas tomar decisiones antes de que te afecten, sin sorpresas."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Por qué me conviene cambiarme de Isapre con Planiapp?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Porque no te dejamos solo después del cambio. Muchos asesores desaparecen una vez cerrado el contrato. En Planiapp te acompañamos durante todo el proceso y después de él, resolviendo dudas, orientándote en el uso de tu plan y anticipándonos a cualquier cambio que pueda afectar tu bolsillo."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -639,79 +711,6 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
       </div>
   </div>
 
-  <!-- FONASA O ISAPRE (enlace al articulo) -->
-  <style>
-  .fvi-wrap { max-width:1100px; margin:3rem auto 0; padding:0 1.5rem; }
-  .fvi { display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; background:var(--white); border:1px solid var(--border); border-radius:18px; padding:1.5rem 1.75rem; text-decoration:none; color:inherit; transition:border-color .2s, box-shadow .2s, transform .2s; }
-  .fvi:hover { border-color:var(--purple-mid); box-shadow:0 12px 26px -16px rgba(38,33,92,.45); transform:translateY(-2px); }
-  .fvi:focus-visible { outline:3px solid var(--purple-mid); outline-offset:3px; }
-  .fvi-flecha { display:inline-block; color:var(--purple); transition:transform .2s; }
-  .fvi:hover .fvi-flecha { transform:translateX(4px); }
-  .fvi-t { font-family:'Inter',sans-serif; font-size:24px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.02em; line-height:1.2; margin-bottom:0.3rem; }
-  .fvi-p { font-size:15px; color:var(--text-muted); line-height:1.55; max-width:560px; }
-  .fvi-img { display:block; width:150px; height:94px; object-fit:cover; border-radius:12px; flex-shrink:0; background:var(--purple-light); }
-  .fvi > div { flex:1; min-width:220px; }
-  @media (max-width:680px){ .fvi-img{ width:100%; height:auto; aspect-ratio:16 / 10; } }
-  @media (max-width:680px){ .fvi-wrap{ margin-top:2rem; padding:0 1rem; } .fvi{ padding:1.25rem 1.1rem; } .fvi-t{ font-size:20px; } }
-  </style>
-  <div class="fvi-wrap">
-    <a class="fvi" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre'})">
-      <img class="fvi-img" src="img/fonasa-o-isapre-card.webp" alt="Mujer revisando un documento en la mesa de su cocina" width="480" height="300" loading="lazy" decoding="async">
-      <div>
-        <div class="fvi-t">¿Fonasa o Isapre? ¿Qué conviene más? <span class="fvi-flecha" aria-hidden="true">→</span></div>
-        <div class="fvi-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</div>
-      </div>
-    </a>
-  </div>
-
-  <!-- EL ERROR MÁS COMÚN -->
-  <style>
-  .err-wrap { max-width:1100px; margin:3.5rem auto 0; padding:0 1.5rem; }
-  .err-panel { background:var(--white); border:1px solid #E7E5F5; border-radius:20px; padding:2.25rem 2.25rem 2rem; }
-  .err-title { font-family:'Inter',sans-serif; font-size:30px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.02em; text-align:center; margin-bottom:0.45rem; line-height:1.25; }
-  .err-sub { text-align:center; font-size:16px; color:var(--text-muted); margin:0 auto 1.9rem; max-width:640px; line-height:1.55; }
-  .err-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.15rem 1.75rem; }
-  .err-item { display:flex; gap:12px; align-items:flex-start; }
-  .err-item.wide { grid-column:1 / -1; border-top:1px solid #EEECF7; padding-top:1.2rem; margin-top:0.15rem; }
-  .err-x { width:26px; height:26px; border-radius:50%; background:#FBECEC; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
-  .err-item-title { font-size:15px; font-weight:600; color:var(--purple-dark); margin-bottom:0.2rem; }
-  .err-item-desc { font-size:13px; line-height:1.55; color:var(--text-muted); }
-  .err-close { margin-top:2rem; background:var(--purple-light); border-radius:16px; padding:1.6rem 1.75rem; text-align:center; }
-  .err-close-h { font-family:'Inter',sans-serif; font-size:21px; font-weight:800; color:var(--purple-dark); letter-spacing:-0.01em; line-height:1.35; margin-bottom:0.5rem; }
-  .err-close-p { font-size:14px; color:var(--purple); line-height:1.6; max-width:660px; margin:0 auto 1.2rem; }
-  .err-btn { background:var(--purple); color:#fff; border:none; border-radius:24px; padding:0.8rem 1.7rem; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; cursor:pointer; transition:background 0.2s; }
-  .err-btn:hover { background:var(--purple-deep); }
-  @media (max-width:680px){
-    .err-wrap{ margin-top:2.5rem; padding:0 1rem; }
-    .err-panel{ padding:1.6rem 1.25rem 1.5rem; border-radius:16px; }
-    .err-title{ font-size:23px; }
-    .err-sub{ font-size:15px; margin-bottom:1.4rem; }
-    .err-grid{ grid-template-columns:1fr; gap:1rem; }
-    .err-close{ padding:1.35rem 1rem; }
-    .err-close-h{ font-size:18px; }
-  }
-  </style>
-  <div class="fvi-wrap" id="errores">
-    <a class="fvi" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores'})">
-      <img class="fvi-img" src="img/errores-al-contratar-isapre-card.webp" alt="Hombre revisando un documento en la mesa de su cocina" width="480" height="300" loading="lazy" decoding="async">
-      <div>
-        <div class="fvi-t">Los 8 errores más comunes al contratar una Isapre <span class="fvi-flecha" aria-hidden="true">→</span></div>
-        <div class="fvi-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</div>
-      </div>
-    </a>
-  </div>
-
-  <!-- TIPS (enlace al articulo) -->
-  <div class="fvi-wrap" id="tips">
-    <a class="fvi" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips'})">
-      <img class="fvi-img" src="img/tips-fonasa-a-isapre-card.webp" alt="Familia jugando en el sofá de su casa" width="480" height="300" loading="lazy" decoding="async">
-      <div>
-        <div class="fvi-t">De Fonasa a Isapre: tips para elegir un buen plan <span class="fvi-flecha" aria-hidden="true">→</span></div>
-        <div class="fvi-p">Seis consejos para contratar bien y tener una buena experiencia con tu Isapre.</div>
-      </div>
-    </a>
-  </div>
-
   <!-- CÓMO ES CADA ISAPRE -->
   <style>
   .isa-badge { display:table; margin:0 auto 0.6rem; font-size:12px; font-weight:600; color:#0F6E56; background:#E1F5EE; border:1px solid #CFEEE3; border-radius:20px; padding:3px 12px; }
@@ -938,6 +937,54 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
         <div class="porque-card-title" style="color:#173404;">Acompañamiento continuo</div>
         <div class="porque-card-desc" style="color:#3B6D11;">No termina cuando te cambias. La posventa sigue, con un canal directo para tus consultas y orientación cuando lo necesites.</div>
       </div>
+    </div>
+  </div>
+
+  <!-- GUIAS (enlaces a los articulos) -->
+  <style>
+  .guias-wrap { max-width:1100px; margin:0 auto 3.5rem; padding:0 1.5rem; }
+  .guias-list { display:grid; gap:1rem; }
+  .fvi { display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; background:var(--white); border:1px solid var(--border); border-radius:18px; padding:1.5rem 1.75rem; text-decoration:none; color:inherit; transition:border-color .2s, box-shadow .2s, transform .2s; }
+  .fvi:hover { border-color:var(--purple-mid); box-shadow:0 12px 26px -16px rgba(38,33,92,.45); transform:translateY(-2px); }
+  .fvi:focus-visible { outline:3px solid var(--purple-mid); outline-offset:3px; }
+  .fvi-flecha { display:inline-block; color:var(--purple); transition:transform .2s; }
+  .fvi:hover .fvi-flecha { transform:translateX(4px); }
+  .fvi-t { font-family:'Inter',sans-serif; font-size:24px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.02em; line-height:1.2; margin-bottom:0.3rem; }
+  .fvi-p { font-size:15px; color:var(--text-muted); line-height:1.55; max-width:560px; }
+  .fvi-img { display:block; width:150px; height:94px; object-fit:cover; border-radius:12px; flex-shrink:0; background:var(--purple-light); }
+  .fvi > div { flex:1; min-width:220px; }
+  @media (max-width:680px){
+    .guias-wrap{ margin-bottom:2.5rem; padding:0 1rem; }
+    .fvi-img{ width:100%; height:auto; aspect-ratio:16 / 10; }
+    .fvi{ padding:1.25rem 1.1rem; }
+    .fvi-t{ font-size:20px; }
+  }
+  </style>
+  <div class="guias-wrap" id="guias">
+    <h2 class="porque-title">Guías para elegir tu plan</h2>
+    <p class="porque-sub">Lo que conviene saber antes de contratar, explicado sin letra chica.</p>
+    <div class="guias-list">
+      <a class="fvi" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre'})">
+        <img class="fvi-img" src="img/fonasa-o-isapre-card.webp" alt="Mujer revisando un documento en la mesa de su cocina" width="480" height="300" loading="lazy" decoding="async">
+        <div>
+          <div class="fvi-t">¿Fonasa o Isapre? ¿Qué conviene más? <span class="fvi-flecha" aria-hidden="true">→</span></div>
+          <div class="fvi-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</div>
+        </div>
+      </a>
+      <a class="fvi" id="errores" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores'})">
+        <img class="fvi-img" src="img/errores-al-contratar-isapre-card.webp" alt="Hombre revisando un documento en la mesa de su cocina" width="480" height="300" loading="lazy" decoding="async">
+        <div>
+          <div class="fvi-t">Los 8 errores más comunes al contratar una Isapre <span class="fvi-flecha" aria-hidden="true">→</span></div>
+          <div class="fvi-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</div>
+        </div>
+      </a>
+      <a class="fvi" id="tips" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips'})">
+        <img class="fvi-img" src="img/tips-fonasa-a-isapre-card.webp" alt="Familia jugando en el sofá de su casa" width="480" height="300" loading="lazy" decoding="async">
+        <div>
+          <div class="fvi-t">De Fonasa a Isapre: tips para elegir un buen plan <span class="fvi-flecha" aria-hidden="true">→</span></div>
+          <div class="fvi-p">Seis consejos para contratar bien y tener una buena experiencia con tu Isapre.</div>
+        </div>
+      </a>
     </div>
   </div>
 
