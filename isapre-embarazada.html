@@ -111,6 +111,14 @@ footer a { color: var(--text-muted); }
 .nov td { border-top: 1px solid var(--border); padding: 0.7rem 1rem; font-size: 14.5px; }
 .nov th + th, .nov td + td { text-align: right; font-variant-numeric: tabular-nums; }
 
+.nov.rn th + th, .nov.rn td + td { text-align: left; font-variant-numeric: normal; }
+.nov .nov-sub td { background: #FFF8E6; color: var(--purple-dark); font-weight: 600; font-size: 13.5px; }
+
+.plan-img { margin: 1rem 0 1.25rem; }
+.plan-img a { display: block; }
+.plan-img img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+.plan-img figcaption { font-size: 12.5px; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.45; }
+
 .faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
 .faq p { font-size: 15.5px; }
 
@@ -209,6 +217,14 @@ footer a { color: var(--text-muted); }
     },
     {
      "@type": "Question",
+     "name": "¿Todos los planes de Isapre cubren igual al recién nacido?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Hay planes que cubren la hospitalización al 100% sin tope en su red preferente, pero dejan la sala cuna, la incubadora y la atención inmediata del recién nacido solo con libre elección y topes de alrededor de 1 UF. Por eso conviene revisar el plan con un asesor antes de firmar."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "¿Cuánto plazo tengo para inscribir a mi hijo en la Isapre?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -287,7 +303,7 @@ footer a { color: var(--text-muted); }
     <p><strong>El problema es lo que queda fuera del paquete.</strong> El PAD está pensado para embarazos de bajo riesgo, y cubre el parto y la atención normal del bebé. Si tu hijo nace prematuro o necesita cuidados adicionales, como neonatología, UTI o UCI, eso no lo cubre el PAD y se cobra aparte. Fonasa lo bonifica solo hasta su arancel, y la diferencia la pagas tú.</p>
     <p>En una clínica privada, una hospitalización neonatal puede superar fácilmente los $10 millones, según los días y lo que necesite el bebé. Es justo el tipo de cuenta que nadie tiene presupuestada.</p>
   </div>
-  <p>En una Isapre, en cambio, esas atenciones las cubre el plan. Si inscribes a tu hijo a tiempo, queda cubierto desde que nace con los porcentajes de tu plan, y si la cuenta es de alto costo existe la <a href="/errores-al-contratar-isapre">CAEC</a>, siempre que se atienda en la red que designa la Isapre. Por eso, más que el parto, lo que conviene mirar es cómo queda protegido tu hijo. Si todavía estás decidiendo entre los dos sistemas, revisa <a href="/fonasa-o-isapre">las diferencias entre Fonasa e Isapre</a>.</p>
+  <p>En una Isapre, en cambio, esas atenciones las cubre el plan. Si inscribes a tu hijo a tiempo, queda cubierto desde que nace con la cobertura de tu plan, y si la cuenta es de alto costo existe la <a href="/errores-al-contratar-isapre">CAEC</a>, siempre que se atienda en la red que designa la Isapre. Eso sí, no todos los planes cubren igual al recién nacido, como verás más abajo. Por eso, más que el parto, lo que conviene mirar es cómo queda protegido tu hijo. Si todavía estás decidiendo entre los dos sistemas, revisa <a href="/fonasa-o-isapre">las diferencias entre Fonasa e Isapre</a>.</p>
 
   <h2>Qué revisar del plan antes de firmar</h2>
   <p>El porcentaje de cobertura dice poco si no miras los topes. En maternidad, estos son los que más pesan:</p>
@@ -295,10 +311,38 @@ footer a { color: var(--text-muted); }
     <li><strong>Parto normal y cesárea.</strong> Revisa el tope en UF de cada uno, no solo el porcentaje.</li>
     <li><strong>Honorarios médicos.</strong> El tope para el equipo que te atiende: obstetra, matrona, anestesista y pediatra.</li>
     <li><strong>Día cama y pabellón.</strong> Cuánto cubre el plan por cada día de hospitalización y por el uso de pabellón.</li>
-    <li><strong>Neonatología.</strong> Los topes de día cama en UTI y UCI neonatal. Si el bebé necesita cuidados, ahí es donde la cuenta se dispara.</li>
+    <li><strong>Sala cuna, incubadora y neonatología.</strong> Si tienen cobertura preferente o solo libre elección, y con qué tope por día. Si el bebé necesita cuidados, ahí es donde la cuenta se dispara.</li>
     <li><strong>Medicamentos e insumos.</strong> Suelen tener topes bajos, y en una hospitalización se acumulan rápido.</li>
     <li><strong>Tu clínica.</strong> Que la maternidad donde te quieres atender esté en la <a href="/mejor-isapre">red preferente del plan</a>, y conocer la red GES y CAEC de la Isapre.</li>
   </ul>
+
+  <h2>Un ejemplo real: "100% sin tope", pero no para el recién nacido</h2>
+  <p>Estos son dos planes individuales reales, de gama alta. Los dos cubren la hospitalización al 100% o al 90% sin tope en clínicas como Dávila, Indisa, Santa María o UC Christus. Pero mira qué pasa con las prestaciones del recién nacido:</p>
+  <div class="nov-wrap">
+    <table class="nov rn">
+      <thead><tr><th scope="col">Prestación</th><th scope="col">Plan A</th><th scope="col">Plan B</th></tr></thead>
+      <tbody>
+        <tr><td>Hospitalización en su red preferente</td><td>100%, 90% o 70% sin tope, según la clínica</td><td>100%, 90% o 70% sin tope, según la clínica</td></tr>
+        <tr class="nov-sub"><td colspan="3">Recién nacido: sin cobertura preferente, solo libre elección</td></tr>
+        <tr><td>Día cama sala cuna</td><td>100%, tope de 1 UF</td><td>60%, tope de 1 UF</td></tr>
+        <tr><td>Día cama incubadora</td><td>100%, tope de 1 UF</td><td>60%, tope de 1 UF</td></tr>
+        <tr><td>Atención inmediata del recién nacido</td><td>100%, tope de 0,4 UF</td><td>60%, tope de 1 UF</td></tr>
+        <tr><td>Honorarios de matrona</td><td>100%, tope de 1,6 VA</td><td>60%, tope de 1 UF</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">No mostramos el nombre de la Isapre ni del plan: el punto no es un plan en particular, sino lo que conviene revisar en cualquiera. VA: veces el arancel de la Isapre.</p>
+  <p>Así aparece en los documentos de los planes. Toca cada imagen para verla en grande:</p>
+  <figure class="plan-img">
+    <a href="img/isapre-embarazada-plan-a.webp" target="_blank" rel="noopener"><img src="img/isapre-embarazada-plan-a.webp" alt="Cobertura hospitalaria del plan A: sala cuna, incubadora, atención inmediata del recién nacido y matrona sin cobertura preferente" width="1000" height="517" loading="lazy" decoding="async"></a>
+    <figcaption>Plan A. En rojo, las prestaciones del recién nacido: "Sin Cobertura Preferente".</figcaption>
+  </figure>
+  <figure class="plan-img">
+    <a href="img/isapre-embarazada-plan-b.webp" target="_blank" rel="noopener"><img src="img/isapre-embarazada-plan-b.webp" alt="Cobertura hospitalaria del plan B: sala cuna, incubadora, atención inmediata del recién nacido y matrona solo con libre elección" width="1100" height="475" loading="lazy" decoding="async"></a>
+    <figcaption>Plan B. En rojo, las prestaciones del recién nacido: "Solo Cobertura Libre Elección".</figcaption>
+  </figure>
+  <p>En los dos planes, la sala cuna, la incubadora, la atención inmediata del recién nacido y la matrona <strong>no tienen cobertura preferente</strong>. Se cubren por libre elección, con un tope de 1 UF por día de sala cuna o incubadora. Un día de incubadora en una clínica privada cuesta bastante más que eso, y la diferencia la pagas tú, aunque el plan diga "100% sin tope".</p>
+  <p>Por eso no basta con mirar el porcentaje ni la clínica. <strong>Antes de firmar, revisa tu plan con un asesor</strong>, sobre todo si estás embarazada o lo estás planificando: estos detalles están en la letra chica y casi nunca aparecen en una cotización.</p>
 
   <h2>Cómo y cuándo inscribir a tu hijo como carga</h2>
   <p>El plazo que más importa es <strong>el primer mes de vida</strong>. Si lo inscribes antes de que cumpla un mes, queda cubierto desde que nace y sin declaración de salud. Si lo haces después del mes y antes de los 90 días, tienes que llenar una declaración de salud, y los beneficios parten desde que lo incorporas, no desde el nacimiento.</p>
@@ -320,6 +364,8 @@ footer a { color: var(--text-muted); }
     <p>Lo ideal es antes de embarazarte. Si ya lo estás, nuestra recomendación es a más tardar al tercer mes, para que la mayor parte del parto quede cubierta por el plan.</p>
     <h3>¿El PAD de parto de Fonasa cubre la UCI neonatal?</h3>
     <p>No. El PAD cubre un parto de bajo riesgo y la atención normal del recién nacido. Si el bebé nace prematuro o necesita neonatología, UTI o UCI, eso se cobra aparte.</p>
+    <h3>¿Todos los planes de Isapre cubren igual al recién nacido?</h3>
+    <p>No. Hay planes que cubren la hospitalización al 100% sin tope en su red preferente, pero dejan la sala cuna, la incubadora y la atención inmediata del recién nacido solo con libre elección y topes de alrededor de 1 UF. Por eso conviene revisar el plan con un asesor antes de firmar.</p>
     <h3>¿Cuánto plazo tengo para inscribir a mi hijo en la Isapre?</h3>
     <p>Un mes desde que nace, para que quede cubierto desde el nacimiento y sin declaración de salud. Algunas Isapres permiten inscribirlo desde el séptimo mes de embarazo.</p>
   </section>
