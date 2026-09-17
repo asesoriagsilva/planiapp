@@ -335,20 +335,44 @@ footer a { color: var(--text-muted); }
     <p><strong>¿Cuándo Fonasa no cubre nada?</strong> Por ejemplo, si estás en el tramo A, que no puede comprar bonos para atenderse en clínicas privadas, o si te atiendes con un prestador que no tiene convenio con Fonasa. Justo en esos casos, el seguro cubre menos o nada.</p>
   </div>
 
-  <h3 class="ej-t">Ejercicio 1: una consulta de $35.000 con el Seguro A</h3>
+  <h3 class="ej-t">Ejercicio 1: una consulta de traumatología en Clínica Santa María</h3>
+  <p>En el arancel 2026 de Fonasa, la consulta de traumatología es el código 01 01 310, y Fonasa bonifica $7.690:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-fonasa-consulta-traumatologia.webp" target="_blank" rel="noopener"><img src="img/seguro-fonasa-consulta-traumatologia.webp" alt="Arancel Fonasa 2026: consulta médica de especialidad en traumatología y ortopedia, código 01 01 310, total 19.220 y bonificación 7.690" width="1100" height="135" loading="lazy" decoding="async"></a>
+    <figcaption>Arancel Fonasa 2026, Modalidad Libre Elección.</figcaption>
+  </figure>
+  <p>En el buscador de aranceles de Clínica Santa María, esa consulta cuesta $57.500 particular y $46.100 para un paciente Fonasa:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-clinica-consulta-traumatologia.webp" target="_blank" rel="noopener"><img src="img/seguro-clinica-consulta-traumatologia.webp" alt="Aranceles de Clínica Santa María: consulta de traumatología y ortopedia a 57.500 particular, 46.100 Fonasa y 51.000 Isapre" width="1100" height="248" loading="lazy" decoding="async"></a>
+    <figcaption>Clínica Santa María, aranceles ambulatorios, consultados el 17 de septiembre de 2026. La clínica la publica con el código anterior de consulta de especialidad.</figcaption>
+  </figure>
   <div class="nov-wrap">
     <table class="nov">
-      <thead><tr><th scope="col"></th><th scope="col">Fonasa cubre 40%</th><th scope="col">Fonasa cubre más del 50%</th><th scope="col">Fonasa no cubre nada</th></tr></thead>
+      <thead><tr><th scope="col">Con bono Fonasa</th><th scope="col">Seguro A</th><th scope="col">Seguro B</th></tr></thead>
       <tbody>
-        <tr><td>Valor de la consulta</td><td>$35.000</td><td>$35.000</td><td>$35.000</td></tr>
-        <tr><td>Cubre Fonasa</td><td>$14.000</td><td>$20.000</td><td>$0</td></tr>
-        <tr><td>Base que usa el seguro</td><td>$17.500</td><td>$15.000</td><td>$0</td></tr>
-        <tr><td>Reembolso del seguro (60%)</td><td>$10.500</td><td>$9.000</td><td>$0</td></tr>
-        <tr class="nov-total"><td>Pagas tú</td><td>$10.500</td><td>$6.000</td><td>$35.000</td></tr>
+        <tr><td>Precio para un paciente Fonasa</td><td>$46.100</td><td>$46.100</td></tr>
+        <tr><td>Cubre Fonasa</td><td>$7.690 (16,7%)</td><td>$7.690 (16,7%)</td></tr>
+        <tr><td>Queda por pagar</td><td>$38.410</td><td>$38.410</td></tr>
+        <tr><td>Base que usa el seguro</td><td>$23.050 (la mitad)</td><td>$38.410</td></tr>
+        <tr><td>Reembolso calculado (60%)</td><td>$13.830</td><td>$23.046</td></tr>
+        <tr><td>Tope por consulta</td><td>UF 1: $40.951</td><td>UF 0,5: $20.475</td></tr>
+        <tr><td>Te devuelve el seguro</td><td>$13.830</td><td>$20.475</td></tr>
+        <tr class="nov-total"><td>Pagas tú</td><td>$24.580</td><td>$17.935</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="cmp-nota">Valores de ejemplo, antes del deducible. En la primera columna, como Fonasa cubrió menos de la mitad, el seguro calcula sobre el 50% del valor: $17.500, y no sobre los $21.000 que quedaron.</p>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Sin bono, como en el tramo A</th><th scope="col">Seguro A</th><th scope="col">Seguro B</th></tr></thead>
+      <tbody>
+        <tr><td>Precio particular</td><td>$57.500</td><td>$57.500</td></tr>
+        <tr><td>Cubre Fonasa</td><td>$0</td><td>$0</td></tr>
+        <tr><td>Te devuelve el seguro</td><td>$0</td><td>$17.250 (30%)</td></tr>
+        <tr class="nov-total"><td>Pagas tú</td><td>$57.500</td><td>$40.250</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Antes del deducible. Como Fonasa cubre menos de la mitad, el Seguro A calcula sobre el 50% del valor y no sobre lo que queda. El Seguro B sí calcula sobre lo que queda, pero su tope por consulta lo deja en $20.475. Montos en UF con la UF del 17 de septiembre de 2026.</p>
 
   <h2>La letra chica 2: el deducible</h2>
   <p>Antes de devolverte plata, el seguro descuenta un deducible cada año. En los dos seguros del ejemplo es de UF 1, unos $41.000, y se descuenta de lo que el seguro te iba a reembolsar:</p>
@@ -356,22 +380,22 @@ footer a { color: var(--text-muted); }
     <a href="img/seguro-a-deducible.webp" target="_blank" rel="noopener"><img src="img/seguro-a-deducible.webp" alt="Tabla del Seguro A: capital asegurado UF 250, deducible UF 1 y tope por evento UF 50" width="900" height="303" loading="lazy" decoding="async"></a>
     <figcaption>Seguro A, extracto de la póliza: deducible de UF 1, tope de UF 50 por evento y UF 250 de capital asegurado.</figcaption>
   </figure>
-  <p>Mira qué pasa con las consultas del ejercicio anterior, en las que el seguro calcula un reembolso de $10.500 cada vez:</p>
+  <p>Mira qué pasa con las consultas del ejercicio anterior, en las que el Seguro A calcula un reembolso de $13.830 cada vez:</p>
 
   <h3 class="ej-t">Ejercicio 2: las consultas del año con el Seguro A</h3>
   <div class="nov-wrap">
     <table class="nov">
       <thead><tr><th scope="col">Consulta</th><th scope="col">Reembolso calculado</th><th scope="col">Se va al deducible</th><th scope="col">Te devuelven</th></tr></thead>
       <tbody>
-        <tr><td>1.ª</td><td>$10.500</td><td>$10.500</td><td>$0</td></tr>
-        <tr><td>2.ª</td><td>$10.500</td><td>$10.500</td><td>$0</td></tr>
-        <tr><td>3.ª</td><td>$10.500</td><td>$10.500</td><td>$0</td></tr>
-        <tr><td>4.ª</td><td>$10.500</td><td>$9.451</td><td>$1.049</td></tr>
-        <tr><td>5.ª</td><td>$10.500</td><td>$0</td><td>$10.500</td></tr>
+        <tr><td>1.ª</td><td>$13.830</td><td>$13.830</td><td>$0</td></tr>
+        <tr><td>2.ª</td><td>$13.830</td><td>$13.830</td><td>$0</td></tr>
+        <tr><td>3.ª</td><td>$13.830</td><td>$13.291</td><td>$539</td></tr>
+        <tr><td>4.ª</td><td>$13.830</td><td>$0</td><td>$13.830</td></tr>
+        <tr><td>5.ª</td><td>$13.830</td><td>$0</td><td>$13.830</td></tr>
       </tbody>
     </table>
   </div>
-  <p><strong>Las tres primeras consultas del año no te devuelven nada.</strong> Si vas poco al médico, puede que en todo el año recuperes muy poco de lo que pagaste en primas.</p>
+  <p><strong>Las dos primeras consultas del año no te devuelven nada, y la tercera, apenas $539.</strong> Si vas poco al médico, puede que en todo el año recuperes muy poco de lo que pagaste en primas.</p>
 
   <h3 class="ej-t">Ejercicio 3: una resonancia de rodilla en Clínica Santa María</h3>
   <p>Ahora con valores reales. En el arancel 2026 de Fonasa, la resonancia de rodilla es el código 04 05 013, con un valor de $176.560 y una bonificación de $88.280:</p>
@@ -499,7 +523,7 @@ footer a { color: var(--text-muted); }
     <a href="/#opciones">Quiero que me asesoren →</a>
   </div>
 
-  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente y las condiciones de cada póliza. El ejercicio 1 usa valores de ejemplo. Los ejercicios 3 y 4 usan el arancel 2026 de Fonasa y los aranceles publicados por Clínica Santa María al 17 de septiembre de 2026, que pueden cambiar. Los montos en UF se calcularon con la UF de ese día. Las imágenes de los seguros A y B son extractos de sus pólizas. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente y las condiciones de cada póliza. Los ejercicios usan el arancel 2026 de Fonasa y los aranceles publicados por Clínica Santa María al 17 de septiembre de 2026, que pueden cambiar. Los montos en UF se calcularon con la UF de ese día. Las imágenes de los seguros A y B son extractos de sus pólizas. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
 </article>
 
 <footer>
