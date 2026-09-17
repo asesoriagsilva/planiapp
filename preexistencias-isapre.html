@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preexistencias en Isapre: ¿qué pasa si me quiero cambiar? | Planiapp</title>
+<meta name="description" content="Aceptación, restricción por 18 meses o rechazo: qué pasa con tus preexistencias al cambiarte de Isapre, qué se declara, el GES y el riesgo de no declarar.">
+<link rel="canonical" href="https://planiapp.cl/preexistencias-isapre">
+<meta property="og:title" content="Preexistencias en Isapres: ¿qué pasa si me quiero cambiar?">
+<meta property="og:description" content="Qué es realmente una preexistencia, las 3 respuestas que te puede dar una Isapre y el riesgo de no declarar.">
+<meta property="og:url" content="https://planiapp.cl/preexistencias-isapre">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://planiapp.cl/img/preexistencias-isapre-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Médico tomando notas frente a una paciente en su consulta">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads + Analytics (sin evento de conversion: ese va solo en gracias.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  gtag('config', 'G-L8TDJPFVRM');
+</script>
+
+<style>
+:root {
+  --purple: #534AB7; --purple-light: #EEEDFE; --purple-mid: #7F77DD;
+  --purple-dark: #26215C; --purple-deep: #3C3489;
+  --blue: #185FA5; --blue-light: #E6F1FB;
+  --text: #1a1830; --text-muted: #6b6b8a; --border: #E7E5F5;
+  --bg: #f8f7ff; --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+a { color: var(--purple); }
+
+nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--border); }
+.nav-logo img { height: 64px; width: auto; display: block; }
+.nav-cta { background: var(--purple); color: #fff; text-decoration: none; border-radius: 24px; padding: 0.55rem 1.2rem; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.nav-cta:hover { background: var(--purple-deep); }
+
+/* Carrusel de logos de Isapres en la barra superior */
+.nav-carrusel { flex: 1; min-width: 0; overflow: hidden; margin: 0 1.5rem; padding: 0 1rem; border-left: 1px solid rgba(83,74,183,0.15); border-right: 1px solid rgba(83,74,183,0.15); }
+.nav-tk { display: inline-flex; align-items: center; animation: ticker 24s linear infinite; }
+.nav-tk img { flex-shrink: 0; margin-right: 2rem; opacity: 0.85; }
+.nav-carrusel:hover .nav-tk { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .nav-tk { animation: none; } }
+@media (max-width: 680px) { .nav-carrusel { margin: 0 0.6rem; padding: 0 0.6rem; } .nav-tk img { margin-right: 1.25rem; } }
+@media (max-width: 420px) { .nav-cta-extra { display: none; } }
+
+.art { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.miga { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
+.miga a { color: var(--text-muted); text-decoration: none; }
+.miga a:hover { color: var(--purple); }
+h1 { font-family: 'Inter', sans-serif; font-size: 38px; font-weight: 900; color: var(--purple-dark); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.9rem; }
+.bajada { font-size: 18px; color: var(--text-muted); margin-bottom: 1.75rem; }
+h2 { font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; line-height: 1.25; margin: 2.5rem 0 0.9rem; }
+p { font-size: 16px; margin-bottom: 1rem; }
+
+/* Tabla comparativa */
+.cmp { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.cmp-row, .cmp-head { display: grid; grid-template-columns: 170px 1fr 1fr; }
+.cmp-head div { padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px; }
+.cmp-head .h-fon { background: var(--blue-light); color: var(--blue); }
+.cmp-head .h-isa { background: var(--purple-light); color: var(--purple); }
+.cmp-row { border-top: 1px solid var(--border); }
+.cmp-row > div { padding: 0.8rem 1rem; font-size: 14px; line-height: 1.5; }
+.cmp-k { font-weight: 600; color: var(--purple-dark); background: #FBFAFF; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Listas de "cuando conviene" */
+.lista { list-style: none; margin: 0.25rem 0 1rem; }
+.lista li { position: relative; padding: 0.7rem 0 0.7rem 1.9rem; border-bottom: 1px solid var(--border); font-size: 15.5px; }
+.lista li:last-child { border-bottom: none; }
+.lista li::before { content: '✓'; position: absolute; left: 0.25rem; top: 0.7rem; font-weight: 700; }
+.lista.fon li::before { color: var(--blue); }
+.lista.isa li::before { color: var(--purple); }
+.lista strong { color: var(--text); }
+
+.ojo { background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin: 1rem 0; }
+.ojo p { font-size: 15px; margin-bottom: 0.6rem; }
+.ojo p:last-child { margin-bottom: 0; }
+.ojo.fon { background: #EEF5FC; border-left-color: #185FA5; }
+
+.cierre { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.9rem 1.75rem; margin-top: 2.75rem; color: #fff; text-align: center; }
+.cierre h2 { color: #fff; margin: 0 0 0.6rem; }
+.cierre p { color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 1.3rem; }
+.cierre a { display: inline-block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.8rem 1.7rem; font-size: 15px; }
+.cierre a:hover { background: var(--purple-light); }
+
+.aviso { font-size: 12px; color: var(--text-muted); margin-top: 2rem; line-height: 1.55; }
+footer { text-align: center; font-size: 13px; color: var(--text-muted); padding: 1.5rem; border-top: 1px solid var(--border); background: var(--white); }
+footer a { color: var(--text-muted); }
+
+.relacionado { margin-top: 2rem; padding: 1rem 1.2rem; background: var(--white); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; }
+.relacionado a { font-weight: 600; text-decoration: none; }
+
+.cabecera { display: block; width: 100%; height: auto; aspect-ratio: 20 / 9; object-fit: cover; border-radius: 16px; margin: 0 0 1.5rem; background: var(--purple-light); }
+
+/* Las 3 respuestas de la Isapre */
+.resp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 1rem; }
+.resp-c { background: var(--white); border: 1px solid var(--border); border-top: 4px solid; border-radius: 14px; padding: 1rem 1.1rem; }
+.resp-c.si { border-top-color: #1D9E75; }
+.resp-c.res { border-top-color: #E0A526; }
+.resp-c.no { border-top-color: #D93025; }
+.resp-i { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 0.5rem; }
+.resp-c.si .resp-i { background: #1D9E75; }
+.resp-c.res .resp-i { background: #B7791F; }
+.resp-c.no .resp-i { background: #D93025; }
+.resp-t { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800; color: var(--purple-dark); line-height: 1.25; margin-bottom: 0.35rem; }
+.resp-c p { font-size: 14.5px; line-height: 1.5; margin: 0; }
+
+.faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
+.faq p { font-size: 15.5px; }
+
+@media (max-width: 680px) {
+  .resp { grid-template-columns: 1fr; }
+  nav { padding: 0.6rem 1rem; }
+  .nav-logo img { height: 46px; }
+  .nav-cta { font-size: 13px; padding: 0.5rem 0.95rem; }
+  .art { padding: 1.75rem 1.1rem 2.5rem; }
+  h1 { font-size: 29px; }
+  .bajada { font-size: 16.5px; }
+  h2 { font-size: 21px; margin-top: 2rem; }
+  /* En celular: la etiqueta ocupa el ancho y debajo van Fonasa | Isapre */
+  .cmp-head { grid-template-columns: 1fr 1fr; }
+  .cmp-head .h-vacio { display: none; }
+  .cmp-row { grid-template-columns: 1fr 1fr; }
+  .cmp-k { grid-column: 1 / -1; padding-bottom: 0.35rem !important; }
+  .cmp-row > div { font-size: 13.5px; padding: 0.6rem 0.8rem; }
+  .cierre { padding: 1.6rem 1.2rem; }
+}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://planiapp.cl/preexistencias-isapre#articulo",
+   "headline": "Preexistencias en Isapres: ¿qué pasa si me quiero cambiar?",
+   "description": "Aceptación, restricción por 18 meses o rechazo: qué pasa con tus preexistencias al cambiarte de Isapre, qué se declara, el GES y el riesgo de no declarar.",
+   "image": [
+    "https://planiapp.cl/img/preexistencias-isapre-og.jpg"
+   ],
+   "datePublished": "2026-09-17",
+   "dateModified": "2026-09-17",
+   "inLanguage": "es-CL",
+   "mainEntityOfPage": "https://planiapp.cl/preexistencias-isapre",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://planiapp.cl/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Preexistencias",
+     "item": "https://planiapp.cl/preexistencias-isapre"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://planiapp.cl/preexistencias-isapre#preguntas",
+   "url": "https://planiapp.cl/preexistencias-isapre",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Me pueden rechazar en una Isapre por una preexistencia?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí. Con tu declaración de salud, la Isapre puede aceptarte sin restricciones, aceptarte con una restricción de hasta 18 meses para esa preexistencia, o rechazarte."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuánto dura la restricción por una preexistencia?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Como máximo 18 meses, contados desde el mes siguiente a la firma del contrato. Después, el plan cubre esa preexistencia en su totalidad."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Tengo que declarar un síntoma que nunca fue diagnosticado?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Una preexistencia es una enfermedad o condición de salud diagnosticada por un médico antes de firmar. Lo que nunca fue diagnosticado no es una preexistencia."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué pasa con mi GES si me cambio de Isapre?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La enfermedad se declara igual, pero el GES se cubre aunque sea preexistente, así que en la nueva Isapre activas el GES de nuevo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué pasa si no declaro una enfermedad?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La Isapre puede negar la cobertura de esa enfermedad y terminar tu contrato. Solo debe cubrirla si fue un error justificado, o si pasaron cinco años sin que necesitaras atención médica por ella."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp"/></a>
+  <div class="nav-carrusel" aria-hidden="true">
+    <div class="nav-tk">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+    </div>
+  </div>
+  <a class="nav-cta" href="/#opciones">Cotizar<span class="nav-cta-extra"> gratis</span></a>
+</nav>
+
+<article class="art">
+  <div class="miga"><a href="/">Inicio</a> › Preexistencias</div>
+
+  <h1>Preexistencias en Isapres: ¿qué pasa si me quiero cambiar?</h1>
+  <p class="bajada">Mucha gente no se cambia por miedo a sus preexistencias. Te explicamos qué es realmente una preexistencia, qué te puede responder la Isapre y en qué casos no es un impedimento.</p>
+
+  <img class="cabecera" src="img/preexistencias-isapre.webp" alt="Médico tomando notas frente a una paciente en su consulta" width="1000" height="450" fetchpriority="high" decoding="async">
+
+  <p>Muchas veces uno asume que tiene preexistencias y no se cambia de Isapre por miedo a quedar sin cobertura. Pero no todo es una preexistencia, y tener una no significa que te vayan a rechazar. Antes de entrar a cualquier Isapre <strong>siempre se completa una declaración de salud</strong>, y con eso la Isapre evalúa tu caso y te da una respuesta.</p>
+
+  <h2>¿Qué es una preexistencia para el sistema?</h2>
+  <p>Es una enfermedad o condición de salud física que ya conocías y que <strong>un médico te diagnosticó</strong> antes de firmar el contrato. La clave está en el diagnóstico: un dolor o una molestia que nunca fue diagnosticada por un médico no es una preexistencia.</p>
+  <p>Además, hay cosas que la ley deja fuera de la declaración de salud:</p>
+  <ul class="lista isa">
+    <li><strong>Salud mental.</strong> Desde 2022, las enfermedades mentales y las discapacidades psíquicas o intelectuales no se declaran.</li>
+    <li><strong>Condiciones congénitas diagnosticadas al nacer.</strong> Si se diagnosticaron durante el período de recién nacido, no son preexistencias, y la Isapre no puede restringir ni rechazar por ellas.</li>
+    <li><strong>Cáncer superado.</strong> Si pasaron cinco años desde que terminaste el tratamiento curativo sin recaídas, la Isapre no te lo puede preguntar.</li>
+    <li><strong>El embarazo.</strong> No es una preexistencia y no se declara. Te lo explicamos en <a href="/isapre-embarazada">qué pasa si contratas una Isapre estando embarazada</a>.</li>
+  </ul>
+
+  <h2>Las 3 respuestas que te puede dar una Isapre</h2>
+  <div class="resp">
+    <div class="resp-c si">
+      <span class="resp-i" aria-hidden="true">✓</span>
+      <div class="resp-t">Aceptación total</div>
+      <p>Entras sin restricciones, con toda la cobertura del plan desde el inicio.</p>
+    </div>
+    <div class="resp-c res">
+      <span class="resp-i" aria-hidden="true">!</span>
+      <div class="resp-t">Aceptación con restricción</div>
+      <p>Por un máximo de 18 meses, lo relacionado con tu preexistencia tiene una cobertura menor. Pasado ese plazo, el plan la cubre completa.</p>
+    </div>
+    <div class="resp-c no">
+      <span class="resp-i" aria-hidden="true">✕</span>
+      <div class="resp-t">Rechazo</div>
+      <p>La Isapre no te acepta. Más abajo te contamos qué opciones tienes.</p>
+    </div>
+  </div>
+  <div class="ojo">
+    <p><strong>Una restricción no te deja sin plan.</strong> Solo afecta a la preexistencia declarada: cualquier otra enfermedad o accidente se cubre con tu plan desde el primer día. En la práctica, las Isapres suelen restringir la hospitalización por esa condición, y lo ambulatorio, como consultas, exámenes o kinesiología, se cubre normal.</p>
+    <p>Incluso con restricción, la ley fija un piso: esas prestaciones no pueden cubrirse menos que en Fonasa libre elección, ni menos que el 25% de lo que da tu plan. Los 18 meses se cuentan desde el mes siguiente a la firma, y lo que queda restringido aparece en tu declaración de salud, así que revísalo antes de firmar.</p>
+  </div>
+
+  <h2>Cuándo una preexistencia no es un impedimento</h2>
+  <ul class="lista isa">
+    <li><strong>Te operaste la rodilla y hoy estás bien.</strong> La declaras. Si la Isapre te acepta con restricción, durante ese plazo una nueva hospitalización por esa rodilla tendría menor cobertura, pero si sigues con kinesiología por ese mismo evento, la nueva Isapre te la cubre igual. Pasada la restricción, el plan te cubre en su totalidad.</li>
+    <li><strong>Tienes hipotiroidismo con GES activo.</strong> Lo declaras igual, pero normalmente no es un problema: el GES se cubre aunque la enfermedad sea preexistente, así que en la nueva Isapre solo activas el GES de nuevo.</li>
+    <li><strong>Diagnósticos con los que cuesta entrar.</strong> Con enfermedades como la diabetes o las autoinmunes, lo más común es que las Isapres rechacen. Ojo: que el GES cubra una enfermedad no obliga a la Isapre a aceptarte.</li>
+  </ul>
+
+  <h2>El peligro de no declarar</h2>
+  <div class="ojo">
+    <p><strong>Si no declaras una enfermedad que te diagnosticaron, la Isapre puede negarte la cobertura de esa enfermedad y además terminar tu contrato.</strong> La declaración de salud la firmas tú, así que la responsabilidad es tuya, aunque alguien te haya dicho que no la declararas.</p>
+    <p>La ley solo obliga a la Isapre a cubrir una enfermedad no declarada en dos casos: si fue un error justificado, o si pasaron cinco años desde que entraste <strong>sin que necesitaras atención médica por esa enfermedad</strong>. Una enfermedad "controlada", con controles o remedios, sí está recibiendo atención médica, así que no entra en esa regla. Y si la Isapre prueba que ocultaste esas atenciones, se presume mala fe y puede terminar tu contrato.</p>
+    <p>Con el GES pasa algo parecido: la Isapre tiene que cubrir las prestaciones GES aunque no hayas declarado la enfermedad, pero igual puede terminar tu contrato por no declararla.</p>
+  </div>
+  <p><strong>Por eso, declara siempre todo lo que te hayan diagnosticado.</strong> Es lo que te protege el día que necesites usar el plan.</p>
+
+  <h2>¿Y si ninguna Isapre te acepta?</h2>
+  <ul class="lista isa">
+    <li><strong>Pide extender la restricción.</strong> Si te rechazan, puedes pedir por escrito a la Isapre, con copia a la Superintendencia de Salud, que te acepte con 18 meses más de restricción, 36 en total. La Isapre igual puede mantener el rechazo.</li>
+    <li><strong>Prueba en otra Isapre.</strong> Cada una evalúa tu declaración de salud por su cuenta.</li>
+    <li><strong>Fonasa.</strong> No pide declaración de salud ni rechaza a nadie, y el GES también existe ahí. Si tienes una enfermedad crónica y te rechazan, puede ser tu mejor opción. Revisa <a href="/fonasa-o-isapre">las diferencias entre Fonasa e Isapre</a>.</li>
+    <li><strong>Si ya estás en una Isapre,</strong> antes de moverte evalúa si te conviene más quedarte donde estás.</li>
+  </ul>
+  <p>Y si hoy estás sano, no esperes: <a href="/errores-al-contratar-isapre">esperar a estar enfermo para cambiarse</a> es el error que más caro sale.</p>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿Me pueden rechazar en una Isapre por una preexistencia?</h3>
+    <p>Sí. Con tu declaración de salud, la Isapre puede aceptarte sin restricciones, aceptarte con una restricción de hasta 18 meses para esa preexistencia, o rechazarte.</p>
+    <h3>¿Cuánto dura la restricción por una preexistencia?</h3>
+    <p>Como máximo 18 meses, contados desde el mes siguiente a la firma del contrato. Después, el plan cubre esa preexistencia en su totalidad.</p>
+    <h3>¿Tengo que declarar un síntoma que nunca fue diagnosticado?</h3>
+    <p>No. Una preexistencia es una enfermedad o condición de salud diagnosticada por un médico antes de firmar. Lo que nunca fue diagnosticado no es una preexistencia.</p>
+    <h3>¿Qué pasa con mi GES si me cambio de Isapre?</h3>
+    <p>La enfermedad se declara igual, pero el GES se cubre aunque sea preexistente, así que en la nueva Isapre activas el GES de nuevo.</p>
+    <h3>¿Qué pasa si no declaro una enfermedad?</h3>
+    <p>La Isapre puede negar la cobertura de esa enfermedad y terminar tu contrato. Solo debe cubrirla si fue un error justificado, o si pasaron cinco años sin que necesitaras atención médica por ella.</p>
+  </section>
+
+  <div class="relacionado">También te puede interesar:<br><a href="/mejor-isapre">¿Cuál es la mejor Isapre en 2026? Tabla comparativa →</a><br><a href="/fonasa-o-isapre">¿Fonasa o Isapre? Qué conviene más →</a><br><a href="/errores-al-contratar-isapre">Los 8 errores más comunes al contratar una Isapre →</a><br><a href="/isapre-embarazada">¿Conviene contratar una Isapre estando embarazada? →</a></div>
+
+  <div class="cierre">
+    <h2>¿Tienes una preexistencia y no sabes si cambiarte?</h2>
+    <p>Revisamos tu caso antes de que llenes la declaración de salud y te orientamos sobre tus opciones. Gratis y sin compromiso.</p>
+    <a href="/#opciones">Quiero que me asesoren →</a>
+  </div>
+
+  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente. Se basa en el <a href="https://www.superdesalud.gob.cl/app/uploads/2020/05/compendio-instr-contract-actualizado-al-11-03-26.pdf" target="_blank" rel="noopener">Compendio de Instrumentos Contractuales</a> y el <a href="https://www.superdesalud.gob.cl/app/uploads/2022/03/compendio-beneficios-version-actualizada-26-01-2026.pdf" target="_blank" rel="noopener">Compendio de Beneficios</a> de la Superintendencia de Salud. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+</article>
+
+<footer>
+  <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
+</footer>
+
+</body>
+</html>
