@@ -115,6 +115,11 @@ footer a { color: var(--text-muted); }
 .nov .nov-total td { font-weight: 700; color: var(--purple-dark); background: #FBFAFF; }
 .ej-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 2rem 0 0.6rem; }
 
+.plan-img { margin: 1rem 0 1.25rem; }
+.plan-img a { display: block; }
+.plan-img img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+.plan-img figcaption { font-size: 12.5px; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.45; }
+
 .faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
 .faq p { font-size: 15.5px; }
 
@@ -313,10 +318,10 @@ footer a { color: var(--text-muted); }
       </tbody>
     </table>
   </div>
-  <p class="cmp-nota">Antes del deducible. En la primera columna, como Fonasa cubrió menos de la mitad, el seguro calcula sobre el 50% del valor: $17.500, y no sobre los $21.000 que quedaron.</p>
+  <p class="cmp-nota">Valores de ejemplo, antes del deducible. En la primera columna, como Fonasa cubrió menos de la mitad, el seguro calcula sobre el 50% del valor: $17.500, y no sobre los $21.000 que quedaron.</p>
 
   <h2>La letra chica 2: el deducible</h2>
-  <p>Antes de devolverte plata, el seguro descuenta un deducible cada año. En el Seguro A es de UF 1, unos $40.000, y se descuenta de lo que el seguro te iba a reembolsar. Mira qué pasa con las consultas del ejercicio anterior, en las que el seguro calcula un reembolso de $10.500 cada vez:</p>
+  <p>Antes de devolverte plata, el seguro descuenta un deducible cada año. En el Seguro A es de UF 1, unos $41.000, y se descuenta de lo que el seguro te iba a reembolsar. Mira qué pasa con las consultas del ejercicio anterior, en las que el seguro calcula un reembolso de $10.500 cada vez:</p>
 
   <h3 class="ej-t">Ejercicio 2: las consultas del año con el Seguro A</h3>
   <div class="nov-wrap">
@@ -326,35 +331,72 @@ footer a { color: var(--text-muted); }
         <tr><td>1.ª</td><td>$10.500</td><td>$10.500</td><td>$0</td></tr>
         <tr><td>2.ª</td><td>$10.500</td><td>$10.500</td><td>$0</td></tr>
         <tr><td>3.ª</td><td>$10.500</td><td>$10.500</td><td>$0</td></tr>
-        <tr><td>4.ª</td><td>$10.500</td><td>$8.500</td><td>$2.000</td></tr>
+        <tr><td>4.ª</td><td>$10.500</td><td>$9.451</td><td>$1.049</td></tr>
         <tr><td>5.ª</td><td>$10.500</td><td>$0</td><td>$10.500</td></tr>
       </tbody>
     </table>
   </div>
   <p><strong>Las tres primeras consultas del año no te devuelven nada.</strong> Si vas poco al médico, puede que en todo el año recuperes muy poco de lo que pagaste en primas.</p>
 
-  <h3 class="ej-t">Ejercicio 3: una resonancia de $300.000 con el Seguro B</h3>
+  <h3 class="ej-t">Ejercicio 3: una resonancia de rodilla en Clínica Santa María</h3>
+  <p>Ahora con valores reales. En el arancel 2026 de Fonasa, la resonancia de rodilla es el código 04 05 013, con un valor de $176.560 y una bonificación de $88.280:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-fonasa-rm-rodilla.webp" target="_blank" rel="noopener"><img src="img/seguro-fonasa-rm-rodilla.webp" alt="Arancel Fonasa 2026: resonancia magnética de rodilla, código 04 05 013, total 176.560 y bonificación 88.280" width="1100" height="133" loading="lazy" decoding="async"></a>
+    <figcaption>Arancel Fonasa 2026, Modalidad Libre Elección. BENEF es lo que bonifica Fonasa.</figcaption>
+  </figure>
+  <p>Con ese código la buscas en el <a href="https://www.clinicasantamaria.cl/aranceles" target="_blank" rel="noopener">buscador de aranceles de Clínica Santa María</a>, y aparecen sus tres precios: particular, Fonasa e Isapre.</p>
+  <figure class="plan-img">
+    <a href="img/seguro-clinica-rm-rodilla.webp" target="_blank" rel="noopener"><img src="img/seguro-clinica-rm-rodilla.webp" alt="Aranceles de Clínica Santa María: resonancia de rodilla a 589.600 particular, 176.560 Fonasa y 496.100 Isapre" width="1100" height="186" loading="lazy" decoding="async"></a>
+    <figcaption>Clínica Santa María, aranceles ambulatorios, consultados el 17 de septiembre de 2026.</figcaption>
+  </figure>
   <div class="nov-wrap">
     <table class="nov">
-      <thead><tr><th scope="col"></th><th scope="col">Fonasa bonifica $80.000</th><th scope="col">Fonasa no bonifica nada</th></tr></thead>
+      <thead><tr><th scope="col"></th><th scope="col">Con bono Fonasa, Seguro A o B</th><th scope="col">Sin bono, Seguro A</th><th scope="col">Sin bono, Seguro B</th></tr></thead>
       <tbody>
-        <tr><td>Valor de la resonancia</td><td>$300.000</td><td>$300.000</td></tr>
-        <tr><td>Cubre Fonasa</td><td>$80.000</td><td>$0</td></tr>
-        <tr><td>Queda por pagar</td><td>$220.000</td><td>$300.000</td></tr>
-        <tr><td>Reembolso del seguro</td><td>$132.000 (60%)</td><td>$90.000 (30%)</td></tr>
-        <tr><td>Deducible (UF 0,5)</td><td>−$20.000</td><td>−$20.000</td></tr>
-        <tr><td>Te devuelve el seguro</td><td>$112.000</td><td>$70.000</td></tr>
-        <tr class="nov-total"><td>Pagas tú</td><td>$108.000</td><td>$230.000</td></tr>
+        <tr><td>Precio en la clínica</td><td>$176.560</td><td>$589.600</td><td>$589.600</td></tr>
+        <tr><td>Cubre Fonasa</td><td>$88.280</td><td>$0</td><td>$0</td></tr>
+        <tr><td>Queda por pagar</td><td>$88.280</td><td>$589.600</td><td>$589.600</td></tr>
+        <tr><td>Reembolso del seguro</td><td>$52.968 (60%)</td><td>$0</td><td>$176.880 (30%)</td></tr>
+        <tr class="nov-total"><td>Pagas tú</td><td>$35.312</td><td>$589.600</td><td>$412.720</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="cmp-nota">Valores de ejemplo, con la UF redondeada a $40.000 y suponiendo que es el primer gasto del año, así que se descuenta todo el deducible.</p>
+  <p class="cmp-nota">Antes del deducible. Con bono, Fonasa cubre justo la mitad, así que en el Seguro A no se aplica la rebaja. Sin bono, como en el tramo A, la clínica cobra el precio particular.</p>
+  <p><strong>En lo ambulatorio y con bono Fonasa, la combinación funciona:</strong> pagas unos $35 mil por una resonancia que particular cuesta $589.600. Ahí un seguro complementario sí rinde. Sin bono, en cambio, la cuenta cambia por completo.</p>
 
   <h2>Donde se queda corto: la hospitalización</h2>
-  <p>Si el seguro te lo da tu empresa, aprovéchalo: <strong>en lo ambulatorio puede funcionar bien</strong>, en consultas, exámenes o kinesiología. Pero en lo hospitalario la cobertura es baja:</p>
+  <p>Si el seguro te lo da tu empresa, aprovéchalo: <strong>en lo ambulatorio puede funcionar bien</strong>, en consultas, exámenes o kinesiología. Pero en lo hospitalario la cobertura es baja. Mira lo que pasa con un día de hospitalización en la misma clínica.</p>
+
+  <h3 class="ej-t">Ejercicio 4: un día de hospitalización en Clínica Santa María</h3>
+  <p>Una habitación médico quirúrgica corresponde al código Fonasa 02 01 001. Por ese día cama, Fonasa bonifica $4.720:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-fonasa-dia-cama.webp" target="_blank" rel="noopener"><img src="img/seguro-fonasa-dia-cama.webp" alt="Arancel Fonasa 2026: día cama de hospitalización integral, código 02 01 001, total 9.440 y bonificación 4.720" width="1100" height="135" loading="lazy" decoding="async"></a>
+    <figcaption>Arancel Fonasa 2026, Modalidad Libre Elección.</figcaption>
+  </figure>
+  <p>Pero la clínica le cobra $565.604 por ese día a un paciente Fonasa:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-clinica-dia-cama.webp" target="_blank" rel="noopener"><img src="img/seguro-clinica-dia-cama.webp" alt="Aranceles de Clínica Santa María: habitación médico quirúrgica a 739.700 particular, 565.604 Fonasa y 589.800 Isapre" width="1100" height="306" loading="lazy" decoding="async"></a>
+    <figcaption>Clínica Santa María, aranceles de hospitalización, consultados el 17 de septiembre de 2026.</figcaption>
+  </figure>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col"></th><th scope="col">Seguro A</th><th scope="col">Seguro B</th></tr></thead>
+      <tbody>
+        <tr><td>Precio para un paciente Fonasa</td><td>$565.604</td><td>$565.604</td></tr>
+        <tr><td>Cubre Fonasa</td><td>$4.720 (0,8%)</td><td>$4.720 (0,8%)</td></tr>
+        <tr><td>Queda por pagar</td><td>$560.884</td><td>$560.884</td></tr>
+        <tr><td>Reembolso calculado</td><td>$169.681 (60% de la mitad)</td><td>$336.530 (60%)</td></tr>
+        <tr><td>Tope por día</td><td>UF 3: $122.853</td><td>UF 2: $81.902</td></tr>
+        <tr><td>Te devuelve el seguro</td><td>$122.853</td><td>$81.902</td></tr>
+        <tr class="nov-total"><td>Pagas tú</td><td>$438.031</td><td>$478.982</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Por un solo día y solo la habitación, sin pabellón, honorarios médicos, medicamentos ni insumos. Topes calculados con la UF del 17 de septiembre de 2026: $40.950,90.</p>
+  <p><strong>Fonasa cubre menos del 1% del día cama</strong>, y aunque el seguro reembolsa, su tope por día lo deja muy lejos de lo que cobra la clínica. Y no es solo el día cama. Esto es lo que más pesa en una hospitalización:</p>
   <ul class="lista isa">
-    <li><strong>Día cama con tope.</strong> El Seguro A cubre hasta UF 3 por día, unos $120.000, y el Seguro B hasta UF 2, unos $80.000, sin importar lo que cobre la clínica. Un día de hospitalización en una clínica privada cuesta bastante más.</li>
-    <li><strong>La regla del 50% pesa más.</strong> En una clínica privada, lo que cubre Fonasa suele ser menos de la mitad de la cuenta. Con la regla del Seguro A, eso significa que el seguro te reembolsa como máximo el 30% del total, y eso antes de aplicar los topes.</li>
+    <li><strong>Día cama con tope.</strong> El Seguro A cubre hasta UF 3 por día y el Seguro B hasta UF 2, sin importar lo que cobre la clínica, como viste en el ejercicio 4.</li>
+    <li><strong>La regla del 50% pesa más.</strong> En una hospitalización en clínica, Fonasa suele cubrir muy poco de la cuenta. Con la regla del Seguro A, el seguro calcula sobre la mitad, así que te reembolsa como máximo el 30% del total, y eso antes de aplicar los topes.</li>
     <li><strong>Tope por evento.</strong> En el Seguro A, todo lo de una misma enfermedad o accidente tiene un tope de UF 50, unos $2 millones. Una hospitalización con cirugía puede superar ese monto con facilidad.</li>
     <li><strong>Sin CAEC.</strong> Si la cuenta es catastrófica, el seguro no tiene un techo de gastos como la <a href="/errores-al-contratar-isapre">CAEC de las Isapres</a>.</li>
     <li><strong>Maternidad con topes bajos.</strong> El parto normal tiene un tope de UF 20 en el Seguro A y de UF 10 en el B. Además, en el Seguro A solo se cubre si el embarazo empezó después de contratar, y solo para la titular o la cónyuge o pareja del titular. Lo comparamos en <a href="/isapre-embarazada">qué pasa si contratas una Isapre estando embarazada</a>.</li>
@@ -378,7 +420,7 @@ footer a { color: var(--text-muted); }
 
   <h2>¿Cuándo sí puede convenir?</h2>
   <ul class="lista fon">
-    <li><strong>Si tu empresa te lo paga o te da un buen descuento.</strong> En lo ambulatorio puede rendir.</li>
+    <li><strong>Si tu empresa te lo paga o te da un buen descuento.</strong> En lo ambulatorio puede rendir, y hay seguros colectivos que cubren mejor que los del ejemplo, porque la empresa negocia sus condiciones, como la BMI o los topes.</li>
     <li><strong>Si eres joven y sano, estás en los tramos B, C o D de Fonasa,</strong> y lo que más usas son consultas y exámenes.</li>
     <li><strong>Si tu 7% no alcanza para un buen plan de Isapre</strong> y no puedes pagar un adicional.</li>
     <li><strong>Como complemento de un plan de Isapre.</strong> Como la Isapre cubre más, el seguro reembolsa sobre una base mayor y sin la rebaja del 50%. Lo contamos en los <a href="/tips-fonasa-a-isapre">tips para elegir un buen plan</a>.</li>
@@ -407,7 +449,7 @@ footer a { color: var(--text-muted); }
     <a href="/#opciones">Quiero que me asesoren →</a>
   </div>
 
-  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente y las condiciones de cada póliza. Los ejercicios usan valores de ejemplo y la UF redondeada a $40.000. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente y las condiciones de cada póliza. El ejercicio 1 usa valores de ejemplo. Los ejercicios 3 y 4 usan el arancel 2026 de Fonasa y los aranceles publicados por Clínica Santa María al 17 de septiembre de 2026, que pueden cambiar. Los montos en UF se calcularon con la UF de ese día. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
 </article>
 
 <footer>
