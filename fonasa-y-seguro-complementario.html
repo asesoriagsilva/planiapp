@@ -215,7 +215,7 @@ footer a { color: var(--text-muted); }
      "name": "¿Cuánto cuesta un seguro complementario?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "En general, entre $30.000 y $50.000 al mes, hasta unos $600.000 al año, además de tu 7% de Fonasa. Si te lo da tu empresa, puede ser más barato."
+      "text": "En general, entre $30.000 y $50.000 al mes por persona, además de tu 7% de Fonasa. En las pólizas que revisamos, va desde unos $28.027 al mes para una persona sola hasta unos $61.742 por persona, según la edad. Si te lo da tu empresa, puede ser más barato."
      }
     },
     {
@@ -231,7 +231,7 @@ footer a { color: var(--text-muted); }
      "name": "¿Hasta qué edad cubre un seguro complementario?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Depende de la póliza, pero suelen tener una edad máxima. En una de las pólizas que revisamos, la cobertura termina a los 65 años."
+      "text": "Depende de la póliza. En una de las que revisamos, la cobertura termina a los 65 años; en la otra, se puede mantener hasta los 99."
      }
     }
    ]
@@ -274,41 +274,62 @@ footer a { color: var(--text-muted); }
   <img class="cabecera" src="img/fonasa-y-seguro-complementario.webp" alt="Pareja preocupada revisando una cuenta en la cocina de su casa" width="1000" height="450" fetchpriority="high" decoding="async">
 
   <p>Mucha gente se queda en Fonasa y le suma un seguro complementario, pensando que así queda igual de cubierta que en una Isapre y pagando menos. A veces funciona, sobre todo en lo ambulatorio. Pero en una hospitalización, que es cuando de verdad se necesita, la historia suele ser otra.</p>
-  <p>Para explicarlo usamos dos pólizas reales, que llamaremos <strong>Seguro A</strong>, una póliza colectiva a la que las personas se suman por su cuenta a través de un corredor, y <strong>Seguro B</strong>, un seguro de libre elección al 60%. No mostramos el nombre de las aseguradoras porque el punto no es una en particular: reglas como estas son comunes en los seguros complementarios.</p>
+  <p>Para explicarlo usamos dos pólizas reales, que llamaremos <strong>Seguro A</strong>, una póliza colectiva a la que las personas se suman por su cuenta a través de un corredor, y <strong>Seguro B</strong>, un seguro individual de libre elección al 60%. No mostramos el nombre de las aseguradoras porque el punto no es una en particular: reglas como estas son comunes en los seguros complementarios.</p>
 
   <h2>Cómo funciona y cuánto cuesta</h2>
-  <p>Un seguro complementario no reemplaza a Fonasa: <strong>funciona encima de lo que Fonasa ya cubrió</strong>. Primero Fonasa bonifica, y después el seguro te reembolsa un porcentaje de lo que queda, con sus propios topes y un deducible. En general cuestan entre $30.000 y $50.000 al mes, hasta unos $600.000 al año, que se suman a tu 7% de Fonasa. Si te lo da tu empresa, puede salirte más barato o gratis.</p>
+  <p>Un seguro complementario no reemplaza a Fonasa: <strong>funciona encima de lo que Fonasa ya cubrió</strong>. Primero Fonasa bonifica, y después el seguro te reembolsa un porcentaje de lo que queda, con sus propios topes y un deducible. En general cuestan entre $30.000 y $50.000 al mes por persona, que se suman a tu 7% de Fonasa. En el Seguro A, el titular solo paga UF 0,68 al mes, unos $28.027, y en el Seguro B cada persona paga entre UF 1,10 y UF 1,51 según su edad, entre los 21 y los 70 años: unos $45.222 a $61.742. Si te lo da tu empresa, puede salirte más barato o gratis.</p>
   <div class="nov-wrap">
     <table class="nov rn">
       <thead><tr><th scope="col">Condición</th><th scope="col">Seguro A</th><th scope="col">Seguro B</th></tr></thead>
       <tbody>
-        <tr><td>Reembolso</td><td>60%</td><td>60%, o 30% si tu sistema de salud no bonificó nada</td></tr>
-        <tr><td>Deducible al año</td><td>UF 1</td><td>UF 0,5</td></tr>
-        <tr><td>Tope por consulta</td><td>UF 1</td><td>UF 0,7</td></tr>
-        <tr><td>Día cama</td><td>UF 3 por día</td><td>UF 2 por día</td></tr>
-        <tr><td>Topes generales</td><td>UF 50 por evento y UF 250 al año</td><td>UF 300 al año</td></tr>
-        <tr><td>Parto normal y cesárea</td><td>UF 20 y UF 30</td><td>UF 10 y UF 15</td></tr>
-        <tr><td>Clínicas</td><td>Excluye Alemana, Las Condes, UC San Carlos y Universidad de los Andes</td><td>Cualquier clínica del país</td></tr>
+        <tr><td>Precio al mes</td><td>UF 0,68 el titular solo</td><td>UF 1,10 a UF 1,51 por persona, según la edad</td></tr>
+        <tr><td>Reembolso</td><td>60%</td><td>60% (80% en RedSalud), o 30% si tu sistema de salud no bonificó nada</td></tr>
+        <tr><td>Deducible al año</td><td>UF 1</td><td>UF 1</td></tr>
+        <tr><td>Tope por consulta</td><td>UF 1</td><td>UF 0,5</td></tr>
+        <tr><td>Día cama</td><td>UF 3 por día</td><td>UF 4 por día</td></tr>
+        <tr><td>Topes generales</td><td>UF 50 por evento y UF 250 al año</td><td>UF 450 al año, y UF 35 al año en lo ambulatorio</td></tr>
+        <tr><td>Parto normal y cesárea</td><td>UF 20 y UF 30</td><td>UF 30 y UF 40</td></tr>
+        <tr><td>Clínicas</td><td>Excluye Alemana, Las Condes, UC San Carlos y Universidad de los Andes</td><td>En Alemana, Las Condes, UC San Carlos y Universidad de los Andes el reembolso baja al 25%</td></tr>
+        <tr><td>Carencia</td><td>No tiene</td><td>60 días para resonancias, tomografías y procedimientos</td></tr>
+        <tr><td>Edad máxima</td><td>Hasta los 64 años y 364 días</td><td>Hasta los 99 años y 364 días</td></tr>
         <tr><td>Preexistencias</td><td>No las cubre</td><td>No las cubre</td></tr>
       </tbody>
     </table>
   </div>
   <p class="cmp-nota">Condiciones de dos pólizas reales. Cada seguro tiene las suyas, así que revisa siempre las de tu póliza.</p>
-  <p>Así aparece el cuadro de coberturas en la póliza del Seguro A:</p>
+  <p>Así aparecen los cuadros de coberturas en las pólizas. Primero, el del Seguro A:</p>
   <figure class="plan-img">
     <a href="img/seguro-a-coberturas.webp" target="_blank" rel="noopener"><img src="img/seguro-a-coberturas.webp" alt="Cuadro de coberturas del Seguro A: consulta médica con tope de UF 1, día cama con tope de UF 3 diarios, parto normal UF 20 y cesárea UF 30, todo al 60%" width="900" height="770" loading="lazy" decoding="async"></a>
     <figcaption>Seguro A, extracto de la póliza. En rojo, la consulta, el día cama y el parto.</figcaption>
+  </figure>
+  <p>Y el del Seguro B, que también muestra el tope anual y el deducible:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-b-coberturas.webp" target="_blank" rel="noopener"><img src="img/seguro-b-coberturas.webp" alt="Cuadro de coberturas del Seguro B: día cama con tope de UF 4, parto normal UF 30, cesárea UF 40, consulta médica UF 0,5, tope anual UF 450 y deducible UF 1" width="900" height="1311" loading="lazy" decoding="async"></a>
+    <figcaption>Seguro B, extracto de la póliza. En rojo, el día cama, el parto, la consulta, el tope anual y el deducible.</figcaption>
+  </figure>
+  <p>Y estos son los precios de cada póliza, en UF al mes:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-a-primas.webp" target="_blank" rel="noopener"><img src="img/seguro-a-primas.webp" alt="Primas del Seguro A: UF 0,6844 al mes el titular solo y UF 1,2729 con una carga" width="900" height="328" loading="lazy" decoding="async"></a>
+    <figcaption>Seguro A, extracto de la póliza: prima bruta mensual según el grupo familiar.</figcaption>
+  </figure>
+  <figure class="plan-img">
+    <a href="img/seguro-b-primas.webp" target="_blank" rel="noopener"><img src="img/seguro-b-primas.webp" alt="Primas del Seguro B por tramo de edad: UF 1,1043 entre 21 y 30 años y UF 1,5077 entre 61 y 70 años" width="900" height="490" loading="lazy" decoding="async"></a>
+    <figcaption>Seguro B, extracto de la póliza: la prima por persona sube con cada tramo de edad.</figcaption>
   </figure>
 
   <h2>La letra chica 1: la bonificación mínima (BMI)</h2>
   <p>Casi todos los seguros complementarios exigen que tu sistema de salud haya cubierto algo antes de pagar. En el rubro se conoce como BMI, o bonificación mínima, y cada póliza la aplica distinto:</p>
   <ul class="lista isa">
     <li><strong>En el Seguro A son dos reglas.</strong> Primero, Fonasa tiene que haber cubierto al menos $1 de la prestación: si no cubrió nada, salvo algunas excepciones que detalla la póliza, el seguro tampoco. Segundo, si Fonasa cubrió menos del 50%, el seguro calcula como si hubiera cubierto la mitad, y solo te reembolsa sobre el otro 50% del valor.</li>
-    <li><strong>En el Seguro B,</strong> si Fonasa no bonificó nada, el reembolso baja del 60% al 30%.</li>
+    <li><strong>En el Seguro B,</strong> si Fonasa no bonificó nada, el reembolso baja del 60% al 30%. Y en Clínica Alemana, Las Condes, UC San Carlos y Universidad de los Andes, el reembolso es de solo un 25%.</li>
   </ul>
   <figure class="plan-img">
     <a href="img/seguro-a-condiciones.webp" target="_blank" rel="noopener"><img src="img/seguro-a-condiciones.webp" alt="Condiciones del Seguro A: el sistema de salud debe haber cubierto al menos $1, excluye cuatro clínicas y, si el sistema cubre menos del 50%, se establece un copago mínimo del 50%" width="900" height="397" loading="lazy" decoding="async"></a>
     <figcaption>Seguro A, extracto de la póliza: la regla del $1, las clínicas excluidas y la regla del 50%.</figcaption>
+  </figure>
+  <figure class="plan-img">
+    <a href="img/seguro-b-condiciones.webp" target="_blank" rel="noopener"><img src="img/seguro-b-condiciones.webp" alt="Condiciones del Seguro B: rebaja de 50% al reembolso si el sistema de salud no bonificó nada, y reembolso de 25% en cinco prestadores" width="900" height="321" loading="lazy" decoding="async"></a>
+    <figcaption>Seguro B, extracto de la póliza: la rebaja del 50% cuando Fonasa no bonifica y el 25% en ciertas clínicas.</figcaption>
   </figure>
   <div class="ojo fon">
     <p><strong>¿Cuándo Fonasa no cubre nada?</strong> Por ejemplo, si estás en el tramo A, que no puede comprar bonos para atenderse en clínicas privadas, o si te atiendes con un prestador que no tiene convenio con Fonasa. Justo en esos casos, el seguro cubre menos o nada.</p>
@@ -330,7 +351,7 @@ footer a { color: var(--text-muted); }
   <p class="cmp-nota">Valores de ejemplo, antes del deducible. En la primera columna, como Fonasa cubrió menos de la mitad, el seguro calcula sobre el 50% del valor: $17.500, y no sobre los $21.000 que quedaron.</p>
 
   <h2>La letra chica 2: el deducible</h2>
-  <p>Antes de devolverte plata, el seguro descuenta un deducible cada año. En el Seguro A es de UF 1, unos $41.000, y se descuenta de lo que el seguro te iba a reembolsar:</p>
+  <p>Antes de devolverte plata, el seguro descuenta un deducible cada año. En los dos seguros del ejemplo es de UF 1, unos $41.000, y se descuenta de lo que el seguro te iba a reembolsar:</p>
   <figure class="plan-img">
     <a href="img/seguro-a-deducible.webp" target="_blank" rel="noopener"><img src="img/seguro-a-deducible.webp" alt="Tabla del Seguro A: capital asegurado UF 250, deducible UF 1 y tope por evento UF 50" width="900" height="303" loading="lazy" decoding="async"></a>
     <figcaption>Seguro A, extracto de la póliza: deducible de UF 1, tope de UF 50 por evento y UF 250 de capital asegurado.</figcaption>
@@ -376,6 +397,11 @@ footer a { color: var(--text-muted); }
     </table>
   </div>
   <p class="cmp-nota">Antes del deducible. Con bono, Fonasa cubre justo la mitad, así que en el Seguro A no se aplica la rebaja. Sin bono, como en el tramo A, la clínica cobra el precio particular.</p>
+  <p>Ojo con la carencia: en el Seguro B, las resonancias no se cubren durante los primeros 60 días desde que contratas.</p>
+  <figure class="plan-img">
+    <a href="img/seguro-b-carencia.webp" target="_blank" rel="noopener"><img src="img/seguro-b-carencia.webp" alt="Carencia del Seguro B: 60 días para tomografías, resonancias magnéticas y procedimientos" width="900" height="133" loading="lazy" decoding="async"></a>
+    <figcaption>Seguro B, extracto de la póliza.</figcaption>
+  </figure>
   <p><strong>En lo ambulatorio y con bono Fonasa, la combinación funciona:</strong> pagas unos $35 mil por una resonancia que particular cuesta $589.600. Ahí un seguro complementario sí rinde. Sin bono, en cambio, la cuenta cambia por completo.</p>
 
   <h2>Donde se queda corto: la hospitalización</h2>
@@ -400,29 +426,29 @@ footer a { color: var(--text-muted); }
         <tr><td>Cubre Fonasa</td><td>$4.720 (0,8%)</td><td>$4.720 (0,8%)</td></tr>
         <tr><td>Queda por pagar</td><td>$560.884</td><td>$560.884</td></tr>
         <tr><td>Reembolso calculado</td><td>$169.681 (60% de la mitad)</td><td>$336.530 (60%)</td></tr>
-        <tr><td>Tope por día</td><td>UF 3: $122.853</td><td>UF 2: $81.902</td></tr>
-        <tr><td>Te devuelve el seguro</td><td>$122.853</td><td>$81.902</td></tr>
-        <tr class="nov-total"><td>Pagas tú</td><td>$438.031</td><td>$478.982</td></tr>
+        <tr><td>Tope por día</td><td>UF 3: $122.853</td><td>UF 4: $163.804</td></tr>
+        <tr><td>Te devuelve el seguro</td><td>$122.853</td><td>$163.804</td></tr>
+        <tr class="nov-total"><td>Pagas tú</td><td>$438.031</td><td>$397.080</td></tr>
       </tbody>
     </table>
   </div>
   <p class="cmp-nota">Por un solo día y solo la habitación, sin pabellón, honorarios médicos, medicamentos ni insumos. Topes calculados con la UF del 17 de septiembre de 2026: $40.950,90.</p>
   <p><strong>Fonasa cubre menos del 1% del día cama</strong>, y aunque el seguro reembolsa, su tope por día lo deja muy lejos de lo que cobra la clínica. Y no es solo el día cama. Esto es lo que más pesa en una hospitalización:</p>
   <ul class="lista isa">
-    <li><strong>Día cama con tope.</strong> El Seguro A cubre hasta UF 3 por día y el Seguro B hasta UF 2, sin importar lo que cobre la clínica, como viste en el ejercicio 4.</li>
+    <li><strong>Día cama con tope.</strong> El Seguro A cubre hasta UF 3 por día y el Seguro B hasta UF 4, sin importar lo que cobre la clínica, como viste en el ejercicio 4.</li>
     <li><strong>La regla del 50% pesa más.</strong> En una hospitalización en clínica, Fonasa suele cubrir muy poco de la cuenta. Con la regla del Seguro A, el seguro calcula sobre la mitad, así que te reembolsa como máximo el 30% del total, y eso antes de aplicar los topes.</li>
     <li><strong>Tope por evento.</strong> En el Seguro A, todo lo de una misma enfermedad o accidente tiene un tope de UF 50, unos $2 millones. Una hospitalización con cirugía puede superar ese monto con facilidad.</li>
     <li><strong>Sin CAEC.</strong> Si la cuenta es catastrófica, el seguro no tiene un techo de gastos como la <a href="/errores-al-contratar-isapre">CAEC de las Isapres</a>.</li>
-    <li><strong>Maternidad con topes bajos.</strong> El parto normal tiene un tope de UF 20 en el Seguro A y de UF 10 en el B. Además, en el Seguro A solo se cubre si el embarazo empezó después de contratar, y solo para la titular o la cónyuge o pareja del titular. Lo comparamos en <a href="/isapre-embarazada">qué pasa si contratas una Isapre estando embarazada</a>.</li>
+    <li><strong>Maternidad con topes bajos.</strong> El parto normal tiene un tope de UF 20 en el Seguro A y de UF 30 en el B, y la cesárea, de UF 30 y UF 40. Además, en el Seguro A solo se cubre si el embarazo empezó después de contratar, y solo para la titular o la cónyuge o pareja del titular. Lo comparamos en <a href="/isapre-embarazada">qué pasa si contratas una Isapre estando embarazada</a>.</li>
     <li><strong>Reembolso, no convenio.</strong> Algunas consultas se reembolsan en línea al momento, pero en una hospitalización normalmente pagas la cuenta y después pides el reembolso con boletas y formularios, y eso demora.</li>
   </ul>
 
   <h2>Isapre vs. Fonasa + seguro complementario</h2>
   <div class="cmp">
     <div class="cmp-head"><div class="h-vacio"></div><div class="h-fon">Fonasa + seguro</div><div class="h-isa">Isapre</div></div>
-    <div class="cmp-row"><div class="cmp-k">Cuánto pagas</div><div>Tu 7% a Fonasa, más la prima del seguro: en general entre $30.000 y $50.000 al mes, o menos si lo paga tu empresa.</div><div>Tu 7%, más un monto adicional si el plan cuesta más.</div></div>
-    <div class="cmp-row"><div class="cmp-k">Alzas de precio</div><div>No tiene renovación garantizada: al renovar, la prima puede subir, y suele subir por tramos de edad.</div><div>El precio base sube una vez al año con un tope que fija la Superintendencia (3,5% en 2026), y el factor cambia por tramo de edad. Nunca sube por usar el plan.</div></div>
-    <div class="cmp-row"><div class="cmp-k">Hasta qué edad</div><div>Tiene edad máxima. En el Seguro A, la cobertura termina a los 65 años.</div><div>Sin límite de edad.</div></div>
+    <div class="cmp-row"><div class="cmp-k">Cuánto pagas</div><div>Tu 7% a Fonasa, más la prima del seguro: unos $28.027 al mes en el Seguro A, y entre $45.222 y $61.742 por persona en el B, o menos si lo paga tu empresa.</div><div>Tu 7%, más un monto adicional si el plan cuesta más.</div></div>
+    <div class="cmp-row"><div class="cmp-k">Alzas de precio</div><div>No tiene renovación garantizada: al renovar, la prima puede subir, y en el Seguro B sube con cada tramo de edad.</div><div>El precio base sube una vez al año con un tope que fija la Superintendencia (3,5% en 2026), y el factor cambia por tramo de edad. Nunca sube por usar el plan.</div></div>
+    <div class="cmp-row"><div class="cmp-k">Hasta qué edad</div><div>Depende de la póliza: el Seguro A termina a los 65 años, y el B permite seguir hasta los 99.</div><div>Sin límite de edad.</div></div>
     <div class="cmp-row"><div class="cmp-k">Quién lo puede terminar</div><div>La aseguradora puede no renovarlo, y si es de tu empresa, lo pierdes al cambiarte de trabajo.</div><div>Solo por causales legales, como no pagar o no declarar una preexistencia.</div></div>
     <div class="cmp-row"><div class="cmp-k">Preexistencias</div><div>No las cubre. Algunas pólizas excluyen incluso lo que estaba en estudio.</div><div>Puede restringirlas hasta 18 meses, y después las cubre. <a href="/preexistencias-isapre">Te lo explicamos acá</a>.</div></div>
     <div class="cmp-row"><div class="cmp-k">Topes</div><div>Tope por evento y anual (UF 50 y UF 250 en el Seguro A), más un deducible.</div><div>Sin tope por evento, y muchos planes sin tope anual en su red preferente.</div></div>
@@ -435,6 +461,11 @@ footer a { color: var(--text-muted); }
   <figure class="plan-img">
     <a href="img/seguro-a-edades.webp" target="_blank" rel="noopener"><img src="img/seguro-a-edades.webp" alt="Tabla de edades del Seguro A: el titular puede entrar hasta los 59 años y permanecer hasta los 64 años y 364 días" width="900" height="255" loading="lazy" decoding="async"></a>
     <figcaption>Seguro A, extracto de la póliza: edad máxima de permanencia del titular.</figcaption>
+  </figure>
+  <p>Y este es el resumen de condiciones que la póliza del Seguro B debe incluir por norma de la Comisión para el Mercado Financiero:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-b-resumen.webp" target="_blank" rel="noopener"><img src="img/seguro-b-resumen.webp" alt="Resumen de condiciones del Seguro B: no contempla renovación garantizada, puede aumentar la prima al renovar, no considera la siniestralidad individual y no cubre preexistencias" width="900" height="271" loading="lazy" decoding="async"></a>
+    <figcaption>Seguro B, extracto de la póliza.</figcaption>
   </figure>
 
   <h2>¿Cuándo sí puede convenir?</h2>
@@ -453,11 +484,11 @@ footer a { color: var(--text-muted); }
     <h3>¿Qué es la BMI de un seguro complementario?</h3>
     <p>Es la bonificación mínima que tu sistema de salud tiene que haber cubierto para que el seguro pague. Si Fonasa no cubre nada o cubre poco, el seguro reembolsa menos o nada.</p>
     <h3>¿Cuánto cuesta un seguro complementario?</h3>
-    <p>En general, entre $30.000 y $50.000 al mes, hasta unos $600.000 al año, además de tu 7% de Fonasa. Si te lo da tu empresa, puede ser más barato.</p>
+    <p>En general, entre $30.000 y $50.000 al mes por persona, además de tu 7% de Fonasa. En las pólizas que revisamos, va desde unos $28.027 al mes para una persona sola hasta unos $61.742 por persona, según la edad. Si te lo da tu empresa, puede ser más barato.</p>
     <h3>¿Un seguro complementario cubre preexistencias?</h3>
     <p>No. Las pólizas excluyen las enfermedades conocidas o diagnosticadas antes de contratar, y algunas incluso las que estaban en estudio.</p>
     <h3>¿Hasta qué edad cubre un seguro complementario?</h3>
-    <p>Depende de la póliza, pero suelen tener una edad máxima. En una de las pólizas que revisamos, la cobertura termina a los 65 años.</p>
+    <p>Depende de la póliza. En una de las que revisamos, la cobertura termina a los 65 años; en la otra, se puede mantener hasta los 99.</p>
   </section>
 
   <div class="relacionado">También te puede interesar:<br><a href="/fonasa-o-isapre">¿Fonasa o Isapre? Qué conviene más →</a><br><a href="/mejor-isapre">¿Cuál es la mejor Isapre en 2026? Tabla comparativa →</a><br><a href="/preexistencias-isapre">Preexistencias en Isapres: ¿qué pasa si me quiero cambiar? →</a><br><a href="/errores-al-contratar-isapre">Los 8 errores más comunes al contratar una Isapre →</a></div>
@@ -468,7 +499,7 @@ footer a { color: var(--text-muted); }
     <a href="/#opciones">Quiero que me asesoren →</a>
   </div>
 
-  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente y las condiciones de cada póliza. El ejercicio 1 usa valores de ejemplo. Los ejercicios 3 y 4 usan el arancel 2026 de Fonasa y los aranceles publicados por Clínica Santa María al 17 de septiembre de 2026, que pueden cambiar. Los montos en UF se calcularon con la UF de ese día. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente y las condiciones de cada póliza. El ejercicio 1 usa valores de ejemplo. Los ejercicios 3 y 4 usan el arancel 2026 de Fonasa y los aranceles publicados por Clínica Santa María al 17 de septiembre de 2026, que pueden cambiar. Los montos en UF se calcularon con la UF de ese día. Las imágenes de los seguros A y B son extractos de sus pólizas. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
 </article>
 
 <footer>
