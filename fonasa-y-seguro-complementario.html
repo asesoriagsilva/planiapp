@@ -467,6 +467,42 @@ footer a { color: var(--text-muted); }
     <li><strong>Reembolso, no convenio.</strong> Algunas consultas se reembolsan en línea al momento, pero en una hospitalización normalmente pagas la cuenta y después pides el reembolso con boletas y formularios, y eso demora.</li>
   </ul>
 
+  <h3 class="ej-t">Ejercicio 5: una urgencia en Clínica Indisa</h3>
+  <p>Una lesión de rodilla, un día hábil: consulta de urgencia y la misma resonancia del ejercicio 3, el código 04 05 013. Clínica Indisa publica solo sus precios particulares, y su consulta de urgencia no tiene código Fonasa asociado:</p>
+  <figure class="plan-img">
+    <a href="img/seguro-indisa-urgencia-consulta.webp" target="_blank" rel="noopener"><img src="img/seguro-indisa-urgencia-consulta.webp" alt="Aranceles de urgencia de Clínica Indisa: consulta de urgencia en horario hábil 70.960 y en inhábil 106.450, sin código Fonasa" width="1100" height="211" loading="lazy" decoding="async"></a>
+    <figcaption>Clínica Indisa, aranceles de urgencia, consultados el 17 de septiembre de 2026. La columna de código Fonasa va vacía.</figcaption>
+  </figure>
+  <figure class="plan-img">
+    <a href="img/seguro-indisa-urgencia-rodilla.webp" target="_blank" rel="noopener"><img src="img/seguro-indisa-urgencia-rodilla.webp" alt="Aranceles de urgencia de Clínica Indisa: resonancia de rodilla, código 04-05-013, a 461.782 en horario hábil" width="1100" height="258" loading="lazy" decoding="async"></a>
+    <figcaption>Clínica Indisa. Son valores de su arancel particular, como aclara la propia clínica.</figcaption>
+  </figure>
+  <p>La cuenta parte en $532.742. Fonasa bonifica los $88.280 que su arancel fija para la resonancia, y nada por la consulta de urgencia, porque no está en el arancel. Y ojo con el Seguro B: la consulta de urgencia se reembolsa al 10%, no al 60%.</p>
+  <figure class="plan-img">
+    <a href="img/seguro-b-urgencia.webp" target="_blank" rel="noopener"><img src="img/seguro-b-urgencia.webp" alt="Cuadro del Seguro B: los exámenes de imagenología se reembolsan al 60%, pero la consulta médica de atención de urgencia solo al 10%" width="900" height="450" loading="lazy" decoding="async"></a>
+    <figcaption>Seguro B, extracto de la póliza. En rojo, la imagenología y la consulta de urgencia.</figcaption>
+  </figure>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col"></th><th scope="col">Solo Fonasa</th><th scope="col">Seguro A</th><th scope="col">Seguro B</th></tr></thead>
+      <tbody>
+        <tr><td>Consulta de urgencia</td><td>$70.960</td><td>$70.960</td><td>$70.960</td></tr>
+        <tr><td>Resonancia de rodilla</td><td>$461.782</td><td>$461.782</td><td>$461.782</td></tr>
+        <tr><td>Cubre Fonasa</td><td>$88.280 (16,6%)</td><td>$88.280</td><td>$88.280</td></tr>
+        <tr><td>Reembolso por la consulta</td><td>&mdash;</td><td>$0</td><td>$7.096 (10%)</td></tr>
+        <tr><td>Reembolso por la resonancia</td><td>&mdash;</td><td>$138.535 (60% de la mitad)</td><td>$224.101 (60%)</td></tr>
+        <tr class="nov-total"><td>Pagas tú</td><td>$444.462</td><td>$305.927</td><td>$213.265</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Antes del deducible y en horario hábil. En horario inhábil, la consulta sube a $106.450 y la resonancia a $692.673. En el Seguro A la consulta no se reembolsa, porque Fonasa no bonificó nada de ella, y en la resonancia se aplica la regla del 50%. En el Seguro B hay que llevar más de 60 días con la póliza, por la carencia de las resonancias.</p>
+  <p>Para comparar, así cubre esta misma urgencia uno de los planes de Isapre que mostramos en <a href="/isapre-embarazada">la guía de embarazo</a>: tiene copago fijo en Indisa y, como el evento incluye una resonancia, se considera urgencia compleja.</p>
+  <figure class="plan-img">
+    <a href="img/seguro-plan-isapre-urgencia.webp" target="_blank" rel="noopener"><img src="img/seguro-plan-isapre-urgencia.webp" alt="Plan de Isapre real: copago fijo de urgencia integral en Clínica Indisa, 1,5 UF en urgencia simple y 4 UF en compleja, y la nota que considera compleja cuando se hacen resonancias" width="1100" height="240" loading="lazy" decoding="async"></a>
+    <figcaption>Plan de Isapre real, extracto del documento del plan. En rojo, el copago de urgencia en Indisa y la nota que explica cuándo es compleja.</figcaption>
+  </figure>
+  <p><strong>Con ese plan, la misma urgencia son 4 UF, unos $163.804 de copago fijo</strong>, según las condiciones del plan. Con Fonasa y seguro complementario pagas entre $213.265 y $305.927, y con Fonasa sola, $444.462. Por eso conviene mirar el <a href="/mejor-isapre">copago fijo de urgencia</a> en la clínica donde te atiendes.</p>
+
   <h2>Isapre vs. Fonasa + seguro complementario</h2>
   <div class="cmp">
     <div class="cmp-head"><div class="h-vacio"></div><div class="h-fon">Fonasa + seguro</div><div class="h-isa">Isapre</div></div>
@@ -523,7 +559,7 @@ footer a { color: var(--text-muted); }
     <a href="/#opciones">Quiero que me asesoren →</a>
   </div>
 
-  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente y las condiciones de cada póliza. Los ejercicios usan el arancel 2026 de Fonasa y los aranceles publicados por Clínica Santa María al 17 de septiembre de 2026, que pueden cambiar. Los montos en UF se calcularon con la UF de ese día. Las imágenes de los seguros A y B son extractos de sus pólizas. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+  <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente y las condiciones de cada póliza. Los ejercicios usan el arancel 2026 de Fonasa y los aranceles publicados por Clínica Santa María y Clínica Indisa al 17 de septiembre de 2026, que pueden cambiar. Los montos en UF se calcularon con la UF de ese día. Las imágenes de los seguros A y B son extractos de sus pólizas. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
 </article>
 
 <footer>
