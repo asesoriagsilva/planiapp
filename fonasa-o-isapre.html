@@ -127,6 +127,46 @@ footer a { color: var(--text-muted); }
   .cmp-row > div { font-size: 13.5px; padding: 0.6rem 0.8rem; }
   .cierre { padding: 1.6rem 1.2rem; }
 }
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
 </style>
 <script type="application/ld+json">
 {
@@ -203,6 +243,7 @@ footer a { color: var(--text-muted); }
   <a class="nav-cta" href="/#opciones">Cotizar<span class="nav-cta-extra"> gratis</span></a>
 </nav>
 
+<div class="pagina">
 <article class="art">
   <div class="miga"><a href="/">Inicio</a> › Fonasa o Isapre</div>
 
@@ -260,16 +301,58 @@ footer a { color: var(--text-muted); }
     <p><strong>Un seguro complementario ayuda, pero no reemplaza a una Isapre.</strong> Para bonos y exámenes puede convenir. En una hospitalización es otra historia. Muchos seguros exigen una bonificación mínima, lo que en el rubro se conoce como BMI: el porcentaje de la cuenta que tu sistema de salud tiene que haber cubierto para que el seguro pague los valores comprometidos. En una clínica privada lo que cubre Fonasa suele ser bajo, así que ese mínimo muchas veces no se cumple y el seguro termina reembolsando bastante menos de lo que esperabas. Por eso suele ser necesario sumarle un seguro catastrófico, y entre tu 7%, el complementario y el catastrófico, lo que pagas al mes puede acercarse a lo que costaría una Isapre. Su nombre lo dice: es complementario. Te lo explicamos con ejercicios en <a href="/fonasa-y-seguro-complementario">la verdad detrás de Fonasa más seguro complementario</a>.</p>
   </div>
 
-  <div class="relacionado">También te puede interesar:<br><a href="/mejor-isapre">¿Cuál es la mejor Isapre en 2026? Tabla comparativa →</a><br><a href="/errores-al-contratar-isapre">Los 8 errores más comunes al contratar una Isapre →</a><br><a href="/tips-fonasa-a-isapre">De Fonasa a Isapre: tips para elegir un buen plan →</a><br><a href="/isapre-embarazada">¿Conviene contratar una Isapre estando embarazada? →</a><br><a href="/preexistencias-isapre">Preexistencias en Isapres: ¿qué pasa si me quiero cambiar? →</a><br><a href="/fonasa-y-seguro-complementario">Fonasa + seguro complementario: la verdad detrás de esta combinación →</a></div>
-
   <div class="cierre">
     <h2>¿Y en tu caso, qué conviene?</h2>
     <p>Depende de tu renta, tus cargas y dónde te atiendes. Cuéntanos tu situación y te decimos qué te conviene, aunque la respuesta sea quedarte en Fonasa.</p>
     <a href="/#opciones">Quiero que me asesoren →</a>
   </div>
 
+  <section class="rel">
+    <h2>Artículos que te podrían interesar</h2>
+    <div class="rel-grid">
+    <a class="rel-c" href="/fonasa-y-seguro-complementario" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'seguro_complementario',origen:'final'})">
+      <img src="img/fonasa-y-seguro-complementario-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">Fonasa + seguro complementario: la verdad detrás de esta combinación</span><span class="rel-p">Cómo funcionan de verdad la BMI, el deducible y los topes, con ejercicios, y la comparación con una Isapre.</span></span>
+    </a>
+    <a class="rel-c" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'final'})">
+      <img src="img/mejor-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">¿Cuál es la mejor Isapre en 2026? Tabla comparativa</span><span class="rel-p">Las 7 Isapres abiertas comparadas: precios por edad, urgencias, reembolsos y reclamos.</span></span>
+    </a>
+    <a class="rel-c" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips',origen:'final'})">
+      <img src="img/tips-fonasa-a-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">De Fonasa a Isapre: tips para elegir un buen plan</span><span class="rel-p">Seis consejos para contratar bien y tener una buena experiencia con tu Isapre.</span></span>
+    </a>
+    </div>
+  </section>
+
   <p class="aviso">La información de este artículo es general y puede cambiar según la normativa vigente. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
 </article>
+
+<aside class="lateral" aria-label="Asesoría y artículos relacionados">
+  <div class="lateral-in">
+    <div class="lat-cta">
+      <div class="lat-cta-t">¿Quieres que revisemos tu caso?</div>
+      <p>Comparamos planes según tu situación, gratis y sin compromiso.</p>
+      <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'lateral'})">Cotizar gratis →</a>
+    </div>
+    <div class="lat-rel">
+      <div class="lat-rel-t">Artículos relacionados</div>
+      <a class="lat-i" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores',origen:'lateral'})">
+        <img src="img/errores-al-contratar-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Los 8 errores más comunes al contratar una Isapre</span><span class="lat-i-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</span></span>
+      </a>
+      <a class="lat-i" href="/preexistencias-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'preexistencias',origen:'lateral'})">
+        <img src="img/preexistencias-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Preexistencias en Isapres: ¿qué pasa si me quiero cambiar?</span><span class="lat-i-p">Qué es realmente una preexistencia, las 3 respuestas que te puede dar una Isapre y el riesgo de no declarar.</span></span>
+      </a>
+      <a class="lat-i" href="/isapre-embarazada" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'embarazo',origen:'lateral'})">
+        <img src="img/isapre-embarazada-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">¿Conviene contratar una Isapre estando embarazada?</span><span class="lat-i-p">La regla de los novenos, lo que no cubre el PAD de Fonasa y el plazo para inscribir a tu hijo.</span></span>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
 
 <footer>
   <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
