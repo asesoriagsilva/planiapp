@@ -250,6 +250,11 @@ footer a { color: var(--text-muted); }
   .perfiles { grid-template-columns: 1fr; }
   .otras.siete { grid-template-columns: repeat(2, 1fr); }
 }
+/* comparativas:inicio */
+.comp-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0.5rem; }
+.comp-links a { background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1rem; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--purple-dark); }
+.comp-links a:hover { border-color: var(--purple-mid); color: var(--purple); }
+/* comparativas:fin */
 /* relacionados:inicio */
 .rel { margin-top: 2.75rem; }
 .rel h2 { margin: 0 0 1rem; }
@@ -709,6 +714,28 @@ footer a { color: var(--text-muted); }
     <p>Revisamos tu caso con la tabla en la mano y te decimos qué plan te conviene, aunque la respuesta sea quedarte donde estás.</p>
     <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'mejor_isapre_final'})">Quiero que me asesoren →</a>
   </div>
+
+  
+
+  
+
+  <!-- comparativas:inicio -->
+  <h2>Compara una Isapre con otra</h2>
+  <div class="comp-links">
+    <a href="/banmedica-o-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'banmedica_o_cruz_blanca',origen:'enlace_comparativas'})">Banmédica o Cruz Blanca →</a>
+    <a href="/banmedica-o-esencial" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'banmedica_o_esencial',origen:'enlace_comparativas'})">Banmédica o Esencial →</a>
+    <a href="/banmedica-o-vida-tres" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'banmedica_o_vida_tres',origen:'enlace_comparativas'})">Banmédica o Vida Tres →</a>
+    <a href="/colmena-o-banmedica" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_banmedica',origen:'enlace_comparativas'})">Colmena o Banmédica →</a>
+    <a href="/colmena-o-consalud" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_consalud',origen:'enlace_comparativas'})">Colmena o Consalud →</a>
+    <a href="/colmena-o-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_cruz_blanca',origen:'enlace_comparativas'})">Colmena o Cruz Blanca →</a>
+    <a href="/colmena-o-esencial" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_esencial',origen:'enlace_comparativas'})">Colmena o Esencial →</a>
+    <a href="/colmena-o-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_nueva_masvida',origen:'enlace_comparativas'})">Colmena o Nueva Masvida →</a>
+    <a href="/consalud-o-banmedica" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'consalud_o_banmedica',origen:'enlace_comparativas'})">Consalud o Banmédica →</a>
+    <a href="/consalud-o-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'consalud_o_cruz_blanca',origen:'enlace_comparativas'})">Consalud o Cruz Blanca →</a>
+    <a href="/consalud-o-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'consalud_o_nueva_masvida',origen:'enlace_comparativas'})">Consalud o Nueva Masvida →</a>
+    <a href="/cruz-blanca-o-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'cruz_blanca_o_nueva_masvida',origen:'enlace_comparativas'})">Cruz Blanca o Nueva Masvida →</a>
+  </div>
+  <!-- comparativas:fin -->
 
   <h2>Conoce cada Isapre en detalle</h2>
   <div class="otras siete">

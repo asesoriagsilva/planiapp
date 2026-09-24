@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banmédica o Esencial: ¿cuál te conviene en 2026? | Planiapp</title>
+<meta name="description" content="Comparamos Banmédica y Esencial con datos verificados: precios por edad, clínicas, urgencias, topes, reembolsos y reclamos. Cuál conviene según tu caso.">
+<link rel="canonical" href="https://planiapp.cl/banmedica-o-esencial">
+<meta property="og:title" content="Banmédica o Esencial: ¿cuál te conviene en 2026?">
+<meta property="og:description" content="Banmédica, salvo que tus médicos estén en Clínica Alemana.">
+<meta property="og:url" content="https://planiapp.cl/banmedica-o-esencial">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://planiapp.cl/img/mejor-isapre-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pareja comparando planes de salud en un computador">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads + Analytics (sin evento de conversion: ese va solo en gracias.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+</script>
+
+<style>
+:root {
+  --purple: #534AB7; --purple-light: #EEEDFE; --purple-mid: #7F77DD;
+  --purple-dark: #26215C; --purple-deep: #3C3489;
+  --blue: #185FA5; --blue-light: #E6F1FB;
+  --text: #1a1830; --text-muted: #6b6b8a; --border: #E7E5F5;
+  --bg: #f8f7ff; --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+a { color: var(--purple); }
+
+nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--border); }
+.nav-logo img { height: 64px; width: auto; display: block; }
+.nav-cta { background: var(--purple); color: #fff; text-decoration: none; border-radius: 24px; padding: 0.55rem 1.2rem; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.nav-cta:hover { background: var(--purple-deep); }
+
+/* Carrusel de logos de Isapres en la barra superior */
+.nav-carrusel { flex: 1; min-width: 0; overflow: hidden; margin: 0 1.5rem; padding: 0 1rem; border-left: 1px solid rgba(83,74,183,0.15); border-right: 1px solid rgba(83,74,183,0.15); }
+.nav-tk { display: inline-flex; align-items: center; animation: ticker 24s linear infinite; }
+.nav-tk img { flex-shrink: 0; margin-right: 2rem; opacity: 0.85; }
+.nav-carrusel:hover .nav-tk { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .nav-tk { animation: none; } }
+@media (max-width: 680px) { .nav-carrusel { margin: 0 0.6rem; padding: 0 0.6rem; } .nav-tk img { margin-right: 1.25rem; } }
+@media (max-width: 420px) { .nav-cta-extra { display: none; } }
+
+.art { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.miga { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
+.miga a { color: var(--text-muted); text-decoration: none; }
+.miga a:hover { color: var(--purple); }
+h1 { font-family: 'Inter', sans-serif; font-size: 38px; font-weight: 900; color: var(--purple-dark); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.9rem; }
+.bajada { font-size: 18px; color: var(--text-muted); margin-bottom: 1.75rem; }
+h2 { font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; line-height: 1.25; margin: 2.5rem 0 0.9rem; }
+p { font-size: 16px; margin-bottom: 1rem; }
+
+/* Tabla comparativa */
+.cmp { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.cmp-row, .cmp-head { display: grid; grid-template-columns: 170px 1fr 1fr; }
+.cmp-head div { padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px; }
+.cmp-head .h-fon { background: var(--blue-light); color: var(--blue); }
+.cmp-head .h-isa { background: var(--purple-light); color: var(--purple); }
+.cmp-row { border-top: 1px solid var(--border); }
+.cmp-row > div { padding: 0.8rem 1rem; font-size: 14px; line-height: 1.5; }
+.cmp-k { font-weight: 600; color: var(--purple-dark); background: #FBFAFF; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Listas de "cuando conviene" */
+.lista { list-style: none; margin: 0.25rem 0 1rem; }
+.lista li { position: relative; padding: 0.7rem 0 0.7rem 1.9rem; border-bottom: 1px solid var(--border); font-size: 15.5px; }
+.lista li:last-child { border-bottom: none; }
+.lista li::before { content: '✓'; position: absolute; left: 0.25rem; top: 0.7rem; font-weight: 700; }
+.lista.fon li::before { color: var(--blue); }
+.lista.isa li::before { color: var(--purple); }
+.lista strong { color: var(--text); }
+
+.ojo { background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin: 1rem 0; }
+.ojo p { font-size: 15px; margin-bottom: 0.6rem; }
+.ojo p:last-child { margin-bottom: 0; }
+.ojo.fon { background: #EEF5FC; border-left-color: #185FA5; }
+
+.cierre { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.9rem 1.75rem; margin-top: 2.75rem; color: #fff; text-align: center; }
+.cierre h2 { color: #fff; margin: 0 0 0.6rem; }
+.cierre p { color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 1.3rem; }
+.cierre a { display: inline-block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.8rem 1.7rem; font-size: 15px; }
+.cierre a:hover { background: var(--purple-light); }
+
+.aviso { font-size: 12px; color: var(--text-muted); margin-top: 2rem; line-height: 1.55; }
+footer { text-align: center; font-size: 13px; color: var(--text-muted); padding: 1.5rem; border-top: 1px solid var(--border); background: var(--white); }
+footer a { color: var(--text-muted); }
+
+.relacionado { margin-top: 2rem; padding: 1rem 1.2rem; background: var(--white); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; }
+.relacionado a { font-weight: 600; text-decoration: none; }
+
+.cabecera { display: block; width: 100%; height: auto; aspect-ratio: 20 / 9; object-fit: cover; border-radius: 16px; margin: 0 0 1.5rem; background: var(--purple-light); }
+
+/* Las 3 respuestas de la Isapre */
+.resp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 1rem; }
+.resp-c { background: var(--white); border: 1px solid var(--border); border-top: 4px solid; border-radius: 14px; padding: 1rem 1.1rem; }
+.resp-c.si { border-top-color: #1D9E75; }
+.resp-c.res { border-top-color: #E0A526; }
+.resp-c.no { border-top-color: #D93025; }
+.resp-i { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 0.5rem; }
+.resp-c.si .resp-i { background: #1D9E75; }
+.resp-c.res .resp-i { background: #B7791F; }
+.resp-c.no .resp-i { background: #D93025; }
+.resp-t { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800; color: var(--purple-dark); line-height: 1.25; margin-bottom: 0.35rem; }
+.resp-c p { font-size: 14.5px; line-height: 1.5; margin: 0; }
+
+.faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
+.faq p { font-size: 15.5px; }
+
+@media (max-width: 680px) {
+  .resp { grid-template-columns: 1fr; }
+  nav { padding: 0.6rem 1rem; }
+  .nav-logo img { height: 46px; }
+  .nav-cta { font-size: 13px; padding: 0.5rem 0.95rem; }
+  .art { padding: 1.75rem 1.1rem 2.5rem; }
+  h1 { font-size: 29px; }
+  .bajada { font-size: 16.5px; }
+  h2 { font-size: 21px; margin-top: 2rem; }
+  /* En celular: la etiqueta ocupa el ancho y debajo van Fonasa | Isapre */
+  .cmp-head { grid-template-columns: 1fr 1fr; }
+  .cmp-head .h-vacio { display: none; }
+  .cmp-row { grid-template-columns: 1fr 1fr; }
+  .cmp-k { grid-column: 1 / -1; padding-bottom: 0.35rem !important; }
+  .cmp-row > div { font-size: 13.5px; padding: 0.6rem 0.8rem; }
+  .cierre { padding: 1.6rem 1.2rem; }
+}
+/* comparativa */
+.nov-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.nov { width: 100%; border-collapse: collapse; }
+.nov th { background: var(--purple-light); color: var(--purple-dark); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 13.5px; line-height: 1.3; text-align: left; padding: 0.8rem 1rem; }
+.nov td { border-top: 1px solid var(--border); padding: 0.7rem 1rem; font-size: 14.5px; line-height: 1.45; vertical-align: top; }
+.vs { display: flex; align-items: center; justify-content: center; gap: 1.5rem; background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.2rem; margin-bottom: 1.5rem; }
+.vs img { height: 34px; width: auto; max-width: 40%; object-fit: contain; }
+.vs-o { font-family: 'Inter', sans-serif; font-weight: 800; color: var(--text-muted); font-size: 15px; }
+.nov.comp td:first-child { font-weight: 600; color: var(--purple-dark); }
+.nov td.bien { background: #EAF7F1; }
+.nov td.mal { background: #FDEEED; }
+.cmp-ico { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; color: #fff; font-size: 10px; font-weight: 700; margin-right: 0.35rem; vertical-align: 1px; }
+.cmp-ico.bien { background: #1D9E75; }
+.cmp-ico.mal { background: #D93025; }
+.lista.menos li::before { content: '!'; color: #B7791F; }
+.ojo.ok { background: #EAF7F1; border-left-color: #1D9E75; }
+.fichas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1rem 0 0.5rem; }
+.fichas a { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 0.8rem; text-decoration: none; font-size: 13.5px; color: var(--text-muted); }
+.fichas a:hover { border-color: var(--purple-mid); }
+.fichas img { height: 24px; width: auto; }
+.fichas-todas { font-family: 'Inter', sans-serif; font-weight: 800; color: var(--purple-dark); font-size: 15px; }
+@media (max-width: 680px) {
+  .fichas { grid-template-columns: 1fr; }
+  .fichas a { flex-direction: row; justify-content: flex-start; gap: 0.8rem; }
+  /* La tabla grande se apila: cada fila queda como una ficha con las dos Isapres una debajo de la otra */
+  .nov.comp thead { display: none; }
+  .nov.comp, .nov.comp tbody, .nov.comp tr, .nov.comp td { display: block; width: 100%; }
+  .nov.comp tr { border-top: 1px solid var(--border); padding: 0.7rem 0; }
+  .nov.comp tr:first-child { border-top: none; }
+  .nov.comp td { border: none; padding: 0.2rem 1rem; }
+  .nov.comp td:first-child { font-family: 'Inter', sans-serif; font-size: 13px; margin-bottom: 0.2rem; }
+  .nov.comp td[data-i]::before { content: attr(data-i) ': '; font-weight: 700; color: var(--purple-dark); }
+  .nov.comp td.bien, .nov.comp td.mal { border-radius: 8px; margin: 0.15rem 0.6rem; padding: 0.35rem 0.4rem; }
+}
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://planiapp.cl/banmedica-o-esencial#articulo",
+   "headline": "Banmédica o Esencial: ¿cuál te conviene en 2026?",
+   "description": "Comparamos Banmédica y Esencial con datos verificados: precios por edad, clínicas, urgencias, topes, reembolsos y reclamos. Cuál conviene según tu caso.",
+   "image": [
+    "https://planiapp.cl/img/mejor-isapre-og.jpg"
+   ],
+   "datePublished": "2026-09-24",
+   "dateModified": "2026-09-24",
+   "inLanguage": "es-CL",
+   "mainEntityOfPage": "https://planiapp.cl/banmedica-o-esencial",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://planiapp.cl/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Mejor Isapre",
+     "item": "https://planiapp.cl/mejor-isapre"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Banmédica o Esencial",
+     "item": "https://planiapp.cl/banmedica-o-esencial"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://planiapp.cl/banmedica-o-esencial#preguntas",
+   "url": "https://planiapp.cl/banmedica-o-esencial",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Cuál es más barata?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Banmédica. Entre los 25 y 34 años su plan de entrada parte en 1,72 UF, contra 2,35 UF de Esencial. La diferencia se mantiene en todos los tramos."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuándo conviene Esencial?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Cuando te atiendes en Clínica Alemana, en Santiago o en Temuco, Valdivia y Osorno. Ahí ninguna otra Isapre calza mejor."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuál tiene más sucursales?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Banmédica, con 31. Esencial tiene una sola, así que casi todo se hace en línea."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuál cubre mejor la kinesiología?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Esencial la cubre sin tope. En Banmédica hay tope, y se levanta contratando un seguro adicional."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp"/></a>
+  <div class="nav-carrusel" aria-hidden="true">
+    <div class="nav-tk">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+    </div>
+  </div>
+  <a class="nav-cta" href="/#opciones">Cotizar<span class="nav-cta-extra"> gratis</span></a>
+</nav>
+
+<div class="pagina">
+<article class="art">
+  <div class="miga"><a href="/">Inicio</a> › <a href="/mejor-isapre">Mejor Isapre</a> › Banmédica o Esencial</div>
+
+  <h1>Banmédica o Esencial: ¿cuál te conviene en 2026?</h1>
+  <p class="bajada">Las dos cubren sin tope lo más caro, prótesis y quimioterapia. La diferencia está en la red y en el precio: Banmédica es la más barata del sistema y Esencial la más cara.</p>
+
+  <div class="vs">
+    <a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'comparativa'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="105" height="28" loading="lazy" decoding="async"></a>
+    <span class="vs-o" aria-hidden="true">o</span>
+    <a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'comparativa'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="116" height="25" loading="lazy" decoding="async"></a>
+  </div>
+
+  <div class="ojo ok">
+    <p><strong>Respuesta corta:</strong> Banmédica, salvo que tus médicos estén en Clínica Alemana.</p>
+    <p>Ojo: la Isapre es solo la mitad de la respuesta. Lo que define tu cobertura es el plan que contratas dentro de ella y la clínica donde te atiendes.</p>
+  </div>
+
+  <h2>Banmédica y Esencial lado a lado</h2>
+  <div class="nov-wrap">
+    <table class="nov comp">
+      <thead><tr><th scope="col"></th><th scope="col">Banmédica</th><th scope="col">Esencial</th></tr></thead>
+      <tbody>
+        <tr><td>Clínicas propias en Santiago</td><td data-i="Banmédica">Santa María, Dávila y Dávila Vespucio</td><td data-i="Esencial">Clínica Alemana</td></tr>
+        <tr><td>Clínicas propias en regiones</td><td data-i="Banmédica">Ciudad del Mar en Viña del Mar y Biobío en Concepción</td><td data-i="Esencial">Alemana de Temuco, Valdivia y Osorno</td></tr>
+        <tr><td>Sucursales</td><td data-i="Banmédica">31</td><td data-i="Esencial">1</td></tr>
+        <tr><td>Convenio preferente</td><td data-i="Banmédica">Casi todas las clínicas, salvo Hospital del Profesor y Bupa Santiago</td><td data-i="Esencial">Santiago, salvo Clínica Las Condes</td></tr>
+        <tr><td>Copago de urgencia en Santiago</td><td data-i="Banmédica">Dávila y Santa María. En algunos planes, también Las Condes y U. de los Andes</td><td data-i="Esencial">Alemana, incluida Chicureo, Indisa y Santa María</td></tr>
+        <tr><td>Copago de urgencia en regiones</td><td class="mal" data-i="Banmédica"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td><td class="mal" data-i="Esencial"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td></tr>
+        <tr><td>Kinesiología</td><td class="" data-i="Banmédica">Con tope. Sin tope con un seguro adicional</td><td class="bien" data-i="Esencial"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td></tr>
+        <tr><td>Psicología</td><td class="" data-i="Banmédica">Con tope anual</td><td class="" data-i="Esencial">Con tope anual</td></tr>
+        <tr><td>Prótesis y órtesis</td><td class="bien" data-i="Banmédica"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td><td class="bien" data-i="Esencial"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope, salvo algunas líneas de planes con topes altos</td></tr>
+        <tr><td>Quimioterapia</td><td class="bien" data-i="Banmédica"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td><td class="bien" data-i="Esencial"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope, salvo algunas líneas de planes con topes altos</td></tr>
+        <tr><td>Red GES y CAEC</td><td class="" data-i="Banmédica">Principalmente Dávila y Santa María</td><td class="" data-i="Esencial">Principalmente Alemana y UC Christus</td></tr>
+        <tr><td>Plan de entrada, 25 a 34 años</td><td data-i="Banmédica">1,72 UF</td><td data-i="Esencial">2,35 UF</td></tr>
+        <tr><td>Reembolsos</td><td class="" data-i="Banmédica">Hasta 5 días</td><td class="mal" data-i="Esencial"><span class="cmp-ico mal" aria-hidden="true">!</span>30 días</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan y se confirman al cotizar.</p>
+
+  <h2>Cuándo te conviene Banmédica</h2>
+  <ul class="lista isa">
+    <li><strong>Es la más barata en todas las edades.</strong> Su plan de entrada parte en 1,72 UF entre los 25 y 34 años, el más barato del sistema.</li>
+    <li><strong>Es la que más destina a pagar prestaciones.</strong> De cada $1.000 que recibe, $950 vuelven en prestaciones y licencias de sus afiliados.</li>
+    <li><strong>Tiene clínicas propias.</strong> Santa María, Dávila y Dávila Vespucio en Santiago.</li>
+  </ul>
+  <p>Dónde se queda corta:</p>
+  <ul class="lista fon menos">
+    <li>No tiene copago de urgencia en regiones.</li>
+    <li>Los reembolsos tardan hasta 5 días.</li>
+  </ul>
+
+  <h2>Cuándo te conviene Esencial</h2>
+  <ul class="lista isa">
+    <li><strong>Es la Isapre de Clínica Alemana.</strong> Si todos tus médicos están ahí, ninguna otra te calza mejor.</li>
+    <li><strong>Kinesiología sin tope.</strong></li>
+    <li><strong>Es de las que menos gente deja.</strong> 5,7 desafiliaciones voluntarias por cada 1.000 cotizantes.</li>
+  </ul>
+  <p>Dónde se queda corta:</p>
+  <ul class="lista fon menos">
+    <li>Es la más cara en todas las edades.</li>
+    <li>Tiene una sola sucursal.</li>
+    <li>No tiene copago de urgencia en regiones.</li>
+    <li>Fuera de su red, muchas veces pagas y después pides reembolso.</li>
+  </ul>
+
+  <h2>Precio del plan de entrada, según tu edad</h2>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Edad</th><th scope="col">Banmédica</th><th scope="col">Esencial</th></tr></thead>
+      <tbody>
+        <tr><td>18 a 24 años</td><td class="bien">1,62 UF</td><td>2,21 UF</td></tr>
+        <tr><td>25 a 34 años</td><td class="bien">1,72 UF</td><td>2,35 UF</td></tr>
+        <tr><td>35 a 44 años</td><td class="bien">2,00 UF</td><td>2,78 UF</td></tr>
+        <tr><td>45 a 54 años</td><td class="bien">2,09 UF</td><td>2,93 UF</td></tr>
+        <tr><td>55 a 64 años</td><td class="bien">2,66 UF</td><td>3,79 UF</td></tr>
+        <tr><td>65 años o más</td><td class="bien">3,03 UF</td><td>4,37 UF</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Precio mensual en UF del plan de entrada, para una persona sin cargas, a septiembre de 2026. En verde, el más barato de cada tramo. 1 UF equivale a unos $40.900. El precio final depende del plan, tus cargas y tu declaración de salud.</p>
+
+  <h2>Qué dicen los datos de la Superintendencia</h2>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col"></th><th scope="col">Banmédica</th><th scope="col">Esencial</th></tr></thead>
+      <tbody>
+        <tr><td>Reclamos por cada 1.000 cotizantes</td><td>10,4</td><td class="bien">10,0</td></tr>
+        <tr><td>Desafiliaciones voluntarias por cada 1.000</td><td>8,8</td><td class="bien">5,7</td></tr>
+        <tr><td>Bonificación por cada $1.000 de ingreso</td><td class="bien">$950</td><td>$857</td></tr>
+        <tr><td>Licencias médicas rechazadas</td><td>16%</td><td>5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Fuente: Superintendencia de Salud, Radiografía de Isapres. Reclamos, desafiliaciones y licencias del segundo trimestre de 2025; bonificación de enero a junio de 2025. La tasa de licencias rechazadas depende también del perfil de afiliados de cada Isapre, por eso no la marcamos.</p>
+
+  <h2>Lo que de verdad define tu elección</h2>
+  <div class="ojo">
+    <p><strong>La clínica donde te atiendes pesa más que el nombre de la Isapre.</strong> Dos planes de la misma Isapre pueden cubrir muy distinto en la misma clínica. Antes de decidir, revisa el porcentaje de cobertura y el copago de urgencia en la clínica que te queda cerca.</p>
+    <p>Y si tienes alguna enfermedad diagnosticada, revisa primero <a href="/preexistencias-isapre">qué pasa con las preexistencias al cambiarte</a>, porque cada Isapre evalúa tu declaración de salud por su cuenta.</p>
+  </div>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿Cuál es más barata?</h3>
+    <p>Banmédica. Entre los 25 y 34 años su plan de entrada parte en 1,72 UF, contra 2,35 UF de Esencial. La diferencia se mantiene en todos los tramos.</p>
+    <h3>¿Cuándo conviene Esencial?</h3>
+    <p>Cuando te atiendes en Clínica Alemana, en Santiago o en Temuco, Valdivia y Osorno. Ahí ninguna otra Isapre calza mejor.</p>
+    <h3>¿Cuál tiene más sucursales?</h3>
+    <p>Banmédica, con 31. Esencial tiene una sola, así que casi todo se hace en línea.</p>
+    <h3>¿Cuál cubre mejor la kinesiología?</h3>
+    <p>Esencial la cubre sin tope. En Banmédica hay tope, y se levanta contratando un seguro adicional.</p>
+  </section>
+
+  <h2>Mira la ficha completa de cada una</h2>
+  <div class="fichas">
+    <a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'comparativa_fichas'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="105" height="28" loading="lazy" decoding="async"><span>Ficha de Banmédica</span></a>
+    <a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'comparativa_fichas'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="116" height="25" loading="lazy" decoding="async"><span>Ficha de Esencial</span></a>
+    <a href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'comparativa_fichas'})"><span class="fichas-todas">Las 7 Isapres</span><span>Tabla comparativa completa</span></a>
+  </div>
+
+  <section class="rel">
+    <h2>Artículos que te podrían interesar</h2>
+    <div class="rel-grid">
+    <a class="rel-c" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'final'})">
+      <img src="img/mejor-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">¿Cuál es la mejor Isapre en 2026? Tabla comparativa</span><span class="rel-p">Las 7 Isapres abiertas comparadas: precios por edad, urgencias, reembolsos y reclamos.</span></span>
+    </a>
+    <a class="rel-c" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre',origen:'final'})">
+      <img src="img/fonasa-o-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">¿Fonasa o Isapre? ¿Qué conviene más?</span><span class="rel-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</span></span>
+    </a>
+    <a class="rel-c" href="/preexistencias-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'preexistencias',origen:'final'})">
+      <img src="img/preexistencias-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">Preexistencias en Isapres: ¿qué pasa si me quiero cambiar?</span><span class="rel-p">Qué es realmente una preexistencia, las 3 respuestas que te puede dar una Isapre y el riesgo de no declarar.</span></span>
+    </a>
+    </div>
+  </section>
+
+  <div class="cierre">
+    <h2>¿Te cuadra alguna de las dos?</h2>
+    <p>Cuéntanos tu caso, tu clínica y tus cargas, y te decimos cuál te conviene de verdad, aunque sea ninguna de estas dos. Gratis y sin compromiso.</p>
+    <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'comparativa_banmedica-o-esencial'})">Quiero que me asesoren →</a>
+  </div>
+
+  <p class="aviso">La información de esta página es referencial y corresponde a la oferta vigente a septiembre de 2026. Los indicadores son de la Superintendencia de Salud. Coberturas, topes y convenios cambian según el plan, y se confirman al momento de cotizar. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+</article>
+
+<aside class="lateral" aria-label="Asesoría y artículos relacionados">
+  <div class="lateral-in">
+    <div class="lat-cta">
+      <div class="lat-cta-t">¿Quieres que revisemos tu caso?</div>
+      <p>Comparamos planes según tu situación, gratis y sin compromiso.</p>
+      <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'lateral'})">Cotizar gratis →</a>
+    </div>
+    <div class="lat-rel">
+      <div class="lat-rel-t">Artículos relacionados</div>
+      <a class="lat-i" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores',origen:'lateral'})">
+        <img src="img/errores-al-contratar-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Los 8 errores más comunes al contratar una Isapre</span><span class="lat-i-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</span></span>
+      </a>
+      <a class="lat-i" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips',origen:'lateral'})">
+        <img src="img/tips-fonasa-a-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">De Fonasa a Isapre: tips para elegir un buen plan</span><span class="lat-i-p">Seis consejos para contratar bien y tener una buena experiencia con tu Isapre.</span></span>
+      </a>
+      <a class="lat-i" href="/isapre-embarazada" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'embarazo',origen:'lateral'})">
+        <img src="img/isapre-embarazada-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">¿Conviene contratar una Isapre estando embarazada?</span><span class="lat-i-p">La regla de los novenos, lo que no cubre el PAD de Fonasa y el plazo para inscribir a tu hijo.</span></span>
+      </a>
+      <a class="lat-i" href="/fonasa-y-seguro-complementario" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'seguro_complementario',origen:'lateral'})">
+        <img src="img/fonasa-y-seguro-complementario-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Fonasa + seguro complementario: la verdad detrás de esta combinación</span><span class="lat-i-p">Cómo funcionan de verdad la BMI, el deducible y los topes, con ejercicios, y la comparación con una Isapre.</span></span>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
+</footer>
+
+</body>
+</html>

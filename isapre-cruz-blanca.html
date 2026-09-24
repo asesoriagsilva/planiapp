@@ -195,6 +195,11 @@ footer a { color: var(--text-muted); }
   .rb-grid { grid-template-columns: 1fr; }
   .analisis { padding: 1rem 1rem; }
 }
+/* comparativas:inicio */
+.comp-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0.5rem; }
+.comp-links a { background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1rem; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--purple-dark); }
+.comp-links a:hover { border-color: var(--purple-mid); color: var(--purple); }
+/* comparativas:fin */
 /* relacionados:inicio */
 .rel { margin-top: 2.75rem; }
 .rel h2 { margin: 0 0 1rem; }
@@ -372,6 +377,20 @@ footer a { color: var(--text-muted); }
     <p>Cuéntanos tu caso y te decimos si Cruz Blanca es la Isapre que te conviene, o cuál lo es, gratis y sin compromiso.</p>
     <a href="/?isapre=Cruz%20Blanca#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Cruz Blanca'})">Cotizar un plan de Cruz Blanca →</a>
   </div>
+
+  
+
+  
+
+  <!-- comparativas:inicio -->
+  <h2>Compara Cruz Blanca con otra Isapre</h2>
+  <div class="comp-links">
+    <a href="/banmedica-o-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'banmedica_o_cruz_blanca',origen:'enlace_comparativas'})">Banmédica o Cruz Blanca →</a>
+    <a href="/colmena-o-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_cruz_blanca',origen:'enlace_comparativas'})">Colmena o Cruz Blanca →</a>
+    <a href="/consalud-o-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'consalud_o_cruz_blanca',origen:'enlace_comparativas'})">Consalud o Cruz Blanca →</a>
+    <a href="/cruz-blanca-o-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'cruz_blanca_o_nueva_masvida',origen:'enlace_comparativas'})">Cruz Blanca o Nueva Masvida →</a>
+  </div>
+  <!-- comparativas:fin -->
 
   <h2>Conoce las otras Isapres</h2>
   <div class="otras">

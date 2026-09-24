@@ -1,38 +1,259 @@
 {
   "redirects": [
-    { "source": "/planiapp.html", "destination": "/", "permanent": true },
-    { "source": "/fonasa-o-isapre.html", "destination": "/fonasa-o-isapre", "permanent": true },
-    { "source": "/errores-al-contratar-isapre.html", "destination": "/errores-al-contratar-isapre", "permanent": true },
-    { "source": "/tips-fonasa-a-isapre.html", "destination": "/tips-fonasa-a-isapre", "permanent": true },
-    { "source": "/isapre-embarazada.html", "destination": "/isapre-embarazada", "permanent": true },
-    { "source": "/preexistencias-isapre.html", "destination": "/preexistencias-isapre", "permanent": true },
-    { "source": "/fonasa-y-seguro-complementario.html", "destination": "/fonasa-y-seguro-complementario", "permanent": true },
-    { "source": "/mejor-isapre.html", "destination": "/mejor-isapre", "permanent": true },
-    { "source": "/que-isapre-me-conviene", "destination": "/mejor-isapre", "permanent": false },
-    { "source": "/que-isapre-me-conviene.html", "destination": "/mejor-isapre", "permanent": false },
-    { "source": "/isapre-banmedica.html", "destination": "/isapre-banmedica", "permanent": true },
-    { "source": "/isapre-colmena.html", "destination": "/isapre-colmena", "permanent": true },
-    { "source": "/isapre-consalud.html", "destination": "/isapre-consalud", "permanent": true },
-    { "source": "/isapre-cruz-blanca.html", "destination": "/isapre-cruz-blanca", "permanent": true },
-    { "source": "/isapre-esencial.html", "destination": "/isapre-esencial", "permanent": true },
-    { "source": "/isapre-nueva-masvida.html", "destination": "/isapre-nueva-masvida", "permanent": true },
-    { "source": "/isapre-vida-tres.html", "destination": "/isapre-vida-tres", "permanent": true }
+    {
+      "source": "/planiapp.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fonasa-o-isapre.html",
+      "destination": "/fonasa-o-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/errores-al-contratar-isapre.html",
+      "destination": "/errores-al-contratar-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/tips-fonasa-a-isapre.html",
+      "destination": "/tips-fonasa-a-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/isapre-embarazada.html",
+      "destination": "/isapre-embarazada",
+      "permanent": true
+    },
+    {
+      "source": "/preexistencias-isapre.html",
+      "destination": "/preexistencias-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/fonasa-y-seguro-complementario.html",
+      "destination": "/fonasa-y-seguro-complementario",
+      "permanent": true
+    },
+    {
+      "source": "/mejor-isapre.html",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/que-isapre-me-conviene",
+      "destination": "/mejor-isapre",
+      "permanent": false
+    },
+    {
+      "source": "/que-isapre-me-conviene.html",
+      "destination": "/mejor-isapre",
+      "permanent": false
+    },
+    {
+      "source": "/isapre-banmedica.html",
+      "destination": "/isapre-banmedica",
+      "permanent": true
+    },
+    {
+      "source": "/isapre-colmena.html",
+      "destination": "/isapre-colmena",
+      "permanent": true
+    },
+    {
+      "source": "/isapre-consalud.html",
+      "destination": "/isapre-consalud",
+      "permanent": true
+    },
+    {
+      "source": "/isapre-cruz-blanca.html",
+      "destination": "/isapre-cruz-blanca",
+      "permanent": true
+    },
+    {
+      "source": "/isapre-esencial.html",
+      "destination": "/isapre-esencial",
+      "permanent": true
+    },
+    {
+      "source": "/isapre-nueva-masvida.html",
+      "destination": "/isapre-nueva-masvida",
+      "permanent": true
+    },
+    {
+      "source": "/isapre-vida-tres.html",
+      "destination": "/isapre-vida-tres",
+      "permanent": true
+    },
+    {
+      "source": "/banmedica-o-cruz-blanca.html",
+      "destination": "/banmedica-o-cruz-blanca",
+      "permanent": true
+    },
+    {
+      "source": "/banmedica-o-vida-tres.html",
+      "destination": "/banmedica-o-vida-tres",
+      "permanent": true
+    },
+    {
+      "source": "/colmena-o-banmedica.html",
+      "destination": "/colmena-o-banmedica",
+      "permanent": true
+    },
+    {
+      "source": "/colmena-o-consalud.html",
+      "destination": "/colmena-o-consalud",
+      "permanent": true
+    },
+    {
+      "source": "/colmena-o-cruz-blanca.html",
+      "destination": "/colmena-o-cruz-blanca",
+      "permanent": true
+    },
+    {
+      "source": "/colmena-o-nueva-masvida.html",
+      "destination": "/colmena-o-nueva-masvida",
+      "permanent": true
+    },
+    {
+      "source": "/consalud-o-banmedica.html",
+      "destination": "/consalud-o-banmedica",
+      "permanent": true
+    },
+    {
+      "source": "/consalud-o-cruz-blanca.html",
+      "destination": "/consalud-o-cruz-blanca",
+      "permanent": true
+    },
+    {
+      "source": "/consalud-o-nueva-masvida.html",
+      "destination": "/consalud-o-nueva-masvida",
+      "permanent": true
+    },
+    {
+      "source": "/cruz-blanca-o-nueva-masvida.html",
+      "destination": "/cruz-blanca-o-nueva-masvida",
+      "permanent": true
+    },
+    {
+      "source": "/banmedica-o-esencial.html",
+      "destination": "/banmedica-o-esencial",
+      "permanent": true
+    },
+    {
+      "source": "/colmena-o-esencial.html",
+      "destination": "/colmena-o-esencial",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/planiapp.html" },
-    { "source": "/fonasa-o-isapre", "destination": "/fonasa-o-isapre.html" },
-    { "source": "/errores-al-contratar-isapre", "destination": "/errores-al-contratar-isapre.html" },
-    { "source": "/tips-fonasa-a-isapre", "destination": "/tips-fonasa-a-isapre.html" },
-    { "source": "/isapre-embarazada", "destination": "/isapre-embarazada.html" },
-    { "source": "/preexistencias-isapre", "destination": "/preexistencias-isapre.html" },
-    { "source": "/fonasa-y-seguro-complementario", "destination": "/fonasa-y-seguro-complementario.html" },
-    { "source": "/mejor-isapre", "destination": "/mejor-isapre.html" },
-    { "source": "/isapre-banmedica", "destination": "/isapre-banmedica.html" },
-    { "source": "/isapre-colmena", "destination": "/isapre-colmena.html" },
-    { "source": "/isapre-consalud", "destination": "/isapre-consalud.html" },
-    { "source": "/isapre-cruz-blanca", "destination": "/isapre-cruz-blanca.html" },
-    { "source": "/isapre-esencial", "destination": "/isapre-esencial.html" },
-    { "source": "/isapre-nueva-masvida", "destination": "/isapre-nueva-masvida.html" },
-    { "source": "/isapre-vida-tres", "destination": "/isapre-vida-tres.html" }
+    {
+      "source": "/",
+      "destination": "/planiapp.html"
+    },
+    {
+      "source": "/fonasa-o-isapre",
+      "destination": "/fonasa-o-isapre.html"
+    },
+    {
+      "source": "/errores-al-contratar-isapre",
+      "destination": "/errores-al-contratar-isapre.html"
+    },
+    {
+      "source": "/tips-fonasa-a-isapre",
+      "destination": "/tips-fonasa-a-isapre.html"
+    },
+    {
+      "source": "/isapre-embarazada",
+      "destination": "/isapre-embarazada.html"
+    },
+    {
+      "source": "/preexistencias-isapre",
+      "destination": "/preexistencias-isapre.html"
+    },
+    {
+      "source": "/fonasa-y-seguro-complementario",
+      "destination": "/fonasa-y-seguro-complementario.html"
+    },
+    {
+      "source": "/mejor-isapre",
+      "destination": "/mejor-isapre.html"
+    },
+    {
+      "source": "/isapre-banmedica",
+      "destination": "/isapre-banmedica.html"
+    },
+    {
+      "source": "/isapre-colmena",
+      "destination": "/isapre-colmena.html"
+    },
+    {
+      "source": "/isapre-consalud",
+      "destination": "/isapre-consalud.html"
+    },
+    {
+      "source": "/isapre-cruz-blanca",
+      "destination": "/isapre-cruz-blanca.html"
+    },
+    {
+      "source": "/isapre-esencial",
+      "destination": "/isapre-esencial.html"
+    },
+    {
+      "source": "/isapre-nueva-masvida",
+      "destination": "/isapre-nueva-masvida.html"
+    },
+    {
+      "source": "/isapre-vida-tres",
+      "destination": "/isapre-vida-tres.html"
+    },
+    {
+      "source": "/banmedica-o-cruz-blanca",
+      "destination": "/banmedica-o-cruz-blanca.html"
+    },
+    {
+      "source": "/banmedica-o-vida-tres",
+      "destination": "/banmedica-o-vida-tres.html"
+    },
+    {
+      "source": "/colmena-o-banmedica",
+      "destination": "/colmena-o-banmedica.html"
+    },
+    {
+      "source": "/colmena-o-consalud",
+      "destination": "/colmena-o-consalud.html"
+    },
+    {
+      "source": "/colmena-o-cruz-blanca",
+      "destination": "/colmena-o-cruz-blanca.html"
+    },
+    {
+      "source": "/colmena-o-nueva-masvida",
+      "destination": "/colmena-o-nueva-masvida.html"
+    },
+    {
+      "source": "/consalud-o-banmedica",
+      "destination": "/consalud-o-banmedica.html"
+    },
+    {
+      "source": "/consalud-o-cruz-blanca",
+      "destination": "/consalud-o-cruz-blanca.html"
+    },
+    {
+      "source": "/consalud-o-nueva-masvida",
+      "destination": "/consalud-o-nueva-masvida.html"
+    },
+    {
+      "source": "/cruz-blanca-o-nueva-masvida",
+      "destination": "/cruz-blanca-o-nueva-masvida.html"
+    },
+    {
+      "source": "/banmedica-o-esencial",
+      "destination": "/banmedica-o-esencial.html"
+    },
+    {
+      "source": "/colmena-o-esencial",
+      "destination": "/colmena-o-esencial.html"
+    }
   ]
 }

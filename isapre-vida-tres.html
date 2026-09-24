@@ -195,6 +195,11 @@ footer a { color: var(--text-muted); }
   .rb-grid { grid-template-columns: 1fr; }
   .analisis { padding: 1rem 1rem; }
 }
+/* comparativas:inicio */
+.comp-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0.5rem; }
+.comp-links a { background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1rem; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--purple-dark); }
+.comp-links a:hover { border-color: var(--purple-mid); color: var(--purple); }
+/* comparativas:fin */
 /* relacionados:inicio */
 .rel { margin-top: 2.75rem; }
 .rel h2 { margin: 0 0 1rem; }
@@ -372,6 +377,17 @@ footer a { color: var(--text-muted); }
     <p>Cuéntanos tu caso y te decimos si Vida Tres es la Isapre que te conviene, o cuál lo es, gratis y sin compromiso.</p>
     <a href="/?isapre=Vida%20Tres#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Vida Tres'})">Cotizar un plan de Vida Tres →</a>
   </div>
+
+  
+
+  
+
+  <!-- comparativas:inicio -->
+  <h2>Compara Vida Tres con otra Isapre</h2>
+  <div class="comp-links">
+    <a href="/banmedica-o-vida-tres" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'banmedica_o_vida_tres',origen:'enlace_comparativas'})">Banmédica o Vida Tres →</a>
+  </div>
+  <!-- comparativas:fin -->
 
   <h2>Conoce las otras Isapres</h2>
   <div class="otras">
