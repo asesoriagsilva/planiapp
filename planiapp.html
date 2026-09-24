@@ -670,6 +670,67 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
               </select>
             </div>
             <div>
+              <label class="pf-label">¿Qué Isapre quieres cotizar?</label>
+              <select class="pf-select" id="s-cotizar" onchange="sD.cotizar=this.value">
+                <option value="">Selecciona...</option>
+                <option>Quiero cotizar varias</option>
+                <option>Todavía no lo sé</option>
+                <option>Banmédica</option>
+                <option>Colmena</option>
+                <option>Consalud</option>
+                <option>Cruz Blanca</option>
+                <option>Esencial</option>
+                <option>Nueva Masvida</option>
+                <option>Vida Tres</option>
+              </select>
+            </div>
+            <div class="pf-row2">
+              <div>
+                <label class="pf-label">Edad</label>
+                <input class="pf-input" type="number" inputmode="numeric" min="18" max="99" id="s-edad" placeholder="Ej: 34" oninput="sD.edad=this.value"/>
+              </div>
+              <div>
+                <label class="pf-label">Región</label>
+                <select class="pf-select" id="s-region" onchange="sD.region=this.value">
+                  <option value="">Selecciona...</option>
+                  <option>Arica y Parinacota</option>
+                  <option>Tarapacá</option>
+                  <option>Antofagasta</option>
+                  <option>Atacama</option>
+                  <option>Coquimbo</option>
+                  <option>Valparaíso</option>
+                  <option>Metropolitana</option>
+                  <option>O'Higgins</option>
+                  <option>Maule</option>
+                  <option>Ñuble</option>
+                  <option>Biobío</option>
+                  <option>La Araucanía</option>
+                  <option>Los Ríos</option>
+                  <option>Los Lagos</option>
+                  <option>Aysén</option>
+                  <option>Magallanes</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="pf-label">Clínica donde te atiendes o te gustaría atenderte</label>
+              <input class="pf-input" type="text" id="s-clinica" list="s-clinicas" placeholder="Ej: Clínica Santa María" oninput="sD.clinica=this.value"/>
+              <datalist id="s-clinicas">
+                <option>Clínica Santa María</option>
+                <option>Clínica Dávila</option>
+                <option>Clínica Indisa</option>
+                <option>Clínica Alemana</option>
+                <option>Clínica Las Condes</option>
+                <option>Clínica UC Christus</option>
+                <option>Clínica Universidad de los Andes</option>
+                <option>Clínicas RedSalud</option>
+                <option>Clínicas Bupa</option>
+                <option>Clínica Ciudad del Mar</option>
+                <option>Clínica Biobío</option>
+                <option>Todavía no lo sé</option>
+              </datalist>
+            </div>
+            <div>
               <label class="pf-label">¿Necesitas alguna cobertura específica?</label>
               <div class="s-chips" id="s-cobs">
                 <button type="button" class="s-chip" onclick="sCob(this)">Bajar costo del plan</button>
@@ -997,7 +1058,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
         <img class="fvi-img" src="img/tips-fonasa-a-isapre-card.webp" alt="Familia jugando en el sofá de su casa" width="480" height="300" loading="lazy" decoding="async">
         <div>
           <div class="fvi-t">De Fonasa a Isapre: tips para elegir un buen plan <span class="fvi-flecha" aria-hidden="true">→</span></div>
-          <div class="fvi-p">Seis consejos para contratar bien y tener una buena experiencia con tu Isapre.</div>
+          <div class="fvi-p">Ocho puntos que revisar antes de firmar: red preferente, topes, urgencias, CAEC y reembolsos.</div>
         </div>
       </a>
       <a class="fvi" href="/isapre-embarazada" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'embarazo'})">
@@ -1198,6 +1259,9 @@ function sCob(btn){
   btn.classList.toggle('on');
   sD.coberturas=[...document.querySelectorAll('#s-cobs .s-chip.on')].map(b=>b.textContent).join(', ');
 }
+// La Isapre que quiere cotizar: la que eligió en el formulario o, si no eligió, la de la ficha desde donde llegó
+function sQuiereCotizar(){ return sD.cotizar || sD.interes || ''; }
+
 async function sSubmit(){
   sD.nombre=document.getElementById('s-nombre').value.trim();
   sD.whatsapp='+569'+sTelDigitos();
@@ -1220,9 +1284,13 @@ async function sSubmit(){
         horario:sD.horario||'Lo antes posible',
         sistema:sD.sistema||'',
         motivo:sD.motivo||'',
-        coberturas:[sD.coberturas, sD.quiz ? 'Test sugirió: ' + sD.quiz : '', sD.interes ? 'Quiere cotizar: ' + sD.interes : ''].filter(Boolean).join(' | '),
+        coberturas:[sD.coberturas, sD.quiz ? 'Test sugirió: ' + sD.quiz : '', sQuiereCotizar() ? 'Quiere cotizar: ' + sQuiereCotizar() : '', sD.edad ? 'Edad: ' + sD.edad : '', sD.region ? 'Región: ' + sD.region : '', sD.clinica ? 'Clínica: ' + sD.clinica : ''].filter(Boolean).join(' | '),
         renta:sD.renta||'',
-        cargas:sD.cargas||''
+        cargas:sD.cargas||'',
+        isapre_cotizar:sQuiereCotizar(),
+        edad:sD.edad||'',
+        region:sD.region||'',
+        clinica:sD.clinica||''
       })})
     ]);
     document.getElementById('s-sending').classList.remove('active');
@@ -1236,7 +1304,13 @@ async function sSubmit(){
 (function () {
   const v = new URLSearchParams(location.search).get('isapre');
   const sel = document.getElementById('s-sistema');
-  if (v && v !== 'Fonasa' && sel && [...sel.options].some(o => o.value === v)) sD.interes = v;
+  if (v && v !== 'Fonasa' && sel && [...sel.options].some(o => o.value === v)) {
+    sD.interes = v;
+    const cot = document.getElementById('s-cotizar');
+    if (cot && [...cot.options].some(o => o.value === v)) { cot.value = v; sD.cotizar = v; }
+    const d = document.querySelector('#form-inline details.s-extra');
+    if (d) d.open = true;
+  }
 })();
 
 // Si viene del test "¿Qué Isapre calza contigo?", deja marcadas sus prioridades y cargas,
