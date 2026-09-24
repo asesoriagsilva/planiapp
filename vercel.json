@@ -144,6 +144,31 @@
       "source": "/colmena-o-esencial.html",
       "destination": "/colmena-o-esencial",
       "permanent": true
+    },
+    {
+      "source": "/consalud-o-esencial.html",
+      "destination": "/consalud-o-esencial",
+      "permanent": true
+    },
+    {
+      "source": "/cruz-blanca-o-esencial.html",
+      "destination": "/cruz-blanca-o-esencial",
+      "permanent": true
+    },
+    {
+      "source": "/esencial-o-nueva-masvida.html",
+      "destination": "/esencial-o-nueva-masvida",
+      "permanent": true
+    },
+    {
+      "source": "/esencial-o-vida-tres.html",
+      "destination": "/esencial-o-vida-tres",
+      "permanent": true
+    },
+    {
+      "source": "/isapre-con-menos-reclamos.html",
+      "destination": "/isapre-con-menos-reclamos",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -254,6 +279,26 @@
     {
       "source": "/colmena-o-esencial",
       "destination": "/colmena-o-esencial.html"
+    },
+    {
+      "source": "/consalud-o-esencial",
+      "destination": "/consalud-o-esencial.html"
+    },
+    {
+      "source": "/cruz-blanca-o-esencial",
+      "destination": "/cruz-blanca-o-esencial.html"
+    },
+    {
+      "source": "/esencial-o-nueva-masvida",
+      "destination": "/esencial-o-nueva-masvida.html"
+    },
+    {
+      "source": "/esencial-o-vida-tres",
+      "destination": "/esencial-o-vida-tres.html"
+    },
+    {
+      "source": "/isapre-con-menos-reclamos",
+      "destination": "/isapre-con-menos-reclamos.html"
     }
   ]
 }

@@ -200,6 +200,10 @@ footer a { color: var(--text-muted); }
 .comp-links a { background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1rem; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--purple-dark); }
 .comp-links a:hover { border-color: var(--purple-mid); color: var(--purple); }
 /* comparativas:fin */
+/* faq:inicio */
+.faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
+.faq p { font-size: 15.5px; }
+/* faq:fin */
 /* relacionados:inicio */
 .rel { margin-top: 2.75rem; }
 .rel h2 { margin: 0 0 1rem; }
@@ -241,6 +245,108 @@ footer a { color: var(--text-muted); }
 }
 /* relacionados:fin */
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://planiapp.cl/isapre-esencial#articulo",
+   "headline": "Isapre Esencial: coberturas, ventajas y desventajas",
+   "description": "Cómo es la Isapre Esencial: clínicas, urgencias, topes, reembolsos, red GES y CAEC, datos de la Superintendencia y dónde se queda corta.",
+   "image": [
+    "https://planiapp.cl/img/mejor-isapre-og.jpg"
+   ],
+   "datePublished": "2026-09-11",
+   "dateModified": "2026-09-24",
+   "inLanguage": "es-CL",
+   "mainEntityOfPage": "https://planiapp.cl/isapre-esencial",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://planiapp.cl/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Isapres",
+     "item": "https://planiapp.cl/mejor-isapre"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Esencial",
+     "item": "https://planiapp.cl/isapre-esencial"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://planiapp.cl/isapre-esencial#preguntas",
+   "url": "https://planiapp.cl/isapre-esencial",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Es buena la Isapre Esencial?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Si te atiendes en Clínica Alemana, es la que mejor calza: es la Isapre del grupo. Cubre kinesiología sin tope y casi no pone topes en prótesis ni quimioterapia. En contra: es la más cara de entrada, tiene una sola sucursal, los reembolsos tardan unos 30 días y en otras clínicas muchas veces hay que pagar y después pedir reembolso."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué dicen los datos sobre Esencial?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Recibe 10,0 reclamos por cada 1.000 cotizantes, la segunda tasa más baja del sistema, y es de las que menos gente pierde por decisión propia, con 5,7 desafiliaciones voluntarias por cada 1.000. Su bonificación es de $857 por cada $1.000 de ingreso."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Esencial solo sirve para Clínica Alemana?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ahí es donde más rinde, incluida la sede Chicureo y las clínicas Alemana de Temuco, Valdivia y Osorno. Tiene convenio preferente en las clínicas de Santiago, salvo Las Condes, y copago de urgencia en Alemana, Indisa y Santa María. En regiones no tiene copago de urgencia."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuánto cuesta el plan más barato de Esencial?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Su plan de entrada parte en 2,35 UF al mes entre los 25 y 34 años, para una persona sin cargas. Es el más caro de las siete Isapres abiertas."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cómo funciona la atención de Esencial?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Es una Isapre nueva y su atención es principalmente digital: tiene una sola sucursal en todo el país. Si prefieres resolver tus trámites en persona, conviene que lo tengas en cuenta antes de cambiarte."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -372,6 +478,23 @@ footer a { color: var(--text-muted); }
 
   <div class="analisis"><p><strong>Nuestro análisis:</strong> Esencial aparece primera en licencias médicas, con solo el 5% rechazadas, pero ese número hay que leerlo con contexto. Es una Isapre con pocos afiliados y muchos de renta alta, sobre el tope imponible. Como la licencia se paga solo hasta ese tope, quien gana muy por sobre ese monto rara vez la presenta, y eso baja la tasa. También está segunda en reclamos (10,0) y en desafiliaciones voluntarias (5,7), así que sus afiliados tienden a quedarse. Donde queda más abajo es en bonificación: destina $857 de cada $1.000, sexta de siete.</p></div>
 
+
+  <!-- faq:inicio -->
+  <section class="faq">
+    <h2>Preguntas frecuentes sobre Esencial</h2>
+    <h3>¿Es buena la Isapre Esencial?</h3>
+    <p>Si te atiendes en Clínica Alemana, es la que mejor calza: es la Isapre del grupo. Cubre kinesiología sin tope y casi no pone topes en prótesis ni quimioterapia. En contra: es la más cara de entrada, tiene una sola sucursal, los reembolsos tardan unos 30 días y en otras clínicas muchas veces hay que pagar y después pedir reembolso.</p>
+    <h3>¿Qué dicen los datos sobre Esencial?</h3>
+    <p>Recibe 10,0 reclamos por cada 1.000 cotizantes, la segunda tasa más baja del sistema, y es de las que menos gente pierde por decisión propia, con 5,7 desafiliaciones voluntarias por cada 1.000. Su bonificación es de $857 por cada $1.000 de ingreso.</p>
+    <h3>¿Esencial solo sirve para Clínica Alemana?</h3>
+    <p>Ahí es donde más rinde, incluida la sede Chicureo y las clínicas Alemana de Temuco, Valdivia y Osorno. Tiene convenio preferente en las clínicas de Santiago, salvo Las Condes, y copago de urgencia en Alemana, Indisa y Santa María. En regiones no tiene copago de urgencia.</p>
+    <h3>¿Cuánto cuesta el plan más barato de Esencial?</h3>
+    <p>Su plan de entrada parte en 2,35 UF al mes entre los 25 y 34 años, para una persona sin cargas. Es el más caro de las siete Isapres abiertas.</p>
+    <h3>¿Cómo funciona la atención de Esencial?</h3>
+    <p>Es una Isapre nueva y su atención es principalmente digital: tiene una sola sucursal en todo el país. Si prefieres resolver tus trámites en persona, conviene que lo tengas en cuenta antes de cambiarte.</p>
+  </section>
+  <!-- faq:fin -->
+
   <div class="cierre">
     <h2>¿Te conviene Esencial?</h2>
     <p>Cuéntanos tu caso y te decimos si Esencial es la Isapre que te conviene, o cuál lo es, gratis y sin compromiso.</p>
@@ -380,11 +503,17 @@ footer a { color: var(--text-muted); }
 
   
 
+  
+
   <!-- comparativas:inicio -->
   <h2>Compara Esencial con otra Isapre</h2>
   <div class="comp-links">
     <a href="/banmedica-o-esencial" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'banmedica_o_esencial',origen:'enlace_comparativas'})">Banmédica o Esencial →</a>
     <a href="/colmena-o-esencial" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_esencial',origen:'enlace_comparativas'})">Colmena o Esencial →</a>
+    <a href="/consalud-o-esencial" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'consalud_o_esencial',origen:'enlace_comparativas'})">Consalud o Esencial →</a>
+    <a href="/cruz-blanca-o-esencial" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'cruz_blanca_o_esencial',origen:'enlace_comparativas'})">Cruz Blanca o Esencial →</a>
+    <a href="/esencial-o-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'esencial_o_nueva_masvida',origen:'enlace_comparativas'})">Esencial o Nueva Masvida →</a>
+    <a href="/esencial-o-vida-tres" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'esencial_o_vida_tres',origen:'enlace_comparativas'})">Esencial o Vida Tres →</a>
   </div>
   <!-- comparativas:fin -->
 

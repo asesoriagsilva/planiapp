@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Qué Isapre tiene menos reclamos? Datos oficiales 2026 | Planiapp</title>
+<meta name="description" content="Vida Tres es la Isapre con menos reclamos y Cruz Blanca la que más. Tabla con reclamos, desafiliaciones y bonificación de las 7 Isapres, según la Superintendencia de Salud.">
+<link rel="canonical" href="https://planiapp.cl/isapre-con-menos-reclamos">
+<meta property="og:title" content="¿Qué Isapre tiene menos reclamos? Datos oficiales 2026">
+<meta property="og:description" content="Vida Tres, con 8,5 reclamos por cada 1.000 cotizantes. Le siguen Esencial, con 10,0, y Banmédica, con 10,4. La más reclamada es Cruz Blanca, con 14,6.">
+<meta property="og:url" content="https://planiapp.cl/isapre-con-menos-reclamos">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://planiapp.cl/img/mejor-isapre-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pareja comparando planes de salud en un computador">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads + Analytics (sin evento de conversion: ese va solo en gracias.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+</script>
+
+<style>
+:root {
+  --purple: #534AB7; --purple-light: #EEEDFE; --purple-mid: #7F77DD;
+  --purple-dark: #26215C; --purple-deep: #3C3489;
+  --blue: #185FA5; --blue-light: #E6F1FB;
+  --text: #1a1830; --text-muted: #6b6b8a; --border: #E7E5F5;
+  --bg: #f8f7ff; --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+a { color: var(--purple); }
+
+nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--border); }
+.nav-logo img { height: 64px; width: auto; display: block; }
+.nav-cta { background: var(--purple); color: #fff; text-decoration: none; border-radius: 24px; padding: 0.55rem 1.2rem; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.nav-cta:hover { background: var(--purple-deep); }
+
+/* Carrusel de logos de Isapres en la barra superior */
+.nav-carrusel { flex: 1; min-width: 0; overflow: hidden; margin: 0 1.5rem; padding: 0 1rem; border-left: 1px solid rgba(83,74,183,0.15); border-right: 1px solid rgba(83,74,183,0.15); }
+.nav-tk { display: inline-flex; align-items: center; animation: ticker 24s linear infinite; }
+.nav-tk img { flex-shrink: 0; margin-right: 2rem; opacity: 0.85; }
+.nav-carrusel:hover .nav-tk { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .nav-tk { animation: none; } }
+@media (max-width: 680px) { .nav-carrusel { margin: 0 0.6rem; padding: 0 0.6rem; } .nav-tk img { margin-right: 1.25rem; } }
+@media (max-width: 420px) { .nav-cta-extra { display: none; } }
+
+.art { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.miga { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
+.miga a { color: var(--text-muted); text-decoration: none; }
+.miga a:hover { color: var(--purple); }
+h1 { font-family: 'Inter', sans-serif; font-size: 38px; font-weight: 900; color: var(--purple-dark); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.9rem; }
+.bajada { font-size: 18px; color: var(--text-muted); margin-bottom: 1.75rem; }
+h2 { font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; line-height: 1.25; margin: 2.5rem 0 0.9rem; }
+p { font-size: 16px; margin-bottom: 1rem; }
+
+/* Tabla comparativa */
+.cmp { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.cmp-row, .cmp-head { display: grid; grid-template-columns: 170px 1fr 1fr; }
+.cmp-head div { padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px; }
+.cmp-head .h-fon { background: var(--blue-light); color: var(--blue); }
+.cmp-head .h-isa { background: var(--purple-light); color: var(--purple); }
+.cmp-row { border-top: 1px solid var(--border); }
+.cmp-row > div { padding: 0.8rem 1rem; font-size: 14px; line-height: 1.5; }
+.cmp-k { font-weight: 600; color: var(--purple-dark); background: #FBFAFF; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Listas de "cuando conviene" */
+.lista { list-style: none; margin: 0.25rem 0 1rem; }
+.lista li { position: relative; padding: 0.7rem 0 0.7rem 1.9rem; border-bottom: 1px solid var(--border); font-size: 15.5px; }
+.lista li:last-child { border-bottom: none; }
+.lista li::before { content: '✓'; position: absolute; left: 0.25rem; top: 0.7rem; font-weight: 700; }
+.lista.fon li::before { color: var(--blue); }
+.lista.isa li::before { color: var(--purple); }
+.lista strong { color: var(--text); }
+
+.ojo { background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin: 1rem 0; }
+.ojo p { font-size: 15px; margin-bottom: 0.6rem; }
+.ojo p:last-child { margin-bottom: 0; }
+.ojo.fon { background: #EEF5FC; border-left-color: #185FA5; }
+
+.cierre { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.9rem 1.75rem; margin-top: 2.75rem; color: #fff; text-align: center; }
+.cierre h2 { color: #fff; margin: 0 0 0.6rem; }
+.cierre p { color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 1.3rem; }
+.cierre a { display: inline-block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.8rem 1.7rem; font-size: 15px; }
+.cierre a:hover { background: var(--purple-light); }
+
+.aviso { font-size: 12px; color: var(--text-muted); margin-top: 2rem; line-height: 1.55; }
+footer { text-align: center; font-size: 13px; color: var(--text-muted); padding: 1.5rem; border-top: 1px solid var(--border); background: var(--white); }
+footer a { color: var(--text-muted); }
+
+.relacionado { margin-top: 2rem; padding: 1rem 1.2rem; background: var(--white); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; }
+.relacionado a { font-weight: 600; text-decoration: none; }
+
+.cabecera { display: block; width: 100%; height: auto; aspect-ratio: 20 / 9; object-fit: cover; border-radius: 16px; margin: 0 0 1.5rem; background: var(--purple-light); }
+
+/* Las 3 respuestas de la Isapre */
+.resp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 1rem; }
+.resp-c { background: var(--white); border: 1px solid var(--border); border-top: 4px solid; border-radius: 14px; padding: 1rem 1.1rem; }
+.resp-c.si { border-top-color: #1D9E75; }
+.resp-c.res { border-top-color: #E0A526; }
+.resp-c.no { border-top-color: #D93025; }
+.resp-i { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 0.5rem; }
+.resp-c.si .resp-i { background: #1D9E75; }
+.resp-c.res .resp-i { background: #B7791F; }
+.resp-c.no .resp-i { background: #D93025; }
+.resp-t { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800; color: var(--purple-dark); line-height: 1.25; margin-bottom: 0.35rem; }
+.resp-c p { font-size: 14.5px; line-height: 1.5; margin: 0; }
+
+.faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
+.faq p { font-size: 15.5px; }
+
+@media (max-width: 680px) {
+  .resp { grid-template-columns: 1fr; }
+  nav { padding: 0.6rem 1rem; }
+  .nav-logo img { height: 46px; }
+  .nav-cta { font-size: 13px; padding: 0.5rem 0.95rem; }
+  .art { padding: 1.75rem 1.1rem 2.5rem; }
+  h1 { font-size: 29px; }
+  .bajada { font-size: 16.5px; }
+  h2 { font-size: 21px; margin-top: 2rem; }
+  /* En celular: la etiqueta ocupa el ancho y debajo van Fonasa | Isapre */
+  .cmp-head { grid-template-columns: 1fr 1fr; }
+  .cmp-head .h-vacio { display: none; }
+  .cmp-row { grid-template-columns: 1fr 1fr; }
+  .cmp-k { grid-column: 1 / -1; padding-bottom: 0.35rem !important; }
+  .cmp-row > div { font-size: 13.5px; padding: 0.6rem 0.8rem; }
+  .cierre { padding: 1.6rem 1.2rem; }
+}
+/* tabla de reclamos */
+.nov-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.nov { width: 100%; border-collapse: collapse; }
+.nov th { background: var(--purple-light); color: var(--purple-dark); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 13px; line-height: 1.3; text-align: left; padding: 0.8rem 0.9rem; }
+.nov td { border-top: 1px solid var(--border); padding: 0.7rem 0.9rem; font-size: 14.5px; }
+.nov th + th, .nov td + td { text-align: right; font-variant-numeric: tabular-nums; }
+.nov.rec img { height: 20px; width: auto; }
+.nov td.bien { background: #EAF7F1; font-weight: 700; }
+.nov td.mal { background: #FDEEED; }
+.ojo.ok { background: #EAF7F1; border-left-color: #1D9E75; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+.comp-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0.5rem; }
+.comp-links a { background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1rem; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--purple-dark); }
+.comp-links a:hover { border-color: var(--purple-mid); color: var(--purple); }
+@media (max-width: 680px) {
+  .nov.rec thead { display: none; }
+  .nov.rec, .nov.rec tbody, .nov.rec tr, .nov.rec td { display: block; width: 100%; }
+  .nov.rec tr { border-top: 1px solid var(--border); padding: 0.7rem 0; }
+  .nov.rec tr:first-child { border-top: none; }
+  .nov.rec td { border: none; padding: 0.2rem 1rem; text-align: left; }
+  .nov.rec td[data-i]:not(:first-child)::before { content: attr(data-i) ': '; font-weight: 700; color: var(--purple-dark); }
+  .nov.rec td.bien, .nov.rec td.mal { border-radius: 8px; margin: 0.15rem 0.6rem; padding: 0.35rem 0.4rem; }
+}
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://planiapp.cl/isapre-con-menos-reclamos#articulo",
+   "headline": "¿Qué Isapre tiene menos reclamos? Datos oficiales 2026",
+   "description": "Vida Tres es la Isapre con menos reclamos y Cruz Blanca la que más. Tabla con reclamos, desafiliaciones y bonificación de las 7 Isapres, según la Superintendencia de Salud.",
+   "image": [
+    "https://planiapp.cl/img/mejor-isapre-og.jpg"
+   ],
+   "datePublished": "2026-09-24",
+   "dateModified": "2026-09-24",
+   "inLanguage": "es-CL",
+   "mainEntityOfPage": "https://planiapp.cl/isapre-con-menos-reclamos",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://planiapp.cl/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Mejor Isapre",
+     "item": "https://planiapp.cl/mejor-isapre"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Isapre con menos reclamos",
+     "item": "https://planiapp.cl/isapre-con-menos-reclamos"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://planiapp.cl/isapre-con-menos-reclamos#preguntas",
+   "url": "https://planiapp.cl/isapre-con-menos-reclamos",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Qué Isapre tiene menos reclamos en Chile?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vida Tres, con 8,5 reclamos por cada 1.000 cotizantes en el segundo trimestre de 2025, según la Superintendencia de Salud. Le siguen Esencial con 10,0 y Banmédica con 10,4."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué Isapre tiene más reclamos?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Cruz Blanca, con 14,6 reclamos por cada 1.000 cotizantes, seguida de Nueva Masvida con 12,5."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Sirve elegir Isapre solo por los reclamos?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. El número de reclamos dice cómo resuelve una Isapre, pero no si su plan te cubre bien en tu clínica. Conviene mirarlo junto con las coberturas, los topes y el copago de urgencia donde te atiendes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Dónde puedo reclamar si mi Isapre no me cubre?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Primero presenta el reclamo en tu Isapre. Si no te responden o no quedas conforme, puedes reclamar ante la Superintendencia de Salud, que es gratis y se hace en línea."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué significa la tasa de desafiliación voluntaria?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Es cuánta gente se va por decisión propia, por cada 1.000 cotizantes. Las más bajas son Vida Tres con 5,4 y Esencial con 5,7; las más altas, Nueva Masvida con 10,9 y Cruz Blanca con 10,5."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp"/></a>
+  <div class="nav-carrusel" aria-hidden="true">
+    <div class="nav-tk">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+    </div>
+  </div>
+  <a class="nav-cta" href="/#opciones">Cotizar<span class="nav-cta-extra"> gratis</span></a>
+</nav>
+
+<div class="pagina">
+<article class="art">
+  <div class="miga"><a href="/">Inicio</a> › <a href="/mejor-isapre">Mejor Isapre</a> › Isapre con menos reclamos</div>
+
+  <h1>¿Qué Isapre tiene menos reclamos?</h1>
+  <p class="bajada">Los reclamos son una de las pocas señales objetivas que existen para comparar Isapres. Estos son los datos que publica la Superintendencia de Salud, ordenados de menos a más.</p>
+
+  <div class="ojo ok">
+    <p><strong>Respuesta corta:</strong> Vida Tres, con 8,5 reclamos por cada 1.000 cotizantes. Le siguen Esencial, con 10,0, y Banmédica, con 10,4. La más reclamada es Cruz Blanca, con 14,6.</p>
+  </div>
+
+  <h2>Reclamos por cada 1.000 cotizantes</h2>
+  <div class="nov-wrap">
+    <table class="nov rec">
+      <thead><tr><th scope="col">Isapre</th><th scope="col">Reclamos</th><th scope="col">Desafiliaciones voluntarias</th><th scope="col">Bonificación por cada $1.000</th><th scope="col">Licencias rechazadas</th></tr></thead>
+      <tbody>
+        <tr>
+          <td data-i="Isapre"><a href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'reclamos'})"><img src="/logos/mini/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24" loading="lazy" decoding="async"></a></td>
+          <td data-i="Reclamos" class="bien">8,5</td>
+          <td data-i="Desafiliaciones">5,4</td>
+          <td data-i="Bonificación">$889</td>
+          <td data-i="Licencias rechazadas">15%</td>
+        </tr>
+        <tr>
+          <td data-i="Isapre"><a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'reclamos'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="116" height="25" loading="lazy" decoding="async"></a></td>
+          <td data-i="Reclamos">10,0</td>
+          <td data-i="Desafiliaciones">5,7</td>
+          <td data-i="Bonificación">$857</td>
+          <td data-i="Licencias rechazadas">5%</td>
+        </tr>
+        <tr>
+          <td data-i="Isapre"><a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'reclamos'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="105" height="28" loading="lazy" decoding="async"></a></td>
+          <td data-i="Reclamos">10,4</td>
+          <td data-i="Desafiliaciones">8,8</td>
+          <td data-i="Bonificación">$950</td>
+          <td data-i="Licencias rechazadas">16%</td>
+        </tr>
+        <tr>
+          <td data-i="Isapre"><a href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'reclamos'})"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="117" height="25" loading="lazy" decoding="async"></a></td>
+          <td data-i="Reclamos">10,7</td>
+          <td data-i="Desafiliaciones">9,5</td>
+          <td data-i="Bonificación">$878</td>
+          <td data-i="Licencias rechazadas">21%</td>
+        </tr>
+        <tr>
+          <td data-i="Isapre"><a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'reclamos'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="94" height="31" loading="lazy" decoding="async"></a></td>
+          <td data-i="Reclamos">11,3</td>
+          <td data-i="Desafiliaciones">10,3</td>
+          <td data-i="Bonificación">$876</td>
+          <td data-i="Licencias rechazadas">19%</td>
+        </tr>
+        <tr>
+          <td data-i="Isapre"><a href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'reclamos'})"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29" loading="lazy" decoding="async"></a></td>
+          <td data-i="Reclamos">12,5</td>
+          <td data-i="Desafiliaciones">10,9</td>
+          <td data-i="Bonificación">$788</td>
+          <td data-i="Licencias rechazadas">24%</td>
+        </tr>
+        <tr>
+          <td data-i="Isapre"><a href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'reclamos'})"><img src="/logos/mini/cruz-blanca.png" alt="Isapre Cruz Blanca" width="119" height="24" loading="lazy" decoding="async"></a></td>
+          <td data-i="Reclamos" class="mal">14,6</td>
+          <td data-i="Desafiliaciones">10,5</td>
+          <td data-i="Bonificación">$884</td>
+          <td data-i="Licencias rechazadas">34%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Fuente: Superintendencia de Salud, Radiografía de Isapres. Reclamos, desafiliaciones y licencias del segundo trimestre de 2025; bonificación de enero a junio de 2025.</p>
+
+  <h2>Qué mide y qué no mide este número</h2>
+  <p>La cifra cuenta los reclamos que llegan a la Superintendencia de Salud por cada 1.000 cotizantes, así que compara Isapres grandes con chicas en igualdad de condiciones. Es una buena señal de cómo resuelve cada una cuando algo se complica: una cobertura mal aplicada, un reembolso que no llega, un alza mal informada.</p>
+  <ul class="lista isa">
+    <li><strong>Sí te dice</strong> qué tan seguido sus afiliados quedan disconformes y tienen que recurrir a un tercero.</li>
+    <li><strong>No te dice</strong> si su plan te cubre bien en tu clínica. Eso depende del plan que contratas, no de la Isapre completa.</li>
+    <li><strong>No te dice</strong> cuánto vas a pagar. Para eso mira <a href="/mejor-isapre#precios">el precio del plan de entrada por edad</a>.</li>
+  </ul>
+  <div class="ojo">
+    <p><strong>Ojo con la columna de licencias rechazadas.</strong> No se puede leer sola: depende también del perfil de afiliados de cada Isapre. Las que tienen más afiliados de renta alta, sobre el tope imponible, muestran tasas más bajas, porque esos afiliados casi no presentan licencias.</p>
+  </div>
+
+  <h2>La otra señal: cuánta gente se va</h2>
+  <p>Las desafiliaciones voluntarias muestran cuántos afiliados deciden irse por su cuenta, por cada 1.000 cotizantes. Vida Tres y Esencial son las que menos gente pierden, con 5,4 y 5,7. Nueva Masvida y Cruz Blanca son las que más, con 10,9 y 10,5.</p>
+  <p>Y la bonificación muestra cuánto de lo que recibe cada Isapre vuelve a los afiliados en prestaciones y licencias: Banmédica lidera con $950 de cada $1.000, y Nueva Masvida queda última con $788.</p>
+
+  <h2>Cómo reclamar si tu Isapre no te cubre</h2>
+  <ul class="lista isa">
+    <li><strong>Primero, reclama en tu Isapre.</strong> Déjalo por escrito y guarda el número de caso.</li>
+    <li><strong>Si no responden o no quedas conforme, reclama en la Superintendencia de Salud.</strong> Es gratis, se hace en línea y ellos le piden respuesta a la Isapre.</li>
+    <li><strong>Junta los papeles antes:</strong> el bono o la cuenta, el detalle de cobertura de tu plan y lo que te respondieron.</li>
+  </ul>
+
+  <h2>Entonces, ¿con cuál me quedo?</h2>
+  <p>Los reclamos son un buen desempate, no el criterio principal. Primero mira qué cubre el plan en la clínica donde te atiendes, y después usa estos datos para elegir entre dos que te sirven parecido. Si estás comparando dos en concreto, tenemos la comparación lado a lado:</p>
+  <div class="comp-links">
+    <a href="/colmena-o-consalud">Colmena o Consalud →</a>
+    <a href="/consalud-o-banmedica">Consalud o Banmédica →</a>
+    <a href="/banmedica-o-cruz-blanca">Banmédica o Cruz Blanca →</a>
+    <a href="/banmedica-o-vida-tres">Banmédica o Vida Tres →</a>
+    <a href="/mejor-isapre">Ver la tabla de las 7 →</a>
+  </div>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿Qué Isapre tiene menos reclamos en Chile?</h3>
+    <p>Vida Tres, con 8,5 reclamos por cada 1.000 cotizantes en el segundo trimestre de 2025, según la Superintendencia de Salud. Le siguen Esencial con 10,0 y Banmédica con 10,4.</p>
+    <h3>¿Qué Isapre tiene más reclamos?</h3>
+    <p>Cruz Blanca, con 14,6 reclamos por cada 1.000 cotizantes, seguida de Nueva Masvida con 12,5.</p>
+    <h3>¿Sirve elegir Isapre solo por los reclamos?</h3>
+    <p>No. El número de reclamos dice cómo resuelve una Isapre, pero no si su plan te cubre bien en tu clínica. Conviene mirarlo junto con las coberturas, los topes y el copago de urgencia donde te atiendes.</p>
+    <h3>¿Dónde puedo reclamar si mi Isapre no me cubre?</h3>
+    <p>Primero presenta el reclamo en tu Isapre. Si no te responden o no quedas conforme, puedes reclamar ante la Superintendencia de Salud, que es gratis y se hace en línea.</p>
+    <h3>¿Qué significa la tasa de desafiliación voluntaria?</h3>
+    <p>Es cuánta gente se va por decisión propia, por cada 1.000 cotizantes. Las más bajas son Vida Tres con 5,4 y Esencial con 5,7; las más altas, Nueva Masvida con 10,9 y Cruz Blanca con 10,5.</p>
+  </section>
+
+  <section class="rel">
+    <h2>Artículos que te podrían interesar</h2>
+    <div class="rel-grid">
+    <a class="rel-c" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'final'})">
+      <img src="img/mejor-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">¿Cuál es la mejor Isapre en 2026? Tabla comparativa</span><span class="rel-p">Las 7 Isapres abiertas comparadas: precios por edad, urgencias, reembolsos y reclamos.</span></span>
+    </a>
+    <a class="rel-c" href="/preexistencias-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'preexistencias',origen:'final'})">
+      <img src="img/preexistencias-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">Preexistencias en Isapres: ¿qué pasa si me quiero cambiar?</span><span class="rel-p">Qué es realmente una preexistencia, las 3 respuestas que te puede dar una Isapre y el riesgo de no declarar.</span></span>
+    </a>
+    <a class="rel-c" href="/fonasa-y-seguro-complementario" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'seguro_complementario',origen:'final'})">
+      <img src="img/fonasa-y-seguro-complementario-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">Fonasa + seguro complementario: la verdad detrás de esta combinación</span><span class="rel-p">Cómo funcionan de verdad la BMI, el deducible y los topes, con ejercicios, y la comparación con una Isapre.</span></span>
+    </a>
+    </div>
+  </section>
+
+  <div class="cierre">
+    <h2>¿Tu Isapre te está respondiendo mal?</h2>
+    <p>Cuéntanos qué pasó y revisamos si te conviene reclamar, cambiar de plan o cambiarte de Isapre. Gratis y sin compromiso.</p>
+    <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'reclamos'})">Quiero que me asesoren →</a>
+  </div>
+
+  <p class="aviso">Los datos son de la Superintendencia de Salud y corresponden al segundo trimestre de 2025, salvo la bonificación, de enero a junio de 2025. Los actualizamos cuando la Superintendencia publica un trimestre nuevo. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+</article>
+
+<aside class="lateral" aria-label="Asesoría y artículos relacionados">
+  <div class="lateral-in">
+    <div class="lat-cta">
+      <div class="lat-cta-t">¿Quieres que revisemos tu caso?</div>
+      <p>Comparamos planes según tu situación, gratis y sin compromiso.</p>
+      <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'lateral'})">Cotizar gratis →</a>
+    </div>
+    <div class="lat-rel">
+      <div class="lat-rel-t">Artículos relacionados</div>
+      <a class="lat-i" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre',origen:'lateral'})">
+        <img src="img/fonasa-o-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">¿Fonasa o Isapre? ¿Qué conviene más?</span><span class="lat-i-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</span></span>
+      </a>
+      <a class="lat-i" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores',origen:'lateral'})">
+        <img src="img/errores-al-contratar-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Los 8 errores más comunes al contratar una Isapre</span><span class="lat-i-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</span></span>
+      </a>
+      <a class="lat-i" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips',origen:'lateral'})">
+        <img src="img/tips-fonasa-a-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">De Fonasa a Isapre: tips para elegir un buen plan</span><span class="lat-i-p">Seis consejos para contratar bien y tener una buena experiencia con tu Isapre.</span></span>
+      </a>
+      <a class="lat-i" href="/isapre-embarazada" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'embarazo',origen:'lateral'})">
+        <img src="img/isapre-embarazada-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">¿Conviene contratar una Isapre estando embarazada?</span><span class="lat-i-p">La regla de los novenos, lo que no cubre el PAD de Fonasa y el plazo para inscribir a tu hijo.</span></span>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
+</footer>
+
+</body>
+</html>
