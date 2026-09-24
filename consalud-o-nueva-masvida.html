@@ -165,6 +165,10 @@ footer a { color: var(--text-muted); }
 .fichas a:hover { border-color: var(--purple-mid); }
 .fichas img { height: 24px; width: auto; }
 .fichas-todas { font-family: 'Inter', sans-serif; font-weight: 800; color: var(--purple-dark); font-size: 15px; }
+.comp-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0.5rem; }
+.comp-links a { background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1rem; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--purple-dark); }
+.comp-links a:hover { border-color: var(--purple-mid); color: var(--purple); }
+.comp-links a.comp-dato { background: var(--purple-light); border-color: var(--purple-light); color: var(--purple-deep); }
 @media (max-width: 680px) {
   .fichas { grid-template-columns: 1fr; }
   .fichas a { flex-direction: row; justify-content: flex-start; gap: 0.8rem; }
@@ -407,6 +411,10 @@ footer a { color: var(--text-muted); }
     <li>Es la que menos destina a prestaciones: $788 de cada $1.000.</li>
   </ul>
 
+  <div class="ojo">
+    <p><strong>Ojo con el precio de Nueva Masvida.</strong> Es de las más baratas, pero también es la que tiene los topes más bajos del sistema: prótesis y órtesis hasta 10 UF, quimioterapia sin cobertura preferente y la red GES y CAEC más chica. Si la eliges por precio, revisa esos topes antes de firmar, porque son los que pesan el día que pasa algo grave.</p>
+  </div>
+
   <h2>Precio del plan de entrada, según tu edad</h2>
   <div class="nov-wrap">
     <table class="nov">
@@ -460,6 +468,19 @@ footer a { color: var(--text-muted); }
     <a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'comparativa_fichas'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="94" height="31" loading="lazy" decoding="async"><span>Ficha de Consalud</span></a>
     <a href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'comparativa_fichas'})"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29" loading="lazy" decoding="async"><span>Ficha de Nueva Masvida</span></a>
     <a href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'comparativa_fichas'})"><span class="fichas-todas">Las 7 Isapres</span><span>Tabla comparativa completa</span></a>
+  </div>
+
+  <h2 id="comparaciones">Otras comparaciones</h2>
+  <p>Si todavía estás entre varias, aquí están las demás:</p>
+  <div class="comp-links">
+    <a href="/colmena-o-consalud" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_consalud',origen:'otra_comparativa'})">Colmena o Consalud →</a>
+    <a href="/consalud-o-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'consalud_o_cruz_blanca',origen:'otra_comparativa'})">Consalud o Cruz Blanca →</a>
+    <a href="/consalud-o-banmedica" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'consalud_o_banmedica',origen:'otra_comparativa'})">Consalud o Banmédica →</a>
+    <a href="/colmena-o-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'colmena_o_nueva_masvida',origen:'otra_comparativa'})">Colmena o Nueva Masvida →</a>
+    <a href="/cruz-blanca-o-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'cruz_blanca_o_nueva_masvida',origen:'otra_comparativa'})">Cruz Blanca o Nueva Masvida →</a>
+    <a href="/consalud-o-esencial" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'consalud_o_esencial',origen:'otra_comparativa'})">Consalud o Esencial →</a>
+    <a href="/esencial-o-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'esencial_o_nueva_masvida',origen:'otra_comparativa'})">Esencial o Nueva Masvida →</a>
+    <a class="comp-dato" href="/isapre-con-menos-reclamos" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'reclamos',origen:'otra_comparativa'})">¿Qué Isapre tiene menos reclamos? →</a>
   </div>
 
   <section class="rel">
