@@ -169,6 +169,11 @@
       "source": "/isapre-con-menos-reclamos.html",
       "destination": "/isapre-con-menos-reclamos",
       "permanent": true
+    },
+    {
+      "source": "/clinica-santa-maria.html",
+      "destination": "/clinica-santa-maria",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -299,6 +304,10 @@
     {
       "source": "/isapre-con-menos-reclamos",
       "destination": "/isapre-con-menos-reclamos.html"
+    },
+    {
+      "source": "/clinica-santa-maria",
+      "destination": "/clinica-santa-maria.html"
     }
   ]
 }

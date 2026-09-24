@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Santa María: qué Isapre conviene si te atiendes ahí | Planiapp</title>
+<meta name="description" content="Sedes, precios reales publicados por la clínica y las prestaciones que no tienen código Fonasa. Qué plan de Isapre cubre de verdad lo caro en Clínica Santa María.">
+<link rel="canonical" href="https://planiapp.cl/clinica-santa-maria">
+<meta property="og:title" content="Clínica Santa María: qué Isapre conviene si te atiendes ahí">
+<meta property="og:description" content="Si tu clínica es Santa María, lo que define tu bolsillo no es el porcentaje del plan, sino que la clínica y sus centros médicos estén como prestador preferente y que el plan cubra lo que no tiene código Fonasa.">
+<meta property="og:url" content="https://planiapp.cl/clinica-santa-maria">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://planiapp.cl/img/clinica-santa-maria-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Edificio de Clínica Santa María en Providencia">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads + Analytics (sin evento de conversion: ese va solo en gracias.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+</script>
+
+<style>
+:root {
+  --purple: #534AB7; --purple-light: #EEEDFE; --purple-mid: #7F77DD;
+  --purple-dark: #26215C; --purple-deep: #3C3489;
+  --blue: #185FA5; --blue-light: #E6F1FB;
+  --text: #1a1830; --text-muted: #6b6b8a; --border: #E7E5F5;
+  --bg: #f8f7ff; --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+a { color: var(--purple); }
+
+nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--border); }
+.nav-logo img { height: 64px; width: auto; display: block; }
+.nav-cta { background: var(--purple); color: #fff; text-decoration: none; border-radius: 24px; padding: 0.55rem 1.2rem; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.nav-cta:hover { background: var(--purple-deep); }
+
+/* Carrusel de logos de Isapres en la barra superior */
+.nav-carrusel { flex: 1; min-width: 0; overflow: hidden; margin: 0 1.5rem; padding: 0 1rem; border-left: 1px solid rgba(83,74,183,0.15); border-right: 1px solid rgba(83,74,183,0.15); }
+.nav-tk { display: inline-flex; align-items: center; animation: ticker 24s linear infinite; }
+.nav-tk img { flex-shrink: 0; margin-right: 2rem; opacity: 0.85; }
+.nav-carrusel:hover .nav-tk { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .nav-tk { animation: none; } }
+@media (max-width: 680px) { .nav-carrusel { margin: 0 0.6rem; padding: 0 0.6rem; } .nav-tk img { margin-right: 1.25rem; } }
+@media (max-width: 420px) { .nav-cta-extra { display: none; } }
+
+.art { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.miga { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
+.miga a { color: var(--text-muted); text-decoration: none; }
+.miga a:hover { color: var(--purple); }
+h1 { font-family: 'Inter', sans-serif; font-size: 38px; font-weight: 900; color: var(--purple-dark); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.9rem; }
+.bajada { font-size: 18px; color: var(--text-muted); margin-bottom: 1.75rem; }
+h2 { font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; line-height: 1.25; margin: 2.5rem 0 0.9rem; }
+p { font-size: 16px; margin-bottom: 1rem; }
+
+/* Tabla comparativa */
+.cmp { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.cmp-row, .cmp-head { display: grid; grid-template-columns: 170px 1fr 1fr; }
+.cmp-head div { padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px; }
+.cmp-head .h-fon { background: var(--blue-light); color: var(--blue); }
+.cmp-head .h-isa { background: var(--purple-light); color: var(--purple); }
+.cmp-row { border-top: 1px solid var(--border); }
+.cmp-row > div { padding: 0.8rem 1rem; font-size: 14px; line-height: 1.5; }
+.cmp-k { font-weight: 600; color: var(--purple-dark); background: #FBFAFF; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Listas de "cuando conviene" */
+.lista { list-style: none; margin: 0.25rem 0 1rem; }
+.lista li { position: relative; padding: 0.7rem 0 0.7rem 1.9rem; border-bottom: 1px solid var(--border); font-size: 15.5px; }
+.lista li:last-child { border-bottom: none; }
+.lista li::before { content: '✓'; position: absolute; left: 0.25rem; top: 0.7rem; font-weight: 700; }
+.lista.fon li::before { color: var(--blue); }
+.lista.isa li::before { color: var(--purple); }
+.lista strong { color: var(--text); }
+
+.ojo { background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin: 1rem 0; }
+.ojo p { font-size: 15px; margin-bottom: 0.6rem; }
+.ojo p:last-child { margin-bottom: 0; }
+.ojo.fon { background: #EEF5FC; border-left-color: #185FA5; }
+
+.cierre { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.9rem 1.75rem; margin-top: 2.75rem; color: #fff; text-align: center; }
+.cierre h2 { color: #fff; margin: 0 0 0.6rem; }
+.cierre p { color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 1.3rem; }
+.cierre a { display: inline-block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.8rem 1.7rem; font-size: 15px; }
+.cierre a:hover { background: var(--purple-light); }
+
+.aviso { font-size: 12px; color: var(--text-muted); margin-top: 2rem; line-height: 1.55; }
+footer { text-align: center; font-size: 13px; color: var(--text-muted); padding: 1.5rem; border-top: 1px solid var(--border); background: var(--white); }
+footer a { color: var(--text-muted); }
+
+.relacionado { margin-top: 2rem; padding: 1rem 1.2rem; background: var(--white); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; }
+.relacionado a { font-weight: 600; text-decoration: none; }
+
+.cabecera { display: block; width: 100%; height: auto; aspect-ratio: 20 / 9; object-fit: cover; border-radius: 16px; margin: 0 0 1.5rem; background: var(--purple-light); }
+
+/* Las 3 respuestas de la Isapre */
+.resp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 1rem; }
+.resp-c { background: var(--white); border: 1px solid var(--border); border-top: 4px solid; border-radius: 14px; padding: 1rem 1.1rem; }
+.resp-c.si { border-top-color: #1D9E75; }
+.resp-c.res { border-top-color: #E0A526; }
+.resp-c.no { border-top-color: #D93025; }
+.resp-i { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 0.5rem; }
+.resp-c.si .resp-i { background: #1D9E75; }
+.resp-c.res .resp-i { background: #B7791F; }
+.resp-c.no .resp-i { background: #D93025; }
+.resp-t { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800; color: var(--purple-dark); line-height: 1.25; margin-bottom: 0.35rem; }
+.resp-c p { font-size: 14.5px; line-height: 1.5; margin: 0; }
+
+.faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
+.faq p { font-size: 15.5px; }
+
+@media (max-width: 680px) {
+  .resp { grid-template-columns: 1fr; }
+  nav { padding: 0.6rem 1rem; }
+  .nav-logo img { height: 46px; }
+  .nav-cta { font-size: 13px; padding: 0.5rem 0.95rem; }
+  .art { padding: 1.75rem 1.1rem 2.5rem; }
+  h1 { font-size: 29px; }
+  .bajada { font-size: 16.5px; }
+  h2 { font-size: 21px; margin-top: 2rem; }
+  /* En celular: la etiqueta ocupa el ancho y debajo van Fonasa | Isapre */
+  .cmp-head { grid-template-columns: 1fr 1fr; }
+  .cmp-head .h-vacio { display: none; }
+  .cmp-row { grid-template-columns: 1fr 1fr; }
+  .cmp-k { grid-column: 1 / -1; padding-bottom: 0.35rem !important; }
+  .cmp-row > div { font-size: 13.5px; padding: 0.6rem 0.8rem; }
+  .cierre { padding: 1.6rem 1.2rem; }
+}
+/* pagina de clinica */
+.nov-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.nov { width: 100%; border-collapse: collapse; }
+.nov th { background: var(--purple-light); color: var(--purple-dark); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 13px; line-height: 1.3; text-align: left; padding: 0.8rem 0.9rem; }
+.nov td { border-top: 1px solid var(--border); padding: 0.7rem 0.9rem; font-size: 14.5px; }
+.nov td:first-child { font-weight: 600; color: var(--purple-dark); }
+.nov th + th, .nov td + td { text-align: right; font-variant-numeric: tabular-nums; }
+.nov.sedes th + th, .nov.sedes td + td { text-align: left; font-variant-numeric: normal; }
+.ojo.ok { background: #EAF7F1; border-left-color: #1D9E75; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+.ej-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; color: var(--purple-dark); margin: 2rem 0 0.6rem; }
+.plan-img { margin: 1.25rem 0 1.5rem; }
+.plan-img img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--white); }
+.plan-img figcaption { font-size: 12px; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5; }
+.fotos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 0.5rem; }
+.fotos .plan-img { margin: 0; }
+.fotos img { aspect-ratio: 3 / 2; object-fit: cover; }
+@media (max-width: 680px) {
+  .fotos { grid-template-columns: 1fr; }
+  .nov thead { display: none; }
+  .nov, .nov tbody, .nov tr, .nov td { display: block; width: 100%; }
+  .nov tr { border-top: 1px solid var(--border); padding: 0.7rem 0; }
+  .nov tr:first-child { border-top: none; }
+  .nov td { border: none; padding: 0.2rem 1rem; text-align: left; }
+  .nov td[data-i]::before { content: attr(data-i) ': '; font-weight: 700; color: var(--purple-dark); }
+}
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://planiapp.cl/clinica-santa-maria#articulo",
+   "headline": "Clínica Santa María: qué Isapre conviene si te atiendes ahí",
+   "description": "Sedes, precios reales publicados por la clínica y las prestaciones que no tienen código Fonasa. Qué plan de Isapre cubre de verdad lo caro en Clínica Santa María.",
+   "image": [
+    "https://planiapp.cl/img/clinica-santa-maria-og.jpg"
+   ],
+   "datePublished": "2026-09-24",
+   "dateModified": "2026-09-24",
+   "inLanguage": "es-CL",
+   "mainEntityOfPage": "https://planiapp.cl/clinica-santa-maria",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://planiapp.cl/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Mejor Isapre",
+     "item": "https://planiapp.cl/mejor-isapre"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Clínica Santa María",
+     "item": "https://planiapp.cl/clinica-santa-maria"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://planiapp.cl/clinica-santa-maria#preguntas",
+   "url": "https://planiapp.cl/clinica-santa-maria",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Qué Isapre conviene si me atiendo en Clínica Santa María?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vida Tres es la que mejor calza: la clínica es parte de su holding y sus planes de línea alta la tienen como prestador preferente con 100% sin tope en lo hospitalario, incluidas prótesis y osteosíntesis. Banmédica comparte la misma red. Lo que hay que revisar en cada caso es el plan puntual, no solo la Isapre."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Mi plan cubre también los centros médicos de Santa María?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No siempre. Hay planes que nombran solo la clínica de Providencia y dejan fuera los centros médicos de Vitacura, La Dehesa, La Reina y Los Dominicos. Revisa que en la oferta preferente ambulatoria aparezcan los centros médicos, no solo la clínica."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué pasa con las prestaciones que no tienen código Fonasa?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Si una prestación no tiene código Fonasa, no hay arancel de referencia, así que ni Fonasa ni el arancel base de una Isapre la bonifican. Se paga particular, salvo que tu plan tenga un arancel propio que la incluya."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuánto cuesta una urgencia en Clínica Santa María?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depende de tu plan. Con un plan que tenga copago fijo de urgencia en esa clínica, una urgencia simple de adulto son 0,8 UF, unos $32.806, y una compleja 3 UF, unos $123.024. Sin copago fijo, pagas según los porcentajes y topes de tu plan, y el monto lo sabes al final."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Vale la pena un plan más caro por esta clínica?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depende de cuánto uses la clínica y de tu presupuesto. Si te atiendes ahí siempre y te preocupa un evento grave, un plan con 100% sin tope y con arancel propio te cubre lo que otros dejan fuera. Si vas una o dos veces al año, probablemente no."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp"/></a>
+  <div class="nav-carrusel" aria-hidden="true">
+    <div class="nav-tk">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+    </div>
+  </div>
+  <a class="nav-cta" href="/#opciones">Cotizar<span class="nav-cta-extra"> gratis</span></a>
+</nav>
+
+<div class="pagina">
+<article class="art">
+  <div class="miga"><a href="/">Inicio</a> › <a href="/mejor-isapre">Mejor Isapre</a> › Clínica Santa María</div>
+
+  <h1>Clínica Santa María: qué Isapre conviene si te atiendes ahí</h1>
+  <p class="bajada">Dónde está cada sede, cuánto cuesta atenderse ahí de verdad y qué plan cubre lo que otros dejan fuera. Con los precios que publica la propia clínica.</p>
+
+  <img class="cabecera" src="img/clinica-santa-maria.webp" alt="Edificio de Clínica Santa María en Providencia" width="1000" height="450" fetchpriority="high" decoding="async">
+
+  <div class="ojo ok">
+    <p><strong>En una línea:</strong> Si tu clínica es Santa María, lo que define tu bolsillo no es el porcentaje del plan, sino que la clínica y sus centros médicos estén como prestador preferente y que el plan cubra lo que no tiene código Fonasa.</p>
+  </div>
+
+  <h2>Las sedes de Clínica Santa María</h2>
+  <p>No es lo mismo atenderse en la clínica de Providencia que en uno de sus centros médicos, y para tu plan esa diferencia sí importa.</p>
+  <div class="nov-wrap">
+    <table class="nov sedes">
+      <thead><tr><th scope="col">Sede</th><th scope="col">Comuna</th><th scope="col">Dirección</th></tr></thead>
+      <tbody>
+        <tr><td>Clínica Santa María</td><td data-i="Comuna">Providencia</td><td data-i="Dirección">Av. Santa María 0500</td></tr>
+        <tr><td>Clínica Santa María Los Dominicos</td><td data-i="Comuna">Las Condes</td><td data-i="Dirección">Av. Apoquindo 7331</td></tr>
+        <tr><td>Centro Médico Vitacura</td><td data-i="Comuna">Vitacura</td><td data-i="Dirección">Av. Vitacura 4705</td></tr>
+        <tr><td>Centro Médico La Dehesa</td><td data-i="Comuna">Lo Barnechea</td><td data-i="Dirección">Av. La Dehesa 1445</td></tr>
+        <tr><td>Centro Médico La Reina</td><td data-i="Comuna">La Reina</td><td data-i="Dirección">Av. Ossa 345</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="fotos">
+  <figure class="plan-img">
+    <a href="img/clinica-santa-maria-vitacura.webp" target="_blank" rel="noopener"><img src="img/clinica-santa-maria-vitacura.webp" alt="Centro Médico Vitacura de Clínica Santa María" width="900" height="560" loading="lazy" decoding="async"></a>
+    <figcaption>Centro Médico Vitacura, en Av. Vitacura 4705.</figcaption>
+  </figure>
+  <figure class="plan-img">
+    <a href="img/clinica-santa-maria-centro-medico.webp" target="_blank" rel="noopener"><img src="img/clinica-santa-maria-centro-medico.webp" alt="Centro médico de Clínica Santa María" width="900" height="560" loading="lazy" decoding="async"></a>
+    <figcaption>Uno de los centros médicos de la red, fuera de Providencia.</figcaption>
+  </figure>
+  <figure class="plan-img">
+    <a href="img/clinica-santa-maria-sede.webp" target="_blank" rel="noopener"><img src="img/clinica-santa-maria-sede.webp" alt="Sede de Clínica Santa María" width="900" height="560" loading="lazy" decoding="async"></a>
+    <figcaption>La red suma consultas, imágenes y procedimientos ambulatorios en varias comunas.</figcaption>
+  </figure>
+  </div>
+  <div class="ojo">
+    <p><strong>Revisa esto en tu plan:</strong> hay planes que nombran solo "Clínica Santa María" y otros que dicen "Clínica Santa María y Centros Médicos Santa María". Si tu médico atiende en La Dehesa o en La Reina y tu plan solo nombra la clínica, esas consultas te quedan en libre elección, que cubre bastante menos.</p>
+  </div>
+
+  <h2>Cuánto cuesta atenderse ahí</h2>
+  <p>Estos son valores del arancel que publica la clínica, en horario hábil. Las columnas son las tres modalidades de su propio arancel, no lo que te va a bonificar tu plan. Mira la diferencia entre la columna particular y la de Isapre: esa brecha es la que negocia tu Isapre por ti, y por eso importa con cuál llegas.</p>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Prestación</th><th scope="col">Código Fonasa</th><th scope="col">Particular</th><th scope="col">Fonasa</th><th scope="col">Isapre</th></tr></thead>
+      <tbody>
+        <tr><td>Consulta médica de especialidad</td><td data-i="Código">01 01 003</td><td data-i="Particular">$65.800</td><td data-i="Fonasa">$46.100</td><td data-i="Isapre">$51.000</td></tr>
+        <tr><td>Resonancia de rodilla</td><td data-i="Código">04 05 013</td><td data-i="Particular">$589.600</td><td data-i="Fonasa">$176.560</td><td data-i="Isapre">$496.100</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Arancel publicado por Clínica Santa María, consultado el 24 de septiembre de 2026. Los valores de urgencia y de horario inhábil son más altos.</p>
+
+  <h2>Lo que no tiene código Fonasa</h2>
+  <p>Acá está el punto ciego que casi nadie mira. Cuando una prestación <strong>no tiene código Fonasa</strong>, no existe arancel de referencia: ni Fonasa ni el arancel base de una Isapre la bonifican. Se paga particular, salvo que tu plan tenga un arancel propio que la incluya.</p>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Prestación</th><th scope="col">Código interno</th><th scope="col">Valor particular</th></tr></thead>
+      <tbody>
+        <tr><td>Semillas de braquiterapia BACSA</td><td data-i="Código interno">19-91-015-00</td><td data-i="Valor">$23.625.700</td></tr>
+        <tr><td>Implante coclear</td><td data-i="Código interno">13-02-900-00</td><td data-i="Valor">$4.285.500</td></tr>
+        <tr><td>Implantación de isótopos, braquiterapia</td><td data-i="Código interno">11-03-044-00</td><td data-i="Valor">$3.759.900</td></tr>
+        <tr><td>Células madre de placenta, alogénica</td><td data-i="Código interno">03-91-908-00</td><td data-i="Valor">$1.767.600</td></tr>
+        <tr><td>Braquiterapia ocular</td><td data-i="Código interno">12-99-007-00</td><td data-i="Valor">$709.500</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Todas aparecen con código Fonasa 0 en el arancel de la clínica, o sea, sin código.</p>
+  <figure class="plan-img">
+    <a href="img/csm-braquiterapia.webp" target="_blank" rel="noopener"><img src="img/csm-braquiterapia.webp" alt="Arancel de Clínica Santa María: semillas de braquiterapia BACSA con código Fonasa 0 y valor de 23.625.700 pesos" width="1100" height="248" loading="lazy" decoding="async"></a>
+    <figcaption>Arancel de Clínica Santa María. La columna Código Fonasa dice 0 y el valor es el mismo en las tres modalidades.</figcaption>
+  </figure>
+  <figure class="plan-img">
+    <a href="img/csm-coclear.webp" target="_blank" rel="noopener"><img src="img/csm-coclear.webp" alt="Arancel de Clínica Santa María: implante coclear, una versión con código Fonasa y otra sin código" width="1100" height="189" loading="lazy" decoding="async"></a>
+    <figcaption>El implante coclear aparece dos veces: una con código Fonasa y otra sin código. La segunda depende de lo que diga tu plan.</figcaption>
+  </figure>
+
+  <h2>Qué Isapre conviene en Clínica Santa María</h2>
+  <p>Hoy la que mejor calza es <a href="/isapre-vida-tres">Vida Tres</a>, porque la clínica es parte de su holding. <a href="/isapre-banmedica">Banmédica</a> comparte la misma red y es más barata de entrada, así que también entra en la conversación. Te mostramos un plan real de Vida Tres para que veas qué mirar.</p>
+
+  <h3 class="ej-t">Hospitalización: 100% sin tope, incluidas las prótesis</h3>
+  <p>En este plan, todo lo hospitalario en Clínica Santa María va con 100% de bonificación y sin tope: día cama, pabellón, honorarios, exámenes, imágenes y, lo que más pesa, <strong>prótesis, órtesis y elementos de osteosíntesis</strong>. Con topes anuales solo en medicamentos, materiales e insumos y quimioterapia, de 900 UF cada uno.</p>
+  <figure class="plan-img">
+    <a href="img/csm-plan-hospitalario.webp" target="_blank" rel="noopener"><img src="img/csm-plan-hospitalario.webp" alt="Plan de Vida Tres: 100% sin tope en prestaciones hospitalarias en Clínica Santa María, con prótesis y osteosíntesis incluidas" width="1100" height="489" loading="lazy" decoding="async"></a>
+    <figcaption>Plan Vanguardia Plus Gold de Vida Tres. En la oferta preferente aparece Clínica Santa María con 100% sin tope.</figcaption>
+  </figure>
+  <div class="ojo">
+    <p><strong>Por qué esto importa tanto.</strong> Los topes de prótesis son el hoyo más caro del sistema. Hay Isapres que cubren <a href="/mejor-isapre">hasta 10 UF en prótesis y órtesis</a>, unos $410.081. Una cadera o una rodilla se van bastante más arriba de eso, y la diferencia la pones tú.</p>
+  </div>
+
+  <h3 class="ej-t">Urgencia: sabes el monto antes de entrar</h3>
+  <p>El plan trae copago fijo de urgencia en Clínica Santa María. Eso significa que pagas un monto conocido, sin importar lo que salga la cuenta.</p>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Tipo de urgencia</th><th scope="col">Simple</th><th scope="col">En pesos</th><th scope="col">Compleja</th><th scope="col">En pesos</th></tr></thead>
+      <tbody>
+        <tr><td>Adulto</td><td data-i="Simple">0,8 UF</td><td data-i="En pesos">$32.806</td><td data-i="Compleja">3 UF</td><td data-i="En pesos">$123.024</td></tr>
+        <tr><td>Pediátrica</td><td data-i="Simple">0,6 UF</td><td data-i="En pesos">$24.605</td><td data-i="Compleja">2,3 UF</td><td data-i="En pesos">$94.319</td></tr>
+        <tr><td>Maternidad</td><td data-i="Simple">0,9 UF</td><td data-i="En pesos">$36.907</td><td data-i="Compleja">3,5 UF</td><td data-i="En pesos">$143.528</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="plan-img">
+    <a href="img/csm-plan-urgencia.webp" target="_blank" rel="noopener"><img src="img/csm-plan-urgencia.webp" alt="Copago fijo de urgencia del plan en Clínica Santa María: 0,8 UF urgencia simple y 3 UF compleja para adultos" width="1100" height="163" loading="lazy" decoding="async"></a>
+    <figcaption>Copago fijo de urgencia del plan, en Clínica Santa María y en las clínicas Dávila.</figcaption>
+  </figure>
+  <p class="cmp-nota">Valores calculados con la UF del 24 de septiembre de 2026, $41.008.</p>
+
+  <h3 class="ej-t">El arancel propio: lo que marca la diferencia</h3>
+  <p>Este plan no se queda en el arancel Fonasa. Trae un arancel propio, el Vanguardia V20, que incluye justamente las prestaciones que arriba aparecían sin código: radiocirugía, cirugía robótica, implante coclear, braquiterapia prostática, células madre, fertilización asistida y biología molecular, entre otras.</p>
+  <figure class="plan-img">
+    <a href="img/csm-plan-vanguardia.webp" target="_blank" rel="noopener"><img src="img/csm-plan-vanguardia.webp" alt="Arancel Vanguardia V20 del plan: radiocirugía, cirugía robótica, implante coclear, braquiterapia prostática y células madre" width="1100" height="431" loading="lazy" decoding="async"></a>
+    <figcaption>El arancel propio del plan, en la segunda página del documento. Acá están las prestaciones que otros planes no tienen cómo bonificar.</figcaption>
+  </figure>
+  <p>Ese detalle es el que no se ve en una cotización rápida. Dos planes pueden decir 100%, y solo uno tener con qué cubrir un implante coclear de $4.285.500 o unas semillas de braquiterapia de $23.625.700. El plan además tiene un tope general anual de 7.000 UF por beneficiario.</p>
+  <div class="ojo">
+    <p><strong>Ojo con lo que sí tiene límites.</strong> En este mismo plan, lo ambulatorio en la clínica y en sus centros médicos va con 80% sin tope, pero la kinesiología tiene tope de 5 UF y las prestaciones dentales 2,2 UF. Ningún plan cubre todo: la gracia es saber dónde te aprieta a ti.</p>
+  </div>
+
+  <h2>Cómo revisar tu propio plan en 3 pasos</h2>
+  <ul class="lista isa">
+    <li><strong>Busca la oferta preferente.</strong> Tiene que decir Clínica Santa María, y si te atiendes fuera de Providencia, también sus centros médicos.</li>
+    <li><strong>Mira la fila de prótesis y osteosíntesis.</strong> Si dice un tope en UF, ese es tu riesgo real en una cirugía.</li>
+    <li><strong>Busca el copago fijo de urgencia.</strong> Si tu plan no lo tiene en esta clínica, en una urgencia el monto lo sabes al final, no antes.</li>
+  </ul>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿Qué Isapre conviene si me atiendo en Clínica Santa María?</h3>
+    <p>Vida Tres es la que mejor calza: la clínica es parte de su holding y sus planes de línea alta la tienen como prestador preferente con 100% sin tope en lo hospitalario, incluidas prótesis y osteosíntesis. Banmédica comparte la misma red. Lo que hay que revisar en cada caso es el plan puntual, no solo la Isapre.</p>
+    <h3>¿Mi plan cubre también los centros médicos de Santa María?</h3>
+    <p>No siempre. Hay planes que nombran solo la clínica de Providencia y dejan fuera los centros médicos de Vitacura, La Dehesa, La Reina y Los Dominicos. Revisa que en la oferta preferente ambulatoria aparezcan los centros médicos, no solo la clínica.</p>
+    <h3>¿Qué pasa con las prestaciones que no tienen código Fonasa?</h3>
+    <p>Si una prestación no tiene código Fonasa, no hay arancel de referencia, así que ni Fonasa ni el arancel base de una Isapre la bonifican. Se paga particular, salvo que tu plan tenga un arancel propio que la incluya.</p>
+    <h3>¿Cuánto cuesta una urgencia en Clínica Santa María?</h3>
+    <p>Depende de tu plan. Con un plan que tenga copago fijo de urgencia en esa clínica, una urgencia simple de adulto son 0,8 UF, unos $32.806, y una compleja 3 UF, unos $123.024. Sin copago fijo, pagas según los porcentajes y topes de tu plan, y el monto lo sabes al final.</p>
+    <h3>¿Vale la pena un plan más caro por esta clínica?</h3>
+    <p>Depende de cuánto uses la clínica y de tu presupuesto. Si te atiendes ahí siempre y te preocupa un evento grave, un plan con 100% sin tope y con arancel propio te cubre lo que otros dejan fuera. Si vas una o dos veces al año, probablemente no.</p>
+  </section>
+
+  <section class="rel">
+    <h2>Artículos que te podrían interesar</h2>
+    <div class="rel-grid">
+    <a class="rel-c" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'final'})">
+      <img src="img/mejor-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">¿Cuál es la mejor Isapre en 2026? Tabla comparativa</span><span class="rel-p">Las 7 Isapres abiertas comparadas: precios por edad, urgencias, reembolsos y reclamos.</span></span>
+    </a>
+    <a class="rel-c" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre',origen:'final'})">
+      <img src="img/fonasa-o-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">¿Fonasa o Isapre? ¿Qué conviene más?</span><span class="rel-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</span></span>
+    </a>
+    <a class="rel-c" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores',origen:'final'})">
+      <img src="img/errores-al-contratar-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">Los 8 errores más comunes al contratar una Isapre</span><span class="rel-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</span></span>
+    </a>
+    </div>
+  </section>
+
+  <div class="cierre">
+    <h2>¿Te atiendes en Santa María?</h2>
+    <p>Cuéntanos tu caso y revisamos si tu plan te cubre bien en esa clínica, o cuál sí lo hace. Gratis y sin compromiso.</p>
+    <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'clinica_santa_maria'})">Quiero que revisen mi plan →</a>
+  </div>
+
+  <p class="aviso">Los precios son del arancel publicado por Clínica Santa María y fueron consultados el 24 de septiembre de 2026; pueden cambiar. Las imágenes del plan corresponden al plan Vanguardia Plus Gold 810/2605 de Vida Tres y se muestran como ejemplo: cada Isapre tiene muchas líneas de planes y las coberturas se confirman al momento de cotizar. Los montos en UF se calcularon con la UF de ese día, $41.008. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+</article>
+
+<aside class="lateral" aria-label="Asesoría y artículos relacionados">
+  <div class="lateral-in">
+    <div class="lat-cta">
+      <div class="lat-cta-t">¿Quieres que revisemos tu caso?</div>
+      <p>Comparamos planes según tu situación, gratis y sin compromiso.</p>
+      <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'lateral'})">Cotizar gratis →</a>
+    </div>
+    <div class="lat-rel">
+      <div class="lat-rel-t">Artículos relacionados</div>
+      <a class="lat-i" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips',origen:'lateral'})">
+        <img src="img/tips-fonasa-a-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">De Fonasa a Isapre: tips para elegir un buen plan</span><span class="lat-i-p">Ocho puntos que revisar antes de firmar: red preferente, topes, urgencias, CAEC y reembolsos.</span></span>
+      </a>
+      <a class="lat-i" href="/isapre-embarazada" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'embarazo',origen:'lateral'})">
+        <img src="img/isapre-embarazada-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">¿Conviene contratar una Isapre estando embarazada?</span><span class="lat-i-p">La regla de los novenos, lo que no cubre el PAD de Fonasa y el plazo para inscribir a tu hijo.</span></span>
+      </a>
+      <a class="lat-i" href="/preexistencias-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'preexistencias',origen:'lateral'})">
+        <img src="img/preexistencias-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Preexistencias en Isapres: ¿qué pasa si me quiero cambiar?</span><span class="lat-i-p">Qué es realmente una preexistencia, las 3 respuestas que te puede dar una Isapre y el riesgo de no declarar.</span></span>
+      </a>
+      <a class="lat-i" href="/fonasa-y-seguro-complementario" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'seguro_complementario',origen:'lateral'})">
+        <img src="img/fonasa-y-seguro-complementario-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Fonasa + seguro complementario: la verdad detrás de esta combinación</span><span class="lat-i-p">Cómo funcionan de verdad la BMI, el deducible y los topes, con ejercicios, y la comparación con una Isapre.</span></span>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
+</footer>
+
+</body>
+</html>
