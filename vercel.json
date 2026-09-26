@@ -184,6 +184,11 @@
       "source": "/clinica-indisa.html",
       "destination": "/clinica-indisa",
       "permanent": true
+    },
+    {
+      "source": "/clinicas-redsalud.html",
+      "destination": "/clinicas-redsalud",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -326,6 +331,10 @@
     {
       "source": "/clinica-indisa",
       "destination": "/clinica-indisa.html"
+    },
+    {
+      "source": "/clinicas-redsalud",
+      "destination": "/clinicas-redsalud.html"
     }
   ]
 }

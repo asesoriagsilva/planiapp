@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínicas RedSalud: precios, red nacional y qué Isapre conviene | Planiapp</title>
+<meta name="description" content="RedSalud tiene la red más amplia de Chile y precios bastante más bajos: la misma resonancia cuesta $272.811 ahí y $589.600 en otra clínica. Qué Isapre conviene si te atiendes en su red.">
+<link rel="canonical" href="https://planiapp.cl/clinicas-redsalud">
+<meta property="og:title" content="Clínicas RedSalud: la red más grande de Chile y la más conveniente">
+<meta property="og:description" content="Con el mismo plan, tu copago depende del valor base de la clínica. En RedSalud ese valor es bastante más bajo, y ahí está el ahorro que casi nadie te explica.">
+<meta property="og:url" content="https://planiapp.cl/clinicas-redsalud">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://planiapp.cl/img/clinicas-redsalud-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clínica RedSalud Providencia">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads + Analytics (sin evento de conversion: ese va solo en gracias.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+</script>
+
+<style>
+:root {
+  --purple: #534AB7; --purple-light: #EEEDFE; --purple-mid: #7F77DD;
+  --purple-dark: #26215C; --purple-deep: #3C3489;
+  --blue: #185FA5; --blue-light: #E6F1FB;
+  --text: #1a1830; --text-muted: #6b6b8a; --border: #E7E5F5;
+  --bg: #f8f7ff; --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+a { color: var(--purple); }
+
+nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--border); }
+.nav-logo img { height: 64px; width: auto; display: block; }
+.nav-cta { background: var(--purple); color: #fff; text-decoration: none; border-radius: 24px; padding: 0.55rem 1.2rem; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.nav-cta:hover { background: var(--purple-deep); }
+
+/* Carrusel de logos de Isapres en la barra superior */
+.nav-carrusel { flex: 1; min-width: 0; overflow: hidden; margin: 0 1.5rem; padding: 0 1rem; border-left: 1px solid rgba(83,74,183,0.15); border-right: 1px solid rgba(83,74,183,0.15); }
+.nav-tk { display: inline-flex; align-items: center; animation: ticker 24s linear infinite; }
+.nav-tk img { flex-shrink: 0; margin-right: 2rem; opacity: 0.85; }
+.nav-carrusel:hover .nav-tk { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .nav-tk { animation: none; } }
+@media (max-width: 680px) { .nav-carrusel { margin: 0 0.6rem; padding: 0 0.6rem; } .nav-tk img { margin-right: 1.25rem; } }
+@media (max-width: 420px) { .nav-cta-extra { display: none; } }
+
+.art { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.miga { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
+.miga a { color: var(--text-muted); text-decoration: none; }
+.miga a:hover { color: var(--purple); }
+h1 { font-family: 'Inter', sans-serif; font-size: 38px; font-weight: 900; color: var(--purple-dark); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.9rem; }
+.bajada { font-size: 18px; color: var(--text-muted); margin-bottom: 1.75rem; }
+h2 { font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; line-height: 1.25; margin: 2.5rem 0 0.9rem; }
+p { font-size: 16px; margin-bottom: 1rem; }
+
+/* Tabla comparativa */
+.cmp { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.cmp-row, .cmp-head { display: grid; grid-template-columns: 170px 1fr 1fr; }
+.cmp-head div { padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px; }
+.cmp-head .h-fon { background: var(--blue-light); color: var(--blue); }
+.cmp-head .h-isa { background: var(--purple-light); color: var(--purple); }
+.cmp-row { border-top: 1px solid var(--border); }
+.cmp-row > div { padding: 0.8rem 1rem; font-size: 14px; line-height: 1.5; }
+.cmp-k { font-weight: 600; color: var(--purple-dark); background: #FBFAFF; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Listas de "cuando conviene" */
+.lista { list-style: none; margin: 0.25rem 0 1rem; }
+.lista li { position: relative; padding: 0.7rem 0 0.7rem 1.9rem; border-bottom: 1px solid var(--border); font-size: 15.5px; }
+.lista li:last-child { border-bottom: none; }
+.lista li::before { content: '✓'; position: absolute; left: 0.25rem; top: 0.7rem; font-weight: 700; }
+.lista.fon li::before { color: var(--blue); }
+.lista.isa li::before { color: var(--purple); }
+.lista strong { color: var(--text); }
+
+.ojo { background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin: 1rem 0; }
+.ojo p { font-size: 15px; margin-bottom: 0.6rem; }
+.ojo p:last-child { margin-bottom: 0; }
+.ojo.fon { background: #EEF5FC; border-left-color: #185FA5; }
+
+.cierre { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.9rem 1.75rem; margin-top: 2.75rem; color: #fff; text-align: center; }
+.cierre h2 { color: #fff; margin: 0 0 0.6rem; }
+.cierre p { color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 1.3rem; }
+.cierre a { display: inline-block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.8rem 1.7rem; font-size: 15px; }
+.cierre a:hover { background: var(--purple-light); }
+
+.aviso { font-size: 12px; color: var(--text-muted); margin-top: 2rem; line-height: 1.55; }
+footer { text-align: center; font-size: 13px; color: var(--text-muted); padding: 1.5rem; border-top: 1px solid var(--border); background: var(--white); }
+footer a { color: var(--text-muted); }
+
+.relacionado { margin-top: 2rem; padding: 1rem 1.2rem; background: var(--white); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; }
+.relacionado a { font-weight: 600; text-decoration: none; }
+
+.cabecera { display: block; width: 100%; height: auto; aspect-ratio: 20 / 9; object-fit: cover; border-radius: 16px; margin: 0 0 1.5rem; background: var(--purple-light); }
+
+/* Las 3 respuestas de la Isapre */
+.resp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 1rem; }
+.resp-c { background: var(--white); border: 1px solid var(--border); border-top: 4px solid; border-radius: 14px; padding: 1rem 1.1rem; }
+.resp-c.si { border-top-color: #1D9E75; }
+.resp-c.res { border-top-color: #E0A526; }
+.resp-c.no { border-top-color: #D93025; }
+.resp-i { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 0.5rem; }
+.resp-c.si .resp-i { background: #1D9E75; }
+.resp-c.res .resp-i { background: #B7791F; }
+.resp-c.no .resp-i { background: #D93025; }
+.resp-t { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800; color: var(--purple-dark); line-height: 1.25; margin-bottom: 0.35rem; }
+.resp-c p { font-size: 14.5px; line-height: 1.5; margin: 0; }
+
+.faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
+.faq p { font-size: 15.5px; }
+
+@media (max-width: 680px) {
+  .resp { grid-template-columns: 1fr; }
+  nav { padding: 0.6rem 1rem; }
+  .nav-logo img { height: 46px; }
+  .nav-cta { font-size: 13px; padding: 0.5rem 0.95rem; }
+  .art { padding: 1.75rem 1.1rem 2.5rem; }
+  h1 { font-size: 29px; }
+  .bajada { font-size: 16.5px; }
+  h2 { font-size: 21px; margin-top: 2rem; }
+  /* En celular: la etiqueta ocupa el ancho y debajo van Fonasa | Isapre */
+  .cmp-head { grid-template-columns: 1fr 1fr; }
+  .cmp-head .h-vacio { display: none; }
+  .cmp-row { grid-template-columns: 1fr 1fr; }
+  .cmp-k { grid-column: 1 / -1; padding-bottom: 0.35rem !important; }
+  .cmp-row > div { font-size: 13.5px; padding: 0.6rem 0.8rem; }
+  .cierre { padding: 1.6rem 1.2rem; }
+}
+/* galeria de planes con lupa */
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 0.5rem; align-items: start; }
+.galeria figure { margin: 0; }
+.galeria img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; cursor: zoom-in; }
+.galeria figcaption { font-size: 11.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.4rem; }
+.lupa { position: fixed; inset: 0; z-index: 99; background: rgba(26,24,48,0.92); display: none; align-items: center; justify-content: center; padding: 3.5rem 1rem 1rem; }
+.lupa.abierta { display: flex; }
+.lupa img { max-width: 100%; max-height: 100%; object-fit: contain; background: #fff; border-radius: 8px; }
+.lupa-x { position: absolute; top: 0.9rem; right: 1rem; width: 42px; height: 42px; border: none; border-radius: 50%; background: #fff; color: var(--purple-dark); font-size: 22px; line-height: 1; cursor: pointer; }
+@media (max-width: 680px) { .galeria { grid-template-columns: 1fr; } }
+/* pagina de clinica */
+.nov-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.nov { width: 100%; border-collapse: collapse; }
+.nov th { background: var(--purple-light); color: var(--purple-dark); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 13px; line-height: 1.3; text-align: left; padding: 0.8rem 0.9rem; }
+.nov td { border-top: 1px solid var(--border); padding: 0.7rem 0.9rem; font-size: 14.5px; }
+.nov td:first-child { font-weight: 600; color: var(--purple-dark); }
+.nov th + th, .nov td + td { text-align: right; font-variant-numeric: tabular-nums; }
+.nov.sedes th + th, .nov.sedes td + td { text-align: left; font-variant-numeric: normal; }
+.ojo.ok { background: #EAF7F1; border-left-color: #1D9E75; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+.ej-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; color: var(--purple-dark); margin: 2rem 0 0.6rem; }
+.plan-img { margin: 1.25rem 0 1.5rem; }
+.plan-img img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--white); }
+.plan-img figcaption { font-size: 12px; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5; }
+/* Tabla ancha de las 7 Isapres */
+.cmp-scroll { overflow-x: auto; background: var(--white); border: 1px solid var(--border); border-radius: 16px; margin: 1.25rem 0 0.5rem; }
+.cmp-t { border-collapse: collapse; width: 100%; min-width: 880px; font-size: 13.5px; }
+.cmp-t th, .cmp-t td { padding: 0.7rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.cmp-t thead th { background: var(--purple-light); vertical-align: middle; text-align: center; }
+.cmp-t thead img { max-width: 100%; height: auto; }
+.cmp-t th[scope="row"] { position: sticky; left: 0; z-index: 1; background: #FBFAFF; font-weight: 600; color: var(--purple-dark); width: 160px; min-width: 160px; border-right: 1px solid var(--border); }
+.cmp-t thead th:first-child { position: sticky; left: 0; z-index: 2; border-right: 1px solid var(--border); }
+.cmp-t tbody tr:last-child th, .cmp-t tbody tr:last-child td { border-bottom: none; }
+.cmp-t td.bien { background: #E6F5EE; color: #0B4A38; }
+.cmp-t td.mal { background: #FBECEC; color: #7A2E33; }
+.cmp-t .reco { box-shadow: inset 2px 0 0 #1D9E75, inset -2px 0 0 #1D9E75; }
+.cmp-t thead .reco { background: #D9F2E7; box-shadow: inset 2px 2px 0 #1D9E75, inset -2px 0 0 #1D9E75; }
+.cmp-t tbody tr:last-child .reco { box-shadow: inset 2px 0 0 #1D9E75, inset -2px 0 0 #1D9E75, inset 0 -2px 0 #1D9E75; }
+.reco-tag { display: block; margin-top: 0.3rem; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #0F6E56; }
+.cmp-kh { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.cmp-ico { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; font-size: 9px; font-weight: 700; color: #fff; margin-right: 0.3rem; vertical-align: 1px; }
+.cmp-ico.bien { background: #1D9E75; }
+.cmp-ico.mal { background: #C2565B; }
+.cmp-hint { display: none; font-size: 12px; color: var(--text-muted); margin: 0.75rem 0 0; }
+@media (max-width: 900px) { .cmp-hint { display: block; } }
+.fotos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 0.5rem; }
+.fotos .plan-img { margin: 0; }
+.fotos img { aspect-ratio: 3 / 2; object-fit: cover; }
+@media (max-width: 680px) {
+  .fotos { grid-template-columns: 1fr; }
+  .nov thead { display: none; }
+  .nov, .nov tbody, .nov tr, .nov td { display: block; width: 100%; }
+  .nov tr { border-top: 1px solid var(--border); padding: 0.7rem 0; }
+  .nov tr:first-child { border-top: none; }
+  .nov td { border: none; padding: 0.2rem 1rem; text-align: left; }
+  .nov td[data-i]::before { content: attr(data-i) ': '; font-weight: 700; color: var(--purple-dark); }
+}
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
+/* comparacion de precios entre clinicas */
+.nov td.bien { background: #EAF7F1; font-weight: 700; }
+.nov td.mal { background: #FDEEED; }
+.plan-img img.zoom { cursor: zoom-in; }
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://planiapp.cl/clinicas-redsalud#articulo",
+   "headline": "Clínicas RedSalud: precios, red nacional y qué Isapre conviene",
+   "description": "RedSalud tiene la red más amplia de Chile y precios bastante más bajos: la misma resonancia cuesta $272.811 ahí y $589.600 en otra clínica. Qué Isapre conviene si te atiendes en su red.",
+   "image": [
+    "https://planiapp.cl/img/clinicas-redsalud-og.jpg"
+   ],
+   "datePublished": "2026-09-26",
+   "dateModified": "2026-09-26",
+   "inLanguage": "es-CL",
+   "mainEntityOfPage": "https://planiapp.cl/clinicas-redsalud",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://planiapp.cl/#organizacion",
+    "name": "Planiapp",
+    "url": "https://planiapp.cl/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://planiapp.cl/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Clínicas",
+     "item": "https://planiapp.cl/clinicas"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Clínicas RedSalud",
+     "item": "https://planiapp.cl/clinicas-redsalud"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://planiapp.cl/clinicas-redsalud#preguntas",
+   "url": "https://planiapp.cl/clinicas-redsalud",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Qué Isapre conviene si me atiendo en clínicas RedSalud?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Consalud, porque esta red es de su mismo grupo: tiene convenio preferente en todo el país y copago fijo de urgencia en 17 clínicas, de Arica a Punta Arenas. Colmena es la segunda opción, con copago fijo de urgencia en RedSalud Vitacura. Ojo con Cruz Blanca: su convenio preferente en Santiago excluye RedSalud Santiago y Providencia."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Es más barato atenderse en RedSalud?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí, y la diferencia es grande. La misma resonancia de rodilla, con el mismo código Fonasa, cuesta $272.811 particular en Clínica RedSalud Santiago y $589.600 en Clínica Santa María. Eso cambia tu copago aunque tengas exactamente el mismo plan."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Menor precio significa menor calidad?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Todas las clínicas privadas de Chile deben cumplir los mismos estándares de acreditación. Lo que cambia entre una y otra es la red médica, la infraestructura y el segmento al que apuntan, no el cumplimiento de la norma."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Dónde está RedSalud en regiones?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tiene clínicas en Iquique, La Serena, Valparaíso, Rancagua, Concepción con el Sanatorio Alemán, Temuco y Punta Arenas, más centros médicos y dentales en gran parte del país. Es la red privada más extendida de Chile."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Conviene un plan caro en una clínica cara o uno bueno en RedSalud?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depende de tu presupuesto y de dónde te atiendes hoy. Un plan que cubra bien en RedSalud suele costar menos que uno que cubra parcialmente en una clínica del segmento alto, y en la práctica terminas pagando copagos más bajos porque el valor de partida es más bajo. Eso sí, si tus médicos de siempre atienden en otra clínica, el ahorro no sirve de nada."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp"/></a>
+  <div class="nav-carrusel" aria-hidden="true">
+    <div class="nav-tk">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+    </div>
+  </div>
+  <a class="nav-cta" href="/#opciones">Cotizar<span class="nav-cta-extra"> gratis</span></a>
+</nav>
+
+<div class="pagina">
+<article class="art">
+  <div class="miga"><a href="/">Inicio</a> › <a href="/clinicas">Clínicas</a> › Clínicas RedSalud</div>
+
+  <h1>Clínicas RedSalud: la red más grande de Chile y la más conveniente</h1>
+  <p class="bajada">Dónde está, qué resuelve y, sobre todo, cuánto cuesta lo mismo acá y en una clínica del segmento alto. Con los precios que publica cada una.</p>
+
+  <img class="cabecera" src="img/clinicas-redsalud.webp" alt="Clínica RedSalud Providencia" width="1000" height="450" fetchpriority="high" decoding="async">
+
+  <div class="ojo ok">
+    <p><strong>En una línea:</strong> Con el mismo plan, tu copago depende del valor base de la clínica. En RedSalud ese valor es bastante más bajo, y ahí está el ahorro que casi nadie te explica.</p>
+  </div>
+
+  <h2>La red más amplia del país</h2>
+  <p>RedSalud tiene <strong>10 clínicas de Arica a Punta Arenas</strong>, además de centros médicos y clínicas dentales en gran parte de Chile. Ninguna otra red privada llega a tantas ciudades.</p>
+  <div class="nov-wrap">
+    <table class="nov sedes">
+      <thead><tr><th scope="col">Clínica</th><th scope="col">Región</th></tr></thead>
+      <tbody>
+        <tr><td>Clínica RedSalud Santiago</td><td data-i="Región">Región Metropolitana</td></tr>
+        <tr><td>Clínica RedSalud Providencia</td><td data-i="Región">Región Metropolitana</td></tr>
+        <tr><td>Clínica RedSalud Vitacura</td><td data-i="Región">Región Metropolitana</td></tr>
+        <tr><td>Clínica RedSalud Iquique</td><td data-i="Región">Tarapacá</td></tr>
+        <tr><td>Clínica RedSalud Elqui</td><td data-i="Región">Coquimbo</td></tr>
+        <tr><td>Clínica RedSalud Valparaíso</td><td data-i="Región">Valparaíso</td></tr>
+        <tr><td>Clínica RedSalud Rancagua</td><td data-i="Región">O'Higgins</td></tr>
+        <tr><td>Clínica RedSalud Mayor Temuco</td><td data-i="Región">La Araucanía</td></tr>
+        <tr><td>Sanatorio Alemán</td><td data-i="Región">Biobío</td></tr>
+        <tr><td>Clínica RedSalud Magallanes</td><td data-i="Región">Magallanes</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="galeria">
+    <figure>
+      <img class="zoom" src="img/clinicas-redsalud-santiago.webp" alt="Clínica RedSalud Santiago" width="900" height="560" loading="lazy" decoding="async">
+      <figcaption>Clínica RedSalud Santiago, donde está su unidad de cardiología.</figcaption>
+    </figure>
+    <figure>
+      <img class="zoom" src="img/clinicas-redsalud.webp" alt="Clínica RedSalud Providencia" width="900" height="560" loading="lazy" decoding="async">
+      <figcaption>Clínica RedSalud Providencia.</figcaption>
+    </figure>
+    <figure>
+      <img class="zoom" src="img/clinicas-redsalud-vitacura.webp" alt="Clínica RedSalud Vitacura" width="900" height="560" loading="lazy" decoding="async">
+      <figcaption>Clínica RedSalud Vitacura.</figcaption>
+    </figure>
+  </div>
+  <p>No es solo cobertura geográfica: la red incluye <strong>maternidad</strong>, <strong>sillas de quimioterapia</strong> con su Instituto del Cáncer y una <strong>unidad de cardiología</strong> en Clínica RedSalud Santiago. O sea, resuelve tanto lo cotidiano como lo complejo.</p>
+
+  <h2>El dato que casi nadie te muestra: el mismo examen, tres clínicas</h2>
+  <p>Esta es una resonancia magnética de rodilla, código Fonasa 04 05 013, la misma prestación en las tres. Son valores particulares publicados por cada clínica.</p>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Clínica</th><th scope="col">Valor particular</th></tr></thead>
+      <tbody>
+        <tr><td>Clínica RedSalud Santiago</td><td data-i="Valor" class="bien">$272.811</td></tr>
+        <tr><td>Clínica Indisa</td><td data-i="Valor" class="">$461.782</td></tr>
+        <tr><td>Clínica Santa María</td><td data-i="Valor" class="mal">$589.600</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Aranceles publicados por cada clínica, consultados en septiembre de 2026. En RedSalud, el mismo examen con Fonasa queda en $173.490.</p>
+  <figure class="plan-img">
+    <img class="zoom" src="img/rs-resonancia.webp" alt="Arancel de RedSalud: resonancia magnética de rodilla, código Fonasa 405013, particular ambulatorio 272.811 pesos" width="1100" height="543" loading="lazy" decoding="async">
+    <figcaption>Arancel de Clínica RedSalud Santiago. Toca la imagen para verla en grande.</figcaption>
+  </figure>
+  <p><strong>La diferencia es de $316.789 en un solo examen.</strong> Y no es que una resonancia sea distinta de la otra: es el mismo código y el mismo examen.</p>
+
+  <h2>Y en una cirugía, la diferencia se multiplica</h2>
+  <p>Una apendicectomía laparoscópica, código 18 02 053, que es de las cirugías de urgencia más comunes:</p>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Clínica</th><th scope="col">Valor particular de la cirugía</th></tr></thead>
+      <tbody>
+        <tr><td>Clínica RedSalud Santiago</td><td data-i="Valor" class="bien">$1.504.232</td></tr>
+        <tr><td>Clínica Santa María</td><td data-i="Valor" class="mal">$2.473.600</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Corresponde al valor de la cirugía en el arancel de cada clínica, sin contar pabellón, día cama, insumos ni honorarios, que se suman aparte en la cuenta final.</p>
+  <figure class="plan-img">
+    <img class="zoom" src="img/rs-apendicectomia.webp" alt="Arancel de RedSalud: apendicectomía laparoscópica, particular hospitalario 1.504.232 pesos" width="1100" height="447" loading="lazy" decoding="async">
+    <figcaption>Arancel de Clínica RedSalud Santiago para la apendicectomía por laparoscopía.</figcaption>
+  </figure>
+
+  <h2>Por qué esto pesa más que el porcentaje de tu plan</h2>
+  <p>Acá está el punto que no se explica en una cotización. Tu copago no sale del porcentaje solo: sale del <strong>porcentaje aplicado al valor de la clínica</strong>. Con la misma cirugía de arriba y un plan que cubra 70%:</p>
+  <ul class="lista isa">
+    <li><strong>En la clínica cara:</strong> 30% de $2.473.600 son <strong>$742.080</strong> de tu bolsillo.</li>
+    <li><strong>En RedSalud:</strong> 30% de $1.504.232 son <strong>$451.270</strong>.</li>
+    <li><strong>Y si tu plan cubre 100% en RedSalud,</strong> que suele costar menos que uno que cubre 70% en una clínica del segmento alto, ese copago se va a cero.</li>
+  </ul>
+  <div class="ojo">
+    <p><strong>Lo que casi nunca te cuentan cuando te venden un plan caro:</strong> que además del precio del plan, en esas clínicas pagas consultas y urgencias de valor alto, y que la espera para una hora con especialista puede ser larga. En la red RedSalud accedes a lo mismo, con aranceles más bajos y con acreditación vigente.</p>
+  </div>
+  <p>Que quede claro: todas las clínicas privadas del país son de calidad y cumplen los mismos estándares de acreditación. Hay unas más caras que otras. Si lo que buscas es buena cobertura y buena atención sin pagar de más, RedSalud cumple con creces.</p>
+
+  <h2>Las 7 Isapres frente a la red RedSalud</h2>
+  <p>En verde, donde cubre bien, y en rojo, donde se queda corta. Destacamos las dos que mejor calzan con esta red.</p>
+  <p class="cmp-hint">Desliza la tabla para ver todas las Isapres →</p>
+  <div class="cmp-scroll">
+    <table class="cmp-t" aria-label="Las 7 Isapres comparadas para las clínicas RedSalud">
+      <thead>
+        <tr>
+          <th scope="col" class="cmp-kh">En la red RedSalud</th>
+          <th scope="col" class="reco"><a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'clinicas_redsalud'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="73" height="24" loading="lazy" decoding="async"></a><span class="reco-tag">Recomendada</span></th>
+          <th scope="col" class="reco"><a href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'clinicas_redsalud'})"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="91" height="20" loading="lazy" decoding="async"></a><span class="reco-tag">Recomendada</span></th>
+          <th scope="col"><a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'clinicas_redsalud'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="82" height="22" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'clinicas_redsalud'})"><img src="/logos/mini/cruz-blanca.png" alt="Isapre Cruz Blanca" width="93" height="19" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'clinicas_redsalud'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="90" height="20" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'clinicas_redsalud'})"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="77" height="23" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'clinicas_redsalud'})"><img src="/logos/mini/vida-tres.png" alt="Isapre Vida Tres" width="96" height="19" loading="lazy" decoding="async"></a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Cobertura preferente</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en todo el país</td>
+          <td class=" reco">Sí</td>
+          <td class="">Sí</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No en Santiago ni Providencia</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+        </tr>
+        <tr>
+          <th scope="row">Urgencias integrales (copago fijo)</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en Vitacura</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene acá</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene acá</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene acá</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene acá</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene acá</td>
+        </tr>
+        <tr>
+          <th scope="row">Clínicas propias en esta red</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, las 10</td>
+          <td class=" reco">No</td>
+          <td class="">No</td>
+          <td class="">No</td>
+          <td class="">No</td>
+          <td class="">No</td>
+          <td class="">No</td>
+        </tr>
+        <tr>
+          <th scope="row">Cobertura en regiones</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>17 clínicas, de Arica a Punta Arenas</td>
+          <td class=" reco">4 clínicas</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene urgencia integral</td>
+          <td class="">2 clínicas</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene urgencia integral</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene urgencia integral</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene urgencia integral</td>
+        </tr>
+        <tr>
+          <th scope="row">Kinesiología</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en preferentes</td>
+          <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
+          <td class="">Con tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin bono: pagas y reembolsas</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
+          <td class="">Con tope</td>
+        </tr>
+        <tr>
+          <th scope="row">Prótesis y órtesis</th>
+          <td class=" reco">Hasta 150 UF</td>
+          <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 50 UF</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope muy bajo</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 10 UF</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+        </tr>
+        <tr>
+          <th scope="row">Quimioterapia</th>
+          <td class=" reco">Hasta 700 UF</td>
+          <td class=" reco">Hasta 1.000 UF</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Oferta vigente a septiembre de 2026. Las coberturas cambian según el plan y se confirman al momento de cotizar.</p>
+
+  <h2>Qué Isapre conviene en la red RedSalud</h2>
+  <p><a href="/isapre-consalud">Consalud</a> es la que mejor calza, y por lejos: comparte grupo con esta red, tiene convenio preferente en todas las clínicas del país y copago fijo de urgencia en 17 de ellas, incluidas las de regiones. Si te atiendes en RedSalud fuera de Santiago, es casi la única que te cubre la urgencia con monto conocido.</p>
+  <p><a href="/isapre-colmena">Colmena</a> queda segunda: tiene copago fijo de urgencia en RedSalud Vitacura y la red GES y CAEC más amplia del sistema.</p>
+  <div class="ojo">
+    <p><strong>Ojo con Cruz Blanca en esta red.</strong> Su convenio preferente en Santiago excluye justamente a RedSalud Santiago y RedSalud Providencia. Si esas son tus clínicas, es la que peor calza.</p>
+  </div>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿Qué Isapre conviene si me atiendo en clínicas RedSalud?</h3>
+    <p>Consalud, porque esta red es de su mismo grupo: tiene convenio preferente en todo el país y copago fijo de urgencia en 17 clínicas, de Arica a Punta Arenas. Colmena es la segunda opción, con copago fijo de urgencia en RedSalud Vitacura. Ojo con Cruz Blanca: su convenio preferente en Santiago excluye RedSalud Santiago y Providencia.</p>
+    <h3>¿Es más barato atenderse en RedSalud?</h3>
+    <p>Sí, y la diferencia es grande. La misma resonancia de rodilla, con el mismo código Fonasa, cuesta $272.811 particular en Clínica RedSalud Santiago y $589.600 en Clínica Santa María. Eso cambia tu copago aunque tengas exactamente el mismo plan.</p>
+    <h3>¿Menor precio significa menor calidad?</h3>
+    <p>No. Todas las clínicas privadas de Chile deben cumplir los mismos estándares de acreditación. Lo que cambia entre una y otra es la red médica, la infraestructura y el segmento al que apuntan, no el cumplimiento de la norma.</p>
+    <h3>¿Dónde está RedSalud en regiones?</h3>
+    <p>Tiene clínicas en Iquique, La Serena, Valparaíso, Rancagua, Concepción con el Sanatorio Alemán, Temuco y Punta Arenas, más centros médicos y dentales en gran parte del país. Es la red privada más extendida de Chile.</p>
+    <h3>¿Conviene un plan caro en una clínica cara o uno bueno en RedSalud?</h3>
+    <p>Depende de tu presupuesto y de dónde te atiendes hoy. Un plan que cubra bien en RedSalud suele costar menos que uno que cubra parcialmente en una clínica del segmento alto, y en la práctica terminas pagando copagos más bajos porque el valor de partida es más bajo. Eso sí, si tus médicos de siempre atienden en otra clínica, el ahorro no sirve de nada.</p>
+  </section>
+
+  <section class="rel">
+    <h2>Artículos que te podrían interesar</h2>
+    <div class="rel-grid">
+    <a class="rel-c" href="/clinicas" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'clinicas',origen:'final'})">
+      <img src="img/clinicas-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">Ranking de las mejores clínicas de Chile</span><span class="rel-p">Las 10 clínicas mejor evaluadas del país y lo que ese ranking no mide: cuánto te cuesta atenderte en cada una.</span></span>
+    </a>
+    <a class="rel-c" href="/clinica-santa-maria" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'clinica_santa_maria',origen:'final'})">
+      <img src="img/clinica-santa-maria-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">Clínica Santa María: qué Isapre conviene si te atiendes ahí</span><span class="rel-p">Sus 5 sedes, los precios que publica la clínica y las prestaciones que no tienen código Fonasa.</span></span>
+    </a>
+    <a class="rel-c" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'final'})">
+      <img src="img/mejor-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">¿Cuál es la mejor Isapre en 2026? Tabla comparativa</span><span class="rel-p">Las 7 Isapres abiertas comparadas: precios por edad, urgencias, reembolsos y reclamos.</span></span>
+    </a>
+    </div>
+  </section>
+
+  <div class="cierre">
+    <h2>¿Te atiendes en RedSalud?</h2>
+    <p>Revisamos si tu plan te cubre bien en esta red y cuánto estarías pagando de más en otra clínica por lo mismo. Gratis y sin compromiso.</p>
+    <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'clinicas_redsalud'})">Quiero que revisen mi plan →</a>
+  </div>
+
+  <p class="aviso">Los precios provienen de los aranceles publicados por cada clínica y fueron consultados en septiembre de 2026; pueden cambiar. Los valores de cirugía corresponden a la prestación y no incluyen pabellón, día cama ni insumos. Las coberturas de cada Isapre son referenciales, cambian según el plan y se confirman al momento de cotizar. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+</article>
+
+<aside class="lateral" aria-label="Asesoría y artículos relacionados">
+  <div class="lateral-in">
+    <div class="lat-cta">
+      <div class="lat-cta-t">¿Quieres que revisemos tu caso?</div>
+      <p>Comparamos planes según tu situación, gratis y sin compromiso.</p>
+      <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'lateral'})">Cotizar gratis →</a>
+    </div>
+    <div class="lat-rel">
+      <div class="lat-rel-t">Artículos relacionados</div>
+      <a class="lat-i" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre',origen:'lateral'})">
+        <img src="img/fonasa-o-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">¿Fonasa o Isapre? ¿Qué conviene más?</span><span class="lat-i-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</span></span>
+      </a>
+      <a class="lat-i" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores',origen:'lateral'})">
+        <img src="img/errores-al-contratar-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Los 8 errores más comunes al contratar una Isapre</span><span class="lat-i-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</span></span>
+      </a>
+      <a class="lat-i" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips',origen:'lateral'})">
+        <img src="img/tips-fonasa-a-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">De Fonasa a Isapre: tips para elegir un buen plan</span><span class="lat-i-p">Ocho puntos que revisar antes de firmar: red preferente, topes, urgencias, CAEC y reembolsos.</span></span>
+      </a>
+      <a class="lat-i" href="/isapre-embarazada" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'embarazo',origen:'lateral'})">
+        <img src="img/isapre-embarazada-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">¿Conviene contratar una Isapre estando embarazada?</span><span class="lat-i-p">La regla de los novenos, lo que no cubre el PAD de Fonasa y el plazo para inscribir a tu hijo.</span></span>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<div class="lupa" id="lupa" hidden>
+  <button class="lupa-x" type="button" aria-label="Cerrar">✕</button>
+  <img alt="">
+</div>
+<script>
+(function () {
+  var lupa = document.getElementById('lupa'), foto = lupa.querySelector('img');
+  function abrir(src, alt) { foto.src = src; foto.alt = alt || ''; lupa.hidden = false; lupa.classList.add('abierta'); document.body.style.overflow = 'hidden'; }
+  function cerrar() { lupa.classList.remove('abierta'); lupa.hidden = true; foto.removeAttribute('src'); document.body.style.overflow = ''; }
+  document.addEventListener('click', function (e) {
+    var z = e.target.closest ? e.target.closest('img.zoom') : null;
+    if (z) { abrir(z.currentSrc || z.src, z.alt); return; }
+    if (e.target === lupa || (e.target.closest && e.target.closest('.lupa-x'))) cerrar();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+})();
+</script>
+
+<footer>
+  <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
+</footer>
+
+</body>
+</html>
