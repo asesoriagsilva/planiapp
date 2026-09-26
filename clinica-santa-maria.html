@@ -158,6 +158,27 @@ footer a { color: var(--text-muted); }
 .plan-img { margin: 1.25rem 0 1.5rem; }
 .plan-img img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--white); }
 .plan-img figcaption { font-size: 12px; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5; }
+/* Tabla ancha de las 7 Isapres */
+.cmp-scroll { overflow-x: auto; background: var(--white); border: 1px solid var(--border); border-radius: 16px; margin: 1.25rem 0 0.5rem; }
+.cmp-t { border-collapse: collapse; width: 100%; min-width: 880px; font-size: 13.5px; }
+.cmp-t th, .cmp-t td { padding: 0.7rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.cmp-t thead th { background: var(--purple-light); vertical-align: middle; text-align: center; }
+.cmp-t thead img { max-width: 100%; height: auto; }
+.cmp-t th[scope="row"] { position: sticky; left: 0; z-index: 1; background: #FBFAFF; font-weight: 600; color: var(--purple-dark); width: 160px; min-width: 160px; border-right: 1px solid var(--border); }
+.cmp-t thead th:first-child { position: sticky; left: 0; z-index: 2; border-right: 1px solid var(--border); }
+.cmp-t tbody tr:last-child th, .cmp-t tbody tr:last-child td { border-bottom: none; }
+.cmp-t td.bien { background: #E6F5EE; color: #0B4A38; }
+.cmp-t td.mal { background: #FBECEC; color: #7A2E33; }
+.cmp-t .reco { box-shadow: inset 2px 0 0 #1D9E75, inset -2px 0 0 #1D9E75; }
+.cmp-t thead .reco { background: #D9F2E7; box-shadow: inset 2px 2px 0 #1D9E75, inset -2px 0 0 #1D9E75; }
+.cmp-t tbody tr:last-child .reco { box-shadow: inset 2px 0 0 #1D9E75, inset -2px 0 0 #1D9E75, inset 0 -2px 0 #1D9E75; }
+.reco-tag { display: block; margin-top: 0.3rem; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #0F6E56; }
+.cmp-kh { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.cmp-ico { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; font-size: 9px; font-weight: 700; color: #fff; margin-right: 0.3rem; vertical-align: 1px; }
+.cmp-ico.bien { background: #1D9E75; }
+.cmp-ico.mal { background: #C2565B; }
+.cmp-hint { display: none; font-size: 12px; color: var(--text-muted); margin: 0.75rem 0 0; }
+@media (max-width: 900px) { .cmp-hint { display: block; } }
 .fotos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 0.5rem; }
 .fotos .plan-img { margin: 0; }
 .fotos img { aspect-ratio: 3 / 2; object-fit: cover; }
@@ -422,8 +443,111 @@ footer a { color: var(--text-muted); }
     <figcaption>El implante coclear aparece dos veces: una con código Fonasa y otra sin código. La segunda depende de lo que diga tu plan.</figcaption>
   </figure>
 
+  <h2>Las 7 Isapres frente a Clínica Santa María</h2>
+  <p>Antes de recomendar nada, mira cómo se para cada Isapre en esta clínica. En verde, donde cubre bien, y en rojo, donde se queda corta. La columna destacada es la que recomendamos para quien se atiende acá.</p>
+  <p class="cmp-hint">Desliza la tabla para ver todas las Isapres →</p>
+  <div class="cmp-scroll">
+    <table class="cmp-t" aria-label="Las 7 Isapres comparadas para Clínica Santa María">
+      <thead>
+        <tr>
+          <th scope="col" class="cmp-kh">En Clínica Santa María</th>
+          <th scope="col" class="reco"><a href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'clinica_santa_maria'})"><img src="/logos/mini/vida-tres.png" alt="Isapre Vida Tres" width="96" height="19" loading="lazy" decoding="async"></a><span class="reco-tag">Recomendada</span></th>
+          <th scope="col"><a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'clinica_santa_maria'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="82" height="22" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'clinica_santa_maria'})"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="91" height="20" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'clinica_santa_maria'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="73" height="24" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'clinica_santa_maria'})"><img src="/logos/mini/cruz-blanca.png" alt="Isapre Cruz Blanca" width="93" height="19" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'clinica_santa_maria'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="90" height="20" loading="lazy" decoding="async"></a></th>
+          <th scope="col"><a href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'clinica_santa_maria'})"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="77" height="23" loading="lazy" decoding="async"></a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Cobertura preferente acá</th>
+          <td class=" reco">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+        </tr>
+        <tr>
+          <th scope="row">Copago fijo de urgencia acá</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+        </tr>
+        <tr>
+          <th scope="row">Kinesiología</th>
+          <td class=" reco">Con tope</td>
+          <td class="">Con tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en preferentes</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin bono: pagas y reembolsas</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
+        </tr>
+        <tr>
+          <th scope="row">Prótesis y órtesis</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 50 UF</td>
+          <td class="">Hasta 150 UF</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope muy bajo</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 10 UF</td>
+        </tr>
+        <tr>
+          <th scope="row">Quimioterapia</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="">Hasta 1.000 UF</td>
+          <td class="">Hasta 700 UF</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
+        </tr>
+        <tr>
+          <th scope="row">Red GES y CAEC</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Incluye Santa María</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Incluye Santa María</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>La más amplia, con Red UC</td>
+          <td class="">Clínicas RedSalud</td>
+          <td class="">Clínicas Bupa</td>
+          <td class="">Alemana y UC Christus</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>La más chica del sistema</td>
+        </tr>
+        <tr>
+          <th scope="row">Procedimientos sin código Fonasa</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, con arancel propio</td>
+          <td class="">Sin arancel propio</td>
+          <td class="">Sin arancel propio</td>
+          <td class="">Sin arancel propio</td>
+          <td class="">Sin arancel propio</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, los cubre</td>
+          <td class="">Sin arancel propio</td>
+        </tr>
+        <tr>
+          <th scope="row">Precio y cobertura de un plan 100% hospitalario y 80% ambulatorio acá</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>La mejor de las siete</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Buena, comparte la red</td>
+          <td class="">Media</td>
+          <td class="">Media, su red es RedSalud</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Baja, su red es Bupa</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Baja acá, su red es Alemana</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Baja, topes bajos</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Oferta vigente a septiembre de 2026. La última fila es nuestra evaluación como asesores, no un dato publicado: pesa qué tan bien cubre cada Isapre en esta clínica en relación con lo que cuesta un plan de ese nivel. Las coberturas cambian según el plan y se confirman al cotizar.</p>
+
   <h2>Qué Isapre conviene en Clínica Santa María</h2>
-  <p>Hoy la que mejor calza es <a href="/isapre-vida-tres">Vida Tres</a>: sus planes de línea alta tienen a esta clínica como prestador preferente, con la cobertura más alta que se ve en el mercado y copago fijo de urgencia acá mismo. <a href="/isapre-banmedica">Banmédica</a> cubre en la misma red y es más barata de entrada, así que también entra en la conversación. Te mostramos un plan real de Vida Tres para que veas qué mirar.</p>
+  <p>Hoy la que mejor calza es <a href="/isapre-vida-tres">Vida Tres</a>: sus planes de línea alta tienen a esta clínica como prestador preferente, con la cobertura más alta que se ve en el mercado, copago fijo de urgencia acá mismo y un arancel propio que cubre lo que no tiene código Fonasa. <a href="/isapre-banmedica">Banmédica</a> cubre en la misma red y es más barata de entrada, así que también entra en la conversación. Te mostramos un plan real de Vida Tres para que veas qué mirar.</p>
 
   <h3 class="ej-t">Hospitalización: 100% sin tope, incluidas las prótesis</h3>
   <p>En este plan, todo lo hospitalario en Clínica Santa María va con 100% de bonificación y sin tope: día cama, pabellón, honorarios, exámenes, imágenes y, lo que más pesa, <strong>prótesis, órtesis y elementos de osteosíntesis</strong>. Con topes anuales solo en medicamentos, materiales e insumos y quimioterapia, de 900 UF cada uno.</p>
