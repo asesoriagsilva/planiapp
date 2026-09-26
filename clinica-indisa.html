@@ -10,10 +10,10 @@
 <meta property="og:description" content="En Indisa, lo que define tu bolsillo es si tu plan tiene copago fijo de urgencia acá y si cubre lo que no tiene código Fonasa, que en esta clínica es justamente lo más caro.">
 <meta property="og:url" content="https://planiapp.cl/clinica-indisa">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://planiapp.cl/img/clinicas-og.jpg">
+<meta property="og:image" content="https://planiapp.cl/img/clinica-indisa-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Recepción de una clínica">
+<meta property="og:image:alt" content="Edificio de Clínica Indisa en Providencia">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
@@ -231,6 +231,46 @@ footer a { color: var(--text-muted); }
   .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 }
 /* relacionados:fin */
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
 </style>
 <script type="application/ld+json">
 {
@@ -242,7 +282,7 @@ footer a { color: var(--text-muted); }
    "headline": "Clínica Indisa: qué Isapre conviene si te atiendes ahí",
    "description": "Sedes, precios reales del arancel de Clínica Indisa y las prestaciones sin código Fonasa, como los pabellones de gran quemado. Qué mirar en tu plan si te atiendes ahí.",
    "image": [
-    "https://planiapp.cl/img/clinicas-og.jpg"
+    "https://planiapp.cl/img/clinica-indisa-og.jpg"
    ],
    "datePublished": "2026-09-26",
    "dateModified": "2026-09-26",
@@ -294,7 +334,7 @@ footer a { color: var(--text-muted); }
      "name": "¿Qué Isapre conviene si me atiendo en Clínica Indisa?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Depende del plan, pero hay dos cosas que revisar sí o sí: que la clínica tenga copago fijo de urgencia en tu plan, porque su urgencia es de las más usadas de Santiago, y que el plan cubra prestaciones sin código Fonasa, porque varias de las de esta clínica no lo tienen."
+      "text": "Acá no hay una sola: recomendamos Consalud, Colmena y Esencial, porque las tres tienen urgencia integral en esta clínica. Consalud destaca en kinesiología y topes, Colmena en red GES y CAEC y reembolsos rápidos, y Esencial es la única de las tres que cubre prestaciones sin código Fonasa. Banmédica y Vida Tres no tienen convenio de urgencia integral acá."
      }
     },
     {
@@ -367,6 +407,8 @@ footer a { color: var(--text-muted); }
   <h1>Clínica Indisa: qué Isapre conviene si te atiendes ahí</h1>
   <p class="bajada">Dónde está cada sede, cuánto cuesta atenderse ahí según su propio arancel y qué tiene que traer tu plan para cubrir lo caro de esta clínica.</p>
 
+  <img class="cabecera" src="img/clinica-indisa.webp" alt="Edificio de Clínica Indisa en Providencia" width="1000" height="450" fetchpriority="high" decoding="async">
+
   <div class="ojo ok">
     <p><strong>En una línea:</strong> En Indisa, lo que define tu bolsillo es si tu plan tiene copago fijo de urgencia acá y si cubre lo que no tiene código Fonasa, que en esta clínica es justamente lo más caro.</p>
   </div>
@@ -378,11 +420,16 @@ footer a { color: var(--text-muted); }
       <thead><tr><th scope="col">Sede</th><th scope="col">Comuna</th><th scope="col">Dirección</th></tr></thead>
       <tbody>
         <tr><td>Clínica Indisa y su urgencia</td><td data-i="Comuna">Providencia</td><td data-i="Dirección">Av. Santa María 1810</td></tr>
+        <tr><td>Clínica Indisa Maipú</td><td data-i="Comuna">Maipú</td><td data-i="Dirección">Santa Elena 901, esquina Américo Vespucio</td></tr>
         <tr><td>Centro Médico Los Conquistadores</td><td data-i="Comuna">Providencia</td><td data-i="Dirección">Los Conquistadores 1926</td></tr>
         <tr><td>Centro Médico Los Españoles</td><td data-i="Comuna">Providencia</td><td data-i="Dirección">Los Españoles 1855</td></tr>
       </tbody>
     </table>
   </div>
+  <figure class="plan-img">
+    <a href="img/clinica-indisa-maipu.webp" target="_blank" rel="noopener"><img src="img/clinica-indisa-maipu.webp" alt="Edificio de Clínica Indisa Maipú" width="900" height="560" loading="lazy" decoding="async"></a>
+    <figcaption>Clínica Indisa Maipú, el primer centro de alta complejidad de la comuna, en Santa Elena esquina Américo Vespucio.</figcaption>
+  </figure>
   <div class="ojo">
     <p><strong>Revisa esto en tu plan:</strong> que aparezcan la clínica y sus centros médicos. Si tu plan nombra solo la clínica y tus controles son en Los Conquistadores o en Los Españoles, esas consultas te quedan en libre elección, que cubre bastante menos.</p>
   </div>
@@ -442,11 +489,11 @@ footer a { color: var(--text-muted); }
       <thead>
         <tr>
           <th scope="col" class="cmp-kh">En Clínica Indisa</th>
+          <th scope="col" class="reco"><a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'clinica_indisa'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="73" height="24" loading="lazy" decoding="async"></a><span class="reco-tag">Recomendada</span></th>
+          <th scope="col" class="reco"><a href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'clinica_indisa'})"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="91" height="20" loading="lazy" decoding="async"></a><span class="reco-tag">Recomendada</span></th>
+          <th scope="col" class="reco"><a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'clinica_indisa'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="90" height="20" loading="lazy" decoding="async"></a><span class="reco-tag">Recomendada</span></th>
           <th scope="col"><a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'clinica_indisa'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="82" height="22" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'clinica_indisa'})"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="91" height="20" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'clinica_indisa'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="73" height="24" loading="lazy" decoding="async"></a></th>
           <th scope="col"><a href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'clinica_indisa'})"><img src="/logos/mini/cruz-blanca.png" alt="Isapre Cruz Blanca" width="93" height="19" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'clinica_indisa'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="90" height="20" loading="lazy" decoding="async"></a></th>
           <th scope="col"><a href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'clinica_indisa'})"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="77" height="23" loading="lazy" decoding="async"></a></th>
           <th scope="col"><a href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'clinica_indisa'})"><img src="/logos/mini/vida-tres.png" alt="Isapre Vida Tres" width="96" height="19" loading="lazy" decoding="async"></a></th>
         </tr>
@@ -454,9 +501,9 @@ footer a { color: var(--text-muted); }
       <tbody>
         <tr>
           <th scope="row">Cobertura preferente</th>
-          <td class="">Sí</td>
-          <td class="">Sí</td>
-          <td class="">Sí</td>
+          <td class=" reco">Sí</td>
+          <td class=" reco">Sí</td>
+          <td class=" reco">Sí</td>
           <td class="">Sí</td>
           <td class="">Sí</td>
           <td class="">Sí</td>
@@ -464,60 +511,83 @@ footer a { color: var(--text-muted); }
         </tr>
         <tr>
           <th scope="row">Urgencias integrales (copago fijo)</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene acá</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
           <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
           <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene acá</td>
         </tr>
         <tr>
           <th scope="row">Kinesiología</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en preferentes</td>
+          <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
           <td class="">Con tope</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en preferentes</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin bono: pagas y reembolsas</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
           <td class="">Con tope</td>
         </tr>
         <tr>
           <th scope="row">Prótesis y órtesis</th>
+          <td class=" reco">Hasta 150 UF</td>
+          <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 50 UF</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
           <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 50 UF</td>
-          <td class="">Hasta 150 UF</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope muy bajo</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 10 UF</td>
           <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
         </tr>
         <tr>
           <th scope="row">Quimioterapia</th>
+          <td class=" reco">Hasta 700 UF</td>
+          <td class=" reco">Hasta 1.000 UF</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
           <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
-          <td class="">Hasta 1.000 UF</td>
-          <td class="">Hasta 700 UF</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
           <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
         </tr>
         <tr>
           <th scope="row">Procedimientos sin código Fonasa</th>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
+          <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
+          <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en el porcentaje del plan</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
           <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
           <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en el porcentaje del plan</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en el porcentaje del plan</td>
+        </tr>
+        <tr>
+          <th scope="row">GES 55, gran quemado</th>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
+          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
         </tr>
       </tbody>
     </table>
   </div>
   <p class="cmp-nota">Oferta vigente a septiembre de 2026. Las coberturas cambian según el plan y se confirman al momento de cotizar.</p>
   <div class="ojo">
-    <p><strong>Lo que salta a la vista:</strong> Banmédica y Vida Tres no tienen copago fijo de urgencia en esta clínica, y su red de urgencias se concentra en Dávila y Santa María. Y de las siete, solo dos cubren prestaciones sin código Fonasa, que en Indisa es justo donde está lo caro.</p>
+    <p><strong>Lo que salta a la vista:</strong> Banmédica y Vida Tres no tienen convenio de urgencia integral con esta clínica: su red de urgencias se concentra en Dávila y Santa María. Y de las siete, solo Esencial y Vida Tres cubren prestaciones sin código Fonasa, que en Indisa es justo donde está lo caro.</p>
+    <p><strong>La buena noticia del GES 55:</strong> las siete Isapres tienen convenio con Indisa para la patología GES 55, gran quemado. O sea, para el caso más grave y más caro de esta clínica, el sistema GES te cubre con cualquiera de ellas, pagando el deducible que corresponda.</p>
+  </div>
+
+  <h2>Qué Isapre conviene en Clínica Indisa</h2>
+  <p>Acá no hay una sola ganadora, y por eso recomendamos tres: <a href="/isapre-consalud">Consalud</a>, <a href="/isapre-colmena">Colmena</a> y <a href="/isapre-esencial">Esencial</a>. Cada una gana por un motivo distinto.</p>
+  <ul class="lista isa">
+    <li><strong>Consalud.</strong> Tiene urgencia integral acá y es la que mejor cubre la kinesiología, sin tope en prestadores preferentes. Sus topes de prótesis, 150 UF, y de quimioterapia, 700 UF, son de los más altos entre las que tienen convenio de urgencia en esta clínica.</li>
+    <li><strong>Colmena.</strong> Urgencia integral acá, la red GES y CAEC más amplia del sistema y los reembolsos más rápidos, en 24 a 48 horas. Su punto flojo son los topes de kinesiología y de prótesis, así que conviene si tu riesgo está más en lo hospitalario que en la rehabilitación.</li>
+    <li><strong>Esencial.</strong> Es la única de las tres que cubre prestaciones sin código Fonasa, que en Indisa es lo que más pesa. Además tiene urgencia integral acá y kinesiología sin tope. A cambio, es la más cara de entrada y tiene una sola sucursal.</li>
+  </ul>
+  <p>Las otras cuatro quedan más atrás en esta clínica: Banmédica y Vida Tres no tienen urgencia integral acá, Cruz Blanca arrastra reembolsos de hasta 45 días y kinesiología sin bono, y Nueva Masvida tiene los topes más bajos del sistema.</p>
+  <div class="ojo">
+    <p><strong>Cuál de las tres depende de ti.</strong> Si te operaste o haces rehabilitación, Consalud. Si te preocupa un evento grave y quieres reembolsos rápidos, Colmena. Si lo tuyo pasa por procedimientos de alta complejidad y puedes pagar más, Esencial. Eso es exactamente lo que revisamos en una asesoría.</p>
   </div>
 
   <h2>Cómo revisar tu propio plan en 3 pasos</h2>
@@ -530,7 +600,7 @@ footer a { color: var(--text-muted); }
   <section class="faq">
     <h2>Preguntas frecuentes</h2>
     <h3>¿Qué Isapre conviene si me atiendo en Clínica Indisa?</h3>
-    <p>Depende del plan, pero hay dos cosas que revisar sí o sí: que la clínica tenga copago fijo de urgencia en tu plan, porque su urgencia es de las más usadas de Santiago, y que el plan cubra prestaciones sin código Fonasa, porque varias de las de esta clínica no lo tienen.</p>
+    <p>Acá no hay una sola: recomendamos Consalud, Colmena y Esencial, porque las tres tienen urgencia integral en esta clínica. Consalud destaca en kinesiología y topes, Colmena en red GES y CAEC y reembolsos rápidos, y Esencial es la única de las tres que cubre prestaciones sin código Fonasa. Banmédica y Vida Tres no tienen convenio de urgencia integral acá.</p>
     <h3>¿Cuánto cuesta una urgencia en Clínica Indisa?</h3>
     <p>La consulta de urgencia en horario hábil cuesta $70.960 en su arancel particular, y sube en horario inhábil. A eso se suman los exámenes y procedimientos. Con un plan que tenga copago fijo de urgencia acá, pagas un monto conocido en vez de la cuenta completa.</p>
     <h3>¿Por qué importa tanto lo del código Fonasa en esta clínica?</h3>
