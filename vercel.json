@@ -179,6 +179,11 @@
       "source": "/clinicas.html",
       "destination": "/clinicas",
       "permanent": true
+    },
+    {
+      "source": "/clinica-indisa.html",
+      "destination": "/clinica-indisa",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -317,6 +322,10 @@
     {
       "source": "/clinicas",
       "destination": "/clinicas.html"
+    },
+    {
+      "source": "/clinica-indisa",
+      "destination": "/clinica-indisa.html"
     }
   ]
 }
