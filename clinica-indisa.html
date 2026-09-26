@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clínica Indisa: qué Isapre conviene si te atiendes ahí | Planiapp</title>
-<meta name="description" content="Sedes, precios reales del arancel de Clínica Indisa y las prestaciones sin código Fonasa, como los pabellones de gran quemado. Qué mirar en tu plan si te atiendes ahí.">
+<meta name="description" content="Sedes de Clínica Indisa, precios reales de su arancel y el copago de urgencia de tres planes comparados. Qué Isapre conviene si te atiendes ahí.">
 <link rel="canonical" href="https://planiapp.cl/clinica-indisa">
 <meta property="og:title" content="Clínica Indisa: qué Isapre conviene si te atiendes ahí">
-<meta property="og:description" content="En Indisa, lo que define tu bolsillo es si tu plan tiene copago fijo de urgencia acá y si cubre lo que no tiene código Fonasa, que en esta clínica es justamente lo más caro.">
+<meta property="og:description" content="En Indisa, lo que más define tu bolsillo es el copago fijo de urgencia de tu plan en esta clínica: la urgencia es lo que más se usa acá y la diferencia entre una Isapre y otra es de varias decenas de miles de pesos.">
 <meta property="og:url" content="https://planiapp.cl/clinica-indisa">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://planiapp.cl/img/clinica-indisa-og.jpg">
@@ -144,6 +144,16 @@ footer a { color: var(--text-muted); }
   .cmp-row > div { font-size: 13.5px; padding: 0.6rem 0.8rem; }
   .cierre { padding: 1.6rem 1.2rem; }
 }
+/* galeria de planes con lupa */
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 0.5rem; align-items: start; }
+.galeria figure { margin: 0; }
+.galeria img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; cursor: zoom-in; }
+.galeria figcaption { font-size: 11.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.4rem; }
+.lupa { position: fixed; inset: 0; z-index: 99; background: rgba(26,24,48,0.92); display: none; align-items: center; justify-content: center; padding: 3.5rem 1rem 1rem; }
+.lupa.abierta { display: flex; }
+.lupa img { max-width: 100%; max-height: 100%; object-fit: contain; background: #fff; border-radius: 8px; }
+.lupa-x { position: absolute; top: 0.9rem; right: 1rem; width: 42px; height: 42px; border: none; border-radius: 50%; background: #fff; color: var(--purple-dark); font-size: 22px; line-height: 1; cursor: pointer; }
+@media (max-width: 680px) { .galeria { grid-template-columns: 1fr; } }
 /* pagina de clinica */
 .nov-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
 .nov { width: 100%; border-collapse: collapse; }
@@ -280,7 +290,7 @@ footer a { color: var(--text-muted); }
    "@type": "Article",
    "@id": "https://planiapp.cl/clinica-indisa#articulo",
    "headline": "Clínica Indisa: qué Isapre conviene si te atiendes ahí",
-   "description": "Sedes, precios reales del arancel de Clínica Indisa y las prestaciones sin código Fonasa, como los pabellones de gran quemado. Qué mirar en tu plan si te atiendes ahí.",
+   "description": "Sedes de Clínica Indisa, precios reales de su arancel y el copago de urgencia de tres planes comparados. Qué Isapre conviene si te atiendes ahí.",
    "image": [
     "https://planiapp.cl/img/clinica-indisa-og.jpg"
    ],
@@ -334,7 +344,7 @@ footer a { color: var(--text-muted); }
      "name": "¿Qué Isapre conviene si me atiendo en Clínica Indisa?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Acá no hay una sola: recomendamos Consalud, Colmena y Esencial, porque las tres tienen urgencia integral en esta clínica. Consalud destaca en kinesiología y topes, Colmena en red GES y CAEC y reembolsos rápidos, y Esencial es la única de las tres que cubre prestaciones sin código Fonasa. Banmédica y Vida Tres no tienen convenio de urgencia integral acá."
+      "text": "Acá no hay una sola: recomendamos Consalud, Colmena y Esencial, porque las tres tienen urgencia integral en esta clínica. Consalud destaca en kinesiología y topes, Colmena en red GES y CAEC y reembolsos rápidos, y Esencial cubre Indisa Maipú al 100%. Banmédica y Vida Tres no tienen convenio de urgencia integral acá."
      }
     },
     {
@@ -347,10 +357,10 @@ footer a { color: var(--text-muted); }
     },
     {
      "@type": "Question",
-     "name": "¿Por qué importa tanto lo del código Fonasa en esta clínica?",
+     "name": "¿Qué pasa si me atiendo acá por una quemadura grave?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Porque el área donde Indisa es referente, la atención de grandes quemados, aparece en su arancel sin código Fonasa. Sin código no hay arancel de referencia, así que ni Fonasa ni el arancel base de una Isapre lo bonifican: depende de que tu plan tenga cobertura propia para esas prestaciones."
+      "text": "El gran quemado es la patología número 55 del GES, y las siete Isapres tienen convenio con Indisa para esa patología. O sea, el caso más grave y más caro de esta clínica queda cubierto por el sistema GES con cualquiera de ellas, pagando el deducible que corresponda."
      }
     },
     {
@@ -410,7 +420,7 @@ footer a { color: var(--text-muted); }
   <img class="cabecera" src="img/clinica-indisa.webp" alt="Edificio de Clínica Indisa en Providencia" width="1000" height="450" fetchpriority="high" decoding="async">
 
   <div class="ojo ok">
-    <p><strong>En una línea:</strong> En Indisa, lo que define tu bolsillo es si tu plan tiene copago fijo de urgencia acá y si cubre lo que no tiene código Fonasa, que en esta clínica es justamente lo más caro.</p>
+    <p><strong>En una línea:</strong> En Indisa, lo que más define tu bolsillo es el copago fijo de urgencia de tu plan en esta clínica: la urgencia es lo que más se usa acá y la diferencia entre una Isapre y otra es de varias decenas de miles de pesos.</p>
   </div>
 
   <h2>Qué es Clínica Indisa y dónde está</h2>
@@ -449,30 +459,6 @@ footer a { color: var(--text-muted); }
     </table>
   </div>
   <p class="cmp-nota">Arancel publicado por Clínica Indisa, consultado el 26 de septiembre de 2026. En horario inhábil varios de estos valores suben alrededor de un 50%.</p>
-
-  <h2>Lo que no tiene código Fonasa</h2>
-  <p>Acá está lo que más pesa en esta clínica. Su área más reconocida, la atención del gran quemado, aparece en el arancel <strong>sin código Fonasa</strong>. Cuando una prestación no tiene código, no existe arancel de referencia: ni Fonasa ni el arancel base de una Isapre la bonifican, y se paga particular, salvo que tu plan tenga cobertura propia para ella.</p>
-  <div class="nov-wrap">
-    <table class="nov">
-      <thead><tr><th scope="col">Prestación</th><th scope="col">Código clínica</th><th scope="col">Valor particular</th></tr></thead>
-      <tbody>
-        <tr><td>Pabellón de gran quemado adulto, alta complejidad</td><td data-i="Código clínica">15-50-011-00</td><td data-i="Valor">$1.248.604</td></tr>
-        <tr><td>Pabellón de gran quemado niño, alta complejidad</td><td data-i="Código clínica">15-50-011-03</td><td data-i="Valor">$1.248.604</td></tr>
-        <tr><td>Pabellón de quemado adulto, cirugía MEEK</td><td data-i="Código clínica">15-50-011-06</td><td data-i="Valor">$2.852.722</td></tr>
-        <tr><td>Pabellón de quemado adulto, cirugía micro</td><td data-i="Código clínica">15-50-011-07</td><td data-i="Valor">$2.852.722</td></tr>
-        <tr><td>Consulta de urgencia</td><td data-i="Código clínica">sin código</td><td data-i="Valor">$70.960</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <figure class="plan-img">
-    <a href="img/indisa-quemados.webp" target="_blank" rel="noopener"><img src="img/indisa-quemados.webp" alt="Arancel de Clínica Indisa: pabellones de gran quemado con la columna de código Fonasa vacía" width="1100" height="495" loading="lazy" decoding="async"></a>
-    <figcaption>Arancel de Clínica Indisa. La columna Código Fonasa va vacía en todos los pabellones de quemados.</figcaption>
-  </figure>
-  <p>Y lo mismo pasa con la consulta de urgencia: en el arancel aparece sin código Fonasa, así que en la práctica Fonasa no bonifica nada de ella.</p>
-  <figure class="plan-img">
-    <a href="img/seguro-indisa-urgencia-consulta.webp" target="_blank" rel="noopener"><img src="img/seguro-indisa-urgencia-consulta.webp" alt="Aranceles de urgencia de Clínica Indisa: consulta de urgencia sin código Fonasa" width="1100" height="211" loading="lazy" decoding="async"></a>
-    <figcaption>La consulta de urgencia de Indisa, también sin código Fonasa.</figcaption>
-  </figure>
 
   <h2>Maternidad: los valores que conviene tener a mano</h2>
   <p>Si estás eligiendo dónde tener a tu hijo, estos son los valores particulares de esta clínica. Lo que termines pagando depende de la cobertura de parto de tu plan y, si entraste hace poco a la Isapre, de <a href="/isapre-embarazada">la regla de los novenos</a>.</p>
@@ -550,16 +536,6 @@ footer a { color: var(--text-muted); }
           <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
         </tr>
         <tr>
-          <th scope="row">Procedimientos sin código Fonasa</th>
-          <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
-          <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
-          <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en el porcentaje del plan</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No los cubre</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en el porcentaje del plan</td>
-        </tr>
-        <tr>
           <th scope="row">GES 55, gran quemado</th>
           <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
           <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí</td>
@@ -574,7 +550,7 @@ footer a { color: var(--text-muted); }
   </div>
   <p class="cmp-nota">Oferta vigente a septiembre de 2026. Las coberturas cambian según el plan y se confirman al momento de cotizar.</p>
   <div class="ojo">
-    <p><strong>Lo que salta a la vista:</strong> Banmédica y Vida Tres no tienen convenio de urgencia integral con esta clínica: su red de urgencias se concentra en Dávila y Santa María. Y de las siete, solo Esencial y Vida Tres cubren prestaciones sin código Fonasa, que en Indisa es justo donde está lo caro.</p>
+    <p><strong>Lo que salta a la vista:</strong> Banmédica y Vida Tres no tienen convenio de urgencia integral con esta clínica: su red de urgencias se concentra en Dávila y Santa María. Entre las que sí lo tienen, el monto cambia bastante: de 2,27 UF a 4 UF en una urgencia compleja de adulto.</p>
     <p><strong>La buena noticia del GES 55:</strong> las siete Isapres tienen convenio con Indisa para la patología GES 55, gran quemado. O sea, para el caso más grave y más caro de esta clínica, el sistema GES te cubre con cualquiera de ellas, pagando el deducible que corresponda.</p>
   </div>
 
@@ -583,28 +559,74 @@ footer a { color: var(--text-muted); }
   <ul class="lista isa">
     <li><strong>Consalud.</strong> Tiene urgencia integral acá y es la que mejor cubre la kinesiología, sin tope en prestadores preferentes. Sus topes de prótesis, 150 UF, y de quimioterapia, 700 UF, son de los más altos entre las que tienen convenio de urgencia en esta clínica.</li>
     <li><strong>Colmena.</strong> Urgencia integral acá, la red GES y CAEC más amplia del sistema y los reembolsos más rápidos, en 24 a 48 horas. Su punto flojo son los topes de kinesiología y de prótesis, así que conviene si tu riesgo está más en lo hospitalario que en la rehabilitación.</li>
-    <li><strong>Esencial.</strong> Es la única de las tres que cubre prestaciones sin código Fonasa, que en Indisa es lo que más pesa. Además tiene urgencia integral acá y kinesiología sin tope. A cambio, es la más cara de entrada y tiene una sola sucursal.</li>
+    <li><strong>Esencial.</strong> Urgencia integral acá con copagos intermedios, kinesiología sin tope y cobertura alta en Indisa Maipú. A cambio, es la más cara de entrada y tiene una sola sucursal.</li>
   </ul>
   <p>Las otras cuatro quedan más atrás en esta clínica: Banmédica y Vida Tres no tienen urgencia integral acá, Cruz Blanca arrastra reembolsos de hasta 45 días y kinesiología sin bono, y Nueva Masvida tiene los topes más bajos del sistema.</p>
   <div class="ojo">
     <p><strong>Cuál de las tres depende de ti.</strong> Si te operaste o haces rehabilitación, Consalud. Si te preocupa un evento grave y quieres reembolsos rápidos, Colmena. Si lo tuyo pasa por procedimientos de alta complejidad y puedes pagar más, Esencial. Eso es exactamente lo que revisamos en una asesoría.</p>
   </div>
 
+  <h3 class="ej-t">Así se ve en planes reales</h3>
+  <p>Estos son tres planes de verdad, uno de cada Isapre recomendada. En los tres aparece Clínica Indisa, Providencia y Maipú, dentro de la oferta preferente con la cobertura más alta del plan. Toca cualquiera para verlo en grande.</p>
+  <div class="galeria">
+    <figure>
+      <img class="zoom" src="img/indisa-plan-colmena.webp" alt="Plan de Colmena: 100% sin tope en Clínica Indisa, Providencia y Maipú, en lo hospitalario, y 80% sin tope en lo ambulatorio." width="776" height="575" loading="lazy" decoding="async">
+      <figcaption><strong>Colmena.</strong> 100% sin tope en Clínica Indisa, Providencia y Maipú, en lo hospitalario, y 80% sin tope en lo ambulatorio.</figcaption>
+    </figure>
+    <figure>
+      <img class="zoom" src="img/indisa-plan-consalud.webp" alt="Plan de Consalud: 100% sin tope en Clínica Indisa Maipú y Providencia, y 80% sin tope en lo ambulatorio." width="989" height="599" loading="lazy" decoding="async">
+      <figcaption><strong>Consalud.</strong> 100% sin tope en Clínica Indisa Maipú y Providencia, y 80% sin tope en lo ambulatorio.</figcaption>
+    </figure>
+    <figure>
+      <img class="zoom" src="img/indisa-plan-esencial.webp" alt="Plan de Esencial: 100% sin tope en Clínica Indisa Maipú y 90% en Indisa Providencia." width="766" height="545" loading="lazy" decoding="async">
+      <figcaption><strong>Esencial.</strong> 100% sin tope en Clínica Indisa Maipú y 90% en Indisa Providencia.</figcaption>
+    </figure>
+  </div>
+  <p class="cmp-nota">Extractos de planes reales, a septiembre de 2026. Son ejemplos: cada Isapre tiene muchas líneas de planes y las coberturas se confirman al cotizar.</p>
+
+  <h3 class="ej-t">El copago de urgencia, lado a lado</h3>
+  <p>Acá es donde más se nota la diferencia entre las tres, y es plata que se paga de verdad: la urgencia de Indisa es de las más usadas de Santiago. Los valores son copago fijo, o sea, lo que pagas sin importar lo que salga la cuenta.</p>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Isapre</th><th scope="col">Adulto, simple y compleja</th><th scope="col">Pediátrica</th><th scope="col">Maternidad</th></tr></thead>
+      <tbody>
+        <tr><td>Consalud</td><td data-i="Adulto">0,78 y 2,27 UF</td><td data-i="Pediátrica">0,67 y 1,54 UF</td><td data-i="Maternidad">No lo indica</td></tr>
+        <tr><td>Colmena</td><td data-i="Adulto">1,5 y 4 UF</td><td data-i="Pediátrica">1,5 y 4 UF</td><td data-i="Maternidad">1,5 y 4 UF</td></tr>
+        <tr><td>Esencial</td><td data-i="Adulto">0,98 y 3,43 UF</td><td data-i="Pediátrica">0,79 y 2,32 UF</td><td data-i="Maternidad">0,76 y 1,77 UF</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">En pesos, una urgencia compleja de adulto: Consalud $93.126, Colmena $164.098, Esencial $140.714. Calculado con la UF del 26 de septiembre de 2026, $41.024.</p>
+  <div class="galeria">
+    <figure>
+      <img class="zoom" src="img/indisa-urgencia-consalud.webp" alt="Copago fijo de urgencia de Consalud en Clínica Indisa" width="951" height="165" loading="lazy" decoding="async">
+      <figcaption><strong>Consalud.</strong> Copago fijo de urgencia en Clínica Indisa, según su plan.</figcaption>
+    </figure>
+    <figure>
+      <img class="zoom" src="img/indisa-urgencia-colmena.webp" alt="Copago fijo de urgencia de Colmena en Clínica Indisa" width="754" height="151" loading="lazy" decoding="async">
+      <figcaption><strong>Colmena.</strong> Copago fijo de urgencia en Clínica Indisa, según su plan.</figcaption>
+    </figure>
+    <figure>
+      <img class="zoom" src="img/indisa-urgencia-esencial.webp" alt="Copago fijo de urgencia de Esencial en Clínica Indisa" width="839" height="121" loading="lazy" decoding="async">
+      <figcaption><strong>Esencial.</strong> Copago fijo de urgencia en Clínica Indisa, según su plan.</figcaption>
+    </figure>
+  </div>
+
   <h2>Cómo revisar tu propio plan en 3 pasos</h2>
   <ul class="lista isa">
     <li><strong>Busca la oferta preferente.</strong> Tiene que decir Clínica Indisa, y si te controlas en sus centros médicos, también ellos.</li>
     <li><strong>Busca el copago fijo de urgencia acá.</strong> Es la urgencia que más se usa en el sector, y sin copago fijo el monto lo sabes al final.</li>
-    <li><strong>Pregunta por las prestaciones sin código Fonasa.</strong> Si te atiendes acá por quemaduras o por un procedimiento de alta complejidad, esa respuesta vale más que el porcentaje del plan.</li>
+    <li><strong>Revisa si la clínica está con el porcentaje más alto del plan.</strong> Varios planes cubren Indisa al 100% en lo hospitalario, pero dejan otras clínicas más abajo, y al revés. Que aparezca no basta: importa con qué porcentaje.</li>
   </ul>
 
   <section class="faq">
     <h2>Preguntas frecuentes</h2>
     <h3>¿Qué Isapre conviene si me atiendo en Clínica Indisa?</h3>
-    <p>Acá no hay una sola: recomendamos Consalud, Colmena y Esencial, porque las tres tienen urgencia integral en esta clínica. Consalud destaca en kinesiología y topes, Colmena en red GES y CAEC y reembolsos rápidos, y Esencial es la única de las tres que cubre prestaciones sin código Fonasa. Banmédica y Vida Tres no tienen convenio de urgencia integral acá.</p>
+    <p>Acá no hay una sola: recomendamos Consalud, Colmena y Esencial, porque las tres tienen urgencia integral en esta clínica. Consalud destaca en kinesiología y topes, Colmena en red GES y CAEC y reembolsos rápidos, y Esencial cubre Indisa Maipú al 100%. Banmédica y Vida Tres no tienen convenio de urgencia integral acá.</p>
     <h3>¿Cuánto cuesta una urgencia en Clínica Indisa?</h3>
     <p>La consulta de urgencia en horario hábil cuesta $70.960 en su arancel particular, y sube en horario inhábil. A eso se suman los exámenes y procedimientos. Con un plan que tenga copago fijo de urgencia acá, pagas un monto conocido en vez de la cuenta completa.</p>
-    <h3>¿Por qué importa tanto lo del código Fonasa en esta clínica?</h3>
-    <p>Porque el área donde Indisa es referente, la atención de grandes quemados, aparece en su arancel sin código Fonasa. Sin código no hay arancel de referencia, así que ni Fonasa ni el arancel base de una Isapre lo bonifican: depende de que tu plan tenga cobertura propia para esas prestaciones.</p>
+    <h3>¿Qué pasa si me atiendo acá por una quemadura grave?</h3>
+    <p>El gran quemado es la patología número 55 del GES, y las siete Isapres tienen convenio con Indisa para esa patología. O sea, el caso más grave y más caro de esta clínica queda cubierto por el sistema GES con cualquiera de ellas, pagando el deducible que corresponda.</p>
     <h3>¿Indisa es buena para maternidad?</h3>
     <p>Es una de sus áreas fuertes, junto con su unidad de medicina reproductiva. En el arancel, el día cama individual de parto está en $784.950 y el pabellón de parto en $962.431, valores particulares. Lo que pagues depende de la cobertura de parto de tu plan y de tus meses de afiliación.</p>
     <h3>¿Mi plan cubre los centros médicos de Indisa?</h3>
@@ -635,7 +657,7 @@ footer a { color: var(--text-muted); }
     <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'clinica_indisa'})">Quiero que revisen mi plan →</a>
   </div>
 
-  <p class="aviso">Los precios son del arancel publicado por Clínica Indisa y fueron consultados el 26 de septiembre de 2026; pueden cambiar y corresponden a su modalidad particular en horario hábil. Las coberturas de cada Isapre son referenciales, cambian según el plan y se confirman al momento de cotizar. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+  <p class="aviso">Los precios son del arancel publicado por Clínica Indisa y fueron consultados el 26 de septiembre de 2026; pueden cambiar y corresponden a su modalidad particular en horario hábil. Las imágenes son extractos de planes reales de cada Isapre, a septiembre de 2026, y se muestran como ejemplo: las coberturas cambian según el plan y se confirman al momento de cotizar. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
 </article>
 
 <aside class="lateral" aria-label="Asesoría y artículos relacionados">
@@ -667,6 +689,24 @@ footer a { color: var(--text-muted); }
   </div>
 </aside>
 </div>
+
+<div class="lupa" id="lupa" hidden>
+  <button class="lupa-x" type="button" aria-label="Cerrar">✕</button>
+  <img alt="">
+</div>
+<script>
+(function () {
+  var lupa = document.getElementById('lupa'), foto = lupa.querySelector('img');
+  function abrir(src, alt) { foto.src = src; foto.alt = alt || ''; lupa.hidden = false; lupa.classList.add('abierta'); document.body.style.overflow = 'hidden'; }
+  function cerrar() { lupa.classList.remove('abierta'); lupa.hidden = true; foto.removeAttribute('src'); document.body.style.overflow = ''; }
+  document.addEventListener('click', function (e) {
+    var z = e.target.closest ? e.target.closest('img.zoom') : null;
+    if (z) { abrir(z.currentSrc || z.src, z.alt); return; }
+    if (e.target === lupa || (e.target.closest && e.target.closest('.lupa-x'))) cerrar();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+})();
+</script>
 
 <footer>
   <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
