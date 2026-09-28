@@ -241,6 +241,10 @@ footer a { color: var(--text-muted); }
   .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 }
 /* relacionados:fin */
+/* comparacion de precios entre clinicas */
+.nov td.bien { background: #EAF7F1; font-weight: 700; }
+.nov td.mal { background: #FDEEED; }
+.plan-img img.zoom { cursor: zoom-in; }
 /* relacionados:inicio */
 .rel { margin-top: 2.75rem; }
 .rel h2 { margin: 0 0 1rem; }
@@ -281,10 +285,6 @@ footer a { color: var(--text-muted); }
   .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 }
 /* relacionados:fin */
-/* comparacion de precios entre clinicas */
-.nov td.bien { background: #EAF7F1; font-weight: 700; }
-.nov td.mal { background: #FDEEED; }
-.plan-img img.zoom { cursor: zoom-in; }
 /* relacionados:inicio */
 .rel { margin-top: 2.75rem; }
 .rel h2 { margin: 0 0 1rem; }
@@ -678,6 +678,12 @@ footer a { color: var(--text-muted); }
     <p>Depende de tu presupuesto y de dónde te atiendes hoy. Un plan que cubra bien en RedSalud suele costar menos que uno que cubra parcialmente en una clínica del segmento alto, y en la práctica terminas pagando copagos más bajos porque el valor de partida es más bajo. Eso sí, si tus médicos de siempre atienden en otra clínica, el ahorro no sirve de nada.</p>
   </section>
 
+  <div class="cierre">
+    <h2>¿Te atiendes en RedSalud?</h2>
+    <p>Revisamos si tu plan te cubre bien en esta red y cuánto estarías pagando de más en otra clínica por lo mismo. Gratis y sin compromiso.</p>
+    <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'clinicas_redsalud'})">Quiero que revisen mi plan →</a>
+  </div>
+
   <section class="rel">
     <h2>Artículos que te podrían interesar</h2>
     <div class="rel-grid">
@@ -685,22 +691,16 @@ footer a { color: var(--text-muted); }
       <img src="img/clinicas-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
       <span class="rel-tx"><span class="rel-t">Ranking de las mejores clínicas de Chile</span><span class="rel-p">Las 10 clínicas mejor evaluadas del país y lo que ese ranking no mide: cuánto te cuesta atenderte en cada una.</span></span>
     </a>
+    <a class="rel-c" href="/clinica-alemana" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'clinica_alemana',origen:'final'})">
+      <img src="img/clinica-alemana-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+      <span class="rel-tx"><span class="rel-t">Clínica Alemana: precios reales y qué Isapre conviene</span><span class="rel-p">Acá el valor para paciente Isapre es casi el mismo que el particular y buena parte del arancel no tiene código Fonasa.</span></span>
+    </a>
     <a class="rel-c" href="/clinica-santa-maria" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'clinica_santa_maria',origen:'final'})">
       <img src="img/clinica-santa-maria-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
       <span class="rel-tx"><span class="rel-t">Clínica Santa María: qué Isapre conviene si te atiendes ahí</span><span class="rel-p">Sus 5 sedes, los precios que publica la clínica y las prestaciones que no tienen código Fonasa.</span></span>
     </a>
-    <a class="rel-c" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'final'})">
-      <img src="img/mejor-isapre-card.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
-      <span class="rel-tx"><span class="rel-t">¿Cuál es la mejor Isapre en 2026? Tabla comparativa</span><span class="rel-p">Las 7 Isapres abiertas comparadas: precios por edad, urgencias, reembolsos y reclamos.</span></span>
-    </a>
     </div>
   </section>
-
-  <div class="cierre">
-    <h2>¿Te atiendes en RedSalud?</h2>
-    <p>Revisamos si tu plan te cubre bien en esta red y cuánto estarías pagando de más en otra clínica por lo mismo. Gratis y sin compromiso.</p>
-    <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'clinicas_redsalud'})">Quiero que revisen mi plan →</a>
-  </div>
 
   <p class="aviso">Los precios provienen de los aranceles publicados por cada clínica y fueron consultados en septiembre de 2026; pueden cambiar. Los valores de cirugía corresponden a la prestación y no incluyen pabellón, día cama ni insumos. Las coberturas de cada Isapre son referenciales, cambian según el plan y se confirman al momento de cotizar. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
 </article>
@@ -714,21 +714,21 @@ footer a { color: var(--text-muted); }
     </div>
     <div class="lat-rel">
       <div class="lat-rel-t">Artículos relacionados</div>
-      <a class="lat-i" href="/fonasa-o-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'fonasa_o_isapre',origen:'lateral'})">
-        <img src="img/fonasa-o-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
-        <span><span class="lat-i-t">¿Fonasa o Isapre? ¿Qué conviene más?</span><span class="lat-i-p">Te explicamos las diferencias reales, sin letra chica y sin empujarte a ningún lado.</span></span>
+      <a class="lat-i" href="/clinica-indisa" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'clinica_indisa',origen:'lateral'})">
+        <img src="img/clinica-indisa-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Clínica Indisa: qué Isapre conviene si te atiendes ahí</span><span class="lat-i-p">Sus 4 sedes, los precios reales, maternidad y gran quemado, y las tres Isapres que mejor calzan.</span></span>
       </a>
-      <a class="lat-i" href="/errores-al-contratar-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'errores',origen:'lateral'})">
-        <img src="img/errores-al-contratar-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
-        <span><span class="lat-i-t">Los 8 errores más comunes al contratar una Isapre</span><span class="lat-i-p">Empezando por el más grave: esperar a estar enfermo. Te contamos cuáles son y cómo evitarlos.</span></span>
+      <a class="lat-i" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'lateral'})">
+        <img src="img/mejor-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">¿Cuál es la mejor Isapre en 2026? Tabla comparativa</span><span class="lat-i-p">Las 7 Isapres abiertas comparadas: precios por edad, urgencias, reembolsos y reclamos.</span></span>
       </a>
-      <a class="lat-i" href="/tips-fonasa-a-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'tips',origen:'lateral'})">
-        <img src="img/tips-fonasa-a-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
-        <span><span class="lat-i-t">De Fonasa a Isapre: tips para elegir un buen plan</span><span class="lat-i-p">Ocho puntos que revisar antes de firmar: red preferente, topes, urgencias, CAEC y reembolsos.</span></span>
+      <a class="lat-i" href="/fonasa-y-seguro-complementario" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'seguro_complementario',origen:'lateral'})">
+        <img src="img/fonasa-y-seguro-complementario-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Fonasa + seguro complementario: la verdad detrás de esta combinación</span><span class="lat-i-p">Cómo funcionan de verdad la BMI, el deducible y los topes, con ejercicios, y la comparación con una Isapre.</span></span>
       </a>
-      <a class="lat-i" href="/isapre-embarazada" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'embarazo',origen:'lateral'})">
-        <img src="img/isapre-embarazada-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
-        <span><span class="lat-i-t">¿Conviene contratar una Isapre estando embarazada?</span><span class="lat-i-p">La regla de los novenos, lo que no cubre el PAD de Fonasa y el plazo para inscribir a tu hijo.</span></span>
+      <a class="lat-i" href="/preexistencias-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'preexistencias',origen:'lateral'})">
+        <img src="img/preexistencias-isapre-mini.webp" alt="" width="58" height="58" loading="lazy" decoding="async">
+        <span><span class="lat-i-t">Preexistencias en Isapres: ¿qué pasa si me quiero cambiar?</span><span class="lat-i-p">Qué es realmente una preexistencia, las 3 respuestas que te puede dar una Isapre y el riesgo de no declarar.</span></span>
       </a>
     </div>
   </div>

@@ -189,6 +189,11 @@
       "source": "/clinicas-redsalud.html",
       "destination": "/clinicas-redsalud",
       "permanent": true
+    },
+    {
+      "source": "/clinica-alemana.html",
+      "destination": "/clinica-alemana",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -335,6 +340,10 @@
     {
       "source": "/clinicas-redsalud",
       "destination": "/clinicas-redsalud.html"
+    },
+    {
+      "source": "/clinica-alemana",
+      "destination": "/clinica-alemana.html"
     }
   ]
 }
