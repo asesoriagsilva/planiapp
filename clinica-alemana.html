@@ -335,10 +335,18 @@ footer a { color: var(--text-muted); }
     },
     {
      "@type": "Question",
+     "name": "¿Cuánto es el deducible del seguro de Clínica Alemana?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depende de cuánto te cubra tu plan previsional. Si te cubre 80% o más, en Clínica Alemana el deducible es UF 0. Entre 60% y 80%, UF 20. Entre 40% y 60%, UF 40. Y bajo 40% se va a UF 65, unos $2.667.653, que en la práctica deja el seguro sin uso. En otros prestadores dentro de Chile los tramos son más altos y en el extranjero es siempre UF 65. Las condiciones vigentes conviene confirmarlas con la propia clínica."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "¿Sirve el seguro de la propia clínica?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Puede ayudar, y de hecho a veces es la vía más fácil para llegar a esta clínica sin pagar un plan con preferente Alemana completo, sobre todo combinado con Vida Tres. Tiene una condición: piden que tu plan previsional bonifique al menos un 40% de la prestación. Si tu plan cubre menos que eso acá, el seguro tampoco te va a salvar. Las condiciones vigentes conviene confirmarlas con la propia clínica."
+      "text": "Puede ayudar, y de hecho a veces es la vía más fácil para llegar a esta clínica sin pagar un plan con preferente Alemana completo, sobre todo combinado con Vida Tres. Lo que no hay que perder de vista es que el deducible se calcula con el porcentaje que te cubre tu plan en cada prestador: si tu plan te deja muy bien en Alemana pero muy bajo en el resto de la red, fuera de Alemana el seguro te va a servir bastante menos."
      }
     },
     {
@@ -524,6 +532,16 @@ footer a { color: var(--text-muted); }
       </thead>
       <tbody>
         <tr>
+          <th scope="row">Convenio preferente en Alemana</th>
+          <td class=" reco">Sí</td>
+          <td class=" reco">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+          <td class="">Sí</td>
+          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No</td>
+        </tr>
+        <tr>
           <th scope="row">Urgencias integrales en Alemana (copago fijo)</th>
           <td class="bien reco"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, desde 70% ambulatorio</td>
           <td class="mal reco"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene acá</td>
@@ -595,14 +613,37 @@ footer a { color: var(--text-muted); }
     <li><strong>Es la única con red GES y CAEC en la propia Alemana.</strong> Si aparece algo grave, te quedas en tu clínica en vez de moverte a la que te asigne el convenio.</li>
   </ul>
   <p>Y además cubre en el porcentaje del plan las prestaciones sin código Fonasa, que acá son buena parte del arancel. En eso último <a href="/isapre-vida-tres">Vida Tres</a> la iguala, pero en urgencia y en CAEC dentro de Alemana no.</p>
+  <div class="ojo">
+    <p><strong>El costo escondido de Esencial, que hay que revisar plan por plan.</strong> Varios de sus planes te dejan muy bien en Clínica Alemana y a cambio te bajan la cobertura en todos los demás prestadores. Si además de Alemana te atiendes en otras partes, ese plan te puede salir caro por el otro lado. Otras Isapres te dan acceso a Alemana y mantienen al resto de la red en porcentajes más altos, que es lo que después te permite usar bien el seguro de la clínica.</p>
+  </div>
   <p>Vida Tres entra por otro lado y también sirve: cubre lo que no tiene código con el arancel propio de sus planes de línea alta, y suele ser una entrada más barata a esta clínica cuando la combinas con el seguro de la propia Alemana. Si el presupuesto no alcanza para un plan preferente Alemana, ese es el camino a mirar.</p>
   <div class="ojo">
     <p><strong>Antes de decidir:</strong> que una Isapre cubra lo sin código no sirve si el plan no nombra a Clínica Alemana en su oferta preferente. Son dos cosas distintas y las dos tienen que estar.</p>
   </div>
 
   <h2>El seguro de la propia clínica</h2>
-  <p>Clínica Alemana ofrece un seguro complementario propio y, en la práctica, a veces es la vía más fácil para acceder a la clínica sin un plan de línea alta. Tiene una condición que conviene saber antes: <strong>piden que tu plan previsional bonifique al menos un 40% de la prestación</strong>. Si tu plan cubre menos que eso en esta clínica, el seguro no te va a arreglar la cuenta.</p>
-  <p>O sea, no reemplaza al plan: lo complementa. Primero hay que tener un plan que cubra acá, y después el seguro se hace cargo de una parte de lo que queda. Las condiciones vigentes conviene confirmarlas con la propia clínica.</p>
+  <p>Clínica Alemana ofrece un seguro complementario propio y, en la práctica, a veces es la vía más fácil para acceder a la clínica sin un plan de línea alta. La clave está en su deducible: <strong>no es un monto fijo, depende de cuánto te cubra tu plan previsional</strong>.</p>
+  <div class="nov-wrap">
+    <table class="nov">
+      <thead><tr><th scope="col">Cobertura de tu plan</th><th scope="col">En Clínica Alemana</th><th scope="col">Otros prestadores en Chile</th><th scope="col">En el extranjero</th></tr></thead>
+      <tbody>
+        <tr><td>Igual o mayor a 80%</td><td data-i="En Alemana">UF 0</td><td data-i="Otros en Chile">UF 15</td><td data-i="Extranjero">UF 65</td></tr>
+        <tr><td>Igual o mayor a 60% y menor a 80%</td><td data-i="En Alemana">UF 20</td><td data-i="Otros en Chile">UF 30</td><td data-i="Extranjero">UF 65</td></tr>
+        <tr><td>Igual o mayor a 40% y menor a 60%</td><td data-i="En Alemana">UF 40</td><td data-i="Otros en Chile">UF 45</td><td data-i="Extranjero">UF 65</td></tr>
+        <tr><td>Menor a 40%</td><td data-i="En Alemana">UF 65</td><td data-i="Otros en Chile">UF 65</td><td data-i="Extranjero">UF 65</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-nota">Deducible para asegurados hasta 74 años y 364 días; desde los 75 el máximo es de UF 150, unos $6.156.123. Aplica por cada asegurado, por enfermedad y por la vigencia anual de la póliza. En prestadores preferentes el deducible es UF 0 para cirugía coronaria, infarto agudo al miocardio, hemorragia cerebral, disrafias espinales y colecistectomía preventiva de cáncer vesicular, en asegurados menores de 41 años.</p>
+  <figure class="plan-img">
+    <img class="zoom" src="img/alemana-deducibles.webp" alt="Tabla de deducibles del seguro de Clínica Alemana según el porcentaje de cobertura del plan previsional" width="713" height="314" loading="lazy" decoding="async">
+    <figcaption>Tabla de deducibles de la póliza. Toca la imagen para verla en grande.</figcaption>
+  </figure>
+  <p>Léelo así: <strong>si tu plan te cubre 80% o más en Clínica Alemana, el deducible es cero</strong> y el seguro entra desde el primer peso. Si tu plan cubre menos de 40%, el deducible salta a UF 65, unos $2.667.653, y en la práctica el seguro deja de servirte. Por eso ese 40% es el piso real: bajo esa línea no hay seguro que te arregle la cuenta.</p>
+  <div class="ojo">
+    <p><strong>Acá está lo que hay que mirar con calma.</strong> Hay planes de Esencial que te dejan muy bien en Clínica Alemana, pero a cambio te bajan la cobertura en todos los demás prestadores. Y fíjate en la tercera columna: el tramo del deducible se calcula con el porcentaje que tienes en cada prestador, así que en el resto de la red caes en un tramo peor. Otras Isapres te dan acceso a Alemana y te mantienen a los demás prestadores en porcentajes más altos, y ahí el seguro te sirve en los dos lados. Esa es la comparación que hay que hacer antes de firmar.</p>
+  </div>
+  <p>El seguro no reemplaza al plan: lo complementa, y lo que te sirva depende directamente del plan que tengas debajo. Las condiciones vigentes conviene confirmarlas con la propia clínica.</p>
   <p>Acá es donde <a href="/isapre-vida-tres">Vida Tres</a> se vuelve interesante. Un plan de Vida Tres que llegue a ese 40% más el seguro de la clínica suele ser una entrada más barata a Alemana que un plan con preferente Alemana completo. No es la misma cobertura, pero si el presupuesto manda, es la ruta que hay que evaluar.</p>
 
   <section class="faq">
@@ -615,8 +656,10 @@ footer a { color: var(--text-muted); }
     <p>La consulta de urgencia en horario hábil son $137.114 y con especialista en horario inhábil $157.838, sin contar exámenes, procedimientos ni insumos, que se suman aparte. Ninguna de esas consultas tiene código Fonasa en el arancel de la clínica.</p>
     <h3>¿Qué pasa con las prestaciones que no tienen código Fonasa?</h3>
     <p>Si una prestación no tiene código Fonasa, no hay arancel de referencia, así que ni Fonasa ni el arancel base de una Isapre la bonifican. Se paga particular, salvo que tu plan tenga un arancel propio que la incluya.</p>
+    <h3>¿Cuánto es el deducible del seguro de Clínica Alemana?</h3>
+    <p>Depende de cuánto te cubra tu plan previsional. Si te cubre 80% o más, en Clínica Alemana el deducible es UF 0. Entre 60% y 80%, UF 20. Entre 40% y 60%, UF 40. Y bajo 40% se va a UF 65, unos $2.667.653, que en la práctica deja el seguro sin uso. En otros prestadores dentro de Chile los tramos son más altos y en el extranjero es siempre UF 65. Las condiciones vigentes conviene confirmarlas con la propia clínica.</p>
     <h3>¿Sirve el seguro de la propia clínica?</h3>
-    <p>Puede ayudar, y de hecho a veces es la vía más fácil para llegar a esta clínica sin pagar un plan con preferente Alemana completo, sobre todo combinado con Vida Tres. Tiene una condición: piden que tu plan previsional bonifique al menos un 40% de la prestación. Si tu plan cubre menos que eso acá, el seguro tampoco te va a salvar. Las condiciones vigentes conviene confirmarlas con la propia clínica.</p>
+    <p>Puede ayudar, y de hecho a veces es la vía más fácil para llegar a esta clínica sin pagar un plan con preferente Alemana completo, sobre todo combinado con Vida Tres. Lo que no hay que perder de vista es que el deducible se calcula con el porcentaje que te cubre tu plan en cada prestador: si tu plan te deja muy bien en Alemana pero muy bajo en el resto de la red, fuera de Alemana el seguro te va a servir bastante menos.</p>
     <h3>¿Es más cara que otras clínicas?</h3>
     <p>Sí. La misma resonancia de rodilla, código 04 05 013, cuesta $684.937 acá y $272.811 en Clínica RedSalud Santiago. Eso no significa que una sea mejor que la otra: todas las clínicas privadas cumplen los mismos estándares de acreditación. Significa que con el mismo plan tu copago parte de una base distinta.</p>
   </section>
@@ -645,7 +688,7 @@ footer a { color: var(--text-muted); }
     </div>
   </section>
 
-  <p class="aviso">Los precios son del arancel publicado por Clínica Alemana y fueron consultados el 28 de septiembre de 2026; pueden cambiar. Los valores de urgencia y de procedimientos corresponden a la prestación y no incluyen exámenes, insumos ni medicamentos, que se suman aparte. Las coberturas de cada Isapre son referenciales, cambian según el plan y se confirman al momento de cotizar. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
+  <p class="aviso">Los precios son del arancel publicado por Clínica Alemana y fueron consultados el 28 de septiembre de 2026; pueden cambiar. Los valores de urgencia y de procedimientos corresponden a la prestación y no incluyen exámenes, insumos ni medicamentos, que se suman aparte. Las coberturas de cada Isapre son referenciales, cambian según el plan y se confirman al momento de cotizar. La tabla de deducibles corresponde al seguro complementario de la propia clínica y sus condiciones se confirman con ella; los montos en UF se calcularon con la UF del 28 de septiembre de 2026, $41.041. Para evaluar tu caso particular, te recomendamos una asesoría.</p>
 </article>
 
 <aside class="lateral" aria-label="Asesoría y artículos relacionados">
