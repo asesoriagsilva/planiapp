@@ -174,6 +174,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .form-inline .pf-code-value { color: #fff; }
 .pf-aviso { background: rgba(255,255,255,0.10); border-left: 3px solid #F5C451; border-radius: 0 10px 10px 0; padding: 0.7rem 0.9rem; margin-top: 0.75rem; font-size: 12px; color: rgba(255,255,255,0.85); line-height: 1.5; }
 .pf-aviso strong { color: #F5C451; }
+.pf-aviso-renta { border-left-color: #FF9F6B; background: rgba(255,159,107,0.14); color: rgba(255,255,255,0.92); }
+.pf-aviso-renta strong { color: #FFC2A0; }
 .pf-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
 .form-section { max-width: 620px; margin: 2.75rem auto 0; padding: 0 1.5rem; scroll-margin-top: 90px; }
 .form-checks { display: flex; flex-wrap: wrap; gap: 0.3rem 0.85rem; margin-top: 0.75rem; }
@@ -635,6 +637,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
           <div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" id="s-renta" placeholder="Ej: 800.000" oninput="sFormatRenta(this)"/></div>
         </div>
       </div>
+      <div class="pf-aviso pf-aviso-renta" id="s-renta-aviso" hidden><strong>Ten en cuenta:</strong> con una renta imponible bajo $800.000 igual podemos evaluar tu caso, pero el 7% legal no alcanza a cubrir el precio de un plan de Isapre. Vas a tener que pagar todos los meses un monto adicional por sobre ese 7%.</div>
       <div class="pf-aviso"><strong>Importante:</strong> esta asesoría es para quienes quieren <strong>ingresar desde Fonasa a una Isapre</strong> o <strong>cambiarse de una Isapre a otra</strong>. Si lo que buscas es cambiar de plan dentro de tu misma Isapre, eso lo debes hacer directamente en su sucursal virtual, porque son planes de mantención internos.</div>
       <style>
       .s-extra { margin-top:1.4rem; border:1px solid var(--border); border-radius:12px; background:#FBFAFF; }
@@ -1175,10 +1178,14 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 const WEBHOOK_SIMPLE = 'https://hook.eu1.make.com/0kmah46kxiwotfaim1s3ua6fqr47pc7u';
 const WSP_NUMBER = '56966450103';
 
+// Bajo esta renta imponible el 7% legal no alcanza a cubrir el precio de un plan
+const RENTA_MINIMA = 800000;
 function sFormatRenta(input) {
   let val = input.value.replace(/[^0-9]/g,'');
   if(val) input.value = parseInt(val).toLocaleString('es-CL');
   sD.renta = val;
+  const aviso = document.getElementById('s-renta-aviso');
+  if(aviso) aviso.hidden = !(val && parseInt(val,10) < RENTA_MINIMA);
 }
 function resetForm(prefix) {
   closeForm(prefix);
@@ -1193,6 +1200,7 @@ function resetForm(prefix) {
     document.querySelectorAll('#s-cobs .s-chip').forEach(b=>b.classList.remove('on'));
     ['s-canal','s-horario'].forEach(id=>{const g=document.getElementById(id);if(g)g.querySelectorAll('.s-chip').forEach((b,i)=>b.classList.toggle('on',i===0));});
     const pf=document.getElementById('s-contacto-pref');if(pf)pf.style.display='none';
+    const ra=document.getElementById('s-renta-aviso');if(ra)ra.hidden=true;
     const sb=document.getElementById('s-submit');if(sb)sb.classList.remove('ready');
   }, 300);
 }
