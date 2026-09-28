@@ -180,8 +180,9 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .pf-aviso-renta { border-left-color: #FF9F6B; background: rgba(255,159,107,0.14); color: rgba(255,255,255,0.92); }
 .pf-aviso-renta strong { color: #FFC2A0; }
 .pf-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
-.pf-row2.pf-row-renta { grid-template-columns: 1.1fr 1fr 0.85fr; }
-@media (max-width: 760px) { .pf-row2.pf-row-renta { grid-template-columns: 1fr 1fr; } .pf-row-renta > div:first-child { grid-column: 1 / -1; } }
+/* Estas dos filas quedan a dos columnas tambien en celular */
+.pf-row2.pf-row-sistema { grid-template-columns: 1.5fr 0.7fr; }
+.pf-row2.pf-row-renta { grid-template-columns: 1fr 0.9fr; }
 .form-section { max-width: 620px; margin: 2.75rem auto 0; padding: 0 1.5rem; scroll-margin-top: 90px; }
 .form-checks { display: flex; flex-wrap: wrap; gap: 0.3rem 0.85rem; margin-top: 0.75rem; }
 .form-checks span { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.9); white-space: nowrap; }
@@ -622,28 +623,36 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
           </div>
         </div>
       </div>
-      <div class="pf-row2 pf-row-renta">
-        <div>
-          <label class="pf-label">Cobertura actual</label>
-          <select class="pf-select" id="s-sistema" onchange="sSistema(this.value)">
-            <option value="">Selecciona...</option>
-            <option>Fonasa</option>
-            <option>Banmédica</option>
-            <option>Colmena</option>
-            <option>Consalud</option>
-            <option>Cruz Blanca</option>
-            <option>Nueva Masvida</option>
-            <option>Vida Tres</option>
-            <option>Esencial</option>
-          </select>
+      <div class="pf-fields">
+        <div class="pf-row2 pf-row-sistema">
+          <div>
+            <label class="pf-label">Cobertura actual</label>
+            <select class="pf-select" id="s-sistema" onchange="sSistema(this.value)">
+              <option value="">Selecciona...</option>
+              <option>Fonasa</option>
+              <option>Banmédica</option>
+              <option>Colmena</option>
+              <option>Consalud</option>
+              <option>Cruz Blanca</option>
+              <option>Nueva Masvida</option>
+              <option>Vida Tres</option>
+              <option>Esencial</option>
+            </select>
+          </div>
+          <div>
+            <label class="pf-label">Edad</label>
+            <input class="pf-input" type="number" inputmode="numeric" min="18" max="99" id="s-edad" placeholder="Ej: 34" oninput="sD.edad=this.value"/>
+          </div>
         </div>
-        <div>
-          <label class="pf-label">Renta imponible</label>
-          <div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" inputmode="numeric" id="s-renta" placeholder="Ej: 800.000" oninput="sFormatRenta(this)"/></div>
-        </div>
-        <div>
-          <label class="pf-label">Tu 7% legal</label>
-          <div class="pf-input-prefix pf-calc-wrap"><span class="prefix">$</span><input class="pf-input pf-calc" type="text" id="s-siete" placeholder="0" readonly tabindex="-1" aria-live="polite"/></div>
+        <div class="pf-row2 pf-row-renta">
+          <div>
+            <label class="pf-label">Renta imponible</label>
+            <div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" inputmode="numeric" id="s-renta" placeholder="Ej: 800.000" oninput="sFormatRenta(this)"/></div>
+          </div>
+          <div>
+            <label class="pf-label">Tu 7% legal</label>
+            <div class="pf-input-prefix pf-calc-wrap"><span class="prefix">$</span><input class="pf-input pf-calc" type="text" id="s-siete" placeholder="0" readonly tabindex="-1" aria-live="polite"/></div>
+          </div>
         </div>
       </div>
       <div class="pf-aviso pf-aviso-renta" id="s-renta-aviso" hidden><strong>Ten en cuenta:</strong> tu 7% legal son <strong id="s-renta-monto">$0</strong> al mes y con eso no alcanzas a cubrir el precio de un plan de Isapre. Igual podemos evaluar tu caso, pero vas a tener que pagar todos los meses un monto adicional por sobre ese 7%.</div>
@@ -696,12 +705,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
                 <option>Vida Tres</option>
               </select>
             </div>
-            <div class="pf-row2">
-              <div>
-                <label class="pf-label">Edad</label>
-                <input class="pf-input" type="number" inputmode="numeric" min="18" max="99" id="s-edad" placeholder="Ej: 34" oninput="sD.edad=this.value"/>
-              </div>
-              <div>
+            <div>
                 <label class="pf-label">Región</label>
                 <select class="pf-select" id="s-region" onchange="sD.region=this.value">
                   <option value="">Selecciona...</option>
@@ -722,7 +726,6 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
                   <option>Aysén</option>
                   <option>Magallanes</option>
                 </select>
-              </div>
             </div>
             <div>
               <label class="pf-label">Clínica donde te atiendes o te gustaría atenderte</label>
