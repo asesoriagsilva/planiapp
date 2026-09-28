@@ -1,0 +1,9 @@
+# Vercel publica todo lo que esté en el repo, así que acá va lo que no debe salir al sitio.
+*.bak
+*.bak[0-9]
+planiapp.html.bak*
+META-ADS.md
+consalud-logo.png
+fonasa-1.png
+planiapp_favicon_grande_1.jpg
+planiapp_logo_vertical_3.jpg
