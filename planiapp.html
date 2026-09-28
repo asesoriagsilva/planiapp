@@ -156,6 +156,9 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .form-inline .pf-label { color: rgba(255,255,255,0.88); font-weight: 500; }
 .form-inline .pf-input, .form-inline .pf-select { border-color: transparent; }
 .form-inline .pf-input:focus, .form-inline .pf-select:focus { border-color: #fff; }
+.form-inline .pf-calc { background: rgba(255,255,255,0.16); border-color: rgba(255,255,255,0.35); color: #fff; font-weight: 600; cursor: default; }
+.form-inline .pf-calc::placeholder { color: rgba(255,255,255,0.45); font-weight: 400; }
+.form-inline .pf-calc-wrap .prefix { color: rgba(255,255,255,0.7); }
 .form-inline .pf-btn-next { background: #fff; color: var(--purple-deep); font-weight: 600; }
 .form-inline .pf-btn-next:hover { background: var(--purple-light); }
 .form-inline .s-extra { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.22); }
@@ -177,6 +180,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .pf-aviso-renta { border-left-color: #FF9F6B; background: rgba(255,159,107,0.14); color: rgba(255,255,255,0.92); }
 .pf-aviso-renta strong { color: #FFC2A0; }
 .pf-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+.pf-row2.pf-row-renta { grid-template-columns: 1.1fr 1fr 0.85fr; }
+@media (max-width: 760px) { .pf-row2.pf-row-renta { grid-template-columns: 1fr 1fr; } .pf-row-renta > div:first-child { grid-column: 1 / -1; } }
 .form-section { max-width: 620px; margin: 2.75rem auto 0; padding: 0 1.5rem; scroll-margin-top: 90px; }
 .form-checks { display: flex; flex-wrap: wrap; gap: 0.3rem 0.85rem; margin-top: 0.75rem; }
 .form-checks span { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.9); white-space: nowrap; }
@@ -617,7 +622,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
           </div>
         </div>
       </div>
-      <div class="pf-row2">
+      <div class="pf-row2 pf-row-renta">
         <div>
           <label class="pf-label">Cobertura actual</label>
           <select class="pf-select" id="s-sistema" onchange="sSistema(this.value)">
@@ -634,10 +639,14 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
         </div>
         <div>
           <label class="pf-label">Renta imponible</label>
-          <div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" id="s-renta" placeholder="Ej: 800.000" oninput="sFormatRenta(this)"/></div>
+          <div class="pf-input-prefix"><span class="prefix">$</span><input class="pf-input" type="text" inputmode="numeric" id="s-renta" placeholder="Ej: 800.000" oninput="sFormatRenta(this)"/></div>
+        </div>
+        <div>
+          <label class="pf-label">Tu 7% legal</label>
+          <div class="pf-input-prefix pf-calc-wrap"><span class="prefix">$</span><input class="pf-input pf-calc" type="text" id="s-siete" placeholder="0" readonly tabindex="-1" aria-live="polite"/></div>
         </div>
       </div>
-      <div class="pf-aviso pf-aviso-renta" id="s-renta-aviso" hidden><strong>Ten en cuenta:</strong> con una renta imponible bajo $800.000 igual podemos evaluar tu caso, pero el 7% legal no alcanza a cubrir el precio de un plan de Isapre. Vas a tener que pagar todos los meses un monto adicional por sobre ese 7%.</div>
+      <div class="pf-aviso pf-aviso-renta" id="s-renta-aviso" hidden><strong>Ten en cuenta:</strong> tu 7% legal son <strong id="s-renta-monto">$0</strong> al mes y con eso no alcanzas a cubrir el precio de un plan de Isapre. Igual podemos evaluar tu caso, pero vas a tener que pagar todos los meses un monto adicional por sobre ese 7%.</div>
       <div class="pf-aviso"><strong>Importante:</strong> esta asesoría es para quienes quieren <strong>ingresar desde Fonasa a una Isapre</strong> o <strong>cambiarse de una Isapre a otra</strong>. Si lo que buscas es cambiar de plan dentro de tu misma Isapre, eso lo debes hacer directamente en su sucursal virtual, porque son planes de mantención internos.</div>
       <style>
       .s-extra { margin-top:1.4rem; border:1px solid var(--border); border-radius:12px; background:#FBFAFF; }
@@ -1180,12 +1189,20 @@ const WSP_NUMBER = '56966450103';
 
 // Bajo esta renta imponible el 7% legal no alcanza a cubrir el precio de un plan
 const RENTA_MINIMA = 800000;
+// Tope imponible de salud: 90 UF. Hay que actualizarlo cuando cambie el valor de la UF.
+const TOPE_IMPONIBLE = 3695148; // 90 UF al 30-09-2026
 function sFormatRenta(input) {
   let val = input.value.replace(/[^0-9]/g,'');
   if(val) input.value = parseInt(val).toLocaleString('es-CL');
   sD.renta = val;
+  const renta = parseInt(val,10) || 0;
+  const siete = Math.round(Math.min(renta, TOPE_IMPONIBLE) * 0.07);
+  const campo = document.getElementById('s-siete');
+  if(campo) campo.value = renta ? siete.toLocaleString('es-CL') : '';
+  const monto = document.getElementById('s-renta-monto');
+  if(monto) monto.textContent = '$' + siete.toLocaleString('es-CL');
   const aviso = document.getElementById('s-renta-aviso');
-  if(aviso) aviso.hidden = !(val && parseInt(val,10) < RENTA_MINIMA);
+  if(aviso) aviso.hidden = !(renta && renta < RENTA_MINIMA);
 }
 function resetForm(prefix) {
   closeForm(prefix);
