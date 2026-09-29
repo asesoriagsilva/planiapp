@@ -264,7 +264,7 @@
   function montar(el) {
     var ubicacion = el.getAttribute('data-ubicacion') || 'sin_ubicacion';
     var modo = el.getAttribute('data-modo') || 'completo';
-    var paso = -1, resp = {}, empezado = false, avanzando = false, pestana = 's';
+    var paso = -1, resp = {}, empezado = false, completado = false, avanzando = false, pestana = 's';
     el.classList.add('qz', modo);
     el.setAttribute('aria-live', 'polite');
 
@@ -390,7 +390,9 @@
 
     function avanzar() {
       paso++;
-      if (paso === PREGUNTAS.length) {
+      // Solo una vez, igual que quiz_start: si vuelve atras y avanza de nuevo, no cuenta como otro test terminado
+      if (paso === PREGUNTAS.length && !completado) {
+        completado = true;
         var cl = clinica(resp.clinica);
         ga('quiz_complete', { resultado: nombre(calcular(resp).orden[0]), clinica: cl ? cl.n : 'Me da lo mismo', ubicacion: ubicacion });
       }

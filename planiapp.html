@@ -1359,6 +1359,8 @@ async function sSubmit(){
   sD.rut='';
   sD.renta=document.getElementById('s-renta').value||'';
   sD.fecha=new Date().toLocaleString('es-CL');sD.tipo_asesoria='Asesoría personalizada Planiapp';
+  // Cierra el embudo en GA4: sin esto solo se ve quien empieza el formulario, no quien lo termina
+  if(typeof gtag==='function' && !planiappInterno) gtag('event','lead_enviado',{form_name:'asesoria_planiapp',sistema:sD.sistema||'',origen_isapre:sQuiereCotizar()||'Sin definir'});
   document.querySelectorAll('#form-inline .pf-step').forEach(x=>x.classList.remove('active'));
   document.getElementById('s-fill').style.width='100%';document.getElementById('s-label').textContent='Verificando...';
   document.getElementById('s-sending').classList.add('active');
