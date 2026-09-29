@@ -159,6 +159,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .form-inline .pf-calc { background: rgba(255,255,255,0.16); border-color: rgba(255,255,255,0.35); color: #fff; font-weight: 600; cursor: default; }
 .form-inline .pf-calc::placeholder { color: rgba(255,255,255,0.45); font-weight: 400; }
 .form-inline .pf-calc-wrap .prefix { color: rgba(255,255,255,0.7); }
+.form-inline .pf-err { border-color: #FF9F6B; box-shadow: 0 0 0 3px rgba(255,159,107,0.3); }
 .form-inline .pf-btn-next { background: #fff; color: var(--purple-deep); font-weight: 600; }
 .form-inline .pf-btn-next:hover { background: var(--purple-light); }
 .form-inline .s-extra { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.22); }
@@ -179,6 +180,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .pf-aviso strong { color: #F5C451; }
 .pf-aviso-renta { border-left-color: #FF9F6B; background: rgba(255,159,107,0.14); color: rgba(255,255,255,0.92); }
 .pf-aviso-renta strong { color: #FFC2A0; }
+.pf-falta { margin-top: 1.1rem; margin-bottom: -0.3rem; font-size: 13.5px; font-weight: 600; color: #FFC2A0; }
+.pf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .pf-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
 /* Estas dos filas quedan a dos columnas tambien en celular */
 .pf-row2.pf-row-sistema { grid-template-columns: 1.5fr 0.7fr; }
@@ -773,6 +776,8 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
           </div>
         </div>
       </details>
+      <div class="pf-hp" aria-hidden="true"><label>No llenar este campo<input type="text" id="s-hp" name="apellido2" tabindex="-1" autocomplete="off"></label></div>
+      <p class="pf-falta" id="s-falta" role="alert" hidden></p>
       <button class="pf-btn-next" id="s-submit" onclick="sSubmit()" style="width:100%;margin-top:1.4rem;justify-content:center;">Enviar formulario →</button>
     </div>
 
@@ -1221,6 +1226,7 @@ function resetForm(prefix) {
     ['s-canal','s-horario'].forEach(id=>{const g=document.getElementById(id);if(g)g.querySelectorAll('.s-chip').forEach((b,i)=>b.classList.toggle('on',i===0));});
     const pf=document.getElementById('s-contacto-pref');if(pf)pf.style.display='none';
     const ra=document.getElementById('s-renta-aviso');if(ra)ra.hidden=true;
+    sLimpiaFalta(); sEnviando=false;
     const sb=document.getElementById('s-submit');if(sb)sb.classList.remove('ready');
   }, 300);
 }
@@ -1292,6 +1298,32 @@ function sChkReq(){
   } else { pref.style.display='none'; }
   const ok = n.length>2 && w.length>=8 && !!sD.sistema;
   document.getElementById('s-submit').classList.toggle('ready',ok);
+  // Se va apagando la marca de cada campo apenas queda bien
+  [['s-nombre',n.length>2],['s-wsp',w.length>=8],['s-sistema',!!sD.sistema]].forEach(p=>{
+    const e=sCaja(p[0]); if(e && p[1]) e.classList.remove('pf-err');
+  });
+  if(ok) sLimpiaFalta();
+}
+// Marca lo que falta en vez de dejar el boton muerto: si no se avisa, la persona lo aprieta y se va
+// El telefono se marca en su caja, porque el borde lo dibuja el contenedor y no el input
+function sCaja(id){
+  const e=document.getElementById(id);
+  return e ? (e.closest('.pf-tel') || e) : null;
+}
+function sLimpiaFalta(){
+  const av=document.getElementById('s-falta');
+  if(av) av.hidden=true;
+  ['s-nombre','s-wsp','s-sistema'].forEach(id=>{const e=sCaja(id);if(e)e.classList.remove('pf-err');});
+}
+// faltan: [{id, texto}, ...]
+function sMarcaFalta(faltan){
+  const av=document.getElementById('s-falta');
+  const textos=faltan.map(f=>f.texto);
+  const t=textos.length>1 ? textos.slice(0,-1).join(', ')+' y '+textos[textos.length-1] : textos[0];
+  if(av){ av.textContent='Para enviar nos falta '+t+'.'; av.hidden=false; }
+  faltan.forEach(f=>{const e=sCaja(f.id);if(e)e.classList.add('pf-err');});
+  const primero=document.getElementById(faltan[0].id);
+  if(primero){ primero.scrollIntoView({block:'center',behavior:'smooth'}); primero.focus({preventScroll:true}); }
 }
 function sPick(btn,key,val){
   btn.parentElement.querySelectorAll('.s-chip').forEach(b=>b.classList.remove('on'));
@@ -1304,9 +1336,26 @@ function sCob(btn){
 // La Isapre que quiere cotizar: la que eligió en el formulario o, si no eligió, la de la ficha desde donde llegó
 function sQuiereCotizar(){ return sD.cotizar || sD.interes || ''; }
 
+let sEnviando=false;
 async function sSubmit(){
-  sD.nombre=document.getElementById('s-nombre').value.trim();
-  sD.whatsapp='+569'+sTelDigitos();
+  const nombre=document.getElementById('s-nombre').value.trim();
+  const tel=sTelDigitos();
+  const sistema=document.getElementById('s-sistema').value;
+  // Sin estos tres el lead no sirve de nada, asi que no se envía
+  const faltan=[];
+  if(nombre.length<3) faltan.push({id:'s-nombre',texto:'tu nombre'});
+  if(tel.length<8) faltan.push({id:'s-wsp',texto:'tu WhatsApp'});
+  if(!sistema) faltan.push({id:'s-sistema',texto:'tu cobertura actual'});
+  if(faltan.length){ sMarcaFalta(faltan); return; }
+  // Trampa para robots: el campo está oculto, una persona nunca lo llena
+  const trampa=document.getElementById('s-hp');
+  if(trampa && trampa.value){ window.location.href='/gracias.html?codigo='+genCode()+'&tipo=simple'; return; }
+  if(sEnviando) return;
+  sEnviando=true;
+  sLimpiaFalta();
+  sD.nombre=nombre;
+  sD.whatsapp='+569'+tel;
+  sD.sistema=sD.sistema||sistema;
   sD.rut='';
   sD.renta=document.getElementById('s-renta').value||'';
   sD.fecha=new Date().toLocaleString('es-CL');sD.tipo_asesoria='Asesoría personalizada Planiapp';
