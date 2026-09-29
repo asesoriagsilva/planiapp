@@ -194,6 +194,11 @@
       "source": "/clinica-alemana.html",
       "destination": "/clinica-alemana",
       "permanent": true
+    },
+    {
+      "source": "/hospital-clinico-universidad-de-chile.html",
+      "destination": "/hospital-clinico-universidad-de-chile",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -344,6 +349,10 @@
     {
       "source": "/clinica-alemana",
       "destination": "/clinica-alemana.html"
+    },
+    {
+      "source": "/hospital-clinico-universidad-de-chile",
+      "destination": "/hospital-clinico-universidad-de-chile.html"
     }
   ]
 }
