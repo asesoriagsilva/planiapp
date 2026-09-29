@@ -1378,7 +1378,7 @@ async function sSubmit(){
         horario:sD.horario||'Lo antes posible',
         sistema:sD.sistema||'',
         motivo:sD.motivo||'',
-        coberturas:[sD.coberturas, sD.quiz ? 'Test sugirió: ' + sD.quiz : '', sQuiereCotizar() ? 'Quiere cotizar: ' + sQuiereCotizar() : '', sD.edad ? 'Edad: ' + sD.edad : '', sD.region ? 'Región: ' + sD.region : '', sD.clinica ? 'Clínica: ' + sD.clinica : ''].filter(Boolean).join(' | '),
+        coberturas:[sD.coberturas, sD.quiz ? 'Test sugirió: ' + sD.quiz : '', sQuiereCotizar() ? 'Quiere cotizar: ' + sQuiereCotizar() : '', sD.region ? 'Región: ' + sD.region : '', sD.clinica ? 'Clínica: ' + sD.clinica : ''].filter(Boolean).join(' | '),
         renta:sD.renta||'',
         cargas:sD.cargas||'',
         isapre_cotizar:sQuiereCotizar(),
