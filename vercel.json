@@ -204,6 +204,11 @@
       "source": "/clinica-san-carlos-de-apoquindo.html",
       "destination": "/clinica-san-carlos-de-apoquindo",
       "permanent": true
+    },
+    {
+      "source": "/clinica-universidad-de-los-andes.html",
+      "destination": "/clinica-universidad-de-los-andes",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -362,6 +367,10 @@
     {
       "source": "/clinica-san-carlos-de-apoquindo",
       "destination": "/clinica-san-carlos-de-apoquindo.html"
+    },
+    {
+      "source": "/clinica-universidad-de-los-andes",
+      "destination": "/clinica-universidad-de-los-andes.html"
     }
   ]
 }
