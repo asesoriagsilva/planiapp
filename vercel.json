@@ -199,6 +199,11 @@
       "source": "/hospital-clinico-universidad-de-chile.html",
       "destination": "/hospital-clinico-universidad-de-chile",
       "permanent": true
+    },
+    {
+      "source": "/clinica-san-carlos-de-apoquindo.html",
+      "destination": "/clinica-san-carlos-de-apoquindo",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -353,6 +358,10 @@
     {
       "source": "/hospital-clinico-universidad-de-chile",
       "destination": "/hospital-clinico-universidad-de-chile.html"
+    },
+    {
+      "source": "/clinica-san-carlos-de-apoquindo",
+      "destination": "/clinica-san-carlos-de-apoquindo.html"
     }
   ]
 }
