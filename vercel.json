@@ -259,6 +259,11 @@
       "source": "/cruz-blanca-o-nueva-masvida",
       "destination": "/mejor-isapre",
       "permanent": true
+    },
+    {
+      "source": "/guia-isapres.html",
+      "destination": "/guia-isapres",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -381,6 +386,10 @@
     {
       "source": "/clinica-universidad-de-los-andes",
       "destination": "/clinica-universidad-de-los-andes.html"
+    },
+    {
+      "source": "/guia-isapres",
+      "destination": "/guia-isapres.html"
     }
   ]
 }

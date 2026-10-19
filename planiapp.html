@@ -820,185 +820,36 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     .isa-mas { margin-left:auto; }
     .isa-line { flex:1 1 100%; order:3; font-size:13px; }
   }
+  .isa-dos { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.4rem; }
+  .isa-card { display:flex; flex-direction:column; gap:0.35rem; background:var(--white); border:1px solid var(--border); border-radius:16px; padding:1.3rem 1.35rem; text-decoration:none; color:inherit; transition:transform .2s, box-shadow .2s, border-color .2s; }
+  .isa-card:hover { transform:translateY(-3px); border-color:var(--purple-mid); box-shadow:0 12px 26px -14px rgba(38,33,92,.4); }
+  .isa-card-tag { align-self:flex-start; font-size:11.5px; font-weight:700; color:#0F6E56; background:#E1F5EE; border-radius:20px; padding:2px 10px; }
+  .isa-card-t { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:var(--purple-dark); }
+  .isa-card-p { font-size:14px; color:var(--text-muted); line-height:1.5; }
+  .isa-card-cta { font-size:14px; font-weight:600; color:var(--purple); margin-top:0.2rem; }
+  .isa-test { text-align:center; font-size:14px; color:var(--text-muted); margin-top:1.1rem; }
+  .isa-test a { color:var(--purple); font-weight:600; text-decoration:none; }
+  @media (max-width:680px){ .isa-dos { grid-template-columns:1fr; } .isa-card { padding:1.1rem 1.15rem; } }
   </style>
   <div class="isa-wrap" id="isapres">
     <div class="isa-badge">Actualizado a septiembre de 2026</div>
-    <h2 class="isa-title">No existe la Isapre perfecta.<br>Sí existe el plan que se adapta a ti.</h2>
-    <p class="isa-sub">Hay Isapres que cubren mejor unas cosas y peor otras, y el plan se arma según tu perfil: si eres joven, si haces deporte, si tienes familia o si solo quieres estar cubierto ante lo grave. Acá tienes para quién es ideal cada una. Toca la que te interese y verás su ficha completa: clínicas, urgencias, topes, reembolsos, dónde se queda corta y los datos de la Superintendencia.</p>
-
-    <a class="isa-link" href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica'})">
-      <img class="isa-logo" src="/logos/banmedica.png" alt="Banmédica" loading="lazy" decoding="async"/>
-      <span class="isa-line">Ideal si te atiendes en Santa María o Dávila, que son de su holding. Es la Isapre que más destina a bonificar a sus afiliados, según la Superintendencia.</span>
-      <span class="isa-mas">Ver más →</span>
-    </a>
-    <a class="isa-link" href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena'})">
-      <img class="isa-logo" src="/logos/colmena.png" alt="Colmena" loading="lazy" decoding="async"/>
-      <span class="isa-line">Ideal si quieres elegir entre todas las clínicas de Santiago, con psicología sin tope anual y la red GES y CAEC más amplia, incluida la Red UC.</span>
-      <span class="isa-mas">Ver más →</span>
-    </a>
-    <a class="isa-link" href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud'})">
-      <img class="isa-logo" src="/logos/consalud.png" alt="Consalud" loading="lazy" decoding="async"/>
-      <span class="isa-line">Ideal si buscas una Isapre fuerte en Santiago y en regiones: red RedSalud, copago de urgencia en las principales clínicas de Arica a Punta Arenas y kinesiología sin tope anual.</span>
-      <span class="isa-mas">Ver más →</span>
-    </a>
-    <a class="isa-link" href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca'})">
-      <img class="isa-logo" src="/logos/cruz-blanca.png" alt="Cruz Blanca" loading="lazy" decoding="async"/>
-      <span class="isa-line">Ideal si te atiendes en Clínicas Bupa o Integramédica, que son de su holding, con copago de urgencia en Santiago, Antofagasta y Viña del Mar.</span>
-      <span class="isa-mas">Ver más →</span>
-    </a>
-    <a class="isa-link" href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial'})">
-      <img class="isa-logo" src="/logos/esencial.png" alt="Esencial" loading="lazy" decoding="async"/>
-      <span class="isa-line">Ideal si te atiendes en Clínica Alemana, en Santiago o en el sur, con kinesiología sin tope y cobertura para procedimientos sin código Fonasa.</span>
-      <span class="isa-mas">Ver más →</span>
-    </a>
-    <a class="isa-link" href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida'})">
-      <img class="isa-logo" src="/logos/nueva-masvida.png" alt="Nueva Masvida" loading="lazy" decoding="async"/>
-      <span class="isa-line">Sus planes de entrada cuestan parecido a los de otras Isapres, pero con muchos más topes. Su punto fuerte es la psicología sin tope anual.</span>
-      <span class="isa-mas">Ver más →</span>
-    </a>
-    <a class="isa-link" href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres'})">
-      <img class="isa-logo" src="/logos/vida-tres.png" alt="Vida Tres" loading="lazy" decoding="async"/>
-      <span class="isa-line">Ideal si usas clínicas del segmento alto: cubre procedimientos sin código Fonasa y es la Isapre con menos reclamos, según la Superintendencia.</span>
-      <span class="isa-mas">Ver más →</span>
-    </a>
-
-    <p class="isa-aviso">La información de cada Isapre es referencial y corresponde a la oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan, y se confirman al momento de cotizar.</p>
-  </div>
-
-  <!-- TABLA COMPARATIVA (version corta; la completa esta en /mejor-isapre) -->
-  <style>
-  .cmp-wrap { max-width:1100px; margin:3.5rem auto 0; padding:0 1.5rem; }
-  .cmp-leyenda { display:flex; flex-wrap:wrap; gap:0.4rem 1rem; font-size:12.5px; color:var(--text-muted); margin:0 0 0.7rem; }
-  .cmp-leyenda span { display:inline-flex; align-items:center; gap:0.35rem; }
-  .cmp-hint { display:none; font-size:12px; color:var(--text-muted); text-align:right; margin:0 0 0.4rem; }
-  .cmp-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--border); border-radius:16px; background:var(--white); }
-  .cmp-t { border-collapse:separate; border-spacing:0; width:100%; min-width:1000px; font-size:13px; line-height:1.4; color:var(--text); }
-  .cmp-t th, .cmp-t td { padding:0.7rem 0.75rem; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
-  .cmp-t thead th { background:var(--purple-light); vertical-align:middle; }
-  .cmp-t thead th a { display:flex; align-items:center; justify-content:center; min-height:34px; }
-  .cmp-t thead img { max-width:100%; height:auto; }
-  .cmp-t th[scope="row"] { position:sticky; left:0; z-index:1; background:#FAFAFD; font-weight:600; color:var(--purple-dark); width:150px; min-width:150px; border-right:1px solid var(--border); }
-  .cmp-t thead th:first-child { position:sticky; left:0; z-index:2; border-right:1px solid var(--border); }
-  .cmp-t tbody tr:last-child th, .cmp-t tbody tr:last-child td { border-bottom:none; }
-  .cmp-t td.bien { background:#E6F5EE; color:#0B4A38; }
-  .cmp-t td.mal { background:#FBECEC; color:#7A2E33; }
-  .cmp-ico { display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border-radius:50%; font-size:10px; font-weight:700; color:#fff; line-height:1; vertical-align:-3px; margin-right:0.3rem; flex-shrink:0; }
-  .cmp-ico.bien { background:#1D9E75; }
-  .cmp-ico.mal { background:#C2565B; }
-  .cmp-kh { font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em; }
-  @media (max-width:680px){
-    .cmp-hint { display:block; }
-    .cmp-t { font-size:12.5px; min-width:900px; }
-    .cmp-t th[scope="row"] { width:112px; min-width:112px; }
-  }
-  .cmp-badge-wrap { text-align:center; margin-bottom:0.6rem; }
-  .cmp-badge { display:inline-block; background:var(--purple-light); color:var(--purple-deep); border-radius:999px; padding:0.35rem 0.9rem; font-size:13px; font-weight:600; }
-  .cmp-duelo { text-align:center; margin:0.9rem 0 0; font-size:15px; }
-  .cmp-duelo a { font-weight:600; text-decoration:none; }
-  .cmp-duelo a:hover { text-decoration:underline; }
-  .cmp-mas { text-align:center; margin:1.1rem 0 0; }
-  .cmp-btn { display:inline-block; background:var(--purple); color:#fff; text-decoration:none; border-radius:24px; padding:0.8rem 1.5rem; font-size:15px; font-weight:500; transition:background .2s; }
-  .cmp-btn:hover { background:var(--purple-deep); }
-  @media (max-width:680px){ .cmp-wrap { margin-top:2.5rem; padding:0 1rem; } .cmp-btn { display:block; } }
-  </style>
-  <div class="cmp-wrap" id="tabla-comparativa">
-    <div class="cmp-badge-wrap"><span class="cmp-badge">Actualizada a septiembre de 2026</span></div>
-    <h2 class="isa-title">Mejor Isapre 2026</h2>
-    <p class="isa-sub">Tabla comparativa entre todas las Isapres: coberturas, precios por edad, reclamos y licencias médicas, lado a lado. En verde, donde cada Isapre cubre bien, y en rojo, donde se queda corta.</p>
-    <div class="cmp-leyenda"><span><span class="cmp-ico bien" aria-hidden="true">✓</span>Cubre bien</span><span><span class="cmp-ico mal" aria-hidden="true">!</span>Cubre poco o con límites</span><span>Sin color: intermedio o dato informativo</span></div>
-    <p class="cmp-hint">Desliza la tabla para ver todas las Isapres →</p>
-    <div class="cmp-scroll">
-      <table class="cmp-t" aria-label="Tabla comparativa de Isapres 2026">
-        <thead>
-        <tr>
-          <th scope="col" class="cmp-kh">Cobertura</th>
-          <th scope="col"><a href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'tabla_home'})"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="80" height="21" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'tabla_home'})"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="90" height="19" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'tabla_home'})"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="72" height="24" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'tabla_home'})"><img src="/logos/mini/cruz-blanca.png" alt="Isapre Cruz Blanca" width="91" height="19" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'tabla_home'})"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="89" height="19" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'tabla_home'})"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="76" height="22" loading="lazy" decoding="async"></a></th>
-          <th scope="col"><a href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'tabla_home'})"><img src="/logos/mini/vida-tres.png" alt="Isapre Vida Tres" width="94" height="18" loading="lazy" decoding="async"></a></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">Copago de urgencia en regiones</th>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
-          <td>4 clínicas: Arica, Antofagasta, Atacama y Talca</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>17 clínicas, de Arica a Punta Arenas</td>
-          <td>2 clínicas: Antofagasta y Viña del Mar</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene</td>
-        </tr>
-        <tr>
-          <th scope="row">Kinesiología</th>
-          <td>Con tope. Sin tope con un seguro adicional</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en prestadores preferentes</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin bono: pagas y te reembolsa como libre elección</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope anual muy bajo</td>
-          <td>Con tope. Sin tope con un seguro adicional</td>
-        </tr>
-        <tr>
-          <th scope="row">Psicología</th>
-          <td>Con tope anual</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope anual</td>
-          <td>Con tope anual</td>
-          <td>Con tope anual</td>
-          <td>Con tope anual</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope anual</td>
-          <td>Con tope anual</td>
-        </tr>
-        <tr>
-          <th scope="row">Prótesis y órtesis</th>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 50 UF</td>
-          <td>Hasta 150 UF</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope en veces arancel, muy bajo</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope, salvo algunas líneas de planes con topes altos</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 10 UF</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
-        </tr>
-        <tr>
-          <th scope="row">Quimioterapia</th>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
-          <td>Hasta 1.000 UF</td>
-          <td>Hasta 700 UF</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope, salvo algunas líneas de planes con topes altos</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sin cobertura preferente</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td>
-        </tr>
-        <tr>
-          <th scope="row">Reembolsos</th>
-          <td>Hasta 5 días</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>24 a 48 horas</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>48 a 72 horas</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 45 días</td>
-          <td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>30 días</td>
-          <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>48 a 72 horas</td>
-          <td>Hasta 5 días</td>
-        </tr>
-        <tr>
-          <th scope="row">Plan de entrada, 25 a 34 años</th>
-          <td>1,72 UF</td>
-          <td>2,10 UF</td>
-          <td>1,89 UF</td>
-          <td>2,06 UF</td>
-          <td>2,35 UF</td>
-          <td>2,03 UF</td>
-          <td>2,06 UF</td>
-        </tr>
-        </tbody>
-      </table>
+    <h2 class="isa-title">No existe la Isapre perfecta.<br>Sí existe el plan que se adapta a&nbsp;ti.</h2>
+    <p class="isa-sub">Cada Isapre cubre mejor unas cosas que otras. Compáralas lado a lado o conoce cómo funciona cada una.</p>
+    <div class="isa-dos">
+      <a class="isa-card" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'portada'})">
+        <span class="isa-card-tag">Tabla comparativa</span>
+        <span class="isa-card-t">Mejor Isapre 2026</span>
+        <span class="isa-card-p">Todas las Isapres del mercado lado a lado: convenios, beneficios, coberturas y reclamos.</span>
+        <span class="isa-card-cta">Ver la tabla →</span>
+      </a>
+      <a class="isa-card" href="/guia-isapres" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'guia_isapres',origen:'portada'})">
+        <span class="isa-card-tag">Guía</span>
+        <span class="isa-card-t">Guía de Isapres</span>
+        <span class="isa-card-p">Cómo funciona cada una, sus clínicas, dónde cubre bien y dónde se queda corta.</span>
+        <span class="isa-card-cta">Ver la guía →</span>
+      </a>
     </div>
-    <div class="cmp-mas"><a class="cmp-btn" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','tabla_completa',{origen:'home'})">Ver la tabla completa: precios por edad, reclamos y licencias médicas →</a></div>
-    <p class="cmp-duelo">¿Estás entre dos Isapres? <a href="/mejor-isapre#comparaciones" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'comparativas',origen:'home_tabla'})">Compáralas una a una →</a></p>
-    <p class="cmp-duelo" style="color:var(--text-muted);font-size:14px;">Ojo con el precio: Nueva Masvida es de las más baratas, pero es la que tiene los topes más bajos, con prótesis hasta 10 UF y quimioterapia sin cobertura preferente.</p>
-    <p class="isa-aviso">La información es referencial y corresponde a la oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan, y se confirman al momento de cotizar.</p>
+    <p class="isa-test">¿No sabes por dónde partir? <a href="/que-isapre-me-conviene" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'test',origen:'portada'})">Haz el test de un minuto →</a></p>
   </div>
 
   <!-- POR QUÉ PLANIAPP -->
