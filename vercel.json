@@ -87,7 +87,7 @@
     },
     {
       "source": "/banmedica-o-cruz-blanca.html",
-      "destination": "/banmedica-o-cruz-blanca",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
@@ -97,7 +97,7 @@
     },
     {
       "source": "/colmena-o-banmedica.html",
-      "destination": "/colmena-o-banmedica",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
@@ -107,37 +107,37 @@
     },
     {
       "source": "/colmena-o-cruz-blanca.html",
-      "destination": "/colmena-o-cruz-blanca",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
       "source": "/colmena-o-nueva-masvida.html",
-      "destination": "/colmena-o-nueva-masvida",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
       "source": "/consalud-o-banmedica.html",
-      "destination": "/consalud-o-banmedica",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
       "source": "/consalud-o-cruz-blanca.html",
-      "destination": "/consalud-o-cruz-blanca",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
       "source": "/consalud-o-nueva-masvida.html",
-      "destination": "/consalud-o-nueva-masvida",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
       "source": "/cruz-blanca-o-nueva-masvida.html",
-      "destination": "/cruz-blanca-o-nueva-masvida",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
       "source": "/banmedica-o-esencial.html",
-      "destination": "/banmedica-o-esencial",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
@@ -152,7 +152,7 @@
     },
     {
       "source": "/cruz-blanca-o-esencial.html",
-      "destination": "/cruz-blanca-o-esencial",
+      "destination": "/mejor-isapre",
       "permanent": true
     },
     {
@@ -208,6 +208,56 @@
     {
       "source": "/clinica-universidad-de-los-andes.html",
       "destination": "/clinica-universidad-de-los-andes",
+      "permanent": true
+    },
+    {
+      "source": "/banmedica-o-cruz-blanca",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/banmedica-o-esencial",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/colmena-o-banmedica",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/colmena-o-cruz-blanca",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/colmena-o-nueva-masvida",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/consalud-o-banmedica",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/consalud-o-cruz-blanca",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/consalud-o-nueva-masvida",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/cruz-blanca-o-esencial",
+      "destination": "/mejor-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/cruz-blanca-o-nueva-masvida",
+      "destination": "/mejor-isapre",
       "permanent": true
     }
   ],
@@ -273,48 +323,12 @@
       "destination": "/isapre-vida-tres.html"
     },
     {
-      "source": "/banmedica-o-cruz-blanca",
-      "destination": "/banmedica-o-cruz-blanca.html"
-    },
-    {
       "source": "/banmedica-o-vida-tres",
       "destination": "/banmedica-o-vida-tres.html"
     },
     {
-      "source": "/colmena-o-banmedica",
-      "destination": "/colmena-o-banmedica.html"
-    },
-    {
       "source": "/colmena-o-consalud",
       "destination": "/colmena-o-consalud.html"
-    },
-    {
-      "source": "/colmena-o-cruz-blanca",
-      "destination": "/colmena-o-cruz-blanca.html"
-    },
-    {
-      "source": "/colmena-o-nueva-masvida",
-      "destination": "/colmena-o-nueva-masvida.html"
-    },
-    {
-      "source": "/consalud-o-banmedica",
-      "destination": "/consalud-o-banmedica.html"
-    },
-    {
-      "source": "/consalud-o-cruz-blanca",
-      "destination": "/consalud-o-cruz-blanca.html"
-    },
-    {
-      "source": "/consalud-o-nueva-masvida",
-      "destination": "/consalud-o-nueva-masvida.html"
-    },
-    {
-      "source": "/cruz-blanca-o-nueva-masvida",
-      "destination": "/cruz-blanca-o-nueva-masvida.html"
-    },
-    {
-      "source": "/banmedica-o-esencial",
-      "destination": "/banmedica-o-esencial.html"
     },
     {
       "source": "/colmena-o-esencial",
@@ -323,10 +337,6 @@
     {
       "source": "/consalud-o-esencial",
       "destination": "/consalud-o-esencial.html"
-    },
-    {
-      "source": "/cruz-blanca-o-esencial",
-      "destination": "/cruz-blanca-o-esencial.html"
     },
     {
       "source": "/esencial-o-nueva-masvida",
