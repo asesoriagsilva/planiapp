@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora Isapre 2026: ¿cuánto cuesta según tu sueldo? | Planiapp</title>
+<meta name="description" content="Calcula en 30 segundos tu 7% de salud y desde cuánto parte un plan de Isapre para tu edad. Si ya estás en Isapre, ve cuánto pagas de tu bolsillo. Gratis.">
+<link rel="canonical" href="https://planiapp.cl/calculadora-isapre">
+<meta property="og:title" content="¿Cuánto cuesta una Isapre con tu sueldo? Calcúlalo en 30 segundos">
+<meta property="og:description" content="Calcula en 30 segundos tu 7% de salud y desde cuánto parte un plan de Isapre para tu edad. Si ya estás en Isapre, ve cuánto pagas de tu bolsillo. Gratis.">
+<meta property="og:url" content="https://planiapp.cl/calculadora-isapre">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://planiapp.cl/img/fonasa-o-isapre-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjNTM0QUI3Ii8+CiAgPGNpcmNsZSBjeD0iMTQiIGN5PSIxNiIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI3LDE2IDEwLDE2IDExLjUsMTEuNSAxMywyMC41IDE0LjUsMTMgMTYsMTggMTcsMTYgMjEsMTYiCiAgICBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMjMiIGN5PSI5IiByPSI0IiBmaWxsPSIjMUQ5RTc1Ii8+CiAgPHBhdGggZD0iTTIxLjUgOWwxLjIgMS4zIDIuMy0yLjYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+" />
+<link rel="preconnect" href="https://mindicador.cl">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://planiapp.cl/calculadora-isapre#pagina",
+   "url": "https://planiapp.cl/calculadora-isapre",
+   "name": "Calculadora Isapre 2026: ¿cuánto cuesta según tu sueldo?",
+   "description": "Calcula en 30 segundos tu 7% de salud y desde cuánto parte un plan de Isapre para tu edad. Si ya estás en Isapre, ve cuánto pagas de tu bolsillo. Gratis.",
+   "inLanguage": "es-CL",
+   "isPartOf": {
+    "@id": "https://planiapp.cl/#sitio"
+   },
+   "publisher": {
+    "@id": "https://planiapp.cl/#organizacion"
+   }
+  },
+  {
+   "@type": "WebApplication",
+   "name": "Calculadora de Isapre de Planiapp",
+   "url": "https://planiapp.cl/calculadora-isapre",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "es-CL",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CLP"
+   }
+  }
+ ]
+}
+</script>
+<style>
+:root {
+  --purple:#534AB7; --purple-light:#EEEDFE; --purple-mid:#7F77DD; --purple-dark:#26215C; --purple-deep:#3C3489;
+  --green:#1D9E75; --green-light:#E1F5EE; --green-dark:#0F6E56;
+  --text:#1a1a2e; --muted:#6b6b8a; --border:rgba(83,74,183,0.15); --bg:#f8f7ff; --white:#fff;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-text-size-adjust:100%; }
+body { font-family:'DM Sans',sans-serif; color:var(--text); background:var(--bg); line-height:1.5; min-height:100vh; overflow-x:hidden; }
+body::before { content:''; position:fixed; inset:-30% -20% auto auto; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle, rgba(127,119,221,.22), transparent 65%); pointer-events:none; z-index:0; }
+body::after { content:''; position:fixed; inset:auto auto -25% -25%; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle, rgba(29,158,117,.14), transparent 65%); pointer-events:none; z-index:0; }
+.lp-top, main, .lp-pie { position:relative; z-index:1; }
+button, input, select { font:inherit; color:inherit; }
+
+.lp-top { display:flex; align-items:center; justify-content:space-between; gap:1rem; max-width:640px; margin:0 auto; padding:0.9rem 1rem; }
+.lp-logo { height:42px; width:auto; display:block; }
+.lp-chip { font-size:12px; font-weight:600; color:var(--green-dark); background:var(--green-light); border:1px solid #CFEEE3; border-radius:20px; padding:4px 11px; white-space:nowrap; }
+
+main { max-width:640px; margin:0 auto; padding:0.6rem 1rem 2.5rem; }
+.lp-hero { text-align:center; margin:0.9rem 0 1.4rem; }
+.lp-badge { display:inline-flex; align-items:center; gap:0.4rem; font-size:12.5px; font-weight:700; color:var(--purple); background:var(--purple-light); border-radius:20px; padding:4px 12px; margin-bottom:0.85rem; }
+.lp-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px rgba(29,158,117,.2); }
+h1 { font-family:'Inter',sans-serif; font-size:36px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.025em; line-height:1.15; text-wrap:balance; }
+h1 span { color:var(--purple); }
+.lp-sub { font-size:17px; color:var(--muted); margin-top:0.7rem; text-wrap:balance; }
+
+.lp-card { background:var(--white); border:1px solid var(--border); border-radius:24px; box-shadow:0 30px 60px -40px rgba(38,33,92,.55); padding:1.4rem 1.4rem 1.5rem; }
+.lp-prog { display:flex; align-items:center; gap:0.75rem; margin-bottom:1.2rem; }
+.lp-prog-barra { flex:1; height:7px; background:var(--purple-light); border-radius:99px; overflow:hidden; }
+.lp-prog-barra div { height:100%; width:0; background:linear-gradient(90deg, var(--purple), var(--purple-mid)); border-radius:99px; transition:width .35s ease; }
+.lp-prog-txt { font-size:12.5px; font-weight:600; color:var(--muted); white-space:nowrap; }
+.lp-prog-txt b { color:var(--purple); font-weight:800; }
+.lp-campo[hidden] { display:none; }
+.lp-rapidos { margin-bottom:0.75rem; }
+.lp-anal { text-align:center; padding:0.5rem 0 0.4rem; }
+.lp-anal-ico { display:inline-flex; margin-bottom:0.55rem; animation:lpGira .9s linear infinite; }
+@keyframes lpGira { to { transform:rotate(360deg); } }
+.lp-anal-lista { list-style:none; display:grid; gap:0.6rem; margin:1rem auto 0.3rem; max-width:380px; text-align:left; }
+.lp-anal-lista li { display:flex; align-items:center; gap:0.65rem; font-size:14.5px; line-height:1.4; color:var(--muted); opacity:.35; transition:opacity .3s, color .3s; }
+.lp-anal-lista li i { width:22px; height:22px; border-radius:50%; border:2px solid var(--border); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-style:normal; transition:background .3s, border-color .3s; }
+.lp-anal-lista li.va, .lp-anal-lista li.ok { opacity:1; color:var(--purple-dark); }
+.lp-anal-lista li.va i { border-color:var(--purple); border-top-color:transparent; animation:lpGira .8s linear infinite; }
+.lp-anal-lista li.ok i { background:var(--green); border-color:var(--green); animation:none; }
+.lp-anal-lista li.ok i::after { content:'✓'; color:#fff; font-size:12px; font-weight:800; }
+@media (prefers-reduced-motion: reduce) { .lp-anal-ico, .lp-anal-lista li.va i { animation:none; } }
+
+.lp-paso { display:none; animation:lpEntra .3s ease; }
+.lp-paso.activo { display:block; }
+@keyframes lpEntra { from { opacity:0; transform:translateX(14px); } to { opacity:1; transform:none; } }
+.lp-q { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); letter-spacing:-0.015em; line-height:1.25; margin-bottom:0.35rem; }
+.lp-ayuda { font-size:14px; color:var(--muted); margin-bottom:1rem; }
+
+.lp-ops { display:grid; gap:0.6rem; }
+.lp-ops.dos { grid-template-columns:1fr 1fr; }
+.lp-ops.tres { grid-template-columns:repeat(3,1fr); }
+.lp-op { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.2rem; min-height:58px; padding:0.8rem 0.6rem; background:var(--bg); border:1.5px solid var(--border); border-radius:16px; cursor:pointer; text-align:center; transition:border-color .15s, background .15s, transform .15s; }
+@media (hover:hover) { .lp-op:hover { border-color:var(--purple-mid); transform:translateY(-2px); } }
+.lp-op:active { transform:scale(.98); }
+.lp-op.on { border-color:var(--purple); background:var(--purple-light); }
+.lp-op:focus-visible { outline:3px solid var(--purple-mid); outline-offset:2px; }
+.lp-op strong { font-size:16px; font-weight:700; color:var(--purple-dark); }
+.lp-op small { font-size:12.5px; color:var(--muted); line-height:1.35; }
+.lp-op-ico { width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:0.35rem; }
+.lp-ops.dos .lp-op { padding:1.1rem 0.8rem; }
+.lp-ops.cuatro { grid-template-columns:repeat(4,1fr); }
+.lp-ops.cuatro .lp-op { min-height:62px; padding:0.5rem 0.4rem; }
+.lp-op img { height:22px; width:auto; max-width:100%; object-fit:contain; }
+.lp-op img.alta { height:32px; }
+.lp-ops.lista .lp-op { flex-direction:row; justify-content:flex-start; gap:0.75rem; padding:0.85rem 1rem; text-align:left; }
+.lp-ops.lista .lp-op-ico { width:36px; height:36px; border-radius:12px; margin:0; flex-shrink:0; background:var(--purple-light); color:var(--purple); }
+.lp-chips { display:flex; flex-wrap:wrap; gap:0.45rem; }
+.lp-chipb { background:var(--bg); border:1.5px solid var(--border); border-radius:999px; padding:0.5rem 0.85rem; font-size:14px; font-weight:600; color:var(--purple-dark); cursor:pointer; transition:background .15s, border-color .15s; }
+.lp-chipb.on { background:var(--purple-light); border-color:var(--purple); }
+.lp-chipb.on::before { content:'✓ '; color:var(--purple); }
+
+.lp-campo { display:flex; align-items:center; background:var(--bg); border:1.5px solid var(--border); border-radius:16px; transition:border-color .15s, box-shadow .15s; }
+.lp-campo:focus-within { border-color:var(--purple); box-shadow:0 0 0 4px rgba(83,74,183,.12); }
+.lp-campo.err { border-color:#C2565B; box-shadow:0 0 0 4px rgba(194,86,91,.12); }
+.lp-campo span { padding-left:1rem; font-size:20px; font-weight:700; color:var(--muted); }
+.lp-campo input, .lp-campo select { flex:1; min-width:0; border:none; background:none; outline:none; padding:0.95rem 1rem 0.95rem 0.45rem; font-size:20px; font-weight:700; color:var(--purple-dark); }
+.lp-campo.texto input, .lp-campo select { font-size:16px; font-weight:500; padding-left:1rem; }
+.lp-campo select { cursor:pointer; }
+.lp-siete { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; margin-top:0.7rem; font-size:14px; color:var(--green-dark); background:var(--green-light); border-radius:12px; padding:0.55rem 0.85rem; }
+.lp-siete[hidden] { display:none; }
+.lp-siete strong { font-size:16px; }
+.lp-err { font-size:13.5px; color:#A33F45; margin-top:0.55rem; }
+.lp-err[hidden] { display:none; }
+
+.lp-nav { display:flex; align-items:center; gap:0.75rem; margin-top:1.2rem; }
+.lp-atras { background:none; border:none; cursor:pointer; font-size:14px; font-weight:600; color:var(--muted); padding:0.6rem 0.2rem; }
+.lp-atras:hover { color:var(--purple); }
+.lp-btn { flex:1; display:inline-flex; align-items:center; justify-content:center; gap:0.4rem; background:var(--purple); color:#fff; border:none; border-radius:999px; padding:0.95rem 1.4rem; font-size:16px; font-weight:700; cursor:pointer; text-decoration:none; transition:background .2s, transform .15s, box-shadow .2s; box-shadow:0 12px 24px -14px rgba(83,74,183,.9); }
+.lp-btn:hover { background:var(--purple-deep); }
+.lp-btn:active { transform:scale(.98); }
+.lp-btn.verde { background:var(--green); box-shadow:0 12px 24px -14px rgba(29,158,117,.9); }
+.lp-btn.verde:hover { background:var(--green-dark); }
+.lp-btn[disabled] { opacity:.6; cursor:wait; }
+.lp-nose { display:block; margin-top:0.7rem; background:none; border:none; cursor:pointer; font-size:14.5px; font-weight:600; color:var(--purple); padding:0.3rem 0; }
+.lp-nose:hover { text-decoration:underline; }
+
+.lp-res-nums { display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; margin:0.9rem 0 0.8rem; }
+.lp-res-nums div { background:var(--bg); border-radius:16px; padding:0.85rem 0.95rem; }
+.lp-res-nums span { display:block; font-size:12.5px; font-weight:600; color:var(--muted); margin-bottom:0.15rem; }
+.lp-res-nums strong { font-family:'Inter',sans-serif; font-size:24px; font-weight:800; color:var(--purple-dark); letter-spacing:-0.01em; }
+.lp-grande { text-align:center; background:linear-gradient(135deg, var(--purple-dark), var(--purple)); color:#fff; border-radius:18px; padding:1.1rem 1rem; margin-bottom:0.8rem; }
+.lp-grande span { display:block; font-size:13.5px; color:#D9D6FA; font-weight:600; }
+.lp-grande strong { display:block; font-family:'Inter',sans-serif; font-size:38px; font-weight:900; letter-spacing:-0.02em; line-height:1.15; }
+.lp-grande small { display:block; font-size:13.5px; color:#D9D6FA; margin-top:0.1rem; }
+.lp-ver { border-radius:16px; padding:0.95rem 1rem; font-size:15px; line-height:1.55; }
+.lp-ver strong { display:block; font-size:17px; margin-bottom:0.15rem; }
+.lp-ver.ok { background:var(--green-light); color:#0B4A38; }
+.lp-ver.medio { background:#FFF4DE; color:#6B4A0E; }
+.lp-ver.info { background:var(--purple-light); color:var(--purple-deep); }
+.lp-otra { display:block; text-align:center; margin-top:0.9rem; font-size:14px; font-weight:600; color:var(--muted); background:none; border:none; cursor:pointer; width:100%; }
+.lp-otra:hover { color:var(--purple); }
+.lp-cta { margin-top:1rem; }
+.lp-mini { font-size:13.5px; font-weight:600; color:var(--purple-dark); margin-bottom:0.45rem; }
+.lp-mini em { font-style:normal; font-weight:500; color:var(--muted); }
+.lp-wsp { display:flex; width:100%; margin-top:1rem; font-size:16.5px; text-align:center; padding-left:1rem; padding-right:1rem; }
+.lp-wsp-nota { text-align:center; font-size:12.5px; color:var(--muted); margin-top:0.45rem; }
+.lp-escriban { color:var(--purple); margin-top:0.5rem; }
+
+.lp-form { display:grid; gap:0.75rem; }
+.lp-form label { display:block; font-size:13.5px; font-weight:600; color:var(--purple-dark); margin-bottom:0.3rem; }
+.lp-form label em { font-style:normal; font-weight:500; color:var(--muted); }
+.lp-tel span { font-size:16px; font-weight:600; padding-right:0.2rem; }
+.lp-tel input { font-size:16px; font-weight:600; letter-spacing:.02em; }
+.lp-trampa { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.lp-priv { display:flex; gap:0.45rem; align-items:flex-start; font-size:12.5px; color:var(--muted); line-height:1.45; margin-top:0.2rem; }
+.lp-priv svg { flex-shrink:0; margin-top:1px; color:var(--green); }
+
+.lp-confia { display:grid; grid-template-columns:repeat(3,1fr); gap:0.6rem; margin:1.4rem 0 0; }
+.lp-confia div { display:flex; flex-direction:column; align-items:center; text-align:center; gap:0.4rem; font-size:13px; font-weight:600; color:var(--purple-dark); line-height:1.35; }
+.lp-confia i { width:34px; height:34px; border-radius:50%; background:var(--green-light); color:var(--green); display:flex; align-items:center; justify-content:center; }
+
+.lp-info { margin-top:2.4rem; }
+.lp-info h2 { font-family:'Inter',sans-serif; font-size:21px; font-weight:800; color:var(--purple-dark); letter-spacing:-0.015em; margin-bottom:0.7rem; }
+.lp-como { list-style:none; display:grid; gap:0.5rem; }
+.lp-como li { position:relative; padding-left:1.5rem; font-size:14.5px; color:var(--text); line-height:1.55; }
+.lp-como li::before { content:''; position:absolute; left:0.3rem; top:0.55rem; width:7px; height:7px; border-radius:50%; background:var(--purple-mid); }
+.lp-faq { margin-top:1.8rem; }
+.lp-faq details { background:var(--white); border:1px solid var(--border); border-radius:14px; margin-bottom:0.55rem; }
+.lp-faq summary { list-style:none; cursor:pointer; padding:0.9rem 1rem; font-size:15px; font-weight:600; color:var(--purple-dark); display:flex; justify-content:space-between; gap:1rem; }
+.lp-faq summary::-webkit-details-marker { display:none; }
+.lp-faq summary::after { content:'+'; font-size:20px; line-height:1; color:var(--purple); transition:transform .2s; }
+.lp-faq details[open] summary::after { transform:rotate(45deg); }
+.lp-faq details p { padding:0 1rem 0.95rem; font-size:14.5px; color:var(--muted); line-height:1.6; }
+.lp-faq a { color:var(--purple); font-weight:600; }
+
+.lp-pie { max-width:640px; margin:0 auto; padding:1.4rem 1rem 2rem; border-top:1px solid var(--border); font-size:12.5px; color:var(--muted); line-height:1.6; text-align:center; }
+.lp-pie a { color:var(--purple); font-weight:600; text-decoration:none; }
+
+@media (max-width:560px) {
+  .lp-logo { height:36px; }
+  h1 { font-size:28px; }
+  .lp-sub { font-size:15.5px; }
+  .lp-card { padding:1.15rem 1rem 1.25rem; border-radius:20px; }
+  .lp-q { font-size:19.5px; }
+  .lp-ops.tres { grid-template-columns:1fr 1fr; }
+  .lp-ops.cuatro { gap:0.45rem; }
+  .lp-ops.cuatro .lp-op { min-height:54px; padding:0.4rem 0.3rem; border-radius:13px; }
+  .lp-op img { height:17px; }
+  .lp-op img.alta { height:26px; }
+  .lp-res-nums strong { font-size:20px; }
+  .lp-grande strong { font-size:32px; }
+  .lp-confia div { font-size:12px; }
+}
+</style>
+</head>
+<body>
+
+<header class="lp-top">
+  <img class="lp-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp" width="170" height="42">
+  <span class="lp-chip">Gratis y sin compromiso</span>
+</header>
+
+<main>
+  <section class="lp-hero">
+    <span class="lp-badge">Calculadora 2026 · 30 segundos</span>
+    <h1 id="lp-h1">¿Cuánto cuesta una <span>Isapre</span> con tu sueldo?</h1>
+    <p class="lp-sub" id="lp-sub">Responde unas preguntas y te mostramos tu 7% de salud y cuánto te costaría un plan.</p>
+  </section>
+
+  <div class="lp-card" aria-live="polite">
+    <div class="lp-prog"><div class="lp-prog-barra"><div id="lp-barra"></div></div><span class="lp-prog-txt" id="lp-prog-txt"></span></div>
+
+    <div class="lp-paso" data-paso="desde">
+      <p class="lp-q">¿Dónde estás hoy?</p>
+      <p class="lp-ayuda">Elige tu sistema de salud actual.</p>
+      <div class="lp-ops dos">
+        <button class="lp-op" type="button" data-desde="fonasa"><span class="lp-op-ico" style="background:var(--green-light);color:var(--green)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></span><strong>Estoy en Fonasa</strong><small>Quiero saber si me alcanza para una Isapre</small></button>
+        <button class="lp-op" type="button" data-desde="isapre"><span class="lp-op-ico" style="background:var(--purple-light);color:var(--purple)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 9v6M9 12h6"/></svg></span><strong>Estoy en Isapre</strong><small>Quiero saber cuánto pago de mi bolsillo</small></button>
+      </div>
+    </div>
+
+    <div class="lp-paso" data-paso="isapre">
+      <p class="lp-q">¿En qué Isapre estás?</p>
+      <p class="lp-ayuda">Toca la tuya.</p>
+      <div class="lp-ops cuatro">
+        <button class="lp-op" type="button" data-isapre="Banmédica"><img src="/logos/banmedica.png" alt="Banmédica" width="120" height="32"></button>
+        <button class="lp-op" type="button" data-isapre="Colmena"><img src="/logos/colmena.png" alt="Colmena" width="120" height="32"></button>
+        <button class="lp-op" type="button" data-isapre="Consalud"><img class="alta" src="/logos/consalud.png" alt="Consalud" width="80" height="32"></button>
+        <button class="lp-op" type="button" data-isapre="Cruz Blanca"><img src="/logos/cruz-blanca.png" alt="Cruz Blanca" width="120" height="32"></button>
+        <button class="lp-op" type="button" data-isapre="Esencial"><img src="/logos/esencial.png" alt="Esencial" width="120" height="32"></button>
+        <button class="lp-op" type="button" data-isapre="Nueva Masvida"><img class="alta" src="/logos/nueva-masvida.png" alt="Nueva Masvida" width="80" height="32"></button>
+        <button class="lp-op" type="button" data-isapre="Vida Tres"><img src="/logos/vida-tres.png" alt="Vida Tres" width="120" height="32"></button>
+        <button class="lp-op" type="button" data-isapre="Otra"><strong>Otra</strong></button>
+      </div>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button></div>
+    </div>
+
+    <div class="lp-paso" data-paso="personas">
+      <p class="lp-q">¿Quiénes estarían en el plan?</p>
+      <p class="lp-ayuda">Cada persona que sumas al plan cambia el precio.</p>
+      <div class="lp-ops lista">
+        <button class="lp-op" type="button" data-cargas="0"><span class="lp-op-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></span><strong>Solo yo</strong></button>
+        <button class="lp-op" type="button" data-cargas="1"><span class="lp-op-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="8.5" cy="8" r="3.3"/><circle cx="15.5" cy="8" r="3.3"/><path d="M2 20c0-3.4 2.9-5.5 6.5-5.5 1.3 0 2.5.3 3.5.8 1-.5 2.2-.8 3.5-.8 3.6 0 6.5 2.1 6.5 5.5"/></svg></span><strong>Con mi pareja</strong></button>
+        <button class="lp-op" type="button" data-cargas="2"><span class="lp-op-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="7" r="3.5"/><circle cx="17.5" cy="11" r="2.3"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M14.8 20c0-2.3 1.2-3.8 2.7-3.8s2.7 1.5 2.7 3.8"/></svg></span><strong>Con mis hijos</strong></button>
+        <button class="lp-op" type="button" data-cargas="3"><span class="lp-op-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M7 20c0-3 2.2-5 5-5s5 2 5 5M1.5 19c0-2.4 1.4-4 3.5-4M22.5 19c0-2.4-1.4-4-3.5-4"/></svg></span><strong>Con mi pareja y mis hijos</strong></button>
+      </div>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button></div>
+    </div>
+
+    <div class="lp-paso" data-paso="edad">
+      <p class="lp-q">¿Qué edad tienes?</p>
+      <p class="lp-ayuda">El precio de los planes cambia según la edad.</p>
+      <div class="lp-ops tres">
+        <button class="lp-op" type="button" data-tramo="0"><strong>18 a 24</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo="1"><strong>25 a 34</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo="2"><strong>35 a 44</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo="3"><strong>45 a 54</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo="4"><strong>55 a 64</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo="5"><strong>65 o más</strong><small>años</small></button>
+      </div>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button></div>
+    </div>
+
+    <div class="lp-paso" data-paso="sueldo">
+      <p class="lp-q">¿Cuánto ganas al mes?</p>
+      <p class="lp-ayuda">Tu sueldo bruto, antes de descuentos: el imponible de tu liquidación, no el líquido que te depositan.</p>
+      <div class="lp-chips lp-rapidos"><button class="lp-chipb" type="button" data-sueldo="800000">$800 mil</button><button class="lp-chipb" type="button" data-sueldo="1200000">$1,2 millones</button><button class="lp-chipb" type="button" data-sueldo="1800000">$1,8 millones</button><button class="lp-chipb" type="button" data-sueldo="2500000">$2,5 millones</button></div>
+      <label class="lp-campo" id="lp-sueldo-caja"><span>$</span><input id="lp-sueldo" type="text" inputmode="numeric" autocomplete="off" placeholder="1.200.000" aria-label="Sueldo imponible mensual"></label>
+      <div class="lp-siete" id="lp-siete-vivo" hidden><span>Tu 7% de salud</span><strong id="lp-siete-monto"></strong></div>
+      <p class="lp-err" id="lp-sueldo-err" hidden>Escribe tu sueldo mensual en pesos, por ejemplo 1.200.000.</p>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="lp-sueldo-ok">Continuar →</button></div>
+    </div>
+
+    <div class="lp-paso" data-paso="pago">
+      <p class="lp-q">¿Cuánto pagas hoy por tu Isapre?</p>
+      <p class="lp-ayuda">Lo ves en tu liquidación, en la línea de salud o Isapre. Si aparece separado en 7% y adicional, súmalos.</p>
+      <label class="lp-campo" id="lp-pago-caja"><span>$</span><input id="lp-pago" type="text" inputmode="numeric" autocomplete="off" placeholder="150.000" aria-label="Pago mensual de tu Isapre"></label>
+      <p class="lp-err" id="lp-pago-err" hidden>Escribe cuánto pagas al mes en pesos, por ejemplo 150.000.</p>
+      <button class="lp-nose" type="button" id="lp-pago-nose">No lo sé, sigamos igual →</button>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="lp-pago-ok">Ver mi resultado →</button></div>
+    </div>
+
+    <div class="lp-paso" data-paso="analizando">
+      <div class="lp-anal">
+        <div class="lp-anal-ico" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="17" stroke="#EEEDFE" stroke-width="4"/><path d="M20 3a17 17 0 0 1 17 17" stroke="#534AB7" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <p class="lp-q">Analizando tu caso...</p>
+        <ul class="lp-anal-lista" id="lp-anal-lista"></ul>
+      </div>
+    </div>
+
+    <div class="lp-paso" data-paso="resultado">
+      <p class="lp-q" id="lp-res-titulo">Tu resultado</p>
+      <div id="lp-res"></div>
+      <div class="lp-cta" id="lp-cta">
+        <p class="lp-mini">¿Qué es lo que más te importa? <em>(opcional, puedes marcar varias)</em></p>
+        <div class="lp-chips" id="lp-importa"></div>
+        <a class="lp-btn verde lp-wsp" id="lp-wsp-btn" href="https://wa.me/56966450103" target="_blank" rel="noopener">💬 Pedir opciones por WhatsApp</a>
+        <p class="lp-wsp-nota">Se abre WhatsApp con tus respuestas listas para enviar.</p>
+        <button class="lp-otra lp-escriban" type="button" id="lp-a-datos">Prefiero que me escriban →</button>
+      </div>
+      <button class="lp-otra" type="button" id="lp-otra">Volver a calcular</button>
+    </div>
+
+    <div class="lp-paso" data-paso="datos">
+      <p class="lp-q">¿A qué WhatsApp te escribimos?</p>
+      <p class="lp-ayuda">Un ejecutivo inscrito en la Superintendencia de Salud revisa tu caso y te envía alternativas por WhatsApp.</p>
+      <form class="lp-form" id="lp-form" novalidate>
+        <div><label for="lp-nombre">Nombre</label><div class="lp-campo texto" id="lp-nombre-caja"><input id="lp-nombre" type="text" autocomplete="given-name" placeholder="Tu nombre"></div></div>
+        <div><label for="lp-wsp">WhatsApp</label><div class="lp-campo lp-tel" id="lp-wsp-caja"><span>+56 9</span><input id="lp-wsp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="1234 5678" maxlength="10"></div></div>
+        <div><label>¿Dónde te atiendes o te gustaría atenderte? <em>(opcional)</em></label><div class="lp-chips" id="lp-clinicas"><button class="lp-chipb" type="button" data-clinica="Alemana">Alemana</button><button class="lp-chipb" type="button" data-clinica="Las Condes">Las Condes</button><button class="lp-chipb" type="button" data-clinica="Santa María">Santa María</button><button class="lp-chipb" type="button" data-clinica="Dávila">Dávila</button><button class="lp-chipb" type="button" data-clinica="UC Christus">UC Christus</button><button class="lp-chipb" type="button" data-clinica="RedSalud">RedSalud</button><button class="lp-chipb" type="button" data-clinica="Indisa">Indisa</button><button class="lp-chipb" type="button" data-clinica="Otra">Otra</button></div>
+          <div class="lp-campo texto" id="lp-clinica-otra" hidden style="margin-top:0.5rem"><input id="lp-clinica" type="text" autocomplete="off" placeholder="¿Cuál? Ej: Clínica Bupa"></div></div>
+        <div class="lp-trampa" aria-hidden="true"><input id="lp-hp" type="text" tabindex="-1" autocomplete="off"></div>
+        <p class="lp-err" id="lp-form-err" hidden></p>
+        <button class="lp-btn verde" type="submit" id="lp-enviar">Enviar →</button>
+        <p class="lp-priv"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Usamos tus datos solo para esta asesoría. Nunca los vendemos ni los compartimos con terceros.</span></p>
+      </form>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button></div>
+    </div>
+  </div>
+
+  <div class="lp-confia">
+    <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Ejecutivo inscrito en la Superintendencia de Salud</div>
+    <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>100% gratis y sin compromiso</div>
+    <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Te escribimos por WhatsApp</div>
+  </div>
+
+  <section class="lp-info">
+    <h2>Cómo calculamos</h2>
+    <ul class="lp-como">
+      <li><strong>Tu 7% de salud:</strong> es el 7% de tu sueldo imponible, con un tope de 90 UF de renta.</li>
+      <li><strong>Plan desde:</strong> el plan de entrada más económico para una persona de tu edad entre las 7 Isapres abiertas, con precios de septiembre de 2026.</li>
+      <li>Usamos la UF del día: <strong id="lp-uf">$41.190</strong>.</li>
+      <li>Es una referencia, no una cotización. El precio final depende del plan, de la clínica y de si sumas cargas.</li>
+    </ul>
+  </section>
+
+  <section class="lp-faq">
+    <h2 style="font-family:'Inter',sans-serif;font-size:21px;font-weight:800;color:var(--purple-dark);letter-spacing:-0.015em;margin-bottom:0.7rem;">Preguntas frecuentes</h2>
+    <details><summary>¿Qué es el 7% de salud?</summary><p>Es la cotización legal obligatoria: el 7% de tu sueldo imponible, con un tope de 90 UF de renta. Si estás en Fonasa, va a Fonasa. Si estás en una Isapre, se usa para pagar tu plan, y si el plan cuesta más, la diferencia la pones tú.</p></details>
+    <details><summary>¿Qué pasa si mi 7% no alcanza para un plan?</summary><p>Puedes poner la diferencia de tu bolsillo cada mes. Si esa diferencia es muy alta para tu presupuesto, Fonasa con un seguro complementario puede ser mejor opción. Te lo explicamos en <a href="/fonasa-y-seguro-complementario">esta guía</a>.</p></details>
+    <details><summary>¿Y si quiero sumar a mi familia?</summary><p>Cada carga suma costo al plan. Como depende de cada Isapre y de cada persona, lo calculamos contigo en la asesoría.</p></details>
+  </section>
+</main>
+
+<footer class="lp-pie">
+  Precios referenciales a septiembre de 2026. La contratación de un plan se realiza con un agente de ventas inscrito en la Superintendencia de Salud.<br>
+  <a href="/">planiapp.cl</a> · <a href="mailto:contacto@planiapp.cl">contacto@planiapp.cl</a>
+</footer>
+
+<script>
+// Plan de entrada más económico entre las 7 Isapres, por tramo de edad, en UF (sep-2026). Sale de comparativas.mjs.
+const PLAN_MIN_UF = [1.62,1.72,2,2.09,2.66,3.03];
+const TRAMOS = ["18 a 24","25 a 34","35 a 44","45 a 54","55 a 64","65 o más"];
+const RENTA_MINIMA = 800000; // bajo esto el 7% no alcanza para un plan: se muestra Fonasa con seguro complementario
+const TOPE_UF = 90;
+const WEBHOOK = 'https://hook.eu1.make.com/0kmah46kxiwotfaim1s3ua6fqr47pc7u';
+let UF = 41190; // respaldo; se reemplaza por la UF del día
+
+const $ = id => document.getElementById(id);
+const pesos = n => '$' + Math.round(n).toLocaleString('es-CL');
+const params = new URLSearchParams(location.search);
+const fuente = (params.get('utm_source') || '').slice(0, 40);
+const variante = params.get('v') === 'b' ? 'b' : 'a'; // prueba A/B del título: cada anuncio trae su variante
+const D = { desde: null, isapre: '', tramo: null, cargas: null, sueldo: 0, pago: 0, noSabe: false, veredicto: '' };
+let pasos = [], actual = '';
+let empezo = false;
+
+function marca(evento, datos) {
+  if (typeof gtag === 'function' && !(typeof planiappInterno !== 'undefined' && planiappInterno)) gtag('event', evento, Object.assign({ origen: 'calculadora', desde: D.desde || '', variante: variante }, datos || {}));
+}
+function pintaUF() { $('lp-uf').textContent = pesos(UF); }
+fetch('https://mindicador.cl/api/uf').then(r => r.json()).then(j => {
+  const v = j && j.serie && j.serie[0] && j.serie[0].valor;
+  if (v > 30000 && v < 80000) { UF = v; pintaUF(); }
+}).catch(() => {});
+
+// Textos de arriba según la puerta por la que entra y la variante del anuncio (deben calzar con el anuncio)
+const TEXTOS = {
+  fonasa: {
+    a: ['¿Cuánto sueldo necesitas para estar en una <span>Isapre</span>?', 'Descúbrelo en 30 segundos, gratis.'],
+    b: ['¿Alcanza el <span>7%</span> para una Isapre?', 'Calcúlalo en 30 segundos con tu sueldo y tu edad.'],
+  },
+  isapre: {
+    a: ['¿Cuánto de tu plan de <span>Isapre</span> sale de tu bolsillo?', 'Revísalo en 30 segundos y te decimos si hay un plan que te calce mejor.'],
+    b: ['¿Te llegó la carta de alza de tu <span>Isapre</span>?', 'Revisa en 30 segundos cuánto pagas de tu bolsillo y si hay un plan que te calce mejor.'],
+  },
+};
+// "¿Qué es lo que más te importa?" en el formulario (opcional)
+const IMPORTA = {
+  fonasa: ['Urgencias', 'Consultas y exámenes', 'Maternidad', 'Cobertura en general'],
+  isapre: ['Pagar menos de mi bolsillo', 'Me llegó la carta de alza', 'Sumar cargas', 'Mejor cobertura en mi clínica'],
+};
+function armaPasos() {
+  const inicio = params.get('desde') === D.desde && D.desde ? [] : ['desde'];
+  pasos = inicio.concat(D.desde === 'isapre' ? ['isapre', 'edad', 'sueldo', 'pago'] : ['edad', 'personas', 'sueldo']);
+}
+function ir(paso) {
+  actual = paso;
+  document.querySelectorAll('.lp-paso').forEach(p => p.classList.toggle('activo', p.dataset.paso === paso));
+  const i = pasos.indexOf(paso);
+  const fin = i < 0;
+  // El avance parte con algo ganado (25% en la primera de 3) y llega a 100% en el análisis
+  if (paso !== 'analizando') {
+    const pct = fin ? 100 : Math.round(((i + 1) / (pasos.length + 1)) * 100);
+    $('lp-barra').style.width = pct + '%';
+    $('lp-prog-txt').innerHTML = '<b>' + pct + '%</b> · ' + (fin ? (paso === 'datos' ? 'Último paso' : 'Listo') : 'Pregunta ' + (i + 1) + ' de ' + pasos.length);
+  }
+  document.querySelectorAll('[data-paso="' + paso + '"] [data-atras]').forEach(b => b.hidden = (i === 0));
+  const foco = { sueldo: 'lp-sueldo', pago: 'lp-pago', datos: 'lp-nombre' }[paso];
+  if (foco) setTimeout(() => $(foco).focus({ preventScroll: true }), 320);
+  // En celular, si la tarjeta quedó arriba de la pantalla (por el teclado), se vuelve a mostrar; al cargar no se mueve
+  const card = document.querySelector('.lp-card');
+  if (empezo && card.getBoundingClientRect().top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function siguiente() {
+  const i = pasos.indexOf(actual);
+  if (i >= 0 && i < pasos.length - 1) ir(pasos[i + 1]); else analizar();
+}
+// Pantalla de análisis: cada línea describe un cálculo que la página sí hace, nunca algo que no hace
+function analizar() {
+  const lineas = ['Calculando tu 7% con la UF de hoy']
+    .concat(D.desde === 'fonasa' ? ['Revisando los planes de entrada de las 7 Isapres para tu edad'] : D.noSabe ? [] : ['Comparándolo con lo que pagas hoy'])
+    .concat(['Preparando tu resultado']);
+  const ul = $('lp-anal-lista');
+  ul.innerHTML = lineas.map(t => '<li><i></i>' + t + '</li>').join('');
+  const desde = parseInt($('lp-barra').style.width, 10) || 0;
+  ir('analizando');
+  const lis = [...ul.children], t = matchMedia('(prefers-reduced-motion: reduce)').matches ? 250 : 750;
+  lis.forEach((li, k) => {
+    setTimeout(() => {
+      li.classList.add('va');
+      const pct = Math.round(desde + (100 - desde) * (k + 1) / lis.length);
+      $('lp-barra').style.width = pct + '%';
+      $('lp-prog-txt').innerHTML = '<b>' + pct + '%</b> · Analizando';
+    }, k * t);
+    setTimeout(() => { li.classList.remove('va'); li.classList.add('ok'); }, k * t + t - 120);
+  });
+  setTimeout(resultado, lis.length * t + 250);
+}
+function atras() {
+  if (actual === 'datos') return ir('resultado');
+  if (actual === 'resultado') return ir(pasos[pasos.length - 1]);
+  const i = pasos.indexOf(actual);
+  if (i > 0) ir(pasos[i - 1]);
+}
+function empezar() { if (!empezo) { empezo = true; marca('calc_inicio'); } }
+
+function elegirDesde(desde, recargar) {
+  D.desde = desde;
+  $('lp-h1').innerHTML = TEXTOS[desde][variante][0];
+  $('lp-sub').textContent = TEXTOS[desde][variante][1];
+  $('lp-importa').innerHTML = IMPORTA[desde].map(t => '<button class="lp-chipb" type="button">' + t + '</button>').join('');
+  $('lp-importa').querySelectorAll('.lp-chipb').forEach(c => c.addEventListener('click', () => c.classList.toggle('on')));
+  document.querySelectorAll('[data-desde]').forEach(b => b.classList.toggle('on', b.dataset.desde === desde));
+  armaPasos();
+  if (!recargar) { empezar(); siguiente(); }
+}
+document.querySelectorAll('[data-desde]').forEach(b => b.addEventListener('click', () => elegirDesde(b.dataset.desde)));
+// Preguntas de botones: se marca la opción y se pasa sola a la siguiente
+function opcion(sel, guarda) {
+  document.querySelectorAll(sel).forEach(b => b.addEventListener('click', () => {
+    guarda(b); empezar();
+    b.parentElement.querySelectorAll('.lp-op').forEach(x => x.classList.toggle('on', x === b));
+    setTimeout(siguiente, 160);
+  }));
+}
+opcion('[data-isapre]', b => D.isapre = b.dataset.isapre);
+opcion('[data-tramo]', b => D.tramo = +b.dataset.tramo);
+opcion('[data-cargas]', b => D.cargas = +b.dataset.cargas);
+document.querySelectorAll('[data-atras]').forEach(b => b.addEventListener('click', atras));
+
+// Montos en pesos: solo dígitos, con puntos de miles
+function monto(input) {
+  const d = input.value.replace(/\D/g, '').slice(0, 9);
+  input.value = d ? (+d).toLocaleString('es-CL') : '';
+  return +d || 0;
+}
+const siete = () => Math.round(Math.min(D.sueldo, TOPE_UF * UF) * 0.07);
+function pintaSueldo() {
+  $('lp-siete-vivo').hidden = D.sueldo < 100000;
+  $('lp-siete-monto').textContent = pesos(siete());
+  $('lp-sueldo-caja').classList.remove('err'); $('lp-sueldo-err').hidden = true;
+}
+$('lp-sueldo').addEventListener('input', e => {
+  D.sueldo = monto(e.target); empezar(); pintaSueldo();
+  document.querySelectorAll('[data-sueldo]').forEach(c => c.classList.toggle('on', +c.dataset.sueldo === D.sueldo));
+});
+// Montos rápidos: llenan el campo (se puede corregir después)
+document.querySelectorAll('[data-sueldo]').forEach(c => c.addEventListener('click', () => {
+  D.sueldo = +c.dataset.sueldo; empezar();
+  $('lp-sueldo').value = D.sueldo.toLocaleString('es-CL');
+  document.querySelectorAll('[data-sueldo]').forEach(x => x.classList.toggle('on', x === c));
+  pintaSueldo();
+}));
+// Clínica: una sola; "Otra" abre un campo para escribirla
+let clinicaSel = '';
+document.querySelectorAll('[data-clinica]').forEach(c => c.addEventListener('click', () => {
+  const on = !c.classList.contains('on');
+  document.querySelectorAll('[data-clinica]').forEach(x => x.classList.remove('on'));
+  if (on) c.classList.add('on');
+  clinicaSel = on ? c.dataset.clinica : '';
+  $('lp-clinica-otra').hidden = clinicaSel !== 'Otra';
+  if (clinicaSel === 'Otra') $('lp-clinica').focus();
+}));
+const clinicaElegida = () => (clinicaSel === 'Otra' ? $('lp-clinica').value.trim().slice(0, 80) : clinicaSel);
+$('lp-pago').addEventListener('input', e => { D.pago = monto(e.target); $('lp-pago-caja').classList.remove('err'); $('lp-pago-err').hidden = true; });
+function okSueldo() {
+  if (D.sueldo < 100000) { $('lp-sueldo-caja').classList.add('err'); $('lp-sueldo-err').hidden = false; return; }
+  siguiente();
+}
+function okPago() {
+  if (D.pago < 10000 || D.pago > D.sueldo) {
+    $('lp-pago-err').textContent = D.pago > D.sueldo ? 'Revisa el monto: es mayor que tu sueldo.' : 'Escribe cuánto pagas al mes en pesos, por ejemplo 150.000.';
+    $('lp-pago-caja').classList.add('err'); $('lp-pago-err').hidden = false; return;
+  }
+  D.noSabe = false;
+  siguiente();
+}
+$('lp-sueldo-ok').addEventListener('click', okSueldo);
+$('lp-pago-ok').addEventListener('click', okPago);
+$('lp-pago-nose').addEventListener('click', () => { D.noSabe = true; D.pago = 0; $('lp-pago').value = ''; siguiente(); });
+$('lp-sueldo').addEventListener('keydown', e => { if (e.key === 'Enter') okSueldo(); });
+$('lp-pago').addEventListener('keydown', e => { if (e.key === 'Enter') okPago(); });
+
+// Números que suben al mostrar el resultado
+function sube(el) {
+  const fin = +el.dataset.n, t0 = performance.now();
+  (function paso(t) {
+    const k = Math.min(1, (t - t0) / 650), v = fin * (1 - Math.pow(1 - k, 3));
+    el.textContent = pesos(v);
+    if (k < 1) requestAnimationFrame(paso);
+  })(t0);
+}
+const n = v => '<strong data-n="' + Math.round(v) + '">' + pesos(0) + '</strong>';
+
+function resultado() {
+  const s = siete();
+  let h = '';
+  if (D.desde === 'fonasa') {
+    const plan = Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100;
+    const falta = plan - s;
+    // El precio es para una persona: con cargas no se puede decir "te alcanza" sin matices
+    const cargas = D.cargas > 0, susCargas = ['', 'tu pareja', 'tus hijos', 'tu familia'][D.cargas] || '';
+    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (cargas ? 'Plan solo para ti, desde' : 'Plan para tu edad, desde') + '</span>' + n(plan) + '</div></div>';
+    if (D.sueldo < RENTA_MINIMA) {
+      D.veredicto = 'conviene_fonasa';
+      h += '<div class="lp-ver info"><strong>Hoy te conviene más Fonasa.</strong>Con tu sueldo, el 7% no alcanza para un plan de Isapre sin poner bastante plata extra cada mes' + (cargas ? ', y si sumas a ' + susCargas + ' sube todavía más' : '') + '. Una buena alternativa es Fonasa con un seguro complementario.</div>'
+        + '<div class="lp-nav"><a class="lp-btn" href="/fonasa-y-seguro-complementario" onclick="marca(\'calc_guia_fonasa\')">Ver cómo funciona →</a></div>';
+    } else if (falta <= 0) {
+      D.veredicto = cargas ? 'alcanza_sin_cargas' : 'alcanza';
+      h += (cargas
+        ? '<div class="lp-ver medio"><strong>Para ti solo, te alcanza.</strong>Si sumas a ' + susCargas + ', el plan sube según la edad de cada persona. Lo calculamos contigo, gratis.</div>'
+        : '<div class="lp-ver ok"><strong>Te alcanza.</strong>Tu 7% cubre un plan de entrada, y te puede alcanzar para uno con mejor cobertura o en tu clínica.</div>');
+    } else {
+      D.veredicto = 'aporte';
+      D.falta = falta;
+      const monto = pesos(Math.ceil(falta / 1000) * 1000);
+      h += (cargas
+        ? '<div class="lp-ver medio"><strong>Te falta un poco.</strong>Solo para ti tendrías que poner unos ' + monto + ' al mes además de tu 7%, y si sumas a ' + susCargas + ' sería más. Lo calculamos contigo, gratis.</div>'
+        : '<div class="lp-ver medio"><strong>Te falta poco.</strong>Para un plan de entrada tendrías que poner unos ' + monto + ' al mes además de tu 7%.</div>');
+    }
+    D.plan = plan;
+  } else if (D.noSabe) {
+    D.veredicto = 'no_sabe_pago';
+    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>Pagas hoy</span><strong>Por revisar</strong></div></div>'
+      + '<div class="lp-ver info"><strong>No hay problema.</strong>Con tu liquidación de sueldo a mano lo calculamos contigo por WhatsApp, y te decimos si hay un plan que te calce mejor.</div>';
+  } else {
+    const bolsillo = D.pago - s;
+    D.bolsillo = bolsillo;
+    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>Pagas hoy</span>' + n(D.pago) + '</div></div>';
+    if (bolsillo > 0) {
+      D.veredicto = 'pone_bolsillo';
+      h += '<div class="lp-grande"><span>De tu bolsillo pones</span>' + n(bolsillo) + '<small>al mes, que son ' + pesos(bolsillo * 12) + ' al año</small></div>'
+        + '<div class="lp-ver info">Es lo que pagas además de tu 7%. Revisemos si hay un plan que te calce mejor con la clínica donde te atiendes y lo que más usas.</div>';
+    } else {
+      D.veredicto = 'dentro_del_7';
+      h += '<div class="lp-ver ok"><strong>Tu plan cabe dentro de tu 7%.</strong>Igual podemos revisar si te cubre bien en la clínica donde te atiendes.</div>';
+    }
+  }
+  $('lp-res').innerHTML = h;
+  $('lp-res').querySelectorAll('[data-n]').forEach(sube);
+  // Renta baja: sin botones de contacto, solo la guía de Fonasa con seguro complementario
+  $('lp-cta').hidden = D.veredicto === 'conviene_fonasa';
+  marca('calc_resultado', { veredicto: D.veredicto, tramo: TRAMOS[D.tramo] });
+  ir('resultado');
+}
+// Cierre por WhatsApp: abre el chat con las respuestas y el resultado ya escritos (la persona decide si lo envía)
+function textoWsp() {
+  const marcadas = [...document.querySelectorAll('#lp-importa .lp-chipb.on')].map(c => c.textContent);
+  const l = ['¡Hola Planiapp! Hice la calculadora.',
+    '• Estoy en ' + (D.desde === 'fonasa' ? 'Fonasa' : (D.isapre && D.isapre !== 'Otra' ? 'Isapre ' + D.isapre : 'Isapre')),
+    '• Edad: ' + TRAMOS[D.tramo] + ' años',
+    '• Sueldo: ' + pesos(D.sueldo) + ' (mi 7%: ' + pesos(siete()) + ')'];
+  if (D.desde === 'fonasa') { if (D.cargas !== null) l.push('• En el plan: ' + ['solo yo', 'yo y mi pareja', 'yo y mis hijos', 'yo, mi pareja y mis hijos'][D.cargas]); }
+  else l.push(D.noSabe ? '• No sé cuánto pago hoy' : '• Pago hoy: ' + pesos(D.pago) + (D.bolsillo > 0 ? ' (' + pesos(D.bolsillo) + ' de mi bolsillo)' : ''));
+  if (marcadas.length) l.push('• Marqué: ' + marcadas.join(', '));
+  l.push(D.desde === 'fonasa' ? '¿Qué opciones tengo?' : '¿Me ayudan a revisar mi plan?');
+  return l.join('\n');
+}
+$('lp-wsp-btn').addEventListener('click', e => {
+  e.currentTarget.href = 'https://wa.me/56966450103?text=' + encodeURIComponent(textoWsp());
+  marca('whatsapp_click', { veredicto: D.veredicto });
+  if (typeof fbq === 'function') fbq('track', 'Contact');
+});
+$('lp-a-datos').addEventListener('click', () => { marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
+$('lp-otra').addEventListener('click', () => {
+  D.tramo = null; D.cargas = null; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false;
+  ['lp-sueldo', 'lp-pago'].forEach(id => $(id).value = '');
+  $('lp-siete-vivo').hidden = true;
+  document.querySelectorAll('.lp-op, [data-sueldo], #lp-importa .lp-chipb').forEach(b => b.classList.remove('on'));
+  if (!params.get('desde')) D.desde = null;
+  armaPasos(); ir(pasos[0]);
+});
+
+// Envío: mismo webhook y mismos campos que el formulario de la portada, para que llegue igual a la planilla
+function codigo() { const c = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let r = 'PL'; for (let i = 0; i < 4; i++) r += c[Math.floor(Math.random() * c.length)]; return r; }
+function telDigitos() { let d = $('lp-wsp').value.replace(/\D/g, ''); if (d.length === 9 && d[0] === '9') d = d.slice(1); return d; }
+['lp-nombre', 'lp-wsp'].forEach(id => $(id).addEventListener('input', () => { $(id + '-caja').classList.remove('err'); $('lp-form-err').hidden = true; }));
+let enviando = false;
+$('lp-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const nombre = $('lp-nombre').value.trim(), tel = telDigitos();
+  const faltan = [];
+  if (nombre.length < 3) { faltan.push('tu nombre'); $('lp-nombre-caja').classList.add('err'); }
+  if (tel.length !== 8) { faltan.push('tu WhatsApp (8 dígitos después del 9)'); $('lp-wsp-caja').classList.add('err'); }
+  if (faltan.length) { $('lp-form-err').textContent = 'Nos falta ' + faltan.join(' y ') + '.'; $('lp-form-err').hidden = false; return; }
+  const cod = codigo();
+  if ($('lp-hp').value) { location.href = '/gracias.html?codigo=' + cod + '&tipo=simple'; return; }
+  if (enviando) return;
+  enviando = true;
+  const b = $('lp-enviar'); b.disabled = true; b.textContent = 'Enviando...';
+  const s = siete();
+  const importa = [...document.querySelectorAll('#lp-importa .lp-chipb.on')].map(c => c.textContent);
+  const cargasTxt = D.cargas === null ? '' : ['Solo yo', 'Con pareja', 'Con hijos', 'Con pareja e hijos'][D.cargas];
+  const clinica = clinicaElegida();
+  const resultadoTxt = { alcanza: 'le alcanza', alcanza_sin_cargas: 'le alcanza sin contar cargas', aporte: 'le faltan ' + pesos(D.falta || 0) + '/mes' + (D.cargas > 0 ? ' sin contar cargas' : '') }[D.veredicto] || '';
+  const resumen = ['Calculadora', 'Tramo: ' + TRAMOS[D.tramo] + ' años', '7%: ' + pesos(s)]
+    .concat(D.desde === 'fonasa'
+      ? ['Plan desde: ' + pesos(D.plan), 'Resultado: ' + resultadoTxt]
+      : D.noSabe ? ['Paga hoy: no lo sabe'] : ['Paga hoy: ' + pesos(D.pago), 'De su bolsillo: ' + pesos(Math.max(0, D.bolsillo)) + '/mes'])
+    .concat(variante === 'b' ? ['Variante: b'] : [])
+    .concat(fuente ? ['Fuente: ' + fuente] : []).join(' | ');
+  const datos = {
+    origen: 'landing-calculadora',
+    fecha: new Date().toLocaleString('es-CL'),
+    codigo: cod,
+    tipo_asesoria: 'Calculadora Planiapp',
+    nombre: nombre,
+    whatsapp: '+569' + tel,
+    canal: 'WhatsApp',
+    horario: 'Lo antes posible',
+    sistema: D.desde === 'fonasa' ? 'Fonasa' : (D.isapre && D.isapre !== 'Otra' ? D.isapre : 'Isapre'),
+    motivo: (D.desde === 'fonasa' ? 'Entrar a una Isapre' : 'Revisar mi plan') + (importa.length ? ' | Le importa: ' + importa.join(', ') : ''),
+    coberturas: resumen + (clinica ? ' | Clínica: ' + clinica : ''),
+    renta: D.sueldo.toLocaleString('es-CL'),
+    cargas: cargasTxt,
+    isapre_cotizar: '',
+    edad: TRAMOS[D.tramo] + ' años',
+    region: '',
+    clinica: clinica
+  };
+  marca('lead_enviado', { form_name: 'calculadora', sistema: datos.sistema, veredicto: D.veredicto });
+  if (typeof fbq === 'function') fbq('track', 'Lead');
+  try { await fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) }); } catch (err) {}
+  location.href = '/gracias.html?codigo=' + cod + '&tipo=simple';
+});
+
+// Entrada: con ?desde=fonasa o ?desde=isapre se salta la primera pregunta (y ?v=b cambia el título)
+(function () {
+  const d = params.get('desde');
+  if (d === 'fonasa' || d === 'isapre') { D.desde = d; elegirDesde(d, true); ir(pasos[0]); }
+  else { armaPasos(); ir('desde'); }
+})();
+</script>
+</body>
+</html>

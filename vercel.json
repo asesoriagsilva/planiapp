@@ -264,6 +264,11 @@
       "source": "/guia-isapres.html",
       "destination": "/guia-isapres",
       "permanent": true
+    },
+    {
+      "source": "/calculadora-isapre.html",
+      "destination": "/calculadora-isapre",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -390,6 +395,10 @@
     {
       "source": "/guia-isapres",
       "destination": "/guia-isapres.html"
+    },
+    {
+      "source": "/calculadora-isapre",
+      "destination": "/calculadora-isapre.html"
     }
   ]
 }
