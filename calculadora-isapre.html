@@ -131,6 +131,25 @@ h1 span { color:var(--purple); }
 .lp-op small { font-size:12.5px; color:var(--muted); line-height:1.35; }
 .lp-op-ico { width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:0.35rem; }
 .lp-ops.dos .lp-op { padding:1.1rem 0.8rem; }
+.lp-puertas { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-top:0.9rem; }
+.lp-puerta { display:flex; flex-direction:column; align-items:flex-start; gap:0.5rem; text-align:left; background:var(--bg); border:1.5px solid var(--border); border-radius:18px; padding:1.1rem 1.1rem 1rem; cursor:pointer; transition:border-color .15s, transform .15s, box-shadow .15s; }
+.lp-puerta:focus-visible { outline:3px solid var(--purple-mid); outline-offset:2px; }
+@media (hover:hover) {
+  .lp-puerta:hover { transform:translateY(-3px); box-shadow:0 14px 28px -18px rgba(38,33,92,.5); }
+  .lp-puerta.fonasa:hover { border-color:var(--green); }
+  .lp-puerta.isapre:hover { border-color:var(--purple); }
+}
+.lp-puerta-tag { display:inline-flex; align-items:center; gap:0.4rem; font-size:12.5px; font-weight:700; border-radius:20px; padding:3px 10px; }
+.lp-puerta-tag i { width:8px; height:8px; border-radius:50%; }
+.fonasa .lp-puerta-tag { background:var(--green-light); color:var(--green-dark); }
+.fonasa .lp-puerta-tag i { background:var(--green); }
+.isapre .lp-puerta-tag { background:var(--purple-light); color:var(--purple); }
+.isapre .lp-puerta-tag i { background:var(--purple); }
+.lp-puerta-q { font-family:'Inter',sans-serif; font-size:17px; font-weight:800; color:var(--purple-dark); line-height:1.3; letter-spacing:-0.01em; }
+.lp-puerta-p { flex:1; font-size:13.5px; color:var(--muted); line-height:1.45; }
+.lp-puerta-btn { align-self:stretch; margin-top:0.3rem; text-align:center; font-size:14.5px; font-weight:700; color:#fff; border-radius:999px; padding:0.7rem 0.9rem; }
+.fonasa .lp-puerta-btn { background:var(--green); }
+.isapre .lp-puerta-btn { background:var(--purple); }
 .lp-ops.cuatro { grid-template-columns:repeat(4,1fr); }
 .lp-ops.cuatro .lp-op { min-height:62px; padding:0.5rem 0.4rem; }
 .lp-op img { height:22px; width:auto; max-width:100%; object-fit:contain; }
@@ -226,6 +245,8 @@ h1 span { color:var(--purple); }
   .lp-card { padding:1.15rem 1rem 1.25rem; border-radius:20px; }
   .lp-q { font-size:19.5px; }
   .lp-ops.tres { grid-template-columns:1fr 1fr; }
+  .lp-puertas { grid-template-columns:1fr; gap:0.65rem; }
+  .lp-puerta { padding:1rem; }
   .lp-ops.cuatro { gap:0.45rem; }
   .lp-ops.cuatro .lp-op { min-height:54px; padding:0.4rem 0.3rem; border-radius:13px; }
   .lp-op img { height:17px; }
@@ -246,19 +267,28 @@ h1 span { color:var(--purple); }
 <main>
   <section class="lp-hero">
     <span class="lp-badge">Calculadora 2026 · 30 segundos</span>
-    <h1 id="lp-h1">¿Cuánto cuesta una <span>Isapre</span> con tu sueldo?</h1>
-    <p class="lp-sub" id="lp-sub">Responde unas preguntas y te mostramos tu 7% de salud y cuánto te costaría un plan.</p>
+    <h1 id="lp-h1">¿Buscas el mejor plan de salud para <span>ti y tu familia</span>?</h1>
+    <p class="lp-sub" id="lp-sub">Elige tu situación actual y ve tu resultado en 30 segundos, gratis.</p>
   </section>
 
   <div class="lp-card" aria-live="polite">
     <div class="lp-prog"><div class="lp-prog-barra"><div id="lp-barra"></div></div><span class="lp-prog-txt" id="lp-prog-txt"></span></div>
 
     <div class="lp-paso" data-paso="desde">
-      <p class="lp-q">¿Dónde estás hoy?</p>
-      <p class="lp-ayuda">Elige tu sistema de salud actual.</p>
-      <div class="lp-ops dos">
-        <button class="lp-op" type="button" data-desde="fonasa"><span class="lp-op-ico" style="background:var(--green-light);color:var(--green)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></span><strong>Estoy en Fonasa</strong><small>Quiero saber si me alcanza para una Isapre</small></button>
-        <button class="lp-op" type="button" data-desde="isapre"><span class="lp-op-ico" style="background:var(--purple-light);color:var(--purple)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 9v6M9 12h6"/></svg></span><strong>Estoy en Isapre</strong><small>Quiero saber cuánto pago de mi bolsillo</small></button>
+      <p class="lp-q">¿Cuál es tu situación actual?</p>
+      <div class="lp-puertas">
+        <button class="lp-puerta fonasa" type="button" data-desde="fonasa">
+          <span class="lp-puerta-tag"><i></i>Estoy en Fonasa</span>
+          <span class="lp-puerta-q">¿Cuánto sueldo necesitas para estar en una Isapre?</span>
+          <span class="lp-puerta-p">Descúbrelo gratis con tu sueldo y tu edad.</span>
+          <span class="lp-puerta-btn">Iniciar evaluación Fonasa →</span>
+        </button>
+        <button class="lp-puerta isapre" type="button" data-desde="isapre">
+          <span class="lp-puerta-tag"><i></i>Estoy en Isapre</span>
+          <span class="lp-puerta-q">¿Cuánto de tu plan sale de tu bolsillo?</span>
+          <span class="lp-puerta-p">Revísalo y te decimos si hay un plan que te calce mejor.</span>
+          <span class="lp-puerta-btn">Evaluar mi plan actual →</span>
+        </button>
       </div>
     </div>
 
@@ -338,7 +368,7 @@ h1 span { color:var(--purple); }
         <p class="lp-mini">¿Qué es lo que más te importa? <em>(opcional, puedes marcar varias)</em></p>
         <div class="lp-chips" id="lp-importa"></div>
         <a class="lp-btn verde lp-wsp" id="lp-wsp-btn" href="https://wa.me/56966450103" target="_blank" rel="noopener">💬 Pedir opciones por WhatsApp</a>
-        <p class="lp-wsp-nota">Se abre WhatsApp con tus respuestas listas para enviar.</p>
+        <p class="lp-wsp-nota">Se abre WhatsApp con tus respuestas listas. Es gratis y no compartimos tus datos.</p>
         <button class="lp-otra lp-escriban" type="button" id="lp-a-datos">Prefiero que me escriban →</button>
       </div>
       <button class="lp-otra" type="button" id="lp-otra">Volver a calcular</button>
@@ -404,6 +434,7 @@ const pesos = n => '$' + Math.round(n).toLocaleString('es-CL');
 const params = new URLSearchParams(location.search);
 const fuente = (params.get('utm_source') || '').slice(0, 40);
 const variante = params.get('v') === 'b' ? 'b' : 'a'; // prueba A/B del título: cada anuncio trae su variante
+const INICIO = [$('lp-h1').innerHTML, $('lp-sub').textContent]; // título de quien llega sin anuncio
 const D = { desde: null, isapre: '', tramo: null, cargas: null, sueldo: 0, pago: 0, noSabe: false, veredicto: '' };
 let pasos = [], actual = '';
 let empezo = false;
@@ -651,7 +682,7 @@ $('lp-otra').addEventListener('click', () => {
   ['lp-sueldo', 'lp-pago'].forEach(id => $(id).value = '');
   $('lp-siete-vivo').hidden = true;
   document.querySelectorAll('.lp-op, [data-sueldo], #lp-importa .lp-chipb').forEach(b => b.classList.remove('on'));
-  if (!params.get('desde')) D.desde = null;
+  if (!params.get('desde')) { D.desde = null; $('lp-h1').innerHTML = INICIO[0]; $('lp-sub').textContent = INICIO[1]; }
   armaPasos(); ir(pasos[0]);
 });
 
