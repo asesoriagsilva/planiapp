@@ -177,6 +177,12 @@ h1 span { color:var(--purple); }
 .lp-puerta-btn { align-self:stretch; margin-top:0.3rem; text-align:center; font-size:14.5px; font-weight:700; color:#fff; border-radius:999px; padding:0.7rem 0.9rem; }
 .fonasa .lp-puerta-btn { background:var(--green); }
 .isapre .lp-puerta-btn { background:var(--purple); }
+.lp-cob .lp-op { min-height:86px; }
+.lp-fonasa-txt { font-family:'Inter',sans-serif; font-size:22px; font-weight:900; letter-spacing:0.05em; color:var(--purple-dark); }
+.lp-op img.lp-fonasa-img { height:42px; }
+.lp-cob-isapre { display:flex; align-items:center; gap:0.45rem; font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); }
+.lp-cob-isapre svg { color:var(--purple); }
+.lp-cob-isapres { margin-top:1.1rem; animation:lpEntra .3s ease; }
 .lp-ops.cuatro { grid-template-columns:repeat(4,1fr); }
 .lp-ops.cuatro .lp-op { min-height:62px; padding:0.5rem 0.4rem; }
 .lp-op img { height:22px; width:auto; max-width:100%; object-fit:contain; }
@@ -302,20 +308,24 @@ h1 span { color:var(--purple); }
     <div class="lp-prog"><div class="lp-prog-barra"><div id="lp-barra"></div></div><span class="lp-prog-txt" id="lp-prog-txt"></span></div>
 
     <div class="lp-paso" data-paso="desde">
-      <p class="lp-q">¿Cuál es tu situación actual?</p>
-      <div class="lp-puertas">
-        <button class="lp-puerta fonasa" type="button" data-desde="fonasa">
-          <span class="lp-puerta-tag"><i></i>Estoy en Fonasa</span>
-          <span class="lp-puerta-q">¿Cuánto sueldo necesitas para estar en una Isapre?</span>
-          <span class="lp-puerta-p">Descúbrelo gratis con tu sueldo y tu edad.</span>
-          <span class="lp-puerta-btn">Iniciar evaluación Fonasa →</span>
-        </button>
-        <button class="lp-puerta isapre" type="button" data-desde="isapre">
-          <span class="lp-puerta-tag"><i></i>Estoy en Isapre</span>
-          <span class="lp-puerta-q">¿Cuánto de tu plan sale de tu bolsillo?</span>
-          <span class="lp-puerta-p">Revísalo y te decimos si hay un plan que te calce mejor.</span>
-          <span class="lp-puerta-btn">Evaluar mi plan actual →</span>
-        </button>
+      <p class="lp-q">¿Cuál es tu cobertura actual?</p>
+      <p class="lp-ayuda">Elige tu sistema de salud de hoy.</p>
+      <div class="lp-ops dos lp-cob">
+        <button class="lp-op" type="button" data-desde="fonasa"><img class="lp-fonasa-img" src="/logos/fonasa.png" alt="Fonasa" height="34"></button>
+        <button class="lp-op" type="button" id="lp-cob-isapre"><span class="lp-cob-isapre"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 9v6M9 12h6"/></svg>Isapre</span></button>
+      </div>
+      <div class="lp-cob-isapres" id="lp-cob-isapres" hidden>
+        <p class="lp-mini">¿En cuál Isapre estás?</p>
+        <div class="lp-ops cuatro">
+          <button class="lp-op" type="button" data-ini-isapre="Banmédica"><img src="/logos/banmedica.png" alt="Banmédica" width="120" height="32"></button>
+          <button class="lp-op" type="button" data-ini-isapre="Colmena"><img src="/logos/colmena.png" alt="Colmena" width="120" height="32"></button>
+          <button class="lp-op" type="button" data-ini-isapre="Consalud"><img class="alta" src="/logos/consalud.png" alt="Consalud" width="80" height="32"></button>
+          <button class="lp-op" type="button" data-ini-isapre="Cruz Blanca"><img src="/logos/cruz-blanca.png" alt="Cruz Blanca" width="120" height="32"></button>
+          <button class="lp-op" type="button" data-ini-isapre="Esencial"><img src="/logos/esencial.png" alt="Esencial" width="120" height="32"></button>
+          <button class="lp-op" type="button" data-ini-isapre="Nueva Masvida"><img class="alta" src="/logos/nueva-masvida.png" alt="Nueva Masvida" width="80" height="32"></button>
+          <button class="lp-op" type="button" data-ini-isapre="Vida Tres"><img src="/logos/vida-tres.png" alt="Vida Tres" width="120" height="32"></button>
+          <button class="lp-op" type="button" data-ini-isapre="Otra"><strong>Otra</strong></button>
+        </div>
       </div>
     </div>
 
@@ -520,10 +530,11 @@ const IMPORTA = {
   isapre: ['Me llegó la carta de alza', 'Bajar costo del plan', 'Urgencias con copago fijo', 'Hospitalización', 'Kinesiología', 'Psicología o psiquiatría', 'Dental', 'Maternidad'],
 };
 // Clínicas por región (salen de quiz.js)
-const POR_REGION = {"Arica y Parinacota":["Clínica San José"],"Tarapacá":["RedSalud Iquique"],"Antofagasta":["Andes Salud Calama","Clínica Bupa Antofagasta","ACHS La Portada"],"Atacama":["ACHS Atacama"],"Coquimbo":["RedSalud Elqui"],"Valparaíso":["Clínica Bupa Reñaca","Clínica Ciudad del Mar","RedSalud Valparaíso"],"Metropolitana":["RedSalud Santiago o Providencia","RedSalud Vitacura","Clínica Santa María","Clínica Dávila o Dávila Vespucio","Clínica Alemana","Clínica Las Condes","UC Christus","Clínica Bupa Santiago","Clínica Indisa","Clínica Meds","Clínica Universidad de los Andes"],"O'Higgins":["RedSalud Rancagua","Clínica Fusat"],"Maule":["Clínica Lircay"],"Ñuble":[],"Biobío":["Sanatorio Alemán","Andes Salud Concepción","Clínica Biobío"],"La Araucanía":["RedSalud Mayor","Clínica Alemana de Temuco"],"Los Ríos":["Clínica Alemana de Valdivia"],"Los Lagos":["Clínica Alemana de Osorno","ACHS Puerto Montt","Andes Salud Puerto Montt","Clínica Puerto Varas"],"Aysén":[],"Magallanes":["RedSalud Magallanes"]};
+const POR_REGION = {"Arica y Parinacota":["Clínica San José"],"Tarapacá":["RedSalud Iquique","Clínica Tarapacá"],"Antofagasta":["Andes Salud Calama","Clínica Bupa Antofagasta","ACHS La Portada"],"Atacama":["ACHS Atacama"],"Coquimbo":["RedSalud Elqui"],"Valparaíso":["Clínica Bupa Reñaca","Clínica Ciudad del Mar","RedSalud Valparaíso","Clínica Los Carrera","Clínica Los Leones"],"Metropolitana":["RedSalud Santiago o Providencia","RedSalud Vitacura","Clínica Santa María","Clínica Dávila o Dávila Vespucio","Clínica Alemana","Clínica Las Condes","UC Christus","Clínica Bupa Santiago","Clínica Indisa","Clínica Meds","Clínica Universidad de los Andes","Clínica San Carlos de Apoquindo"],"O'Higgins":["RedSalud Rancagua","Clínica Fusat","Clínica Isamédica"],"Maule":["Clínica Lircay"],"Ñuble":["Andes Salud Chillán"],"Biobío":["Sanatorio Alemán","Andes Salud Concepción","Clínica Biobío"],"La Araucanía":["RedSalud Mayor","Clínica Alemana de Temuco"],"Los Ríos":["Clínica Alemana de Valdivia"],"Los Lagos":["Clínica Alemana de Osorno","ACHS Puerto Montt","Andes Salud Puerto Montt","Clínica Puerto Varas"],"Aysén":[],"Magallanes":["RedSalud Magallanes"]};
 function armaPasos() {
-  const inicio = params.get('desde') === D.desde && D.desde ? [] : ['desde'];
-  pasos = inicio.concat(D.desde === 'isapre' ? ['isapre', 'edad', 'sueldo', 'pago'] : ['edad', 'personas', 'sueldo']);
+  // Sin anuncio, la Isapre se elige en la primera pregunta; con ?desde=isapre tiene su propia pregunta de logos
+  const conInicio = !(params.get('desde') === D.desde && D.desde);
+  pasos = (conInicio ? ['desde'] : []).concat(D.desde === 'isapre' ? (conInicio ? [] : ['isapre']).concat(['edad', 'sueldo', 'pago']) : ['edad', 'personas', 'sueldo']);
 }
 function ir(paso) {
   actual = paso;
@@ -588,6 +599,19 @@ function elegirDesde(desde, recargar) {
   if (!recargar) { empezar(); siguiente(); }
 }
 document.querySelectorAll('[data-desde]').forEach(b => b.addEventListener('click', () => elegirDesde(b.dataset.desde)));
+// Primera pregunta: "Isapre" despliega los logos y al elegir una se sigue
+$('lp-cob-isapre').addEventListener('click', () => {
+  empezar();
+  $('lp-cob-isapre').classList.add('on');
+  document.querySelectorAll('[data-desde]').forEach(b => b.classList.remove('on'));
+  $('lp-cob-isapres').hidden = false;
+  setTimeout(() => $('lp-cob-isapres').scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 100);
+});
+document.querySelectorAll('[data-ini-isapre]').forEach(b => b.addEventListener('click', () => {
+  D.isapre = b.dataset.iniIsapre;
+  b.parentElement.querySelectorAll('.lp-op').forEach(x => x.classList.toggle('on', x === b));
+  setTimeout(() => elegirDesde('isapre'), 160);
+}));
 // Preguntas de botones: se marca la opción y se pasa sola a la siguiente
 function opcion(sel, guarda) {
   document.querySelectorAll(sel).forEach(b => b.addEventListener('click', () => {
@@ -848,7 +872,7 @@ $('lp-otra').addEventListener('click', () => {
   $('lp-hijos').innerHTML = ''; $('lp-fam').hidden = true; $('lp-fam-ok').hidden = true;
   $('lp-siete-vivo').hidden = true;
   document.querySelectorAll('.lp-op, #lp-importa .lp-chipb').forEach(b => b.classList.remove('on'));
-  if (!params.get('desde')) { D.desde = null; $('lp-h1').innerHTML = INICIO[0]; $('lp-sub').textContent = INICIO[1]; }
+  if (!params.get('desde')) { D.desde = null; $('lp-h1').innerHTML = INICIO[0]; $('lp-sub').textContent = INICIO[1]; $('lp-cob-isapres').hidden = true; }
   armaPasos(); ir(pasos[0]);
 });
 
