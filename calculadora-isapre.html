@@ -127,7 +127,8 @@ h1 span { color:var(--purple); }
 .lp-plan-txt b { color:var(--purple-dark); }
 .lp-plan-exc { font-size:13px; color:var(--muted); }
 .lp-plan-exc.si { color:var(--green-dark); font-weight:700; }
-.lp-planes-nota { font-size:12.5px; color:var(--muted); margin-top:0.2rem; }
+.lp-planes-nota { font-size:12.5px; color:var(--muted); margin-top:0.4rem; }
+.lp-op-t { font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--purple); margin:0.9rem 0 0.4rem; }
 .lp-anal { text-align:center; padding:0.5rem 0 0.4rem; }
 .lp-anal-ico { display:inline-flex; margin-bottom:0.55rem; animation:lpGira .9s linear infinite; }
 @keyframes lpGira { to { transform:rotate(360deg); } }
@@ -279,6 +280,8 @@ h1 span { color:var(--purple); }
   .lp-q { font-size:19.5px; }
   .lp-ops.tres { grid-template-columns:1fr 1fr; }
   .lp-puertas { grid-template-columns:1fr; gap:0.65rem; }
+  /* El botón de propuestas queda a la vista mientras se lee el resultado */
+  [data-paso="resultado"] .lp-cta { position:sticky; bottom:0; z-index:5; margin:1rem -1rem 0; padding:0.9rem 1rem 0.5rem; background:linear-gradient(to top, var(--white) 78%, rgba(255,255,255,0)); }
   .lp-puerta { padding:1rem; }
   .lp-ops.cuatro { gap:0.45rem; }
   .lp-ops.cuatro .lp-op { min-height:54px; padding:0.4rem 0.3rem; border-radius:13px; }
@@ -405,6 +408,12 @@ h1 span { color:var(--purple); }
     <div class="lp-paso" data-paso="resultado">
       <p class="lp-q" id="lp-res-titulo">Tu resultado</p>
       <div id="lp-res"></div>
+      <div class="lp-bloque" id="lp-extra" hidden>
+        <p class="lp-mini">¿Tienes un monto adicional pensado para pagar en la Isapre? <em>(además de tu 7%)</em></p>
+        <div class="lp-chips lp-extra-rapidos" id="lp-extra-rapidos"></div>
+        <label class="lp-campo chico" id="lp-extra-caja"><span>$</span><input id="lp-extra-monto" type="text" inputmode="numeric" autocomplete="off" placeholder="Ej: 30.000" aria-label="Monto adicional al mes"></label>
+        <p class="lp-extra-total" id="lp-extra-total" hidden></p>
+      </div>
       <div class="lp-cta" id="lp-cta">
         <button class="lp-btn verde lp-wsp" type="button" id="lp-a-propuestas">Quiero recibir propuestas →</button>
         <p class="lp-wsp-nota">Gratis y sin compromiso.</p>
@@ -415,11 +424,6 @@ h1 span { color:var(--purple); }
     <div class="lp-paso" data-paso="propuestas">
       <p class="lp-q">Para enviarte propuestas a tu medida</p>
       <p class="lp-nota-datos"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Estos datos solo los pedimos para complementar tu perfil y enviarte propuestas ajustadas a ti.</span></p>
-      <div class="lp-bloque" id="lp-extra" hidden>
-        <p class="lp-mini">¿Tienes un monto adicional pensado para pagar en la Isapre? <em>(además de tu 7%)</em></p>
-        <label class="lp-campo chico" id="lp-extra-caja"><span>$</span><input id="lp-extra-monto" type="text" inputmode="numeric" autocomplete="off" placeholder="Ej: 30.000" aria-label="Monto adicional al mes"></label>
-        <p class="lp-extra-total" id="lp-extra-total" hidden></p>
-      </div>
       <div class="lp-bloque">
         <label class="lp-mini" for="lp-region">¿En qué región vives?</label>
         <div class="lp-campo texto" id="lp-region-caja"><select id="lp-region"><option value="">Elige tu región...</option><option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option><option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Aysén</option><option>Magallanes</option></select></div>
@@ -466,6 +470,7 @@ h1 span { color:var(--purple); }
     <ul class="lp-como">
       <li><strong>Tu 7% de salud:</strong> es el 7% de tu sueldo imponible, con un tope de 90 UF de renta.</li>
       <li><strong>Planes que puedes elegir:</strong> los que cuestan entre el 6,5% y el 7% de tu renta. Si eliges uno bajo tu 7%, la diferencia te queda como excedente. Los excedentes no se eliminaron, pero hoy se restringen a planes con un precio lo más cercano posible a tu 7%.</li>
+      <li><strong>Con pareja o cargas:</strong> sumamos a cada uno con su factor de la tabla de factores única de la Superintendencia de Salud. Las cargas menores de 2 años no pagan hasta cumplirlos.</li>
       <li><strong>Si te alcanza:</strong> comparamos tu 7% con el plan de entrada más económico para una persona de tu edad entre las 7 Isapres abiertas, con precios de septiembre de 2026.</li>
       <li>Usamos la UF del día: <strong id="lp-uf">$41.190</strong>.</li>
       <li>Es una referencia, no una cotización. El precio final depende del plan, de la clínica y de si sumas cargas.</li>
@@ -476,7 +481,7 @@ h1 span { color:var(--purple); }
     <h2 style="font-family:'Inter',sans-serif;font-size:21px;font-weight:800;color:var(--purple-dark);letter-spacing:-0.015em;margin-bottom:0.7rem;">Preguntas frecuentes</h2>
     <details><summary>¿Qué es el 7% de salud?</summary><p>Es la cotización legal obligatoria: el 7% de tu sueldo imponible, con un tope de 90 UF de renta. Si estás en Fonasa, va a Fonasa. Si estás en una Isapre, se usa para pagar tu plan, y si el plan cuesta más, la diferencia la pones tú.</p></details>
     <details><summary>¿Qué pasa si mi 7% no alcanza para un plan?</summary><p>Puedes poner la diferencia de tu bolsillo cada mes. Si esa diferencia es muy alta para tu presupuesto, Fonasa con un seguro complementario puede ser mejor opción. Te lo explicamos en <a href="/fonasa-y-seguro-complementario">esta guía</a>.</p></details>
-    <details><summary>¿Y si quiero sumar a mi familia?</summary><p>Cada carga suma costo al plan. Como depende de cada Isapre y de cada persona, lo calculamos contigo en la asesoría.</p></details>
+    <details><summary>¿Y si quiero sumar a mi familia?</summary><p>Con la edad de tu pareja y de tus cargas te mostramos el plan más bajo para todo el grupo, calculado con la tabla de factores única de la Superintendencia de Salud. Las cargas menores de 2 años no pagan hasta cumplirlos. El valor final de cada plan lo confirmamos contigo.</p></details>
   </section>
 </main>
 
@@ -488,6 +493,14 @@ h1 span { color:var(--purple); }
 <script>
 // Plan de entrada más económico entre las 7 Isapres, por tramo de edad, en UF (sep-2026). Sale de comparativas.mjs.
 const PLAN_MIN_UF = [1.62,1.72,2,2.09,2.66,3.03];
+// Por Isapre: precios de entrada por tramo, precio base y cargo por persona (GES y otros), en UF
+const PLANES = [{"precios":[1.62,1.72,2,2.09,2.66,3.03],"base":0.9395,"g":0.7774},{"precios":[1.99,2.1,2.41,2.52,3.16,3.58],"base":1.0605,"g":1.036},{"precios":[1.78,1.89,2.24,2.36,3.05,3.52],"base":1.1605,"g":0.7326},{"precios":[1.95,2.06,2.39,2.5,3.15,3.59],"base":1.0919,"g":0.9689},{"precios":[2.21,2.35,2.78,2.93,3.79,4.37],"base":1.4407,"g":0.9106},{"precios":[1.92,2.03,2.39,2.51,3.21,3.69],"base":1.1802,"g":0.8547},{"precios":[1.93,2.06,2.47,2.6,3.41,3.95],"base":1.3477,"g":0.7152}];
+// Factor de carga de la Tabla de Factores Única (Circular IF/343). Menores de 2 años no pagan hasta cumplirlos.
+const FCARGA = e => (e < 2 ? 0 : e < 20 ? 0.6 : e < 35 ? 0.7 : e < 45 ? 0.9 : e < 55 ? 1.0 : e < 65 ? 1.4 : 2.2);
+// Plan mínimo del grupo: el cotizante con su precio de entrada y cada carga con base × factor + cargo por persona
+function minFamiliaUF(tramo, edades) {
+  return Math.min(...PLANES.map(p => p.precios[tramo] + edades.reduce((s, e) => s + (e < 2 ? 0 : p.base * FCARGA(e) + p.g), 0)));
+}
 const TRAMOS = ["18 a 24","25 a 34","35 a 44","45 a 54","55 a 64","65 o más"];
 const RENTA_MINIMA = 800000; // bajo esto el 7% no alcanza para un plan: se muestra Fonasa con seguro complementario
 const TOPE_UF = 90;
@@ -722,11 +735,21 @@ function okPropuestas() {
   return false;
 }
 // Monto adicional (cuando el plan más bajo cuesta más que su 7%): las propuestas se ajustan a 7% + ese monto
-$('lp-extra-monto').addEventListener('input', e => {
-  D.extra = monto(e.target);
+function pintaExtra() {
   $('lp-extra-total').hidden = !D.extra;
   $('lp-extra-total').innerHTML = 'Te enviamos propuestas de hasta <b>' + pesos(siete() + D.extra) + '</b> al mes (tu 7% + ' + pesos(D.extra) + ').';
-});
+  document.querySelectorAll('[data-extra]').forEach(c => c.classList.toggle('on', +c.dataset.extra === D.extra));
+}
+$('lp-extra-monto').addEventListener('input', e => { D.extra = monto(e.target); pintaExtra(); });
+// Montos rápidos: primero lo justo que falta, luego dos montos más holgados (redondeados a diez mil)
+function montosRapidos(falta) {
+  const justo = Math.ceil(falta / 1000) * 1000, sube = v => Math.ceil(v / 10000) * 10000;
+  const montos = [justo, sube(justo + 15000), sube(justo + 35000)];
+  $('lp-extra-rapidos').innerHTML = montos.map((v, k) => '<button class="lp-chipb" type="button" data-extra="' + v + '">' + (k === 0 ? 'Lo que falta: ' : '') + pesos(v) + '</button>').join('');
+  $('lp-extra-rapidos').querySelectorAll('[data-extra]').forEach(c => c.addEventListener('click', () => {
+    D.extra = +c.dataset.extra; $('lp-extra-monto').value = D.extra.toLocaleString('es-CL'); pintaExtra();
+  }));
+}
 $('lp-pago').addEventListener('input', e => { D.pago = monto(e.target); $('lp-pago-caja').classList.remove('err'); $('lp-pago-err').hidden = true; });
 function okSueldo() {
   if (D.sueldo < 100000) { $('lp-sueldo-caja').classList.add('err'); $('lp-sueldo-err').hidden = false; return; }
@@ -781,30 +804,55 @@ function resultado() {
   if (D.desde === 'fonasa') {
     const plan = Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100;
     const falta = plan - s;
-    // El precio es para una persona: con cargas no se puede decir "te alcanza" sin matices
     const cargas = D.cargas > 0, susCargas = ['', 'tu pareja', 'tus hijos', 'tu familia'][D.cargas] || '';
-    const ops = D.sueldo >= RENTA_MINIMA ? opcionesPlan(plan) : [];
-    D.desdePlan = ops.length ? ops[0].precio : plan;
-    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (ops.length ? 'Puedes optar a planes desde' : 'El plan más bajo para tu edad') + '</span>' + n(D.desdePlan) + '</div></div>';
+    const conQuien = ['', 'con tu pareja', 'con tus hijos', 'con tu familia'][D.cargas] || '';
+    const redondo = v => pesos(Math.ceil(v / 1000) * 1000);
+    D.plan = plan;
     if (D.sueldo < RENTA_MINIMA) {
       D.veredicto = 'conviene_fonasa';
-      h += '<div class="lp-ver info"><strong>Hoy te conviene más Fonasa.</strong>Con tu sueldo, el 7% no alcanza para un plan de Isapre sin poner bastante plata extra cada mes' + (cargas ? ', y si sumas a ' + susCargas + ' sube todavía más' : '') + '. Una buena alternativa es Fonasa con un seguro complementario.</div>'
+      D.desdePlan = plan;
+      h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>El plan más bajo para tu edad</span>' + n(plan) + '</div></div>'
+        + '<div class="lp-ver info"><strong>Hoy te conviene más Fonasa.</strong>Con tu sueldo, el 7% no alcanza para un plan de Isapre sin poner bastante plata extra cada mes' + (cargas ? ', y si sumas a ' + susCargas + ' sube todavía más' : '') + '. Una buena alternativa es Fonasa con un seguro complementario.</div>'
         + '<div class="lp-nav"><a class="lp-btn" href="/fonasa-y-seguro-complementario" onclick="marca(\'calc_guia_fonasa\')">Ver cómo funciona →</a></div>';
-    } else if (falta <= 0) {
-      D.veredicto = cargas ? 'alcanza_sin_cargas' : 'alcanza';
-      h += (cargas
-        ? '<div class="lp-ver medio"><strong>Para ti, te alcanza.</strong>Con tu 7% puedes optar a planes ' + rango(ops) + '. Al sumar a ' + susCargas + ', el precio depende de la edad de cada uno: con las edades que nos diste lo calculamos contigo, gratis.</div>'
-        : '<div class="lp-ver ok"><strong>Te alcanza.</strong>Puedes optar a planes ' + rango(ops) + ' al mes. Si eliges uno bajo tu 7%, la diferencia te queda como excedente.</div>')
-        + bloquePlanes(ops);
+    } else if (!cargas) {
+      // Solo: como siempre
+      const ops = opcionesPlan(plan);
+      D.desdePlan = ops.length ? ops[0].precio : plan;
+      h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (ops.length ? 'Puedes optar a planes desde' : 'El plan más bajo para tu edad') + '</span>' + n(D.desdePlan) + '</div></div>';
+      if (falta <= 0) {
+        D.veredicto = 'alcanza';
+        h += '<div class="lp-ver ok"><strong>Te alcanza.</strong>Puedes optar a planes ' + rango(ops) + ' al mes. Si eliges uno bajo tu 7%, la diferencia te queda como excedente.</div>' + bloquePlanes(ops);
+      } else {
+        D.veredicto = 'aporte';
+        D.falta = falta;
+        h += '<div class="lp-ver medio"><strong>Te faltan unos ' + redondo(falta) + ' al mes.</strong>El plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + '. Si quieres que te enviemos opciones, cuéntanos abajo cuánto más podrías poner al mes.</div>';
+      }
     } else {
-      D.veredicto = 'aporte';
-      D.falta = falta;
-      const monto = pesos(Math.ceil(falta / 1000) * 1000);
-      h += '<div class="lp-ver medio"><strong>Te faltan unos ' + monto + ' al mes.</strong>El plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + '.'
-        + (cargas ? ' Si sumas a ' + susCargas + ', sería más.' : '')
-        + ' Si quieres que te enviemos opciones, toca el botón y cuéntanos cuánto más podrías poner al mes.</div>';
+      // Con pareja o cargas: dos opciones. 1) Solo tú, como siempre. 2) Con ellos: plan mínimo del grupo (tabla de factores única) y cuánto pondría de su bolsillo
+      const edades = (D.pareja !== null ? [D.pareja] : []).concat(D.hijos);
+      const planFam = Math.round(minFamiliaUF(D.tramo, edades) * UF / 100) * 100;
+      const faltaFam = planFam - s;
+      const ops = faltaFam <= 0 ? opcionesPlan(planFam) : [];
+      D.planFam = planFam;
+      D.desdePlan = ops.length ? ops[0].precio : planFam;
+      h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>El plan más bajo ' + conQuien + '</span>' + n(planFam) + '</div></div>'
+        + '<p class="lp-op-t">Opción 1 · Solo tú</p>'
+        + (falta <= 0
+          ? '<div class="lp-ver ok"><strong>Te alcanza.</strong>Solo para ti, el plan más bajo para tu edad es de ' + pesos(plan) + ' y lo cubres con tu 7%.</div>'
+          : '<div class="lp-ver medio"><strong>Te faltan unos ' + redondo(falta) + ' al mes.</strong>Solo para ti, el plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + '.</div>')
+        + '<p class="lp-op-t">Opción 2 · ' + conQuien.charAt(0).toUpperCase() + conQuien.slice(1) + '</p>';
+      const todos = D.cargas === 1 ? 'los dos' : 'todos';
+      const protegida = D.cargas === 1 ? 'Para que tu pareja también esté protegida' : 'Para que toda tu familia esté protegida';
+      if (faltaFam <= 0) {
+        D.veredicto = 'familia_alcanza';
+        h += '<div class="lp-ver ok"><strong>Con tu 7% pueden estar ' + todos + ' protegidos.</strong>El plan más bajo ' + conQuien + ' es de ' + pesos(planFam) + ' y lo cubres con tu 7%. Puedes optar a planes ' + rango(ops) + ' al mes.</div>' + bloquePlanes(ops);
+      } else {
+        D.veredicto = 'familia_aporte';
+        D.falta = faltaFam;
+        h += '<div class="lp-ver medio"><strong>Por unos ' + redondo(faltaFam) + ' más al mes, pueden estar ' + todos + ' protegidos.</strong>' + protegida + ', el plan más bajo es de ' + pesos(planFam) + ' y tu 7% es de ' + pesos(s) + '. Esa diferencia la pondrías de tu bolsillo. Si quieres que te enviemos opciones, cuéntanos abajo cuánto más podrías poner al mes.</div>';
+      }
+      h += '<p class="lp-planes-nota">Valores mínimos de referencia, calculados con la tabla de factores única de la Superintendencia de Salud. Las cargas menores de 2 años no pagan hasta cumplirlos.</p>';
     }
-    D.plan = plan;
   } else if (D.noSabe) {
     D.veredicto = 'no_sabe_pago';
     h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>Pagas hoy</span><strong>Por revisar</strong></div></div>'
@@ -831,7 +879,8 @@ function resultado() {
   $('lp-res').querySelectorAll('[data-n]').forEach(sube);
   // Renta baja: sin botones de contacto, solo la guía de Fonasa con seguro complementario
   $('lp-cta').hidden = D.veredicto === 'conviene_fonasa';
-  $('lp-extra').hidden = D.veredicto !== 'aporte';
+  $('lp-extra').hidden = !(D.veredicto === 'aporte' || D.veredicto === 'familia_aporte');
+  if (!$('lp-extra').hidden) { montosRapidos(D.falta); pintaExtra(); }
   marca('calc_resultado', { veredicto: D.veredicto, tramo: TRAMOS[D.tramo] });
   ir('resultado');
 }
@@ -847,7 +896,8 @@ function textoWsp() {
     if (D.cargas !== null) l.push('• En el plan: ' + (!f.length ? 'solo yo' : f.length === 1 ? 'yo y ' + f[0] : 'yo, ' + f[0] + ' y ' + f[1]));
   }
   else l.push(D.noSabe ? '• No sé cuánto pago hoy' : '• Pago hoy: ' + pesos(D.pago) + (D.bolsillo > 0 ? ' (' + pesos(D.bolsillo) + ' de mi bolsillo)' : ''));
-  if (D.veredicto === 'aporte' && D.extra) l.push('• Puedo poner hasta ' + pesos(D.extra) + ' además de mi 7% (en total ' + pesos(siete() + D.extra) + ' al mes)');
+  if (D.desde === 'fonasa' && D.cargas > 0 && D.planFam) l.push('• Plan más bajo con mi grupo: ' + pesos(D.planFam) + ' al mes');
+  if ((D.veredicto === 'aporte' || D.veredicto === 'familia_aporte') && D.extra) l.push('• Puedo poner hasta ' + pesos(D.extra) + ' además de mi 7% (en total ' + pesos(siete() + D.extra) + ' al mes)');
   if ($('lp-region').value) l.push('• Región: ' + $('lp-region').value);
   const clinicas = clinicasElegidas();
   if (clinicas.length) l.push('• Clínicas: ' + clinicas.join(', '));
@@ -865,7 +915,7 @@ $('lp-wsp-btn').addEventListener('click', e => {
 $('lp-a-propuestas').addEventListener('click', () => { marca('calc_quiere_propuestas', { veredicto: D.veredicto }); ir('propuestas'); });
 $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
 $('lp-otra').addEventListener('click', () => {
-  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0;
+  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
   $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true;
   $('lp-region').value = ''; $('lp-clinicas').innerHTML = ''; $('lp-clin-bloque').hidden = true; $('lp-prop-err').hidden = true;
@@ -897,8 +947,9 @@ $('lp-form').addEventListener('submit', async e => {
   const importa = [...document.querySelectorAll('#lp-importa .lp-chipb.on')].map(c => c.textContent);
   const cargasTxt = D.cargas === null ? '' : (familia(false).join(' + ') || 'Solo yo');
   const clinica = clinicasElegidas().join(', ');
-  const adicional = D.veredicto === 'aporte' && D.extra ? ' | Adicional: ' + pesos(D.extra) + ' (presupuesto ' + pesos(siete() + D.extra) + ')' : '';
-  const resultadoTxt = { alcanza: 'le alcanza', alcanza_sin_cargas: 'le alcanza sin contar cargas', aporte: 'le faltan ' + pesos(D.falta || 0) + '/mes' + (D.cargas > 0 ? ' sin contar cargas' : '') }[D.veredicto] || '';
+  const adicional = (D.veredicto === 'aporte' || D.veredicto === 'familia_aporte') && D.extra ? ' | Adicional: ' + pesos(D.extra) + ' (presupuesto ' + pesos(siete() + D.extra) + ')' : '';
+  const resultadoTxt = { alcanza: 'le alcanza', aporte: 'le faltan ' + pesos(D.falta || 0) + '/mes',
+    familia_alcanza: 'le alcanza con su grupo (plan mínimo ' + pesos(D.planFam || 0) + ')', familia_aporte: 'con su grupo le faltan ' + pesos(D.falta || 0) + '/mes (plan mínimo ' + pesos(D.planFam || 0) + ')' }[D.veredicto] || '';
   const resumen = ['Calculadora', 'Tramo: ' + TRAMOS[D.tramo] + ' años', '7%: ' + pesos(s)]
     .concat(D.desde === 'fonasa'
       ? ['Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
