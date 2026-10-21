@@ -269,6 +269,11 @@
       "source": "/calculadora-isapre.html",
       "destination": "/calculadora-isapre",
       "permanent": true
+    },
+    {
+      "source": "/fonasa",
+      "destination": "/calculadora-isapre?desde=fonasa&utm_source=instagram",
+      "permanent": false
     }
   ],
   "rewrites": [
