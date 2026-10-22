@@ -119,7 +119,11 @@ h1 span { color:var(--purple); }
 .lp-chipb.nada { border-style:dashed; }
 .lp-campo.chico input { font-size:18px; padding-top:0.75rem; padding-bottom:0.75rem; }
 .lp-extra-rapidos { margin:0.2rem 0 1rem; }
-#lp-extra-monto::placeholder { font-size:15px; font-weight:500; color:var(--muted); }
+#lp-extra-monto::placeholder, #lp-adic::placeholder { font-size:15px; font-weight:500; color:var(--muted); }
+.lp-campo.lp-uf input { padding-left:1rem; }
+.lp-campo.lp-uf span { padding:0 1rem 0 0; }
+.lp-ejecutivo { display:flex; gap:0.6rem; align-items:flex-start; background:var(--purple-light); border-radius:14px; padding:0.75rem 0.9rem; margin-top:1rem; font-size:13.5px; color:var(--purple-deep); line-height:1.5; }
+.lp-ejecutivo svg { flex-shrink:0; margin-top:2px; color:var(--purple); }
 .lp-extra-total { margin-top:0.5rem; font-size:14px; color:var(--green-dark); background:var(--green-light); border-radius:12px; padding:0.55rem 0.85rem; }
 .lp-planes { margin-top:0.8rem; }
 .lp-planes-t { font-size:13.5px; font-weight:700; color:var(--purple-dark); margin-bottom:0.45rem; }
@@ -473,18 +477,23 @@ h1 span { color:var(--purple); }
     <div class="lp-paso" data-paso="sueldo">
       <p class="lp-pre" id="lp-sueldo-pre" hidden>Primero vamos contigo</p>
       <p class="lp-q">¿Cuánto ganas al mes?</p>
-      <p class="lp-ayuda">Tu sueldo bruto, antes de descuentos: el imponible de tu liquidación, no el líquido que te depositan.</p>
+      <p class="lp-ayuda" id="lp-sueldo-ayuda">Tu sueldo bruto, antes de descuentos: el imponible de tu liquidación, no el líquido que te depositan.</p>
       <label class="lp-campo" id="lp-sueldo-caja"><span>$</span><input id="lp-sueldo" type="text" inputmode="numeric" autocomplete="off" placeholder="1.200.000" aria-label="Sueldo imponible mensual"></label>
       <div class="lp-siete" id="lp-siete-vivo" hidden><span>Tu 7% de salud</span><strong id="lp-siete-monto"></strong></div>
       <p class="lp-err" id="lp-sueldo-err" hidden>Escribe tu sueldo mensual en pesos, por ejemplo 1.200.000.</p>
+      <div class="lp-bloque" id="lp-adic-bloque" hidden>
+        <label class="lp-mini" for="lp-adic">¿Tienes un «adicional Isapre» en tus descuentos? <em>(opcional)</em></label>
+        <label class="lp-campo chico"><span>$</span><input id="lp-adic" type="text" inputmode="numeric" autocomplete="off" placeholder="Si no tienes, déjalo en blanco" aria-label="Adicional Isapre de tu liquidación"></label>
+      </div>
       <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="lp-sueldo-ok">Continuar →</button></div>
     </div>
 
     <div class="lp-paso" data-paso="pago">
-      <p class="lp-q">¿Cuánto pagas hoy por tu Isapre?</p>
-      <p class="lp-ayuda">Lo ves en tu liquidación, en la línea de salud o Isapre. Si aparece separado en 7% y adicional, súmalos.</p>
-      <label class="lp-campo" id="lp-pago-caja"><span>$</span><input id="lp-pago" type="text" inputmode="numeric" autocomplete="off" placeholder="150.000" aria-label="Pago mensual de tu Isapre"></label>
-      <p class="lp-err" id="lp-pago-err" hidden>Escribe cuánto pagas al mes en pesos, por ejemplo 150.000.</p>
+      <p class="lp-q">¿Cuánto vale tu plan de Isapre?</p>
+      <p class="lp-ayuda">El valor de tu plan siempre está en UF: aparece en tu contrato como «cotización pactada», en la carta de adecuación o en tu sucursal virtual. Con eso sabemos si estás pagando de más.</p>
+      <label class="lp-campo lp-uf" id="lp-pago-caja"><input id="lp-pago" type="text" inputmode="decimal" autocomplete="off" placeholder="3,25" aria-label="Valor de tu plan en UF"><span>UF</span></label>
+      <div class="lp-siete" id="lp-pago-vivo" hidden><span>Hoy son al mes</span><strong id="lp-pago-pesos"></strong></div>
+      <p class="lp-err" id="lp-pago-err" hidden>Escribe el valor de tu plan en UF, por ejemplo 3,25.</p>
       <button class="lp-nose" type="button" id="lp-pago-nose">No lo sé, sigamos igual →</button>
       <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="lp-pago-ok">Ver mi resultado →</button></div>
     </div>
@@ -536,7 +545,15 @@ h1 span { color:var(--purple); }
         <p class="lp-mini">¿Qué cobertura buscas? <em>(opcional, puedes marcar varias)</em></p>
         <div class="lp-chips" id="lp-importa"></div>
       </div>
+      <div class="lp-bloque" id="lp-pref-bloque" hidden>
+        <p class="lp-mini">¿Te gustaría seguir pagando lo mismo que hoy, para ver si mejoramos tu plan?</p>
+        <div class="lp-chips" id="lp-pref">
+          <button class="lp-chipb" type="button" data-pref="Mantener lo que pago y mejorar mi plan">Sí, mantener lo que pago y mejorar mi plan</button>
+          <button class="lp-chipb" type="button" data-pref="Pagar menos y ajustar mi plan a mi 7%">No, prefiero pagar menos</button>
+        </div>
+      </div>
       <p class="lp-err" id="lp-prop-err" hidden></p>
+      <p class="lp-ejecutivo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg><span>Un <b>ejecutivo personal</b> te enviará las propuestas. Con él puedes hacer todas tus preguntas y comparar planes y coberturas: es una persona, no una IA con respuestas genéricas.</span></p>
       <a class="lp-btn verde lp-wsp" id="lp-wsp-btn" href="https://wa.me/56966450103" target="_blank" rel="noopener">💬 Pedir propuestas por WhatsApp</a>
       <p class="lp-wsp-nota">Se abre WhatsApp con tus respuestas listas. Es gratis y no compartimos tus datos.</p>
       <button class="lp-otra lp-escriban" type="button" id="lp-a-datos">Prefiero que me escriban →</button>
@@ -545,7 +562,7 @@ h1 span { color:var(--purple); }
 
     <div class="lp-paso" data-paso="datos">
       <p class="lp-q">¿A qué WhatsApp te escribimos?</p>
-      <p class="lp-ayuda">Un ejecutivo inscrito en la Superintendencia de Salud revisa tu caso y te envía alternativas por WhatsApp.</p>
+      <p class="lp-ayuda">Un ejecutivo personal, inscrito en la Superintendencia de Salud, te enviará las propuestas por WhatsApp. Con él puedes hacer todas tus preguntas y comparar planes y coberturas: es una persona, no una IA con respuestas genéricas.</p>
       <form class="lp-form" id="lp-form" novalidate>
         <div><label for="lp-nombre">Nombre</label><div class="lp-campo texto" id="lp-nombre-caja"><input id="lp-nombre" type="text" autocomplete="given-name" placeholder="Tu nombre"></div></div>
         <div><label for="lp-wsp">WhatsApp</label><div class="lp-campo lp-tel" id="lp-wsp-caja"><span>+56 9</span><input id="lp-wsp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="1234 5678" maxlength="10"></div></div>
@@ -624,7 +641,7 @@ const variante = params.get('v') === 'b' ? 'b' : 'a'; // prueba A/B del título:
 // Puerta por la que se entró directo (anuncio o cambio de puerta): con ella se salta la pantalla de inicio
 let entrada = ['fonasa', 'isapre', 'pareja'].includes(params.get('desde')) ? params.get('desde') : null;
 const INICIO = [$('lp-h1').innerHTML, $('lp-sub').textContent]; // título de quien llega sin anuncio
-const D = { desde: null, isapre: '', tramo: null, cargas: null, pareja: null, hijos: [], tramo2: null, sueldo: 0, sueldo2: 0, pcob: '', suma: 0, pago: 0, noSabe: false, extra: 0, veredicto: '' };
+const D = { desde: null, isapre: '', tramo: null, cargas: null, pareja: null, hijos: [], tramo2: null, sueldo: 0, sueldo2: 0, pcob: '', suma: 0, pago: 0, pagoUF: 0, adic: 0, pref: '', noSabe: false, extra: 0, veredicto: '' };
 let pasos = [], actual = '';
 let empezo = false;
 
@@ -687,6 +704,12 @@ function ir(paso) {
   // En pareja, las preguntas propias dicen 'Primero vamos contigo'; el perfil se arma al llegar
   $('lp-edad-pre').hidden = $('lp-sueldo-pre').hidden = D.desde !== 'pareja';
   if (paso === 'p-perfil') pintaPerfil();
+  if (paso === 'sueldo') {
+    $('lp-sueldo-ayuda').innerHTML = D.desde === 'isapre'
+      ? 'Es tu sueldo bruto, sin descuentos. En tu liquidación aparece como <b>«Imponible AFP/Salud»</b> o <b>«Total haberes»</b>.'
+      : 'Tu sueldo bruto, antes de descuentos: el imponible de tu liquidación, no el líquido que te depositan.';
+    $('lp-adic-bloque').hidden = D.desde !== 'isapre';
+  }
   if (foco) setTimeout(() => $(foco).focus({ preventScroll: true }), 320);
   // En celular, si la tarjeta quedó arriba de la pantalla (por el teclado), se vuelve a mostrar; al cargar no se mueve
   const card = document.querySelector('.lp-card');
@@ -944,14 +967,27 @@ function montosRapidos(falta) {
     D.extra = +c.dataset.extra; $('lp-extra-monto').value = D.extra.toLocaleString('es-CL'); pintaExtra();
   }));
 }
-$('lp-pago').addEventListener('input', e => { D.pago = monto(e.target); $('lp-pago-caja').classList.remove('err'); $('lp-pago-err').hidden = true; });
+// Valor del plan en UF (como aparece en el contrato): acepta coma o punto y hasta 2 decimales
+const fmtUF = v => v.toLocaleString('es-CL', { maximumFractionDigits: 2 });
+$('lp-pago').addEventListener('input', e => {
+  let t = e.target.value.replace(/[^0-9.,]/g, '').replace('.', ',');
+  const partes = t.split(','); if (partes.length > 2) t = partes[0] + ',' + partes.slice(1).join('');
+  t = t.replace(/^(\d{0,3})\d*(,\d{0,2})?.*$/, '$1$2');
+  e.target.value = t;
+  D.pagoUF = parseFloat(t.replace(',', '.')) || 0;
+  D.pago = Math.round(D.pagoUF * UF);
+  $('lp-pago-vivo').hidden = !(D.pagoUF >= 0.5);
+  $('lp-pago-pesos').textContent = pesos(Math.round(D.pago / 100) * 100);
+  $('lp-pago-caja').classList.remove('err'); $('lp-pago-err').hidden = true;
+});
+$('lp-adic').addEventListener('input', e => { D.adic = monto(e.target); });
 function okSueldo() {
   if (D.sueldo < 100000) { $('lp-sueldo-caja').classList.add('err'); $('lp-sueldo-err').hidden = false; return; }
   siguiente();
 }
 function okPago() {
-  if (D.pago < 10000 || D.pago > D.sueldo) {
-    $('lp-pago-err').textContent = D.pago > D.sueldo ? 'Revisa el monto: es mayor que tu sueldo.' : 'Escribe cuánto pagas al mes en pesos, por ejemplo 150.000.';
+  if (!(D.pagoUF >= 0.5 && D.pagoUF <= 40)) {
+    $('lp-pago-err').textContent = 'Escribe el valor de tu plan en UF, por ejemplo 3,25.';
     $('lp-pago-caja').classList.add('err'); $('lp-pago-err').hidden = false; return;
   }
   D.noSabe = false;
@@ -959,7 +995,7 @@ function okPago() {
 }
 $('lp-sueldo-ok').addEventListener('click', okSueldo);
 $('lp-pago-ok').addEventListener('click', okPago);
-$('lp-pago-nose').addEventListener('click', () => { D.noSabe = true; D.pago = 0; $('lp-pago').value = ''; siguiente(); });
+$('lp-pago-nose').addEventListener('click', () => { D.noSabe = true; D.pago = 0; D.pagoUF = 0; $('lp-pago').value = ''; $('lp-pago-vivo').hidden = true; siguiente(); });
 $('lp-sueldo').addEventListener('keydown', e => { if (e.key === 'Enter') okSueldo(); });
 $('lp-pago').addEventListener('keydown', e => { if (e.key === 'Enter') okPago(); });
 
@@ -1094,26 +1130,29 @@ function resultado() {
       h += '<div class="lp-ver medio"><strong>Por unos ' + pesos(Math.ceil(faltaFam / 1000) * 1000) + ' más al mes, pueden estar ' + todos + ' protegidos.</strong>El plan más bajo para ' + todos + ' es de ' + pesos(planFam) + ' y entre los dos suman ' + pesos(suma) + ' de 7%. Esa diferencia la pondrían de su bolsillo. Si quieren que les enviemos opciones, cuéntennos abajo cuánto más podrían poner al mes.</div>';
     }
     h += '<p class="lp-planes-nota">En un plan compensado cada uno mantiene su contrato y suman sus cotizaciones. Valores mínimos de referencia, calculados con la tabla de factores única, con los dos como cotizantes. Las cargas menores de 2 años no pagan hasta cumplirlos.</p>';
-  } else if (D.noSabe) {
+  } else if (D.noSabe && !D.adic) {
     D.veredicto = 'no_sabe_pago';
     h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>Pagas hoy</span><strong>Por revisar</strong></div></div>'
       + '<div class="lp-ver info"><strong>No hay problema.</strong>Con tu liquidación de sueldo a mano lo calculamos contigo por WhatsApp, y te decimos si hay un plan que te calce mejor.</div>'
       + bloquePlanes(opcionesPlan(Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100));
   } else {
-    const bolsillo = D.pago - s;
+    // Isapre: con el valor del plan en UF (o, si no lo sabe, con el adicional de su liquidación) se ve si paga sobre su 7%
+    const pago = D.noSabe ? s + D.adic : D.pago;
+    const bolsillo = Math.round((pago - s) / 100) * 100;
+    const calza = Math.abs(pago - s) <= Math.max(2000, s * 0.03);
     D.bolsillo = bolsillo;
-    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>Pagas hoy</span>' + n(D.pago) + '</div></div>';
-    if (bolsillo > 0) {
+    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (D.noSabe ? 'Pagas hoy (según tu liquidación)' : 'Tu plan: ' + fmtUF(D.pagoUF) + ' UF') + '</span>' + n(Math.round(pago / 100) * 100) + '</div></div>';
+    if (!calza && bolsillo > 0) {
       D.veredicto = 'pone_bolsillo';
-      h += '<div class="lp-grande"><span>De tu bolsillo pones</span>' + n(bolsillo) + '<small>al mes, que son ' + pesos(bolsillo * 12) + ' al año</small></div>'
-        + '<div class="lp-ver info">Es lo que pagas además de tu 7%. Revisemos si hay un plan que te calce mejor con la clínica donde te atiendes y lo que más usas.</div>'
+      h += '<div class="lp-grande"><span>Si ajustas tu plan a tu 7%, te ahorras</span>' + n(bolsillo) + '<small>al mes, que son ' + pesos(bolsillo * 12) + ' al año</small></div>'
+        + '<div class="lp-ver alto"><strong>Hoy esa diferencia sale de tu bolsillo.</strong>Pagas ' + pesos(bolsillo) + ' más que tu 7%, y se va a la Isapre todos los meses. Revisemos si hay un plan por tu 7% que te calce con la clínica donde te atiendes y lo que más usas.</div>'
         + bloquePlanes(opcionesPlan(Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100));
+    } else if (calza) {
+      D.veredicto = 'calza_7';
+      h += '<div class="lp-ver info"><strong>Tu plan cuesta lo mismo que tu 7%. Puedes tener opciones de mejorarlo.</strong>Con la Ley Corta, a muchos afiliados les ajustaron el precio del plan a su 7%, pero la cobertura siguió siendo la misma. Revisemos si, por lo mismo que pagas hoy, puedes tener un plan mejor.</div>';
     } else {
       D.veredicto = 'dentro_del_7';
-      const exc = Math.round((s - D.pago) / 100) * 100;
-      h += exc < 1000
-        ? '<div class="lp-ver ok"><strong>Tu plan cuesta justo tu 7%.</strong>No pones nada extra de tu bolsillo. Igual podemos revisar si te cubre bien en la clínica donde te atiendes.</div>'
-        : '<div class="lp-ver ok"><strong>Tu plan cuesta menos que tu 7%.</strong>La diferencia, unos ' + pesos(exc) + ' al mes, te queda como excedente. Igual podemos revisar si te cubre bien en la clínica donde te atiendes.</div>';
+      h += '<div class="lp-ver ok"><strong>Tu plan cuesta menos que tu 7%.</strong>La diferencia, unos ' + pesos(-bolsillo) + ' al mes, te queda como excedente. Igual podemos revisar si te cubre bien en la clínica donde te atiendes.</div>';
     }
   }
   $('lp-res').innerHTML = h;
@@ -1152,7 +1191,11 @@ function textoWsp() {
     const f = familia(true);
     if (D.cargas !== null) l.push('• En el plan: ' + (!f.length ? 'solo yo' : f.length === 1 ? 'yo y ' + f[0] : 'yo, ' + f[0] + ' y ' + f[1]));
   }
-  else l.push(D.noSabe ? '• No sé cuánto pago hoy' : '• Pago hoy: ' + pesos(D.pago) + (D.bolsillo > 0 ? ' (' + pesos(D.bolsillo) + ' de mi bolsillo)' : ''));
+  else {
+    l.push(D.noSabe ? '• No sé el valor de mi plan en UF' : '• Mi plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ' al mes)' + (D.bolsillo > 0 ? ', pago ' + pesos(D.bolsillo) + ' sobre mi 7%' : ''));
+    if (D.adic) l.push('• Adicional Isapre en mi liquidación: ' + pesos(D.adic));
+    if (D.pref) l.push('• Prefiero: ' + D.pref.toLowerCase());
+  }
   if (D.desde === 'fonasa' && D.cargas > 0 && D.planFam) l.push('• Plan más bajo con mi grupo: ' + pesos(D.planFam) + ' al mes');
   if ((D.veredicto === 'aporte' || D.veredicto === 'familia_aporte') && D.extra) l.push('• Puedo poner hasta ' + pesos(D.extra) + ' además de mi 7% (en total ' + pesos(siete() + D.extra) + ' al mes)');
   if ($('lp-region').value) l.push('• Región: ' + $('lp-region').value);
@@ -1169,10 +1212,16 @@ $('lp-wsp-btn').addEventListener('click', e => {
   marca('whatsapp_click', { veredicto: D.veredicto });
   if (typeof fbq === 'function') fbq('track', 'Contact');
 });
-$('lp-a-propuestas').addEventListener('click', () => { marca('calc_quiere_propuestas', { veredicto: D.veredicto }); pintaExplica(); ir('propuestas'); });
+$('lp-a-propuestas').addEventListener('click', () => { marca('calc_quiere_propuestas', { veredicto: D.veredicto }); pintaExplica(); $('lp-pref-bloque').hidden = D.desde !== 'isapre'; ir('propuestas'); });
+document.querySelectorAll('[data-pref]').forEach(c => c.addEventListener('click', () => {
+  const on = !c.classList.contains('on');
+  document.querySelectorAll('[data-pref]').forEach(x => x.classList.remove('on'));
+  if (on) c.classList.add('on');
+  D.pref = on ? c.dataset.pref : '';
+}));
 $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
 function limpiar() {
-  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
+  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
   D.tramo2 = null; $('pp-sueldo2').value = ''; $('pp-perfil').innerHTML = ''; $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
   $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
@@ -1246,7 +1295,10 @@ $('lp-form').addEventListener('submit', async e => {
     .concat(pareja ? ['Hoy: ' + (D.pcob || 'sin indicar'), 'Sueldos: ' + pesos(D.sueldo) + ' y ' + pesos(D.sueldo2), 'Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
       : D.desde === 'fonasa'
       ? ['Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
-      : D.noSabe ? ['Paga hoy: no lo sabe'] : ['Paga hoy: ' + pesos(D.pago), 'De su bolsillo: ' + pesos(Math.max(0, D.bolsillo)) + '/mes'])
+      : [D.noSabe ? 'Plan: no sabe el valor en UF' : 'Plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ')']
+        .concat(D.adic ? ['Adicional en liquidación: ' + pesos(D.adic)] : [])
+        .concat(D.veredicto === 'pone_bolsillo' ? ['Paga sobre su 7%: ' + pesos(D.bolsillo) + '/mes'] : D.veredicto === 'calza_7' ? ['Su plan calza con su 7%'] : D.veredicto === 'dentro_del_7' ? ['Plan bajo su 7%'] : [])
+        .concat(D.pref ? ['Prefiere: ' + D.pref] : []))
     .concat(variante === 'b' ? ['Variante: b'] : [])
     .concat(fuente ? ['Fuente: ' + fuente] : []).join(' | ');
   const datos = {
