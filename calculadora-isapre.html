@@ -1090,13 +1090,8 @@ function resultado() {
     } else {
       D.veredicto = 'pareja_aporte';
       D.falta = faltaFam;
-      const nv = nivelFalta(faltaFam, suma), X = pesos(Math.ceil(faltaFam / 1000) * 1000);
-      h += '<div class="lp-ver ' + nv + '"><strong>' + (nv === 'alto'
-          ? 'Para estar ' + todos + ' protegidos, tendrían que poner ' + X + ' al mes de su bolsillo.'
-          : (nv === 'ok' ? 'Por solo ' : 'Por unos ') + X + ' más al mes, pueden estar ' + todos + ' protegidos.')
-        + '</strong>El plan más bajo para ' + todos + ' es de ' + pesos(planFam) + ' y entre los dos suman ' + pesos(suma) + ' de 7%. '
-        + (nv === 'alto' ? 'Esa diferencia la pagarían de su bolsillo cada mes, además de sus 7%.' : 'Esa diferencia la pondrían de su bolsillo.')
-        + ' Si quieren que les enviemos opciones, cuéntennos abajo cuánto más podrían poner al mes.</div>';
+      // La regla de colores es solo para la puerta de Fonasa; la de pareja tendrá su propia lógica (pendiente de Gonzalo)
+      h += '<div class="lp-ver medio"><strong>Por unos ' + pesos(Math.ceil(faltaFam / 1000) * 1000) + ' más al mes, pueden estar ' + todos + ' protegidos.</strong>El plan más bajo para ' + todos + ' es de ' + pesos(planFam) + ' y entre los dos suman ' + pesos(suma) + ' de 7%. Esa diferencia la pondrían de su bolsillo. Si quieren que les enviemos opciones, cuéntennos abajo cuánto más podrían poner al mes.</div>';
     }
     h += '<p class="lp-planes-nota">En un plan compensado cada uno mantiene su contrato y suman sus cotizaciones. Valores mínimos de referencia, calculados con la tabla de factores única, con los dos como cotizantes. Las cargas menores de 2 años no pagan hasta cumplirlos.</p>';
   } else if (D.noSabe) {
