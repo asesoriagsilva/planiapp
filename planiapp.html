@@ -891,7 +891,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     <div class="isa-dos">
       <a class="isa-card" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'portada'})">
         <span class="isa-card-ico" style="background:#EEEDFE;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg></span>
-        <span class="isa-card-txt"><span class="isa-card-t">Mejor Isapre 2026</span><span class="isa-card-p">Tabla con convenios, beneficios y reclamos</span></span>
+        <span class="isa-card-txt"><span class="isa-card-t">Mejor Isapre 2026</span><span class="isa-card-p">Tabla con convenios, precios por edad y reclamos</span></span>
         <span class="isa-card-fl" aria-hidden="true">→</span>
       </a>
       <a class="isa-card" href="/guia-isapres" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'guia_isapres',origen:'portada'})">
@@ -1023,6 +1023,17 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .gu-tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#0F6E56; background:#E1F5EE; border-radius:20px; padding:2px 9px; }
   .gu-t { font-family:'Inter',sans-serif; font-size:15.5px; font-weight:800; color:var(--purple-dark); line-height:1.3; letter-spacing:-0.01em; }
   .gu-hint { display:none; }
+  .gu-dest { display:grid; grid-template-columns:1fr 1.05fr; align-items:stretch; background:var(--purple-dark); border-radius:20px; overflow:hidden; text-decoration:none; color:#fff; margin-bottom:1.25rem; transition:transform .2s, box-shadow .2s; }
+  .gu-dest:hover { transform:translateY(-4px); box-shadow:0 22px 40px -22px rgba(38,33,92,.75); }
+  .gu-dest:focus-visible { outline:3px solid var(--purple-mid); outline-offset:3px; }
+  .gu-dest-fig { overflow:hidden; }
+  .gu-dest-fig img { display:block; width:100%; height:100%; min-height:240px; object-fit:cover; transition:transform .4s; }
+  .gu-dest:hover .gu-dest-fig img { transform:scale(1.04); }
+  .gu-dest-txt { display:flex; flex-direction:column; justify-content:center; gap:0.7rem; padding:1.75rem 2rem; }
+  .gu-dest-tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--purple-dark); background:#C9F2DF; border-radius:20px; padding:3px 10px; }
+  .gu-dest-t { font-family:'Inter',sans-serif; font-size:24px; font-weight:800; line-height:1.22; letter-spacing:-0.015em; }
+  .gu-dest-p { font-size:15px; line-height:1.55; color:#D9D6F7; }
+  .gu-dest-cta { align-self:flex-start; margin-top:0.3rem; font-size:14.5px; font-weight:700; color:var(--purple-dark); background:#fff; border-radius:999px; padding:0.6rem 1.15rem; }
   @media (max-width:900px){ .gu-lista { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:680px){
     .guias-wrap { margin:2.75rem auto; padding:0 1rem; }
@@ -1031,11 +1042,21 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     .gu { flex:0 0 66%; scroll-snap-align:start; }
     .gu:hover { transform:none; }
     .gu-hint { display:block; text-align:center; font-size:13px; color:var(--text-muted); margin-top:0.6rem; }
+    .gu-dest { grid-template-columns:1fr; margin-bottom:1rem; }
+    .gu-dest:hover { transform:none; }
+    .gu-dest-fig img { min-height:0; aspect-ratio:16 / 9; height:auto; }
+    .gu-dest-txt { padding:1.1rem 1.15rem 1.3rem; gap:0.55rem; }
+    .gu-dest-t { font-size:19px; }
+    .gu-dest-p { font-size:14px; }
   }
   </style>
   <section class="guias-wrap" id="guias">
     <h2 class="sec-t">Guías para elegir tu plan</h2>
     <p class="sec-p">Lo que conviene saber antes de contratar, sin letra chica.</p>
+    <a class="gu-dest" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'portada_destacado'})">
+      <span class="gu-dest-fig"><img src="img/mejor-isapre-card.webp" alt="Pareja revisando planes de Isapre en un computador" width="480" height="300" loading="lazy" decoding="async"></span>
+      <span class="gu-dest-txt"><span class="gu-dest-tag">Artículo destacado</span><span class="gu-dest-t">¿Cuál es la mejor Isapre en 2026? Tabla comparativa de las 7 Isapres</span><span class="gu-dest-p">Coberturas, urgencias, reembolsos, reclamos y el precio del plan de entrada según tu edad, en UF y en pesos.</span><span class="gu-dest-cta">Ver la tabla →</span></span>
+    </a>
     <div class="gu-lista">
       <a class="gu" href="/clinicas" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'clinicas'})">
         <span class="gu-fig"><img class="gu-img" src="img/clinicas-card.webp" alt="Recepción de una clínica" width="480" height="300" loading="lazy" decoding="async"></span>

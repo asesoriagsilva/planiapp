@@ -622,9 +622,9 @@ h1 span { color:var(--purple); }
 
 <script>
 // Plan de entrada más económico entre las 7 Isapres, por tramo de edad, en UF (sep-2026). Sale de comparativas.mjs.
-const PLAN_MIN_UF = [1.62,1.72,2,2.09,2.66,3.03];
+const PLAN_MIN_UF = [1.76,1.87,2.2,2.3,2.96,3.39];
 // Por Isapre: precios de entrada por tramo, precio base y cargo por persona (GES y otros), en UF
-const PLANES = [{"precios":[1.62,1.72,2,2.09,2.66,3.03],"base":0.9395,"g":0.7774},{"precios":[1.99,2.1,2.41,2.52,3.16,3.58],"base":1.0605,"g":1.036},{"precios":[1.78,1.89,2.24,2.36,3.05,3.52],"base":1.1605,"g":0.7326},{"precios":[1.95,2.06,2.39,2.5,3.15,3.59],"base":1.0919,"g":0.9689},{"precios":[2.21,2.35,2.78,2.93,3.79,4.37],"base":1.4407,"g":0.9106},{"precios":[1.92,2.03,2.39,2.51,3.21,3.69],"base":1.1802,"g":0.8547},{"precios":[1.93,2.06,2.47,2.6,3.41,3.95],"base":1.3477,"g":0.7152}];
+const PLANES = [{"precios":[1.76,1.87,2.2,2.3,2.96,3.39],"base":1.0872,"g":0.7825},{"precios":[1.99,2.1,2.41,2.52,3.16,3.58],"base":1.0605,"g":1.036},{"precios":[1.78,1.89,2.24,2.36,3.05,3.52],"base":1.1605,"g":0.7326},{"precios":[2.11,2.24,2.62,2.75,3.51,4.02],"base":1.2721,"g":0.9669},{"precios":[2.21,2.35,2.78,2.93,3.79,4.37],"base":1.4407,"g":0.9106},{"precios":[2.01,2.13,2.52,2.65,3.41,3.93],"base":1.2802,"g":0.8547},{"precios":[1.93,2.06,2.47,2.6,3.41,3.95],"base":1.3477,"g":0.7152}];
 // Factor de carga de la Tabla de Factores Única (Circular IF/343). Menores de 2 años no pagan hasta cumplirlos.
 const FCARGA = e => (e < 2 ? 0 : e < 20 ? 0.6 : e < 35 ? 0.7 : e < 45 ? 0.9 : e < 55 ? 1.0 : e < 65 ? 1.4 : 2.2);
 // Plan mínimo del grupo: el cotizante con su precio de entrada y cada carga con base × factor + cargo por persona
