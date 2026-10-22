@@ -564,6 +564,9 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
     e.preventDefault();
     const u = new URL(a.href, location.href); u.searchParams.set('embed', '1');
+    // Si la persona llegó a la portada con un origen (utm_source) o como tráfico interno, la calculadora lo hereda
+    const aqui = new URLSearchParams(location.search);
+    ['utm_source', 'interno'].forEach(k => { if (aqui.get(k)) u.searchParams.set(k, aqui.get(k)); });
     vista.innerHTML = '<div class="calc-carga"><i></i>Abriendo la calculadora…</div><iframe title="Calculadora de Isapre" scrolling="no"></iframe>';
     const fr = vista.querySelector('iframe');
     fr.addEventListener('load', () => { const c = vista.querySelector('.calc-carga'); if (c) c.remove(); fr.classList.add('lista'); });
