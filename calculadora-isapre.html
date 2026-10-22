@@ -832,20 +832,22 @@ function resultado() {
       const edades = (D.pareja !== null ? [D.pareja] : []).concat(D.hijos);
       const planFam = Math.round(minFamiliaUF(D.tramo, edades) * UF / 100) * 100;
       const faltaFam = planFam - s;
+      // Misma regla que solo: si el 7% alcanza, se muestran planes del 6,5% al 7% (nunca el plan más barato del mercado)
       const ops = faltaFam <= 0 ? opcionesPlan(planFam) : [];
+      const opsSolo = falta <= 0 ? opcionesPlan(plan) : [];
       D.planFam = planFam;
       D.desdePlan = ops.length ? ops[0].precio : planFam;
-      h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>El plan más bajo ' + conQuien + '</span>' + n(planFam) + '</div></div>'
+      h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (ops.length ? 'Puedes optar a planes desde' : 'El plan más bajo ' + conQuien) + '</span>' + n(D.desdePlan) + '</div></div>'
         + '<p class="lp-op-t">Opción 1 · Solo tú</p>'
         + (falta <= 0
-          ? '<div class="lp-ver ok"><strong>Te alcanza.</strong>Solo para ti, el plan más bajo para tu edad es de ' + pesos(plan) + ' y lo cubres con tu 7%.</div>'
+          ? '<div class="lp-ver ok"><strong>Te alcanza.</strong>Solo para ti, puedes optar a planes ' + rango(opsSolo) + ' al mes. Si eliges uno bajo tu 7%, la diferencia te queda como excedente.</div>'
           : '<div class="lp-ver medio"><strong>Te faltan unos ' + redondo(falta) + ' al mes.</strong>Solo para ti, el plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + '.</div>')
         + '<p class="lp-op-t">Opción 2 · ' + conQuien.charAt(0).toUpperCase() + conQuien.slice(1) + '</p>';
       const todos = D.cargas === 1 ? 'los dos' : 'todos';
       const protegida = D.cargas === 1 ? 'Para que tu pareja también esté protegida' : 'Para que toda tu familia esté protegida';
       if (faltaFam <= 0) {
         D.veredicto = 'familia_alcanza';
-        h += '<div class="lp-ver ok"><strong>Con tu 7% pueden estar ' + todos + ' protegidos.</strong>El plan más bajo ' + conQuien + ' es de ' + pesos(planFam) + ' y lo cubres con tu 7%. Puedes optar a planes ' + rango(ops) + ' al mes.</div>' + bloquePlanes(ops);
+        h += '<div class="lp-ver ok"><strong>Con tu 7% pueden estar ' + todos + ' protegidos.</strong>Puedes optar a planes ' + rango(ops) + ' al mes para ' + (D.cargas === 1 ? 'los dos' : 'toda tu familia') + '. Si eliges uno bajo tu 7%, la diferencia te queda como excedente.</div>' + bloquePlanes(ops);
       } else {
         D.veredicto = 'familia_aporte';
         D.falta = faltaFam;
