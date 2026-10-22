@@ -222,6 +222,7 @@ footer a { color: var(--text-muted); }
 /* Pagina mejor Isapre */
 .art-top { padding-bottom: 0; }
 .art-sig { padding-top: 0.5rem; }
+.art-precios { padding-top: 0.5rem; padding-bottom: 0.5rem; }
 .badge { display: inline-block; font-size: 12px; font-weight: 600; color: #0F6E56; background: #E1F5EE; border: 1px solid #CFEEE3; border-radius: 20px; padding: 3px 12px; margin-bottom: 0.9rem; }
 .tabla-wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 .tabla-wrap h2 { margin-top: 1.5rem; }
@@ -254,7 +255,7 @@ footer a { color: var(--text-muted); }
 .calc-cta a { flex-shrink: 0; background: var(--purple); color: #fff; text-decoration: none; font-weight: 600; font-size: 14.5px; border-radius: 999px; padding: 0.7rem 1.2rem; white-space: nowrap; }
 .calc-cta a:hover { background: var(--purple-deep); }
 @media (max-width: 600px) { .calc-cta { flex-direction: column; align-items: stretch; } .calc-cta a { text-align: center; } }
-.cmp-clp, .clp { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); white-space: nowrap; }
+.clp { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); white-space: nowrap; }
 .faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
 .faq p { font-size: 15.5px; }
 .otras.siete { grid-template-columns: repeat(4, 1fr); }
@@ -440,8 +441,8 @@ footer a { color: var(--text-muted); }
   <p>Para armar esta tabla revisamos la oferta vigente de las 7 Isapres abiertas y los indicadores que publica la Superintendencia de Salud. En verde marcamos donde una Isapre cubre bien y en rojo donde se queda corta. Más abajo te decimos cuál conviene según lo que más usas.</p>
   <div class="indice" role="navigation" aria-label="En esta página">
     <a href="#tabla">Tabla comparativa</a>
-    <a href="#perfiles">Según tu perfil</a>
     <a href="#precios">Precios por edad</a>
+    <a href="#perfiles">Según tu perfil</a>
     <a href="#reclamos">Reclamos</a>
     <a href="#preguntas">Preguntas frecuentes</a>
   </div>
@@ -577,66 +578,6 @@ footer a { color: var(--text-muted); }
         <td>Dávila, Santa María y U. de los Andes</td>
       </tr>
       <tr>
-        <th scope="row">Plan de entrada, 18 a 24 años</th>
-        <td>1,76 UF<span class="cmp-clp" data-uf="1.76">($72.500)</span></td>
-        <td>1,99 UF<span class="cmp-clp" data-uf="1.99">($82.000)</span></td>
-        <td>1,78 UF<span class="cmp-clp" data-uf="1.78">($73.300)</span></td>
-        <td>2,11 UF<span class="cmp-clp" data-uf="2.11">($86.900)</span></td>
-        <td>2,21 UF<span class="cmp-clp" data-uf="2.21">($91.100)</span></td>
-        <td>2,01 UF<span class="cmp-clp" data-uf="2.01">($82.800)</span></td>
-        <td>1,93 UF<span class="cmp-clp" data-uf="1.93">($79.500)</span></td>
-      </tr>
-      <tr>
-        <th scope="row">Plan de entrada, 25 a 34 años</th>
-        <td>1,87 UF<span class="cmp-clp" data-uf="1.87">($77.000)</span></td>
-        <td>2,10 UF<span class="cmp-clp" data-uf="2.1">($86.500)</span></td>
-        <td>1,89 UF<span class="cmp-clp" data-uf="1.89">($77.900)</span></td>
-        <td>2,24 UF<span class="cmp-clp" data-uf="2.24">($92.300)</span></td>
-        <td>2,35 UF<span class="cmp-clp" data-uf="2.35">($96.800)</span></td>
-        <td>2,13 UF<span class="cmp-clp" data-uf="2.13">($87.800)</span></td>
-        <td>2,06 UF<span class="cmp-clp" data-uf="2.06">($84.900)</span></td>
-      </tr>
-      <tr>
-        <th scope="row">Plan de entrada, 35 a 44 años</th>
-        <td>2,20 UF<span class="cmp-clp" data-uf="2.2">($90.600)</span></td>
-        <td>2,41 UF<span class="cmp-clp" data-uf="2.41">($99.300)</span></td>
-        <td>2,24 UF<span class="cmp-clp" data-uf="2.24">($92.300)</span></td>
-        <td>2,62 UF<span class="cmp-clp" data-uf="2.62">($107.900)</span></td>
-        <td>2,78 UF<span class="cmp-clp" data-uf="2.78">($114.500)</span></td>
-        <td>2,52 UF<span class="cmp-clp" data-uf="2.52">($103.800)</span></td>
-        <td>2,47 UF<span class="cmp-clp" data-uf="2.47">($101.800)</span></td>
-      </tr>
-      <tr>
-        <th scope="row">Plan de entrada, 45 a 54 años</th>
-        <td>2,30 UF<span class="cmp-clp" data-uf="2.3">($94.800)</span></td>
-        <td>2,52 UF<span class="cmp-clp" data-uf="2.52">($103.800)</span></td>
-        <td>2,36 UF<span class="cmp-clp" data-uf="2.36">($97.200)</span></td>
-        <td>2,75 UF<span class="cmp-clp" data-uf="2.75">($113.300)</span></td>
-        <td>2,93 UF<span class="cmp-clp" data-uf="2.93">($120.700)</span></td>
-        <td>2,65 UF<span class="cmp-clp" data-uf="2.65">($109.200)</span></td>
-        <td>2,60 UF<span class="cmp-clp" data-uf="2.6">($107.100)</span></td>
-      </tr>
-      <tr>
-        <th scope="row">Plan de entrada, 55 a 64 años</th>
-        <td>2,96 UF<span class="cmp-clp" data-uf="2.96">($122.000)</span></td>
-        <td>3,16 UF<span class="cmp-clp" data-uf="3.16">($130.200)</span></td>
-        <td>3,05 UF<span class="cmp-clp" data-uf="3.05">($125.700)</span></td>
-        <td>3,51 UF<span class="cmp-clp" data-uf="3.51">($144.600)</span></td>
-        <td>3,79 UF<span class="cmp-clp" data-uf="3.79">($156.100)</span></td>
-        <td>3,41 UF<span class="cmp-clp" data-uf="3.41">($140.500)</span></td>
-        <td>3,41 UF<span class="cmp-clp" data-uf="3.41">($140.500)</span></td>
-      </tr>
-      <tr>
-        <th scope="row">Plan de entrada, 65 años o más</th>
-        <td>3,39 UF<span class="cmp-clp" data-uf="3.39">($139.700)</span></td>
-        <td>3,58 UF<span class="cmp-clp" data-uf="3.58">($147.500)</span></td>
-        <td>3,52 UF<span class="cmp-clp" data-uf="3.52">($145.000)</span></td>
-        <td>4,02 UF<span class="cmp-clp" data-uf="4.02">($165.600)</span></td>
-        <td>4,37 UF<span class="cmp-clp" data-uf="4.37">($180.000)</span></td>
-        <td>3,93 UF<span class="cmp-clp" data-uf="3.93">($161.900)</span></td>
-        <td>3,95 UF<span class="cmp-clp" data-uf="3.95">($162.700)</span></td>
-      </tr>
-      <tr>
         <th scope="row">Reembolsos</th>
         <td>Hasta 5 días</td>
         <td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>24 a 48 horas</td>
@@ -649,8 +590,35 @@ footer a { color: var(--text-muted); }
       </tbody>
     </table>
   </div>
-  <p class="aviso">La información es referencial. Los precios son de octubre de 2026, con los pesos calculados con la UF de hoy, y las coberturas, convenios y topes corresponden a la oferta vigente a septiembre de 2026. Cambian según el plan y se confirman al momento de cotizar.</p>
+  <p class="aviso">La información es referencial y corresponde a la oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan, y se confirman al momento de cotizar.</p>
 </section>
+
+<div class="art art-precios">
+  <h2 id="precios">¿Cuál es la Isapre más barata? Precio del plan de entrada según tu edad</h2>
+  <p>Estos son los precios mensuales del plan de entrada de cada Isapre para una persona sola, por tramo de edad. En todas las edades la más barata es Banmédica, seguida de Consalud, y la más cara es Esencial. Entre las demás la diferencia es chica y el orden cambia con la edad.</p>
+  <div class="sup-scroll">
+    <table class="sup precios" aria-label="Precio del plan de entrada por Isapre y edad">
+      <thead>
+        <tr><th>Edad</th><th>Banmédica</th><th>Colmena</th><th>Consalud</th><th>Cruz Blanca</th><th>Esencial</th><th>Nueva Masvida</th><th>Vida Tres</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>18 a 24 años</td><td class="top">1,76 UF<span class="clp" data-uf="1.76">($72.500)</span></td><td>1,99 UF<span class="clp" data-uf="1.99">($82.000)</span></td><td>1,78 UF<span class="clp" data-uf="1.78">($73.300)</span></td><td>2,11 UF<span class="clp" data-uf="2.11">($86.900)</span></td><td>2,21 UF<span class="clp" data-uf="2.21">($91.100)</span></td><td>2,01 UF<span class="clp" data-uf="2.01">($82.800)</span></td><td>1,93 UF<span class="clp" data-uf="1.93">($79.500)</span></td></tr>
+        <tr><td>25 a 34 años</td><td class="top">1,87 UF<span class="clp" data-uf="1.87">($77.000)</span></td><td>2,10 UF<span class="clp" data-uf="2.1">($86.500)</span></td><td>1,89 UF<span class="clp" data-uf="1.89">($77.900)</span></td><td>2,24 UF<span class="clp" data-uf="2.24">($92.300)</span></td><td>2,35 UF<span class="clp" data-uf="2.35">($96.800)</span></td><td>2,13 UF<span class="clp" data-uf="2.13">($87.800)</span></td><td>2,06 UF<span class="clp" data-uf="2.06">($84.900)</span></td></tr>
+        <tr><td>35 a 44 años</td><td class="top">2,20 UF<span class="clp" data-uf="2.2">($90.600)</span></td><td>2,41 UF<span class="clp" data-uf="2.41">($99.300)</span></td><td>2,24 UF<span class="clp" data-uf="2.24">($92.300)</span></td><td>2,62 UF<span class="clp" data-uf="2.62">($107.900)</span></td><td>2,78 UF<span class="clp" data-uf="2.78">($114.500)</span></td><td>2,52 UF<span class="clp" data-uf="2.52">($103.800)</span></td><td>2,47 UF<span class="clp" data-uf="2.47">($101.800)</span></td></tr>
+        <tr><td>45 a 54 años</td><td class="top">2,30 UF<span class="clp" data-uf="2.3">($94.800)</span></td><td>2,52 UF<span class="clp" data-uf="2.52">($103.800)</span></td><td>2,36 UF<span class="clp" data-uf="2.36">($97.200)</span></td><td>2,75 UF<span class="clp" data-uf="2.75">($113.300)</span></td><td>2,93 UF<span class="clp" data-uf="2.93">($120.700)</span></td><td>2,65 UF<span class="clp" data-uf="2.65">($109.200)</span></td><td>2,60 UF<span class="clp" data-uf="2.6">($107.100)</span></td></tr>
+        <tr><td>55 a 64 años</td><td class="top">2,96 UF<span class="clp" data-uf="2.96">($122.000)</span></td><td>3,16 UF<span class="clp" data-uf="3.16">($130.200)</span></td><td>3,05 UF<span class="clp" data-uf="3.05">($125.700)</span></td><td>3,51 UF<span class="clp" data-uf="3.51">($144.600)</span></td><td>3,79 UF<span class="clp" data-uf="3.79">($156.100)</span></td><td>3,41 UF<span class="clp" data-uf="3.41">($140.500)</span></td><td>3,41 UF<span class="clp" data-uf="3.41">($140.500)</span></td></tr>
+        <tr><td>65 años o más</td><td class="top">3,39 UF<span class="clp" data-uf="3.39">($139.700)</span></td><td>3,58 UF<span class="clp" data-uf="3.58">($147.500)</span></td><td>3,52 UF<span class="clp" data-uf="3.52">($145.000)</span></td><td>4,02 UF<span class="clp" data-uf="4.02">($165.600)</span></td><td>4,37 UF<span class="clp" data-uf="4.37">($180.000)</span></td><td>3,93 UF<span class="clp" data-uf="3.93">($161.900)</span></td><td>3,95 UF<span class="clp" data-uf="3.95">($162.700)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="rb-fuente">Precio mensual en UF del plan de entrada de cada Isapre, para una persona sin cargas, octubre de 2026. Entre paréntesis, el valor en pesos con la UF de hoy (<span id="uf-hoy">$41.200</span>). En verde, el más barato de cada tramo. Valores referenciales: el precio final depende del plan, tus cargas y tu declaración de salud.</p>
+  <div class="ojo"><p><strong>El más barato no siempre conviene.</strong> El plan de entrada de Banmédica cubre 40% y se concentra en la red Dávila. El de Nueva Masvida, por un precio parecido al resto, cubre entre 50% y 70% en más clínicas, pero arrastra los topes más bajos del sistema: prótesis y órtesis hasta 10 UF, quimioterapia sin cobertura preferente y la red GES y CAEC más chica. Antes de elegir por precio, mira qué clínicas, qué porcentajes y qué topes trae cada plan.</p></div>
+  <div class="calc-cta">
+    <div><strong>¿Te alcanza tu 7% para uno de estos planes?</strong><p>Pon tu edad y tu sueldo en la calculadora y te mostramos qué planes puedes elegir con tu 7%, sin hacer cuentas a mano.</p></div>
+    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'mejor_isapre_precios'})">Probar la calculadora →</a>
+  </div>
+</div>
+
 
 <div class="art art-sig">
   <h2 id="perfiles">¿Cuál es la mejor Isapre según tu perfil?</h2>
@@ -702,30 +670,6 @@ footer a { color: var(--text-muted); }
     <h2>¿No sabes cuál es la tuya?</h2>
     <p>Casi nadie calza en un solo perfil: pesan tu edad, tus cargas, tu renta y las clínicas donde te atiendes. Cuéntanos tu caso y te decimos cuál te conviene, gratis y sin compromiso.</p>
     <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'mejor_isapre_perfiles'})">Quiero que me asesoren →</a>
-  </div>
-
-  <h2 id="precios">¿Cuál es la Isapre más barata? Precio del plan de entrada según tu edad</h2>
-  <p>Estos son los precios mensuales del plan de entrada de cada Isapre para una persona sola, por tramo de edad. En todas las edades la más barata es Banmédica, seguida de Consalud, y la más cara es Esencial. Entre las demás la diferencia es chica y el orden cambia con la edad.</p>
-  <div class="sup-scroll">
-    <table class="sup precios" aria-label="Precio del plan de entrada por Isapre y edad">
-      <thead>
-        <tr><th>Edad</th><th>Banmédica</th><th>Colmena</th><th>Consalud</th><th>Cruz Blanca</th><th>Esencial</th><th>Nueva Masvida</th><th>Vida Tres</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>18 a 24 años</td><td class="top">1,76 UF<span class="clp" data-uf="1.76">($72.500)</span></td><td>1,99 UF<span class="clp" data-uf="1.99">($82.000)</span></td><td>1,78 UF<span class="clp" data-uf="1.78">($73.300)</span></td><td>2,11 UF<span class="clp" data-uf="2.11">($86.900)</span></td><td>2,21 UF<span class="clp" data-uf="2.21">($91.100)</span></td><td>2,01 UF<span class="clp" data-uf="2.01">($82.800)</span></td><td>1,93 UF<span class="clp" data-uf="1.93">($79.500)</span></td></tr>
-        <tr><td>25 a 34 años</td><td class="top">1,87 UF<span class="clp" data-uf="1.87">($77.000)</span></td><td>2,10 UF<span class="clp" data-uf="2.1">($86.500)</span></td><td>1,89 UF<span class="clp" data-uf="1.89">($77.900)</span></td><td>2,24 UF<span class="clp" data-uf="2.24">($92.300)</span></td><td>2,35 UF<span class="clp" data-uf="2.35">($96.800)</span></td><td>2,13 UF<span class="clp" data-uf="2.13">($87.800)</span></td><td>2,06 UF<span class="clp" data-uf="2.06">($84.900)</span></td></tr>
-        <tr><td>35 a 44 años</td><td class="top">2,20 UF<span class="clp" data-uf="2.2">($90.600)</span></td><td>2,41 UF<span class="clp" data-uf="2.41">($99.300)</span></td><td>2,24 UF<span class="clp" data-uf="2.24">($92.300)</span></td><td>2,62 UF<span class="clp" data-uf="2.62">($107.900)</span></td><td>2,78 UF<span class="clp" data-uf="2.78">($114.500)</span></td><td>2,52 UF<span class="clp" data-uf="2.52">($103.800)</span></td><td>2,47 UF<span class="clp" data-uf="2.47">($101.800)</span></td></tr>
-        <tr><td>45 a 54 años</td><td class="top">2,30 UF<span class="clp" data-uf="2.3">($94.800)</span></td><td>2,52 UF<span class="clp" data-uf="2.52">($103.800)</span></td><td>2,36 UF<span class="clp" data-uf="2.36">($97.200)</span></td><td>2,75 UF<span class="clp" data-uf="2.75">($113.300)</span></td><td>2,93 UF<span class="clp" data-uf="2.93">($120.700)</span></td><td>2,65 UF<span class="clp" data-uf="2.65">($109.200)</span></td><td>2,60 UF<span class="clp" data-uf="2.6">($107.100)</span></td></tr>
-        <tr><td>55 a 64 años</td><td class="top">2,96 UF<span class="clp" data-uf="2.96">($122.000)</span></td><td>3,16 UF<span class="clp" data-uf="3.16">($130.200)</span></td><td>3,05 UF<span class="clp" data-uf="3.05">($125.700)</span></td><td>3,51 UF<span class="clp" data-uf="3.51">($144.600)</span></td><td>3,79 UF<span class="clp" data-uf="3.79">($156.100)</span></td><td>3,41 UF<span class="clp" data-uf="3.41">($140.500)</span></td><td>3,41 UF<span class="clp" data-uf="3.41">($140.500)</span></td></tr>
-        <tr><td>65 años o más</td><td class="top">3,39 UF<span class="clp" data-uf="3.39">($139.700)</span></td><td>3,58 UF<span class="clp" data-uf="3.58">($147.500)</span></td><td>3,52 UF<span class="clp" data-uf="3.52">($145.000)</span></td><td>4,02 UF<span class="clp" data-uf="4.02">($165.600)</span></td><td>4,37 UF<span class="clp" data-uf="4.37">($180.000)</span></td><td>3,93 UF<span class="clp" data-uf="3.93">($161.900)</span></td><td>3,95 UF<span class="clp" data-uf="3.95">($162.700)</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="rb-fuente">Precio mensual en UF del plan de entrada de cada Isapre, para una persona sin cargas, octubre de 2026. Entre paréntesis, el valor en pesos con la UF de hoy (<span id="uf-hoy">$41.200</span>). En verde, el más barato de cada tramo. Valores referenciales: el precio final depende del plan, tus cargas y tu declaración de salud.</p>
-  <div class="ojo"><p><strong>El más barato no siempre conviene.</strong> El plan de entrada de Banmédica cubre 40% y se concentra en la red Dávila. El de Nueva Masvida, por un precio parecido al resto, cubre entre 50% y 70% en más clínicas, pero arrastra los topes más bajos del sistema: prótesis y órtesis hasta 10 UF, quimioterapia sin cobertura preferente y la red GES y CAEC más chica. Antes de elegir por precio, mira qué clínicas, qué porcentajes y qué topes trae cada plan.</p></div>
-  <div class="calc-cta">
-    <div><strong>¿Te alcanza tu 7% para uno de estos planes?</strong><p>Pon tu edad y tu sueldo en la calculadora y te mostramos qué planes puedes elegir con tu 7%, sin hacer cuentas a mano.</p></div>
-    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'mejor_isapre_precios'})">Probar la calculadora →</a>
   </div>
 
   <h2 id="reclamos">¿Qué Isapre tiene menos reclamos? Los datos oficiales</h2>
