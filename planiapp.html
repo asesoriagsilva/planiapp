@@ -76,6 +76,27 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 .hero-guarantee { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); margin-top: 0.75rem; }
 .hero-guarantee-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
 .hero-right { flex: 1 1 0; min-width: 0; }
+/* Inicio oscuro con la calculadora: fondo morado, título blanco y el 7% en verde */
+.hero { background: radial-gradient(640px 400px at 88% 18%, rgba(29,158,117,.30), transparent 70%), radial-gradient(560px 380px at 6% 92%, rgba(127,119,221,.38), transparent 70%), linear-gradient(135deg, #1E1A4D 0%, #2B2468 55%, #3C3489 100%); align-items: center; padding: 3rem 2.5rem 3.25rem; gap: 3rem; }
+.hero-title { color: #fff; }
+.hero-title span { color: #4BE3A3; }
+.hero-lead { color: #fff; font-weight: 600; }
+.hero-sub2 { color: rgba(255,255,255,.74); }
+.hero-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.3rem; }
+.hero-chips span { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 13px; font-weight: 600; color: #fff; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 0.4rem 0.8rem; }
+.hero-chips svg { color: #4BE3A3; flex-shrink: 0; }
+@media (max-width: 600px) { .hero-chips { gap: 0.4rem; margin-top: 1rem; } .hero-chips span { font-size: 12px; padding: 0.32rem 0.65rem; } }
+.calc-card-volver { display: none; margin-left: auto; align-self: flex-start; font: inherit; font-size: 13px; font-weight: 700; color: #0F6E56; background: #fff; border: 1px solid #CDEBDD; border-radius: 999px; padding: 0.35rem 0.8rem; cursor: pointer; white-space: nowrap; }
+.calc-card.abierta .calc-card-volver { display: inline-flex; }
+.calc-card-inicio, .calc-card-vista { animation: calcEntra .35s ease both; }
+@keyframes calcEntra { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.calc-card-vista { position: relative; margin-top: 0.4rem; }
+.calc-card-vista iframe { display: block; width: 100%; height: 440px; border: 0; border-radius: 22px; background: transparent; opacity: 0; transition: opacity .3s, height .25s ease; }
+.calc-card-vista iframe.lista { opacity: 1; }
+.calc-carga { position: absolute; inset: 0 0 auto 0; height: 140px; display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-size: 14px; font-weight: 600; color: #0F6E56; }
+.calc-carga i { width: 18px; height: 18px; border-radius: 50%; border: 2.5px solid #BDE6D2; border-top-color: #0F6E56; animation: calcGira .8s linear infinite; }
+@keyframes calcGira { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .calc-card-inicio, .calc-card-vista { animation: none; } }
 /* Recuadro de la calculadora a la derecha del inicio */
 .calc-card { max-width: 500px; margin-left: auto; background: linear-gradient(135deg, #E6F9F0 0%, #C9EEDC 45%, #E2F7EC 70%, #D3F2E3 100%); background-size: 220% 220%; animation: calcFondo 9s ease-in-out infinite; border: 1px solid #BDE6D2; border-radius: 22px; padding: 1.4rem 1.4rem 1.25rem; box-shadow: 0 24px 48px -30px rgba(15,110,86,.6); }
 @keyframes calcFondo { 0%, 100% { background-position: 0% 40%; } 50% { background-position: 100% 60%; } }
@@ -364,7 +385,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .faq-answer { font-size: 15px; color: var(--text-muted); line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0; }
   .faq-answer.open { max-height: 300px; padding-bottom: 1.1rem; }
 @media (max-width: 768px) {
-  .hero { flex-direction: column; padding: 1.5rem 1.25rem; gap: 1.5rem; }
+  .hero { flex-direction: column; padding: 1.75rem 1.1rem 2rem; gap: 1.5rem; }
   .hero-right { width: 100%; flex-basis: auto; }
   .hero-left { max-width: 100%; }
   .hero-title { font-size: 30px; line-height: 1.15; margin-bottom: 0.75rem; }
@@ -510,24 +531,55 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <div class="hero">
     <div class="hero-left">
 
-      <h1 class="hero-title">¡Encontramos el plan de <span>Isapre</span> ideal para ti!</h1>
-      <p class="hero-sub hero-lead">Un ejecutivo siempre te dirá que su Isapre es la mejor. Elegir bien no es solo pagar menos: es saber qué cubre tu plan, cuáles son sus topes y si realmente se adapta a tus necesidades.</p>
-      <p class="hero-sub hero-sub2" style="margin-bottom:0;">En Planiapp buscamos que tu nuevo plan se ajuste a tu bolsillo, funcione cuando lo necesites y sea claro, sin sorpresas a futuro. Si no te conviene cambiarte, también te lo diremos.</p>
+      <h1 class="hero-title">La forma más inteligente de aprovechar tu <span>7% de salud</span></h1>
+      <p class="hero-sub hero-lead">Simula, compara Isapres y optimiza tu plan en solo 30 segundos.</p>
+      <p class="hero-sub hero-sub2" style="margin-bottom:0;">Somos una asesoría digital con ejecutivos inscritos en la Superintendencia de Salud. Te ayudamos a elegir informado y, si no te conviene cambiarte, también te lo diremos.</p>
+      <div class="hero-chips"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>100% gratis</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Calculas sin dejar tus datos</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Ejecutivos inscritos</span></div>
     </div>
     <div class="hero-right">
       <div class="calc-card">
-        <div class="calc-card-top"><span class="calc-card-ico" aria-hidden="true"><svg width="40" height="48" viewBox="0 0 40 48"><rect x="1" y="1" width="38" height="46" rx="7" fill="#5C6271"/><rect x="1" y="1" width="38" height="46" rx="7" fill="none" stroke="#454A57" stroke-width="1.5"/><rect x="6" y="6" width="28" height="11" rx="2.5" fill="#DDF5EA"/><rect x="19" y="9.5" width="12" height="4" rx="1.2" fill="#1D9E75" opacity=".55"/><rect x="6" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="6" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="6" y="37" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="37" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="37" width="8" height="6" rx="2" fill="#E8559A"/></svg></span><div><p class="calc-card-k">Calculadora de Isapre</p><p class="calc-card-t">Calcula qué plan te da tu 7%</p></div></div>
+        <div class="calc-card-top"><span class="calc-card-ico" aria-hidden="true"><svg width="40" height="48" viewBox="0 0 40 48"><rect x="1" y="1" width="38" height="46" rx="7" fill="#5C6271"/><rect x="1" y="1" width="38" height="46" rx="7" fill="none" stroke="#454A57" stroke-width="1.5"/><rect x="6" y="6" width="28" height="11" rx="2.5" fill="#DDF5EA"/><rect x="19" y="9.5" width="12" height="4" rx="1.2" fill="#1D9E75" opacity=".55"/><rect x="6" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="6" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="6" y="37" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="37" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="37" width="8" height="6" rx="2" fill="#E8559A"/></svg></span><div><p class="calc-card-k">Calculadora de Isapre</p><p class="calc-card-t">Calcula qué plan te da tu 7%</p></div><button type="button" class="calc-card-volver" aria-label="Volver a elegir dónde estás">← Volver</button></div>
+        <div class="calc-card-inicio">
         <p class="calc-card-p">Solo con tu edad y tu sueldo, sin dejar tus datos. ¿Dónde estás hoy?</p>
         <div class="calc-card-ops">
           <a href="/calculadora-isapre?desde=fonasa" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_fonasa'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg></span><span><b>Estoy en Fonasa</b><small>Ver si me alcanza para una Isapre</small></span></a>
-          <a href="/calculadora-isapre?desde=isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_isapre'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>Estoy en Isapre</b><small>Ajustar mi plan a mi 7%</small></span></a>
+          <a href="/calculadora-isapre?desde=isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_isapre'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>Estoy en Isapre</b><small>Ver si pago de más o puedo ahorrar</small></span></a>
           <a href="/calculadora-isapre?desde=pareja" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_pareja'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.2c3 .3 5 2.4 5 5.3"/></svg></span><span><b>Somos pareja</b><small>Plan compensado: sumamos nuestros dos 7%</small></span></a>
         </div>
         <a class="calc-card-alt" href="#opciones">Prefiero que me asesoren<span class="calc-alt-x"> directamente</span> <span class="calc-alt-fl" aria-hidden="true">↓</span></a>
+        </div>
+        <div class="calc-card-vista" hidden></div>
       </div>
     </div>
   </div>
 </div>
+<script>
+// Recuadro de la calculadora: cada opción abre la calculadora dentro del mismo recuadro (iframe con ?embed=1), sin recargar.
+// La calculadora le avisa su alto y cada cambio de pregunta. Con Ctrl o clic central, el enlace abre la página completa como siempre.
+(function () {
+  const card = document.querySelector('.calc-card');
+  if (!card) return;
+  const inicio = card.querySelector('.calc-card-inicio'), vista = card.querySelector('.calc-card-vista'), volver = card.querySelector('.calc-card-volver');
+  card.querySelectorAll('.calc-card-ops a').forEach(a => a.addEventListener('click', e => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+    e.preventDefault();
+    const u = new URL(a.href, location.href); u.searchParams.set('embed', '1');
+    vista.innerHTML = '<div class="calc-carga"><i></i>Abriendo la calculadora…</div><iframe title="Calculadora de Isapre" scrolling="no"></iframe>';
+    const fr = vista.querySelector('iframe');
+    fr.addEventListener('load', () => { const c = vista.querySelector('.calc-carga'); if (c) c.remove(); fr.classList.add('lista'); });
+    fr.src = u.pathname + u.search;
+    inicio.hidden = true; vista.hidden = false; card.classList.add('abierta');
+  }));
+  volver.addEventListener('click', () => { vista.hidden = true; vista.innerHTML = ''; inicio.hidden = false; card.classList.remove('abierta'); });
+  window.addEventListener('message', e => {
+    if (e.origin !== location.origin || !e.data || !e.data.planiappCalc) return;
+    const fr = vista.querySelector('iframe');
+    if (!fr || e.source !== fr.contentWindow) return;
+    if (e.data.alto) fr.style.height = e.data.alto + 'px';
+    if (e.data.planiappCalc === 'paso') { const r = card.getBoundingClientRect(); if (r.top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+})();
+</script>
 
   <!-- FORMULARIO -->
   <div class="form-section">
