@@ -120,6 +120,11 @@ h1 span { color:var(--purple); }
 .lp-campo.chico input { font-size:18px; padding-top:0.75rem; padding-bottom:0.75rem; }
 .lp-extra-rapidos { margin:0.2rem 0 1rem; }
 #lp-extra-monto::placeholder, #lp-adic::placeholder { font-size:15px; font-weight:500; color:var(--muted); }
+.lp-check { display:flex; align-items:flex-start; gap:0.6rem; margin-top:0.9rem; cursor:pointer; font-size:14.5px; font-weight:600; color:var(--purple-dark); line-height:1.4; }
+.lp-check input { width:20px; height:20px; flex-shrink:0; margin-top:1px; accent-color:var(--purple); cursor:pointer; }
+.lp-campo input:disabled { opacity:.45; }
+.lp-liq { margin-top:0.5rem; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:#fff; }
+.lp-liq svg { display:block; width:100%; height:auto; }
 .lp-campo.lp-uf input { padding-left:1rem; }
 .lp-campo.lp-uf span { padding:0 1rem 0 0; }
 .lp-ejecutivo { display:flex; gap:0.6rem; align-items:flex-start; background:var(--purple-light); border-radius:14px; padding:0.75rem 0.9rem; margin-top:1rem; font-size:13.5px; color:var(--purple-deep); line-height:1.5; }
@@ -483,7 +488,10 @@ h1 span { color:var(--purple); }
       <p class="lp-err" id="lp-sueldo-err" hidden>Escribe tu sueldo mensual en pesos, por ejemplo 1.200.000.</p>
       <div class="lp-bloque" id="lp-adic-bloque" hidden>
         <label class="lp-mini" for="lp-adic">¿Tienes un «adicional Isapre» en tus descuentos? <em>(opcional)</em></label>
+        <p class="lp-ayuda" style="margin-bottom:0.5rem">Lo ves en tu liquidación de sueldo, en los descuentos, como «Adicional Isapre».</p>
         <label class="lp-campo chico"><span>$</span><input id="lp-adic" type="text" inputmode="numeric" autocomplete="off" placeholder="Si no tienes, déjalo en blanco" aria-label="Adicional Isapre de tu liquidación"></label>
+        <button class="lp-nose" type="button" id="lp-ver-liq" aria-expanded="false">¿Dónde lo veo? Ver una liquidación de ejemplo</button>
+        <div class="lp-liq" id="lp-liq" hidden><svg viewBox="0 0 340 330" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, Arial, sans-serif" role="img" aria-label="Liquidación de sueldo de ejemplo, con el total imponible y el adicional Isapre destacados"><rect width="340" height="34" fill="#26215C"/><text x="14" y="22" font-size="12.5" font-weight="700" fill="#fff" letter-spacing="0.6">LIQUIDACIÓN DE SUELDO</text><rect x="264" y="9" width="62" height="17" rx="8.5" fill="#1D9E75"/><text x="295" y="21.5" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">EJEMPLO</text><text x="14" y="56" font-size="10.5" font-weight="700" fill="#7F77DD" letter-spacing="0.8">HABERES</text><text x="14" y="79" font-size="12.5" font-weight="400" fill="#5a5a78">Sueldo base</text><text x="326" y="79" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$1.250.000</text><line x1="14" y1="86" x2="326" y2="86" stroke="#EEEDFE"/><text x="14" y="103" font-size="12.5" font-weight="400" fill="#5a5a78">Gratificación legal</text><text x="326" y="103" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$150.000</text><line x1="14" y1="110" x2="326" y2="110" stroke="#EEEDFE"/><rect x="8" y="112" width="324" height="40" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/><text x="16" y="127" font-size="12.5" font-weight="700" fill="#26215C">Total imponible / Total haberes</text><text x="324" y="127" font-size="12.5" font-weight="700" fill="#26215C" text-anchor="end">$1.400.000</text><text x="16" y="144" font-size="11" font-weight="700" fill="#534AB7">↑ Tu sueldo imponible</text><text x="14" y="172" font-size="10.5" font-weight="700" fill="#7F77DD" letter-spacing="0.8">DESCUENTOS</text><text x="14" y="195" font-size="12.5" font-weight="400" fill="#5a5a78">AFP (10% + comisión)</text><text x="326" y="195" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$160.000</text><line x1="14" y1="202" x2="326" y2="202" stroke="#EEEDFE"/><text x="14" y="219" font-size="12.5" font-weight="400" fill="#5a5a78">Salud Isapre 7%</text><text x="326" y="219" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$98.000</text><line x1="14" y1="226" x2="326" y2="226" stroke="#EEEDFE"/><rect x="8" y="228" width="324" height="40" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text x="16" y="243" font-size="12.5" font-weight="700" fill="#26215C">Adicional Isapre</text><text x="324" y="243" font-size="12.5" font-weight="700" fill="#26215C" text-anchor="end">$46.000</text><text x="16" y="260" font-size="11" font-weight="700" fill="#0F6E56">↑ Tu adicional Isapre</text><text x="14" y="289" font-size="12.5" font-weight="400" fill="#5a5a78">Seguro de cesantía</text><text x="326" y="289" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$8.400</text><line x1="14" y1="296" x2="326" y2="296" stroke="#EEEDFE"/><text x="14" y="313" font-size="12.5" font-weight="700" fill="#26215C">Líquido a pagar</text><text x="326" y="313" font-size="12.5" font-weight="700" fill="#26215C" text-anchor="end">$1.087.600</text></svg></div>
       </div>
       <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="lp-sueldo-ok">Continuar →</button></div>
     </div>
@@ -493,8 +501,8 @@ h1 span { color:var(--purple); }
       <p class="lp-ayuda">El valor de tu plan siempre está en UF: aparece en tu contrato como «cotización pactada», en la carta de adecuación o en tu sucursal virtual. Con eso sabemos si estás pagando de más.</p>
       <label class="lp-campo lp-uf" id="lp-pago-caja"><input id="lp-pago" type="text" inputmode="decimal" autocomplete="off" placeholder="3,25" aria-label="Valor de tu plan en UF"><span>UF</span></label>
       <div class="lp-siete" id="lp-pago-vivo" hidden><span>Hoy son al mes</span><strong id="lp-pago-pesos"></strong></div>
-      <p class="lp-err" id="lp-pago-err" hidden>Escribe el valor de tu plan en UF, por ejemplo 3,25.</p>
-      <button class="lp-nose" type="button" id="lp-pago-nose">No lo sé, sigamos igual →</button>
+      <p class="lp-err" id="lp-pago-err" hidden>Escribe el valor de tu plan en UF, por ejemplo 3,25, o marca la casilla de abajo.</p>
+      <label class="lp-check"><input type="checkbox" id="lp-pago-nose"><span>No lo sé, solo quiero un plan ajustado a mi 7%</span></label>
       <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="lp-pago-ok">Ver mi resultado →</button></div>
     </div>
 
@@ -986,8 +994,9 @@ function okSueldo() {
   siguiente();
 }
 function okPago() {
+  if ($('lp-pago-nose').checked) { D.noSabe = true; siguiente(); return; }
   if (!(D.pagoUF >= 0.5 && D.pagoUF <= 40)) {
-    $('lp-pago-err').textContent = 'Escribe el valor de tu plan en UF, por ejemplo 3,25.';
+    $('lp-pago-err').textContent = 'Escribe el valor de tu plan en UF, por ejemplo 3,25, o marca la casilla de abajo.';
     $('lp-pago-caja').classList.add('err'); $('lp-pago-err').hidden = false; return;
   }
   D.noSabe = false;
@@ -995,7 +1004,19 @@ function okPago() {
 }
 $('lp-sueldo-ok').addEventListener('click', okSueldo);
 $('lp-pago-ok').addEventListener('click', okPago);
-$('lp-pago-nose').addEventListener('click', () => { D.noSabe = true; D.pago = 0; D.pagoUF = 0; $('lp-pago').value = ''; $('lp-pago-vivo').hidden = true; siguiente(); });
+// Casilla 'No lo sé, solo quiero un plan ajustado a mi 7%': bloquea el campo de UF
+$('lp-pago-nose').addEventListener('change', e => {
+  D.noSabe = e.target.checked;
+  $('lp-pago').disabled = D.noSabe;
+  if (D.noSabe) { D.pago = 0; D.pagoUF = 0; $('lp-pago').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-caja').classList.remove('err'); $('lp-pago-err').hidden = true; }
+});
+// Liquidación de ejemplo, desplegable
+$('lp-ver-liq').addEventListener('click', () => {
+  const abrir = $('lp-liq').hidden;
+  $('lp-liq').hidden = !abrir;
+  $('lp-ver-liq').setAttribute('aria-expanded', abrir);
+  $('lp-ver-liq').textContent = abrir ? 'Ocultar la liquidación de ejemplo' : '¿Dónde lo veo? Ver una liquidación de ejemplo';
+});
 $('lp-sueldo').addEventListener('keydown', e => { if (e.key === 'Enter') okSueldo(); });
 $('lp-pago').addEventListener('keydown', e => { if (e.key === 'Enter') okPago(); });
 
@@ -1132,9 +1153,10 @@ function resultado() {
     h += '<p class="lp-planes-nota">En un plan compensado cada uno mantiene su contrato y suman sus cotizaciones. Valores mínimos de referencia, calculados con la tabla de factores única, con los dos como cotizantes. Las cargas menores de 2 años no pagan hasta cumplirlos.</p>';
   } else if (D.noSabe && !D.adic) {
     D.veredicto = 'no_sabe_pago';
-    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>Pagas hoy</span><strong>Por revisar</strong></div></div>'
-      + '<div class="lp-ver info"><strong>No hay problema.</strong>Con tu liquidación de sueldo a mano lo calculamos contigo por WhatsApp, y te decimos si hay un plan que te calce mejor.</div>'
-      + bloquePlanes(opcionesPlan(Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100));
+    const opsIs = opcionesPlan(Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100);
+    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (opsIs.length ? 'Puedes optar a planes desde' : 'Tu plan actual') + '</span>' + (opsIs.length ? n(opsIs[0].precio) : '<strong>Por revisar</strong>') + '</div></div>'
+      + '<div class="lp-ver info"><strong>Estos son los planes ajustados a tu 7%.</strong>' + (opsIs.length ? 'Puedes optar a planes ' + rango(opsIs) + ' al mes. ' : '') + 'Si después quieres revisar tu plan actual, con tu liquidación a mano lo vemos contigo por WhatsApp.</div>'
+      + bloquePlanes(opsIs);
   } else {
     // Isapre: con el valor del plan en UF (o, si no lo sabe, con el adicional de su liquidación) se ve si paga sobre su 7%
     const pago = D.noSabe ? s + D.adic : D.pago;
@@ -1192,7 +1214,7 @@ function textoWsp() {
     if (D.cargas !== null) l.push('• En el plan: ' + (!f.length ? 'solo yo' : f.length === 1 ? 'yo y ' + f[0] : 'yo, ' + f[0] + ' y ' + f[1]));
   }
   else {
-    l.push(D.noSabe ? '• No sé el valor de mi plan en UF' : '• Mi plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ' al mes)' + (D.bolsillo > 0 ? ', pago ' + pesos(D.bolsillo) + ' sobre mi 7%' : ''));
+    l.push(D.noSabe ? '• No sé el valor de mi plan: solo quiero un plan ajustado a mi 7%' : '• Mi plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ' al mes)' + (D.bolsillo > 0 ? ', pago ' + pesos(D.bolsillo) + ' sobre mi 7%' : ''));
     if (D.adic) l.push('• Adicional Isapre en mi liquidación: ' + pesos(D.adic));
     if (D.pref) l.push('• Prefiero: ' + D.pref.toLowerCase());
   }
@@ -1221,7 +1243,7 @@ document.querySelectorAll('[data-pref]').forEach(c => c.addEventListener('click'
 }));
 $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
 function limpiar() {
-  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
+  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-nose').checked = false; $('lp-pago').disabled = false; $('lp-liq').hidden = true; $('lp-ver-liq').textContent = '¿Dónde lo veo? Ver una liquidación de ejemplo'; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
   D.tramo2 = null; $('pp-sueldo2').value = ''; $('pp-perfil').innerHTML = ''; $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
   $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
@@ -1295,7 +1317,7 @@ $('lp-form').addEventListener('submit', async e => {
     .concat(pareja ? ['Hoy: ' + (D.pcob || 'sin indicar'), 'Sueldos: ' + pesos(D.sueldo) + ' y ' + pesos(D.sueldo2), 'Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
       : D.desde === 'fonasa'
       ? ['Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
-      : [D.noSabe ? 'Plan: no sabe el valor en UF' : 'Plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ')']
+      : [D.noSabe ? 'Plan: no sabe el valor; quiere un plan ajustado a su 7%' : 'Plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ')']
         .concat(D.adic ? ['Adicional en liquidación: ' + pesos(D.adic)] : [])
         .concat(D.veredicto === 'pone_bolsillo' ? ['Paga sobre su 7%: ' + pesos(D.bolsillo) + '/mes'] : D.veredicto === 'calza_7' ? ['Su plan calza con su 7%'] : D.veredicto === 'dentro_del_7' ? ['Plan bajo su 7%'] : [])
         .concat(D.pref ? ['Prefiere: ' + D.pref] : []))
