@@ -76,6 +76,18 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 .hero-guarantee { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); margin-top: 0.75rem; }
 .hero-guarantee-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
 .hero-right { flex: 1 1 0; min-width: 0; }
+/* Acceso a la calculadora desde el inicio: el formulario sigue más abajo */
+.hero-calc { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem; margin-top: 1.4rem; }
+.hero-calc-btn { display: flex; align-items: center; gap: 0.9rem; max-width: 520px; width: 100%; background: var(--purple); color: #fff; text-decoration: none; border-radius: 18px; padding: 0.95rem 1.15rem; box-shadow: 0 14px 30px -16px rgba(83,74,183,.8); transition: transform .2s, background .2s; -webkit-tap-highlight-color: transparent; }
+@media (hover: hover) { .hero-calc-btn:hover { background: var(--purple-deep); transform: translateY(-2px); } }
+.hero-calc-btn:focus-visible { outline: 3px solid var(--purple-mid); outline-offset: 3px; }
+.hero-calc-ico { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center; }
+.hero-calc-txt { flex: 1; display: flex; flex-direction: column; gap: 0.15rem; }
+.hero-calc-txt b { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; line-height: 1.25; }
+.hero-calc-txt small { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.85); }
+.hero-calc-fl { flex-shrink: 0; font-size: 20px; }
+.hero-calc-alt { font-size: 14px; font-weight: 600; color: var(--purple); text-decoration: none; padding-left: 0.2rem; }
+.hero-calc-alt:hover { text-decoration: underline; }
 .specialist-card { background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 1.25rem; text-align: center; box-shadow: 0 4px 24px rgba(83,74,183,0.08); }
 .spec-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--purple-mid); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; color: #fff; margin: 0 auto 0.75rem; }
 .spec-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
@@ -479,6 +491,14 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
       <h1 class="hero-title">¡Encontramos el plan de <span>Isapre</span> ideal para ti!</h1>
       <p class="hero-sub hero-lead">Un ejecutivo siempre te dirá que su Isapre es la mejor. Elegir bien no es solo pagar menos: es saber qué cubre tu plan, cuáles son sus topes y si realmente se adapta a tus necesidades.</p>
       <p class="hero-sub hero-sub2" style="margin-bottom:0;">En Planiapp buscamos que tu nuevo plan se ajuste a tu bolsillo, funcione cuando lo necesites y sea claro, sin sorpresas a futuro. Si no te conviene cambiarte, también te lo diremos.</p>
+      <div class="hero-calc">
+        <a class="hero-calc-btn" href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero'})">
+          <span class="hero-calc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h4"/></svg></span>
+          <span class="hero-calc-txt"><b>Calcula qué plan te da tu 7%</b><small>Vengas de Fonasa o de una Isapre, solo con tu edad y tu sueldo. Sin dejar tus datos.</small></span>
+          <span class="hero-calc-fl" aria-hidden="true">→</span>
+        </a>
+        <a class="hero-calc-alt" href="#opciones">Prefiero que me asesoren directamente ↓</a>
+      </div>
     </div>
     <div class="hero-right">
 <style>
