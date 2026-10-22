@@ -193,6 +193,10 @@ h1 span { color:var(--purple); }
 .lp-pareja-txt strong { font-size:15.5px; font-weight:700; color:var(--purple-dark); line-height:1.3; }
 .lp-pareja-txt small { font-size:12.5px; color:var(--muted); }
 .lp-pareja-fl { font-size:20px; color:var(--purple); }
+.lp-cambio { margin-top:1.1rem; padding-top:0.9rem; border-top:1px dashed var(--border); }
+.lp-cambio p { font-size:12.5px; font-weight:700; color:var(--muted); margin-bottom:0.35rem; }
+.lp-cambio-op { display:block; width:100%; text-align:left; background:none; border:none; cursor:pointer; padding:0.4rem 0; font-size:14px; font-weight:600; color:var(--purple); line-height:1.4; }
+@media (hover:hover) { .lp-cambio-op:hover { text-decoration:underline; } }
 .lp-hijos { display:grid; gap:0.6rem; margin-bottom:0.6rem; }
 .lp-hijos:empty { margin:0; }
 .lp-ops.cuatro { grid-template-columns:repeat(4,1fr); }
@@ -507,6 +511,11 @@ h1 span { color:var(--purple); }
       </form>
       <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button></div>
     </div>
+
+    <div class="lp-cambio" id="lp-cambio" hidden>
+      <p>¿No es tu caso?</p>
+      <div id="lp-cambio-ops"></div>
+    </div>
   </div>
 
   <div class="lp-confia">
@@ -568,6 +577,8 @@ const pesos = n => '$' + Math.round(n).toLocaleString('es-CL');
 const params = new URLSearchParams(location.search);
 const fuente = (params.get('utm_source') || '').slice(0, 40);
 const variante = params.get('v') === 'b' ? 'b' : 'a'; // prueba A/B del título: cada anuncio trae su variante
+// Puerta por la que se entró directo (anuncio o cambio de puerta): con ella se salta la pantalla de inicio
+let entrada = ['fonasa', 'isapre', 'pareja'].includes(params.get('desde')) ? params.get('desde') : null;
 const INICIO = [$('lp-h1').innerHTML, $('lp-sub').textContent]; // título de quien llega sin anuncio
 const D = { desde: null, isapre: '', tramo: null, cargas: null, pareja: null, hijos: [], sueldo: 0, sueldo2: 0, pcob: '', suma: 0, pago: 0, noSabe: false, extra: 0, veredicto: '' };
 let pasos = [], actual = '';
@@ -607,7 +618,7 @@ const IMPORTA = {
 const POR_REGION = {"Arica y Parinacota":["Clínica San José"],"Tarapacá":["RedSalud Iquique","Clínica Tarapacá"],"Antofagasta":["Andes Salud Calama","Clínica Bupa Antofagasta","ACHS La Portada"],"Atacama":["ACHS Atacama"],"Coquimbo":["RedSalud Elqui"],"Valparaíso":["Clínica Bupa Reñaca","Clínica Ciudad del Mar","RedSalud Valparaíso","Clínica Los Carrera","Clínica Los Leones"],"Metropolitana":["RedSalud Santiago o Providencia","RedSalud Vitacura","Clínica Santa María","Clínica Dávila o Dávila Vespucio","Clínica Alemana","Clínica Las Condes","UC Christus","Clínica Bupa Santiago","Clínica Indisa","Clínica Meds","Clínica Universidad de los Andes","Clínica San Carlos de Apoquindo"],"O'Higgins":["RedSalud Rancagua","Clínica Fusat","Clínica Isamédica"],"Maule":["Clínica Lircay"],"Ñuble":["Andes Salud Chillán"],"Biobío":["Sanatorio Alemán","Andes Salud Concepción","Clínica Biobío"],"La Araucanía":["RedSalud Mayor","Clínica Alemana de Temuco"],"Los Ríos":["Clínica Alemana de Valdivia"],"Los Lagos":["Clínica Alemana de Osorno","ACHS Puerto Montt","Andes Salud Puerto Montt","Clínica Puerto Varas"],"Aysén":[],"Magallanes":["RedSalud Magallanes"]};
 function armaPasos() {
   // Sin anuncio, la Isapre se elige en la primera pregunta; con ?desde=isapre tiene su propia pregunta de logos
-  const conInicio = !(params.get('desde') === D.desde && D.desde);
+  const conInicio = !(entrada === D.desde && D.desde);
   pasos = (conInicio ? ['desde'] : []).concat(
     D.desde === 'isapre' ? (conInicio ? [] : ['isapre']).concat(['edad', 'sueldo', 'pago'])
       : D.desde === 'pareja' ? ['p-cob', 'edad', 'p-familia', 'p-sueldos']
@@ -625,6 +636,9 @@ function ir(paso) {
     $('lp-prog-txt').innerHTML = '<b>' + pct + '%</b> · ' + (fin ? (paso === 'resultado' ? 'Listo' : 'Último paso') : 'Pregunta ' + (i + 1) + ' de ' + pasos.length);
   }
   document.querySelectorAll('[data-paso="' + paso + '"] [data-atras]').forEach(b => b.hidden = (i === 0));
+  // "¿No es tu caso?" solo en las preguntas de una puerta (no en el inicio, el análisis ni el resultado)
+  $('lp-cambio').hidden = !(D.desde && i >= 0 && paso !== 'desde');
+  if (!$('lp-cambio').hidden) pintaCambio();
   const foco = { sueldo: 'lp-sueldo', pago: 'lp-pago', datos: 'lp-nombre', 'p-familia': 'pp-edad', 'p-sueldos': 'pp-sueldo1' }[paso];
   if (foco) setTimeout(() => $(foco).focus({ preventScroll: true }), 320);
   // En celular, si la tarjeta quedó arriba de la pantalla (por el teclado), se vuelve a mostrar; al cargar no se mueve
@@ -1076,7 +1090,7 @@ $('lp-wsp-btn').addEventListener('click', e => {
 });
 $('lp-a-propuestas').addEventListener('click', () => { marca('calc_quiere_propuestas', { veredicto: D.veredicto }); ir('propuestas'); });
 $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
-$('lp-otra').addEventListener('click', () => {
+function limpiar() {
   D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
   ['pp-edad', 'pp-sueldo1', 'pp-sueldo2'].forEach(id => $(id).value = ''); $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
@@ -1085,9 +1099,34 @@ $('lp-otra').addEventListener('click', () => {
   $('lp-hijos').innerHTML = ''; $('lp-fam').hidden = true; $('lp-fam-ok').hidden = true;
   $('lp-siete-vivo').hidden = true;
   document.querySelectorAll('.lp-op, #lp-importa .lp-chipb').forEach(b => b.classList.remove('on'));
-  if (!params.get('desde')) { D.desde = null; $('lp-h1').innerHTML = INICIO[0]; $('lp-sub').textContent = INICIO[1]; $('lp-cob-isapres').hidden = true; }
+}
+$('lp-otra').addEventListener('click', () => {
+  limpiar();
+  if (!entrada) { D.desde = null; $('lp-h1').innerHTML = INICIO[0]; $('lp-sub').textContent = INICIO[1]; $('lp-cob-isapres').hidden = true; }
   armaPasos(); ir(pasos[0]);
 });
+// "¿No es tu caso?": quien entró por la puerta equivocada (por ejemplo, está en Isapre y llegó por el anuncio de Fonasa)
+// se cambia a otra puerta ahí mismo y parte en su primera pregunta
+const CAMBIOS = {
+  fonasa: [['isapre', 'Estoy en Isapre: quiero bajar o ajustar mi plan'], ['pareja', 'Me gustaría cotizar con mi pareja: los dos trabajamos']],
+  isapre: [['fonasa', 'Estoy en Fonasa: quiero ver si me alcanza para un plan'], ['pareja', 'Me gustaría cotizar con mi pareja: los dos trabajamos']],
+  pareja: [['fonasa', 'Prefiero cotizar solo: estoy en Fonasa'], ['isapre', 'Prefiero cotizar solo: estoy en Isapre']],
+};
+function pintaCambio() {
+  $('lp-cambio-ops').innerHTML = (CAMBIOS[D.desde] || []).map(([a, t]) => '<button class="lp-cambio-op" type="button" data-a="' + a + '">' + t + ' →</button>').join('');
+  $('lp-cambio-ops').querySelectorAll('[data-a]').forEach(b => b.addEventListener('click', () => cambiarPuerta(b.dataset.a)));
+}
+function cambiarPuerta(nueva) {
+  marca('calc_cambio_puerta', { de: D.desde || '', a: nueva });
+  limpiar();
+  entrada = nueva;
+  D.desde = nueva;
+  elegirDesde(nueva, true);
+  // Al cambiarse, el título es el de la puerta (no el de la variante B del anuncio por el que llegó)
+  $('lp-h1').innerHTML = TEXTOS[nueva].a[0]; $('lp-sub').textContent = TEXTOS[nueva].a[1];
+  ir(pasos[0]);
+  document.querySelector('.lp-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 // Envío: mismo webhook y mismos campos que el formulario de la portada, para que llegue igual a la planilla
 function codigo() { const c = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let r = 'PL'; for (let i = 0; i < 4; i++) r += c[Math.floor(Math.random() * c.length)]; return r; }
