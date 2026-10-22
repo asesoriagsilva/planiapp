@@ -244,6 +244,16 @@ footer a { color: var(--text-muted); }
 .sup.precios td:first-child { white-space: nowrap; }
 .sup.precios th, .sup.precios td { padding-left: 0.5rem; padding-right: 0.5rem; }
 .sup.precios th:first-child, .sup.precios td:first-child { padding-left: 0.75rem; }
+.indice { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.4rem 0 0.25rem; }
+.indice a { font-size: 14px; font-weight: 600; color: var(--purple-deep); background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 0.95rem; text-decoration: none; }
+.indice a:hover { border-color: var(--purple-mid); background: var(--purple-light); }
+#tabla, #perfiles, #precios, #reclamos, #preguntas { scroll-margin-top: 1rem; }
+.calc-cta { display: flex; align-items: center; gap: 1.25rem; background: var(--purple-light); border: 1px solid #DCD9FB; border-radius: 16px; padding: 1.2rem 1.4rem; margin: 1.75rem 0 0.5rem; }
+.calc-cta strong { display: block; font-size: 16.5px; color: var(--purple-dark); margin-bottom: 0.25rem; }
+.calc-cta p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--text-muted); }
+.calc-cta a { flex-shrink: 0; background: var(--purple); color: #fff; text-decoration: none; font-weight: 600; font-size: 14.5px; border-radius: 999px; padding: 0.7rem 1.2rem; white-space: nowrap; }
+.calc-cta a:hover { background: var(--purple-deep); }
+@media (max-width: 600px) { .calc-cta { flex-direction: column; align-items: stretch; } .calc-cta a { text-align: center; } }
 .cmp-clp, .clp { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); white-space: nowrap; }
 .faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
 .faq p { font-size: 15.5px; }
@@ -360,42 +370,26 @@ footer a { color: var(--text-muted); }
     },
     {
      "@type": "Question",
-     "name": "¿Qué Isapre es mejor en regiones?",
+     "name": "¿Me puedo cambiar de Isapre si tengo una preexistencia?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Consalud, porque tiene 7 clínicas propias fuera de Santiago y copago de urgencia en 17 clínicas del país. Banmédica, Vida Tres, Esencial y Nueva Masvida no tienen copago de urgencia en regiones."
+      "text": "Sí. Al cambiarte llenas una declaración de salud, y la nueva Isapre puede aceptarte, aceptarte con una restricción de hasta 18 meses que solo afecta a esa enfermedad, o rechazarte. Tener una preexistencia no significa que te vayan a rechazar, y hay cosas que no se declaran, como la salud mental o el embarazo."
      }
     },
     {
      "@type": "Question",
-     "name": "¿Qué Isapre reembolsa más rápido?",
+     "name": "¿Qué pasa con mis excedentes si me cambio de Isapre?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Colmena, en 24 a 48 horas. Le siguen Consalud y Nueva Masvida, con 48 a 72 horas. En Cruz Blanca el reembolso puede tardar hasta 45 días."
+      "text": "Siguen siendo tuyos. Si terminas tu contrato, la Isapre que dejas tiene que devolverte todo el saldo acumulado. Además, desde 2020 las Isapres devuelven cada año, hasta fines de enero, el saldo que no usaste."
      }
     },
     {
      "@type": "Question",
-     "name": "¿Qué Isapres tienen psicología sin tope anual?",
+     "name": "¿La asesoría de Planiapp tiene algún costo?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Colmena y Nueva Masvida. En Banmédica, Consalud, Cruz Blanca, Esencial y Vida Tres la psicología tiene tope anual."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "¿Qué Isapres no tienen tope en prótesis y quimioterapia?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Banmédica, Vida Tres y Esencial. En Esencial hay algunas líneas de planes con topes, aunque son altos."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "¿Cuál es la Isapre más barata?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Banmédica tiene el plan de entrada más barato en todas las edades: entre los 25 y 34 años cuesta desde 1,87 UF. Le sigue Consalud, con 1,89 UF, y la más cara es Esencial, con 2,35 UF. La diferencia entre las demás es chica, así que conviene comparar qué cubre cada plan."
+      "text": "No. La asesoría y las propuestas son gratis y sin compromiso: no te cobramos nada, contrates o no."
      }
     },
     {
@@ -444,6 +438,13 @@ footer a { color: var(--text-muted); }
   <h1>¿Cuál es la mejor Isapre en 2026? Tabla comparativa de las 7 Isapres</h1>
   <p class="bajada">No existe una Isapre que sea la mejor para todos, pero sí la mejor para tu perfil. Comparamos coberturas, urgencias, reembolsos y datos oficiales, lado a lado.</p>
   <p>Para armar esta tabla revisamos la oferta vigente de las 7 Isapres abiertas y los indicadores que publica la Superintendencia de Salud. En verde marcamos donde una Isapre cubre bien y en rojo donde se queda corta. Más abajo te decimos cuál conviene según lo que más usas.</p>
+  <div class="indice" role="navigation" aria-label="En esta página">
+    <a href="#tabla">Tabla comparativa</a>
+    <a href="#perfiles">Según tu perfil</a>
+    <a href="#precios">Precios por edad</a>
+    <a href="#reclamos">Reclamos</a>
+    <a href="#preguntas">Preguntas frecuentes</a>
+  </div>
 </div>
 
 <section class="tabla-wrap" id="tabla">
@@ -652,7 +653,7 @@ footer a { color: var(--text-muted); }
 </section>
 
 <div class="art art-sig">
-  <h2>¿Cuál es la mejor Isapre según tu perfil?</h2>
+  <h2 id="perfiles">¿Cuál es la mejor Isapre según tu perfil?</h2>
   <p>La Isapre que le sirve a tu compañero de trabajo puede no servirte a ti. Estos son los casos que más vemos en las asesorías.</p>
   <div class="perfiles">
     <div class="perfil">
@@ -703,7 +704,7 @@ footer a { color: var(--text-muted); }
     <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'mejor_isapre_perfiles'})">Quiero que me asesoren →</a>
   </div>
 
-  <h2 id="precios" style="scroll-margin-top:1rem;">¿Cuál es la Isapre más barata? Precio del plan de entrada según tu edad</h2>
+  <h2 id="precios">¿Cuál es la Isapre más barata? Precio del plan de entrada según tu edad</h2>
   <p>Estos son los precios mensuales del plan de entrada de cada Isapre para una persona sola, por tramo de edad. En todas las edades la más barata es Banmédica, seguida de Consalud, y la más cara es Esencial. Entre las demás la diferencia es chica y el orden cambia con la edad.</p>
   <div class="sup-scroll">
     <table class="sup precios" aria-label="Precio del plan de entrada por Isapre y edad">
@@ -722,8 +723,12 @@ footer a { color: var(--text-muted); }
   </div>
   <p class="rb-fuente">Precio mensual en UF del plan de entrada de cada Isapre, para una persona sin cargas, octubre de 2026. Entre paréntesis, el valor en pesos con la UF de hoy (<span id="uf-hoy">$41.200</span>). En verde, el más barato de cada tramo. Valores referenciales: el precio final depende del plan, tus cargas y tu declaración de salud.</p>
   <div class="ojo"><p><strong>El más barato no siempre conviene.</strong> El plan de entrada de Banmédica cubre 40% y se concentra en la red Dávila. El de Nueva Masvida, por un precio parecido al resto, cubre entre 50% y 70% en más clínicas, pero arrastra los topes más bajos del sistema: prótesis y órtesis hasta 10 UF, quimioterapia sin cobertura preferente y la red GES y CAEC más chica. Antes de elegir por precio, mira qué clínicas, qué porcentajes y qué topes trae cada plan.</p></div>
+  <div class="calc-cta">
+    <div><strong>¿Te alcanza tu 7% para uno de estos planes?</strong><p>Pon tu edad y tu sueldo en la calculadora y te mostramos qué planes puedes elegir con tu 7%, sin hacer cuentas a mano.</p></div>
+    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'mejor_isapre_precios'})">Probar la calculadora →</a>
+  </div>
 
-  <h2>¿Qué Isapre tiene menos reclamos? Los datos oficiales</h2>
+  <h2 id="reclamos">¿Qué Isapre tiene menos reclamos? Los datos oficiales</h2>
   <p>Vida Tres es la que menos reclamos recibe, con 8,5 por cada 1.000 cotizantes, y Cruz Blanca la que más, con 14,6. En bonificación, Banmédica destina $950 de cada $1.000 que recibe a pagar prestaciones y licencias de sus afiliados, y Nueva Masvida $788. Revisa el detalle en <a href="/isapre-con-menos-reclamos">qué Isapre tiene menos reclamos</a>.</p>
   <div class="sup-scroll">
     <table class="sup" aria-label="Indicadores de la Superintendencia de Salud por Isapre">
@@ -744,20 +749,16 @@ footer a { color: var(--text-muted); }
   <p class="rb-fuente">Fuente: Superintendencia de Salud, Radiografía de Isapres. Reclamos, desafiliaciones y licencias del segundo trimestre de 2025; bonificación de enero a junio de 2025. En verde, el mejor resultado de cada columna.</p>
   <p class="rb-nota">La tasa de licencias rechazadas también depende del perfil de cada Isapre: las que tienen más afiliados de renta alta, sobre el tope imponible, tienden a mostrar tasas más bajas. Por eso no la marcamos.</p>
 
-  <section class="faq">
+  <section class="faq" id="preguntas">
     <h2>Preguntas frecuentes</h2>
     <h3>¿Cuál es la mejor Isapre de Chile en 2026?</h3>
     <p>No hay una que sea la mejor para todos. En los datos oficiales, Vida Tres es la que menos reclamos recibe y Banmédica la que más destina a bonificar. En coberturas depende de lo que uses: regiones, kinesiología, psicología o protección ante lo grave. Por eso armamos la guía por perfil de más arriba.</p>
-    <h3>¿Qué Isapre es mejor en regiones?</h3>
-    <p>Consalud, porque tiene 7 clínicas propias fuera de Santiago y copago de urgencia en 17 clínicas del país. Banmédica, Vida Tres, Esencial y Nueva Masvida no tienen copago de urgencia en regiones.</p>
-    <h3>¿Qué Isapre reembolsa más rápido?</h3>
-    <p>Colmena, en 24 a 48 horas. Le siguen Consalud y Nueva Masvida, con 48 a 72 horas. En Cruz Blanca el reembolso puede tardar hasta 45 días.</p>
-    <h3>¿Qué Isapres tienen psicología sin tope anual?</h3>
-    <p>Colmena y Nueva Masvida. En Banmédica, Consalud, Cruz Blanca, Esencial y Vida Tres la psicología tiene tope anual.</p>
-    <h3>¿Qué Isapres no tienen tope en prótesis y quimioterapia?</h3>
-    <p>Banmédica, Vida Tres y Esencial. En Esencial hay algunas líneas de planes con topes, aunque son altos.</p>
-    <h3>¿Cuál es la Isapre más barata?</h3>
-    <p>Banmédica tiene el plan de entrada más barato en todas las edades: entre los 25 y 34 años cuesta desde 1,87 UF. Le sigue Consalud, con 1,89 UF, y la más cara es Esencial, con 2,35 UF. La diferencia entre las demás es chica, así que conviene comparar qué cubre cada plan.</p>
+    <h3>¿Me puedo cambiar de Isapre si tengo una preexistencia?</h3>
+    <p>Sí. Al cambiarte llenas una declaración de salud, y la nueva Isapre puede aceptarte, aceptarte con una restricción de hasta 18 meses que solo afecta a esa enfermedad, o rechazarte. Tener una preexistencia no significa que te vayan a rechazar, y hay cosas que no se declaran, como la salud mental o el embarazo. Te lo explicamos en detalle en <a href="/preexistencias-isapre">preexistencias en Isapres</a>.</p>
+    <h3>¿Qué pasa con mis excedentes si me cambio de Isapre?</h3>
+    <p>Siguen siendo tuyos. Si terminas tu contrato, la Isapre que dejas tiene que devolverte todo el saldo acumulado. Además, desde 2020 las Isapres devuelven cada año, hasta fines de enero, el saldo que no usaste. Puedes revisar cómo funciona en el <a href="https://www.superdesalud.gob.cl/tax-materias-isapres/excedentes-de-cotizacion-7345/" rel="noopener">sitio de la Superintendencia de Salud</a>.</p>
+    <h3>¿La asesoría de Planiapp tiene algún costo?</h3>
+    <p>No. La asesoría y las propuestas son gratis y sin compromiso: no te cobramos nada, contrates o no.</p>
     <h3>¿Cada cuánto se actualiza esta tabla?</h3>
     <p>La revisamos cuando cambian las condiciones de las Isapres y cuando la Superintendencia publica datos nuevos. Esta versión corresponde a octubre de 2026.</p>
   </section>
