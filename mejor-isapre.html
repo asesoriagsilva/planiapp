@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Cuál es la mejor Isapre en 2026? Tabla comparativa | Planiapp</title>
-<meta name="description" content="Comparamos las 7 Isapres abiertas: precio de entrada por edad, urgencias, kinesiología, psicología, prótesis, quimioterapia, reembolsos y reclamos. La mejor Isapre según tu perfil, actualizada a 2026.">
+<meta name="description" content="Comparamos las 7 Isapres abiertas: precio de entrada por edad, urgencias, kinesiología, psicología, prótesis, quimioterapia y reembolsos. La mejor Isapre según tu perfil, actualizada a 2026.">
 <link rel="canonical" href="https://planiapp.cl/mejor-isapre">
 <meta property="og:title" content="¿Cuál es la mejor Isapre en 2026?">
 <meta property="og:description" content="Tabla comparativa de las 7 Isapres y cuál conviene según tu perfil: regiones, segmento alto, kinesiología, psicología o protección ante lo grave.">
@@ -227,9 +227,18 @@ footer a { color: var(--text-muted); }
 .tabla-wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 .tabla-wrap h2 { margin-top: 1.5rem; }
 .tabla-wrap .aviso { margin-top: 0.8rem; }
-.perfiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 1rem 0 0.5rem; }
-.perfil { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.1rem 1.2rem; }
-.perfil h3 { font-family: 'Inter', sans-serif; font-size: 16.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.4rem; }
+.perfiles { display: flex; flex-direction: column; gap: 0.55rem; margin: 1rem 0 0.5rem; }
+.perfil { background: var(--white); border: 1px solid var(--border); border-radius: 16px; transition: border-color .2s; }
+.perfil[open] { border-color: var(--purple-mid); }
+.perfil summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.95rem 1.1rem; -webkit-tap-highlight-color: transparent; }
+.perfil summary::-webkit-details-marker { display: none; }
+.perfil summary::after { content: '+'; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--purple-light); color: var(--purple); font-size: 20px; font-weight: 600; line-height: 28px; text-align: center; transition: transform .2s; }
+.perfil[open] summary::after { transform: rotate(45deg); }
+.perfil summary:focus-visible { outline: 3px solid var(--purple-mid); outline-offset: 2px; border-radius: 16px; }
+.perfil-sum { display: flex; flex-direction: column; gap: 0.15rem; }
+.perfil-isas { font-size: 13px; font-weight: 600; color: var(--purple); }
+.perfil-c { padding: 0 1.1rem 1.05rem; }
+.perfil h3 { font-family: 'Inter', sans-serif; font-size: 16.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 0; }
 .perfil p { font-size: 14.5px; line-height: 1.55; margin-bottom: 0.65rem; }
 .perfil-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .perfil-links a { font-size: 13px; font-weight: 600; text-decoration: none; background: var(--purple-light); border-radius: 20px; padding: 0.25rem 0.75rem; }
@@ -248,20 +257,36 @@ footer a { color: var(--text-muted); }
 .indice { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.4rem 0 0.25rem; }
 .indice a { font-size: 14px; font-weight: 600; color: var(--purple-deep); background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 0.95rem; text-decoration: none; }
 .indice a:hover { border-color: var(--purple-mid); background: var(--purple-light); }
-#tabla, #perfiles, #precios, #reclamos, #preguntas { scroll-margin-top: 1rem; }
+#tabla, #perfiles, #precios, #preguntas { scroll-margin-top: 1rem; }
 .calc-cta { display: flex; align-items: center; gap: 1.25rem; background: var(--purple-light); border: 1px solid #DCD9FB; border-radius: 16px; padding: 1.2rem 1.4rem; margin: 1.75rem 0 0.5rem; }
 .calc-cta strong { display: block; font-size: 16.5px; color: var(--purple-dark); margin-bottom: 0.25rem; }
 .calc-cta p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--text-muted); }
 .calc-cta a { flex-shrink: 0; background: var(--purple); color: #fff; text-decoration: none; font-weight: 600; font-size: 14.5px; border-radius: 999px; padding: 0.7rem 1.2rem; white-space: nowrap; }
 .calc-cta a:hover { background: var(--purple-deep); }
 @media (max-width: 600px) { .calc-cta { flex-direction: column; align-items: stretch; } .calc-cta a { text-align: center; } }
+.edad-t { font-size: 14px; font-weight: 700; color: var(--purple-dark); margin: 1.1rem 0 0.5rem; }
+.edad-sel { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.9rem; }
+.edad-sel button { font: inherit; font-size: 14px; font-weight: 600; color: var(--purple-deep); background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 0.9rem; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.edad-sel button[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); color: #fff; }
+@media (hover: hover) { .edad-sel button[aria-pressed="false"]:hover { border-color: var(--purple-mid); background: var(--purple-light); } }
+.precio-lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.pl-it { display: grid; grid-template-columns: 110px 1fr auto; align-items: center; gap: 0.75rem; background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 0.6rem 1rem; }
+.pl-it.top { background: #E6F5EE; border-color: #CFEEE3; }
+.pl-logo { display: flex; align-items: center; }
+.pl-logo img { max-width: 100%; height: auto; }
+.pl-tag { justify-self: start; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #0B4A38; background: #fff; border-radius: 20px; padding: 2px 9px; }
+.pl-uf { text-align: right; font-variant-numeric: tabular-nums; }
+.pl-uf b { font-size: 16px; color: var(--purple-dark); }
+.pl-it.top .pl-uf b { color: #0B4A38; }
+.precio-todo { margin-top: 0.9rem; }
+.precio-todo summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--purple); }
+.precio-todo .sup-scroll { margin-top: 0.7rem; }
 .clp { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); white-space: nowrap; }
 .faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
 .faq p { font-size: 15.5px; }
 .otras.siete { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 680px) {
   .tabla-wrap { padding: 0 1rem; }
-  .perfiles { grid-template-columns: 1fr; }
   .otras.siete { grid-template-columns: repeat(2, 1fr); }
 }
 /* comparativas:inicio */
@@ -318,7 +343,7 @@ footer a { color: var(--text-muted); }
    "@type": "Article",
    "@id": "https://planiapp.cl/mejor-isapre#articulo",
    "headline": "¿Cuál es la mejor Isapre en 2026? Tabla comparativa de las 7 Isapres",
-   "description": "Comparamos las 7 Isapres abiertas: precio de entrada por edad, urgencias, kinesiología, psicología, prótesis, quimioterapia, reembolsos y reclamos. La mejor Isapre según tu perfil, actualizada a 2026.",
+   "description": "Comparamos las 7 Isapres abiertas: precio de entrada por edad, urgencias, kinesiología, psicología, prótesis, quimioterapia y reembolsos. La mejor Isapre según tu perfil, actualizada a 2026.",
    "image": [
     "https://planiapp.cl/img/fonasa-o-isapre-og.jpg"
    ],
@@ -363,14 +388,6 @@ footer a { color: var(--text-muted); }
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "¿Cuál es la mejor Isapre de Chile en 2026?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No hay una que sea la mejor para todos. En los datos oficiales, Vida Tres es la que menos reclamos recibe y Banmédica la que más destina a bonificar. En coberturas depende de lo que uses: regiones, kinesiología, psicología o protección ante lo grave. Por eso armamos la guía por perfil de más arriba."
-     }
-    },
-    {
-     "@type": "Question",
      "name": "¿Me puedo cambiar de Isapre si tengo una preexistencia?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -391,14 +408,6 @@ footer a { color: var(--text-muted); }
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "No. La asesoría y las propuestas son gratis y sin compromiso: no te cobramos nada, contrates o no."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "¿Cada cuánto se actualiza esta tabla?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "La revisamos cuando cambian las condiciones de las Isapres y cuando la Superintendencia publica datos nuevos. Esta versión corresponde a octubre de 2026."
      }
     }
    ]
@@ -437,13 +446,12 @@ footer a { color: var(--text-muted); }
   <div class="miga"><a href="/">Inicio</a> › Mejor Isapre</div>
   <span class="badge">Actualizada a octubre de 2026</span>
   <h1>¿Cuál es la mejor Isapre en 2026? Tabla comparativa de las 7 Isapres</h1>
-  <p class="bajada">No existe una Isapre que sea la mejor para todos, pero sí la mejor para tu perfil. Comparamos coberturas, urgencias, reembolsos y datos oficiales, lado a lado.</p>
-  <p>Para armar esta tabla revisamos la oferta vigente de las 7 Isapres abiertas y los indicadores que publica la Superintendencia de Salud. En verde marcamos donde una Isapre cubre bien y en rojo donde se queda corta. Más abajo te decimos cuál conviene según lo que más usas.</p>
+  <p class="bajada">No existe una Isapre que sea la mejor para todos, pero sí la mejor para tu perfil. Comparamos coberturas, urgencias, reembolsos y precios, lado a lado.</p>
+  <p>Para armar esta tabla revisamos la oferta vigente de las 7 Isapres abiertas. En verde marcamos donde una Isapre cubre bien y en rojo donde se queda corta. Más abajo te decimos cuál conviene según lo que más usas.</p>
   <div class="indice" role="navigation" aria-label="En esta página">
     <a href="#tabla">Tabla comparativa</a>
     <a href="#precios">Precios por edad</a>
     <a href="#perfiles">Según tu perfil</a>
-    <a href="#reclamos">Reclamos</a>
     <a href="#preguntas">Preguntas frecuentes</a>
   </div>
 </div>
@@ -596,22 +604,28 @@ footer a { color: var(--text-muted); }
 <div class="art art-precios">
   <h2 id="precios">¿Cuál es la Isapre más barata? Precio del plan de entrada según tu edad</h2>
   <p>Estos son los precios mensuales del plan de entrada de cada Isapre para una persona sola, por tramo de edad. En todas las edades la más barata es Banmédica, seguida de Consalud, y la más cara es Esencial. Entre las demás la diferencia es chica y el orden cambia con la edad.</p>
-  <div class="sup-scroll">
-    <table class="sup precios" aria-label="Precio del plan de entrada por Isapre y edad">
-      <thead>
-        <tr><th>Edad</th><th>Banmédica</th><th>Colmena</th><th>Consalud</th><th>Cruz Blanca</th><th>Esencial</th><th>Nueva Masvida</th><th>Vida Tres</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>18 a 24 años</td><td class="top">1,76 UF<span class="clp" data-uf="1.76">($72.500)</span></td><td>1,99 UF<span class="clp" data-uf="1.99">($82.000)</span></td><td>1,78 UF<span class="clp" data-uf="1.78">($73.300)</span></td><td>2,11 UF<span class="clp" data-uf="2.11">($86.900)</span></td><td>2,21 UF<span class="clp" data-uf="2.21">($91.100)</span></td><td>2,01 UF<span class="clp" data-uf="2.01">($82.800)</span></td><td>1,93 UF<span class="clp" data-uf="1.93">($79.500)</span></td></tr>
-        <tr><td>25 a 34 años</td><td class="top">1,87 UF<span class="clp" data-uf="1.87">($77.000)</span></td><td>2,10 UF<span class="clp" data-uf="2.1">($86.500)</span></td><td>1,89 UF<span class="clp" data-uf="1.89">($77.900)</span></td><td>2,24 UF<span class="clp" data-uf="2.24">($92.300)</span></td><td>2,35 UF<span class="clp" data-uf="2.35">($96.800)</span></td><td>2,13 UF<span class="clp" data-uf="2.13">($87.800)</span></td><td>2,06 UF<span class="clp" data-uf="2.06">($84.900)</span></td></tr>
-        <tr><td>35 a 44 años</td><td class="top">2,20 UF<span class="clp" data-uf="2.2">($90.600)</span></td><td>2,41 UF<span class="clp" data-uf="2.41">($99.300)</span></td><td>2,24 UF<span class="clp" data-uf="2.24">($92.300)</span></td><td>2,62 UF<span class="clp" data-uf="2.62">($107.900)</span></td><td>2,78 UF<span class="clp" data-uf="2.78">($114.500)</span></td><td>2,52 UF<span class="clp" data-uf="2.52">($103.800)</span></td><td>2,47 UF<span class="clp" data-uf="2.47">($101.800)</span></td></tr>
-        <tr><td>45 a 54 años</td><td class="top">2,30 UF<span class="clp" data-uf="2.3">($94.800)</span></td><td>2,52 UF<span class="clp" data-uf="2.52">($103.800)</span></td><td>2,36 UF<span class="clp" data-uf="2.36">($97.200)</span></td><td>2,75 UF<span class="clp" data-uf="2.75">($113.300)</span></td><td>2,93 UF<span class="clp" data-uf="2.93">($120.700)</span></td><td>2,65 UF<span class="clp" data-uf="2.65">($109.200)</span></td><td>2,60 UF<span class="clp" data-uf="2.6">($107.100)</span></td></tr>
-        <tr><td>55 a 64 años</td><td class="top">2,96 UF<span class="clp" data-uf="2.96">($122.000)</span></td><td>3,16 UF<span class="clp" data-uf="3.16">($130.200)</span></td><td>3,05 UF<span class="clp" data-uf="3.05">($125.700)</span></td><td>3,51 UF<span class="clp" data-uf="3.51">($144.600)</span></td><td>3,79 UF<span class="clp" data-uf="3.79">($156.100)</span></td><td>3,41 UF<span class="clp" data-uf="3.41">($140.500)</span></td><td>3,41 UF<span class="clp" data-uf="3.41">($140.500)</span></td></tr>
-        <tr><td>65 años o más</td><td class="top">3,39 UF<span class="clp" data-uf="3.39">($139.700)</span></td><td>3,58 UF<span class="clp" data-uf="3.58">($147.500)</span></td><td>3,52 UF<span class="clp" data-uf="3.52">($145.000)</span></td><td>4,02 UF<span class="clp" data-uf="4.02">($165.600)</span></td><td>4,37 UF<span class="clp" data-uf="4.37">($180.000)</span></td><td>3,93 UF<span class="clp" data-uf="3.93">($161.900)</span></td><td>3,95 UF<span class="clp" data-uf="3.95">($162.700)</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="rb-fuente">Precio mensual en UF del plan de entrada de cada Isapre, para una persona sin cargas, octubre de 2026. Entre paréntesis, el valor en pesos con la UF de hoy (<span id="uf-hoy">$41.200</span>). En verde, el más barato de cada tramo. Valores referenciales: el precio final depende del plan, tus cargas y tu declaración de salud.</p>
+  <p class="edad-t" id="edad-t">Elige tu edad</p>
+  <div class="edad-sel" role="group" aria-labelledby="edad-t"><button type="button" data-tramo="0" aria-pressed="false">18 a 24</button><button type="button" data-tramo="1" aria-pressed="true">25 a 34</button><button type="button" data-tramo="2" aria-pressed="false">35 a 44</button><button type="button" data-tramo="3" aria-pressed="false">45 a 54</button><button type="button" data-tramo="4" aria-pressed="false">55 a 64</button><button type="button" data-tramo="5" aria-pressed="false">65 o más</button></div>
+  <ol class="precio-lista" id="precio-lista" aria-live="polite"><li class="pl-it top"><span class="pl-logo"><img src="/logos/mini/banmedica.png" alt="Isapre Banmédica" width="80" height="21" loading="lazy" decoding="async"></span><span class="pl-tag">Más barata</span><span class="pl-uf"><b>1,87 UF</b><span class="clp" data-uf="1.87">($77.000)</span></span></li><li class="pl-it"><span class="pl-logo"><img src="/logos/mini/consalud.png" alt="Isapre Consalud" width="72" height="24" loading="lazy" decoding="async"></span><span></span><span class="pl-uf"><b>1,89 UF</b><span class="clp" data-uf="1.89">($77.900)</span></span></li><li class="pl-it"><span class="pl-logo"><img src="/logos/mini/vida-tres.png" alt="Isapre Vida Tres" width="94" height="18" loading="lazy" decoding="async"></span><span></span><span class="pl-uf"><b>2,06 UF</b><span class="clp" data-uf="2.06">($84.900)</span></span></li><li class="pl-it"><span class="pl-logo"><img src="/logos/mini/colmena.png" alt="Isapre Colmena" width="90" height="19" loading="lazy" decoding="async"></span><span></span><span class="pl-uf"><b>2,10 UF</b><span class="clp" data-uf="2.1">($86.500)</span></span></li><li class="pl-it"><span class="pl-logo"><img src="/logos/mini/nueva-masvida.png" alt="Isapre Nueva Masvida" width="76" height="22" loading="lazy" decoding="async"></span><span></span><span class="pl-uf"><b>2,13 UF</b><span class="clp" data-uf="2.13">($87.800)</span></span></li><li class="pl-it"><span class="pl-logo"><img src="/logos/mini/cruz-blanca.png" alt="Isapre Cruz Blanca" width="91" height="19" loading="lazy" decoding="async"></span><span></span><span class="pl-uf"><b>2,24 UF</b><span class="clp" data-uf="2.24">($92.300)</span></span></li><li class="pl-it"><span class="pl-logo"><img src="/logos/mini/esencial.png" alt="Isapre Esencial" width="89" height="19" loading="lazy" decoding="async"></span><span></span><span class="pl-uf"><b>2,35 UF</b><span class="clp" data-uf="2.35">($96.800)</span></span></li></ol>
+  <details class="precio-todo">
+    <summary>Ver la tabla completa, con todas las edades</summary>
+    <div class="sup-scroll">
+      <table class="sup precios" aria-label="Precio del plan de entrada por Isapre y edad">
+        <thead>
+          <tr><th>Edad</th><th>Banmédica</th><th>Colmena</th><th>Consalud</th><th>Cruz Blanca</th><th>Esencial</th><th>Nueva Masvida</th><th>Vida Tres</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>18 a 24 años</td><td class="top">1,76 UF<span class="clp" data-uf="1.76">($72.500)</span></td><td>1,99 UF<span class="clp" data-uf="1.99">($82.000)</span></td><td>1,78 UF<span class="clp" data-uf="1.78">($73.300)</span></td><td>2,11 UF<span class="clp" data-uf="2.11">($86.900)</span></td><td>2,21 UF<span class="clp" data-uf="2.21">($91.100)</span></td><td>2,01 UF<span class="clp" data-uf="2.01">($82.800)</span></td><td>1,93 UF<span class="clp" data-uf="1.93">($79.500)</span></td></tr>
+          <tr><td>25 a 34 años</td><td class="top">1,87 UF<span class="clp" data-uf="1.87">($77.000)</span></td><td>2,10 UF<span class="clp" data-uf="2.1">($86.500)</span></td><td>1,89 UF<span class="clp" data-uf="1.89">($77.900)</span></td><td>2,24 UF<span class="clp" data-uf="2.24">($92.300)</span></td><td>2,35 UF<span class="clp" data-uf="2.35">($96.800)</span></td><td>2,13 UF<span class="clp" data-uf="2.13">($87.800)</span></td><td>2,06 UF<span class="clp" data-uf="2.06">($84.900)</span></td></tr>
+          <tr><td>35 a 44 años</td><td class="top">2,20 UF<span class="clp" data-uf="2.2">($90.600)</span></td><td>2,41 UF<span class="clp" data-uf="2.41">($99.300)</span></td><td>2,24 UF<span class="clp" data-uf="2.24">($92.300)</span></td><td>2,62 UF<span class="clp" data-uf="2.62">($107.900)</span></td><td>2,78 UF<span class="clp" data-uf="2.78">($114.500)</span></td><td>2,52 UF<span class="clp" data-uf="2.52">($103.800)</span></td><td>2,47 UF<span class="clp" data-uf="2.47">($101.800)</span></td></tr>
+          <tr><td>45 a 54 años</td><td class="top">2,30 UF<span class="clp" data-uf="2.3">($94.800)</span></td><td>2,52 UF<span class="clp" data-uf="2.52">($103.800)</span></td><td>2,36 UF<span class="clp" data-uf="2.36">($97.200)</span></td><td>2,75 UF<span class="clp" data-uf="2.75">($113.300)</span></td><td>2,93 UF<span class="clp" data-uf="2.93">($120.700)</span></td><td>2,65 UF<span class="clp" data-uf="2.65">($109.200)</span></td><td>2,60 UF<span class="clp" data-uf="2.6">($107.100)</span></td></tr>
+          <tr><td>55 a 64 años</td><td class="top">2,96 UF<span class="clp" data-uf="2.96">($122.000)</span></td><td>3,16 UF<span class="clp" data-uf="3.16">($130.200)</span></td><td>3,05 UF<span class="clp" data-uf="3.05">($125.700)</span></td><td>3,51 UF<span class="clp" data-uf="3.51">($144.600)</span></td><td>3,79 UF<span class="clp" data-uf="3.79">($156.100)</span></td><td>3,41 UF<span class="clp" data-uf="3.41">($140.500)</span></td><td>3,41 UF<span class="clp" data-uf="3.41">($140.500)</span></td></tr>
+          <tr><td>65 años o más</td><td class="top">3,39 UF<span class="clp" data-uf="3.39">($139.700)</span></td><td>3,58 UF<span class="clp" data-uf="3.58">($147.500)</span></td><td>3,52 UF<span class="clp" data-uf="3.52">($145.000)</span></td><td>4,02 UF<span class="clp" data-uf="4.02">($165.600)</span></td><td>4,37 UF<span class="clp" data-uf="4.37">($180.000)</span></td><td>3,93 UF<span class="clp" data-uf="3.93">($161.900)</span></td><td>3,95 UF<span class="clp" data-uf="3.95">($162.700)</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <p class="rb-fuente">Precio mensual en UF del plan de entrada de cada Isapre, para una persona sin cargas, octubre de 2026, ordenado de menor a mayor. Entre paréntesis, el valor en pesos con la UF de hoy (<span id="uf-hoy">$41.200</span>). En la tabla completa, en verde, el más barato de cada tramo. Valores referenciales: el precio final depende del plan, tus cargas y tu declaración de salud.</p>
   <div class="ojo"><p><strong>El más barato no siempre conviene.</strong> El plan de entrada de Banmédica cubre 40% y se concentra en la red Dávila. El de Nueva Masvida, por un precio parecido al resto, cubre entre 50% y 70% en más clínicas, pero arrastra los topes más bajos del sistema: prótesis y órtesis hasta 10 UF, quimioterapia sin cobertura preferente y la red GES y CAEC más chica. Antes de elegir por precio, mira qué clínicas, qué porcentajes y qué topes trae cada plan.</p></div>
   <div class="calc-cta">
     <div><strong>¿Te alcanza tu 7% para uno de estos planes?</strong><p>Pon tu edad y tu sueldo en la calculadora y te mostramos qué planes puedes elegir con tu 7%, sin hacer cuentas a mano.</p></div>
@@ -622,48 +636,64 @@ footer a { color: var(--text-muted); }
 
 <div class="art art-sig">
   <h2 id="perfiles">¿Cuál es la mejor Isapre según tu perfil?</h2>
-  <p>La Isapre que le sirve a tu compañero de trabajo puede no servirte a ti. Estos son los casos que más vemos en las asesorías.</p>
+  <p>La Isapre que le sirve a tu compañero de trabajo puede no servirte a ti. Estos son los casos que más vemos en las asesorías: toca el tuyo para ver por qué.</p>
   <div class="perfiles">
-    <div class="perfil">
-      <h3>Si vives en regiones</h3>
-      <p>Consalud es la que tiene más clínicas propias fuera de Santiago (7 RedSalud) y copago de urgencia en 17 clínicas, de Arica a Punta Arenas. Si vives en Temuco, Valdivia u Osorno y te atiendes en Clínica Alemana, mira también Esencial, aunque ahí no tiene copago de urgencia.</p>
-      <div class="perfil-links"><a href="/isapre-consalud">Consalud</a><a href="/isapre-esencial">Esencial</a></div>
-    </div>
-    <div class="perfil">
-      <h3>Si te atiendes en clínicas del segmento alto</h3>
-      <p>Vida Tres cubre procedimientos sin código Fonasa y es la Isapre con menos reclamos. Si todos tus médicos están en Clínica Alemana, Esencial es la que mejor calza.</p>
-      <div class="perfil-links"><a href="/isapre-vida-tres">Vida Tres</a><a href="/isapre-esencial">Esencial</a></div>
-    </div>
-    <div class="perfil">
-      <h3>Si lo que más te preocupa es algo grave</h3>
-      <p>Banmédica, Vida Tres y Esencial no tienen tope en prótesis, órtesis ni quimioterapia (en Esencial, salvo algunas líneas de planes). Colmena tiene la red GES y CAEC más amplia del sistema, con la Red UC.</p>
-      <div class="perfil-links"><a href="/isapre-banmedica">Banmédica</a><a href="/isapre-vida-tres">Vida Tres</a><a href="/isapre-esencial">Esencial</a><a href="/isapre-colmena">Colmena</a></div>
-    </div>
-    <div class="perfil">
-      <h3>Si usas kinesiología seguido</h3>
-      <p>Consalud y Esencial tienen kinesiología sin tope. En Colmena y Nueva Masvida el tope anual es muy bajo, y en Cruz Blanca no hay bono: pagas y te reembolsan como libre elección.</p>
-      <div class="perfil-links"><a href="/isapre-consalud">Consalud</a><a href="/isapre-esencial">Esencial</a></div>
-    </div>
-    <div class="perfil">
-      <h3>Si necesitas psicología</h3>
-      <p>Colmena y Nueva Masvida tienen psicología sin tope anual; en el resto hay tope. Ojo con Nueva Masvida: en casi todo lo demás sus topes son bajos.</p>
-      <div class="perfil-links"><a href="/isapre-colmena">Colmena</a><a href="/isapre-nueva-masvida">Nueva Masvida</a></div>
-    </div>
-    <div class="perfil">
-      <h3>Si tienes hijos</h3>
-      <p>En las familias el gasto frecuente son las urgencias. Busca copago de urgencia en la clínica que te queda cerca: en Santiago, Consalud lo tiene en 9 clínicas, y Cruz Blanca y Nueva Masvida en 6.</p>
-      <div class="perfil-links"><a href="/isapre-consalud">Consalud</a><a href="/isapre-cruz-blanca">Cruz Blanca</a><a href="/isapre-nueva-masvida">Nueva Masvida</a></div>
-    </div>
-    <div class="perfil">
-      <h3>Si buscas pagar poco</h3>
-      <p>Banmédica tiene el plan de entrada más barato en todas las edades, seguida de Consalud. La diferencia con el resto es chica: entre los 25 y 34 años va de 1,87 UF a 2,35 UF. Ojo con elegir solo por precio: los planes de entrada suelen cubrir entre 40% y 70%, y en pocas clínicas. Y ojo especialmente con Nueva Masvida: cuesta parecido al resto, pero es la que tiene los topes más bajos del sistema, con prótesis hasta 10 UF y quimioterapia sin cobertura preferente.</p>
-      <div class="perfil-links"><a href="/isapre-banmedica">Banmédica</a><a href="/isapre-consalud">Consalud</a></div>
-    </div>
-    <div class="perfil">
-      <h3>Si quieres reembolsos rápidos</h3>
-      <p>Colmena reembolsa en 24 a 48 horas, y Consalud y Nueva Masvida en 48 a 72 horas. En Cruz Blanca puede tardar hasta 45 días.</p>
-      <div class="perfil-links"><a href="/isapre-colmena">Colmena</a><a href="/isapre-consalud">Consalud</a><a href="/isapre-nueva-masvida">Nueva Masvida</a></div>
-    </div>
+    <details class="perfil">
+      <summary><span class="perfil-sum"><h3>Si vives en regiones</h3><span class="perfil-isas">Consalud · Esencial</span></span></summary>
+      <div class="perfil-c">
+        <p>Consalud es la que tiene más clínicas propias fuera de Santiago (7 RedSalud) y copago de urgencia en 17 clínicas, de Arica a Punta Arenas. Si vives en Temuco, Valdivia u Osorno y te atiendes en Clínica Alemana, mira también Esencial, aunque ahí no tiene copago de urgencia.</p>
+        <div class="perfil-links"><a href="/isapre-consalud">Consalud</a><a href="/isapre-esencial">Esencial</a></div>
+      </div>
+    </details>
+    <details class="perfil">
+      <summary><span class="perfil-sum"><h3>Si te atiendes en clínicas del segmento alto</h3><span class="perfil-isas">Vida Tres · Esencial</span></span></summary>
+      <div class="perfil-c">
+        <p>Vida Tres cubre procedimientos sin código Fonasa y es la Isapre con menos reclamos. Si todos tus médicos están en Clínica Alemana, Esencial es la que mejor calza.</p>
+        <div class="perfil-links"><a href="/isapre-vida-tres">Vida Tres</a><a href="/isapre-esencial">Esencial</a></div>
+      </div>
+    </details>
+    <details class="perfil">
+      <summary><span class="perfil-sum"><h3>Si lo que más te preocupa es algo grave</h3><span class="perfil-isas">Banmédica · Vida Tres · Esencial · Colmena</span></span></summary>
+      <div class="perfil-c">
+        <p>Banmédica, Vida Tres y Esencial no tienen tope en prótesis, órtesis ni quimioterapia (en Esencial, salvo algunas líneas de planes). Colmena tiene la red GES y CAEC más amplia del sistema, con la Red UC.</p>
+        <div class="perfil-links"><a href="/isapre-banmedica">Banmédica</a><a href="/isapre-vida-tres">Vida Tres</a><a href="/isapre-esencial">Esencial</a><a href="/isapre-colmena">Colmena</a></div>
+      </div>
+    </details>
+    <details class="perfil">
+      <summary><span class="perfil-sum"><h3>Si usas kinesiología seguido</h3><span class="perfil-isas">Consalud · Esencial</span></span></summary>
+      <div class="perfil-c">
+        <p>Consalud y Esencial tienen kinesiología sin tope. En Colmena y Nueva Masvida el tope anual es muy bajo, y en Cruz Blanca no hay bono: pagas y te reembolsan como libre elección.</p>
+        <div class="perfil-links"><a href="/isapre-consalud">Consalud</a><a href="/isapre-esencial">Esencial</a></div>
+      </div>
+    </details>
+    <details class="perfil">
+      <summary><span class="perfil-sum"><h3>Si necesitas psicología</h3><span class="perfil-isas">Colmena · Nueva Masvida</span></span></summary>
+      <div class="perfil-c">
+        <p>Colmena y Nueva Masvida tienen psicología sin tope anual; en el resto hay tope. Ojo con Nueva Masvida: en casi todo lo demás sus topes son bajos.</p>
+        <div class="perfil-links"><a href="/isapre-colmena">Colmena</a><a href="/isapre-nueva-masvida">Nueva Masvida</a></div>
+      </div>
+    </details>
+    <details class="perfil">
+      <summary><span class="perfil-sum"><h3>Si tienes hijos</h3><span class="perfil-isas">Consalud · Cruz Blanca · Nueva Masvida</span></span></summary>
+      <div class="perfil-c">
+        <p>En las familias el gasto frecuente son las urgencias. Busca copago de urgencia en la clínica que te queda cerca: en Santiago, Consalud lo tiene en 9 clínicas, y Cruz Blanca y Nueva Masvida en 6.</p>
+        <div class="perfil-links"><a href="/isapre-consalud">Consalud</a><a href="/isapre-cruz-blanca">Cruz Blanca</a><a href="/isapre-nueva-masvida">Nueva Masvida</a></div>
+      </div>
+    </details>
+    <details class="perfil">
+      <summary><span class="perfil-sum"><h3>Si buscas pagar poco</h3><span class="perfil-isas">Banmédica · Consalud</span></span></summary>
+      <div class="perfil-c">
+        <p>Banmédica tiene el plan de entrada más barato en todas las edades, seguida de Consalud. La diferencia con el resto es chica: entre los 25 y 34 años va de 1,87 UF a 2,35 UF. Ojo con elegir solo por precio: los planes de entrada suelen cubrir entre 40% y 70%, y en pocas clínicas. Y ojo especialmente con Nueva Masvida: cuesta parecido al resto, pero es la que tiene los topes más bajos del sistema, con prótesis hasta 10 UF y quimioterapia sin cobertura preferente.</p>
+        <div class="perfil-links"><a href="/isapre-banmedica">Banmédica</a><a href="/isapre-consalud">Consalud</a></div>
+      </div>
+    </details>
+    <details class="perfil">
+      <summary><span class="perfil-sum"><h3>Si quieres reembolsos rápidos</h3><span class="perfil-isas">Colmena · Consalud · Nueva Masvida</span></span></summary>
+      <div class="perfil-c">
+        <p>Colmena reembolsa en 24 a 48 horas, y Consalud y Nueva Masvida en 48 a 72 horas. En Cruz Blanca puede tardar hasta 45 días.</p>
+        <div class="perfil-links"><a href="/isapre-colmena">Colmena</a><a href="/isapre-consalud">Consalud</a><a href="/isapre-nueva-masvida">Nueva Masvida</a></div>
+      </div>
+    </details>
   </div>
 
   <div class="cierre">
@@ -672,39 +702,14 @@ footer a { color: var(--text-muted); }
     <a href="/#opciones" onclick="if(typeof gtag==='function')gtag('event','cotizar_isapre',{isapre:'Sin definir',origen:'mejor_isapre_perfiles'})">Quiero que me asesoren →</a>
   </div>
 
-  <h2 id="reclamos">¿Qué Isapre tiene menos reclamos? Los datos oficiales</h2>
-  <p>Vida Tres es la que menos reclamos recibe, con 8,5 por cada 1.000 cotizantes, y Cruz Blanca la que más, con 14,6. En bonificación, Banmédica destina $950 de cada $1.000 que recibe a pagar prestaciones y licencias de sus afiliados, y Nueva Masvida $788. Revisa el detalle en <a href="/isapre-con-menos-reclamos">qué Isapre tiene menos reclamos</a>.</p>
-  <div class="sup-scroll">
-    <table class="sup" aria-label="Indicadores de la Superintendencia de Salud por Isapre">
-      <thead>
-        <tr><th>Isapre</th><th>Reclamos por cada 1.000 cotizantes</th><th>Desafiliaciones voluntarias por cada 1.000</th><th>Bonificación por cada $1.000</th><th>Licencias médicas rechazadas</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><a href="/isapre-vida-tres">Vida Tres</a></td><td class="top">8,5</td><td class="top">5,4</td><td>$889</td><td>15%</td></tr>
-        <tr><td><a href="/isapre-esencial">Esencial</a></td><td>10,0</td><td>5,7</td><td>$857</td><td>5%</td></tr>
-        <tr><td><a href="/isapre-banmedica">Banmédica</a></td><td>10,4</td><td>8,8</td><td class="top">$950</td><td>16%</td></tr>
-        <tr><td><a href="/isapre-colmena">Colmena</a></td><td>10,7</td><td>9,5</td><td>$878</td><td>21%</td></tr>
-        <tr><td><a href="/isapre-consalud">Consalud</a></td><td>11,3</td><td>10,3</td><td>$876</td><td>19%</td></tr>
-        <tr><td><a href="/isapre-nueva-masvida">Nueva Masvida</a></td><td>12,5</td><td>10,9</td><td>$788</td><td>24%</td></tr>
-        <tr><td><a href="/isapre-cruz-blanca">Cruz Blanca</a></td><td>14,6</td><td>10,5</td><td>$884</td><td>34%</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="rb-fuente">Fuente: Superintendencia de Salud, Radiografía de Isapres. Reclamos, desafiliaciones y licencias del segundo trimestre de 2025; bonificación de enero a junio de 2025. En verde, el mejor resultado de cada columna.</p>
-  <p class="rb-nota">La tasa de licencias rechazadas también depende del perfil de cada Isapre: las que tienen más afiliados de renta alta, sobre el tope imponible, tienden a mostrar tasas más bajas. Por eso no la marcamos.</p>
-
   <section class="faq" id="preguntas">
     <h2>Preguntas frecuentes</h2>
-    <h3>¿Cuál es la mejor Isapre de Chile en 2026?</h3>
-    <p>No hay una que sea la mejor para todos. En los datos oficiales, Vida Tres es la que menos reclamos recibe y Banmédica la que más destina a bonificar. En coberturas depende de lo que uses: regiones, kinesiología, psicología o protección ante lo grave. Por eso armamos la guía por perfil de más arriba.</p>
     <h3>¿Me puedo cambiar de Isapre si tengo una preexistencia?</h3>
     <p>Sí. Al cambiarte llenas una declaración de salud, y la nueva Isapre puede aceptarte, aceptarte con una restricción de hasta 18 meses que solo afecta a esa enfermedad, o rechazarte. Tener una preexistencia no significa que te vayan a rechazar, y hay cosas que no se declaran, como la salud mental o el embarazo. Te lo explicamos en detalle en <a href="/preexistencias-isapre">preexistencias en Isapres</a>.</p>
     <h3>¿Qué pasa con mis excedentes si me cambio de Isapre?</h3>
     <p>Siguen siendo tuyos. Si terminas tu contrato, la Isapre que dejas tiene que devolverte todo el saldo acumulado. Además, desde 2020 las Isapres devuelven cada año, hasta fines de enero, el saldo que no usaste. Puedes revisar cómo funciona en el <a href="https://www.superdesalud.gob.cl/tax-materias-isapres/excedentes-de-cotizacion-7345/" rel="noopener">sitio de la Superintendencia de Salud</a>.</p>
     <h3>¿La asesoría de Planiapp tiene algún costo?</h3>
     <p>No. La asesoría y las propuestas son gratis y sin compromiso: no te cobramos nada, contrates o no.</p>
-    <h3>¿Cada cuánto se actualiza esta tabla?</h3>
-    <p>La revisamos cuando cambian las condiciones de las Isapres y cuando la Superintendencia publica datos nuevos. Esta versión corresponde a octubre de 2026.</p>
   </section>
 
   <div class="cierre">
@@ -775,6 +780,22 @@ footer a { color: var(--text-muted); }
 </footer>
 
 <script>
+// Selector de edad de los precios: arma la lista del tramo elegido, de menor a mayor, desde la tabla completa
+(function () {
+  const tabla = document.querySelector('.sup.precios'), lista = document.getElementById('precio-lista');
+  if (!tabla || !lista) return;
+  const LOGOS = {"Banmédica":["banmedica",80,21],"Colmena":["colmena",90,19],"Consalud":["consalud",72,24],"Cruz Blanca":["cruz-blanca",91,19],"Esencial":["esencial",89,19],"Nueva Masvida":["nueva-masvida",76,22],"Vida Tres":["vida-tres",94,18]};
+  const nombres = [...tabla.tHead.rows[0].cells].slice(1).map(c => c.textContent);
+  const botones = [...document.querySelectorAll('.edad-sel button')];
+  function pinta(i) {
+    const fila = tabla.tBodies[0].rows[i];
+    const its = nombres.map((n, k) => { const td = fila.cells[k + 1], s = td.querySelector('.clp'); return { n, uf: +s.dataset.uf, txt: td.firstChild.textContent.trim(), pesos: s.textContent }; }).sort((a, b) => a.uf - b.uf);
+    lista.innerHTML = its.map((it, k) => '<li class="pl-it' + (k === 0 ? ' top' : '') + '"><span class="pl-logo"><img src="/logos/mini/' + LOGOS[it.n][0] + '.png" alt="Isapre ' + it.n + '" width="' + LOGOS[it.n][1] + '" height="' + LOGOS[it.n][2] + '"></span>'
+      + (k === 0 ? '<span class="pl-tag">Más barata</span>' : '<span></span>') + '<span class="pl-uf"><b>' + it.txt + '</b><span class="clp" data-uf="' + it.uf + '">' + it.pesos + '</span></span></li>').join('');
+    botones.forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.tramo === i)));
+  }
+  botones.forEach(b => b.addEventListener('click', () => { pinta(+b.dataset.tramo); if (typeof gtag === 'function') gtag('event', 'precio_edad', { tramo: b.textContent }); }));
+})();
 // Pesos del plan de entrada con la UF del día; si mindicador no responde, quedan los de la última actualización
 fetch('https://mindicador.cl/api/uf').then(r => r.json()).then(d => {
   const uf = d && d.serie && d.serie[0] && d.serie[0].valor;
