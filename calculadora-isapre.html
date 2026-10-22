@@ -203,6 +203,19 @@ h1 span { color:var(--purple); }
 .lp-cambio-op i { font-style:normal; color:var(--purple); }
 @media (hover:hover) { .lp-cambio-op:hover { border-color:var(--purple-mid); background:var(--purple-light); } }
 @media (max-width:370px) { .lp-cambio-op { font-size:13px; gap:0.45rem; padding:0.65rem 0.8rem; } .lp-cambio-op em { font-size:11.5px; } }
+.lp-pre { font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--purple); margin-bottom:0.25rem; }
+.lp-perfil { display:flex; align-items:center; gap:0.75rem; background:var(--bg); border-radius:16px; padding:0.85rem 0.95rem; margin-bottom:0.5rem; }
+.lp-perfil .lp-op-ico { width:38px; height:38px; margin:0; border-radius:12px; background:var(--purple-light); color:var(--purple); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.lp-perfil div { flex:1; min-width:0; }
+.lp-perfil b { display:block; font-size:15px; color:var(--purple-dark); }
+.lp-perfil small { display:block; font-size:13px; color:var(--muted); }
+.lp-perfil strong { font-family:'Inter',sans-serif; font-size:17px; font-weight:800; color:var(--green-dark); white-space:nowrap; }
+.lp-perfil strong small { display:block; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:var(--muted); text-align:right; }
+.lp-perfil.total { background:var(--green-light); }
+.lp-perfil.total b { color:var(--green-dark); }
+.lp-explica { background:var(--purple-light); border-radius:16px; padding:0.95rem 1rem; margin-top:0.6rem; }
+.lp-explica strong { display:block; font-size:15px; color:var(--purple-dark); margin-bottom:0.35rem; }
+.lp-explica p { font-size:13.5px; color:var(--purple-deep); line-height:1.55; margin-top:0.4rem; }
 .lp-hijos { display:grid; gap:0.6rem; margin-bottom:0.6rem; }
 .lp-hijos:empty { margin:0; }
 .lp-ops.cuatro { grid-template-columns:repeat(4,1fr); }
@@ -369,27 +382,41 @@ h1 span { color:var(--purple); }
       <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button></div>
     </div>
 
-    <div class="lp-paso" data-paso="p-familia">
+    <div class="lp-paso" data-paso="p-edad2">
+      <p class="lp-pre">Ahora tu pareja</p>
       <p class="lp-q">¿Qué edad tiene tu pareja?</p>
-      <p class="lp-ayuda">Si además tienen hijos u otras cargas, agrégalos con su edad.</p>
-      <div class="lp-fam">
-        <div class="lp-fam-fila"><label for="pp-edad">Edad de tu pareja</label><div class="lp-campo edad"><input id="pp-edad" type="text" inputmode="numeric" maxlength="2" autocomplete="off" placeholder="Ej: 34"><span>años</span></div></div>
-        <div><div id="pp-hijos" class="lp-hijos"></div><button class="lp-agregar" type="button" id="pp-agregar">+ Agregar una carga</button></div>
-        <p class="lp-err" id="pp-err" hidden></p>
+      <p class="lp-ayuda">En el plan compensado tu pareja también es cotizante.</p>
+      <div class="lp-ops tres">
+        <button class="lp-op" type="button" data-tramo2="0"><strong>18 a 24</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo2="1"><strong>25 a 34</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo2="2"><strong>35 a 44</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo2="3"><strong>45 a 54</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo2="4"><strong>55 a 64</strong><small>años</small></button>
+        <button class="lp-op" type="button" data-tramo2="5"><strong>65 o más</strong><small>años</small></button>
       </div>
-      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="pp-fam-ok">Continuar →</button></div>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button></div>
     </div>
 
-    <div class="lp-paso" data-paso="p-sueldos">
-      <p class="lp-q">¿Cuánto ganan al mes?</p>
-      <p class="lp-ayuda">El sueldo bruto de cada uno, antes de descuentos: el imponible de la liquidación.</p>
-      <div class="lp-fam">
-        <div class="lp-fam-fila"><label for="pp-sueldo1">Tu sueldo</label><label class="lp-campo chico" id="pp-sueldo1-caja"><span>$</span><input id="pp-sueldo1" type="text" inputmode="numeric" autocomplete="off" placeholder="1.200.000"></label></div>
-        <div class="lp-fam-fila"><label for="pp-sueldo2">Sueldo de tu pareja</label><label class="lp-campo chico" id="pp-sueldo2-caja"><span>$</span><input id="pp-sueldo2" type="text" inputmode="numeric" autocomplete="off" placeholder="1.000.000"></label></div>
+    <div class="lp-paso" data-paso="p-sueldo2">
+      <p class="lp-pre">Ahora tu pareja</p>
+      <p class="lp-q">¿Cuánto gana tu pareja al mes?</p>
+      <p class="lp-ayuda">Su sueldo bruto, antes de descuentos: el imponible de su liquidación.</p>
+      <label class="lp-campo" id="pp-sueldo2-caja"><span>$</span><input id="pp-sueldo2" type="text" inputmode="numeric" autocomplete="off" placeholder="1.000.000" aria-label="Sueldo imponible de tu pareja"></label>
+      <div class="lp-siete" id="pp-siete" hidden><span>El 7% de tu pareja</span><strong id="pp-siete-monto"></strong></div>
+      <p class="lp-err" id="pp-sueldos-err" hidden>Escribe el sueldo mensual de tu pareja en pesos, por ejemplo 1.000.000.</p>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="pp-sueldo2-ok">Continuar →</button></div>
+    </div>
+
+    <div class="lp-paso" data-paso="p-perfil">
+      <p class="lp-q">Su perfil</p>
+      <p class="lp-ayuda">Revisa que esté bien. Si tienen hijos u otras cargas, agrégalas con su edad.</p>
+      <div id="pp-perfil"></div>
+      <div class="lp-fam" style="margin-top:0.8rem">
+        <div id="pp-hijos" class="lp-hijos"></div>
+        <button class="lp-agregar" type="button" id="pp-agregar">+ Agregar carga</button>
+        <p class="lp-err" id="pp-err" hidden></p>
       </div>
-      <div class="lp-siete" id="pp-siete" hidden><span>Juntos suman de 7%</span><strong id="pp-siete-monto"></strong></div>
-      <p class="lp-err" id="pp-sueldos-err" hidden>Escribe el sueldo mensual de cada uno, por ejemplo 1.200.000.</p>
-      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="pp-sueldos-ok">Ver resultado →</button></div>
+      <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button><button class="lp-btn" type="button" id="pp-ver">Ver resultado →</button></div>
     </div>
 
     <div class="lp-paso" data-paso="isapre">
@@ -426,6 +453,7 @@ h1 span { color:var(--purple); }
     </div>
 
     <div class="lp-paso" data-paso="edad">
+      <p class="lp-pre" id="lp-edad-pre" hidden>Primero vamos contigo</p>
       <p class="lp-q">¿Qué edad tienes?</p>
       <p class="lp-ayuda">El precio de los planes cambia según la edad.</p>
       <div class="lp-ops tres">
@@ -440,6 +468,7 @@ h1 span { color:var(--purple); }
     </div>
 
     <div class="lp-paso" data-paso="sueldo">
+      <p class="lp-pre" id="lp-sueldo-pre" hidden>Primero vamos contigo</p>
       <p class="lp-q">¿Cuánto ganas al mes?</p>
       <p class="lp-ayuda">Tu sueldo bruto, antes de descuentos: el imponible de tu liquidación, no el líquido que te depositan.</p>
       <label class="lp-campo" id="lp-sueldo-caja"><span>$</span><input id="lp-sueldo" type="text" inputmode="numeric" autocomplete="off" placeholder="1.200.000" aria-label="Sueldo imponible mensual"></label>
@@ -483,6 +512,13 @@ h1 span { color:var(--purple); }
 
     <div class="lp-paso" data-paso="propuestas">
       <p class="lp-q">Para enviarte propuestas a tu medida</p>
+      <div class="lp-explica" id="lp-explica" hidden>
+        <strong>Así funciona el plan compensado</strong>
+        <p>Cada uno toma un plan con su propio 7%, pero uno puede compensar al otro para que los dos queden con el mismo plan. No es obligatorio.</p>
+        <p><b>Ejemplo:</b> si el plan cuesta $100.000 para cada uno, y el 7% de uno es de $100.000 y el del otro de $80.000, quien tiene $100.000 puede aportarle $20.000 adicionales a su pareja, y los dos quedan con el mismo plan.</p>
+        <p id="lp-explica-caso"></p>
+        <p id="lp-explica-carga" hidden>Las cargas se asignan al contrato de uno de los dos, y eso sube su plan. Quien queda sin carga puede asumir parte de esa alza para ayudar a quien queda con los hijos.</p>
+      </div>
       <p class="lp-nota-datos"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Estos datos solo los pedimos para complementar tu perfil y enviarte propuestas ajustadas a ti.</span></p>
       <div class="lp-bloque">
         <label class="lp-mini" for="lp-region">¿En qué región vives?</label>
@@ -566,10 +602,9 @@ const FCARGA = e => (e < 2 ? 0 : e < 20 ? 0.6 : e < 35 ? 0.7 : e < 45 ? 0.9 : e 
 function minFamiliaUF(tramo, edades) {
   return Math.min(...PLANES.map(p => p.precios[tramo] + edades.reduce((s, e) => s + (e < 2 ? 0 : p.base * FCARGA(e) + p.g), 0)));
 }
-// Plan compensado: los dos son cotizantes (ninguno es carga), así que la pareja va con factor de cotizante
-const FCOT_EDAD = e => (e < 20 ? 0.6 : e < 25 ? 0.9 : e < 35 ? 1.0 : e < 45 ? 1.3 : e < 55 ? 1.4 : e < 65 ? 2.0 : 2.4);
-function minCompensadoUF(tramo, edadPareja, cargas) {
-  return Math.min(...PLANES.map(p => p.precios[tramo] + p.base * FCOT_EDAD(edadPareja) + p.g
+// Plan compensado: los dos son cotizantes (ninguno es carga), así que la pareja entra con el precio de cotizante de su tramo
+function minCompensadoUF(tramo, tramo2, cargas) {
+  return Math.min(...PLANES.map(p => p.precios[tramo] + p.precios[tramo2]
     + cargas.reduce((s, e) => s + (e < 2 ? 0 : p.base * FCARGA(e) + p.g), 0)));
 }
 const TRAMOS = ["18 a 24","25 a 34","35 a 44","45 a 54","55 a 64","65 o más"];
@@ -586,7 +621,7 @@ const variante = params.get('v') === 'b' ? 'b' : 'a'; // prueba A/B del título:
 // Puerta por la que se entró directo (anuncio o cambio de puerta): con ella se salta la pantalla de inicio
 let entrada = ['fonasa', 'isapre', 'pareja'].includes(params.get('desde')) ? params.get('desde') : null;
 const INICIO = [$('lp-h1').innerHTML, $('lp-sub').textContent]; // título de quien llega sin anuncio
-const D = { desde: null, isapre: '', tramo: null, cargas: null, pareja: null, hijos: [], sueldo: 0, sueldo2: 0, pcob: '', suma: 0, pago: 0, noSabe: false, extra: 0, veredicto: '' };
+const D = { desde: null, isapre: '', tramo: null, cargas: null, pareja: null, hijos: [], tramo2: null, sueldo: 0, sueldo2: 0, pcob: '', suma: 0, pago: 0, noSabe: false, extra: 0, veredicto: '' };
 let pasos = [], actual = '';
 let empezo = false;
 
@@ -627,7 +662,7 @@ function armaPasos() {
   const conInicio = !(entrada === D.desde && D.desde);
   pasos = (conInicio ? ['desde'] : []).concat(
     D.desde === 'isapre' ? (conInicio ? [] : ['isapre']).concat(['edad', 'sueldo', 'pago'])
-      : D.desde === 'pareja' ? ['p-cob', 'edad', 'p-familia', 'p-sueldos']
+      : D.desde === 'pareja' ? ['p-cob', 'edad', 'sueldo', 'p-edad2', 'p-sueldo2', 'p-perfil']
         : ['edad', 'personas', 'sueldo']);
 }
 function ir(paso) {
@@ -645,7 +680,10 @@ function ir(paso) {
   // "¿No es tu caso?" solo en las preguntas de una puerta (no en el inicio, el análisis ni el resultado)
   $('lp-cambio').hidden = !(D.desde && i >= 0 && paso !== 'desde');
   if (!$('lp-cambio').hidden) pintaCambio();
-  const foco = { sueldo: 'lp-sueldo', pago: 'lp-pago', datos: 'lp-nombre', 'p-familia': 'pp-edad', 'p-sueldos': 'pp-sueldo1' }[paso];
+  const foco = { sueldo: 'lp-sueldo', pago: 'lp-pago', datos: 'lp-nombre', 'p-sueldo2': 'pp-sueldo2' }[paso];
+  // En pareja, las preguntas propias dicen 'Primero vamos contigo'; el perfil se arma al llegar
+  $('lp-edad-pre').hidden = $('lp-sueldo-pre').hidden = D.desde !== 'pareja';
+  if (paso === 'p-perfil') pintaPerfil();
   if (foco) setTimeout(() => $(foco).focus({ preventScroll: true }), 320);
   // En celular, si la tarjeta quedó arriba de la pantalla (por el teclado), se vuelve a mostrar; al cargar no se mueve
   const card = document.querySelector('.lp-card');
@@ -767,8 +805,36 @@ function okFamilia() {
   D.pareja = pareja; D.hijos = hijos; siguiente();
 }
 $('lp-fam-ok').addEventListener('click', okFamilia);
-// ---- Plan compensado en pareja: dónde están, edad de la pareja (y cargas), y los dos sueldos
+// ---- Plan compensado en pareja: dónde están, tú (edad y sueldo), tu pareja (edad y sueldo), y el perfil de los dos con sus cargas
 opcion('[data-pcob]', b => D.pcob = b.dataset.pcob);
+opcion('[data-tramo2]', b => D.tramo2 = +b.dataset.tramo2);
+const sieteDe = v => Math.round(Math.min(v, TOPE_UF * UF) * 0.07 / 100) * 100;
+$('pp-sueldo2').addEventListener('input', e => {
+  D.sueldo2 = monto(e.target);
+  $('pp-siete').hidden = D.sueldo2 < 100000;
+  $('pp-siete-monto').textContent = pesos(sieteDe(D.sueldo2));
+  $('pp-sueldo2-caja').classList.remove('err'); $('pp-sueldos-err').hidden = true;
+});
+function okSueldo2() {
+  if (!(D.sueldo2 >= 100000)) { $('pp-sueldo2-caja').classList.add('err'); $('pp-sueldos-err').hidden = false; return; }
+  siguiente();
+}
+$('pp-sueldo2-ok').addEventListener('click', okSueldo2);
+$('pp-sueldo2').addEventListener('keydown', e => { if (e.key === 'Enter') okSueldo2(); });
+// Perfil: cada uno con su edad, su sueldo y su 7%, y lo que suman
+const ICO_PERSONA = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>';
+function pintaPerfil() {
+  const s1 = sieteDe(D.sueldo), s2 = sieteDe(D.sueldo2);
+  const fila = (quien, tramo, sueldo, s, de) => '<div class="lp-perfil"><span class="lp-op-ico">' + ICO_PERSONA + '</span><div><b>' + quien + '</b><small>' + TRAMOS[tramo] + ' años · sueldo ' + pesos(sueldo) + '</small></div><strong>' + pesos(s) + '<small>' + de + ' 7%</small></strong></div>';
+  $('pp-perfil').innerHTML = fila('Tú', D.tramo, D.sueldo, s1, 'tu') + fila('Tu pareja', D.tramo2, D.sueldo2, s2, 'su')
+    + '<div class="lp-perfil total"><div><b>Juntos suman de 7%</b><small>Lo que pueden destinar al plan sin poner plata extra</small></div><strong>' + pesos(s1 + s2) + '</strong></div>';
+}
+function numeraCargasPareja() {
+  const filas = [...$('pp-hijos').children];
+  filas.forEach((f, k) => { f.querySelector('label').textContent = 'Edad de la carga ' + (k + 1); });
+  $('pp-agregar').textContent = filas.length ? '+ Agregar otra carga' : '+ Agregar carga';
+  $('pp-agregar').hidden = filas.length >= 8;
+}
 function filaCargaPareja() {
   const lista = $('pp-hijos');
   if (lista.children.length >= 8) return null;
@@ -776,47 +842,32 @@ function filaCargaPareja() {
   f.innerHTML = '<label></label><div class="lp-campo edad"><input type="text" inputmode="numeric" maxlength="2" autocomplete="off" placeholder="Edad"><span>años</span><button class="lp-quitar" type="button" aria-label="Quitar esta carga">×</button></div>';
   const inp = f.querySelector('input');
   inp.addEventListener('input', () => { inp.value = inp.value.replace(/\D/g, '').slice(0, 2); $('pp-err').hidden = true; });
-  inp.addEventListener('keydown', e => { if (e.key === 'Enter') okPareja(); });
+  inp.addEventListener('keydown', e => { if (e.key === 'Enter') okPerfil(); });
   f.querySelector('.lp-quitar').addEventListener('click', () => { f.remove(); numeraCargasPareja(); });
   lista.append(f); numeraCargasPareja();
   return inp;
 }
-function numeraCargasPareja() {
-  const filas = [...$('pp-hijos').children];
-  filas.forEach((f, k) => { f.querySelector('label').textContent = 'Edad de la carga ' + (k + 1); });
-  $('pp-agregar').textContent = filas.length ? '+ Agregar otra carga' : '+ Agregar una carga';
-  $('pp-agregar').hidden = filas.length >= 8;
-}
 $('pp-agregar').addEventListener('click', () => { const i = filaCargaPareja(); if (i) i.focus(); });
-$('pp-edad').addEventListener('input', e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 2); $('pp-err').hidden = true; });
-$('pp-edad').addEventListener('keydown', e => { if (e.key === 'Enter') okPareja(); });
-function okPareja() {
-  const falta = [];
-  const pareja = parseInt($('pp-edad').value, 10);
-  if (!(pareja >= 18 && pareja <= 99)) falta.push('la edad de tu pareja');
+function okPerfil() {
   const hijos = [...$('pp-hijos').querySelectorAll('input')].map(i => (i.value === '' ? NaN : +i.value));
-  if (hijos.some(e => !(e >= 0 && e <= 99))) falta.push('la edad de cada carga (pon 0 si tiene menos de 1 año)');
-  if (falta.length) { $('pp-err').textContent = 'Nos falta ' + falta.join(' y ') + '.'; $('pp-err').hidden = false; return; }
-  D.pareja = pareja; D.hijos = hijos; empezar(); siguiente();
+  if (hijos.some(e => !(e >= 0 && e <= 99))) { $('pp-err').textContent = 'Nos falta la edad de cada carga (pon 0 si tiene menos de 1 año).'; $('pp-err').hidden = false; return; }
+  D.hijos = hijos; siguiente();
 }
-$('pp-fam-ok').addEventListener('click', okPareja);
-const sieteDe = v => Math.round(Math.min(v, TOPE_UF * UF) * 0.07);
-function pintaSueldosPareja() {
-  const ok = D.sueldo >= 100000 && D.sueldo2 >= 100000;
-  $('pp-siete').hidden = !ok;
-  $('pp-siete-monto').textContent = pesos(sieteDe(D.sueldo) + sieteDe(D.sueldo2));
-  $('pp-sueldos-err').hidden = true;
-  ['pp-sueldo1-caja', 'pp-sueldo2-caja'].forEach(id => $(id).classList.remove('err'));
+$('pp-ver').addEventListener('click', okPerfil);
+// Al pedir propuestas: cómo funciona el plan compensado, con sus propios números
+function pintaExplica() {
+  const on = D.desde === 'pareja';
+  $('lp-explica').hidden = !on;
+  if (!on) return;
+  const s1 = sieteDe(D.sueldo), s2 = sieteDe(D.sueldo2), tope = TOPE_UF * UF;
+  let caso = '<b>En su caso:</b> tu 7% es de ' + pesos(s1) + ' y el de tu pareja, de ' + pesos(s2) + '. ';
+  caso += Math.abs(s1 - s2) < 5000
+    ? 'Como sus 7% son parecidos, cada uno puede cubrir su propio plan.'
+    : 'Quien gana más (' + (s1 > s2 ? 'tú' : 'tu pareja') + ') ajusta su plan a su 7%, y lo que aporte para que el otro tenga el mismo plan va como adicional.';
+  if (D.sueldo > tope || D.sueldo2 > tope) caso += ' El 7% se calcula hasta el tope imponible (un sueldo de unos ' + pesos(Math.round(tope / 1000) * 1000) + '), así que ' + (D.sueldo > tope ? 'tu 7%' : 'el 7% de tu pareja') + ' no pasa de ' + pesos(sieteDe(tope)) + '.';
+  $('lp-explica-caso').innerHTML = caso;
+  $('lp-explica-carga').hidden = !D.hijos.length;
 }
-$('pp-sueldo1').addEventListener('input', e => { D.sueldo = monto(e.target); pintaSueldosPareja(); });
-$('pp-sueldo2').addEventListener('input', e => { D.sueldo2 = monto(e.target); pintaSueldosPareja(); });
-function okSueldosPareja() {
-  const malos = [[D.sueldo, 'pp-sueldo1-caja'], [D.sueldo2, 'pp-sueldo2-caja']].filter(([v]) => !(v >= 100000));
-  if (malos.length) { malos.forEach(([, id]) => $(id).classList.add('err')); $('pp-sueldos-err').hidden = false; return; }
-  siguiente();
-}
-$('pp-sueldos-ok').addEventListener('click', okSueldosPareja);
-['pp-sueldo1', 'pp-sueldo2'].forEach(id => $(id).addEventListener('keydown', e => { if (e.key === 'Enter') okSueldosPareja(); }));
 
 // Texto del grupo familiar con edades, para el WhatsApp y la planilla
 const listaEdades = a => (a.length === 1 ? a[0] + (a[0] === 1 ? ' año' : ' años') : a.slice(0, -1).join(', ') + ' y ' + a[a.length - 1] + ' años');
@@ -833,7 +884,7 @@ function monto(input) {
   input.value = d ? (+d).toLocaleString('es-CL') : '';
   return +d || 0;
 }
-const siete = () => Math.round(Math.min(D.sueldo, TOPE_UF * UF) * 0.07);
+const siete = () => Math.round(Math.min(D.sueldo, TOPE_UF * UF) * 0.07 / 100) * 100;
 function pintaSueldo() {
   $('lp-siete-vivo').hidden = D.sueldo < 100000;
   $('lp-siete-monto').textContent = pesos(siete());
@@ -1002,7 +1053,7 @@ function resultado() {
     // Plan compensado: suman los dos 7% y el plan del grupo lleva a los dos como cotizantes
     const s1 = sieteDe(D.sueldo), s2 = sieteDe(D.sueldo2), suma = s1 + s2;
     const baseRenta = Math.min(D.sueldo, TOPE_UF * UF) + Math.min(D.sueldo2, TOPE_UF * UF);
-    const planFam = Math.round(minCompensadoUF(D.tramo, D.pareja, D.hijos) * UF / 100) * 100;
+    const planFam = Math.round(minCompensadoUF(D.tramo, D.tramo2, D.hijos) * UF / 100) * 100;
     const faltaFam = planFam - suma;
     const ops = faltaFam <= 0 ? opcionesPlan(planFam, baseRenta) : [];
     const todos = D.hijos.length ? 'todos' : 'los dos';
@@ -1057,7 +1108,7 @@ function textoWsp() {
   if (D.desde === 'pareja') {
     const lp = ['¡Hola Planiapp! Hice la calculadora para un plan compensado en pareja.',
       '• Hoy estamos: ' + (D.pcob || 'sin indicar'),
-      '• Mi edad: ' + TRAMOS[D.tramo] + ' años · Mi pareja: ' + D.pareja + ' años',
+      '• Mi edad: ' + TRAMOS[D.tramo] + ' años · Mi pareja: ' + TRAMOS[D.tramo2] + ' años',
       D.hijos.length ? '• Cargas: ' + D.hijos.length + ' (' + listaEdades(D.hijos) + ')' : '• Sin cargas',
       '• Sueldos: ' + pesos(D.sueldo) + ' y ' + pesos(D.sueldo2) + ' (juntos, 7%: ' + pesos(D.suma) + ')',
       '• Plan más bajo para el grupo: ' + pesos(D.planFam) + ' al mes'];
@@ -1094,11 +1145,11 @@ $('lp-wsp-btn').addEventListener('click', e => {
   marca('whatsapp_click', { veredicto: D.veredicto });
   if (typeof fbq === 'function') fbq('track', 'Contact');
 });
-$('lp-a-propuestas').addEventListener('click', () => { marca('calc_quiere_propuestas', { veredicto: D.veredicto }); ir('propuestas'); });
+$('lp-a-propuestas').addEventListener('click', () => { marca('calc_quiere_propuestas', { veredicto: D.veredicto }); pintaExplica(); ir('propuestas'); });
 $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
 function limpiar() {
   D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
-  ['pp-edad', 'pp-sueldo1', 'pp-sueldo2'].forEach(id => $(id).value = ''); $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
+  D.tramo2 = null; $('pp-sueldo2').value = ''; $('pp-perfil').innerHTML = ''; $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
   $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
   $('lp-region').value = ''; $('lp-clinicas').innerHTML = ''; $('lp-clin-bloque').hidden = true; $('lp-prop-err').hidden = true;
@@ -1161,13 +1212,13 @@ $('lp-form').addEventListener('submit', async e => {
   const pareja = D.desde === 'pareja';
   const s = pareja ? D.suma : siete();
   const importa = [...document.querySelectorAll('#lp-importa .lp-chipb.on')].map(c => c.textContent);
-  const cargasTxt = pareja ? familia(false).join(' + ') + ' (plan compensado)' : D.cargas === null ? '' : (familia(false).join(' + ') || 'Solo yo');
+  const cargasTxt = pareja ? 'Pareja (' + TRAMOS[D.tramo2] + ' años)' + (D.hijos.length ? ' + ' + D.hijos.length + (D.hijos.length === 1 ? ' carga' : ' cargas') + ' (' + listaEdades(D.hijos) + ')' : '') + ' (plan compensado)' : D.cargas === null ? '' : (familia(false).join(' + ') || 'Solo yo');
   const clinica = clinicasElegidas().join(', ');
   const adicional = ['aporte', 'familia_aporte', 'pareja_aporte'].includes(D.veredicto) && D.extra ? ' | Adicional: ' + pesos(D.extra) + ' (presupuesto ' + pesos(s + D.extra) + ')' : '';
   const resultadoTxt = { alcanza: 'le alcanza', aporte: 'le faltan ' + pesos(D.falta || 0) + '/mes',
     familia_alcanza: 'le alcanza con su grupo (plan mínimo ' + pesos(D.planFam || 0) + ')', familia_aporte: 'con su grupo le faltan ' + pesos(D.falta || 0) + '/mes (plan mínimo ' + pesos(D.planFam || 0) + ')',
     pareja_alcanza: 'les alcanza (plan mínimo ' + pesos(D.planFam || 0) + ')', pareja_aporte: 'les faltan ' + pesos(D.falta || 0) + '/mes (plan mínimo ' + pesos(D.planFam || 0) + ')' }[D.veredicto] || '';
-  const resumen = ['Calculadora' + (pareja ? ' · plan compensado' : ''), 'Tramo: ' + TRAMOS[D.tramo] + ' años' + (pareja ? ' · pareja ' + D.pareja + ' años' : ''), (pareja ? '7% de los dos: ' : '7%: ') + pesos(s)]
+  const resumen = ['Calculadora' + (pareja ? ' · plan compensado' : ''), 'Tramo: ' + TRAMOS[D.tramo] + ' años' + (pareja ? ' · pareja ' + TRAMOS[D.tramo2] + ' años' : ''), (pareja ? '7% de los dos: ' : '7%: ') + pesos(s)]
     .concat(pareja ? ['Hoy: ' + (D.pcob || 'sin indicar'), 'Sueldos: ' + pesos(D.sueldo) + ' y ' + pesos(D.sueldo2), 'Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
       : D.desde === 'fonasa'
       ? ['Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
