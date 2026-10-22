@@ -1019,7 +1019,8 @@ function resultado() {
       } else {
         D.veredicto = 'aporte';
         D.falta = falta;
-        h += '<div class="lp-ver medio"><strong>Te faltan unos ' + redondo(falta) + ' al mes.</strong>El plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + '. Si quieres que te enviemos opciones, cuéntanos abajo cuánto más podrías poner al mes.</div>';
+        // El gancho para quien gana menos: lo poco que le falta para entrar, no lo que no le alcanza
+        h += '<div class="lp-ver ok"><strong>Por solo ' + redondo(falta) + ' más al mes puedes entrar a una Isapre.</strong>Con tu 7% (' + pesos(s) + ') más esos ' + redondo(falta) + ', accedes al plan más bajo para tu edad (' + pesos(plan) + '), con el GES y todas las coberturas que exige la ley. Si quieres que te enviemos opciones, cuéntanos abajo cuánto más podrías poner al mes.</div>';
       }
     } else {
       // Con pareja o cargas: dos opciones. 1) Solo tú, como siempre. 2) Con ellos: plan mínimo del grupo (tabla de factores única) y cuánto pondría de su bolsillo
@@ -1035,7 +1036,7 @@ function resultado() {
         + '<p class="lp-op-t">Opción 1 · Solo tú</p>'
         + (falta <= 0
           ? '<div class="lp-ver ok"><strong>Te alcanza.</strong>Solo para ti, puedes optar a planes ' + rango(opsSolo) + ' al mes. Si eliges uno bajo tu 7%, la diferencia te queda como excedente.</div>'
-          : '<div class="lp-ver medio"><strong>Te faltan unos ' + redondo(falta) + ' al mes.</strong>Solo para ti, el plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + '.</div>')
+          : '<div class="lp-ver ok"><strong>Por solo ' + redondo(falta) + ' más al mes puedes entrar a una Isapre.</strong>Solo para ti, el plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + ', con el GES y todas las coberturas que exige la ley.</div>')
         + '<p class="lp-op-t">Opción 2 · ' + conQuien.charAt(0).toUpperCase() + conQuien.slice(1) + '</p>';
       const todos = D.cargas === 1 ? 'los dos' : 'todos';
       const protegida = D.cargas === 1 ? 'Para que tu pareja también esté protegida' : 'Para que toda tu familia esté protegida';
