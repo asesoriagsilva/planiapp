@@ -268,6 +268,7 @@ h1 span { color:var(--purple); }
 .lp-ver strong { display:block; font-size:17px; margin-bottom:0.15rem; }
 .lp-ver.ok { background:var(--green-light); color:#0B4A38; }
 .lp-ver.medio { background:#FFF4DE; color:#6B4A0E; }
+.lp-ver.alto { background:#FBECEC; color:#7A2E33; }
 .lp-ver.info { background:var(--purple-light); color:var(--purple-deep); }
 .lp-otra { display:block; text-align:center; margin-top:0.9rem; font-size:14px; font-weight:600; color:var(--muted); background:none; border:none; cursor:pointer; width:100%; }
 .lp-otra:hover { color:var(--purple); }
@@ -992,6 +993,14 @@ function bloquePlanes(ops, titulo, plural) {
       ? 'Los excedentes no se eliminaron: hoy se restringen a un monto lo más cercano posible a sus 7%. Lo que les quede de excedente queda a su favor en su cuenta de la Isapre.'
       : 'Los excedentes no se eliminaron: hoy se restringen a un monto lo más cercano posible a tu 7%. Lo que te quede de excedente queda a tu favor en tu cuenta de la Isapre.') + '</p></div>';
 }
+// Color según cuánto le falta comparado con su 7% (en pareja, con lo que suman):
+// menos de la mitad, verde; entre 50% y 60%, amarillo; más de 60%, rojo (es lo que pagaría de su bolsillo)
+function nivelFalta(falta, base7) { const r = falta / base7; return r < 0.5 ? 'ok' : r <= 0.6 ? 'medio' : 'alto'; }
+function tituloFalta(nv, monto) {
+  return nv === 'ok' ? 'Por solo ' + monto + ' más al mes puedes acceder a una Isapre.'
+    : nv === 'medio' ? 'Con ' + monto + ' más al mes puedes acceder a una Isapre.'
+      : 'Tendrías que poner ' + monto + ' al mes de tu bolsillo.';
+}
 const rango = ops => (ops.length > 1 ? 'desde ' + pesos(ops[0].precio) + ' hasta ' + pesos(ops[ops.length - 1].precio) : 'de hasta ' + pesos(ops[0].precio));
 
 function resultado() {
@@ -1022,7 +1031,12 @@ function resultado() {
         D.veredicto = 'aporte';
         D.falta = falta;
         // El gancho para quien gana menos: lo poco que le falta para entrar, no lo que no le alcanza
-        h += '<div class="lp-ver ok"><strong>Por solo ' + redondo(falta) + ' más al mes puedes acceder a una Isapre.</strong>Con tu 7% (' + pesos(s) + ') más esos ' + redondo(falta) + ', accedes al plan más bajo para tu edad (' + pesos(plan) + '), con el GES y todas las coberturas que exige la ley. Si quieres aportar más, tienes opciones de planes con más cobertura: cuéntanos abajo cuánto podrías poner al mes.</div>';
+        const nv = nivelFalta(falta, s);
+        h += '<div class="lp-ver ' + nv + '"><strong>' + tituloFalta(nv, redondo(falta)) + '</strong>'
+          + (nv === 'alto'
+            ? 'El plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + '. Esa diferencia la pagarías de tu bolsillo cada mes, además de tu 7%. Si igual quieres que te enviemos opciones, cuéntanos abajo cuánto podrías poner al mes.'
+            : 'Con tu 7% (' + pesos(s) + ') más esos ' + redondo(falta) + ', accedes al plan más bajo para tu edad (' + pesos(plan) + '), con el GES y todas las coberturas que exige la ley. Si quieres aportar más, tienes opciones de planes con más cobertura: cuéntanos abajo cuánto podrías poner al mes.')
+          + '</div>';
       }
     } else {
       // Con pareja o cargas: dos opciones. 1) Solo tú, como siempre. 2) Con ellos: plan mínimo del grupo (tabla de factores única) y cuánto pondría de su bolsillo
@@ -1038,7 +1052,7 @@ function resultado() {
         + '<p class="lp-op-t">Opción 1 · Solo tú</p>'
         + (falta <= 0
           ? '<div class="lp-ver ok"><strong>Te alcanza.</strong>Solo para ti, puedes optar a planes ' + rango(opsSolo) + ' al mes. Si eliges uno bajo tu 7%, la diferencia te queda como excedente.</div>'
-          : '<div class="lp-ver ok"><strong>Por solo ' + redondo(falta) + ' más al mes puedes acceder a una Isapre.</strong>Solo para ti, el plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + ', con el GES y todas las coberturas que exige la ley.</div>')
+          : '<div class="lp-ver ' + nivelFalta(falta, s) + '"><strong>' + tituloFalta(nivelFalta(falta, s), redondo(falta)) + '</strong>Solo para ti, el plan más bajo para tu edad es de ' + pesos(plan) + ' y tu 7% es de ' + pesos(s) + (nivelFalta(falta, s) === 'alto' ? '. Esa diferencia la pagarías de tu bolsillo cada mes.' : ', con el GES y todas las coberturas que exige la ley.') + '</div>')
         + '<p class="lp-op-t">Opción 2 · ' + conQuien.charAt(0).toUpperCase() + conQuien.slice(1) + '</p>';
       const todos = D.cargas === 1 ? 'los dos' : 'todos';
       const protegida = D.cargas === 1 ? 'Para que tu pareja también esté protegida' : 'Para que toda tu familia esté protegida';
@@ -1048,7 +1062,13 @@ function resultado() {
       } else {
         D.veredicto = 'familia_aporte';
         D.falta = faltaFam;
-        h += '<div class="lp-ver medio"><strong>Por unos ' + redondo(faltaFam) + ' más al mes, pueden estar ' + todos + ' protegidos.</strong>' + protegida + ', el plan más bajo es de ' + pesos(planFam) + ' y tu 7% es de ' + pesos(s) + '. Esa diferencia la pondrías de tu bolsillo. Si quieres que te enviemos opciones, cuéntanos abajo cuánto más podrías poner al mes.</div>';
+        const nv = nivelFalta(faltaFam, s);
+        h += '<div class="lp-ver ' + nv + '"><strong>' + (nv === 'alto'
+            ? 'Para que estén ' + todos + ' protegidos, tendrías que poner ' + redondo(faltaFam) + ' al mes de tu bolsillo.'
+            : (nv === 'ok' ? 'Por solo ' : 'Por unos ') + redondo(faltaFam) + ' más al mes, pueden estar ' + todos + ' protegidos.')
+          + '</strong>' + protegida + ', el plan más bajo es de ' + pesos(planFam) + ' y tu 7% es de ' + pesos(s) + '. '
+          + (nv === 'alto' ? 'Esa diferencia la pagarías de tu bolsillo cada mes, además de tu 7%.' : 'Esa diferencia la pondrías de tu bolsillo.')
+          + ' Si quieres que te enviemos opciones, cuéntanos abajo cuánto más podrías poner al mes.</div>';
       }
       h += '<p class="lp-planes-nota">Valores mínimos de referencia, calculados con la tabla de factores única de la Superintendencia de Salud. Las cargas menores de 2 años no pagan hasta cumplirlos.</p>';
     }
@@ -1070,7 +1090,13 @@ function resultado() {
     } else {
       D.veredicto = 'pareja_aporte';
       D.falta = faltaFam;
-      h += '<div class="lp-ver medio"><strong>Por unos ' + pesos(Math.ceil(faltaFam / 1000) * 1000) + ' más al mes, pueden estar ' + todos + ' protegidos.</strong>El plan más bajo para ' + todos + ' es de ' + pesos(planFam) + ' y entre los dos suman ' + pesos(suma) + ' de 7%. Esa diferencia la pondrían de su bolsillo. Si quieren que les enviemos opciones, cuéntennos abajo cuánto más podrían poner al mes.</div>';
+      const nv = nivelFalta(faltaFam, suma), X = pesos(Math.ceil(faltaFam / 1000) * 1000);
+      h += '<div class="lp-ver ' + nv + '"><strong>' + (nv === 'alto'
+          ? 'Para estar ' + todos + ' protegidos, tendrían que poner ' + X + ' al mes de su bolsillo.'
+          : (nv === 'ok' ? 'Por solo ' : 'Por unos ') + X + ' más al mes, pueden estar ' + todos + ' protegidos.')
+        + '</strong>El plan más bajo para ' + todos + ' es de ' + pesos(planFam) + ' y entre los dos suman ' + pesos(suma) + ' de 7%. '
+        + (nv === 'alto' ? 'Esa diferencia la pagarían de su bolsillo cada mes, además de sus 7%.' : 'Esa diferencia la pondrían de su bolsillo.')
+        + ' Si quieren que les enviemos opciones, cuéntennos abajo cuánto más podrían poner al mes.</div>';
     }
     h += '<p class="lp-planes-nota">En un plan compensado cada uno mantiene su contrato y suman sus cotizaciones. Valores mínimos de referencia, calculados con la tabla de factores única, con los dos como cotizantes. Las cargas menores de 2 años no pagan hasta cumplirlos.</p>';
   } else if (D.noSabe) {
