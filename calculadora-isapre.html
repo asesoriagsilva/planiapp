@@ -1182,7 +1182,8 @@ function resultado() {
       h += '<div class="lp-ver info"><strong>Tu plan cuesta lo mismo que tu 7%. Puedes tener opciones de mejorarlo.</strong>Con la Ley Corta, a muchos afiliados les ajustaron el precio del plan a su 7%, pero la cobertura siguió siendo la misma. Revisemos si, por lo mismo que pagas hoy, puedes tener un plan mejor.</div>';
     } else {
       D.veredicto = 'dentro_del_7';
-      h += '<div class="lp-ver ok"><strong>Tu plan cuesta menos que tu 7%.</strong>La diferencia, unos ' + pesos(-bolsillo) + ' al mes, te queda como excedente. Igual podemos revisar si te cubre bien en la clínica donde te atiendes.</div>';
+      // Con excedente: el gancho es mejorar el plan con el mismo 7%, no quedarse con el excedente
+      h += '<div class="lp-ver ok"><strong>¡Excelente! Te quedan ' + pesos(-bolsillo) + ' de excedente al mes.</strong>Ojo: con la Ley Corta cambiaron las reglas de los excedentes, pero tu plan sigue con la misma cobertura con que lo contrataste. Con tu mismo 7% (' + pesos(s) + ') podrías acceder a un plan actualizado, con mejores clínicas o más cobertura, sin poner $1 extra. Hagamos una revisión rápida por WhatsApp para mostrarte las mejores alternativas.</div>';
     }
   }
   $('lp-res').innerHTML = h;
@@ -1222,7 +1223,7 @@ function textoWsp() {
     if (D.cargas !== null) l.push('• En el plan: ' + (!f.length ? 'solo yo' : f.length === 1 ? 'yo y ' + f[0] : 'yo, ' + f[0] + ' y ' + f[1]));
   }
   else {
-    l.push(D.noSabe ? '• No sé el valor de mi plan: solo quiero un plan ajustado a mi 7%' : '• Mi plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ' al mes)' + (D.bolsillo > 0 ? ', pago ' + pesos(D.bolsillo) + ' sobre mi 7%' : ''));
+    l.push(D.noSabe ? '• No sé el valor de mi plan: solo quiero un plan ajustado a mi 7%' : '• Mi plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ' al mes)' + (D.bolsillo > 0 ? ', pago ' + pesos(D.bolsillo) + ' sobre mi 7%' : D.veredicto === 'dentro_del_7' ? ', me quedan ' + pesos(-D.bolsillo) + ' de excedente' : ''));
     if (D.adic) l.push('• Adicional Isapre en mi liquidación: ' + pesos(D.adic));
     if (D.pref) l.push('• Prefiero: ' + D.pref.toLowerCase());
   }
@@ -1327,7 +1328,7 @@ $('lp-form').addEventListener('submit', async e => {
       ? ['Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
       : [D.noSabe ? 'Plan: no sabe el valor; quiere un plan ajustado a su 7%' : 'Plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ')']
         .concat(D.adic ? ['Adicional en liquidación: ' + pesos(D.adic)] : [])
-        .concat(D.veredicto === 'pone_bolsillo' ? ['Paga sobre su 7%: ' + pesos(D.bolsillo) + '/mes'] : D.veredicto === 'calza_7' ? ['Su plan calza con su 7%'] : D.veredicto === 'dentro_del_7' ? ['Plan bajo su 7%'] : [])
+        .concat(D.veredicto === 'pone_bolsillo' ? ['Paga sobre su 7%: ' + pesos(D.bolsillo) + '/mes'] : D.veredicto === 'calza_7' ? ['Su plan calza con su 7%'] : D.veredicto === 'dentro_del_7' ? ['Plan bajo su 7%: excedente de ' + pesos(-D.bolsillo) + '/mes'] : [])
         .concat(D.pref ? ['Prefiere: ' + D.pref] : []))
     .concat(variante === 'b' ? ['Variante: b'] : [])
     .concat(fuente ? ['Fuente: ' + fuente] : []).join(' | ');
