@@ -339,11 +339,41 @@ h1 span { color:var(--purple); }
   .lp-confia div { font-size:12px; }
 }
 /* Dentro de la portada (iframe con ?embed=1): solo la tarjeta, sin encabezado, textos ni pie */
-.embed body { background:transparent; min-height:0; overflow:hidden; }
+.embed body { background:transparent; min-height:0; scrollbar-width:thin; }
 .embed body::before, .embed body::after, .embed .lp-top, .embed .lp-hero, .embed .lp-confia, .embed .lp-info, .embed .lp-faq, .embed .lp-pie { display:none; }
 .embed main { max-width:none; padding:0; }
-.embed .lp-card { box-shadow:none; border-color:#CDEBDD; padding:1.15rem 1.1rem 1.25rem; }
-.embed [data-paso="resultado"] .lp-cta { position:static; margin:1rem 0 0; padding:0; background:none; }
+.embed .lp-card { box-shadow:none; border-color:#CDEBDD; border-radius:20px; padding:0.9rem 1rem 1rem; }
+.embed .lp-prog { margin-bottom:0.75rem; }
+.embed .lp-q { font-size:18px; margin-bottom:0.2rem; }
+.embed .lp-ayuda { font-size:13px; margin-bottom:0.65rem; }
+.embed .lp-pre { font-size:11.5px; }
+.embed .lp-ops { gap:0.45rem; }
+.embed .lp-op { min-height:44px; padding:0.5rem; border-radius:13px; }
+.embed .lp-ops.dos .lp-op { padding:0.6rem; }
+.embed .lp-op strong { font-size:15px; }
+.embed .lp-op small { font-size:11.5px; }
+.embed .lp-ops.lista .lp-op { padding:0.55rem 0.8rem; }
+.embed .lp-ops.lista .lp-op-ico { width:30px; height:30px; }
+.embed .lp-ops.cuatro .lp-op { min-height:48px; }
+.embed .lp-campo input, .embed .lp-campo select { padding-top:0.7rem; padding-bottom:0.7rem; font-size:18px; }
+.embed .lp-campo span { font-size:18px; }
+.embed .lp-cambio { display:none !important; }
+.embed .lp-card { min-height:100vh; }
+.embed .lp-nav { margin-top:0.8rem; }
+.embed .lp-btn { padding:0.7rem 1.1rem; font-size:15px; }
+.embed .lp-siete { margin-top:0.5rem; padding:0.5rem 0.8rem; font-size:13px; }
+.embed .lp-bloque { margin-top:0.75rem; }
+.embed .lp-res-nums { margin:0.5rem 0 0.6rem; gap:0.45rem; }
+.embed .lp-res-nums div { padding:0.6rem 0.75rem; }
+.embed .lp-res-nums strong { font-size:19px; }
+.embed .lp-grande { padding:0.75rem 0.8rem; margin-bottom:0.6rem; }
+.embed .lp-grande strong { font-size:28px; }
+.embed .lp-grande span, .embed .lp-grande small { font-size:12.5px; }
+.embed .lp-ver { padding:0.75rem 0.85rem; font-size:14px; }
+.embed .lp-ver strong { font-size:15.5px; }
+.embed [data-paso="resultado"] .lp-cta { position:sticky; bottom:0; z-index:5; margin:0.8rem -1rem 0; padding:0.6rem 1rem 0.4rem; background:linear-gradient(to top, var(--white) 80%, rgba(255,255,255,0)); }
+.embed .lp-cta .lp-btn { white-space:nowrap; }
+.embed #lp-cta-nota { font-size:11.5px; margin-top:0.25rem; }
 </style>
 <script>if (/[?&]embed=1(&|$)/.test(location.search)) { document.documentElement.classList.add('embed'); var b = document.createElement('base'); b.target = '_top'; document.head.appendChild(b); }</script>
 </head>
@@ -733,7 +763,9 @@ function ir(paso) {
   if (foco) setTimeout(() => $(foco).focus({ preventScroll: true }), 320);
   // En celular, si la tarjeta quedó arriba de la pantalla (por el teclado), se vuelve a mostrar; al cargar no se mueve
   const card = document.querySelector('.lp-card');
-  if (empezo && card.getBoundingClientRect().top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Dentro de la portada, cada pregunta nueva parte desde arriba del recuadro
+  if (EMBED) window.scrollTo(0, 0);
+  else if (empezo && card.getBoundingClientRect().top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 function siguiente() {
   const i = pasos.indexOf(actual);

@@ -88,10 +88,17 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 @media (max-width: 600px) { .hero-chips { gap: 0.4rem; margin-top: 1rem; } .hero-chips span { font-size: 12px; padding: 0.32rem 0.65rem; } }
 .calc-card-volver { display: none; margin-left: auto; align-self: flex-start; font: inherit; font-size: 13px; font-weight: 700; color: #0F6E56; background: #fff; border: 1px solid #CDEBDD; border-radius: 999px; padding: 0.35rem 0.8rem; cursor: pointer; white-space: nowrap; }
 .calc-card.abierta .calc-card-volver { display: inline-flex; }
+.calc-card-inicio[hidden], .calc-card-vista[hidden] { display: none !important; }
+@media (min-width: 901px) { .calc-card { min-height: 465px; display: flex; flex-direction: column; } .calc-card-inicio { flex: 1; display: flex; flex-direction: column; } .calc-card-inicio .calc-card-alt { margin-top: auto; } }
+.calc-card.abierta .calc-card-k { display: none; }
+.calc-card.abierta .calc-card-t { font-size: 17px; }
+.calc-card.abierta .calc-card-ico { transform: scale(.72); width: 36px; height: 40px; animation: none; }
+.calc-card.abierta .calc-card-top { align-items: center; margin-bottom: 0.4rem; }
+.calc-card.abierta .calc-card-volver { align-self: center; }
 .calc-card-inicio, .calc-card-vista { animation: calcEntra .35s ease both; }
 @keyframes calcEntra { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-.calc-card-vista { position: relative; margin-top: 0.4rem; }
-.calc-card-vista iframe { display: block; width: 100%; height: 440px; border: 0; border-radius: 22px; background: transparent; opacity: 0; transition: opacity .3s, height .25s ease; }
+.calc-card-vista { position: relative; }
+.calc-card-vista iframe { display: block; width: 100%; height: 320px; border: 0; border-radius: 20px; background: transparent; opacity: 0; transition: opacity .3s; }
 .calc-card-vista iframe.lista { opacity: 1; }
 .calc-carga { position: absolute; inset: 0 0 auto 0; height: 140px; display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-size: 14px; font-weight: 600; color: #0F6E56; }
 .calc-carga i { width: 18px; height: 18px; border-radius: 50%; border: 2.5px solid #BDE6D2; border-top-color: #0F6E56; animation: calcGira .8s linear infinite; }
@@ -569,16 +576,26 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     ['utm_source', 'interno'].forEach(k => { if (aqui.get(k)) u.searchParams.set(k, aqui.get(k)); });
     vista.innerHTML = '<div class="calc-carga"><i></i>Abriendo la calculadora…</div><iframe title="Calculadora de Isapre" scrolling="no"></iframe>';
     const fr = vista.querySelector('iframe');
-    fr.addEventListener('load', () => { const c = vista.querySelector('.calc-carga'); if (c) c.remove(); fr.classList.add('lista'); });
+    fr.addEventListener('load', () => { const c = vista.querySelector('.calc-carga'); if (c) c.remove(); fr.classList.add('lista'); ajusta(); });
     fr.src = u.pathname + u.search;
+    card.style.height = card.offsetHeight + 'px'; // el recuadro no cambia de tamaño
     inicio.hidden = true; vista.hidden = false; card.classList.add('abierta');
+    ajusta();
   }));
-  volver.addEventListener('click', () => { vista.hidden = true; vista.innerHTML = ''; inicio.hidden = false; card.classList.remove('abierta'); });
+  volver.addEventListener('click', () => { vista.hidden = true; vista.innerHTML = ''; inicio.hidden = false; card.classList.remove('abierta'); card.style.height = ''; });
+  // El iframe ocupa todo el alto libre del recuadro (y la calculadora se desplaza por dentro)
+  function ajusta() {
+    const fr = vista.querySelector('iframe');
+    if (!fr) return;
+    const cs = getComputedStyle(card);
+    const libre = card.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - vista.offsetTop + card.querySelector('.calc-card-top').offsetTop;
+    fr.style.height = Math.max(260, Math.floor(libre)) + 'px';
+  }
+  window.addEventListener('resize', ajusta);
   window.addEventListener('message', e => {
     if (e.origin !== location.origin || !e.data || !e.data.planiappCalc) return;
     const fr = vista.querySelector('iframe');
     if (!fr || e.source !== fr.contentWindow) return;
-    if (e.data.alto) fr.style.height = e.data.alto + 'px';
     if (e.data.planiappCalc === 'paso') { const r = card.getBoundingClientRect(); if (r.top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 })();
