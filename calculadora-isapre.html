@@ -202,6 +202,7 @@ h1 span { color:var(--purple); }
 .lp-cambio-op em { font-style:normal; font-weight:500; font-size:12px; color:var(--muted); }
 .lp-cambio-op i { font-style:normal; color:var(--purple); }
 @media (hover:hover) { .lp-cambio-op:hover { border-color:var(--purple-mid); background:var(--purple-light); } }
+@media (max-width:370px) { .lp-cambio-op { font-size:13px; gap:0.45rem; padding:0.65rem 0.8rem; } .lp-cambio-op em { font-size:11.5px; } }
 .lp-hijos { display:grid; gap:0.6rem; margin-bottom:0.6rem; }
 .lp-hijos:empty { margin:0; }
 .lp-ops.cuatro { grid-template-columns:repeat(4,1fr); }
@@ -1118,8 +1119,8 @@ const ICONO = {
   pareja: '<circle cx="8.5" cy="8" r="3.3"/><circle cx="15.5" cy="8" r="3.3"/><path d="M2 20c0-3.4 2.9-5.5 6.5-5.5 1.3 0 2.5.3 3.5.8 1-.5 2.2-.8 3.5-.8 3.6 0 6.5 2.1 6.5 5.5"/>',
 };
 const CAMBIOS = {
-  fonasa: [['isapre', 'Estoy en Isapre <em>(ajustar plan)</em>'], ['pareja', 'Plan en pareja <em>(compensado)</em>']],
-  isapre: [['fonasa', 'Estoy en Fonasa <em>(ver si alcanza)</em>'], ['pareja', 'Plan en pareja <em>(compensado)</em>']],
+  fonasa: [['isapre', 'Estoy en Isapre <em>(ajustar plan)</em>'], ['pareja', 'Cotizar en pareja <em>(ambos aportan)</em>']],
+  isapre: [['fonasa', 'Estoy en Fonasa <em>(ver si alcanza)</em>'], ['pareja', 'Cotizar en pareja <em>(ambos aportan)</em>']],
   pareja: [['fonasa', 'Solo yo: estoy en Fonasa'], ['isapre', 'Solo yo: estoy en Isapre']],
 };
 function pintaCambio() {
