@@ -489,7 +489,7 @@ h1 span { color:var(--purple); }
       <p class="lp-err" id="lp-sueldo-err" hidden>Escribe tu sueldo mensual en pesos, por ejemplo 1.200.000.</p>
       <div class="lp-bloque" id="lp-adic-bloque" hidden>
         <label class="lp-mini" for="lp-adic">¿Tienes un «adicional Isapre» en tus descuentos? <em>(opcional)</em></label>
-        <p class="lp-ayuda" style="margin-bottom:0.5rem">Lo ves en tu liquidación de sueldo, en los descuentos, como «Adicional Isapre».</p>
+        <p class="lp-ayuda" style="margin-bottom:0.5rem">Lo ves en tu liquidación de sueldo, en los descuentos, como «Adicional Isapre». Si lo pones, no necesitas buscar el valor de tu plan.</p>
         <label class="lp-campo chico"><span>$</span><input id="lp-adic" type="text" inputmode="numeric" autocomplete="off" placeholder="Si no tienes, déjalo en blanco" aria-label="Adicional Isapre de tu liquidación"></label>
         <button class="lp-nose" type="button" id="lp-ver-liq" aria-expanded="false">¿Dónde lo veo? Ver una liquidación de ejemplo</button>
         <div class="lp-liq" id="lp-liq" hidden><svg viewBox="0 0 340 330" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, Arial, sans-serif" role="img" aria-label="Liquidación de sueldo de ejemplo, con el total imponible y el adicional Isapre destacados"><rect width="340" height="34" fill="#26215C"/><text x="14" y="22" font-size="12.5" font-weight="700" fill="#fff" letter-spacing="0.6">LIQUIDACIÓN DE SUELDO</text><rect x="264" y="9" width="62" height="17" rx="8.5" fill="#1D9E75"/><text x="295" y="21.5" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">EJEMPLO</text><text x="14" y="56" font-size="10.5" font-weight="700" fill="#7F77DD" letter-spacing="0.8">HABERES</text><text x="14" y="79" font-size="12.5" font-weight="400" fill="#5a5a78">Sueldo base</text><text x="326" y="79" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$1.250.000</text><line x1="14" y1="86" x2="326" y2="86" stroke="#EEEDFE"/><text x="14" y="103" font-size="12.5" font-weight="400" fill="#5a5a78">Gratificación legal</text><text x="326" y="103" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$150.000</text><line x1="14" y1="110" x2="326" y2="110" stroke="#EEEDFE"/><rect x="8" y="112" width="324" height="40" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/><text x="16" y="127" font-size="12.5" font-weight="700" fill="#26215C">Total imponible / Total haberes</text><text x="324" y="127" font-size="12.5" font-weight="700" fill="#26215C" text-anchor="end">$1.400.000</text><text x="16" y="144" font-size="11" font-weight="700" fill="#534AB7">↑ Tu sueldo imponible</text><text x="14" y="172" font-size="10.5" font-weight="700" fill="#7F77DD" letter-spacing="0.8">DESCUENTOS</text><text x="14" y="195" font-size="12.5" font-weight="400" fill="#5a5a78">AFP (10% + comisión)</text><text x="326" y="195" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$160.000</text><line x1="14" y1="202" x2="326" y2="202" stroke="#EEEDFE"/><text x="14" y="219" font-size="12.5" font-weight="400" fill="#5a5a78">Salud Isapre 7%</text><text x="326" y="219" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$98.000</text><line x1="14" y1="226" x2="326" y2="226" stroke="#EEEDFE"/><rect x="8" y="228" width="324" height="40" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text x="16" y="243" font-size="12.5" font-weight="700" fill="#26215C">Adicional Isapre</text><text x="324" y="243" font-size="12.5" font-weight="700" fill="#26215C" text-anchor="end">$46.000</text><text x="16" y="260" font-size="11" font-weight="700" fill="#0F6E56">↑ Tu adicional Isapre</text><text x="14" y="289" font-size="12.5" font-weight="400" fill="#5a5a78">Seguro de cesantía</text><text x="326" y="289" font-size="12.5" font-weight="400" fill="#5a5a78" text-anchor="end">$8.400</text><line x1="14" y1="296" x2="326" y2="296" stroke="#EEEDFE"/><text x="14" y="313" font-size="12.5" font-weight="700" fill="#26215C">Líquido a pagar</text><text x="326" y="313" font-size="12.5" font-weight="700" fill="#26215C" text-anchor="end">$1.087.600</text></svg></div>
@@ -688,9 +688,10 @@ const IMPORTA = {
 const POR_REGION = {"Arica y Parinacota":["Clínica San José"],"Tarapacá":["RedSalud Iquique","Clínica Tarapacá"],"Antofagasta":["Andes Salud Calama","Clínica Bupa Antofagasta","ACHS La Portada"],"Atacama":["ACHS Atacama"],"Coquimbo":["RedSalud Elqui"],"Valparaíso":["Clínica Bupa Reñaca","Clínica Ciudad del Mar","RedSalud Valparaíso","Clínica Los Carrera","Clínica Los Leones"],"Metropolitana":["RedSalud Santiago o Providencia","RedSalud Vitacura","Clínica Santa María","Clínica Dávila o Dávila Vespucio","Clínica Alemana","Clínica Las Condes","UC Christus","Clínica Bupa Santiago","Clínica Indisa","Clínica Meds","Clínica Universidad de los Andes","Clínica San Carlos de Apoquindo"],"O'Higgins":["RedSalud Rancagua","Clínica Fusat","Clínica Isamédica"],"Maule":["Clínica Lircay"],"Ñuble":["Andes Salud Chillán"],"Biobío":["Sanatorio Alemán","Andes Salud Concepción","Clínica Biobío"],"La Araucanía":["RedSalud Mayor","Clínica Alemana de Temuco"],"Los Ríos":["Clínica Alemana de Valdivia"],"Los Lagos":["Clínica Alemana de Osorno","ACHS Puerto Montt","Andes Salud Puerto Montt","Clínica Puerto Varas"],"Aysén":[],"Magallanes":["RedSalud Magallanes"]};
 function armaPasos() {
   // Sin anuncio, la Isapre se elige en la primera pregunta; con ?desde=isapre tiene su propia pregunta de logos
+  // En Isapre, si puso el adicional de su liquidación no se le pregunta el valor del plan en UF
   const conInicio = !(entrada === D.desde && D.desde);
   pasos = (conInicio ? ['desde'] : []).concat(
-    D.desde === 'isapre' ? (conInicio ? [] : ['isapre']).concat(['edad', 'sueldo', 'pago'])
+    D.desde === 'isapre' ? (conInicio ? [] : ['isapre']).concat(['edad', 'sueldo'], D.adic > 0 ? [] : ['pago'])
       : D.desde === 'pareja' ? ['p-cob', 'edad', 'sueldo', 'p-edad2', 'p-sueldo2', 'p-perfil']
         : ['edad', 'personas', 'sueldo']);
 }
@@ -718,6 +719,7 @@ function ir(paso) {
       ? 'Es tu sueldo bruto, sin descuentos. En tu liquidación aparece como <b>«Imponible AFP/Salud»</b> o <b>«Total haberes»</b>.'
       : 'Tu sueldo bruto, antes de descuentos: el imponible de tu liquidación, no el líquido que te depositan.';
     $('lp-adic-bloque').hidden = D.desde !== 'isapre';
+    botonSueldo();
   }
   if (foco) setTimeout(() => $(foco).focus({ preventScroll: true }), 320);
   // En celular, si la tarjeta quedó arriba de la pantalla (por el teclado), se vuelve a mostrar; al cargar no se mueve
@@ -733,7 +735,7 @@ function analizar() {
   const lineas = ['Calculando tu 7% con la UF de hoy']
     .concat(D.desde === 'fonasa' ? ['Revisando los planes de entrada de las 7 Isapres para tu edad']
       : D.desde === 'pareja' ? ['Sumando el 7% de los dos', 'Revisando los planes de las 7 Isapres para su grupo']
-        : D.noSabe ? [] : ['Comparándolo con lo que pagas hoy'])
+        : D.noSabe && !(D.adic > 0) ? [] : ['Comparándolo con lo que pagas hoy'])
     .concat(['Preparando tu resultado']);
   const ul = $('lp-anal-lista');
   ul.innerHTML = lineas.map(t => '<li><i></i>' + t + '</li>').join('');
@@ -989,9 +991,13 @@ $('lp-pago').addEventListener('input', e => {
   $('lp-pago-pesos').textContent = pesos(Math.round(D.pago / 100) * 100);
   $('lp-pago-caja').classList.remove('err'); $('lp-pago-err').hidden = true;
 });
-$('lp-adic').addEventListener('input', e => { D.adic = monto(e.target); });
+// Con el adicional basta: el botón lleva directo al resultado, sin la pregunta de la UF
+const botonSueldo = () => { $('lp-sueldo-ok').textContent = D.desde === 'isapre' && D.adic > 0 ? 'Ver mi resultado →' : 'Continuar →'; };
+$('lp-adic').addEventListener('input', e => { D.adic = monto(e.target); botonSueldo(); });
+$('lp-adic').addEventListener('keydown', e => { if (e.key === 'Enter') okSueldo(); });
 function okSueldo() {
   if (D.sueldo < 100000) { $('lp-sueldo-caja').classList.add('err'); $('lp-sueldo-err').hidden = false; return; }
+  if (D.desde === 'isapre') armaPasos();
   siguiente();
 }
 function okPago() {
@@ -1166,17 +1172,34 @@ function resultado() {
         : '<div class="lp-ver info"><strong>Revisemos tu plan actual.</strong>El plan más bajo para tu edad es de ' + enUF(planIs) + ' (' + pesos(planIs) + ' al mes) y tu 7% es de ' + pesos(s) + '. Por WhatsApp revisamos contigo tu contrato o tu liquidación, sin costo, para ver cuánto pagas hoy sobre tu 7% y si hay un plan que te convenga más.</div>')
       + bloquePlanes(opsIs, 'Planes ajustados a tu 7%', false, true);
   } else {
-    // Isapre: con el valor del plan en UF (o, si no lo sabe, con el adicional de su liquidación) se ve si paga sobre su 7%
-    const pago = D.noSabe ? s + D.adic : D.pago;
+    // Isapre: con el adicional de su liquidación (si lo puso, no se le preguntó la UF) o con el valor del plan en UF se ve si paga sobre su 7%
+    const conAdic = D.adic > 0;
+    const pago = conAdic ? s + D.adic : D.pago;
     const bolsillo = Math.round((pago - s) / 100) * 100;
-    const calza = Math.abs(pago - s) <= Math.max(2000, s * 0.03);
-    D.bolsillo = bolsillo;
-    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (D.noSabe ? 'Pagas hoy (según tu liquidación)' : 'Tu plan: ' + fmtUF(D.pagoUF) + ' UF') + '</span>' + n(Math.round(pago / 100) * 100) + '</div></div>';
-    if (!calza && bolsillo > 0) {
+    const umbral = Math.max(2000, s * 0.03);
+    const calza = Math.abs(pago - s) <= umbral;
+    // Si su 7% no alcanza para el plan más bajo para su edad, lo más que puede ahorrar es hasta ese plan, no hasta su 7%
+    const planIs = Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100;
+    const bajoMin = planIs > s;
+    const ahorro = Math.round((pago - Math.max(s, planIs)) / 100) * 100;
+    D.bolsillo = bolsillo; D.ahorro = ahorro;
+    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (conAdic ? 'Pagas hoy (7% + adicional)' : 'Tu plan: ' + fmtUF(D.pagoUF) + ' UF') + '</span>' + n(Math.round(pago / 100) * 100) + '</div></div>';
+    if (!calza && bolsillo > 0 && ahorro > umbral) {
       D.veredicto = 'pone_bolsillo';
-      h += '<div class="lp-grande"><span>Si ajustas tu plan a tu 7%, te ahorras</span>' + n(bolsillo) + '<small>al mes, que son ' + pesos(bolsillo * 12) + ' al año</small></div>'
-        + '<div class="lp-ver alto"><strong>Hoy esa diferencia sale de tu bolsillo.</strong>Pagas ' + pesos(bolsillo) + ' más que tu 7%, y se va a la Isapre todos los meses. Revisemos si hay un plan por tu 7% que te calce con la clínica donde te atiendes y lo que más usas.</div>'
-        + bloquePlanes(opcionesPlan(Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100), '', false, true);
+      h += '<div class="lp-grande"><span>' + (bajoMin ? 'Con el plan más bajo para tu edad, te ahorras' : 'Si ajustas tu plan a tu 7%, te ahorras') + '</span>' + n(ahorro) + '<small>al mes, que son ' + pesos(ahorro * 12) + ' al año</small></div>'
+        + '<div class="lp-ver alto"><strong>' + (conAdic ? 'Ese adicional sale de tu bolsillo.' : 'Hoy esa diferencia sale de tu bolsillo.') + '</strong>'
+        + (conAdic
+          ? 'Hoy pagas ' + pesos(Math.round(pago / 100) * 100) + ' en total: tu 7% (' + pesos(s) + ') más ' + pesos(D.adic) + ' de adicional que te descuentan del sueldo todos los meses. '
+          : 'Pagas ' + pesos(bolsillo) + ' más que tu 7%, y se va a la Isapre todos los meses. ')
+        + (bajoMin
+          ? 'Tu 7% no alcanza para el plan más bajo para tu edad (' + pesos(planIs) + '), así que igual pondrías algo, pero serían ' + pesos(planIs - s) + ' al mes y no ' + pesos(bolsillo) + '.'
+          : 'Revisemos si hay un plan por tu 7% que te calce con la clínica donde te atiendes y lo que más usas.')
+        + '</div>'
+        + bloquePlanes(opcionesPlan(planIs), '', false, true);
+    } else if (!calza && bolsillo > 0) {
+      // Pone algo sobre su 7%, pero ya paga cerca del plan más bajo para su edad
+      D.veredicto = 'cerca_minimo';
+      h += '<div class="lp-ver info"><strong>Tu plan ya está cerca del más bajo para tu edad.</strong>Tu 7% (' + pesos(s) + ') no alcanza para el plan más bajo para tu edad (' + pesos(planIs) + '), por eso pones ' + pesos(bolsillo) + ' de tu bolsillo. Revisemos si, por lo mismo que pagas hoy, puedes tener un plan con mejor cobertura.</div>';
     } else if (calza) {
       D.veredicto = 'calza_7';
       h += '<div class="lp-ver info"><strong>Tu plan cuesta lo mismo que tu 7%. Puedes tener opciones de mejorarlo.</strong>Con la Ley Corta, a muchos afiliados les ajustaron el precio del plan a su 7%, pero la cobertura siguió siendo la misma. Revisemos si, por lo mismo que pagas hoy, puedes tener un plan mejor.</div>';
@@ -1223,7 +1246,7 @@ function textoWsp() {
     if (D.cargas !== null) l.push('• En el plan: ' + (!f.length ? 'solo yo' : f.length === 1 ? 'yo y ' + f[0] : 'yo, ' + f[0] + ' y ' + f[1]));
   }
   else {
-    l.push(D.noSabe ? '• No sé el valor de mi plan: solo quiero un plan ajustado a mi 7%' : '• Mi plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ' al mes)' + (D.bolsillo > 0 ? ', pago ' + pesos(D.bolsillo) + ' sobre mi 7%' : D.veredicto === 'dentro_del_7' ? ', me quedan ' + pesos(-D.bolsillo) + ' de excedente' : ''));
+    l.push(D.adic > 0 ? '• Pago hoy unos ' + pesos(Math.round((siete() + D.adic) / 100) * 100) + ' al mes (mi 7% más el adicional)' : D.noSabe ? '• No sé el valor de mi plan: solo quiero un plan ajustado a mi 7%' : '• Mi plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ' al mes)' + (D.bolsillo > 0 ? ', pago ' + pesos(D.bolsillo) + ' sobre mi 7%' : D.veredicto === 'dentro_del_7' ? ', me quedan ' + pesos(-D.bolsillo) + ' de excedente' : ''));
     if (D.adic) l.push('• Adicional Isapre en mi liquidación: ' + pesos(D.adic));
     if (D.pref) l.push('• Prefiero: ' + D.pref.toLowerCase());
   }
@@ -1252,7 +1275,7 @@ document.querySelectorAll('[data-pref]').forEach(c => c.addEventListener('click'
 }));
 $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
 function limpiar() {
-  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-nose').checked = false; $('lp-pago').disabled = false; $('lp-pago-ok').textContent = 'Ver mi resultado →'; $('lp-liq').hidden = true; $('lp-ver-liq').textContent = '¿Dónde lo veo? Ver una liquidación de ejemplo'; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
+  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-nose').checked = false; $('lp-pago').disabled = false; $('lp-pago-ok').textContent = 'Ver mi resultado →'; $('lp-sueldo-ok').textContent = 'Continuar →'; $('lp-liq').hidden = true; $('lp-ver-liq').textContent = '¿Dónde lo veo? Ver una liquidación de ejemplo'; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
   D.tramo2 = null; $('pp-sueldo2').value = ''; $('pp-perfil').innerHTML = ''; $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
   $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
@@ -1326,9 +1349,10 @@ $('lp-form').addEventListener('submit', async e => {
     .concat(pareja ? ['Hoy: ' + (D.pcob || 'sin indicar'), 'Sueldos: ' + pesos(D.sueldo) + ' y ' + pesos(D.sueldo2), 'Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
       : D.desde === 'fonasa'
       ? ['Planes desde: ' + pesos(D.desdePlan), 'Resultado: ' + resultadoTxt]
-      : [D.noSabe ? 'Plan: no sabe el valor; quiere un plan ajustado a su 7%' : 'Plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ')']
+      : [D.adic > 0 ? 'Paga hoy: ' + pesos(Math.round((s + D.adic) / 100) * 100) + ' (7% + adicional)' : D.noSabe ? 'Plan: no sabe el valor; quiere un plan ajustado a su 7%' : 'Plan: ' + fmtUF(D.pagoUF) + ' UF (' + pesos(Math.round(D.pago / 100) * 100) + ')']
         .concat(D.adic ? ['Adicional en liquidación: ' + pesos(D.adic)] : [])
-        .concat(D.veredicto === 'pone_bolsillo' ? ['Paga sobre su 7%: ' + pesos(D.bolsillo) + '/mes'] : D.veredicto === 'calza_7' ? ['Su plan calza con su 7%'] : D.veredicto === 'dentro_del_7' ? ['Plan bajo su 7%: excedente de ' + pesos(-D.bolsillo) + '/mes'] : [])
+        .concat(D.veredicto === 'pone_bolsillo' ? ['Paga sobre su 7%: ' + pesos(D.bolsillo) + '/mes · ahorro posible ' + pesos(D.ahorro) + '/mes']
+          : D.veredicto === 'cerca_minimo' ? ['Paga sobre su 7%: ' + pesos(D.bolsillo) + '/mes, cerca del plan mínimo para su edad'] : D.veredicto === 'calza_7' ? ['Su plan calza con su 7%'] : D.veredicto === 'dentro_del_7' ? ['Plan bajo su 7%: excedente de ' + pesos(-D.bolsillo) + '/mes'] : [])
         .concat(D.pref ? ['Prefiere: ' + D.pref] : []))
     .concat(variante === 'b' ? ['Variante: b'] : [])
     .concat(fuente ? ['Fuente: ' + fuente] : []).join(' | ');
