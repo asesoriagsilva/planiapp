@@ -136,6 +136,7 @@ h1 span { color:var(--purple); }
 .lp-plan-pct { grid-row:span 2; font-family:'Inter',sans-serif; font-size:18px; font-weight:800; color:var(--purple); text-align:center; background:var(--white); border-radius:10px; padding:0.45rem 0; }
 .lp-plan-txt { font-size:14.5px; color:var(--text); }
 .lp-plan-txt b { color:var(--purple-dark); }
+.lp-plan-uf { font-size:12.5px; color:var(--muted); white-space:nowrap; }
 .lp-plan-exc { font-size:13px; color:var(--muted); }
 .lp-plan-exc.si { color:var(--green-dark); font-weight:700; }
 .lp-planes-nota { font-size:12.5px; color:var(--muted); margin-top:0.4rem; }
@@ -1008,6 +1009,7 @@ $('lp-pago-ok').addEventListener('click', okPago);
 $('lp-pago-nose').addEventListener('change', e => {
   D.noSabe = e.target.checked;
   $('lp-pago').disabled = D.noSabe;
+  $('lp-pago-ok').textContent = D.noSabe ? 'Ver planes a mi 7% →' : 'Ver mi resultado →';
   if (D.noSabe) { D.pago = 0; D.pagoUF = 0; $('lp-pago').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-caja').classList.remove('err'); $('lp-pago-err').hidden = true; }
 });
 // Liquidación de ejemplo, desplegable
@@ -1041,10 +1043,11 @@ function opcionesPlan(planMin, base) {
   if (base === undefined) base = Math.min(D.sueldo, TOPE_UF * UF);
   return OPCIONES.map(p => ({ p, precio: Math.round(base * p / 10000) * 100, exc: Math.round(base * (7 - p) / 10000) * 100 })).filter(o => o.precio >= planMin);
 }
-function bloquePlanes(ops, titulo, plural) {
+// conUF: en la puerta Isapre el plan también se muestra en UF, que es como aparece en el contrato
+function bloquePlanes(ops, titulo, plural, conUF) {
   if (!ops.length) return '';
   return '<div class="lp-planes"><p class="lp-planes-t">' + (titulo || 'Planes que puedes elegir con tu 7%') + '</p>'
-    + ops.map(o => '<div class="lp-plan"><span class="lp-plan-pct">' + pct(o.p) + '</span><span class="lp-plan-txt">Plan de ' + (o.p === 7 ? 'hasta ' : 'unos ') + '<b>' + pesos(o.precio) + '</b> al mes</span>'
+    + ops.map(o => '<div class="lp-plan"><span class="lp-plan-pct">' + pct(o.p) + '</span><span class="lp-plan-txt">Plan de ' + (o.p === 7 ? 'hasta ' : 'unos ') + '<b>' + pesos(o.precio) + '</b> al mes' + (conUF ? ' <small class="lp-plan-uf">(' + fmtUF(o.precio / UF) + ' UF)</small>' : '') + '</span>'
       + '<span class="lp-plan-exc' + (o.exc ? ' si' : '') + '">' + (o.exc ? (plural ? 'Les quedan ' : 'Te quedan ') + pesos(o.exc) + ' al mes de excedente' : (plural ? 'Usan todo su 7% en el plan' : 'Usas todo tu 7% en el plan')) + '</span></div>').join('')
     + '<p class="lp-planes-nota">' + (plural
       ? 'Los excedentes no se eliminaron: hoy se restringen a un monto lo más cercano posible a sus 7%. Lo que les quede de excedente queda a su favor en su cuenta de la Isapre.'
@@ -1152,11 +1155,16 @@ function resultado() {
     }
     h += '<p class="lp-planes-nota">En un plan compensado cada uno mantiene su contrato y suman sus cotizaciones. Valores mínimos de referencia, calculados con la tabla de factores única, con los dos como cotizantes. Las cargas menores de 2 años no pagan hasta cumplirlos.</p>';
   } else if (D.noSabe && !D.adic) {
+    // No sabe cuánto vale su plan: se le muestran los planes ajustados a su 7% y se le ofrece revisar su contrato
     D.veredicto = 'no_sabe_pago';
-    const opsIs = opcionesPlan(Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100);
-    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (opsIs.length ? 'Puedes optar a planes desde' : 'Tu plan actual') + '</span>' + (opsIs.length ? n(opsIs[0].precio) : '<strong>Por revisar</strong>') + '</div></div>'
-      + '<div class="lp-ver info"><strong>Estos son los planes ajustados a tu 7%.</strong>' + (opsIs.length ? 'Puedes optar a planes ' + rango(opsIs) + ' al mes. ' : '') + 'Si después quieres revisar tu plan actual, con tu liquidación a mano lo vemos contigo por WhatsApp.</div>'
-      + bloquePlanes(opsIs);
+    const planIs = Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100;
+    const opsIs = opcionesPlan(planIs);
+    const enUF = v => fmtUF(v / UF) + ' UF';
+    h = '<div class="lp-res-nums"><div><span>Tu 7% de salud</span>' + n(s) + '</div><div><span>' + (opsIs.length ? 'Puedes optar a planes desde' : 'El plan más bajo para tu edad') + '</span>' + n(opsIs.length ? opsIs[0].precio : planIs) + '</div></div>'
+      + (opsIs.length
+        ? '<div class="lp-ver ok"><strong>No necesitas saber cuánto vale tu plan.</strong>Con tu 7% (' + pesos(s) + ') puedes optar a planes desde ' + enUF(opsIs[0].precio) + ' (' + pesos(opsIs[0].precio) + ' al mes), sin poner plata de tu bolsillo. Por WhatsApp revisamos contigo tu contrato o tu liquidación, sin costo, para ver si hoy estás pagando más que tu 7%.</div>'
+        : '<div class="lp-ver info"><strong>Revisemos tu plan actual.</strong>El plan más bajo para tu edad es de ' + enUF(planIs) + ' (' + pesos(planIs) + ' al mes) y tu 7% es de ' + pesos(s) + '. Por WhatsApp revisamos contigo tu contrato o tu liquidación, sin costo, para ver cuánto pagas hoy sobre tu 7% y si hay un plan que te convenga más.</div>')
+      + bloquePlanes(opsIs, 'Planes ajustados a tu 7%', false, true);
   } else {
     // Isapre: con el valor del plan en UF (o, si no lo sabe, con el adicional de su liquidación) se ve si paga sobre su 7%
     const pago = D.noSabe ? s + D.adic : D.pago;
@@ -1168,7 +1176,7 @@ function resultado() {
       D.veredicto = 'pone_bolsillo';
       h += '<div class="lp-grande"><span>Si ajustas tu plan a tu 7%, te ahorras</span>' + n(bolsillo) + '<small>al mes, que son ' + pesos(bolsillo * 12) + ' al año</small></div>'
         + '<div class="lp-ver alto"><strong>Hoy esa diferencia sale de tu bolsillo.</strong>Pagas ' + pesos(bolsillo) + ' más que tu 7%, y se va a la Isapre todos los meses. Revisemos si hay un plan por tu 7% que te calce con la clínica donde te atiendes y lo que más usas.</div>'
-        + bloquePlanes(opcionesPlan(Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100));
+        + bloquePlanes(opcionesPlan(Math.round(PLAN_MIN_UF[D.tramo] * UF / 100) * 100), '', false, true);
     } else if (calza) {
       D.veredicto = 'calza_7';
       h += '<div class="lp-ver info"><strong>Tu plan cuesta lo mismo que tu 7%. Puedes tener opciones de mejorarlo.</strong>Con la Ley Corta, a muchos afiliados les ajustaron el precio del plan a su 7%, pero la cobertura siguió siendo la misma. Revisemos si, por lo mismo que pagas hoy, puedes tener un plan mejor.</div>';
@@ -1243,7 +1251,7 @@ document.querySelectorAll('[data-pref]').forEach(c => c.addEventListener('click'
 }));
 $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
 function limpiar() {
-  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-nose').checked = false; $('lp-pago').disabled = false; $('lp-liq').hidden = true; $('lp-ver-liq').textContent = '¿Dónde lo veo? Ver una liquidación de ejemplo'; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
+  D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-nose').checked = false; $('lp-pago').disabled = false; $('lp-pago-ok').textContent = 'Ver mi resultado →'; $('lp-liq').hidden = true; $('lp-ver-liq').textContent = '¿Dónde lo veo? Ver una liquidación de ejemplo'; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
   D.tramo2 = null; $('pp-sueldo2').value = ''; $('pp-perfil').innerHTML = ''; $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
   $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
