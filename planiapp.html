@@ -77,22 +77,30 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 .hero-guarantee-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
 .hero-right { flex: 1 1 0; min-width: 0; }
 /* Recuadro de la calculadora a la derecha del inicio */
-.calc-card { max-width: 500px; margin-left: auto; background: var(--white); border: 1px solid var(--border); border-radius: 22px; padding: 1.4rem 1.4rem 1.15rem; box-shadow: 0 24px 48px -30px rgba(38,33,92,.5); }
+.calc-card { max-width: 500px; margin-left: auto; background: linear-gradient(135deg, #E6F9F0 0%, #C9EEDC 45%, #E2F7EC 70%, #D3F2E3 100%); background-size: 220% 220%; animation: calcFondo 9s ease-in-out infinite; border: 1px solid #BDE6D2; border-radius: 22px; padding: 1.4rem 1.4rem 1.25rem; box-shadow: 0 24px 48px -30px rgba(15,110,86,.6); }
+@keyframes calcFondo { 0%, 100% { background-position: 0% 40%; } 50% { background-position: 100% 60%; } }
+@keyframes calcFlota { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-4px) rotate(-3deg); } }
+@keyframes calcBaja { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+@media (prefers-reduced-motion: reduce) { .calc-card, .calc-card-ico, .calc-alt-fl { animation: none !important; } }
 .calc-card-top { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.55rem; }
-.calc-card-ico { flex-shrink: 0; width: 46px; height: 46px; border-radius: 14px; background: var(--purple); color: #fff; display: flex; align-items: center; justify-content: center; }
-.calc-card-k { font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--purple); margin: 0 0 2px; }
+.calc-card-ico { flex-shrink: 0; width: 48px; height: 54px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 6px 8px rgba(38,33,92,.25)); animation: calcFlota 4.5s ease-in-out infinite; }
+.calc-card-k { font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #0F6E56; margin: 0 0 2px; }
 .calc-card-t { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 800; color: var(--purple-dark); line-height: 1.2; letter-spacing: -0.01em; margin: 0; }
-.calc-card-p { font-size: 14.5px; color: var(--text-muted); line-height: 1.5; margin: 0 0 0.85rem; }
+.calc-card-p { font-size: 14.5px; color: #3E6458; line-height: 1.5; margin: 0 0 0.85rem; }
 .calc-card-ops { display: flex; flex-direction: column; gap: 0.5rem; }
-.calc-card-ops a { display: flex; align-items: center; gap: 0.8rem; background: #F7F6FE; border: 1px solid var(--border); border-radius: 14px; padding: 0.7rem 0.9rem; text-decoration: none; color: var(--purple-dark); transition: border-color .15s, background .15s; -webkit-tap-highlight-color: transparent; }
-.calc-card-ops a::after { content: '→'; margin-left: auto; padding-left: 0.5rem; font-size: 18px; color: var(--purple); }
-@media (hover: hover) { .calc-card-ops a:hover { border-color: var(--purple-mid); background: var(--purple-light); } }
+.calc-card-ops a { display: flex; align-items: center; gap: 0.8rem; background: #fff; border: 1px solid #CDEBDD; box-shadow: 0 8px 16px -14px rgba(15,110,86,.7); border-radius: 14px; padding: 0.7rem 0.9rem; text-decoration: none; color: var(--purple-dark); transition: border-color .15s, background .15s; -webkit-tap-highlight-color: transparent; }
+.calc-card-ops a::after { content: '→'; margin-left: auto; padding-left: 0.5rem; font-size: 18px; color: #0F6E56; transition: transform .2s; }
+@media (hover: hover) { .calc-card-ops a:hover { border-color: #1D9E75; background: #F5FFFA; } .calc-card-ops a:hover::after { transform: translateX(3px); } }
 .calc-card-ops a:focus-visible { outline: 3px solid var(--purple-mid); outline-offset: 2px; }
-.calc-op-ico { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--white); border: 1px solid var(--border); color: var(--purple); display: flex; align-items: center; justify-content: center; }
+.calc-op-ico { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #E1F5EE; border: 1px solid #CDEBDD; color: #0F6E56; display: flex; align-items: center; justify-content: center; }
 .calc-card-ops b { display: block; font-size: 15.5px; line-height: 1.25; }
 .calc-card-ops small { display: block; font-size: 13px; color: var(--text-muted); line-height: 1.35; }
-.calc-card-alt { display: inline-block; margin-top: 0.85rem; font-size: 14px; font-weight: 600; color: var(--purple); text-decoration: none; }
-.calc-card-alt:hover { text-decoration: underline; }
+.calc-card-alt { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: fit-content; margin: 1.05rem auto 0; background: var(--purple); color: #fff; font-size: 14.5px; font-weight: 600; text-decoration: none; border-radius: 999px; padding: 0.7rem 1.4rem; box-shadow: 0 12px 22px -14px rgba(83,74,183,.9); transition: background .2s, transform .2s; -webkit-tap-highlight-color: transparent; }
+@media (hover: hover) { .calc-card-alt:hover { background: var(--purple-deep); transform: translateY(-1px); } }
+.calc-card-alt { white-space: nowrap; }
+@media (max-width: 440px) { .calc-alt-x { display: none; } }
+.calc-card-alt:focus-visible { outline: 3px solid var(--purple-mid); outline-offset: 3px; }
+.calc-alt-fl { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,.2); font-size: 13px; animation: calcBaja 1.8s ease-in-out infinite; }
 /* Formulario con los pasos a su derecha */
 .form-pasos { position: sticky; top: 1.5rem; padding-top: 0.4rem; }
 .form-pasos-t { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; margin: 0 0 1rem; }
@@ -508,14 +516,14 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     </div>
     <div class="hero-right">
       <div class="calc-card">
-        <div class="calc-card-top"><span class="calc-card-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h4"/></svg></span><div><p class="calc-card-k">Calculadora de Isapre</p><p class="calc-card-t">Calcula qué plan te da tu 7%</p></div></div>
+        <div class="calc-card-top"><span class="calc-card-ico" aria-hidden="true"><svg width="40" height="48" viewBox="0 0 40 48"><rect x="1" y="1" width="38" height="46" rx="7" fill="#5C6271"/><rect x="1" y="1" width="38" height="46" rx="7" fill="none" stroke="#454A57" stroke-width="1.5"/><rect x="6" y="6" width="28" height="11" rx="2.5" fill="#DDF5EA"/><rect x="19" y="9.5" width="12" height="4" rx="1.2" fill="#1D9E75" opacity=".55"/><rect x="6" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="21" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="6" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="29" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="6" y="37" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="16" y="37" width="8" height="6" rx="2" fill="#F6A9CB"/><rect x="26" y="37" width="8" height="6" rx="2" fill="#E8559A"/></svg></span><div><p class="calc-card-k">Calculadora de Isapre</p><p class="calc-card-t">Calcula qué plan te da tu 7%</p></div></div>
         <p class="calc-card-p">Solo con tu edad y tu sueldo, sin dejar tus datos. ¿Dónde estás hoy?</p>
         <div class="calc-card-ops">
           <a href="/calculadora-isapre?desde=fonasa" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_fonasa'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg></span><span><b>Estoy en Fonasa</b><small>Ver si me alcanza para una Isapre</small></span></a>
           <a href="/calculadora-isapre?desde=isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_isapre'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>Estoy en Isapre</b><small>Ajustar mi plan a mi 7%</small></span></a>
           <a href="/calculadora-isapre?desde=pareja" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_pareja'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.2c3 .3 5 2.4 5 5.3"/></svg></span><span><b>Somos pareja</b><small>Plan compensado: sumamos nuestros dos 7%</small></span></a>
         </div>
-        <a class="calc-card-alt" href="#opciones">Prefiero que me asesoren directamente ↓</a>
+        <a class="calc-card-alt" href="#opciones">Prefiero que me asesoren<span class="calc-alt-x"> directamente</span> <span class="calc-alt-fl" aria-hidden="true">↓</span></a>
       </div>
     </div>
   </div>
