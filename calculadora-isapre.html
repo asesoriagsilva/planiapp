@@ -416,7 +416,7 @@ h1 span { color:var(--purple); }
       </div>
       <div class="lp-cta" id="lp-cta">
         <button class="lp-btn verde lp-wsp" type="button" id="lp-a-propuestas">Quiero recibir propuestas →</button>
-        <p class="lp-wsp-nota">Gratis y sin compromiso.</p>
+        <p class="lp-wsp-nota" id="lp-cta-nota">Gratis y sin compromiso.</p>
       </div>
       <button class="lp-otra" type="button" id="lp-otra">Volver a calcular</button>
     </div>
@@ -739,6 +739,8 @@ function pintaExtra() {
   $('lp-extra-total').hidden = !D.extra;
   $('lp-extra-total').innerHTML = 'Te enviamos propuestas de hasta <b>' + pesos(siete() + D.extra) + '</b> al mes (tu 7% + ' + pesos(D.extra) + ').';
   document.querySelectorAll('[data-extra]').forEach(c => c.classList.toggle('on', +c.dataset.extra === D.extra));
+  // El botón queda fijo abajo: la línea bajo él repite el total, por si el aviso verde quedó fuera de la pantalla
+  $('lp-cta-nota').innerHTML = D.extra ? 'Propuestas de hasta <b>' + pesos(siete() + D.extra) + '</b> al mes · Gratis y sin compromiso' : 'Gratis y sin compromiso.';
 }
 $('lp-extra-monto').addEventListener('input', e => { D.extra = monto(e.target); pintaExtra(); });
 // Montos rápidos: primero lo justo que falta, luego dos montos más holgados (redondeados a diez mil)
@@ -883,6 +885,7 @@ function resultado() {
   $('lp-cta').hidden = D.veredicto === 'conviene_fonasa';
   $('lp-extra').hidden = !(D.veredicto === 'aporte' || D.veredicto === 'familia_aporte');
   if (!$('lp-extra').hidden) { montosRapidos(D.falta); pintaExtra(); }
+  else $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
   marca('calc_resultado', { veredicto: D.veredicto, tramo: TRAMOS[D.tramo] });
   ir('resultado');
 }
@@ -919,7 +922,7 @@ $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; m
 $('lp-otra').addEventListener('click', () => {
   D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
-  $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true;
+  $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
   $('lp-region').value = ''; $('lp-clinicas').innerHTML = ''; $('lp-clin-bloque').hidden = true; $('lp-prop-err').hidden = true;
   $('lp-hijos').innerHTML = ''; $('lp-fam').hidden = true; $('lp-fam-ok').hidden = true;
   $('lp-siete-vivo').hidden = true;
