@@ -118,6 +118,8 @@ h1 span { color:var(--purple); }
 .lp-nota-datos svg { flex-shrink:0; margin-top:2px; }
 .lp-chipb.nada { border-style:dashed; }
 .lp-campo.chico input { font-size:18px; padding-top:0.75rem; padding-bottom:0.75rem; }
+.lp-extra-rapidos { margin:0.2rem 0 1rem; }
+#lp-extra-monto::placeholder { font-size:15px; font-weight:500; color:var(--muted); }
 .lp-extra-total { margin-top:0.5rem; font-size:14px; color:var(--green-dark); background:var(--green-light); border-radius:12px; padding:0.55rem 0.85rem; }
 .lp-planes { margin-top:0.8rem; }
 .lp-planes-t { font-size:13.5px; font-weight:700; color:var(--purple-dark); margin-bottom:0.45rem; }
@@ -500,7 +502,7 @@ h1 span { color:var(--purple); }
       <div class="lp-bloque" id="lp-extra" hidden>
         <p class="lp-mini">¿Tienes un monto adicional pensado para pagar en la Isapre? <em>(además de tu 7%)</em></p>
         <div class="lp-chips lp-extra-rapidos" id="lp-extra-rapidos"></div>
-        <label class="lp-campo chico" id="lp-extra-caja"><span>$</span><input id="lp-extra-monto" type="text" inputmode="numeric" autocomplete="off" placeholder="Ej: 30.000" aria-label="Monto adicional al mes"></label>
+        <label class="lp-campo chico" id="lp-extra-caja"><span>$</span><input id="lp-extra-monto" type="text" inputmode="numeric" autocomplete="off" placeholder="Ingresa lo que puedes aportar" aria-label="Monto adicional al mes"></label>
         <p class="lp-extra-total" id="lp-extra-total" hidden></p>
       </div>
       <div class="lp-cta" id="lp-cta">
