@@ -76,18 +76,32 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 .hero-guarantee { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); margin-top: 0.75rem; }
 .hero-guarantee-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
 .hero-right { flex: 1 1 0; min-width: 0; }
-/* Acceso a la calculadora desde el inicio: el formulario sigue más abajo */
-.hero-calc { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem; margin-top: 1.4rem; }
-.hero-calc-btn { display: flex; align-items: center; gap: 0.9rem; max-width: 520px; width: 100%; background: var(--purple); color: #fff; text-decoration: none; border-radius: 18px; padding: 0.95rem 1.15rem; box-shadow: 0 14px 30px -16px rgba(83,74,183,.8); transition: transform .2s, background .2s; -webkit-tap-highlight-color: transparent; }
-@media (hover: hover) { .hero-calc-btn:hover { background: var(--purple-deep); transform: translateY(-2px); } }
-.hero-calc-btn:focus-visible { outline: 3px solid var(--purple-mid); outline-offset: 3px; }
-.hero-calc-ico { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center; }
-.hero-calc-txt { flex: 1; display: flex; flex-direction: column; gap: 0.15rem; }
-.hero-calc-txt b { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; line-height: 1.25; }
-.hero-calc-txt small { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.85); }
-.hero-calc-fl { flex-shrink: 0; font-size: 20px; }
-.hero-calc-alt { font-size: 14px; font-weight: 600; color: var(--purple); text-decoration: none; padding-left: 0.2rem; }
-.hero-calc-alt:hover { text-decoration: underline; }
+/* Recuadro de la calculadora a la derecha del inicio */
+.calc-card { max-width: 500px; margin-left: auto; background: var(--white); border: 1px solid var(--border); border-radius: 22px; padding: 1.4rem 1.4rem 1.15rem; box-shadow: 0 24px 48px -30px rgba(38,33,92,.5); }
+.calc-card-top { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.55rem; }
+.calc-card-ico { flex-shrink: 0; width: 46px; height: 46px; border-radius: 14px; background: var(--purple); color: #fff; display: flex; align-items: center; justify-content: center; }
+.calc-card-k { font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--purple); margin: 0 0 2px; }
+.calc-card-t { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 800; color: var(--purple-dark); line-height: 1.2; letter-spacing: -0.01em; margin: 0; }
+.calc-card-p { font-size: 14.5px; color: var(--text-muted); line-height: 1.5; margin: 0 0 0.85rem; }
+.calc-card-ops { display: flex; flex-direction: column; gap: 0.5rem; }
+.calc-card-ops a { display: flex; align-items: center; gap: 0.8rem; background: #F7F6FE; border: 1px solid var(--border); border-radius: 14px; padding: 0.7rem 0.9rem; text-decoration: none; color: var(--purple-dark); transition: border-color .15s, background .15s; -webkit-tap-highlight-color: transparent; }
+.calc-card-ops a::after { content: '→'; margin-left: auto; padding-left: 0.5rem; font-size: 18px; color: var(--purple); }
+@media (hover: hover) { .calc-card-ops a:hover { border-color: var(--purple-mid); background: var(--purple-light); } }
+.calc-card-ops a:focus-visible { outline: 3px solid var(--purple-mid); outline-offset: 2px; }
+.calc-op-ico { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--white); border: 1px solid var(--border); color: var(--purple); display: flex; align-items: center; justify-content: center; }
+.calc-card-ops b { display: block; font-size: 15.5px; line-height: 1.25; }
+.calc-card-ops small { display: block; font-size: 13px; color: var(--text-muted); line-height: 1.35; }
+.calc-card-alt { display: inline-block; margin-top: 0.85rem; font-size: 14px; font-weight: 600; color: var(--purple); text-decoration: none; }
+.calc-card-alt:hover { text-decoration: underline; }
+/* Formulario con los pasos a su derecha */
+.form-pasos { position: sticky; top: 1.5rem; padding-top: 0.4rem; }
+.form-pasos-t { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; margin: 0 0 1rem; }
+@media (max-width: 900px) {
+  .calc-card { max-width: none; margin-left: 0; }
+  .form-section { grid-template-columns: 1fr !important; max-width: 620px !important; gap: 1.75rem !important; }
+  .form-pasos { position: static; padding-top: 0; }
+  .form-pasos-t { font-size: 19px; margin-bottom: 0.75rem; }
+}
 .specialist-card { background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 1.25rem; text-align: center; box-shadow: 0 4px 24px rgba(83,74,183,0.08); }
 .spec-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--purple-mid); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; color: #fff; margin: 0 auto 0.75rem; }
 .spec-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
@@ -198,7 +212,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 /* Estas dos filas quedan a dos columnas tambien en celular */
 .pf-row2.pf-row-sistema { grid-template-columns: 1.5fr 0.7fr; }
 .pf-row2.pf-row-renta { grid-template-columns: 1fr 0.9fr; }
-.form-section { max-width: 620px; margin: 2.75rem auto 0; padding: 0 1.5rem; scroll-margin-top: 90px; }
+.form-section { max-width: 1100px; margin: 2.75rem auto 0; padding: 0 1.5rem; scroll-margin-top: 90px; display: grid; grid-template-columns: minmax(0, 620px) minmax(0, 1fr); gap: 2.75rem; align-items: start; }
 .form-checks { display: flex; flex-wrap: wrap; gap: 0.3rem 0.85rem; margin-top: 0.75rem; }
 .form-checks span { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.9); white-space: nowrap; }
 /* La franja de WhatsApp con aire arriba y abajo */
@@ -491,96 +505,18 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
       <h1 class="hero-title">¡Encontramos el plan de <span>Isapre</span> ideal para ti!</h1>
       <p class="hero-sub hero-lead">Un ejecutivo siempre te dirá que su Isapre es la mejor. Elegir bien no es solo pagar menos: es saber qué cubre tu plan, cuáles son sus topes y si realmente se adapta a tus necesidades.</p>
       <p class="hero-sub hero-sub2" style="margin-bottom:0;">En Planiapp buscamos que tu nuevo plan se ajuste a tu bolsillo, funcione cuando lo necesites y sea claro, sin sorpresas a futuro. Si no te conviene cambiarte, también te lo diremos.</p>
-      <div class="hero-calc">
-        <a class="hero-calc-btn" href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero'})">
-          <span class="hero-calc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h4"/></svg></span>
-          <span class="hero-calc-txt"><b>Calcula qué plan te da tu 7%</b><small>Vengas de Fonasa o de una Isapre, solo con tu edad y tu sueldo. Sin dejar tus datos.</small></span>
-          <span class="hero-calc-fl" aria-hidden="true">→</span>
-        </a>
-        <a class="hero-calc-alt" href="#opciones">Prefiero que me asesoren directamente ↓</a>
-      </div>
     </div>
     <div class="hero-right">
-<style>
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
-@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
-@keyframes dash{to{stroke-dashoffset:-24;}}
-.sc{animation:fadeUp 0.5s ease both;}
-.sc:nth-child(1){animation-delay:0.1s;}
-.sc:nth-child(2){animation-delay:0.3s;}
-.sc:nth-child(3){animation-delay:0.5s;}
-.sc:nth-child(4){animation-delay:0.7s;}
-.si{animation:pulse 3s ease-in-out infinite;}
-.conn{stroke-dasharray:6 4;animation:dash 1.2s linear infinite;}
-</style>
-<div id="como-funciona" style="scroll-margin-top:90px;"></div>
-<div class="pasos-flow" style="display:flex;flex-direction:column;gap:4px;padding:0.1rem 0;">
-
-  <div class="sc" style="display:flex;align-items:center;gap:12px;">
-    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-      <div class="si" style="width:38px;height:38px;border-radius:50%;background:#EEEDFE;border:2px solid #534AB7;display:flex;align-items:center;justify-content:center;">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M13 3.5l3.5 3.5L7.5 16H4v-3.5L13 3.5z" stroke="#534AB7" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 5.5l3.5 3.5" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="calc-card">
+        <div class="calc-card-top"><span class="calc-card-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h4"/></svg></span><div><p class="calc-card-k">Calculadora de Isapre</p><p class="calc-card-t">Calcula qué plan te da tu 7%</p></div></div>
+        <p class="calc-card-p">Solo con tu edad y tu sueldo, sin dejar tus datos. ¿Dónde estás hoy?</p>
+        <div class="calc-card-ops">
+          <a href="/calculadora-isapre?desde=fonasa" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_fonasa'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg></span><span><b>Estoy en Fonasa</b><small>Ver si me alcanza para una Isapre</small></span></a>
+          <a href="/calculadora-isapre?desde=isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_isapre'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span><span><b>Estoy en Isapre</b><small>Ajustar mi plan a mi 7%</small></span></a>
+          <a href="/calculadora-isapre?desde=pareja" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'portada_hero_pareja'})"><span class="calc-op-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.2c3 .3 5 2.4 5 5.3"/></svg></span><span><b>Somos pareja</b><small>Plan compensado: sumamos nuestros dos 7%</small></span></a>
+        </div>
+        <a class="calc-card-alt" href="#opciones">Prefiero que me asesoren directamente ↓</a>
       </div>
-    </div>
-    <div style="flex:1;background:#EEEDFE;border-radius:12px;padding:0.5rem 0.85rem;">
-      <div style="font-size:11px;font-weight:600;color:#7F77DD;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 1</div>
-      <div style="font-size:13px;font-weight:600;color:#26215C;margin-bottom:2px;">Completa el formulario</div>
-      <div style="font-size:11px;color:#534AB7;line-height:1.4;">Responde algunas preguntas para armar tu perfil de salud.</div>
-    </div>
-  </div>
-
-  <div style="display:flex;justify-content:flex-start;padding-left:19px;">
-    <svg width="2" height="12"><line x1="1" y1="0" x2="1" y2="12" class="conn" stroke="#534AB7" stroke-width="2"/></svg>
-  </div>
-
-  <div class="sc" style="display:flex;align-items:center;gap:12px;">
-    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-      <div class="si" style="width:38px;height:38px;border-radius:50%;background:#E1F5EE;border:2px solid #1D9E75;display:flex;align-items:center;justify-content:center;animation-delay:0.8s;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </div>
-    <div style="flex:1;background:#E1F5EE;border-radius:12px;padding:0.5rem 0.85rem;">
-      <div style="font-size:11px;font-weight:600;color:#0F6E56;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 2</div>
-      <div style="font-size:13px;font-weight:600;color:#04342C;margin-bottom:2px;">Elige cómo te contactamos</div>
-      <div style="font-size:11px;color:#0F6E56;line-height:1.4;">Escoge llamada o WhatsApp y el horario en que prefieres que te contactemos.</div>
-    </div>
-  </div>
-
-  <div style="display:flex;justify-content:flex-start;padding-left:19px;">
-    <svg width="2" height="12"><line x1="1" y1="0" x2="1" y2="12" class="conn" stroke="#1D9E75" stroke-width="2"/></svg>
-  </div>
-
-  <div class="sc" style="display:flex;align-items:center;gap:12px;">
-    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-      <div class="si" style="width:38px;height:38px;border-radius:50%;background:#E6F1FB;border:2px solid #185FA5;display:flex;align-items:center;justify-content:center;animation-delay:1.6s;">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="8" r="3.5" stroke="#185FA5" stroke-width="1.5"/><path d="M4 17c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-    </div>
-    <div style="flex:1;background:#E6F1FB;border-radius:12px;padding:0.5rem 0.85rem;">
-      <div style="font-size:11px;font-weight:600;color:#185FA5;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 3</div>
-      <div style="font-size:13px;font-weight:600;color:#042C53;margin-bottom:2px;">Recibe tus propuestas</div>
-      <div style="font-size:11px;color:#185FA5;line-height:1.4;">Un ejecutivo inscrito en la Superintendencia de Salud te contacta y te envía los planes a tu WhatsApp y te explica sus beneficios y detalles.</div>
-    </div>
-  </div>
-
-  <div style="display:flex;justify-content:flex-start;padding-left:19px;">
-    <svg width="2" height="12"><line x1="1" y1="0" x2="1" y2="12" class="conn" stroke="#185FA5" stroke-width="2"/></svg>
-  </div>
-
-  <div class="sc" style="display:flex;align-items:center;gap:12px;">
-    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-      <div class="si" style="width:38px;height:38px;border-radius:50%;background:#EAF3DE;border:2px solid #3B6D11;display:flex;align-items:center;justify-content:center;animation-delay:2.4s;">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M3 10.5C3 7 5.5 4 10 4s7 3 7 6.5c0 2.5-1.5 4.5-3.5 5.5l-3.5 1-3.5-1C4.5 15 3 13 3 10.5z" stroke="#3B6D11" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </div>
-    <div style="flex:1;background:#EAF3DE;border-radius:12px;padding:0.5rem 0.85rem;">
-      <div style="font-size:11px;font-weight:600;color:#3B6D11;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 4</div>
-      <div style="font-size:13px;font-weight:600;color:#173404;margin-bottom:2px;">Elige y gestiona el cambio</div>
-      <div style="font-size:11px;color:#3B6D11;line-height:1.4;">Escoges el plan que más te acomoda y te ayudamos a gestionar el cambio directamente con el ejecutivo de la Isapre.</div>
-    </div>
-  </div>
-
-</div>
     </div>
   </div>
 </div>
@@ -817,6 +753,89 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
       </div>
     </div>
       </div>
+  <aside class="form-pasos">
+    <p class="form-pasos-t">¿Cómo funciona?</p>
+<style>
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+@keyframes dash{to{stroke-dashoffset:-24;}}
+.sc{animation:fadeUp 0.5s ease both;}
+.sc:nth-child(1){animation-delay:0.1s;}
+.sc:nth-child(2){animation-delay:0.3s;}
+.sc:nth-child(3){animation-delay:0.5s;}
+.sc:nth-child(4){animation-delay:0.7s;}
+.si{animation:pulse 3s ease-in-out infinite;}
+.conn{stroke-dasharray:6 4;animation:dash 1.2s linear infinite;}
+</style>
+<div id="como-funciona" style="scroll-margin-top:90px;"></div>
+<div class="pasos-flow" style="display:flex;flex-direction:column;gap:4px;padding:0.1rem 0;">
+
+  <div class="sc" style="display:flex;align-items:center;gap:12px;">
+    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+      <div class="si" style="width:38px;height:38px;border-radius:50%;background:#EEEDFE;border:2px solid #534AB7;display:flex;align-items:center;justify-content:center;">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M13 3.5l3.5 3.5L7.5 16H4v-3.5L13 3.5z" stroke="#534AB7" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 5.5l3.5 3.5" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div style="flex:1;background:#EEEDFE;border-radius:12px;padding:0.5rem 0.85rem;">
+      <div style="font-size:11px;font-weight:600;color:#7F77DD;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 1</div>
+      <div style="font-size:13px;font-weight:600;color:#26215C;margin-bottom:2px;">Completa el formulario</div>
+      <div style="font-size:11px;color:#534AB7;line-height:1.4;">Responde algunas preguntas para armar tu perfil de salud.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:flex-start;padding-left:19px;">
+    <svg width="2" height="12"><line x1="1" y1="0" x2="1" y2="12" class="conn" stroke="#534AB7" stroke-width="2"/></svg>
+  </div>
+
+  <div class="sc" style="display:flex;align-items:center;gap:12px;">
+    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+      <div class="si" style="width:38px;height:38px;border-radius:50%;background:#E1F5EE;border:2px solid #1D9E75;display:flex;align-items:center;justify-content:center;animation-delay:0.8s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+    <div style="flex:1;background:#E1F5EE;border-radius:12px;padding:0.5rem 0.85rem;">
+      <div style="font-size:11px;font-weight:600;color:#0F6E56;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 2</div>
+      <div style="font-size:13px;font-weight:600;color:#04342C;margin-bottom:2px;">Elige cómo te contactamos</div>
+      <div style="font-size:11px;color:#0F6E56;line-height:1.4;">Escoge llamada o WhatsApp y el horario en que prefieres que te contactemos.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:flex-start;padding-left:19px;">
+    <svg width="2" height="12"><line x1="1" y1="0" x2="1" y2="12" class="conn" stroke="#1D9E75" stroke-width="2"/></svg>
+  </div>
+
+  <div class="sc" style="display:flex;align-items:center;gap:12px;">
+    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+      <div class="si" style="width:38px;height:38px;border-radius:50%;background:#E6F1FB;border:2px solid #185FA5;display:flex;align-items:center;justify-content:center;animation-delay:1.6s;">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="8" r="3.5" stroke="#185FA5" stroke-width="1.5"/><path d="M4 17c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div style="flex:1;background:#E6F1FB;border-radius:12px;padding:0.5rem 0.85rem;">
+      <div style="font-size:11px;font-weight:600;color:#185FA5;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 3</div>
+      <div style="font-size:13px;font-weight:600;color:#042C53;margin-bottom:2px;">Recibe tus propuestas</div>
+      <div style="font-size:11px;color:#185FA5;line-height:1.4;">Un ejecutivo inscrito en la Superintendencia de Salud te contacta y te envía los planes a tu WhatsApp y te explica sus beneficios y detalles.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:flex-start;padding-left:19px;">
+    <svg width="2" height="12"><line x1="1" y1="0" x2="1" y2="12" class="conn" stroke="#185FA5" stroke-width="2"/></svg>
+  </div>
+
+  <div class="sc" style="display:flex;align-items:center;gap:12px;">
+    <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+      <div class="si" style="width:38px;height:38px;border-radius:50%;background:#EAF3DE;border:2px solid #3B6D11;display:flex;align-items:center;justify-content:center;animation-delay:2.4s;">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M3 10.5C3 7 5.5 4 10 4s7 3 7 6.5c0 2.5-1.5 4.5-3.5 5.5l-3.5 1-3.5-1C4.5 15 3 13 3 10.5z" stroke="#3B6D11" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+    <div style="flex:1;background:#EAF3DE;border-radius:12px;padding:0.5rem 0.85rem;">
+      <div style="font-size:11px;font-weight:600;color:#3B6D11;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Paso 4</div>
+      <div style="font-size:13px;font-weight:600;color:#173404;margin-bottom:2px;">Elige y gestiona el cambio</div>
+      <div style="font-size:11px;color:#3B6D11;line-height:1.4;">Escoges el plan que más te acomoda y te ayudamos a gestionar el cambio directamente con el ejecutivo de la Isapre.</div>
+    </div>
+  </div>
+
+</div>
+  </aside>
   </div>
 
   <!-- CÓMO ES CADA ISAPRE -->
