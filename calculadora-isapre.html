@@ -194,9 +194,14 @@ h1 span { color:var(--purple); }
 .lp-pareja-txt small { font-size:12.5px; color:var(--muted); }
 .lp-pareja-fl { font-size:20px; color:var(--purple); }
 .lp-cambio { margin-top:1.1rem; padding-top:0.9rem; border-top:1px dashed var(--border); }
-.lp-cambio p { font-size:12.5px; font-weight:700; color:var(--muted); margin-bottom:0.35rem; }
-.lp-cambio-op { display:block; width:100%; text-align:left; background:none; border:none; cursor:pointer; padding:0.4rem 0; font-size:14px; font-weight:600; color:var(--purple); line-height:1.4; }
-@media (hover:hover) { .lp-cambio-op:hover { text-decoration:underline; } }
+.lp-cambio p { font-size:12.5px; font-weight:700; color:var(--muted); margin-bottom:0.5rem; }
+#lp-cambio-ops { display:grid; gap:0.5rem; }
+.lp-cambio-op { display:flex; align-items:center; gap:0.6rem; width:100%; text-align:left; background:var(--bg); border:1px solid var(--border); border-radius:999px; cursor:pointer; padding:0.65rem 0.95rem; font-size:14px; font-weight:600; color:var(--purple-dark); line-height:1.3; transition:border-color .15s, background .15s; }
+.lp-cambio-op svg { flex-shrink:0; color:var(--purple); }
+.lp-cambio-op span { flex:1; }
+.lp-cambio-op em { font-style:normal; font-weight:500; color:var(--muted); }
+.lp-cambio-op i { font-style:normal; color:var(--purple); }
+@media (hover:hover) { .lp-cambio-op:hover { border-color:var(--purple-mid); background:var(--purple-light); } }
 .lp-hijos { display:grid; gap:0.6rem; margin-bottom:0.6rem; }
 .lp-hijos:empty { margin:0; }
 .lp-ops.cuatro { grid-template-columns:repeat(4,1fr); }
@@ -1107,13 +1112,20 @@ $('lp-otra').addEventListener('click', () => {
 });
 // "¿No es tu caso?": quien entró por la puerta equivocada (por ejemplo, está en Isapre y llegó por el anuncio de Fonasa)
 // se cambia a otra puerta ahí mismo y parte en su primera pregunta
+const ICONO = {
+  fonasa: '<path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/>',
+  isapre: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 9v6M9 12h6"/>',
+  pareja: '<circle cx="8.5" cy="8" r="3.3"/><circle cx="15.5" cy="8" r="3.3"/><path d="M2 20c0-3.4 2.9-5.5 6.5-5.5 1.3 0 2.5.3 3.5.8 1-.5 2.2-.8 3.5-.8 3.6 0 6.5 2.1 6.5 5.5"/>',
+};
 const CAMBIOS = {
-  fonasa: [['isapre', 'Estoy en Isapre: quiero bajar o ajustar mi plan'], ['pareja', 'Me gustaría cotizar con mi pareja: los dos trabajamos']],
-  isapre: [['fonasa', 'Estoy en Fonasa: quiero ver si me alcanza para un plan'], ['pareja', 'Me gustaría cotizar con mi pareja: los dos trabajamos']],
-  pareja: [['fonasa', 'Prefiero cotizar solo: estoy en Fonasa'], ['isapre', 'Prefiero cotizar solo: estoy en Isapre']],
+  fonasa: [['isapre', 'Estoy en Isapre <em>(ajustar plan)</em>'], ['pareja', 'Cotizar en pareja <em>(plan compensado)</em>']],
+  isapre: [['fonasa', 'Estoy en Fonasa <em>(ver si me alcanza)</em>'], ['pareja', 'Cotizar en pareja <em>(plan compensado)</em>']],
+  pareja: [['fonasa', 'Solo yo: estoy en Fonasa'], ['isapre', 'Solo yo: estoy en Isapre']],
 };
 function pintaCambio() {
-  $('lp-cambio-ops').innerHTML = (CAMBIOS[D.desde] || []).map(([a, t]) => '<button class="lp-cambio-op" type="button" data-a="' + a + '">' + t + ' →</button>').join('');
+  $('lp-cambio-ops').innerHTML = (CAMBIOS[D.desde] || []).map(([a, t]) => '<button class="lp-cambio-op" type="button" data-a="' + a + '">'
+    + '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONO[a] + '</svg>'
+    + '<span>' + t + '</span><i aria-hidden="true">→</i></button>').join('');
   $('lp-cambio-ops').querySelectorAll('[data-a]').forEach(b => b.addEventListener('click', () => cambiarPuerta(b.dataset.a)));
 }
 function cambiarPuerta(nueva) {
