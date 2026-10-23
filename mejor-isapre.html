@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Cuál es la mejor Isapre en 2026? Tabla comparativa | Planiapp</title>
-<meta name="description" content="Comparamos las 7 Isapres abiertas: precio de entrada por edad, urgencias, kinesiología, psicología, prótesis, quimioterapia y reembolsos. La mejor Isapre según tu perfil, actualizada a 2026.">
+<meta name="description" content="Tabla 2026 de las 7 Isapres: precio de entrada por edad, urgencias, kinesiología, psicología, topes y reembolsos, y cuál conviene según tu perfil.">
 <link rel="canonical" href="https://planiapp.cl/mejor-isapre">
 <meta property="og:title" content="¿Cuál es la mejor Isapre en 2026?">
 <meta property="og:description" content="Tabla comparativa de las 7 Isapres y cuál conviene según tu perfil: regiones, segmento alto, kinesiología, psicología o protección ante lo grave.">
@@ -44,12 +44,16 @@
       else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
       else if (q.get('fbclid')) o = 'Facebook o Instagram';
       else if (h && h !== location.hostname.replace(/^www\./, '')) {
-        o = /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
           : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
           : /instagram\./.test(h) ? 'Instagram'
           : /facebook\.|fb\.me/.test(h) ? 'Facebook'
           : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
           : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
           : 'Otro sitio: ' + h;
       }
       var antes = localStorage.getItem('planiapp_origen');
@@ -282,12 +286,6 @@ footer a { color: var(--text-muted); }
 .indice a { font-size: 14px; font-weight: 600; color: var(--purple-deep); background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 0.95rem; text-decoration: none; }
 .indice a:hover { border-color: var(--purple-mid); background: var(--purple-light); }
 #tabla, #perfiles, #precios, #preguntas { scroll-margin-top: 1rem; }
-.calc-cta { display: flex; align-items: center; gap: 1.25rem; background: var(--purple-light); border: 1px solid #DCD9FB; border-radius: 16px; padding: 1.2rem 1.4rem; margin: 1.75rem 0 0.5rem; }
-.calc-cta strong { display: block; font-size: 16.5px; color: var(--purple-dark); margin-bottom: 0.25rem; }
-.calc-cta p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--text-muted); }
-.calc-cta a { flex-shrink: 0; background: var(--purple); color: #fff; text-decoration: none; font-weight: 600; font-size: 14.5px; border-radius: 999px; padding: 0.7rem 1.2rem; white-space: nowrap; }
-.calc-cta a:hover { background: var(--purple-deep); }
-@media (max-width: 600px) { .calc-cta { flex-direction: column; align-items: stretch; } .calc-cta a { text-align: center; } }
 .edad-t { font-size: 14px; font-weight: 700; color: var(--purple-dark); margin: 1.1rem 0 0.5rem; }
 .edad-sel { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.9rem; }
 .edad-sel button { font: inherit; font-size: 14px; font-weight: 600; color: var(--purple-deep); background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 0.9rem; cursor: pointer; -webkit-tap-highlight-color: transparent; }
@@ -367,7 +365,7 @@ footer a { color: var(--text-muted); }
    "@type": "Article",
    "@id": "https://planiapp.cl/mejor-isapre#articulo",
    "headline": "¿Cuál es la mejor Isapre en 2026? Tabla comparativa de las 7 Isapres",
-   "description": "Comparamos las 7 Isapres abiertas: precio de entrada por edad, urgencias, kinesiología, psicología, prótesis, quimioterapia y reembolsos. La mejor Isapre según tu perfil, actualizada a 2026.",
+   "description": "Tabla 2026 de las 7 Isapres: precio de entrada por edad, urgencias, kinesiología, psicología, topes y reembolsos, y cuál conviene según tu perfil.",
    "image": [
     "https://planiapp.cl/img/fonasa-o-isapre-og.jpg"
    ],
@@ -439,6 +437,15 @@ footer a { color: var(--text-muted); }
  ]
 }
 </script>
+<style>
+/* Llamado a la calculadora dentro de los artículos */
+div.calc-cta { display:flex; align-items:center; gap:1.1rem; background:linear-gradient(135deg,#E6F9F0,#D3F2E3); border:1px solid #BDE6D2; border-radius:16px; padding:1.1rem 1.25rem; margin:1.75rem 0; }
+div.calc-cta strong { display:block; font-size:16.5px; color:#0B4A38; margin-bottom:0.2rem; line-height:1.3; }
+div.calc-cta p { margin:0; font-size:14.5px; line-height:1.5; color:#2F5D50; }
+div.calc-cta a { flex-shrink:0; background:#1D9E75; color:#fff; text-decoration:none; font-weight:700; font-size:14.5px; border-radius:999px; padding:0.7rem 1.15rem; white-space:nowrap; box-shadow:0 10px 20px -12px rgba(29,158,117,.9); }
+div.calc-cta a:hover { background:#0F6E56; color:#fff; }
+@media (max-width:600px) { div.calc-cta { flex-direction:column; align-items:stretch; } div.calc-cta a { text-align:center; } }
+</style>
 </head>
 <body>
 

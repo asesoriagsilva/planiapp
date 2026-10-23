@@ -44,12 +44,16 @@
       else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
       else if (q.get('fbclid')) o = 'Facebook o Instagram';
       else if (h && h !== location.hostname.replace(/^www\./, '')) {
-        o = /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
           : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
           : /instagram\./.test(h) ? 'Instagram'
           : /facebook\.|fb\.me/.test(h) ? 'Facebook'
           : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
           : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
           : 'Otro sitio: ' + h;
       }
       var antes = localStorage.getItem('planiapp_origen');

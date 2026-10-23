@@ -44,12 +44,16 @@
       else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
       else if (q.get('fbclid')) o = 'Facebook o Instagram';
       else if (h && h !== location.hostname.replace(/^www\./, '')) {
-        o = /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
           : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
           : /instagram\./.test(h) ? 'Instagram'
           : /facebook\.|fb\.me/.test(h) ? 'Facebook'
           : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
           : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
           : 'Otro sitio: ' + h;
       }
       var antes = localStorage.getItem('planiapp_origen');
@@ -305,6 +309,15 @@ footer a { color: var(--text-muted); }
  ]
 }
 </script>
+<style>
+/* Llamado a la calculadora dentro de los artículos */
+div.calc-cta { display:flex; align-items:center; gap:1.1rem; background:linear-gradient(135deg,#E6F9F0,#D3F2E3); border:1px solid #BDE6D2; border-radius:16px; padding:1.1rem 1.25rem; margin:1.75rem 0; }
+div.calc-cta strong { display:block; font-size:16.5px; color:#0B4A38; margin-bottom:0.2rem; line-height:1.3; }
+div.calc-cta p { margin:0; font-size:14.5px; line-height:1.5; color:#2F5D50; }
+div.calc-cta a { flex-shrink:0; background:#1D9E75; color:#fff; text-decoration:none; font-weight:700; font-size:14.5px; border-radius:999px; padding:0.7rem 1.15rem; white-space:nowrap; box-shadow:0 10px 20px -12px rgba(29,158,117,.9); }
+div.calc-cta a:hover { background:#0F6E56; color:#fff; }
+@media (max-width:600px) { div.calc-cta { flex-direction:column; align-items:stretch; } div.calc-cta a { text-align:center; } }
+</style>
 </head>
 <body>
 
@@ -375,6 +388,11 @@ footer a { color: var(--text-muted); }
     <p>Incluso con restricción, la ley fija un piso: esas prestaciones no pueden cubrirse menos que en Fonasa libre elección, ni menos que el 25% de lo que da tu plan. Los 18 meses se cuentan desde el mes siguiente a la firma, y lo que queda restringido aparece en tu declaración de salud, así que revísalo antes de firmar.</p>
   </div>
 
+  <div class="calc-cta">
+    <div><strong>¿Ya sabes qué plan te da tu 7%?</strong><p>Antes de cambiarte, calcula con tu edad y tu sueldo qué planes puedes elegir. Sin dejar tus datos.</p></div>
+    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'preexistencias_medio'})">Calcular mi 7% →</a>
+  </div>
+
   <h2>Cuándo una preexistencia no es un impedimento</h2>
   <ul class="lista isa">
     <li><strong>Te operaste la rodilla y hoy estás bien.</strong> La declaras. Si la Isapre te acepta con restricción, durante ese plazo una nueva hospitalización por esa rodilla tendría menor cobertura, pero si sigues con kinesiología por ese mismo evento, la nueva Isapre te la cubre igual. Pasada la restricción, el plan te cubre en su totalidad.</li>
@@ -398,6 +416,11 @@ footer a { color: var(--text-muted); }
     <li><strong>Si ya estás en una Isapre,</strong> antes de moverte evalúa si te conviene más quedarte donde estás.</li>
   </ul>
   <p>Y si hoy estás sano, no esperes: <a href="/errores-al-contratar-isapre">esperar a estar enfermo para cambiarse</a> es el error que más caro sale.</p>
+
+  <div class="calc-cta">
+    <div><strong>Calcula qué plan te da tu 7%</strong><p>Con tu edad y tu sueldo te mostramos qué planes puedes elegir y si te alcanza sin poner plata extra. Sin dejar tus datos.</p></div>
+    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'preexistencias_final'})">Calcular mi 7% →</a>
+  </div>
 
   <section class="faq">
     <h2>Preguntas frecuentes</h2>

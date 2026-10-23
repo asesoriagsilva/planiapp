@@ -28,12 +28,16 @@
       else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
       else if (q.get('fbclid')) o = 'Facebook o Instagram';
       else if (h && h !== location.hostname.replace(/^www\./, '')) {
-        o = /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
           : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
           : /instagram\./.test(h) ? 'Instagram'
           : /facebook\.|fb\.me/.test(h) ? 'Facebook'
           : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
           : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
           : 'Otro sitio: ' + h;
       }
       var antes = localStorage.getItem('planiapp_origen');
@@ -43,9 +47,11 @@
   window.planiappOrigen = function () { try { var g = JSON.parse(localStorage.getItem('planiapp_origen') || 'null'); return g ? g.o + ' · entró por ' + (g.p === '/' ? 'la portada' : g.p) : 'Directo'; } catch (e) { return ''; } };
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Planiapp | Asesoría profesional en Isapre</title>
+<title>Planiapp | Calcula tu 7% y elige tu plan de Isapre</title>
+<meta name="description" content="Calcula gratis qué plan de Isapre te da tu 7% de salud, revisa coberturas y precios de las 7 Isapres y recibe propuestas de un ejecutivo inscrito.">
 <link rel="canonical" href="https://planiapp.cl/">
-<meta property="og:title" content="Planiapp | Asesoría profesional en Isapre">
+<meta property="og:title" content="Planiapp | Calcula tu 7% y elige tu plan de Isapre">
+<meta property="og:description" content="Calcula gratis qué plan de Isapre te da tu 7% de salud, revisa coberturas y precios de las 7 Isapres y recibe propuestas de un ejecutivo inscrito.">
 <meta property="og:url" content="https://planiapp.cl/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://planiapp.cl/img/fonasa-o-isapre-og.jpg">
@@ -1500,6 +1506,8 @@ async function sSubmit(){
   sD.fecha=new Date().toLocaleString('es-CL');sD.tipo_asesoria='Asesoría personalizada Planiapp';
   // Cierra el embudo en GA4: sin esto solo se ve quien empieza el formulario, no quien lo termina
   if(typeof gtag==='function' && !planiappInterno) gtag('event','lead_enviado',{form_name:'asesoria_planiapp',sistema:sD.sistema||'',origen_isapre:sQuiereCotizar()||'Sin definir'});
+  /* generate_lead: el nombre estándar de Google para un lead (es el que se marca como evento clave en GA4) */
+  if(typeof gtag==='function' && !planiappInterno) gtag('event','generate_lead',{form_name:'asesoria_planiapp',lead_source:typeof planiappOrigen==='function'?planiappOrigen():''});
   document.querySelectorAll('#form-inline .pf-step').forEach(x=>x.classList.remove('active'));
   document.getElementById('s-fill').style.width='100%';document.getElementById('s-label').textContent='Verificando...';
   document.getElementById('s-sending').classList.add('active');

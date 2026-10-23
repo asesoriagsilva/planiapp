@@ -28,12 +28,16 @@
       else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
       else if (q.get('fbclid')) o = 'Facebook o Instagram';
       else if (h && h !== location.hostname.replace(/^www\./, '')) {
-        o = /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
           : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
           : /instagram\./.test(h) ? 'Instagram'
           : /facebook\.|fb\.me/.test(h) ? 'Facebook'
           : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
           : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
           : 'Otro sitio: ' + h;
       }
       var antes = localStorage.getItem('planiapp_origen');
@@ -1442,6 +1446,7 @@ $('lp-form').addEventListener('submit', async e => {
     clinica: clinica || (sinClinica() ? 'No tiene' : '')
   };
   marca('lead_enviado', { form_name: 'calculadora', sistema: datos.sistema, veredicto: D.veredicto });
+  marca('generate_lead', { form_name: 'calculadora', lead_source: typeof planiappOrigen === 'function' ? planiappOrigen() : '' }); // nombre estándar de Google para el evento clave
   if (typeof fbq === 'function') fbq('track', 'Lead');
   try { await fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) }); } catch (err) {}
   (EMBED ? window.top : window).location.href = '/gracias.html?codigo=' + cod + '&tipo=simple';

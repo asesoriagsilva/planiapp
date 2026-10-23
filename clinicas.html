@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ranking de las mejores clínicas de Chile | Planiapp</title>
-<meta name="description" content="Las 10 clínicas mejor evaluadas de Chile según el ranking de reputación Merco Salud, qué mide ese estudio y qué revisar antes de elegir dónde atenderte.">
+<meta name="description" content="Alemana, UC Christus, Santa María, Indisa y más: las 10 clínicas mejor evaluadas de Chile según Merco Salud 2025, y qué revisar en tu plan.">
 <link rel="canonical" href="https://planiapp.cl/clinicas">
 <meta property="og:title" content="Ranking de las mejores clínicas de Chile">
 <meta property="og:description" content="La reputación de una clínica no dice cuánto vas a pagar ahí. Eso lo define el convenio de tu plan con esa clínica.">
@@ -44,12 +44,16 @@
       else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
       else if (q.get('fbclid')) o = 'Facebook o Instagram';
       else if (h && h !== location.hostname.replace(/^www\./, '')) {
-        o = /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
           : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
           : /instagram\./.test(h) ? 'Instagram'
           : /facebook\.|fb\.me/.test(h) ? 'Facebook'
           : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
           : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
           : 'Otro sitio: ' + h;
       }
       var antes = localStorage.getItem('planiapp_origen');
@@ -241,7 +245,7 @@ a.rk-a:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(83,74,1
    "@type": "Article",
    "@id": "https://planiapp.cl/clinicas#articulo",
    "headline": "Ranking de las mejores clínicas de Chile",
-   "description": "Las 10 clínicas mejor evaluadas de Chile según el ranking de reputación Merco Salud, qué mide ese estudio y qué revisar antes de elegir dónde atenderte.",
+   "description": "Alemana, UC Christus, Santa María, Indisa y más: las 10 clínicas mejor evaluadas de Chile según Merco Salud 2025, y qué revisar en tu plan.",
    "image": [
     "https://planiapp.cl/img/clinicas-og.jpg"
    ],
@@ -386,6 +390,15 @@ a.rk-a:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(83,74,1
  ]
 }
 </script>
+<style>
+/* Llamado a la calculadora dentro de los artículos */
+div.calc-cta { display:flex; align-items:center; gap:1.1rem; background:linear-gradient(135deg,#E6F9F0,#D3F2E3); border:1px solid #BDE6D2; border-radius:16px; padding:1.1rem 1.25rem; margin:1.75rem 0; }
+div.calc-cta strong { display:block; font-size:16.5px; color:#0B4A38; margin-bottom:0.2rem; line-height:1.3; }
+div.calc-cta p { margin:0; font-size:14.5px; line-height:1.5; color:#2F5D50; }
+div.calc-cta a { flex-shrink:0; background:#1D9E75; color:#fff; text-decoration:none; font-weight:700; font-size:14.5px; border-radius:999px; padding:0.7rem 1.15rem; white-space:nowrap; box-shadow:0 10px 20px -12px rgba(29,158,117,.9); }
+div.calc-cta a:hover { background:#0F6E56; color:#fff; }
+@media (max-width:600px) { div.calc-cta { flex-direction:column; align-items:stretch; } div.calc-cta a { text-align:center; } }
+</style>
 </head>
 <body>
 
@@ -445,6 +458,11 @@ a.rk-a:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(83,74,1
     <p><strong>Ojo con leer este ranking como una guía de compra.</strong> Mide reputación entre profesionales de la salud y gestión clínica. No mide cuánto te cobran, ni cuánto te bonifica tu plan, ni si tu Isapre tiene convenio ahí. Para tu bolsillo, esa es la parte que importa.</p>
   </div>
 
+  <div class="calc-cta">
+    <div><strong>¿Te alcanza para atenderte en la clínica que quieres?</strong><p>Calcula qué plan te da tu 7% con tu edad y tu sueldo. Si pides propuestas, las armamos con tu clínica.</p></div>
+    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'clinicas_medio'})">Calcular mi 7% →</a>
+  </div>
+
   <h2>También tenemos ficha de</h2>
   <p>RedSalud no entra al ranking como una sola clínica, porque es una red, pero es la más amplia del país y la de precios más bajos.</p>
   <div class="rk">
@@ -459,6 +477,11 @@ a.rk-a:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(83,74,1
     <li><strong>Los topes, sobre todo en prótesis.</strong> Es donde más se nota la diferencia entre un plan y otro cuando hay una cirugía.</li>
     <li><strong>Las prestaciones sin código Fonasa.</strong> Si no tienen código, no hay arancel de referencia y nadie las bonifica, salvo que tu plan traiga un arancel propio.</li>
   </ul>
+
+  <div class="calc-cta">
+    <div><strong>Calcula qué plan te da tu 7%</strong><p>Con tu edad y tu sueldo te mostramos qué planes puedes elegir y si te alcanza sin poner plata extra. Sin dejar tus datos.</p></div>
+    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'clinicas_final'})">Calcular mi 7% →</a>
+  </div>
 
   <section class="faq">
     <h2>Preguntas frecuentes</h2>
