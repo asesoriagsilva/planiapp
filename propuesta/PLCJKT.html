@@ -246,7 +246,8 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 <footer>Planiapp · Asesoría con ejecutivos inscritos en la Superintendencia de Salud · Propuesta preparada el 23 de octubre de 2026</footer>
 <script>if (typeof gtag === 'function') gtag('event', 'propuesta_vista', { propuesta: 'PLCJKT' });</script>
 <script>
-// Elegir un plan: pantalla de confirmación, sin pedir de nuevo el WhatsApp (ya conversa con el ejecutivo). La elección le llega por Make (mismo webhook del formulario);
+// Elegir un plan: pantalla de confirmación, sin pedir de nuevo el WhatsApp (ya conversa con el ejecutivo). La elección le llega por Make
+// (mismo webhook del formulario, ruta "Elección en propuesta" por origen = 'propuesta'; no entra a la planilla de leads);
 // los datos de afiliación, si los completa, los manda la persona desde su WhatsApp.
 (function () {
   const PLANES = [{"isapre":"Consalud","plan":"Easy Full Norte","cod":"13-EFN17-26","logo":"/logos/consalud.png","lw":94,"lh":31,"precio":"$110.500 al mes · 2,68 UF"}];
@@ -267,7 +268,8 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
   $('el-form').addEventListener('submit', async e => {
     e.preventDefault();
     $('el-enviar').disabled = true; $('el-enviar').textContent = 'Enviando…';
-    const datos = { origen: 'propuesta', fecha: new Date().toLocaleString('es-CL'), codigo: 'PLCJKT', nombre: "Javier", whatsapp: 'Mismo chat del lead PLCJKT',
+    const datos = { origen: 'propuesta', fecha: new Date().toLocaleString('es-CL'), codigo: 'PLCJKT', nombre: "Javier", whatsapp: '',
+      plan: elegido.isapre + ' · ' + elegido.plan + ' (' + elegido.cod + ')', precio: elegido.precio,
       canal: 'WhatsApp', horario: 'Dentro del día', sistema: "Fonasa", edad: "35 a 44 años", cargas: "Solo tú", renta: '',
       motivo: 'Eligió en su propuesta: ' + elegido.isapre + ' · ' + elegido.plan + ' (' + elegido.cod + ')',
       coberturas: 'Propuesta PLCJKT | ' + elegido.precio + ' | Clínica: ' + "RedSalud Elqui (La Serena)" };

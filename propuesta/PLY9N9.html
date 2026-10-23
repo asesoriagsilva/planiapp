@@ -329,7 +329,8 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 <footer>Planiapp · Asesoría con ejecutivos inscritos en la Superintendencia de Salud · Propuesta preparada el 23 de octubre de 2026</footer>
 <script>if (typeof gtag === 'function') gtag('event', 'propuesta_vista', { propuesta: 'PLY9N9' });</script>
 <script>
-// Elegir un plan: pantalla de confirmación, sin pedir de nuevo el WhatsApp (ya conversa con el ejecutivo). La elección le llega por Make (mismo webhook del formulario);
+// Elegir un plan: pantalla de confirmación, sin pedir de nuevo el WhatsApp (ya conversa con el ejecutivo). La elección le llega por Make
+// (mismo webhook del formulario, ruta "Elección en propuesta" por origen = 'propuesta'; no entra a la planilla de leads);
 // los datos de afiliación, si los completa, los manda la persona desde su WhatsApp.
 (function () {
   const PLANES = [{"isapre":"Consalud","plan":"Life Focus 190 Light","cod":"13-FCL197L-26","logo":"/logos/consalud.png","lw":94,"lh":31,"precio":"$117.100 al mes · 2,84 UF"},{"isapre":"Nueva Masvida","plan":"Pleno Max","cod":"PM261012","logo":"/logos/nueva-masvida.png","lw":99,"lh":29,"precio":"$116.400 al mes · 2,82 UF"},{"isapre":"Vida Tres","plan":"Vanguardia Plus Platinum","cod":"VPP260866","logo":"/logos/vida-tres.png","lw":123,"lh":24,"precio":"$115.900 al mes · 2,81 UF"}];
@@ -350,7 +351,8 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
   $('el-form').addEventListener('submit', async e => {
     e.preventDefault();
     $('el-enviar').disabled = true; $('el-enviar').textContent = 'Enviando…';
-    const datos = { origen: 'propuesta', fecha: new Date().toLocaleString('es-CL'), codigo: 'PLY9N9', nombre: "Fernando", whatsapp: 'Mismo chat del lead PLY9N9',
+    const datos = { origen: 'propuesta', fecha: new Date().toLocaleString('es-CL'), codigo: 'PLY9N9', nombre: "Fernando", whatsapp: '',
+      plan: elegido.isapre + ' · ' + elegido.plan + ' (' + elegido.cod + ')', precio: elegido.precio,
       canal: 'WhatsApp', horario: 'Dentro del día', sistema: "Fonasa", edad: "25 a 34 años", cargas: "Solo tú", renta: '',
       motivo: 'Eligió en su propuesta: ' + elegido.isapre + ' · ' + elegido.plan + ' (' + elegido.cod + ')',
       coberturas: 'Propuesta PLY9N9 | ' + elegido.precio + ' | Clínica: ' + "UC Christus" };
