@@ -328,6 +328,39 @@ div.calc-cta a { flex-shrink:0; background:#1D9E75; color:#fff; text-decoration:
 div.calc-cta a:hover { background:#0F6E56; color:#fff; }
 @media (max-width:600px) { div.calc-cta { flex-direction:column; align-items:stretch; } div.calc-cta a { text-align:center; } }
 </style>
+<style>
+.resumen { background:#F6F5FF; border:1px solid #E1DEFA; border-radius:16px; padding:1rem 1.2rem; margin:1.25rem 0 1.5rem; }
+.resumen-t { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#534AB7; margin:0 0 0.45rem; }
+.resumen ul { margin:0; padding-left:1.1rem; display:flex; flex-direction:column; gap:0.4rem; }
+.resumen li { font-size:15px; line-height:1.5; }
+.resumen b { color:#26215C; }
+.nov-calc { background:#fff; border:1.5px solid #E1DEFA; border-radius:18px; padding:1.1rem 1.15rem; margin:1.25rem 0 0.9rem; }
+.nov-calc-t { font-family:'Inter',sans-serif; font-size:17px; font-weight:800; color:#26215C; margin:0 0 0.2rem; }
+.nov-calc-p { font-size:14px; color:#6b6b8a; margin:0 0 0.75rem; }
+.nov-meses { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.nov-meses button { font:inherit; font-size:14px; font-weight:600; color:#3C3489; background:#fff; border:1px solid #E1DEFA; border-radius:999px; padding:0.45rem 0.85rem; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+.nov-meses button[aria-pressed="true"] { background:#534AB7; border-color:#534AB7; color:#fff; }
+@media (hover:hover) { .nov-meses button[aria-pressed="false"]:hover, .nov-meses button:not([aria-pressed]):hover { background:#EEEDFE; } }
+.nov-res { margin-top:0.9rem; border-radius:14px; padding:0.9rem 1rem; background:#E6F5EE; color:#0B4A38; }
+.nov-res.medio { background:#FFF4DE; color:#6B4A0E; }
+.nov-res.poco { background:#FBECEC; color:#7A2E33; }
+.nov-res-top { display:flex; align-items:baseline; gap:0.5rem; flex-wrap:wrap; }
+.nov-res-top strong { font-family:'Inter',sans-serif; font-size:32px; font-weight:900; line-height:1; }
+.nov-res-top span { font-size:14px; font-weight:600; }
+.nov-barra { height:8px; border-radius:99px; background:rgba(0,0,0,.08); margin:0.6rem 0; overflow:hidden; }
+.nov-barra i { display:block; height:100%; width:0; border-radius:99px; background:currentColor; transition:width .4s ease; }
+.nov-res-txt { font-size:15px; line-height:1.5; margin:0; }
+.nov-res-nota { font-size:12.5px; opacity:.85; margin:0.45rem 0 0.75rem; }
+.nov-wsp, .wsp-cta a { display:inline-flex; align-items:center; gap:0.5rem; background:#1D9E75; color:#fff !important; text-decoration:none; font-weight:700; font-size:14.5px; border-radius:999px; padding:0.65rem 1.1rem; }
+.nov-wsp:hover, .wsp-cta a:hover { background:#0F6E56; }
+.nov-todos { margin:0.2rem 0 0.4rem; }
+.nov-todos summary { cursor:pointer; font-size:14px; font-weight:600; color:#534AB7; margin-bottom:0.5rem; }
+div.wsp-cta { display:flex; align-items:center; gap:1.1rem; background:#F6F5FF; border:1px solid #E1DEFA; border-radius:16px; padding:1.1rem 1.25rem; margin:1.6rem 0; }
+div.wsp-cta strong { display:block; font-size:16.5px; color:#26215C; margin-bottom:0.2rem; line-height:1.3; }
+div.wsp-cta p { margin:0; font-size:14.5px; line-height:1.5; color:#4a4a6a; }
+div.wsp-cta a { flex-shrink:0; white-space:nowrap; }
+@media (max-width:600px) { div.wsp-cta { flex-direction:column; align-items:stretch; } div.wsp-cta a { justify-content:center; } .nov-wsp { width:100%; justify-content:center; } }
+</style>
 </head>
 <body>
 
@@ -363,6 +396,15 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
 
   <img class="cabecera" src="img/isapre-embarazada.webp" alt="Mujer embarazada junto a una cuna en su casa" width="1000" height="450" fetchpriority="high" decoding="async">
 
+  <div class="resumen">
+    <p class="resumen-t">En resumen</p>
+    <ul>
+      <li><b>¿Te pueden rechazar por estar embarazada?</b> No. El embarazo no es una preexistencia y no se declara.</li>
+      <li><b>¿Cuándo conviene entrar?</b> Lo ideal es antes del embarazo. Si ya lo estás, a más tardar al tercer mes, por la regla de los novenos.</li>
+      <li><b>El riesgo real es el recién nacido.</b> Una hospitalización neonatal puede superar los $10 millones: revisa cómo cubre el plan la sala cuna y la incubadora.</li>
+    </ul>
+  </div>
+
   <p>Muchas mujeres creen que una Isapre no las va a aceptar si ya están embarazadas, o que no les va a cubrir el parto. No es así. Te puedes cambiar de Fonasa a una Isapre estando embarazada, pero antes conviene entender dos cosas: <strong>mientras más avanzado el embarazo, menor es la cobertura del parto</strong>, y lo que de verdad puede salir caro muchas veces no es el parto, sino lo que el bebé necesite después.</p>
 
   <h2>¿Te pueden rechazar por estar embarazada?</h2>
@@ -371,6 +413,20 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
 
   <h2>La regla de los novenos: el mes en que entras sí importa</h2>
   <p>Si quedaste embarazada antes de contratar, la Isapre cubre el parto de forma proporcional. Se toman los meses que tu plan va a estar vigente hasta el parto y se dividen por los nueve meses de embarazo: esa es la parte de la cobertura del plan que se aplica al parto. Los meses se cuentan <strong>desde que empiezan los beneficios del contrato</strong>, no desde el día en que firmas.</p>
+  <div class="nov-calc" id="nov-calc">
+    <p class="nov-calc-t">Calcula tu caso</p>
+    <p class="nov-calc-p">¿En qué mes de embarazo partirían tus beneficios? Suelen empezar el mes siguiente a la firma del contrato.</p>
+    <div class="nov-meses" role="group" aria-label="Mes de embarazo en que parten los beneficios"><button type="button" data-mes="0">Lo estoy planificando</button><button type="button" data-mes="1">Mes 1</button><button type="button" data-mes="2">Mes 2</button><button type="button" data-mes="3">Mes 3</button><button type="button" data-mes="4">Mes 4</button><button type="button" data-mes="5">Mes 5</button><button type="button" data-mes="6">Mes 6</button><button type="button" data-mes="7">Mes 7</button><button type="button" data-mes="8">Mes 8</button></div>
+    <div class="nov-res" id="nov-res" hidden aria-live="polite">
+      <div class="nov-res-top"><strong id="nov-pct"></strong><span id="nov-frac"></span></div>
+      <div class="nov-barra"><i id="nov-barra"></i></div>
+      <p class="nov-res-txt" id="nov-txt"></p>
+      <p class="nov-res-nota">Es el mínimo que exige la norma: algunas Isapres son más flexibles. Lo que pagas al final depende también de los topes del plan.</p>
+      <a class="nov-wsp" id="nov-wsp" href="https://wa.me/56966450103?text=Hola%2C%20estoy%20embarazada%20y%20quiero%20revisar%20qu%C3%A9%20plan%20de%20Isapre%20me%20conviene." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Revisar mi caso por WhatsApp</a>
+    </div>
+  </div>
+  <details class="nov-todos">
+    <summary>Ver la tabla con todos los meses</summary>
   <div class="nov-wrap">
     <table class="nov">
       <thead><tr><th scope="col">Tus beneficios parten</th><th scope="col">Parte cubierta</th><th scope="col">Plan que cubre el parto al 100%</th></tr></thead>
@@ -384,6 +440,7 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
       </tbody>
     </table>
   </div>
+  </details>
   <p class="cmp-nota">Es la cobertura mínima que exige la norma, calculada sobre la duración real del embarazo, y la Isapre puede ofrecer condiciones mejores. Ejemplo referencial: lo que pagas al final también depende de los topes de tu plan.</p>
   <p>Por eso, si lo estás planificando, lo ideal es contratar <strong>antes de embarazarte</strong>. Y si ya lo estás, nuestra recomendación es entrar <strong>a más tardar al tercer mes</strong>, para que la mayor parte del parto quede cubierta por tu plan.</p>
   <div class="ojo">
@@ -403,6 +460,11 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
     <p>En una clínica privada, una hospitalización neonatal puede superar fácilmente los $10 millones, según los días y lo que necesite el bebé. Es justo el tipo de cuenta que nadie tiene presupuestada.</p>
   </div>
   <p>En una Isapre, en cambio, esas atenciones las cubre el plan. Si inscribes a tu hijo a tiempo, queda cubierto desde que nace con la cobertura de tu plan, y si la cuenta es de alto costo existe la <a href="/errores-al-contratar-isapre">CAEC</a>, siempre que se atienda en la red que designa la Isapre. Eso sí, no todos los planes cubren igual al recién nacido, como verás más abajo. Por eso, más que el parto, lo que conviene mirar es cómo queda protegido tu hijo. Si todavía estás decidiendo entre los dos sistemas, revisa <a href="/fonasa-o-isapre">las diferencias entre Fonasa e Isapre</a>.</p>
+
+  <div class="wsp-cta">
+    <div><strong>¿Tu plan cubre bien al recién nacido?</strong><p>Te ayudamos a revisar la sala cuna, la incubadora y la neonatología de tu plan actual o de uno nuevo, antes del parto.</p></div>
+    <a href="https://wa.me/56966450103?text=Hola%2C%20estoy%20embarazada%20y%20quiero%20revisar%20si%20mi%20plan%20de%20Isapre%20(o%20uno%20nuevo)%20cubre%20bien%20al%20reci%C3%A9n%20nacido." target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','whatsapp_click',{origen:'embarazada_recien_nacido'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Escríbenos por WhatsApp</a>
+  </div>
 
   <h2>Qué revisar del plan antes de firmar</h2>
   <p>El porcentaje de cobertura dice poco si no miras los topes. En maternidad, estos son los que más pesan:</p>
@@ -566,5 +628,32 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
   <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
 </footer>
 
+<script>
+// Regla de los novenos: meses de vigencia del plan hasta el parto / 9 (mínimo que exige la norma)
+(function () {
+  const caja = document.getElementById('nov-calc'); if (!caja) return;
+  const $ = id => document.getElementById(id);
+  const TXT = {
+    plan: 'Lo ideal: si contratas antes de embarazarte, tu plan cubre el parto completo. Aprovecha de elegir uno que cubra bien al recién nacido.',
+    ok: 'Estás a tiempo: la mayor parte del parto queda cubierta por tu plan. Revisa también cómo cubre al recién nacido.',
+    medio: 'El plan cubre una parte importante del parto y el resto lo pagas tú. Si inscribes a tu hijo a tiempo, queda cubierto desde que nace.',
+    poco: 'El plan cubre poco del parto. Aun así puede convenirte por el recién nacido: si nace prematuro o necesita neonatología, esa cuenta la cubre el plan.'
+  };
+  caja.querySelectorAll('[data-mes]').forEach(b => b.addEventListener('click', () => {
+    const m = +b.dataset.mes, partes = m === 0 ? 9 : 10 - m, pct = Math.round(partes / 9 * 100);
+    caja.querySelectorAll('[data-mes]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    const nivel = m === 0 ? 'plan' : m <= 3 ? 'ok' : m <= 5 ? 'medio' : 'poco';
+    $('nov-pct').textContent = pct + '%';
+    $('nov-frac').textContent = 'de la cobertura de tu plan se aplica al parto (' + partes + ' de 9 partes)';
+    $('nov-barra').style.width = pct + '%';
+    $('nov-txt').textContent = TXT[nivel];
+    $('nov-res').className = 'nov-res ' + nivel; $('nov-res').hidden = false;
+    const msg = m === 0 ? 'Hola, estoy planificando un embarazo y quiero revisar qué plan de Isapre me conviene.' : 'Hola, estoy embarazada (mis beneficios partirían en el mes ' + m + ') y quiero revisar qué plan de Isapre me conviene.';
+    $('nov-wsp').href = 'https://wa.me/56966450103?text=' + encodeURIComponent(msg);
+    if (typeof gtag === 'function') gtag('event', 'novenos_mes', { mes: m });
+  }));
+  $('nov-wsp').addEventListener('click', () => { if (typeof gtag === 'function') gtag('event', 'whatsapp_click', { origen: 'embarazada_novenos' }); });
+})();
+</script>
 </body>
 </html>
