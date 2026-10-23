@@ -105,9 +105,10 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .comp thead th { background:var(--purple-light); color:var(--purple-dark); font-size:13.5px; }
 .comp tbody th { color:var(--purple-dark); font-weight:600; width:200px; }
 .comp tbody tr:last-child th, .comp tbody tr:last-child td { border-bottom:none; }
-.porque { margin-top:2rem; background:var(--white); border:1px solid var(--border); border-left:4px solid var(--purple); border-radius:18px; padding:1.2rem 1.25rem; display:flex; flex-direction:column; gap:0.55rem; }
-.porque h2 { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:var(--purple-dark); }
-.porque p { font-size:15px; color:var(--text); line-height:1.55; }
+.porque { margin-top:2rem; background:var(--green-light); border:1px solid #BDE7D7; border-left:5px solid var(--green); border-radius:18px; padding:1.2rem 1.25rem; display:flex; flex-direction:column; gap:0.55rem; }
+.porque h2 { display:flex; align-items:center; gap:0.55rem; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:#0B4A38; }
+.porque h2 svg { flex-shrink:0; color:#fff; background:var(--green); border-radius:50%; padding:6px; width:32px; height:32px; }
+.porque p { font-size:15px; color:#0B4A38; line-height:1.55; }
 .notas { margin-top:2rem; }
 .notas ul { padding-left:1.1rem; color:var(--muted); font-size:13.5px; display:flex; flex-direction:column; gap:0.35rem; }
 .cierre { margin-top:2rem; background:linear-gradient(160deg, #534AB7 0%, #3C3489 100%); color:#fff; border-radius:20px; padding:1.5rem 1.4rem; text-align:center; }
@@ -165,11 +166,8 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       <div class="el-plan"><img id="el-logo" src="" alt="" width="94" height="31"><div><p class="el-k">Elegiste</p><p class="el-nom" id="el-nom"></p><p class="el-precio" id="el-precio"></p></div></div>
       <div class="el-aviso"><b>Dentro del día te contactará un ejecutivo de <span class="el-isa"></span>, inscrito en la Superintendencia de Salud.</b> Te ayudará con la contratación y, después, en la postventa: dudas y orientación para usar tu plan.</div>
       <form class="el-form" id="el-form" novalidate>
-        <label for="el-wsp">Confirma tu WhatsApp para que te contacte</label>
-        <div class="el-tel"><span>+56 9</span><input id="el-wsp" type="tel" inputmode="numeric" maxlength="9" autocomplete="tel-national" placeholder="1234 5678"></div>
-        <p class="el-err" id="el-err" hidden>Escribe los 8 números de tu WhatsApp, después del +56 9.</p>
         <button class="el-btn" type="submit" id="el-enviar">Confirmar mi elección</button>
-        <p class="el-priv">Solo lo usamos para contactarte por esta propuesta.</p>
+        <p class="el-priv">Tu ejecutivo te escribe en el mismo chat de WhatsApp.</p>
       </form>
       <div class="el-ok" id="el-ok" hidden>
         <div class="el-ok-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>¡Listo, Javier! Recibimos tu elección.</span></div>
@@ -241,14 +239,14 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 
   <section class="cierre">
     <strong>¿Tienes dudas o quieres comparar otro plan?</strong>
-    <p>Escríbenos y te ayudamos a elegir. Si ninguno te convence, buscamos otras opciones.</p>
-    <a href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLCJKT%20en%20Planiapp%20y%20tengo%20una%20duda." target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_duda',{propuesta:'PLCJKT'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Escribir por WhatsApp</a>
+    <p>Sigue conversando con tu ejecutivo en el mismo chat de WhatsApp. Te ayudamos a elegir y, si ninguno te convence, buscamos otras opciones.</p>
+    <a href="https://wa.me/56966450103" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_duda',{propuesta:'PLCJKT'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Continuar con mi ejecutivo por WhatsApp</a>
   </section>
 </main>
 <footer>Planiapp · Asesoría con ejecutivos inscritos en la Superintendencia de Salud · Propuesta preparada el 23 de octubre de 2026</footer>
 <script>if (typeof gtag === 'function') gtag('event', 'propuesta_vista', { propuesta: 'PLCJKT' });</script>
 <script>
-// Elegir un plan: pantalla de confirmación. El WhatsApp confirmado le llega al ejecutivo por Make (mismo webhook del formulario);
+// Elegir un plan: pantalla de confirmación, sin pedir de nuevo el WhatsApp (ya conversa con el ejecutivo). La elección le llega por Make (mismo webhook del formulario);
 // los datos de afiliación, si los completa, los manda la persona desde su WhatsApp.
 (function () {
   const PLANES = [{"isapre":"Consalud","plan":"Easy Full Norte","cod":"13-EFN17-26","logo":"/logos/consalud.png","lw":94,"lh":31,"precio":"$110.500 al mes · 2,68 UF"}];
@@ -266,13 +264,10 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }));
   $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, porque, notas, cierre].forEach(x => x && (x.hidden = false)); });
-  $('el-wsp').addEventListener('input', e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 8); $('el-err').hidden = true; });
   $('el-form').addEventListener('submit', async e => {
     e.preventDefault();
-    const d = $('el-wsp').value;
-    if (!/^\d{8}$/.test(d)) { $('el-err').hidden = false; $('el-wsp').focus(); return; }
     $('el-enviar').disabled = true; $('el-enviar').textContent = 'Enviando…';
-    const datos = { origen: 'propuesta', fecha: new Date().toLocaleString('es-CL'), codigo: 'PLCJKT', nombre: "Javier", whatsapp: '+569' + d,
+    const datos = { origen: 'propuesta', fecha: new Date().toLocaleString('es-CL'), codigo: 'PLCJKT', nombre: "Javier", whatsapp: 'Mismo chat del lead PLCJKT',
       canal: 'WhatsApp', horario: 'Dentro del día', sistema: "Fonasa", edad: "35 a 44 años", cargas: "Solo tú", renta: '',
       motivo: 'Eligió en su propuesta: ' + elegido.isapre + ' · ' + elegido.plan + ' (' + elegido.cod + ')',
       coberturas: 'Propuesta PLCJKT | ' + elegido.precio + ' | Clínica: ' + "RedSalud Elqui (La Serena)" };
