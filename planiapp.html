@@ -17,6 +17,30 @@
     planiappInterno = localStorage.getItem('planiapp_interno') === '1';
   } catch (e) {}
   gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+  /* Origen del visitante: la última fuente externa (buscador, anuncio, red social o enlace con utm). Los formularios lo envían con el lead. */
+  try {
+    (function () {
+      var q = new URLSearchParams(location.search), r = document.referrer, h = '', o = '';
+      try { h = r ? new URL(r).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+      var us = q.get('utm_source') || '', pago = /cpc|ppc|paid|ads/.test((q.get('utm_medium') || '').toLowerCase());
+      var may = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+      if (q.get('gclid') || q.get('gbraid') || q.get('wbraid')) o = 'Google Ads';
+      else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
+      else if (q.get('fbclid')) o = 'Facebook o Instagram';
+      else if (h && h !== location.hostname.replace(/^www\./, '')) {
+        o = /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+          : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
+          : /instagram\./.test(h) ? 'Instagram'
+          : /facebook\.|fb\.me/.test(h) ? 'Facebook'
+          : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
+          : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : 'Otro sitio: ' + h;
+      }
+      var antes = localStorage.getItem('planiapp_origen');
+      if (o || !antes) localStorage.setItem('planiapp_origen', JSON.stringify({ o: o || 'Directo', p: location.pathname, t: Date.now() }));
+    })();
+  } catch (e) {}
+  window.planiappOrigen = function () { try { var g = JSON.parse(localStorage.getItem('planiapp_origen') || 'null'); return g ? g.o + ' · entró por ' + (g.p === '/' ? 'la portada' : g.p) : 'Directo'; } catch (e) { return ''; } };
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planiapp | Asesoría profesional en Isapre</title>
@@ -1493,7 +1517,7 @@ async function sSubmit(){
         horario:sD.horario||'Lo antes posible',
         sistema:sD.sistema||'',
         motivo:sD.motivo||'',
-        coberturas:[sD.coberturas, sD.quiz ? 'Test sugirió: ' + sD.quiz : '', sQuiereCotizar() ? 'Quiere cotizar: ' + sQuiereCotizar() : '', sD.region ? 'Región: ' + sD.region : '', sD.clinica ? 'Clínica: ' + sD.clinica : ''].filter(Boolean).join(' | '),
+        coberturas:[sD.coberturas, sD.quiz ? 'Test sugirió: ' + sD.quiz : '', sQuiereCotizar() ? 'Quiere cotizar: ' + sQuiereCotizar() : '', sD.region ? 'Región: ' + sD.region : '', sD.clinica ? 'Clínica: ' + sD.clinica : '', typeof planiappOrigen === 'function' ? 'Origen: ' + planiappOrigen() : ''].filter(Boolean).join(' | '),
         renta:sD.renta||'',
         cargas:sD.cargas||'',
         isapre_cotizar:sQuiereCotizar(),

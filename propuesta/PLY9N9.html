@@ -24,6 +24,30 @@
     planiappInterno = localStorage.getItem('planiapp_interno') === '1';
   } catch (e) {}
   gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+  /* Origen del visitante: la última fuente externa (buscador, anuncio, red social o enlace con utm). Los formularios lo envían con el lead. */
+  try {
+    (function () {
+      var q = new URLSearchParams(location.search), r = document.referrer, h = '', o = '';
+      try { h = r ? new URL(r).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+      var us = q.get('utm_source') || '', pago = /cpc|ppc|paid|ads/.test((q.get('utm_medium') || '').toLowerCase());
+      var may = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+      if (q.get('gclid') || q.get('gbraid') || q.get('wbraid')) o = 'Google Ads';
+      else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
+      else if (q.get('fbclid')) o = 'Facebook o Instagram';
+      else if (h && h !== location.hostname.replace(/^www\./, '')) {
+        o = /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+          : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
+          : /instagram\./.test(h) ? 'Instagram'
+          : /facebook\.|fb\.me/.test(h) ? 'Facebook'
+          : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
+          : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : 'Otro sitio: ' + h;
+      }
+      var antes = localStorage.getItem('planiapp_origen');
+      if (o || !antes) localStorage.setItem('planiapp_origen', JSON.stringify({ o: o || 'Directo', p: location.pathname, t: Date.now() }));
+    })();
+  } catch (e) {}
+  window.planiappOrigen = function () { try { var g = JSON.parse(localStorage.getItem('planiapp_origen') || 'null'); return g ? g.o + ' · entró por ' + (g.p === '/' ? 'la portada' : g.p) : 'Directo'; } catch (e) { return ''; } };
 </script>
 <style>
 :root { --purple:#534AB7; --purple-light:#EEEDFE; --purple-mid:#7F77DD; --purple-dark:#26215C; --purple-deep:#3C3489; --green:#1D9E75; --green-dark:#0F6E56; --green-light:#E1F5EE; --text:#1a1830; --muted:#6b6b8a; --border:#E7E5F5; --bg:#f8f7ff; --white:#fff; }
@@ -86,6 +110,36 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .cierre p { color:rgba(255,255,255,.88); margin:0.3rem auto 1rem; max-width:520px; }
 .cierre strong { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; }
 .cierre a { display:inline-flex; align-items:center; gap:0.5rem; background:#fff; color:var(--purple-deep); border-radius:999px; padding:0.75rem 1.4rem; font-weight:700; text-decoration:none; }
+.el { max-width:620px; margin:0 auto; }
+.el-volver { background:none; border:none; font:inherit; font-size:14px; font-weight:600; color:var(--purple); cursor:pointer; padding:0.3rem 0; margin-bottom:0.6rem; }
+.el-card { background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.4rem 1.3rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); display:flex; flex-direction:column; gap:1rem; }
+.el-plan { display:flex; align-items:center; gap:1rem; }
+.el-plan img { height:30px; width:auto; max-width:120px; object-fit:contain; flex-shrink:0; }
+.el-k { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--green-dark); }
+.el-nom { font-family:'Inter',sans-serif; font-size:19px; font-weight:800; color:var(--purple-dark); line-height:1.25; }
+.el-precio { font-size:14px; color:var(--muted); }
+.el-aviso { background:var(--green-light); color:#0B4A38; border-radius:16px; padding:0.9rem 1rem; font-size:15px; line-height:1.55; }
+.el-aviso b { display:block; margin-bottom:0.2rem; }
+.el-form label, .el-campos label { display:block; font-size:13.5px; font-weight:600; color:var(--purple-dark); margin-bottom:0.35rem; }
+.el-tel { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:14px; background:var(--bg); overflow:hidden; }
+.el-tel span { padding:0 0.6rem 0 0.9rem; font-weight:700; color:var(--muted); }
+.el-tel input { flex:1; min-width:0; border:none; background:none; outline:none; font:inherit; font-size:18px; font-weight:700; color:var(--purple-dark); padding:0.8rem 0.9rem 0.8rem 0; }
+.el-tel:focus-within, .el-campos input:focus, .el-campos select:focus { border-color:var(--purple); box-shadow:0 0 0 4px rgba(83,74,183,.12); }
+.el-err { color:#B4444A; font-size:13.5px; margin-top:0.4rem; }
+.el-btn { display:flex; align-items:center; justify-content:center; gap:0.5rem; width:100%; margin-top:0.8rem; border:none; border-radius:999px; background:var(--purple); color:#fff; font:inherit; font-size:16px; font-weight:700; padding:0.85rem 1rem; cursor:pointer; }
+.el-btn.verde { background:var(--green); }
+.el-btn[disabled] { opacity:.65; cursor:wait; }
+.el-priv { font-size:12.5px; color:var(--muted); text-align:center; margin-top:0.5rem; }
+.el-ok-t { display:flex; align-items:center; gap:0.5rem; font-family:'Inter',sans-serif; font-size:18px; font-weight:800; color:#0B4A38; }
+.el-ok-t svg { width:26px; height:26px; color:#fff; background:var(--green); border-radius:50%; padding:5px; flex-shrink:0; }
+.el-datos { margin-top:1rem; border-top:1px dashed var(--border); padding-top:1rem; }
+.el-datos-t { font-family:'Inter',sans-serif; font-size:17px; font-weight:800; color:var(--purple-dark); }
+.el-datos-t em { font-style:normal; font-weight:500; color:var(--muted); font-size:14px; }
+.el-datos-p { font-size:14px; color:var(--muted); margin:0.25rem 0 0.8rem; }
+.el-campos { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; }
+.el-campos .ancho { grid-column:1 / -1; }
+.el-campos input, .el-campos select { display:block; width:100%; margin-top:0.3rem; border:1.5px solid var(--border); border-radius:12px; background:var(--bg); font:inherit; font-size:15px; font-weight:500; color:var(--text); padding:0.65rem 0.75rem; outline:none; }
+@media (max-width:480px) { .el-campos { grid-template-columns:1fr; } }
 footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25rem 2rem; }
 @media (max-width:900px) { .planes { grid-template-columns:1fr; max-width:560px; margin:0 auto; } }
 @media (max-width:560px) { .hero h1 { font-size:27px; } .hero-in { padding:1.6rem 1rem 1.8rem; } main { padding:1.25rem 1rem 2.5rem; } .top img { height:34px; } }
@@ -100,6 +154,40 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
   <div class="perfil"><span>25 a 34 años</span><span>Solo tú</span><span>Tu 7%: <b>$120.400</b></span><span>Clínica: UC Christus</span><span>Buscas: Consultas y exámenes</span></div>
 </div></section>
 <main>
+  <section class="el" id="eleccion" hidden aria-live="polite">
+    <button class="el-volver" type="button" id="el-volver">← Volver a los planes</button>
+    <div class="el-card">
+      <div class="el-plan"><img id="el-logo" src="" alt="" width="94" height="31"><div><p class="el-k">Elegiste</p><p class="el-nom" id="el-nom"></p><p class="el-precio" id="el-precio"></p></div></div>
+      <div class="el-aviso"><b>Dentro del día te contactará un ejecutivo de <span class="el-isa"></span>, inscrito en la Superintendencia de Salud.</b> Te ayudará con la contratación y, después, en la postventa: dudas y orientación para usar tu plan.</div>
+      <form class="el-form" id="el-form" novalidate>
+        <label for="el-wsp">Confirma tu WhatsApp para que te contacte</label>
+        <div class="el-tel"><span>+56 9</span><input id="el-wsp" type="tel" inputmode="numeric" maxlength="9" autocomplete="tel-national" placeholder="1234 5678"></div>
+        <p class="el-err" id="el-err" hidden>Escribe los 8 números de tu WhatsApp, después del +56 9.</p>
+        <button class="el-btn" type="submit" id="el-enviar">Confirmar mi elección</button>
+        <p class="el-priv">Solo lo usamos para contactarte por esta propuesta.</p>
+      </form>
+      <div class="el-ok" id="el-ok" hidden>
+        <div class="el-ok-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>¡Listo, Fernando! Recibimos tu elección.</span></div>
+        <div class="el-datos">
+          <p class="el-datos-t">Agiliza tu ingreso <em>(opcional)</em></p>
+          <p class="el-datos-p">Son los datos que la Isapre pide para la afiliación. Puedes enviarlos ahora o dárselos después al ejecutivo: de todas formas los vas a necesitar.</p>
+          <div class="el-campos">
+            <label>RUT<input id="d-rut" type="text" autocomplete="off" placeholder="12.345.678-9"></label>
+            <label>Fecha de nacimiento<input id="d-nac" type="date"></label>
+            <label class="ancho">Correo electrónico<input id="d-correo" type="email" autocomplete="email" placeholder="nombre@correo.cl"></label>
+            <label class="ancho">Dirección (calle, número y comuna)<input id="d-dir" type="text" autocomplete="street-address"></label>
+            <label class="ancho">Tipo de trabajador<select id="d-tipo"><option value="">Elige una opción</option><option>Dependiente</option><option>Independiente</option><option>Pensionado</option></select></label>
+            <label>Empresa donde trabajas<input id="d-emp" type="text" autocomplete="organization"></label>
+            <label>RUT de la empresa<input id="d-emprut" type="text" autocomplete="off" placeholder="76.543.210-K"></label>
+          </div>
+          <p class="el-err" id="d-err" hidden></p>
+          <button class="el-btn verde" type="button" id="d-enviar"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Enviar mis datos por WhatsApp</button>
+          <p class="el-priv">Se envían desde tu WhatsApp a Planiapp y se los pasamos a tu ejecutivo. No quedan guardados en esta página.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="planes">
     <article class="pl">
       <header class="pl-top">
@@ -130,7 +218,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       </ul>
       <div class="pl-acc">
         <a class="pl-pdf" href="/planes/consalud-13-fcl197l-26.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PLY9N9',isapre:'Consalud',plan:'13-FCL197L-26'})">Ver el plan completo (PDF)</a>
-        <a class="pl-wsp" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Life%20Focus%20190%20Light%20de%20Consalud%20(13-FCL197L-26).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Consalud',plan:'13-FCL197L-26'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+        <a class="pl-wsp" data-plan="0" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Life%20Focus%20190%20Light%20de%20Consalud%20(13-FCL197L-26).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Consalud',plan:'13-FCL197L-26'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
       </div>
     </article>
     <article class="pl">
@@ -161,7 +249,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       </ul>
       <div class="pl-acc">
         <a class="pl-pdf" href="/planes/nueva-masvida-pm261012.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PLY9N9',isapre:'Nueva Masvida',plan:'PM261012'})">Ver el plan completo (PDF)</a>
-        <a class="pl-wsp" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Pleno%20Max%20de%20Nueva%20Masvida%20(PM261012).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Nueva Masvida',plan:'PM261012'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+        <a class="pl-wsp" data-plan="1" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Pleno%20Max%20de%20Nueva%20Masvida%20(PM261012).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Nueva Masvida',plan:'PM261012'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
       </div>
     </article>
     <article class="pl">
@@ -192,7 +280,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       </ul>
       <div class="pl-acc">
         <a class="pl-pdf" href="/planes/vida-tres-vpp260866.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PLY9N9',isapre:'Vida Tres',plan:'VPP260866'})">Ver el plan completo (PDF)</a>
-        <a class="pl-wsp" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Vanguardia%20Plus%20Platinum%20de%20Vida%20Tres%20(VPP260866).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Vida Tres',plan:'VPP260866'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+        <a class="pl-wsp" data-plan="2" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Vanguardia%20Plus%20Platinum%20de%20Vida%20Tres%20(VPP260866).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Vida Tres',plan:'VPP260866'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
       </div>
     </article>
   </div>
@@ -231,5 +319,56 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 </main>
 <footer>Planiapp · Asesoría con ejecutivos inscritos en la Superintendencia de Salud · Propuesta preparada el 23 de octubre de 2026</footer>
 <script>if (typeof gtag === 'function') gtag('event', 'propuesta_vista', { propuesta: 'PLY9N9' });</script>
+<script>
+// Elegir un plan: pantalla de confirmación. El WhatsApp confirmado le llega al ejecutivo por Make (mismo webhook del formulario);
+// los datos de afiliación, si los completa, los manda la persona desde su WhatsApp.
+(function () {
+  const PLANES = [{"isapre":"Consalud","plan":"Life Focus 190 Light","cod":"13-FCL197L-26","logo":"/logos/consalud.png","lw":94,"lh":31,"precio":"$117.100 al mes · 2,84 UF"},{"isapre":"Nueva Masvida","plan":"Pleno Max","cod":"PM261012","logo":"/logos/nueva-masvida.png","lw":99,"lh":29,"precio":"$116.400 al mes · 2,82 UF"},{"isapre":"Vida Tres","plan":"Vanguardia Plus Platinum","cod":"VPP260866","logo":"/logos/vida-tres.png","lw":123,"lh":24,"precio":"$115.900 al mes · 2,81 UF"}];
+  const $ = id => document.getElementById(id);
+  const lista = document.querySelector('.planes'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), cierre = document.querySelector('.cierre'), el = $('eleccion');
+  let elegido = null;
+  document.querySelectorAll('.pl-wsp[data-plan]').forEach(a => a.addEventListener('click', e => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault();
+    elegido = PLANES[+a.dataset.plan];
+    $('el-logo').src = elegido.logo; $('el-logo').alt = 'Isapre ' + elegido.isapre; $('el-logo').width = elegido.lw; $('el-logo').height = elegido.lh;
+    $('el-nom').textContent = elegido.plan + ' · ' + elegido.isapre; $('el-precio').textContent = elegido.precio;
+    document.querySelectorAll('.el-isa').forEach(s => s.textContent = elegido.isapre);
+    [lista, comp, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+  $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, notas, cierre].forEach(x => x && (x.hidden = false)); });
+  $('el-wsp').addEventListener('input', e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 8); $('el-err').hidden = true; });
+  $('el-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const d = $('el-wsp').value;
+    if (!/^\d{8}$/.test(d)) { $('el-err').hidden = false; $('el-wsp').focus(); return; }
+    $('el-enviar').disabled = true; $('el-enviar').textContent = 'Enviando…';
+    const datos = { origen: 'propuesta', fecha: new Date().toLocaleString('es-CL'), codigo: 'PLY9N9', nombre: "Fernando", whatsapp: '+569' + d,
+      canal: 'WhatsApp', horario: 'Dentro del día', sistema: "Fonasa", edad: "25 a 34 años", cargas: "Solo tú", renta: '',
+      motivo: 'Eligió en su propuesta: ' + elegido.isapre + ' · ' + elegido.plan + ' (' + elegido.cod + ')',
+      coberturas: 'Propuesta PLY9N9 | ' + elegido.precio + ' | Clínica: ' + "UC Christus" };
+    if (typeof gtag === 'function' && !(typeof planiappInterno !== 'undefined' && planiappInterno)) gtag('event', 'propuesta_eleccion', { propuesta: 'PLY9N9', isapre: elegido.isapre, plan: elegido.cod });
+    try { await fetch('https://hook.eu1.make.com/0kmah46kxiwotfaim1s3ua6fqr47pc7u', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) }); } catch (err) {}
+    $('el-form').hidden = true; $('el-ok').hidden = false;
+  });
+  // RUT chileno: dígito verificador (módulo 11)
+  const rutOk = r => { const s = r.replace(/[^0-9kK]/g, '').toUpperCase(); if (s.length < 2) return false; const c = s.slice(0, -1), dv = s.slice(-1); let m = 0, f = 2; for (let i = c.length - 1; i >= 0; i--) { m += +c[i] * f; f = f === 7 ? 2 : f + 1; } const e = 11 - (m % 11); return dv === (e === 11 ? '0' : e === 10 ? 'K' : String(e)); };
+  $('d-enviar').addEventListener('click', () => {
+    const v = id => $(id).value.trim();
+    const err = m => { $('d-err').textContent = m; $('d-err').hidden = false; };
+    if (v('d-rut') && !rutOk(v('d-rut'))) return err('Revisa tu RUT: el dígito verificador no calza.');
+    if (v('d-emprut') && !rutOk(v('d-emprut'))) return err('Revisa el RUT de la empresa: el dígito verificador no calza.');
+    if (v('d-correo') && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('d-correo'))) return err('Revisa tu correo electrónico.');
+    const nac = v('d-nac') ? v('d-nac').split('-').reverse().join('-') : '';
+    const filas = [['RUT', v('d-rut')], ['Fecha de nacimiento', nac], ['Correo', v('d-correo')], ['Dirección', v('d-dir')], ['Tipo de trabajador', v('d-tipo')], ['Empresa', v('d-emp')], ['RUT de la empresa', v('d-emprut')]].filter(x => x[1]);
+    if (!filas.length) return err('Completa al menos un dato, o déjalo para cuando te contacte el ejecutivo.');
+    $('d-err').hidden = true;
+    const texto = 'Hola, elegí el plan ' + elegido.plan + ' de ' + elegido.isapre + ' en mi propuesta PLY9N9. Mis datos para la afiliación:\n' + filas.map(x => '• ' + x[0] + ': ' + x[1]).join('\n');
+    if (typeof gtag === 'function' && !(typeof planiappInterno !== 'undefined' && planiappInterno)) gtag('event', 'propuesta_datos_wsp', { propuesta: 'PLY9N9' });
+    window.open('https://wa.me/56966450103?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  });
+})();
+</script>
 </body>
 </html>
