@@ -379,6 +379,15 @@ footer a { color: var(--text-muted); }
  ]
 }
 </script>
+<style>
+/* Llamado a la calculadora dentro de los artículos */
+div.calc-cta { display:flex; align-items:center; gap:1.1rem; background:linear-gradient(135deg,#E6F9F0,#D3F2E3); border:1px solid #BDE6D2; border-radius:16px; padding:1.1rem 1.25rem; margin:1.75rem 0; }
+div.calc-cta strong { display:block; font-size:16.5px; color:#0B4A38; margin-bottom:0.2rem; line-height:1.3; }
+div.calc-cta p { margin:0; font-size:14.5px; line-height:1.5; color:#2F5D50; }
+div.calc-cta a { flex-shrink:0; background:#1D9E75; color:#fff; text-decoration:none; font-weight:700; font-size:14.5px; border-radius:999px; padding:0.7rem 1.15rem; white-space:nowrap; box-shadow:0 10px 20px -12px rgba(29,158,117,.9); }
+div.calc-cta a:hover { background:#0F6E56; color:#fff; }
+@media (max-width:600px) { div.calc-cta { flex-direction:column; align-items:stretch; } div.calc-cta a { text-align:center; } }
+</style>
 </head>
 <body>
 
@@ -434,6 +443,11 @@ footer a { color: var(--text-muted); }
     <p>Por sus topes bajos, muchas prestaciones quedan con poca cobertura. En regiones tiene convenios, pero no copago de urgencia: se paga con los porcentajes ambulatorios y topes muy bajos en medicamentos e insumos, así que la cuenta puede salir alta. Suele pedir más antecedentes antes de cubrir una hospitalización, es la segunda Isapre con más reclamos según la Superintendencia de Salud, y hay varios especialistas que no atienden con la Isapre. Y como su precio de entrada es parecido al de otras Isapres, conviene comparar qué cubre cada una antes de elegirla por precio.</p>
   </div>
   <p class="cmp-nota">La información es referencial y corresponde a la oferta vigente a septiembre de 2026. Coberturas, convenios y topes cambian según el plan, y se confirman al momento de cotizar.</p>
+
+  <div class="calc-cta">
+    <div><strong>Antes de elegir Isapre, calcula tu 7%</strong><p>Con tu edad y tu sueldo te mostramos qué planes puedes elegir y si te alcanza sin poner plata extra. Sin dejar tus datos.</p></div>
+    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'ficha_nueva-masvida_medio'})">Calcular mi 7% →</a>
+  </div>
 
   <h2>¿Qué dicen los datos de la Superintendencia sobre Nueva Masvida?</h2>
   <p>La Superintendencia de Salud publica cada trimestre indicadores de todas las Isapres abiertas en su plataforma Radiografía de Isapres. Elegimos cuatro que sirven para decidir: los reclamos, las licencias médicas rechazadas, cuánta gente se va por decisión propia y cuánto de lo que recibe cada Isapre vuelve a sus afiliados en bonificaciones. En cada gráfico Nueva Masvida aparece destacada, y las Isapres están ordenadas de mejor a peor resultado para el afiliado.</p>
@@ -511,6 +525,11 @@ footer a { color: var(--text-muted); }
   <div class="analisis"><p><strong>Nuestro análisis:</strong> Los datos de la Superintendencia coinciden con lo que vemos en las asesorías. Nueva Masvida es la Isapre que menos destina a bonificar a sus afiliados, $788 de cada $1.000, y la que tiene más desafiliaciones voluntarias (10,9 por cada 1.000 cotizantes). Además está penúltima en reclamos (12,5) y en licencias médicas rechazadas (24%). Es coherente con planes de topes bajos. Si esperas usar mucho tu plan, revisa bien antes de contratar.</p></div>
 
 
+
+  <div class="calc-cta">
+    <div><strong>¿Cuánto plan te da tu 7%?</strong><p>Calcúlalo en la calculadora y, si quieres, te enviamos propuestas con la clínica donde te atiendes.</p></div>
+    <a href="/calculadora-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'ficha_nueva-masvida_final'})">Calcular mi 7% →</a>
+  </div>
 
   <!-- faq:inicio -->
   <section class="faq">
