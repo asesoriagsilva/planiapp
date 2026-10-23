@@ -404,6 +404,30 @@
     {
       "source": "/calculadora-isapre",
       "destination": "/calculadora-isapre.html"
+    },
+    {
+      "source": "/propuesta/:codigo",
+      "destination": "/propuesta/:codigo.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/propuesta/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/planes/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

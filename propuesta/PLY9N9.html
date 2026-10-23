@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Tu propuesta de Isapre | Planiapp</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjNTM0QUI3Ii8+CiAgPGNpcmNsZSBjeD0iMTQiIGN5PSIxNiIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI3LDE2IDEwLDE2IDExLjUsMTEuNSAxMywyMC41IDE0LjUsMTMgMTYsMTggMTcsMTYgMjEsMTYiCiAgICBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMjMiIGN5PSI5IiByPSI0IiBmaWxsPSIjMUQ5RTc1Ii8+CiAgPHBhdGggZD0iTTIxLjUgOWwxLjIgMS4zIDIuMy0yLjYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+</script>
+<style>
+:root { --purple:#534AB7; --purple-light:#EEEDFE; --purple-mid:#7F77DD; --purple-dark:#26215C; --purple-deep:#3C3489; --green:#1D9E75; --green-dark:#0F6E56; --green-light:#E1F5EE; --text:#1a1830; --muted:#6b6b8a; --border:#E7E5F5; --bg:#f8f7ff; --white:#fff; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'DM Sans',sans-serif; color:var(--text); background:var(--bg); line-height:1.5; }
+.top { display:flex; align-items:center; justify-content:space-between; gap:1rem; max-width:1100px; margin:0 auto; padding:0.9rem 1.25rem; }
+.top img { height:40px; width:auto; }
+.top span { font-size:12.5px; font-weight:600; color:var(--green-dark); background:var(--green-light); border-radius:999px; padding:0.3rem 0.8rem; }
+.hero { background:linear-gradient(135deg, #1E1A4D 0%, #2B2468 55%, #3C3489 100%); color:#fff; }
+.hero-in { max-width:1100px; margin:0 auto; padding:2.2rem 1.25rem 2.4rem; }
+.hero-k { font-size:12.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:#4BE3A3; }
+.hero h1 { font-family:'Inter',sans-serif; font-size:34px; font-weight:900; line-height:1.15; letter-spacing:-0.02em; margin:0.35rem 0 0.6rem; }
+.hero p { color:rgba(255,255,255,.82); font-size:16px; max-width:640px; }
+.perfil { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.2rem; }
+.perfil span { font-size:13.5px; font-weight:600; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:0.4rem 0.85rem; }
+.perfil b { color:#4BE3A3; font-weight:700; }
+main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
+.planes { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.1rem; align-items:start; }
+.pl { background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.25rem 1.2rem 1.2rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); display:flex; flex-direction:column; gap:0.9rem; }
+.pl-top { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; }
+.pl-top img { height:28px; width:auto; max-width:130px; object-fit:contain; }
+.pl-cod { font-size:11.5px; font-weight:600; color:var(--muted); background:var(--bg); border-radius:999px; padding:0.2rem 0.6rem; }
+.pl-nom { font-family:'Inter',sans-serif; font-size:19px; font-weight:800; color:var(--purple-dark); line-height:1.25; }
+.pl-precio { background:var(--green-light); border-radius:16px; padding:0.8rem 0.95rem; }
+.pl-precio strong { font-family:'Inter',sans-serif; font-size:28px; font-weight:900; color:#0B4A38; letter-spacing:-0.02em; }
+.pl-precio span { font-size:13.5px; color:var(--green-dark); margin-left:0.35rem; }
+.pl-exc { font-size:13px; color:#0B4A38; margin-top:0.15rem; }
+.pl-t { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--purple); margin-bottom:0.45rem; }
+.pl-uc { border:1.5px solid var(--purple-light); border-radius:16px; padding:0.8rem 0.9rem; }
+.pl-uc-nums { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; }
+.pl-uc-nums div { background:var(--purple-light); border-radius:12px; padding:0.5rem 0.65rem; }
+.pl-uc-nums b { display:block; font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); line-height:1.1; }
+.pl-uc-nums span { font-size:12px; color:var(--purple-deep); font-weight:600; }
+.pl-uc-urg { font-size:13px; color:var(--muted); margin-top:0.5rem; line-height:1.45; }
+.pl-datos { display:flex; flex-direction:column; gap:0.55rem; }
+.pl-datos dt { font-size:13px; font-weight:700; color:var(--purple-dark); }
+.pl-datos dd { font-size:13.5px; color:var(--muted); line-height:1.45; }
+.pl-lista { list-style:none; display:flex; flex-direction:column; gap:0.45rem; }
+.pl-lista li { display:flex; gap:0.5rem; font-size:14px; line-height:1.45; }
+.pl-lista svg { flex-shrink:0; margin-top:2px; }
+.pl-lista .si svg { color:var(--green); }
+.pl-lista .ojo { background:#FFF4DE; color:#6B4A0E; border-radius:10px; padding:0.45rem 0.6rem; }
+.pl-lista .ojo svg { color:#B7791F; }
+.pl-acc { display:flex; flex-direction:column; gap:0.5rem; margin-top:auto; padding-top:0.3rem; }
+.pl-acc a { display:flex; align-items:center; justify-content:center; gap:0.5rem; border-radius:999px; padding:0.75rem 1rem; font-size:15px; font-weight:700; text-decoration:none; transition:background .15s, transform .15s; }
+.pl-pdf { background:var(--white); color:var(--purple); border:1.5px solid var(--purple-light); }
+.pl-wsp { background:var(--green); color:#fff; box-shadow:0 12px 22px -14px rgba(29,158,117,.9); }
+@media (hover:hover) { .pl-pdf:hover { background:var(--purple-light); } .pl-wsp:hover { background:var(--green-dark); } }
+.comp { margin-top:2.2rem; }
+.comp h2, .notas h2 { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); margin-bottom:0.8rem; }
+.comp-scroll { overflow-x:auto; border:1px solid var(--border); border-radius:18px; background:var(--white); }
+.comp table { border-collapse:collapse; width:100%; min-width:640px; font-size:14px; table-layout:fixed; }
+.comp th, .comp td { padding:0.7rem 0.85rem; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+.comp thead th { background:var(--purple-light); color:var(--purple-dark); font-size:13.5px; }
+.comp tbody th { color:var(--purple-dark); font-weight:600; width:200px; }
+.comp tbody tr:last-child th, .comp tbody tr:last-child td { border-bottom:none; }
+.notas { margin-top:2rem; }
+.notas ul { padding-left:1.1rem; color:var(--muted); font-size:13.5px; display:flex; flex-direction:column; gap:0.35rem; }
+.cierre { margin-top:2rem; background:linear-gradient(160deg, #534AB7 0%, #3C3489 100%); color:#fff; border-radius:20px; padding:1.5rem 1.4rem; text-align:center; }
+.cierre p { color:rgba(255,255,255,.88); margin:0.3rem auto 1rem; max-width:520px; }
+.cierre strong { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; }
+.cierre a { display:inline-flex; align-items:center; gap:0.5rem; background:#fff; color:var(--purple-deep); border-radius:999px; padding:0.75rem 1.4rem; font-weight:700; text-decoration:none; }
+footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25rem 2rem; }
+@media (max-width:900px) { .planes { grid-template-columns:1fr; max-width:560px; margin:0 auto; } }
+@media (max-width:560px) { .hero h1 { font-size:27px; } .hero-in { padding:1.6rem 1rem 1.8rem; } main { padding:1.25rem 1rem 2.5rem; } .top img { height:34px; } }
+</style>
+</head>
+<body>
+<div class="top"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp" width="170" height="42"><span>Propuesta PLY9N9</span></div>
+<section class="hero"><div class="hero-in">
+  <p class="hero-k">Tu propuesta de Isapre</p>
+  <h1>Fernando, estos son los planes que te recomendamos</h1>
+  <p>Los elegimos con lo que nos contaste en la calculadora: los tres caben en tu 7%, sin poner plata extra, y tienen cobertura preferente en UC Christus.</p>
+  <div class="perfil"><span>25 a 34 años</span><span>Solo tú</span><span>Tu 7%: <b>$120.400</b></span><span>Clínica: UC Christus</span><span>Buscas: Consultas y exámenes</span></div>
+</div></section>
+<main>
+  <div class="planes">
+    <article class="pl">
+      <header class="pl-top">
+        <img src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31">
+        <span class="pl-cod">13-FCL197L-26</span>
+      </header>
+      <h2 class="pl-nom">Life Focus 190 Light</h2>
+      <div class="pl-precio">
+        <div><strong>$117.100</strong><span>al mes · 2,84 UF</span></div>
+        <p class="pl-exc">Con tu 7% te quedan unos <b>$3.300</b> de excedente al mes</p>
+      </div>
+      <div class="pl-uc">
+        <p class="pl-t">En UC Christus</p>
+        <div class="pl-uc-nums"><div><b>70%</b><span>Consultas y exámenes</span></div><div><b>60%</b><span>Hospitalización</span></div></div>
+        <p class="pl-uc-urg">Copago fijo en el Hospital Clínico UC: 1,17 UF la urgencia simple y 3,45 UF la compleja</p>
+      </div>
+      <dl class="pl-datos">
+        <div><dt>Consultas y exámenes al 80%</dt><dd>Integramédica, Centros Médicos RedSalud, Clínica Bupa Santiago, Clínicas RedSalud Santiago y Providencia, y Clínica Dávila</dd></div>
+        <div><dt>Hospitalización al 100%</dt><dd>Clínica RedSalud Santiago</dd></div>
+        <div><dt>En enfermedades graves</dt><dd>Prótesis hasta 150 UF y quimioterapia hasta 500 UF. Con la CAEC, pagas como máximo 126 UF por enfermedad catastrófica.</dd></div>
+      </dl>
+      <ul class="pl-lista">
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>El que mejor cubre tus consultas y exámenes en UC Christus: 70%</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Urgencia con copago fijo en el Hospital Clínico UC</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Psicología y kinesiología sin tope en sus prestadores preferentes</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Beneficio de Consalud: exámenes preventivos y de laboratorio a costo $0, según sus condiciones vigentes</span></li>
+
+      </ul>
+      <div class="pl-acc">
+        <a class="pl-pdf" href="/planes/consalud-13-fcl197l-26.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PLY9N9',isapre:'Consalud',plan:'13-FCL197L-26'})">Ver el plan completo (PDF)</a>
+        <a class="pl-wsp" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Life%20Focus%20190%20Light%20de%20Consalud%20(13-FCL197L-26).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Consalud',plan:'13-FCL197L-26'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+      </div>
+    </article>
+    <article class="pl">
+      <header class="pl-top">
+        <img src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29">
+        <span class="pl-cod">PM261012</span>
+      </header>
+      <h2 class="pl-nom">Pleno Max</h2>
+      <div class="pl-precio">
+        <div><strong>$116.400</strong><span>al mes · 2,82 UF</span></div>
+        <p class="pl-exc">Con tu 7% te quedan unos <b>$4.000</b> de excedente al mes</p>
+      </div>
+      <div class="pl-uc">
+        <p class="pl-t">En UC Christus</p>
+        <div class="pl-uc-nums"><div><b>60%</b><span>Consultas y exámenes</span></div><div><b>60%</b><span>Hospitalización</span></div></div>
+        <p class="pl-uc-urg">Copago fijo en el Hospital Clínico UC: 1,20 UF la urgencia simple y 3,00 UF la compleja</p>
+      </div>
+      <dl class="pl-datos">
+        <div><dt>Consultas y exámenes al 80%</dt><dd>Integramédica, Clínica Dávila, Clínica Bupa Santiago, Clínicas RedSalud y Clínica Cordillera</dd></div>
+        <div><dt>Hospitalización al 100%</dt><dd>Clínica Cordillera y Hospital del Profesor (90% en Bupa Santiago y Clínicas RedSalud)</dd></div>
+        <div><dt>En enfermedades graves</dt><dd>Prótesis hasta 15 UF y quimioterapia hasta 100 UF al año.</dd></div>
+      </dl>
+      <ul class="pl-lista">
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Urgencia con copago fijo en el Hospital Clínico UC</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Consulta psicológica sin tope en sus prestadores preferentes</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Muy buena hospitalización en Bupa Santiago, RedSalud y Cordillera</span></li>
+        <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Sus topes en enfermedades graves son bajos: prótesis hasta 15 UF y quimioterapia hasta 100 UF al año</span></li>
+      </ul>
+      <div class="pl-acc">
+        <a class="pl-pdf" href="/planes/nueva-masvida-pm261012.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PLY9N9',isapre:'Nueva Masvida',plan:'PM261012'})">Ver el plan completo (PDF)</a>
+        <a class="pl-wsp" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Pleno%20Max%20de%20Nueva%20Masvida%20(PM261012).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Nueva Masvida',plan:'PM261012'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+      </div>
+    </article>
+    <article class="pl">
+      <header class="pl-top">
+        <img src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24">
+        <span class="pl-cod">VPP260866</span>
+      </header>
+      <h2 class="pl-nom">Vanguardia Plus Platinum</h2>
+      <div class="pl-precio">
+        <div><strong>$115.900</strong><span>al mes · 2,81 UF</span></div>
+        <p class="pl-exc">Con tu 7% te quedan unos <b>$4.500</b> de excedente al mes</p>
+      </div>
+      <div class="pl-uc">
+        <p class="pl-t">En UC Christus</p>
+        <div class="pl-uc-nums"><div><b>60%</b><span>Consultas y exámenes</span></div><div><b>60%</b><span>Hospitalización</span></div></div>
+        <p class="pl-uc-urg">En el Hospital Clínico UC, 60% de cobertura (sin copago fijo). Copago fijo en Clínica Dávila y Clínica Santa María</p>
+      </div>
+      <dl class="pl-datos">
+        <div><dt>Consultas y exámenes al 80%</dt><dd>Clínica Dávila y sus centros médicos, Integramédica, Vidaintegra y Clínica RedSalud Santiago</dd></div>
+        <div><dt>Hospitalización al 80%</dt><dd>Clínica Dávila, Dávila Vespucio y Clínica RedSalud Santiago</dd></div>
+        <div><dt>En enfermedades graves</dt><dd>Prótesis sin tope y quimioterapia hasta 1.000 UF.</dd></div>
+      </dl>
+      <ul class="pl-lista">
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>La más fuerte en lo grave: prótesis sin tope y quimioterapia hasta 1.000 UF</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Su arancel cubre prestaciones nuevas, como cirugía robótica y radiocirugía</span></li>
+        <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>En la urgencia del Hospital Clínico UC no tiene copago fijo: cubre el 60%</span></li>
+        <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Kinesiología con tope de 4,2 UF al año</span></li>
+      </ul>
+      <div class="pl-acc">
+        <a class="pl-pdf" href="/planes/vida-tres-vpp260866.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PLY9N9',isapre:'Vida Tres',plan:'VPP260866'})">Ver el plan completo (PDF)</a>
+        <a class="pl-wsp" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Vanguardia%20Plus%20Platinum%20de%20Vida%20Tres%20(VPP260866).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PLY9N9',isapre:'Vida Tres',plan:'VPP260866'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+      </div>
+    </article>
+  </div>
+
+  <section class="comp">
+    <h2>Los tres, lado a lado</h2>
+    <div class="comp-scroll">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col">Consalud<br><small style="font-weight:500;color:var(--muted)">Life Focus 190 Light</small></th><th scope="col">Nueva Masvida<br><small style="font-weight:500;color:var(--muted)">Pleno Max</small></th><th scope="col">Vida Tres<br><small style="font-weight:500;color:var(--muted)">Vanguardia Plus Platinum</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Precio para ti</th><td><b>$117.100</b> al mes (2,84 UF)</td><td><b>$116.400</b> al mes (2,82 UF)</td><td><b>$115.900</b> al mes (2,81 UF)</td></tr>
+          <tr><th scope="row">Consultas y exámenes en UC Christus</th><td>70%</td><td>60%</td><td>60%</td></tr>
+          <tr><th scope="row">Hospitalización en UC Christus</th><td>60%</td><td>60%</td><td>60%</td></tr>
+          <tr><th scope="row">Urgencia en el Hospital Clínico UC</th><td>Copago fijo</td><td>Copago fijo</td><td>Sin copago fijo (60%)</td></tr>
+          <tr><th scope="row">En enfermedades graves</th><td>Prótesis hasta 150 UF y quimioterapia hasta 500 UF. Con la CAEC, pagas como máximo 126 UF por enfermedad catastrófica.</td><td>Prótesis hasta 15 UF y quimioterapia hasta 100 UF al año.</td><td>Prótesis sin tope y quimioterapia hasta 1.000 UF.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="notas">
+    <h2>Para que lo tengas claro</h2>
+    <ul>
+      <li>Los precios son referenciales, con la UF de hoy ($41.200). El precio de cada plan es su precio base por tu factor de edad (1) más el GES de cada Isapre, y se paga en UF.</li>
+      <li>La cobertura preferente rige en los prestadores indicados en cada plan, con médicos del staff y usando bonos. Fuera de ellos, rige la cobertura de libre elección.</li>
+      <li>Para entrar a cualquier Isapre se completa una declaración de salud, y la aceptación depende de ella.</li>
+      <li>El detalle completo de cada plan está en su PDF. Ante cualquier duda, te lo explicamos por WhatsApp.</li>
+    </ul>
+  </section>
+
+  <section class="cierre">
+    <strong>¿Tienes dudas o quieres comparar otro plan?</strong>
+    <p>Escríbenos y te ayudamos a elegir. Si ninguno te convence, buscamos otras opciones.</p>
+    <a href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PLY9N9%20en%20Planiapp%20y%20tengo%20una%20duda." target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_duda',{propuesta:'PLY9N9'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Escribir por WhatsApp</a>
+  </section>
+</main>
+<footer>Planiapp · Asesoría con ejecutivos inscritos en la Superintendencia de Salud · Propuesta preparada el 23 de octubre de 2026</footer>
+<script>if (typeof gtag === 'function') gtag('event', 'propuesta_vista', { propuesta: 'PLY9N9' });</script>
+</body>
+</html>
