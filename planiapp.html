@@ -972,15 +972,6 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .isa-panel p { flex:1; margin:0; font-size:16px; color:var(--text); line-height:1.55; }
   .isa-ficha { flex-shrink:0; background:var(--purple); color:#fff; font-size:14px; font-weight:600; text-decoration:none; padding:0.7rem 1.15rem; border-radius:999px; white-space:nowrap; transition:background .2s; }
   .isa-ficha:hover { background:var(--purple-deep); }
-  .isa-dos { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem; }
-  .isa-card { display:flex; align-items:center; gap:0.9rem; background:var(--white); border:1px solid var(--border); border-radius:16px; padding:1rem 1.15rem; text-decoration:none; color:inherit; transition:transform .2s, box-shadow .2s, border-color .2s; }
-  .isa-card:hover { transform:translateY(-2px); border-color:var(--purple-mid); box-shadow:0 12px 26px -16px rgba(38,33,92,.45); }
-  .isa-card-ico { flex-shrink:0; width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; }
-  .isa-card-txt { flex:1; min-width:0; display:flex; flex-direction:column; gap:0.1rem; }
-  .isa-card-t { font-family:'Inter',sans-serif; font-size:17px; font-weight:800; color:var(--purple-dark); }
-  .isa-card-p { font-size:13.5px; color:var(--text-muted); line-height:1.45; }
-  .isa-card-fl { color:var(--purple); font-size:20px; transition:transform .2s; }
-  .isa-card:hover .isa-card-fl { transform:translateX(4px); }
   @media (max-width:680px){
     .sec-t { font-size:24px; }
     .sec-p { font-size:15px; margin-bottom:1.3rem; }
@@ -993,8 +984,6 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
     .isa-panel { flex-direction:column; align-items:stretch; gap:0.8rem; padding:0.9rem 0.3rem 0.2rem; }
     .isa-panel p { font-size:15px; }
     .isa-ficha { text-align:center; }
-    .isa-dos { grid-template-columns:1fr; gap:0.65rem; margin-top:0.75rem; }
-    .isa-card { padding:0.85rem 1rem; }
   }
   </style>
   <section class="isa-wrap" id="isapres">
@@ -1039,18 +1028,6 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
         <p>Ideal si usas clínicas del segmento alto: cubre procedimientos sin código Fonasa y es la Isapre con menos reclamos, según la Superintendencia.</p>
         <a class="isa-ficha" href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'portada'})">Ver ficha de Vida Tres →</a>
       </div>
-    </div>
-    <div class="isa-dos">
-      <a class="isa-card" href="/mejor-isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'mejor_isapre',origen:'portada'})">
-        <span class="isa-card-ico" style="background:#EEEDFE;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg></span>
-        <span class="isa-card-txt"><span class="isa-card-t">Mejor Isapre 2026</span><span class="isa-card-p">Tabla con convenios, coberturas y precios por edad</span></span>
-        <span class="isa-card-fl" aria-hidden="true">→</span>
-      </a>
-      <a class="isa-card" href="/guia-isapres" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'guia_isapres',origen:'portada'})">
-        <span class="isa-card-ico" style="background:#E1F5EE;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2z"/><path d="M22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"/></svg></span>
-        <span class="isa-card-txt"><span class="isa-card-t">Guía de Isapres</span><span class="isa-card-p">Cómo funciona cada una y sus clínicas</span></span>
-        <span class="isa-card-fl" aria-hidden="true">→</span>
-      </a>
     </div>
   </section>
   <script>
