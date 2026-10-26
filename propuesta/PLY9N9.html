@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Tu propuesta de Isapre | Planiapp</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjNTM0QUI3Ii8+CiAgPGNpcmNsZSBjeD0iMTQiIGN5PSIxNiIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI3LDE2IDEwLDE2IDExLjUsMTEuNSAxMywyMC41IDE0LjUsMTMgMTYsMTggMTcsMTYgMjEsMTYiCiAgICBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMjMiIGN5PSI5IiByPSI0IiBmaWxsPSIjMUQ5RTc1Ii8+CiAgPHBhdGggZD0iTTIxLjUgOWwxLjIgMS4zIDIuMy0yLjYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+" />
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
@@ -103,12 +103,25 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 @media (hover:hover) { .pl-pdf:hover { background:var(--purple-light); } .pl-wsp:hover { background:var(--green-dark); } }
 .comp { margin-top:2.2rem; }
 .comp h2, .notas h2 { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); margin-bottom:0.8rem; }
-.comp-scroll { overflow-x:auto; border:1px solid var(--border); border-radius:18px; background:var(--white); }
-.comp table { border-collapse:collapse; width:100%; min-width:640px; font-size:14px; table-layout:fixed; }
-.comp th, .comp td { padding:0.7rem 0.85rem; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
-.comp thead th { background:var(--purple-light); color:var(--purple-dark); font-size:13.5px; }
-.comp tbody th { color:var(--purple-dark); font-weight:600; width:200px; }
+.comp-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--border); border-radius:18px; background:var(--white); }
+.comp table { border-collapse:separate; border-spacing:0; width:100%; min-width:760px; font-size:13.5px; line-height:1.45; table-layout:fixed; }
+.comp th, .comp td { padding:0.7rem 0.8rem; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+.comp thead th { background:var(--purple-light); color:var(--purple-dark); vertical-align:middle; text-align:center; }
+.comp thead img { display:block; height:26px; width:auto; max-width:120px; object-fit:contain; margin:0 auto 0.3rem; }
+.comp thead small { display:block; font-size:12px; font-weight:600; color:var(--purple-deep); }
+.comp th[scope="row"] { position:sticky; left:0; z-index:1; background:#FAFAFD; color:var(--purple-dark); font-weight:600; width:170px; border-right:1px solid var(--border); }
+.comp thead th:first-child { position:sticky; left:0; z-index:2; border-right:1px solid var(--border); text-align:left; width:170px; }
 .comp tbody tr:last-child th, .comp tbody tr:last-child td { border-bottom:none; }
+.comp td.bien { background:#E6F5EE; color:#0B4A38; }
+.comp td.mal { background:#FBECEC; color:#7A2E33; }
+.cmp-leyenda { display:flex; flex-wrap:wrap; gap:0.4rem 1rem; font-size:12.5px; color:var(--muted); margin:0 0 0.7rem; }
+.cmp-leyenda > span { display:inline-flex; align-items:center; gap:0.35rem; }
+.cmp-hint { display:none; font-size:12px; color:var(--muted); text-align:right; margin:0 0 0.4rem; }
+.cmp-ico { display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border-radius:50%; font-size:10px; font-weight:700; color:#fff; line-height:1; vertical-align:-3px; margin-right:0.3rem; flex-shrink:0; }
+.cmp-ico.bien { background:#1D9E75; }
+.cmp-ico.mal { background:#C2565B; }
+.cmp-kh { font-size:12px; font-weight:600; color:var(--muted) !important; text-transform:uppercase; letter-spacing:0.04em; }
+@media (max-width:680px) { .cmp-hint { display:block; } .comp table { font-size:12.5px; min-width:640px; } .comp th[scope="row"], .comp thead th:first-child { width:112px; } }
 .porque { margin-top:2rem; background:var(--green-light); border:1px solid #BDE7D7; border-left:5px solid var(--green); border-radius:18px; padding:1.2rem 1.25rem; display:flex; flex-direction:column; gap:0.55rem; }
 .porque h2 { display:flex; align-items:center; gap:0.55rem; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:#0B4A38; }
 .porque h2 svg { flex-shrink:0; color:#fff; background:var(--green); border-radius:50%; padding:6px; width:32px; height:32px; }
@@ -294,15 +307,19 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 
   <section class="comp">
     <h2>Los tres, lado a lado</h2>
+    <div class="cmp-leyenda"><span><span class="cmp-ico bien" aria-hidden="true">✓</span>Cubre bien</span><span><span class="cmp-ico mal" aria-hidden="true">!</span>Cubre poco o con límites</span><span>Sin color: intermedio o dato informativo</span></div>
+    <p class="cmp-hint">Desliza la tabla para ver los 3 planes →</p>
     <div class="comp-scroll">
       <table>
-        <thead><tr><th scope="col"></th><th scope="col">Consalud<br><small style="font-weight:500;color:var(--muted)">Life Focus 190 Light</small></th><th scope="col">Nueva Masvida<br><small style="font-weight:500;color:var(--muted)">Pleno Max</small></th><th scope="col">Vida Tres<br><small style="font-weight:500;color:var(--muted)">Vanguardia Plus Platinum</small></th></tr></thead>
+        <thead><tr><th scope="col" class="cmp-kh">Cobertura</th><th scope="col"><img src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><small>Life Focus 190 Light</small></th><th scope="col"><img src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><small>Pleno Max</small></th><th scope="col"><img src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><small>Vanguardia Plus Platinum</small></th></tr></thead>
         <tbody>
           <tr><th scope="row">Precio para ti</th><td><b>$117.100</b> al mes (2,84 UF)</td><td><b>$116.400</b> al mes (2,82 UF)</td><td><b>$115.900</b> al mes (2,81 UF)</td></tr>
-          <tr><th scope="row">Consultas y exámenes en UC Christus</th><td>70%</td><td>60%</td><td>60%</td></tr>
-          <tr><th scope="row">Hospitalización en UC Christus</th><td>60%</td><td>60%</td><td>60%</td></tr>
-          <tr><th scope="row">Urgencia en el Hospital Clínico UC</th><td>Copago fijo</td><td>Copago fijo</td><td>Sin copago fijo (60%)</td></tr>
-          <tr><th scope="row">En enfermedades graves</th><td>Prótesis hasta 150 UF y quimioterapia hasta 500 UF. Con la CAEC, pagas como máximo 126 UF por enfermedad catastrófica.</td><td>Prótesis hasta 15 UF y quimioterapia hasta 100 UF al año.</td><td>Prótesis sin tope y quimioterapia hasta 1.000 UF.</td></tr>
+          <tr><th scope="row">Cobertura hospitalaria</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>100% en Clínica RedSalud Santiago. En el Hospital Clínico UC, 60%</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>100% en Clínica Cordillera y Hospital del Profesor, 90% en Bupa Santiago y RedSalud. En el Hospital Clínico UC, 60%</td><td>80% en Dávila y RedSalud Santiago, 70% en Indisa. En el Hospital Clínico UC, 60%</td></tr>
+          <tr><th scope="row">Cobertura ambulatoria</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>80% en Integramédica, RedSalud y Bupa Santiago. En Red de Salud UC Christus, 70%</td><td>80% en Integramédica, Dávila, Bupa Santiago y RedSalud. En UC Christus, 60%</td><td>80% en Dávila, Integramédica, Vidaintegra y RedSalud Santiago. En el Hospital Clínico UC, 60%</td></tr>
+          <tr><th scope="row">Kinesiología</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en sus prestadores preferentes (80% en sus centros, 70% en UC Christus)</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope de 7,5 UF al año</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope de 4,2 UF al año</td></tr>
+          <tr><th scope="row">Prótesis y órtesis</th><td>Hasta 150 UF al año en hospitalización y 15 UF ambulatorias</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 15 UF en hospitalización y 9 UF ambulatorias</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en hospitalización y 7,5 UF ambulatorias</td></tr>
+          <tr><th scope="row">Copago fijo en urgencias</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí. En el Hospital Clínico UC: 1,17 UF la simple y 3,45 UF la compleja</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí. 1,20 UF la simple y 3,00 UF la compleja, también en el Hospital Clínico UC</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sí, desde 0,7 UF en Dávila, pero no en el Hospital Clínico UC (ahí cubre 60%)</td></tr>
+          <tr><th scope="row">Procedimientos sin código Fonasa</th><td>Cubre lo que está en el Arancel Consalud. Instrumental robótico al 50%, hasta 23 UF al año</td><td>En Cordillera, Bupa Santiago, Indisa y Hospital del Profesor se cubren solo por libre elección</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí: su arancel incluye procedimientos nuevos, como cirugía robótica, radiocirugía y radiofrecuencia</td></tr>
         </tbody>
       </table>
     </div>
