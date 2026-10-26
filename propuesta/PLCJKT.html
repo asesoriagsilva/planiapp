@@ -72,10 +72,11 @@ body { font-family:'DM Sans',sans-serif; color:var(--text); background:var(--bg)
 main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .planes { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.1rem; align-items:start; }
 .pl { background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.25rem 1.2rem 1.2rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); display:flex; flex-direction:column; gap:0.9rem; }
+.lg-consalud { --lgx:1.35; }
 .pl-top { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; }
-.pl-top img { height:28px; width:auto; max-width:130px; object-fit:contain; }
+.pl-top img { height:calc(28px * var(--lgx, 1)); width:auto; max-width:calc(130px * var(--lgx, 1)); object-fit:contain; }
 .pl-cod { font-size:11.5px; font-weight:600; color:var(--muted); background:var(--bg); border-radius:999px; padding:0.2rem 0.6rem; }
-.pl-nom { font-family:'Inter',sans-serif; font-size:19px; font-weight:800; color:var(--purple-dark); line-height:1.25; }
+.pl-nom { text-transform:uppercase; font-family:'Inter',sans-serif; font-size:19px; font-weight:800; color:var(--purple-dark); line-height:1.25; }
 .pl-precio { background:var(--green-light); border-radius:16px; padding:0.8rem 0.95rem; }
 .pl-precio strong { font-family:'Inter',sans-serif; font-size:28px; font-weight:900; color:#0B4A38; letter-spacing:-0.02em; }
 .pl-precio span { font-size:13.5px; color:var(--green-dark); margin-left:0.35rem; }
@@ -107,8 +108,8 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .comp table { border-collapse:separate; border-spacing:0; width:100%; min-width:760px; font-size:13.5px; line-height:1.45; table-layout:fixed; }
 .comp th, .comp td { padding:0.7rem 0.8rem; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
 .comp thead th { background:var(--purple-light); color:var(--purple-dark); vertical-align:middle; text-align:center; }
-.comp thead img { display:block; height:26px; width:auto; max-width:120px; object-fit:contain; margin:0 auto 0.3rem; }
-.comp thead small { display:block; font-size:12px; font-weight:600; color:var(--purple-deep); }
+.comp thead img { display:block; height:calc(26px * var(--lgx, 1)); width:auto; max-width:calc(120px * var(--lgx, 1)); object-fit:contain; margin:0 auto 0.3rem; }
+.comp thead small { display:block; text-transform:uppercase; font-size:12px; font-weight:600; color:var(--purple-deep); }
 .comp th[scope="row"] { position:sticky; left:0; z-index:1; background:#FAFAFD; color:var(--purple-dark); font-weight:600; width:170px; border-right:1px solid var(--border); }
 .comp thead th:first-child { position:sticky; left:0; z-index:2; border-right:1px solid var(--border); text-align:left; width:170px; }
 .comp tbody tr:last-child th, .comp tbody tr:last-child td { border-bottom:none; }
@@ -124,7 +125,7 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .estad-i { background:var(--white); border:1.5px solid var(--border); border-radius:16px; overflow:hidden; }
 .estad-i summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:0.6rem; padding:0.75rem 0.9rem; cursor:pointer; }
 .estad-i summary::-webkit-details-marker { display:none; }
-.estad-i summary img { height:24px; width:auto; max-width:110px; object-fit:contain; }
+.estad-i summary img { height:calc(24px * var(--lgx, 1)); width:auto; max-width:calc(110px * var(--lgx, 1)); object-fit:contain; }
 .estad-i summary span { font-size:13px; font-weight:700; color:var(--purple); background:var(--purple-light); border-radius:999px; padding:0.3rem 0.7rem; white-space:nowrap; }
 .estad-i[open] summary span { background:var(--purple); color:#fff; }
 .estad-c { border-top:1px solid var(--border); padding:0.75rem 0.9rem; display:flex; flex-direction:column; gap:0.35rem; font-size:14px; }
@@ -153,7 +154,7 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .el-volver { background:none; border:none; font:inherit; font-size:14px; font-weight:600; color:var(--purple); cursor:pointer; padding:0.3rem 0; margin-bottom:0.6rem; }
 .el-card { background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.4rem 1.3rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); display:flex; flex-direction:column; gap:1rem; }
 .el-plan { display:flex; align-items:center; gap:1rem; }
-.el-plan img { height:30px; width:auto; max-width:120px; object-fit:contain; flex-shrink:0; }
+.el-plan img { height:calc(30px * var(--lgx, 1)); width:auto; max-width:calc(120px * var(--lgx, 1)); object-fit:contain; flex-shrink:0; }
 .el-k { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--green-dark); }
 .el-nom { font-family:'Inter',sans-serif; font-size:19px; font-weight:800; color:var(--purple-dark); line-height:1.25; }
 .el-precio { font-size:14px; color:var(--muted); }
@@ -228,7 +229,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
   <div class="planes uno">
     <article class="pl">
       <header class="pl-top">
-        <img src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31">
+        <img class="lg-consalud" src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31">
         <span class="pl-cod">13-EFN17-26</span>
       </header>
       <h2 class="pl-nom">Easy Full Norte</h2>
@@ -249,7 +250,6 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       <ul class="pl-lista">
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Urgencia con copago fijo en Clínica RedSalud Elqui</span></li>
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Psicología y kinesiología sin tope en sus prestadores preferentes</span></li>
-        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Beneficio de Consalud: exámenes preventivos y de laboratorio a costo $0, según sus condiciones vigentes</span></li>
         <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Es un plan básico: cubre entre 50% y 60% en sus prestadores preferentes. Fuera de ellos rige la libre elección, con topes bajos (por ejemplo, 0,45 UF por consulta)</span></li>
         <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>En la Región de Coquimbo, su clínica preferente es Clínica RedSalud Elqui, en La Serena</span></li>
       </ul>
@@ -263,7 +263,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
   <section class="estad">
     <h2>Reclamos y licencias médicas de la Isapre</h2>
     <div class="estad-grid">
-      <details class="estad-i"><summary><img src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><span>Ver reclamos y licencias</span></summary>
+      <details class="estad-i"><summary><img class="lg-consalud" src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><span>Ver reclamos y licencias</span></summary>
         <div class="estad-c"><p><b>11,3</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>81%</b> y rechazó el 19%</p></div></details>
     </div>
     <p class="estad-f">Datos publicados por la Superintendencia de Salud (Radiografía de Isapres, segundo trimestre de 2025). <a href="/isapre-con-menos-reclamos" target="_blank" rel="noopener">Ver las 7 Isapres →</a></p>
@@ -292,7 +292,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 // Elegir un plan: pantalla de confirmación (sin pedir el WhatsApp ni pasar por Make). Al confirmar se abre el mismo chat de WhatsApp
 // con el plan y el precio escritos; los datos de afiliación, si los completa, también los manda la persona desde su WhatsApp.
 (function () {
-  const PLANES = [{"isapre":"Consalud","plan":"Easy Full Norte","cod":"13-EFN17-26","logo":"/logos/consalud.png","lw":94,"lh":31,"precio":"$110.500 al mes · 2,68 UF"}];
+  const PLANES = [{"isapre":"Consalud","plan":"Easy Full Norte","cod":"13-EFN17-26","logo":"/logos/consalud.png","lg":"lg-consalud","lw":94,"lh":31,"precio":"$110.500 al mes · 2,68 UF"}];
   const $ = id => document.getElementById(id);
   const lista = document.querySelector('.planes'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), estad = document.querySelector('.estad'), cierre = document.querySelector('.cierre'), el = $('eleccion');
   let elegido = null;
@@ -300,7 +300,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
     e.preventDefault();
     elegido = PLANES[+a.dataset.plan];
-    $('el-logo').src = elegido.logo; $('el-logo').alt = 'Isapre ' + elegido.isapre; $('el-logo').width = elegido.lw; $('el-logo').height = elegido.lh;
+    $('el-logo').src = elegido.logo; $('el-logo').className = elegido.lg; $('el-logo').alt = 'Isapre ' + elegido.isapre; $('el-logo').width = elegido.lw; $('el-logo').height = elegido.lh;
     $('el-nom').textContent = elegido.plan + ' · ' + elegido.isapre; $('el-precio').textContent = elegido.precio;
     document.querySelectorAll('.el-isa').forEach(s => s.textContent = elegido.isapre);
     [lista, comp, estad, porque, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
