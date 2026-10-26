@@ -114,6 +114,23 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .comp tbody tr:last-child th, .comp tbody tr:last-child td { border-bottom:none; }
 .comp td.bien { background:#E6F5EE; color:#0B4A38; }
 .comp td.mal { background:#FBECEC; color:#7A2E33; }
+.comp h2 { margin-bottom:0.35rem; }
+.cmp-prest { display:flex; flex-wrap:wrap; align-items:center; gap:0.4rem 0.9rem; margin:0 0 0.8rem; font-size:14.5px; color:var(--text); }
+.cmp-prest b { color:var(--purple-dark); }
+.cmp-prest a { font-size:13.5px; font-weight:600; color:var(--purple); text-decoration:none; background:var(--purple-light); border-radius:999px; padding:0.25rem 0.75rem; }
+.estad { margin-top:2rem; }
+.estad h2 { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:var(--purple-dark); margin-bottom:0.8rem; }
+.estad-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.7rem; align-items:start; }
+.estad-i { background:var(--white); border:1.5px solid var(--border); border-radius:16px; overflow:hidden; }
+.estad-i summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:0.6rem; padding:0.75rem 0.9rem; cursor:pointer; }
+.estad-i summary::-webkit-details-marker { display:none; }
+.estad-i summary img { height:24px; width:auto; max-width:110px; object-fit:contain; }
+.estad-i summary span { font-size:13px; font-weight:700; color:var(--purple); background:var(--purple-light); border-radius:999px; padding:0.3rem 0.7rem; white-space:nowrap; }
+.estad-i[open] summary span { background:var(--purple); color:#fff; }
+.estad-c { border-top:1px solid var(--border); padding:0.75rem 0.9rem; display:flex; flex-direction:column; gap:0.35rem; font-size:14px; }
+.estad-c b { font-family:'Inter',sans-serif; font-weight:800; color:var(--purple-dark); }
+.estad-f { font-size:12.5px; color:var(--muted); margin-top:0.6rem; }
+.estad-f a { color:var(--purple); font-weight:600; }
 .cmp-leyenda { display:flex; flex-wrap:wrap; gap:0.4rem 1rem; font-size:12.5px; color:var(--muted); margin:0 0 0.7rem; }
 .cmp-leyenda > span { display:inline-flex; align-items:center; gap:0.35rem; }
 .cmp-hint { display:none; font-size:12px; color:var(--muted); text-align:right; margin:0 0 0.4rem; }
@@ -306,7 +323,9 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
   </div>
 
   <section class="comp">
-    <h2>Los tres, lado a lado</h2>
+    <h2>Comparación entre planes, según tu prestador</h2>
+    <p class="cmp-prest"><span>Tu prestador: <b>Clínica UC Christus</b></span><a href="/clinica-san-carlos-de-apoquindo" target="_blank" rel="noopener">Conoce la red UC Christus en Planiapp →</a></p>
+
     <div class="cmp-leyenda"><span><span class="cmp-ico bien" aria-hidden="true">✓</span>Cubre bien</span><span><span class="cmp-ico mal" aria-hidden="true">!</span>Cubre poco o con límites</span><span>Sin color: intermedio o dato informativo</span></div>
     <p class="cmp-hint">Desliza la tabla para ver los 3 planes →</p>
     <div class="comp-scroll">
@@ -314,15 +333,28 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
         <thead><tr><th scope="col" class="cmp-kh">Cobertura</th><th scope="col"><img src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><small>Life Focus 190 Light</small></th><th scope="col"><img src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><small>Pleno Max</small></th><th scope="col"><img src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><small>Vanguardia Plus Platinum</small></th></tr></thead>
         <tbody>
           <tr><th scope="row">Precio para ti</th><td><b>$117.100</b> al mes (2,84 UF)</td><td><b>$116.400</b> al mes (2,82 UF)</td><td><b>$115.900</b> al mes (2,81 UF)</td></tr>
-          <tr><th scope="row">Cobertura hospitalaria</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>100% en Clínica RedSalud Santiago. En el Hospital Clínico UC, 60%</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>100% en Clínica Cordillera y Hospital del Profesor, 90% en Bupa Santiago y RedSalud. En el Hospital Clínico UC, 60%</td><td>80% en Dávila y RedSalud Santiago, 70% en Indisa. En el Hospital Clínico UC, 60%</td></tr>
-          <tr><th scope="row">Cobertura ambulatoria</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>80% en Integramédica, RedSalud y Bupa Santiago. En Red de Salud UC Christus, 70%</td><td>80% en Integramédica, Dávila, Bupa Santiago y RedSalud. En UC Christus, 60%</td><td>80% en Dávila, Integramédica, Vidaintegra y RedSalud Santiago. En el Hospital Clínico UC, 60%</td></tr>
-          <tr><th scope="row">Kinesiología</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en sus prestadores preferentes (80% en sus centros, 70% en UC Christus)</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope de 7,5 UF al año</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Tope de 4,2 UF al año</td></tr>
-          <tr><th scope="row">Prótesis y órtesis</th><td>Hasta 150 UF al año en hospitalización y 15 UF ambulatorias</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 15 UF en hospitalización y 9 UF ambulatorias</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en hospitalización y 7,5 UF ambulatorias</td></tr>
-          <tr><th scope="row">Copago fijo en urgencias</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí. En el Hospital Clínico UC: 1,17 UF la simple y 3,45 UF la compleja</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí. 1,20 UF la simple y 3,00 UF la compleja, también en el Hospital Clínico UC</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Sí, desde 0,7 UF en Dávila, pero no en el Hospital Clínico UC (ahí cubre 60%)</td></tr>
-          <tr><th scope="row">Procedimientos sin código Fonasa</th><td>Cubre lo que está en el Arancel Consalud. Instrumental robótico al 50%, hasta 23 UF al año</td><td>En Cordillera, Bupa Santiago, Indisa y Hospital del Profesor se cubren solo por libre elección</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí: su arancel incluye procedimientos nuevos, como cirugía robótica, radiocirugía y radiofrecuencia</td></tr>
+          <tr><th scope="row">Hospitalización en UC Christus</th><td>60% en el Hospital Clínico UC, sin tope (con médicos del staff)</td><td>60% en el Hospital Clínico UC y Clínica UC, sin tope (con médicos del staff)</td><td>60% en el Hospital Clínico UC, sin tope (con médicos del staff)</td></tr>
+          <tr><th scope="row">Consultas y exámenes en UC Christus</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>70% en Red de Salud UC Christus, sin tope</td><td>60% en el Hospital Clínico, Clínica UC y Centros Médicos UC Christus, sin tope</td><td>60% en el Hospital Clínico UC (Lira y Marcoleta) y Centros Médicos Red UC, sin tope</td></tr>
+          <tr><th scope="row">Kinesiología en UC Christus</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>70%, sin tope</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>60%, con tope de 7,5 UF al año</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>60%, con tope de 4,2 UF al año</td></tr>
+          <tr><th scope="row">Prótesis y órtesis en UC Christus</th><td>60% en hospitalización, hasta 150 UF al año (15 UF ambulatorias)</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>60% en hospitalización, hasta 15 UF al año (9 UF ambulatorias)</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>60% en hospitalización, sin tope (7,5 UF ambulatorias)</td></tr>
+          <tr><th scope="row">Copago fijo en urgencias en UC Christus</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en el Hospital Clínico UC: 1,17 UF la simple y 3,45 UF la compleja</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en el Hospital Clínico UC: 1,20 UF la simple y 3,00 UF la compleja</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene copago fijo en el Hospital Clínico UC: cubre el 60%</td></tr>
+          <tr><th scope="row">Procedimientos sin código Fonasa</th><td>Cubre lo que está en el Arancel Consalud. Instrumental robótico al 50%, hasta 23 UF al año</td><td>UC Christus no aparece entre las clínicas que no las hacen. En Cordillera, Bupa Santiago, Indisa y Hospital del Profesor van por libre elección</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí: su arancel incluye procedimientos nuevos, como cirugía robótica, radiocirugía y radiofrecuencia</td></tr>
         </tbody>
       </table>
     </div>
+  </section>
+
+  <section class="estad">
+    <h2>Reclamos y licencias médicas de cada Isapre</h2>
+    <div class="estad-grid">
+      <details class="estad-i"><summary><img src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><span>Ver reclamos y licencias</span></summary>
+        <div class="estad-c"><p><b>11,3</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>81%</b> y rechazó el 19%</p></div></details>
+      <details class="estad-i"><summary><img src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><span>Ver reclamos y licencias</span></summary>
+        <div class="estad-c"><p><b>12,5</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>76%</b> y rechazó el 24%</p></div></details>
+      <details class="estad-i"><summary><img src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><span>Ver reclamos y licencias</span></summary>
+        <div class="estad-c"><p><b>8,5</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>85%</b> y rechazó el 15%</p></div></details>
+    </div>
+    <p class="estad-f">Datos publicados por la Superintendencia de Salud (Radiografía de Isapres, segundo trimestre de 2025). <a href="/isapre-con-menos-reclamos" target="_blank" rel="noopener">Ver las 7 Isapres →</a></p>
   </section>
 
   <section class="porque">
@@ -355,7 +387,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 (function () {
   const PLANES = [{"isapre":"Consalud","plan":"Life Focus 190 Light","cod":"13-FCL197L-26","logo":"/logos/consalud.png","lw":94,"lh":31,"precio":"$117.100 al mes · 2,84 UF"},{"isapre":"Nueva Masvida","plan":"Pleno Max","cod":"PM261012","logo":"/logos/nueva-masvida.png","lw":99,"lh":29,"precio":"$116.400 al mes · 2,82 UF"},{"isapre":"Vida Tres","plan":"Vanguardia Plus Platinum","cod":"VPP260866","logo":"/logos/vida-tres.png","lw":123,"lh":24,"precio":"$115.900 al mes · 2,81 UF"}];
   const $ = id => document.getElementById(id);
-  const lista = document.querySelector('.planes'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), cierre = document.querySelector('.cierre'), el = $('eleccion');
+  const lista = document.querySelector('.planes'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), estad = document.querySelector('.estad'), cierre = document.querySelector('.cierre'), el = $('eleccion');
   let elegido = null;
   document.querySelectorAll('.pl-wsp[data-plan]').forEach(a => a.addEventListener('click', e => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
@@ -364,10 +396,10 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
     $('el-logo').src = elegido.logo; $('el-logo').alt = 'Isapre ' + elegido.isapre; $('el-logo').width = elegido.lw; $('el-logo').height = elegido.lh;
     $('el-nom').textContent = elegido.plan + ' · ' + elegido.isapre; $('el-precio').textContent = elegido.precio;
     document.querySelectorAll('.el-isa').forEach(s => s.textContent = elegido.isapre);
-    [lista, comp, porque, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
+    [lista, comp, estad, porque, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }));
-  $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, porque, notas, cierre].forEach(x => x && (x.hidden = false)); });
+  $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, estad, porque, notas, cierre].forEach(x => x && (x.hidden = false)); });
   $('el-form').addEventListener('submit', e => {
     e.preventDefault();
     const texto = 'Hola, elegí el plan ' + elegido.plan + ' de ' + elegido.isapre + ' (' + elegido.cod + ') en mi propuesta PLY9N9, a ' + elegido.precio + '. ¿Cómo seguimos?';

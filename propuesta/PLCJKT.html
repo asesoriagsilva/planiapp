@@ -114,6 +114,23 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .comp tbody tr:last-child th, .comp tbody tr:last-child td { border-bottom:none; }
 .comp td.bien { background:#E6F5EE; color:#0B4A38; }
 .comp td.mal { background:#FBECEC; color:#7A2E33; }
+.comp h2 { margin-bottom:0.35rem; }
+.cmp-prest { display:flex; flex-wrap:wrap; align-items:center; gap:0.4rem 0.9rem; margin:0 0 0.8rem; font-size:14.5px; color:var(--text); }
+.cmp-prest b { color:var(--purple-dark); }
+.cmp-prest a { font-size:13.5px; font-weight:600; color:var(--purple); text-decoration:none; background:var(--purple-light); border-radius:999px; padding:0.25rem 0.75rem; }
+.estad { margin-top:2rem; }
+.estad h2 { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:var(--purple-dark); margin-bottom:0.8rem; }
+.estad-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.7rem; align-items:start; }
+.estad-i { background:var(--white); border:1.5px solid var(--border); border-radius:16px; overflow:hidden; }
+.estad-i summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:0.6rem; padding:0.75rem 0.9rem; cursor:pointer; }
+.estad-i summary::-webkit-details-marker { display:none; }
+.estad-i summary img { height:24px; width:auto; max-width:110px; object-fit:contain; }
+.estad-i summary span { font-size:13px; font-weight:700; color:var(--purple); background:var(--purple-light); border-radius:999px; padding:0.3rem 0.7rem; white-space:nowrap; }
+.estad-i[open] summary span { background:var(--purple); color:#fff; }
+.estad-c { border-top:1px solid var(--border); padding:0.75rem 0.9rem; display:flex; flex-direction:column; gap:0.35rem; font-size:14px; }
+.estad-c b { font-family:'Inter',sans-serif; font-weight:800; color:var(--purple-dark); }
+.estad-f { font-size:12.5px; color:var(--muted); margin-top:0.6rem; }
+.estad-f a { color:var(--purple); font-weight:600; }
 .cmp-leyenda { display:flex; flex-wrap:wrap; gap:0.4rem 1rem; font-size:12.5px; color:var(--muted); margin:0 0 0.7rem; }
 .cmp-leyenda > span { display:inline-flex; align-items:center; gap:0.35rem; }
 .cmp-hint { display:none; font-size:12px; color:var(--muted); text-align:right; margin:0 0 0.4rem; }
@@ -243,6 +260,15 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
     </article>
   </div>
 
+  <section class="estad">
+    <h2>Reclamos y licencias médicas de la Isapre</h2>
+    <div class="estad-grid">
+      <details class="estad-i"><summary><img src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><span>Ver reclamos y licencias</span></summary>
+        <div class="estad-c"><p><b>11,3</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>81%</b> y rechazó el 19%</p></div></details>
+    </div>
+    <p class="estad-f">Datos publicados por la Superintendencia de Salud (Radiografía de Isapres, segundo trimestre de 2025). <a href="/isapre-con-menos-reclamos" target="_blank" rel="noopener">Ver las 7 Isapres →</a></p>
+  </section>
+
 
   <section class="notas">
     <h2>Para que lo tengas claro</h2>
@@ -268,7 +294,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 (function () {
   const PLANES = [{"isapre":"Consalud","plan":"Easy Full Norte","cod":"13-EFN17-26","logo":"/logos/consalud.png","lw":94,"lh":31,"precio":"$110.500 al mes · 2,68 UF"}];
   const $ = id => document.getElementById(id);
-  const lista = document.querySelector('.planes'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), cierre = document.querySelector('.cierre'), el = $('eleccion');
+  const lista = document.querySelector('.planes'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), estad = document.querySelector('.estad'), cierre = document.querySelector('.cierre'), el = $('eleccion');
   let elegido = null;
   document.querySelectorAll('.pl-wsp[data-plan]').forEach(a => a.addEventListener('click', e => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
@@ -277,10 +303,10 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
     $('el-logo').src = elegido.logo; $('el-logo').alt = 'Isapre ' + elegido.isapre; $('el-logo').width = elegido.lw; $('el-logo').height = elegido.lh;
     $('el-nom').textContent = elegido.plan + ' · ' + elegido.isapre; $('el-precio').textContent = elegido.precio;
     document.querySelectorAll('.el-isa').forEach(s => s.textContent = elegido.isapre);
-    [lista, comp, porque, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
+    [lista, comp, estad, porque, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }));
-  $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, porque, notas, cierre].forEach(x => x && (x.hidden = false)); });
+  $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, estad, porque, notas, cierre].forEach(x => x && (x.hidden = false)); });
   $('el-form').addEventListener('submit', e => {
     e.preventDefault();
     const texto = 'Hola, elegí el plan ' + elegido.plan + ' de ' + elegido.isapre + ' (' + elegido.cod + ') en mi propuesta PLCJKT, a ' + elegido.precio + '. ¿Cómo seguimos?';
