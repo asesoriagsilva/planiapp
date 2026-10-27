@@ -59,9 +59,6 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://mindicador.cl">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">
@@ -271,6 +268,11 @@ h1 span { color:var(--purple); }
 .lp-chipb { background:var(--bg); border:1.5px solid var(--border); border-radius:999px; padding:0.5rem 0.85rem; font-size:14px; font-weight:600; color:var(--purple-dark); cursor:pointer; transition:background .15s, border-color .15s; }
 .lp-chipb.on { background:var(--purple-light); border-color:var(--purple); }
 .lp-chipb.on::before { content:'✓ '; color:var(--purple); }
+/* Zona de coberturas en morado claro, para distinguirla de la región y del monto adicional */
+.lp-zona-cob { background:var(--purple-light); border:1px solid #DCD8FA; border-radius:16px; padding:0.85rem 0.9rem; }
+.lp-zona-cob .lp-chipb { background:var(--white); border-color:#DCD8FA; }
+.lp-zona-cob .lp-chipb.on { background:var(--purple); border-color:var(--purple); color:#fff; }
+.lp-zona-cob .lp-chipb.on::before { color:#fff; }
 
 .lp-campo { display:flex; align-items:center; background:var(--bg); border:1.5px solid var(--border); border-radius:16px; transition:border-color .15s, box-shadow .15s; }
 .lp-campo:focus-within { border-color:var(--purple); box-shadow:0 0 0 4px rgba(83,74,183,.12); }
@@ -618,9 +620,21 @@ h1 span { color:var(--purple); }
         <div class="lp-chips" id="lp-clinicas"></div>
         <div class="lp-campo texto" id="lp-clinica-otra" hidden style="margin-top:0.5rem"><input id="lp-clinica" type="text" autocomplete="off" placeholder="¿Cuál? Escribe el nombre"></div>
       </div>
-      <div class="lp-bloque">
+      <div class="lp-bloque lp-zona-cob">
         <p class="lp-mini">¿Qué cobertura buscas? <em>(opcional, puedes marcar varias)</em></p>
         <div class="lp-chips" id="lp-importa"></div>
+      </div>
+      <div class="lp-bloque" id="lp-mas-bloque" hidden>
+        <p class="lp-mini">¿Te gustaría cotizar con un monto adicional a tu 7%, para tener mejores coberturas? <em>(opcional)</em></p>
+        <div class="lp-chips" id="lp-mas">
+          <button class="lp-chipb" type="button" data-mas="0">No, solo mi 7%</button>
+          <button class="lp-chipb" type="button" data-mas="10000">+$10.000</button>
+          <button class="lp-chipb" type="button" data-mas="20000">+$20.000</button>
+          <button class="lp-chipb" type="button" data-mas="30000">+$30.000</button>
+          <button class="lp-chipb" type="button" data-mas="otro">Otro monto</button>
+        </div>
+        <label class="lp-campo chico" id="lp-mas-otro" hidden style="margin-top:0.5rem"><span>$</span><input id="lp-mas-monto" type="text" inputmode="numeric" autocomplete="off" placeholder="Escribe el monto adicional" aria-label="Monto adicional a tu 7%"></label>
+        <p class="lp-extra-total" id="lp-mas-total" hidden></p>
       </div>
       <div class="lp-bloque" id="lp-pref-bloque" hidden>
         <p class="lp-mini">¿Te gustaría seguir pagando lo mismo que hoy, para ver si mejoramos tu plan?</p>
@@ -1324,6 +1338,7 @@ function textoWsp() {
   }
   if (D.desde === 'fonasa' && D.cargas > 0 && D.planFam) l.push('• Plan más bajo con mi grupo: ' + pesos(D.planFam) + ' al mes');
   if ((D.veredicto === 'aporte' || D.veredicto === 'familia_aporte') && D.extra) l.push('• Puedo poner hasta ' + pesos(D.extra) + ' además de mi 7% (en total ' + pesos(siete() + D.extra) + ' al mes)');
+  if (conMas() && D.extra) l.push('• Me gustaría cotizar con ' + pesos(D.extra) + ' adicionales a mi 7% para tener mejores coberturas (en total ' + pesos(siete() + D.extra) + ' al mes)');
   if ($('lp-region').value) l.push('• Región: ' + $('lp-region').value);
   const clinicas = clinicasElegidas();
   if (clinicas.length) l.push('• Clínicas: ' + clinicas.join(', '));
@@ -1338,7 +1353,25 @@ $('lp-wsp-btn').addEventListener('click', e => {
   marca('whatsapp_click', { veredicto: D.veredicto });
   if (typeof fbq === 'function') fbq('track', 'Contact');
 });
-$('lp-a-propuestas').addEventListener('click', () => { marca('calc_quiere_propuestas', { veredicto: D.veredicto }); pintaExplica(); $('lp-pref-bloque').hidden = D.desde !== 'isapre'; ir('propuestas'); });
+// A quien ya le alcanza con su 7% (puerta Fonasa) se le ofrece, opcional, cotizar con un monto adicional para mejores coberturas.
+// A quien no le alcanza, el monto adicional ya se le preguntó en el resultado.
+const conMas = () => D.desde === 'fonasa' && (D.veredicto === 'alcanza' || D.veredicto === 'familia_alcanza');
+$('lp-a-propuestas').addEventListener('click', () => { marca('calc_quiere_propuestas', { veredicto: D.veredicto }); pintaExplica(); $('lp-pref-bloque').hidden = D.desde !== 'isapre'; $('lp-mas-bloque').hidden = !conMas(); ir('propuestas'); });
+function pintaMas() {
+  $('lp-mas-total').hidden = !D.extra;
+  $('lp-mas-total').innerHTML = 'Te enviamos propuestas de hasta <b>' + pesos(siete() + D.extra) + '</b> al mes: tu 7% (' + pesos(siete()) + ') más ' + pesos(D.extra) + '.';
+}
+document.querySelectorAll('[data-mas]').forEach(c => c.addEventListener('click', () => {
+  const on = !c.classList.contains('on');
+  document.querySelectorAll('[data-mas]').forEach(x => x.classList.remove('on'));
+  if (on) c.classList.add('on');
+  const otro = on && c.dataset.mas === 'otro';
+  $('lp-mas-otro').hidden = !otro;
+  D.extra = on && !otro ? +c.dataset.mas : otro ? monto($('lp-mas-monto')) : 0;
+  if (otro) setTimeout(() => $('lp-mas-monto').focus(), 50);
+  pintaMas();
+}));
+$('lp-mas-monto').addEventListener('input', e => { D.extra = monto(e.target); pintaMas(); });
 document.querySelectorAll('[data-pref]').forEach(c => c.addEventListener('click', () => {
   const on = !c.classList.contains('on');
   document.querySelectorAll('[data-pref]').forEach(x => x.classList.remove('on'));
@@ -1354,7 +1387,8 @@ function limpiar() {
   $('lp-region').value = ''; $('lp-clinicas').innerHTML = ''; $('lp-clin-bloque').hidden = true; $('lp-prop-err').hidden = true;
   $('lp-hijos').innerHTML = ''; $('lp-fam').hidden = true; $('lp-fam-ok').hidden = true;
   $('lp-siete-vivo').hidden = true;
-  document.querySelectorAll('.lp-op, #lp-importa .lp-chipb').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.lp-op, #lp-importa .lp-chipb, [data-mas]').forEach(b => b.classList.remove('on'));
+  $('lp-mas-monto').value = ''; $('lp-mas-otro').hidden = true; $('lp-mas-total').hidden = true;
 }
 $('lp-otra').addEventListener('click', () => {
   limpiar();
@@ -1413,7 +1447,8 @@ $('lp-form').addEventListener('submit', async e => {
   const importa = [...document.querySelectorAll('#lp-importa .lp-chipb.on')].map(c => c.textContent);
   const cargasTxt = pareja ? 'Pareja (' + TRAMOS[D.tramo2] + ' años)' + (D.hijos.length ? ' + ' + D.hijos.length + (D.hijos.length === 1 ? ' carga' : ' cargas') + ' (' + listaEdades(D.hijos) + ')' : '') + ' (plan compensado)' : D.cargas === null ? '' : (familia(false).join(' + ') || 'Solo yo');
   const clinica = clinicasElegidas().join(', ');
-  const adicional = ['aporte', 'familia_aporte', 'pareja_aporte'].includes(D.veredicto) && D.extra ? ' | Adicional: ' + pesos(D.extra) + ' (presupuesto ' + pesos(s + D.extra) + ')' : '';
+  const adicional = ['aporte', 'familia_aporte', 'pareja_aporte'].includes(D.veredicto) && D.extra ? ' | Adicional: ' + pesos(D.extra) + ' (presupuesto ' + pesos(s + D.extra) + ')'
+    : conMas() && D.extra ? ' | Adicional para mejores coberturas: ' + pesos(D.extra) + ' (presupuesto ' + pesos(s + D.extra) + ')' : '';
   const resultadoTxt = { alcanza: 'le alcanza', aporte: 'le faltan ' + pesos(D.falta || 0) + '/mes',
     familia_alcanza: 'le alcanza con su grupo (plan mínimo ' + pesos(D.planFam || 0) + ')', familia_aporte: 'con su grupo le faltan ' + pesos(D.falta || 0) + '/mes (plan mínimo ' + pesos(D.planFam || 0) + ')',
     pareja_alcanza: 'les alcanza (plan mínimo ' + pesos(D.planFam || 0) + ')', pareja_aporte: 'les faltan ' + pesos(D.falta || 0) + '/mes (plan mínimo ' + pesos(D.planFam || 0) + ')' }[D.veredicto] || '';
