@@ -406,6 +406,24 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
 .corto .c-ojo li { color:#5C3D06; } .corto .c-ojo svg { color:#B7791F; }
 @media (max-width:600px) { .corto { grid-template-columns:1fr; } }
 </style>
+<style>
+/* Ficha en recuadros morado claro */
+.ficha { background:none; border:none; border-radius:0; overflow:visible; display:flex; flex-direction:column; gap:0.5rem; }
+.ficha-row { display:grid; grid-template-columns:190px 1fr; align-items:start; background:#EFEDFE; border:1px solid #DCD8FA; border-radius:14px; transition:border-color .15s; }
+.ficha-row:first-child { border-top:1px solid #DCD8FA; }
+.ficha-row > div { padding:0.8rem 1rem; }
+.ficha-k { background:none; color:#534AB7; font-weight:700; }
+@media (hover:hover) { .ficha-row:hover { border-color:#C9C4F4; } }
+.ficha-row.mal { background:#FBECEC; border-color:#F2CACC; }
+.ficha-row.mal > div:last-child { background:none; }
+.ficha-row.mal .ficha-k { color:#A23A40; }
+@media (max-width:680px) {
+  .ficha-row { grid-template-columns:1fr; }
+  .ficha-row > div { padding:0.6rem 0.9rem; }
+  .ficha-k { padding-bottom:0 !important; font-size:12.5px; text-transform:uppercase; letter-spacing:.04em; }
+  .ficha-row > div:last-child { padding-top:0.2rem; }
+}
+</style>
 </head>
 <body>
 
