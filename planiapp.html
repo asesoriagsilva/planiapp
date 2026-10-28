@@ -966,12 +966,12 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .isa-tab:hover { transform:translateY(-2px); }
   .isa-tab[aria-selected="true"] { background:var(--white); border-color:var(--purple); box-shadow:0 8px 18px -12px rgba(83,74,183,.6); transform:none; }
   .isa-tab:focus-visible { outline:3px solid var(--purple-mid); outline-offset:2px; }
-  .isa-panel { display:flex; align-items:center; gap:1.25rem; padding:1.1rem 0.5rem 0.3rem; animation:isaEntra .3s ease; }
+  .isa-panel { display:flex; align-items:center; justify-content:center; gap:1.25rem; padding:1.1rem 0.5rem 0.3rem; animation:isaEntra .3s ease; }
   .isa-panel[hidden] { display:none; }
   @keyframes isaEntra { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
   .isa-panel p { flex:1; margin:0; font-size:16px; color:var(--text); line-height:1.55; }
-  .isa-ficha { flex-shrink:0; background:var(--purple); color:#fff; font-size:14px; font-weight:600; text-decoration:none; padding:0.7rem 1.15rem; border-radius:999px; white-space:nowrap; transition:background .2s; }
-  .isa-ficha:hover { background:var(--purple-deep); }
+  .isa-ficha { flex-shrink:0; background:#1D9E75; color:#fff; font-size:15px; font-weight:700; text-decoration:none; padding:0.8rem 1.6rem; border-radius:999px; white-space:nowrap; transition:background .2s; }
+  .isa-ficha:hover, .isa-ficha:focus-visible { background:#0F6E56; color:#fff; }
   @media (max-width:680px){
     .sec-t { font-size:24px; }
     .sec-p { font-size:15px; margin-bottom:1.3rem; }
@@ -989,7 +989,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <section class="isa-wrap" id="isapres">
     <div class="isa-badge">Actualizado a septiembre de 2026</div>
     <h2 class="sec-t">No existe la Isapre perfecta.<br>Sí existe el plan <span style="white-space:nowrap">que se adapta a ti.</span></h2>
-    <p class="sec-p">Toca una Isapre y te contamos para quién es ideal.</p>
+    <p class="sec-p">Toca una Isapre para ver su ficha.</p>
     <div class="isa-box">
       <div class="isa-tabs" role="tablist" aria-label="Isapres">
         <button class="isa-tab" type="button" role="tab" id="isa-t-banmedica" aria-controls="isa-p-banmedica" aria-selected="true" tabindex="0" data-isapre="Banmédica"><img src="/logos/banmedica.png" alt="Banmédica" width="92" height="24" loading="lazy" decoding="async"></button>
@@ -1001,32 +1001,25 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
         <button class="isa-tab" type="button" role="tab" id="isa-t-vida-tres" aria-controls="isa-p-vida-tres" aria-selected="false" tabindex="-1" data-isapre="Vida Tres"><img src="/logos/vida-tres.png" alt="Vida Tres" width="92" height="24" loading="lazy" decoding="async"></button>
       </div>
       <div class="isa-panel" role="tabpanel" id="isa-p-banmedica" aria-labelledby="isa-t-banmedica">
-        <p>Ideal si te atiendes en Santa María o Dávila, que son de su holding. Es la Isapre que más destina a bonificar a sus afiliados, según la Superintendencia.</p>
-        <a class="isa-ficha" href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'portada'})">Ver ficha de Banmédica →</a>
+        <a class="isa-ficha" href="/isapre-banmedica" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Banmédica',origen:'portada'})">Ver ficha de Banmédica</a>
       </div>
       <div class="isa-panel" role="tabpanel" id="isa-p-colmena" aria-labelledby="isa-t-colmena" hidden>
-        <p>Ideal si quieres elegir entre todas las clínicas de Santiago, con psicología sin tope anual y la red GES y CAEC más amplia, incluida la Red UC.</p>
-        <a class="isa-ficha" href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'portada'})">Ver ficha de Colmena →</a>
+        <a class="isa-ficha" href="/isapre-colmena" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Colmena',origen:'portada'})">Ver ficha de Colmena</a>
       </div>
       <div class="isa-panel" role="tabpanel" id="isa-p-consalud" aria-labelledby="isa-t-consalud" hidden>
-        <p>Ideal si buscas una Isapre fuerte en Santiago y en regiones: red RedSalud, copago de urgencia en las principales clínicas de Arica a Punta Arenas y kinesiología sin tope anual.</p>
-        <a class="isa-ficha" href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'portada'})">Ver ficha de Consalud →</a>
+        <a class="isa-ficha" href="/isapre-consalud" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Consalud',origen:'portada'})">Ver ficha de Consalud</a>
       </div>
       <div class="isa-panel" role="tabpanel" id="isa-p-cruz-blanca" aria-labelledby="isa-t-cruz-blanca" hidden>
-        <p>Ideal si te atiendes en Clínicas Bupa o Integramédica, que son de su holding, con copago de urgencia en Santiago, Antofagasta y Viña del Mar.</p>
-        <a class="isa-ficha" href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'portada'})">Ver ficha de Cruz Blanca →</a>
+        <a class="isa-ficha" href="/isapre-cruz-blanca" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Cruz Blanca',origen:'portada'})">Ver ficha de Cruz Blanca</a>
       </div>
       <div class="isa-panel" role="tabpanel" id="isa-p-esencial" aria-labelledby="isa-t-esencial" hidden>
-        <p>Ideal si te atiendes en Clínica Alemana, en Santiago o en el sur, con kinesiología sin tope y cobertura para procedimientos sin código Fonasa.</p>
-        <a class="isa-ficha" href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'portada'})">Ver ficha de Esencial →</a>
+        <a class="isa-ficha" href="/isapre-esencial" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Esencial',origen:'portada'})">Ver ficha de Esencial</a>
       </div>
       <div class="isa-panel" role="tabpanel" id="isa-p-nueva-masvida" aria-labelledby="isa-t-nueva-masvida" hidden>
-        <p>Sus planes de entrada cuestan parecido a los de otras Isapres, pero con muchos más topes. Su punto fuerte es la psicología sin tope anual.</p>
-        <a class="isa-ficha" href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'portada'})">Ver ficha de Nueva Masvida →</a>
+        <a class="isa-ficha" href="/isapre-nueva-masvida" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Nueva Masvida',origen:'portada'})">Ver ficha de Nueva Masvida</a>
       </div>
       <div class="isa-panel" role="tabpanel" id="isa-p-vida-tres" aria-labelledby="isa-t-vida-tres" hidden>
-        <p>Ideal si usas clínicas del segmento alto: cubre procedimientos sin código Fonasa y es la Isapre con menos reclamos, según la Superintendencia.</p>
-        <a class="isa-ficha" href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'portada'})">Ver ficha de Vida Tres →</a>
+        <a class="isa-ficha" href="/isapre-vida-tres" onclick="if(typeof gtag==='function')gtag('event','isapre_ver',{isapre:'Vida Tres',origen:'portada'})">Ver ficha de Vida Tres</a>
       </div>
     </div>
   </section>
