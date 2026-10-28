@@ -236,7 +236,7 @@ footer a { color: var(--text-muted); }
     "https://planiapp.cl/img/isapre-embarazada-og.jpg"
    ],
    "datePublished": "2026-09-16",
-   "dateModified": "2026-09-17",
+   "dateModified": "2026-10-28",
    "inLanguage": "es-CL",
    "mainEntityOfPage": "https://planiapp.cl/isapre-embarazada",
    "author": {
@@ -351,6 +351,23 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
 .nov-barra i { display:block; height:100%; width:0; border-radius:99px; background:currentColor; transition:width .4s ease; }
 .nov-res-txt { font-size:15px; line-height:1.5; margin:0; }
 .nov-res-nota { font-size:12.5px; opacity:.85; margin:0.45rem 0 0.75rem; }
+.nov-paso { font-size:14.5px; font-weight:700; color:#26215C; margin:0 0 0.5rem; }
+.nov-clinicas { display:grid; grid-template-columns:repeat(4,1fr); gap:0.5rem; margin-bottom:0.45rem; }
+.nov-clinicas button { font:inherit; text-align:left; color:#26215C; background:#fff; border:1px solid #E1DEFA; border-radius:14px; padding:0.6rem 0.75rem; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+.nov-clinicas button b { display:block; font-size:14px; font-weight:700; line-height:1.3; }
+.nov-clinicas button span { display:block; font-size:13px; color:#6b6b8a; margin-top:2px; }
+.nov-clinicas button[aria-pressed="true"] { background:#534AB7; border-color:#534AB7; color:#fff; }
+.nov-clinicas button[aria-pressed="true"] span { color:#E4E1FB; }
+@media (hover:hover) { .nov-clinicas button[aria-pressed="false"]:hover, .nov-clinicas button:not([aria-pressed]):hover { background:#EEEDFE; } }
+.nov-clin-nota { font-size:12.5px; color:#6b6b8a; margin:0 0 1rem; }
+.nov-monto { background:rgba(255,255,255,.65); border-radius:12px; padding:0.5rem 0.8rem; margin:0.7rem 0; font-size:14.5px; }
+.nov-monto div { display:flex; justify-content:space-between; align-items:baseline; gap:0.75rem; padding:0.3rem 0; }
+.nov-monto div + div { border-top:1px solid rgba(0,0,0,.07); }
+.nov-monto b { white-space:nowrap; font-variant-numeric:tabular-nums; }
+.nov-monto .nm-tu { font-weight:700; }
+.nov-monto p { margin:0.2rem 0; font-size:14px; }
+.nov-bebe { font-size:14.5px; line-height:1.5; margin:0.6rem 0 0; }
+@media (max-width:600px) { .nov-clinicas { grid-template-columns:1fr 1fr; } }
 .nov-wsp, .wsp-cta a { display:inline-flex; align-items:center; gap:0.5rem; background:#1D9E75; color:#fff !important; text-decoration:none; font-weight:700; font-size:14.5px; border-radius:999px; padding:0.65rem 1.1rem; }
 .nov-wsp:hover, .wsp-cta a:hover { background:#0F6E56; }
 .nov-todos { margin:0.2rem 0 0.4rem; }
@@ -415,12 +432,18 @@ div.wsp-cta a { flex-shrink:0; white-space:nowrap; }
   <p>Si quedaste embarazada antes de contratar, la Isapre cubre el parto de forma proporcional. Se toman los meses que tu plan va a estar vigente hasta el parto y se dividen por los nueve meses de embarazo: esa es la parte de la cobertura del plan que se aplica al parto. Los meses se cuentan <strong>desde que empiezan los beneficios del contrato</strong>, no desde el día en que firmas.</p>
   <div class="nov-calc" id="nov-calc">
     <p class="nov-calc-t">Calcula tu caso</p>
-    <p class="nov-calc-p">¿En qué mes de embarazo partirían tus beneficios? Suelen empezar el mes siguiente a la firma del contrato.</p>
+    <p class="nov-paso">1. ¿En qué clínica te gustaría tener a tu hijo?</p>
+    <div class="nov-clinicas" role="group" aria-label="Clínica del parto"><button type="button" data-clinica="RedSalud Santiago" data-valor="2200000"><b>RedSalud Santiago</b><span>aprox. $2.200.000</span></button><button type="button" data-clinica="Clínica Dávila" data-valor="2800000"><b>Dávila</b><span>aprox. $2.800.000</span></button><button type="button" data-clinica="Clínica Indisa" data-valor="4500000"><b>Indisa</b><span>aprox. $4.500.000</span></button><button type="button" data-clinica="Clínica Alemana" data-valor="8000000"><b>Alemana</b><span>aprox. $8.000.000</span></button></div>
+    <p class="nov-clin-nota">Valores referenciales de un parto normal sin complicaciones, no son exactos. Una complicación puede elevar mucho la cuenta.</p>
+    <p class="nov-paso">2. ¿En qué mes de embarazo partirían tus beneficios?</p>
+    <p class="nov-calc-p">Suelen empezar el mes siguiente a la firma del contrato.</p>
     <div class="nov-meses" role="group" aria-label="Mes de embarazo en que parten los beneficios"><button type="button" data-mes="0">Lo estoy planificando</button><button type="button" data-mes="1">Mes 1</button><button type="button" data-mes="2">Mes 2</button><button type="button" data-mes="3">Mes 3</button><button type="button" data-mes="4">Mes 4</button><button type="button" data-mes="5">Mes 5</button><button type="button" data-mes="6">Mes 6</button><button type="button" data-mes="7">Mes 7</button><button type="button" data-mes="8">Mes 8</button></div>
     <div class="nov-res" id="nov-res" hidden aria-live="polite">
       <div class="nov-res-top"><strong id="nov-pct"></strong><span id="nov-frac"></span></div>
       <div class="nov-barra"><i id="nov-barra"></i></div>
+      <div class="nov-monto" id="nov-monto"></div>
       <p class="nov-res-txt" id="nov-txt"></p>
+      <p class="nov-bebe" id="nov-bebe" hidden><strong>Tu bebé no está afecto a los novenos.</strong> Su cobertura no se divide en partes: recibe la cobertura de tu plan desde que nace, si lo inscribes a tiempo.</p>
       <p class="nov-res-nota">Es el mínimo que exige la norma: algunas Isapres son más flexibles. Lo que pagas al final depende también de los topes del plan.</p>
       <a class="nov-wsp" id="nov-wsp" href="https://wa.me/56966450103?text=Hola%2C%20estoy%20embarazada%20y%20quiero%20revisar%20qu%C3%A9%20plan%20de%20Isapre%20me%20conviene." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Revisar mi caso por WhatsApp</a>
     </div>
@@ -629,28 +652,55 @@ div.wsp-cta a { flex-shrink:0; white-space:nowrap; }
 </footer>
 
 <script>
-// Regla de los novenos: meses de vigencia del plan hasta el parto / 9 (mínimo que exige la norma)
+// Regla de los novenos: meses de vigencia del plan hasta el parto / 9 (mínimo que exige la norma).
+// Con la clínica elegida, el valor referencial del parto se divide en 9 partes; el recién nacido no se divide.
 (function () {
   const caja = document.getElementById('nov-calc'); if (!caja) return;
   const $ = id => document.getElementById(id);
+  const pesos = x => '$' + String(Math.round(x)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   const TXT = {
     plan: 'Lo ideal: si contratas antes de embarazarte, tu plan cubre el parto completo. Aprovecha de elegir uno que cubra bien al recién nacido.',
     ok: 'Estás a tiempo: la mayor parte del parto queda cubierta por tu plan. Revisa también cómo cubre al recién nacido.',
-    medio: 'El plan cubre una parte importante del parto y el resto lo pagas tú. Si inscribes a tu hijo a tiempo, queda cubierto desde que nace.',
+    medio: 'El plan cubre una parte importante del parto y el resto lo pagas tú.',
     poco: 'El plan cubre poco del parto. Aun así puede convenirte por el recién nacido: si nace prematuro o necesita neonatología, esa cuenta la cubre el plan.'
   };
-  caja.querySelectorAll('[data-mes]').forEach(b => b.addEventListener('click', () => {
-    const m = +b.dataset.mes, partes = m === 0 ? 9 : 10 - m, pct = Math.round(partes / 9 * 100);
-    caja.querySelectorAll('[data-mes]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  let clin = null, mes = null;
+  function pinta() {
+    if (mes === null) return;
+    const m = mes, partes = m === 0 ? 9 : 10 - m, pct = Math.round(partes / 9 * 100);
     const nivel = m === 0 ? 'plan' : m <= 3 ? 'ok' : m <= 5 ? 'medio' : 'poco';
     $('nov-pct').textContent = pct + '%';
     $('nov-frac').textContent = 'de la cobertura de tu plan se aplica al parto (' + partes + ' de 9 partes)';
     $('nov-barra').style.width = pct + '%';
+    if (clin) {
+      const v = +clin.dataset.valor, parte = v / 9, nombre = clin.dataset.clinica;
+      $('nov-monto').innerHTML = '<div><span>Parto en ' + nombre + ' (aprox.)</span><b>' + pesos(v) + '</b></div>'
+        + (partes === 9
+          ? '<div class="nm-tu"><span>Se aplica la cobertura de tu plan (9 de 9)</span><b>' + pesos(v) + '</b></div>'
+          : '<div><span>Cada novena parte (÷ 9)</span><b>' + pesos(parte) + '</b></div>'
+            + '<div><span>Se aplica la cobertura de tu plan (' + partes + ' de 9)</span><b>' + pesos(parte * partes) + '</b></div>'
+            + '<div class="nm-tu"><span>Queda sin cobertura y lo pagas tú (' + (9 - partes) + ' de 9)</span><b>' + pesos(parte * (9 - partes)) + '</b></div>');
+    } else {
+      $('nov-monto').innerHTML = '<p>Elige una clínica arriba para ver cuánto sería en pesos.</p>';
+    }
     $('nov-txt').textContent = TXT[nivel];
+    $('nov-bebe').hidden = m === 0;
     $('nov-res').className = 'nov-res ' + nivel; $('nov-res').hidden = false;
-    const msg = m === 0 ? 'Hola, estoy planificando un embarazo y quiero revisar qué plan de Isapre me conviene.' : 'Hola, estoy embarazada (mis beneficios partirían en el mes ' + m + ') y quiero revisar qué plan de Isapre me conviene.';
+    const donde = clin ? ', me gustaría tener a mi hijo en ' + clin.dataset.clinica : '';
+    const msg = m === 0 ? 'Hola, estoy planificando un embarazo' + donde + ' y quiero revisar qué plan de Isapre me conviene.' : 'Hola, estoy embarazada (mis beneficios partirían en el mes ' + m + ')' + donde + ' y quiero revisar qué plan de Isapre me conviene.';
     $('nov-wsp').href = 'https://wa.me/56966450103?text=' + encodeURIComponent(msg);
-    if (typeof gtag === 'function') gtag('event', 'novenos_mes', { mes: m });
+  }
+  caja.querySelectorAll('[data-clinica]').forEach(b => b.addEventListener('click', () => {
+    clin = b;
+    caja.querySelectorAll('[data-clinica]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    pinta();
+    if (typeof gtag === 'function') gtag('event', 'novenos_clinica', { clinica: b.dataset.clinica });
+  }));
+  caja.querySelectorAll('[data-mes]').forEach(b => b.addEventListener('click', () => {
+    mes = +b.dataset.mes;
+    caja.querySelectorAll('[data-mes]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    pinta();
+    if (typeof gtag === 'function') gtag('event', 'novenos_mes', { mes: mes, clinica: clin ? clin.dataset.clinica : '' });
   }));
   $('nov-wsp').addEventListener('click', () => { if (typeof gtag === 'function') gtag('event', 'whatsapp_click', { origen: 'embarazada_novenos' }); });
 })();
