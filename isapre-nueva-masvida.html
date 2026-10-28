@@ -279,6 +279,8 @@ footer a { color: var(--text-muted); }
   .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 }
 /* relacionados:fin */
+.ficha-row.mal > div:last-child { background: #FBECEC; color: #7A2E33; font-weight: 600; }
+.ficha-ico { display: inline-flex; align-items: center; justify-content: center; width: 17px; height: 17px; border-radius: 50%; background: #C2565B; color: #fff; font-size: 11px; font-weight: 800; line-height: 1; vertical-align: -3px; margin-right: 0.4rem; }
 </style>
 <script type="application/ld+json">
 {
@@ -342,7 +344,7 @@ footer a { color: var(--text-muted); }
      "name": "¿Qué tal es la Isapre Nueva Masvida?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Sus planes están entre los más baratos y por ese precio suelen cubrir en más clínicas que otros planes de entrada. Cubre psicología sin tope y tiene cirugías prepagadas. En contra: sus topes son bajos, con prótesis hasta 10 UF, la quimioterapia no tiene cobertura preferente y su red GES y CAEC es la más chica."
+      "text": "Sus planes están entre los más baratos y por ese precio suelen cubrir en más clínicas que otros planes de entrada. Cubre psicología sin tope. En contra: sus topes son bajos, con prótesis hasta 10 UF, la quimioterapia no tiene cobertura preferente y su red GES y CAEC es la más chica."
      }
     },
     {
@@ -458,7 +460,7 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
   <h1>Isapre Nueva Masvida: qué cubre bien, dónde se queda corta y para quién conviene</h1>
   <p class="bajada">Su punto fuerte es la psicología sin tope anual. Ojo con el precio: sus planes de entrada cuestan parecido a los de otras Isapres, pero tiene los topes más bajos del sistema, como prótesis y órtesis hasta 10 UF.</p>
   <div class="corto" aria-label="En corto">
-    <div class="c-si"><p class="corto-t">Conviene por</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Psicología sin tope anual</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Reembolsos en 48 a 72 horas</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Cirugías prepagadas</span></li></ul></div>
+    <div class="c-si"><p class="corto-t">Conviene por</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Psicología sin tope anual</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Reembolsos en 48 a 72 horas</span></li></ul></div>
     <div class="c-ojo"><p class="corto-t">Ojo con</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Los topes más bajos del sistema, como prótesis hasta 10 UF</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>La red GES y CAEC con menos prestadores</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>En regiones no tiene copago de urgencia</span></li></ul></div>
   </div>
 
@@ -469,10 +471,10 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
     <div class="ficha-row"><div class="ficha-k">Sucursales</div><div>33 a lo largo del país.</div></div>
     <div class="ficha-row"><div class="ficha-k">Cobertura preferente</div><div>Todas las clínicas de Santiago, excepto Clínica Alemana, donde solo hay libre elección, con topes muy bajos.</div></div>
     <div class="ficha-row"><div class="ficha-k">Urgencias</div><div>Copago de urgencia en Indisa, Las Condes, Santa María, Clínicas Bupa, Dávila y UC Christus.</div></div>
-    <div class="ficha-row"><div class="ficha-k">Urgencias en regiones</div><div>Se cubre con los mismos porcentajes que la atención ambulatoria y con topes muy bajos en medicamentos e insumos. Lo ideal es contar con un seguro complementario o con el seguro de urgencia de tu clínica.</div></div>
-    <div class="ficha-row"><div class="ficha-k">Kinesiología</div><div>Tope anual muy bajo.</div></div>
-    <div class="ficha-row"><div class="ficha-k">Topes</div><div>Muy bajos en prótesis, órtesis y quimioterapia, igual que en otras prestaciones ambulatorias. En mujeres, la cobertura del recién nacido tiene topes.</div></div>
-    <div class="ficha-row"><div class="ficha-k">Coberturas especiales</div><div>Psicología sin tope anual, cirugías prepagadas y varios productos adicionales a la Isapre.</div></div>
+    <div class="ficha-row mal"><div class="ficha-k">Urgencias en regiones</div><div><span class="ficha-ico" aria-hidden="true">!</span>Se cubre con los mismos porcentajes que la atención ambulatoria y con topes muy bajos en medicamentos e insumos. Lo ideal es contar con un seguro complementario o con el seguro de urgencia de tu clínica.</div></div>
+    <div class="ficha-row mal"><div class="ficha-k">Kinesiología</div><div><span class="ficha-ico" aria-hidden="true">!</span>Tope anual muy bajo.</div></div>
+    <div class="ficha-row mal"><div class="ficha-k">Topes</div><div><span class="ficha-ico" aria-hidden="true">!</span>Muy bajos en prótesis, órtesis y quimioterapia, igual que en otras prestaciones ambulatorias. En mujeres, la cobertura del recién nacido tiene topes.</div></div>
+    <div class="ficha-row"><div class="ficha-k">Coberturas especiales</div><div>Psicología sin tope anual y varios productos adicionales a la Isapre.</div></div>
     <div class="ficha-row"><div class="ficha-k">Red GES y CAEC</div><div>Entre todas las Isapres, la que ofrece menos prestadores para elegir.</div></div>
     <div class="ficha-row"><div class="ficha-k">Precio de entrada</div><div>Desde 2,13 UF entre los 25 y 34 años, parecido a la mayoría. Su plan de entrada cubre entre 50% y 70% en varias clínicas, pero con topes bajos.</div></div>
     <div class="ficha-row"><div class="ficha-k">Reembolsos</div><div>Entre 48 y 72 horas, desde julio de 2026.</div></div>
@@ -575,7 +577,7 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
   <section class="faq">
     <h2>Preguntas frecuentes sobre Nueva Masvida</h2>
     <h3>¿Qué tal es la Isapre Nueva Masvida?</h3>
-    <p>Sus planes están entre los más baratos y por ese precio suelen cubrir en más clínicas que otros planes de entrada. Cubre psicología sin tope y tiene cirugías prepagadas. En contra: sus topes son bajos, con prótesis hasta 10 UF, la quimioterapia no tiene cobertura preferente y su red GES y CAEC es la más chica.</p>
+    <p>Sus planes están entre los más baratos y por ese precio suelen cubrir en más clínicas que otros planes de entrada. Cubre psicología sin tope. En contra: sus topes son bajos, con prótesis hasta 10 UF, la quimioterapia no tiene cobertura preferente y su red GES y CAEC es la más chica.</p>
     <h3>¿Cuántos reclamos recibe Nueva Masvida?</h3>
     <p>Recibe 12,5 reclamos por cada 1.000 cotizantes, la segunda tasa más alta. También es la que menos destina a prestaciones: $788 de cada $1.000 de ingreso.</p>
     <h3>¿En qué clínicas conviene Nueva Masvida?</h3>
