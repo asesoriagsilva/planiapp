@@ -388,6 +388,21 @@ div.calc-cta a { flex-shrink:0; background:#1D9E75; color:#fff; text-decoration:
 div.calc-cta a:hover { background:#0F6E56; color:#fff; }
 @media (max-width:600px) { div.calc-cta { flex-direction:column; align-items:stretch; } div.calc-cta a { text-align:center; } }
 </style>
+<style>
+/* Recuadro "En corto" de las fichas */
+.corto { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:1.1rem 0 1.4rem; }
+.corto > div { border-radius:16px; padding:0.9rem 1rem; }
+.corto .c-si { background:#E6F5EE; border:1px solid #CFEEE3; }
+.corto .c-ojo { background:#FFF4DE; border:1px solid #F5E2BB; }
+.corto p.corto-t { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 0.45rem; }
+.corto .c-si .corto-t { color:#0B4A38; } .corto .c-ojo .corto-t { color:#7A4E07; }
+.corto ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.4rem; }
+.corto li { display:flex; gap:0.45rem; font-size:14.5px; line-height:1.45; }
+.corto li svg { flex-shrink:0; margin-top:2px; }
+.corto .c-si li { color:#0B4A38; } .corto .c-si svg { color:#1D9E75; }
+.corto .c-ojo li { color:#5C3D06; } .corto .c-ojo svg { color:#B7791F; }
+@media (max-width:600px) { .corto { grid-template-columns:1fr; } }
+</style>
 </head>
 <body>
 
@@ -421,6 +436,10 @@ div.calc-cta a:hover { background:#0F6E56; color:#fff; }
   <img class="isa-logo-h" src="logos/nueva-masvida.png" alt="Logo de Nueva Masvida">
   <h1>Isapre Nueva Masvida: qué cubre bien, dónde se queda corta y para quién conviene</h1>
   <p class="bajada">Su punto fuerte es la psicología sin tope anual. Ojo con el precio: sus planes de entrada cuestan parecido a los de otras Isapres, pero tiene los topes más bajos del sistema, como prótesis y órtesis hasta 10 UF.</p>
+  <div class="corto" aria-label="En corto">
+    <div class="c-si"><p class="corto-t">Conviene por</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Psicología sin tope anual</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Reembolsos en 48 a 72 horas</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Cirugías prepagadas</span></li></ul></div>
+    <div class="c-ojo"><p class="corto-t">Ojo con</p><ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Los topes más bajos del sistema, como prótesis hasta 10 UF</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>La red GES y CAEC con menos prestadores</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>En regiones no tiene copago de urgencia</span></li></ul></div>
+  </div>
 
   <div class="ficha-nota">Así es Nueva Masvida, punto por punto.</div>
   <div class="ficha">
