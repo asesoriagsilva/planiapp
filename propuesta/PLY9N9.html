@@ -91,6 +91,19 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .pl-datos { display:flex; flex-direction:column; gap:0.55rem; }
 .pl-datos dt { font-size:13px; font-weight:700; color:var(--purple-dark); }
 .pl-datos dd { font-size:13.5px; color:var(--muted); line-height:1.45; }
+.pl-urg { background:var(--green-light); border-radius:16px; padding:0.75rem 0.85rem; }
+.pl-urg-t { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--green-dark); margin-bottom:0.4rem; }
+.pl-urg-tb { width:100%; border-collapse:collapse; font-size:13.5px; }
+.pl-urg-tb th, .pl-urg-tb td { padding:0.35rem 0.3rem; text-align:left; vertical-align:top; border-top:1px solid #C6EAD9; }
+.pl-urg-tb thead th { border-top:none; font-size:11.5px; font-weight:600; color:var(--green-dark); padding-top:0; }
+.pl-urg-tb tbody th { font-weight:600; color:#0B4A38; }
+.pl-urg-tb small { display:block; font-size:12px; font-weight:500; color:var(--green-dark); }
+.pl-urg-tb td b { font-family:'Inter',sans-serif; font-weight:800; color:#0B4A38; }
+.pl-urg-info { margin-top:0.45rem; }
+.pl-urg-info summary { display:inline-flex; align-items:center; gap:0.3rem; list-style:none; cursor:pointer; font-size:12.5px; font-weight:700; color:var(--green-dark); background:#fff; border:1px solid #BDE7D7; border-radius:999px; padding:0.2rem 0.65rem; }
+.pl-urg-info summary::-webkit-details-marker { display:none; }
+.pl-urg-info summary::before { content:'i'; display:inline-flex; align-items:center; justify-content:center; width:15px; height:15px; border-radius:50%; background:var(--green); color:#fff; font-size:10px; font-weight:800; font-style:italic; }
+.pl-urg-info p { font-size:13px; color:#0B4A38; line-height:1.5; margin-top:0.45rem; }
 .pl-lista { list-style:none; display:flex; flex-direction:column; gap:0.45rem; }
 .pl-lista li { display:flex; gap:0.5rem; font-size:14px; line-height:1.45; }
 .pl-lista svg { flex-shrink:0; margin-top:2px; }
@@ -247,8 +260,14 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
         <div><dt>Hospitalización al 100%</dt><dd>Clínica RedSalud Santiago</dd></div>
         <div><dt>En enfermedades graves</dt><dd>Prótesis hasta 150 UF y quimioterapia hasta 500 UF. Con la CAEC, pagas como máximo 126 UF por enfermedad catastrófica.</dd></div>
       </dl>
+      <div class="pl-urg">
+        <p class="pl-urg-t">Urgencia con copago fijo</p>
+        <table class="pl-urg-tb"><thead><tr><th scope="col">Clínica</th><th scope="col">Simple</th><th scope="col">Compleja</th></tr></thead><tbody>
+          <tr><th scope="row">Hospital Clínico UC</th><td><b>1,17 UF</b><small>$48.200</small></td><td><b>3,45 UF</b><small>$142.200</small></td></tr>
+        </tbody></table>
+        <details class="pl-urg-info"><summary>¿Qué es un copago fijo?</summary><p>Un copago fijo significa que la atención de urgencia tiene ese valor fijo e incluye todo lo que te hagan ahí. En los planes sin copago fijo, la Isapre bonifica cada prestación por separado y, con los topes, la urgencia puede salir muy cara.</p></details>
+      </div>
       <ul class="pl-lista">
-        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Urgencia con copago fijo en el Hospital Clínico UC: pagas en total 1,17 UF ($48.200) la simple y 3,45 UF ($142.200) la compleja. Incluye todo: consulta, exámenes, imágenes, medicamentos, insumos y honorarios.</span></li>
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>El que mejor cubre tus consultas y exámenes en UC Christus: 70%</span></li>
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Psicología y kinesiología sin tope en sus prestadores preferentes</span></li>
 
@@ -278,8 +297,14 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
         <div><dt>Hospitalización al 100%</dt><dd>Clínica Cordillera y Hospital del Profesor (90% en Bupa Santiago y Clínicas RedSalud)</dd></div>
         <div><dt>En enfermedades graves</dt><dd>Prótesis hasta 15 UF y quimioterapia hasta 100 UF al año.</dd></div>
       </dl>
+      <div class="pl-urg">
+        <p class="pl-urg-t">Urgencia con copago fijo</p>
+        <table class="pl-urg-tb"><thead><tr><th scope="col">Clínica</th><th scope="col">Simple</th><th scope="col">Compleja</th></tr></thead><tbody>
+          <tr><th scope="row">Hospital Clínico UC</th><td><b>1,2 UF</b><small>$49.500</small></td><td><b>3 UF</b><small>$123.700</small></td></tr>
+        </tbody></table>
+        <details class="pl-urg-info"><summary>¿Qué es un copago fijo?</summary><p>Un copago fijo significa que la atención de urgencia tiene ese valor fijo e incluye todo lo que te hagan ahí. En los planes sin copago fijo, la Isapre bonifica cada prestación por separado y, con los topes, la urgencia puede salir muy cara.</p></details>
+      </div>
       <ul class="pl-lista">
-        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Urgencia con copago fijo en el Hospital Clínico UC: pagas en total 1,20 UF ($49.500) la simple y 3,00 UF ($123.700) la compleja. Incluye todo: consulta, exámenes, imágenes, medicamentos, insumos y honorarios.</span></li>
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Consulta psicológica sin tope en sus prestadores preferentes</span></li>
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Muy buena hospitalización en Bupa Santiago, RedSalud y Cordillera</span></li>
         <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Sus topes en enfermedades graves son bajos: prótesis hasta 15 UF y quimioterapia hasta 100 UF al año</span></li>
@@ -339,6 +364,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
           <tr><th scope="row">Prótesis y órtesis en UC Christus</th><td>60% en hospitalización, hasta 150 UF al año (15 UF ambulatorias)</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>60% en hospitalización, hasta 15 UF al año (9 UF ambulatorias)</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>60% en hospitalización, sin tope (7,5 UF ambulatorias)</td></tr>
           <tr><th scope="row">Copago fijo en urgencias en UC Christus</th><td>Sí, en el Hospital Clínico UC: 1,17 UF la simple y 3,45 UF la compleja</td><td>Sí, en el Hospital Clínico UC: 1,20 UF la simple y 3,00 UF la compleja</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene copago fijo en el Hospital Clínico UC: cubre el 60%</td></tr>
           <tr><th scope="row">Procedimientos sin código Fonasa</th><td>Cubre lo que está en el Arancel Consalud</td><td>UC Christus no aparece entre las clínicas que no las hacen. En Cordillera, Bupa Santiago, Indisa y Hospital del Profesor van por libre elección</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí: su arancel incluye procedimientos nuevos, como cirugía robótica, radiocirugía y radiofrecuencia</td></tr>
+          <tr><th scope="row">Otros prestadores del plan</th><td>Consultas y exámenes al 80%: Integramédica, Centros Médicos RedSalud, Clínica Bupa Santiago, Clínicas RedSalud Santiago y Providencia, y Clínica Dávila. Hospitalización al 100%: Clínica RedSalud Santiago</td><td>Consultas y exámenes al 80%: Integramédica, Clínica Dávila, Clínica Bupa Santiago, Clínicas RedSalud y Clínica Cordillera. Hospitalización al 100%: Clínica Cordillera y Hospital del Profesor (90% en Bupa Santiago y Clínicas RedSalud)</td><td>Consultas y exámenes al 80%: Clínica Dávila y sus centros médicos, Integramédica, Vidaintegra y Clínica RedSalud Santiago. Hospitalización al 80%: Clínica Dávila, Dávila Vespucio y Clínica RedSalud Santiago</td></tr>
         </tbody>
       </table>
     </div>
