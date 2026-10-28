@@ -187,9 +187,16 @@ footer a { color: var(--text-muted); }
 .nov td.mal { background: #FDEEED; }
 .ojo.ok { background: #EAF7F1; border-left-color: #1D9E75; }
 .cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
-.comp-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0.5rem; }
-.comp-links a { background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1rem; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--purple-dark); }
-.comp-links a:hover { border-color: var(--purple-mid); color: var(--purple); }
+.quedo { background: #EFEDFE; border: 1px solid #DCD8FA; border-radius: 18px; padding: 1.4rem 1.5rem 1.5rem; margin: 2.2rem 0 1rem; }
+.quedo h2 { margin-top: 0; }
+.quedo p:last-of-type { margin-bottom: 0; }
+.quedo-btns { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; }
+.quedo-btns a { border-radius: 999px; padding: 0.7rem 1.2rem; font-size: 15px; font-weight: 700; text-decoration: none; line-height: 1.3; transition: background .15s, border-color .15s; }
+.quedo-btns .q-fonasa { background: var(--purple); color: #fff; border: 1px solid var(--purple); }
+.quedo-btns .q-fonasa:hover { background: var(--purple-deep); border-color: var(--purple-deep); }
+.quedo-btns .q-isapre { background: #fff; color: var(--purple-dark); border: 1px solid #C9C4F4; }
+.quedo-btns .q-isapre:hover { border-color: var(--purple); color: var(--purple); }
+@media (max-width: 600px) { .quedo { padding: 1.1rem 1rem 1.2rem; } .quedo-btns a { flex: 1 1 100%; text-align: center; } }
 @media (max-width: 680px) {
   .nov.rec thead { display: none; }
   .nov.rec, .nov.rec tbody, .nov.rec tr, .nov.rec td { display: block; width: 100%; }
@@ -253,7 +260,7 @@ footer a { color: var(--text-muted); }
     "https://planiapp.cl/img/isapre-con-menos-reclamos-og.jpg"
    ],
    "datePublished": "2026-09-24",
-   "dateModified": "2026-09-24",
+   "dateModified": "2026-10-28",
    "inLanguage": "es-CL",
    "mainEntityOfPage": "https://planiapp.cl/isapre-con-menos-reclamos",
    "author": {
@@ -462,12 +469,14 @@ footer a { color: var(--text-muted); }
     <li><strong>Junta los papeles antes:</strong> el bono o la cuenta, el detalle de cobertura de tu plan y lo que te respondieron.</li>
   </ul>
 
-  <h2>Entonces, ¿con cuál me quedo?</h2>
-  <p>Los reclamos son un buen desempate, no el criterio principal. Primero mira qué cubre el plan en la clínica donde te atiendes, y después usa estos datos para elegir entre dos que te sirven parecido. Si estás comparando dos en concreto, tenemos la comparación lado a lado:</p>
-  <div class="comp-links">
-    <a href="/colmena-o-consalud">Colmena o Consalud →</a>
-    <a href="/banmedica-o-vida-tres">Banmédica o Vida Tres →</a>
-    <a href="/mejor-isapre">Ver la tabla de las 7 →</a>
+  <div class="quedo">
+    <h2>Entonces, ¿con cuál me quedo?</h2>
+    <p>Los reclamos son un buen desempate, no el criterio principal. Primero mira qué cubre el plan en la clínica donde te atiendes, y después usa estos datos para elegir entre dos que te sirven parecido.</p>
+    <p>La mejor manera de no terminar reclamando es escoger bien el plan. Mucha gente reclama porque nadie le explicó su plan, o porque lo contrató con un asesor que solo buscaba bajarle el precio sin contarle lo que perdía. Por eso en Planiapp te ayudamos a buscar tu plan en 30 segundos con nuestra calculadora, estés en Fonasa o en Isapre.</p>
+    <div class="quedo-btns">
+      <a class="q-fonasa" href="/calculadora-isapre?desde=fonasa" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'reclamos_fonasa'})">Ver si mi 7% alcanza para Isapre →</a>
+      <a class="q-isapre" href="/calculadora-isapre?desde=isapre" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'calculadora',origen:'reclamos_isapre'})">Estoy en Isapre y quiero ajustar mi plan al 7% →</a>
+    </div>
   </div>
 
   <section class="faq">
