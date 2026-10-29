@@ -83,6 +83,12 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .lg-consalud { --lgx:1.35; }
 .pl-top { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; }
 .pl-top img { height:calc(28px * var(--lgx, 1)); width:auto; max-width:calc(130px * var(--lgx, 1)); object-fit:contain; }
+.pl-conv { display:inline-flex; align-items:center; gap:0.55rem; align-self:flex-start; border:1px solid var(--border); border-radius:999px; padding:0.3rem 0.75rem 0.3rem 0.7rem; margin-top:-0.35rem; }
+.pl-conv span { font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); }
+.pl-conv img { height:17px; width:auto; }
+.pl-conv-box { background:var(--purple-light); border:1px solid #DCD9FB; border-radius:14px; padding:0.7rem 0.85rem; }
+.pl-conv-t { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--purple); margin-bottom:0.2rem; }
+.pl-conv-box p:last-child { font-size:14px; line-height:1.45; }
 .pl-cod { font-size:11.5px; font-weight:600; color:var(--muted); background:var(--bg); border-radius:999px; padding:0.2rem 0.6rem; }
 .pl-nom { text-transform:uppercase; font-family:'Inter',sans-serif; font-size:19px; font-weight:800; color:var(--purple-dark); line-height:1.25; }
 .pl-precio { background:var(--green-light); border-radius:16px; padding:0.8rem 0.95rem; }
@@ -260,6 +266,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
         <img class="lg-consalud" src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31">
         <span class="pl-cod">13-FCL1657-26</span>
       </header>
+      <p class="pl-conv"><span>Convenio colectivo</span><img src="/logos/santander.svg" alt="Banco Santander" width="98" height="17"></p>
       <h2 class="pl-nom">Life Focus 165</h2>
       <div class="pl-precio">
         <div><strong>$126.000</strong><span>al mes · 3,06 UF</span></div>
@@ -287,6 +294,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Psicología y kinesiología sin tope en sus prestadores preferentes</span></li>
 
       </ul>
+      <div class="pl-conv-box"><p class="pl-conv-t">Convenio colectivo Banco Santander</p><p>Al tener convenio colectivo, accedes a beneficios extra.</p></div>
       <div class="pl-acc">
         <a class="pl-pdf" href="/planes/consalud-13-fcl1657-26.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PRJSHC',isapre:'Consalud',plan:'13-FCL1657-26'})">Ver el plan completo (PDF)</a>
         <a class="pl-wsp" data-plan="0" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PRJSHC%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Life%20Focus%20165%20de%20Consalud%20(13-FCL1657-26).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PRJSHC',isapre:'Consalud',plan:'13-FCL1657-26'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
@@ -380,7 +388,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
           <tr><th scope="row">Prótesis y órtesis en UC Christus</th><td>60% en hospitalización, hasta 150 UF al año</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>50% en hospitalización, hasta 15 UF al año</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>50% en hospitalización, sin tope</td></tr>
           <tr><th scope="row">Copago fijo en urgencias en UC Christus</th><td>Sí, en el Hospital Clínico UC: 1,97 UF la simple y 6,60 UF la compleja</td><td>Sí, en el Hospital Clínico UC: 1,20 UF la simple y 3,00 UF la compleja</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene copago fijo en el Hospital Clínico UC: cubre el 50%</td></tr>
           <tr><th scope="row">Procedimientos sin código Fonasa</th><td>Cubre lo que está en el Arancel Consalud</td><td>Cubre lo que está en el Arancel Nueva Masvida</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, sin tope: su arancel incluye procedimientos nuevos, como cirugía robótica y radiocirugía</td></tr>
-          <tr><th scope="row">Otros prestadores del plan</th><td>Hospitalización al 70%: Clínicas RedSalud Providencia y Santiago, Clínica Dávila, Dávila Vespucio, Bupa Santiago, Hospital Clínico de la Universidad de Chile, Clínica Cordillera y Hospital del Profesor. Consultas y exámenes al 70%: Centros Médicos RedSalud e Integramédica</td><td>Hospitalización al 100%: Clínica Cordillera y Hospital del Profesor (80% en Clínica Dávila, Dávila Vespucio, Bupa Santiago y Clínicas RedSalud Providencia y Santiago). Consultas y exámenes al 80%: Clínica Bupa Santiago, Clínicas RedSalud Providencia y Santiago, Centros RedSalud Santiago, Integramédica, Clínica Cordillera y Hospital del Profesor</td><td>Hospitalización al 70%: Clínica Dávila, Dávila Vespucio y Clínica RedSalud Santiago. Consultas y exámenes al 70%: Clínica Dávila, Dávila Vespucio, Centros Médicos Red Dávila, Integramédica, Vidaintegra y Clínica RedSalud Santiago</td></tr>
+          <tr><th scope="row">Otros prestadores del plan</th><td>Clínicas RedSalud Providencia y Santiago, Clínica Dávila, Dávila Vespucio, Bupa Santiago, Hospital Clínico de la Universidad de Chile, Clínica Cordillera, Hospital del Profesor, Centros Médicos RedSalud e Integramédica</td><td>Clínica Cordillera, Hospital del Profesor, Clínica Dávila, Dávila Vespucio, Bupa Santiago, Clínicas RedSalud Providencia y Santiago, Centros RedSalud Santiago e Integramédica</td><td>Clínica Dávila, Dávila Vespucio, Clínica RedSalud Santiago, Centros Médicos Red Dávila, Integramédica y Vidaintegra</td></tr>
         </tbody>
       </table>
     </div>
