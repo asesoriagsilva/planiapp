@@ -149,7 +149,10 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .cmp-prest { display:flex; flex-wrap:wrap; align-items:center; gap:0.4rem 0.9rem; margin:0 0 0.8rem; font-size:14.5px; color:var(--text); }
 .cmp-prest b { color:var(--purple-dark); }
 .cmp-prest a { font-size:13.5px; font-weight:600; color:var(--purple); text-decoration:none; background:var(--purple-light); border-radius:999px; padding:0.25rem 0.75rem; }
-.seguro { margin-top:2rem; background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.4rem 1.3rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); }
+.cmp-prest a.cmp-art { font-size:14px; font-weight:800; color:#fff; background:var(--purple); padding:0.45rem 1.05rem; box-shadow:0 10px 20px -12px rgba(83,74,183,.8); }
+.cmp-prest a.cmp-art:hover { background:var(--purple-deep); }
+.cmp-art-nota { font-size:13px; color:var(--muted); line-height:1.4; }
+.seguro { margin-top:2rem; background:var(--purple-light); border:1px solid #DCD8FB; border-radius:22px; padding:1.4rem 1.3rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); }
 .seg-k { font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:#0B8A84; }
 .seguro h2 { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); line-height:1.2; margin:0.2rem 0 0.4rem; }
 .seg-intro { font-size:15px; color:var(--muted); max-width:680px; }
@@ -159,7 +162,7 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .seg-cubre span { font-size:13px; font-weight:600; color:#0E4F4B; line-height:1.35; }
 .seg-max { font-size:13px; color:var(--muted); margin-top:0.6rem; }
 .seg-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:0.8rem; margin-top:1.1rem; }
-.seg-box { background:var(--bg); border:1px solid var(--border); border-radius:16px; padding:0.9rem 1rem; }
+.seg-box { background:var(--white); border:1px solid #E2DEFB; border-radius:16px; padding:0.9rem 1rem; }
 .seguro h3 { font-size:14.5px; font-weight:800; color:var(--purple-dark); margin-bottom:0.55rem; }
 .seg-tb { width:100%; border-collapse:collapse; font-size:14px; }
 .seg-tb th, .seg-tb td { padding:0.45rem 0; border-top:1px solid var(--border); text-align:left; font-weight:500; vertical-align:top; }
@@ -170,20 +173,20 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .seg-tb .seg-tot td { color:#0B6F6A; font-size:16px; }
 .seg-ya { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:var(--green-dark); white-space:normal; }
 .seg-ded { list-style:none; display:flex; flex-direction:column; gap:0.45rem; }
-.seg-ded li { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:0.6rem; background:var(--white); border-radius:12px; padding:0.5rem 0.65rem; }
+.seg-ded li { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:0.6rem; background:var(--bg); border-radius:12px; padding:0.5rem 0.65rem; }
 .seg-ded img { height:calc(20px * var(--lgx, 1)); width:auto; max-width:calc(84px * var(--lgx, 1)); object-fit:contain; }
 .seg-ded span { font-size:13px; color:var(--muted); line-height:1.3; }
 .seg-ded b { font-family:'Inter',sans-serif; font-weight:800; color:var(--purple-dark); text-align:right; white-space:nowrap; }
 .seg-nota { font-size:12.5px; color:var(--muted); margin-top:0.55rem; line-height:1.45; }
 .seg-sum { margin-top:1.1rem; }
 .seg-sum-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:0.6rem; }
-.seg-sum-grid div { border:1.5px solid var(--purple-light); border-radius:14px; padding:0.75rem 0.85rem; display:flex; flex-direction:column; align-items:flex-start; gap:0.2rem; }
+.seg-sum-grid div { background:var(--white); border:1.5px solid #E2DEFB; border-radius:14px; padding:0.75rem 0.85rem; display:flex; flex-direction:column; align-items:flex-start; gap:0.2rem; }
 .seg-sum-grid img { height:calc(22px * var(--lgx, 1)); width:auto; max-width:calc(100px * var(--lgx, 1)); object-fit:contain; margin-bottom:0.25rem; }
 .seg-sum-grid b { font-family:'Inter',sans-serif; font-size:22px; font-weight:900; color:var(--purple-dark); line-height:1.15; }
 .seg-sum-grid span { font-size:12.5px; color:var(--muted); }
 .seg-sum-grid em { font-style:normal; font-size:13px; font-weight:700; color:var(--green-dark); background:var(--green-light); border-radius:999px; padding:0.2rem 0.65rem; margin-top:0.25rem; }
 .seg-notas { margin-top:0.9rem; padding-left:1.1rem; font-size:13px; color:var(--muted); display:flex; flex-direction:column; gap:0.25rem; }
-.seg-pdf { display:inline-flex; margin-top:0.85rem; font-size:14px; font-weight:700; color:var(--purple); text-decoration:none; border:1.5px solid var(--purple-light); border-radius:999px; padding:0.5rem 1rem; }
+.seg-pdf { display:inline-flex; margin-top:0.85rem; font-size:14px; font-weight:700; color:var(--purple); text-decoration:none; background:var(--white); border:1.5px solid #DCD8FB; border-radius:999px; padding:0.5rem 1rem; }
 .estad { margin-top:2rem; background:var(--purple-light); border:1px solid #DCD9FB; border-radius:20px; padding:1.2rem 1.25rem; }
 .estad h2 { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:var(--purple-dark); margin-bottom:0.8rem; }
 .estad-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.7rem; align-items:start; }
@@ -417,7 +420,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 
   <section class="comp">
     <h2>Comparación entre planes, según tu prestador</h2>
-    <p class="cmp-prest"><span>Tu prestador: <b>Clínica Santa María</b></span><a href="/clinica-santa-maria" target="_blank" rel="noopener">Conoce Clínica Santa María en Planiapp →</a></p>
+    <p class="cmp-prest"><span>Tu prestador: <b>Clínica Santa María</b></span><a class="cmp-art" href="/clinica-santa-maria" target="_blank" rel="noopener">Conoce Clínica Santa María en Planiapp</a><span class="cmp-art-nota">Revisa cuánto cuesta atenderte ahí y qué Isapre conviene más en esta clínica.</span></p>
 
     <div class="cmp-leyenda"><span><span class="cmp-ico bien" aria-hidden="true">✓</span>Cubre bien</span><span><span class="cmp-ico mal" aria-hidden="true">!</span>Cubre poco o con límites</span><span>Sin color: intermedio o dato informativo</span></div>
     <p class="cmp-hint">Desliza la tabla para ver los 3 planes →</p>
