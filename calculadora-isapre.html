@@ -336,12 +336,6 @@ h1 span { color:var(--purple); }
 .lp-confia i { width:34px; height:34px; border-radius:50%; background:var(--green-light); color:var(--green); display:flex; align-items:center; justify-content:center; }
 
 .lp-info { margin-top:2.4rem; }
-.lp-insta { margin-top:2.4rem; text-align:center; }
-.lp-insta[hidden] { display:none; }
-.lp-insta h2 { font-family:'Inter',sans-serif; font-size:21px; font-weight:800; color:var(--purple-dark); letter-spacing:-0.015em; margin-bottom:0.4rem; }
-.lp-insta p { font-size:15px; color:var(--muted); margin:0 auto 1rem; max-width:480px; }
-.lp-insta .instagram-media { background:#fff; border:0; border-radius:14px; box-shadow:0 0 1px 0 rgba(0,0,0,.5), 0 1px 10px 0 rgba(0,0,0,.15); margin:0 auto !important; max-width:400px; min-width:300px; width:calc(100% - 2px); padding:1.2rem; }
-.lp-insta .instagram-media a { color:var(--purple); font-weight:700; text-decoration:none; }
 .lp-info h2 { font-family:'Inter',sans-serif; font-size:21px; font-weight:800; color:var(--purple-dark); letter-spacing:-0.015em; margin-bottom:0.7rem; }
 .lp-como { list-style:none; display:grid; gap:0.5rem; }
 .lp-como li { position:relative; padding-left:1.5rem; font-size:14.5px; color:var(--text); line-height:1.55; }
@@ -379,7 +373,7 @@ h1 span { color:var(--purple); }
 }
 /* Dentro de la portada (iframe con ?embed=1): solo la tarjeta, sin encabezado, textos ni pie */
 .embed body { background:transparent; min-height:0; scrollbar-width:thin; }
-.embed body::before, .embed body::after, .embed .lp-top, .embed .lp-hero, .embed .lp-confia, .embed .lp-insta, .embed .lp-info, .embed .lp-faq, .embed .lp-pie { display:none; }
+.embed body::before, .embed body::after, .embed .lp-top, .embed .lp-hero, .embed .lp-confia, .embed .lp-info, .embed .lp-faq, .embed .lp-pie { display:none; }
 .embed main { max-width:none; padding:0; }
 .embed .lp-card { box-shadow:none; border-color:#CDEBDD; border-radius:20px; padding:0.9rem 1rem 1rem; }
 .embed .lp-prog { margin-bottom:0.75rem; }
@@ -683,12 +677,6 @@ h1 span { color:var(--purple); }
     <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>Te escribimos por WhatsApp</div>
   </div>
 
-  <section class="lp-insta" id="lp-insta" hidden>
-    <h2>¿Le estás pagando de más a tu Isapre?</h2>
-    <p>Desliza la publicación: muchas personas pagan un adicional que no necesitan o se quedan cortas en su clínica.</p>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfEUhHQFrR_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/p/DfEUhHQFrR_/" target="_blank" rel="noopener">Ver la publicación en Instagram</a></blockquote>
-  </section>
-
   <section class="lp-info">
     <h2>Cómo calculamos</h2>
     <ul class="lp-como">
@@ -790,21 +778,8 @@ function armaPasos() {
       : D.desde === 'pareja' ? ['p-cob', 'edad', 'sueldo', 'p-edad2', 'p-sueldo2', 'p-perfil']
         : ['edad', 'personas', 'sueldo']);
 }
-// Publicación de Instagram solo para quien está en Isapre (no dentro de la portada); embed.js se carga al acercarse a ella
-let instaCargado = false;
-function pintaInsta() {
-  const s = $('lp-insta'), on = !EMBED && D.desde === 'isapre';
-  s.hidden = !on;
-  if (!on || instaCargado) return;
-  instaCargado = true;
-  const carga = () => { const sc = document.createElement('script'); sc.async = true; sc.src = 'https://www.instagram.com/embed.js'; document.body.appendChild(sc); };
-  if (!('IntersectionObserver' in window)) return carga();
-  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); carga(); } }, { rootMargin: '400px' });
-  io.observe(s);
-}
 function ir(paso) {
   actual = paso;
-  pintaInsta();
   if (EMBED && empezo) parent.postMessage({ planiappCalc: 'paso' }, '/');
   document.querySelectorAll('.lp-paso').forEach(p => p.classList.toggle('activo', p.dataset.paso === paso));
   const i = pasos.indexOf(paso);
