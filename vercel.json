@@ -406,7 +406,7 @@
       "destination": "/calculadora-isapre.html"
     },
     {
-      "source": "/propuesta/:codigo(PLY9N9|PLCJKT|PLDQFV|PRJSHC|PRK35Z)",
+      "source": "/propuesta/:codigo(PLY9N9|PLCJKT|PLDQFV|PRJSHC|PRK35Z|PR4E6D)",
       "destination": "/propuesta/:codigo.html"
     },
     {

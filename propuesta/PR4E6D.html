@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Tu propuesta de Isapre | Planiapp</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+  /* Origen del visitante: la última fuente externa (buscador, anuncio, red social o enlace con utm). Los formularios lo envían con el lead. */
+  try {
+    (function () {
+      var q = new URLSearchParams(location.search), r = document.referrer, h = '', o = '';
+      try { h = r ? new URL(r).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+      var us = q.get('utm_source') || '', pago = /cpc|ppc|paid|ads/.test((q.get('utm_medium') || '').toLowerCase());
+      var may = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+      if (q.get('gclid') || q.get('gbraid') || q.get('wbraid')) o = 'Google Ads';
+      else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
+      else if (q.get('fbclid')) o = 'Facebook o Instagram';
+      else if (h && h !== location.hostname.replace(/^www\./, '')) {
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+          : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
+          : /instagram\./.test(h) ? 'Instagram'
+          : /facebook\.|fb\.me/.test(h) ? 'Facebook'
+          : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
+          : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
+          : 'Otro sitio: ' + h;
+      }
+      var antes = localStorage.getItem('planiapp_origen');
+      if (o || !antes) localStorage.setItem('planiapp_origen', JSON.stringify({ o: o || 'Directo', p: location.pathname, t: Date.now() }));
+    })();
+  } catch (e) {}
+  window.planiappOrigen = function () { try { var g = JSON.parse(localStorage.getItem('planiapp_origen') || 'null'); return g ? g.o + ' · entró por ' + (g.p === '/' ? 'la portada' : g.p) : 'Directo'; } catch (e) { return ''; } };
+</script>
+<style>
+:root { --purple:#534AB7; --purple-light:#EEEDFE; --purple-mid:#7F77DD; --purple-dark:#26215C; --purple-deep:#3C3489; --green:#1D9E75; --green-dark:#0F6E56; --green-light:#E1F5EE; --text:#1a1830; --muted:#6b6b8a; --border:#E7E5F5; --bg:#f8f7ff; --white:#fff; }
+* { box-sizing:border-box; margin:0; padding:0; }
+[hidden] { display:none !important; }
+body { font-family:'DM Sans',sans-serif; color:var(--text); background:var(--bg); line-height:1.5; }
+.top { display:flex; align-items:center; justify-content:space-between; gap:1rem; max-width:1100px; margin:0 auto; padding:0.9rem 1.25rem; }
+.top img { height:40px; width:auto; }
+.top span { font-size:12.5px; font-weight:600; color:var(--green-dark); background:var(--green-light); border-radius:999px; padding:0.3rem 0.8rem; }
+.hero { background:linear-gradient(135deg, #1E1A4D 0%, #2B2468 55%, #3C3489 100%); color:#fff; }
+.hero-in { max-width:1100px; margin:0 auto; padding:2.2rem 1.25rem 2.4rem; }
+.hero-k { font-size:12.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:#4BE3A3; }
+.hero h1 { font-family:'Inter',sans-serif; font-size:34px; font-weight:900; line-height:1.15; letter-spacing:-0.02em; margin:0.35rem 0 0.6rem; }
+.hero p { color:rgba(255,255,255,.82); font-size:16px; max-width:640px; }
+.perfil { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.2rem; }
+.perfil span { font-size:13.5px; font-weight:600; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:0.4rem 0.85rem; }
+.perfil b { color:#4BE3A3; font-weight:700; }
+.hero-fila { display:flex; align-items:center; gap:2rem; }
+.hero-txt { flex:1; min-width:0; }
+.inicio { flex:0 0 250px; display:flex; gap:0.65rem; align-items:flex-start; background:rgba(255,255,255,.08); border:1px solid rgba(75,227,163,.45); border-radius:16px; padding:0.8rem 0.95rem; }
+.inicio svg { flex-shrink:0; width:20px; height:20px; color:#4BE3A3; margin-top:1px; }
+.hero .inicio p { font-size:13.5px; font-weight:600; color:#fff; line-height:1.4; }
+.hero .inicio p b { color:#4BE3A3; }
+.hero .inicio p small { display:block; font-size:12px; font-weight:500; color:rgba(255,255,255,.7); margin-top:0.3rem; }
+@media (max-width:860px) { .hero-fila { flex-direction:column; align-items:flex-start; gap:1.1rem; } .inicio { flex-basis:auto; max-width:340px; } }
+main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
+.planes { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.1rem; align-items:start; }
+.pl { background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.25rem 1.2rem 1.2rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); display:flex; flex-direction:column; gap:0.9rem; }
+.lg-consalud { --lgx:1.35; }
+.pl-top { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; }
+.pl-top img { height:calc(28px * var(--lgx, 1)); width:auto; max-width:calc(130px * var(--lgx, 1)); object-fit:contain; }
+.pl-conv { display:inline-flex; align-items:center; gap:0.55rem; align-self:flex-start; border:1px solid var(--border); border-radius:999px; padding:0.3rem 0.75rem 0.3rem 0.7rem; margin-top:-0.35rem; }
+.pl-conv span { font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); }
+.pl-conv img { height:17px; width:auto; }
+.pl-conv-box { background:var(--purple-light); border:1px solid #DCD9FB; border-radius:14px; padding:0.7rem 0.85rem; }
+.pl-conv-t { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--purple); margin-bottom:0.2rem; }
+.pl-conv-box p:last-child { font-size:14px; line-height:1.45; }
+.pl-cod { font-size:11.5px; font-weight:600; color:var(--muted); background:var(--bg); border-radius:999px; padding:0.2rem 0.6rem; }
+.pl-nom { text-transform:uppercase; font-family:'Inter',sans-serif; font-size:19px; font-weight:800; color:var(--purple-dark); line-height:1.25; }
+.pl-precio { background:var(--green-light); border-radius:16px; padding:0.8rem 0.95rem; }
+.pl-precio strong { font-family:'Inter',sans-serif; font-size:28px; font-weight:900; color:#0B4A38; letter-spacing:-0.02em; }
+.pl-precio span { font-size:13.5px; color:var(--green-dark); margin-left:0.35rem; }
+.pl-exc { font-size:13px; color:#0B4A38; margin-top:0.15rem; }
+.pl-t { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--purple); margin-bottom:0.45rem; }
+.pl-uc { border:1.5px solid var(--purple-light); border-radius:16px; padding:0.8rem 0.9rem; }
+.pl-uc-nums { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; }
+.pl-uc-nums div { background:var(--purple-light); border-radius:12px; padding:0.5rem 0.65rem; }
+.pl-uc-nums b { display:block; font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); line-height:1.1; }
+.pl-uc-nums span { font-size:12px; color:var(--purple-deep); font-weight:600; }
+.pl-uc-urg { font-size:13px; color:var(--muted); margin-top:0.5rem; line-height:1.45; }
+.pl-datos { display:flex; flex-direction:column; gap:0.55rem; }
+.pl-datos dt { font-size:13px; font-weight:700; color:var(--purple-dark); }
+.pl-datos dd { font-size:13.5px; color:var(--muted); line-height:1.45; }
+.pl-urg { background:var(--green-light); border-radius:16px; padding:0.75rem 0.85rem; }
+.pl-urg-t { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--green-dark); margin-bottom:0.4rem; }
+.pl-urg-tb { width:100%; border-collapse:collapse; font-size:13.5px; }
+.pl-urg-tb th, .pl-urg-tb td { padding:0.35rem 0.3rem; text-align:left; vertical-align:top; border-top:1px solid #C6EAD9; }
+.pl-urg-tb thead th { border-top:none; font-size:11.5px; font-weight:600; color:var(--green-dark); padding-top:0; }
+.pl-urg-tb tbody th { font-weight:600; color:#0B4A38; }
+.pl-urg-tb small { display:block; font-size:12px; font-weight:500; color:var(--green-dark); }
+.pl-urg-tb td b, .pl-urg-tb td small { white-space:nowrap; }
+.pl-urg-tb td b { font-family:'Inter',sans-serif; font-weight:800; color:#0B4A38; }
+.pl-urg-info { margin-top:0.45rem; }
+.pl-urg-info summary { display:inline-flex; align-items:center; gap:0.3rem; list-style:none; cursor:pointer; font-size:12.5px; font-weight:700; color:var(--green-dark); background:#fff; border:1px solid #BDE7D7; border-radius:999px; padding:0.2rem 0.65rem; }
+.pl-urg-info summary::-webkit-details-marker { display:none; }
+.pl-urg-info summary::before { content:'i'; display:inline-flex; align-items:center; justify-content:center; width:15px; height:15px; border-radius:50%; background:var(--green); color:#fff; font-size:10px; font-weight:800; font-style:italic; }
+.pl-urg-info p { font-size:13px; color:#0B4A38; line-height:1.5; margin-top:0.45rem; }
+.pl-lista { list-style:none; display:flex; flex-direction:column; gap:0.45rem; }
+.pl-lista li { display:flex; gap:0.5rem; font-size:14px; line-height:1.45; }
+.pl-lista svg { flex-shrink:0; margin-top:2px; }
+.pl-lista .si svg { color:var(--green); }
+.pl-lista .ojo { background:#FFF4DE; color:#6B4A0E; border-radius:10px; padding:0.45rem 0.6rem; }
+.pl-lista .ojo svg { color:#B7791F; }
+.pl-lista .alerta { background:#FBECEC; color:#7A2E33; border:1px solid #F1C9CB; border-radius:10px; padding:0.5rem 0.65rem; font-weight:600; }
+.pl-lista .alerta svg { color:#C2565B; }
+.pl-acc { display:flex; flex-direction:column; gap:0.5rem; margin-top:auto; padding-top:0.3rem; }
+.pl-acc a { display:flex; align-items:center; justify-content:center; gap:0.5rem; border-radius:999px; padding:0.75rem 1rem; font-size:15px; font-weight:700; text-decoration:none; transition:background .15s, transform .15s; }
+.pl-pdf { background:var(--white); color:var(--purple); border:1.5px solid var(--purple-light); }
+.pl-wsp { background:var(--green); color:#fff; box-shadow:0 12px 22px -14px rgba(29,158,117,.9); }
+@media (hover:hover) { .pl-pdf:hover { background:var(--purple-light); } .pl-wsp:hover { background:var(--green-dark); } }
+.comp { margin-top:2.2rem; }
+.comp h2, .notas h2 { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); margin-bottom:0.8rem; }
+.comp-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--border); border-radius:18px; background:var(--white); }
+.comp table { border-collapse:separate; border-spacing:0; width:100%; min-width:760px; font-size:13.5px; line-height:1.45; table-layout:fixed; }
+.comp th, .comp td { padding:0.7rem 0.8rem; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+.comp thead th { background:var(--purple-light); color:var(--purple-dark); vertical-align:middle; text-align:center; }
+.comp thead img { display:block; height:calc(26px * var(--lgx, 1)); width:auto; max-width:calc(120px * var(--lgx, 1)); object-fit:contain; margin:0 auto 0.3rem; }
+.comp thead small { display:block; text-transform:uppercase; font-size:12px; font-weight:600; color:var(--purple-deep); }
+.comp th[scope="row"] { position:sticky; left:0; z-index:1; background:#FAFAFD; color:var(--purple-dark); font-weight:600; width:170px; border-right:1px solid var(--border); }
+.comp thead th:first-child { position:sticky; left:0; z-index:2; border-right:1px solid var(--border); text-align:left; width:170px; }
+.comp tbody tr:last-child th, .comp tbody tr:last-child td { border-bottom:none; }
+.comp td.bien { background:#E6F5EE; color:#0B4A38; }
+.comp td.mal { background:#FBECEC; color:#7A2E33; }
+.comp h2 { margin-bottom:0.35rem; }
+.cmp-prest { display:flex; flex-wrap:wrap; align-items:center; gap:0.4rem 0.9rem; margin:0 0 0.8rem; font-size:14.5px; color:var(--text); }
+.cmp-prest b { color:var(--purple-dark); }
+.cmp-prest a { font-size:13.5px; font-weight:600; color:var(--purple); text-decoration:none; background:var(--purple-light); border-radius:999px; padding:0.25rem 0.75rem; }
+.seguro { margin-top:2rem; background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.4rem 1.3rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); }
+.seg-k { font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:#0B8A84; }
+.seguro h2 { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); line-height:1.2; margin:0.2rem 0 0.4rem; }
+.seg-intro { font-size:15px; color:var(--muted); max-width:680px; }
+.seg-cubre { display:grid; grid-template-columns:repeat(auto-fit, minmax(128px, 1fr)); gap:0.6rem; margin-top:1rem; }
+.seg-cubre div { background:#E6F6F5; border-radius:14px; padding:0.7rem 0.8rem; display:flex; flex-direction:column; gap:0.15rem; }
+.seg-cubre b { font-family:'Inter',sans-serif; font-size:22px; font-weight:900; color:#0B6F6A; line-height:1.1; }
+.seg-cubre span { font-size:13px; font-weight:600; color:#0E4F4B; line-height:1.35; }
+.seg-max { font-size:13px; color:var(--muted); margin-top:0.6rem; }
+.seg-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:0.8rem; margin-top:1.1rem; }
+.seg-box { background:var(--bg); border:1px solid var(--border); border-radius:16px; padding:0.9rem 1rem; }
+.seguro h3 { font-size:14.5px; font-weight:800; color:var(--purple-dark); margin-bottom:0.55rem; }
+.seg-tb { width:100%; border-collapse:collapse; font-size:14px; }
+.seg-tb th, .seg-tb td { padding:0.45rem 0; border-top:1px solid var(--border); text-align:left; font-weight:500; vertical-align:top; }
+.seg-tb tr:first-child th, .seg-tb tr:first-child td { border-top:none; }
+.seg-tb td { text-align:right; font-family:'Inter',sans-serif; font-weight:700; color:var(--purple-dark); white-space:nowrap; }
+.seg-tb small, .seg-ded small { display:block; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; color:var(--muted); }
+.seg-tb .seg-tot th, .seg-tb .seg-tot td { border-top:1.5px solid var(--purple-dark); font-weight:800; }
+.seg-tb .seg-tot td { color:#0B6F6A; font-size:16px; }
+.seg-ya { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:var(--green-dark); white-space:normal; }
+.seg-ded { list-style:none; display:flex; flex-direction:column; gap:0.45rem; }
+.seg-ded li { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:0.6rem; background:var(--white); border-radius:12px; padding:0.5rem 0.65rem; }
+.seg-ded img { height:calc(20px * var(--lgx, 1)); width:auto; max-width:calc(84px * var(--lgx, 1)); object-fit:contain; }
+.seg-ded span { font-size:13px; color:var(--muted); line-height:1.3; }
+.seg-ded b { font-family:'Inter',sans-serif; font-weight:800; color:var(--purple-dark); text-align:right; white-space:nowrap; }
+.seg-nota { font-size:12.5px; color:var(--muted); margin-top:0.55rem; line-height:1.45; }
+.seg-sum { margin-top:1.1rem; }
+.seg-sum-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:0.6rem; }
+.seg-sum-grid div { border:1.5px solid var(--purple-light); border-radius:14px; padding:0.75rem 0.85rem; display:flex; flex-direction:column; align-items:flex-start; gap:0.2rem; }
+.seg-sum-grid img { height:calc(22px * var(--lgx, 1)); width:auto; max-width:calc(100px * var(--lgx, 1)); object-fit:contain; margin-bottom:0.25rem; }
+.seg-sum-grid b { font-family:'Inter',sans-serif; font-size:22px; font-weight:900; color:var(--purple-dark); line-height:1.15; }
+.seg-sum-grid span { font-size:12.5px; color:var(--muted); }
+.seg-sum-grid em { font-style:normal; font-size:13px; font-weight:700; color:var(--green-dark); background:var(--green-light); border-radius:999px; padding:0.2rem 0.65rem; margin-top:0.25rem; }
+.seg-notas { margin-top:0.9rem; padding-left:1.1rem; font-size:13px; color:var(--muted); display:flex; flex-direction:column; gap:0.25rem; }
+.seg-pdf { display:inline-flex; margin-top:0.85rem; font-size:14px; font-weight:700; color:var(--purple); text-decoration:none; border:1.5px solid var(--purple-light); border-radius:999px; padding:0.5rem 1rem; }
+.estad { margin-top:2rem; background:var(--purple-light); border:1px solid #DCD9FB; border-radius:20px; padding:1.2rem 1.25rem; }
+.estad h2 { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:var(--purple-dark); margin-bottom:0.8rem; }
+.estad-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.7rem; align-items:start; }
+.estad-i { background:var(--white); border:1.5px solid #fff; box-shadow:0 10px 24px -20px rgba(38,33,92,.5); border-radius:16px; overflow:hidden; }
+.estad-i summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:0.6rem; padding:0.75rem 0.9rem; cursor:pointer; }
+.estad-i summary::-webkit-details-marker { display:none; }
+.estad-i summary img { height:calc(24px * var(--lgx, 1)); width:auto; max-width:calc(110px * var(--lgx, 1)); object-fit:contain; }
+.estad-i summary span { font-size:13px; font-weight:700; color:var(--purple); background:var(--purple-light); border-radius:999px; padding:0.3rem 0.7rem; white-space:nowrap; }
+.estad-i[open] summary span { background:var(--purple); color:#fff; }
+.estad-i.mal { background:#FDF3F3; border-color:#F6DADB; }
+.estad-i.mal summary span { background:#F8E1E2; color:#8A3A3F; }
+.estad-i.mal[open] summary span { background:#F1C9CB; color:#7A2E33; }
+.estad-i.mal .estad-c { border-top-color:#F1C9CB; }
+.estad-i.bien { background:#F1FAF4; border-color:#D6EFDF; }
+.estad-i.bien summary span { background:#DCF2E4; color:#24663F; }
+.estad-i.bien[open] summary span { background:#C5E8D1; color:#1C5233; }
+.estad-i.bien .estad-c { border-top-color:#C5E8D1; }
+.estad-c { border-top:1px solid var(--border); padding:0.75rem 0.9rem; display:flex; flex-direction:column; gap:0.35rem; font-size:14px; }
+.estad-c b { font-family:'Inter',sans-serif; font-weight:800; color:var(--purple-dark); }
+@media (max-width:420px) { .estad-i summary { padding:0.7rem 0.75rem; } .estad-i summary img { max-width:86px; } .estad-i summary span { font-size:12.5px; padding:0.3rem 0.6rem; } }
+.estad-f { font-size:12.5px; color:var(--muted); margin-top:0.6rem; }
+.estad-f a { color:var(--purple); font-weight:600; }
+.cmp-leyenda { display:flex; flex-wrap:wrap; gap:0.4rem 1rem; font-size:12.5px; color:var(--muted); margin:0 0 0.7rem; }
+.cmp-leyenda > span { display:inline-flex; align-items:center; gap:0.35rem; }
+.cmp-hint { display:none; font-size:12px; color:var(--muted); text-align:right; margin:0 0 0.4rem; }
+.cmp-ico { display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border-radius:50%; font-size:10px; font-weight:700; color:#fff; line-height:1; vertical-align:-3px; margin-right:0.3rem; flex-shrink:0; }
+.cmp-ico.bien { background:#1D9E75; }
+.cmp-ico.mal { background:#C2565B; }
+.cmp-kh { font-size:12px; font-weight:600; color:var(--muted) !important; text-transform:uppercase; letter-spacing:0.04em; }
+@media (max-width:680px) { .cmp-hint { display:block; } .comp table { font-size:12.5px; min-width:640px; } .comp th[scope="row"], .comp thead th:first-child { width:112px; } }
+.porque { margin-top:2rem; background:var(--green-light); border:1px solid #BDE7D7; border-left:5px solid var(--green); border-radius:18px; padding:1.2rem 1.25rem; display:flex; flex-direction:column; gap:0.55rem; }
+.porque h2 { display:flex; align-items:center; gap:0.55rem; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:#0B4A38; }
+.porque h2 svg { flex-shrink:0; color:#fff; background:var(--green); border-radius:50%; padding:6px; width:32px; height:32px; }
+.porque p { font-size:15px; color:#0B4A38; line-height:1.55; }
+.notas { margin-top:2rem; }
+.notas ul { padding-left:1.1rem; color:var(--muted); font-size:13.5px; display:flex; flex-direction:column; gap:0.35rem; }
+.cierre { margin-top:2rem; background:linear-gradient(160deg, #534AB7 0%, #3C3489 100%); color:#fff; border-radius:20px; padding:1.5rem 1.4rem; text-align:center; }
+.cierre p { color:rgba(255,255,255,.88); margin:0.3rem auto 1rem; max-width:520px; }
+.cierre strong { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; }
+.cierre a { display:inline-flex; align-items:center; gap:0.5rem; background:#fff; color:var(--purple-deep); border-radius:999px; padding:0.75rem 1.4rem; font-weight:700; text-decoration:none; }
+.el { max-width:620px; margin:0 auto; }
+.el-volver { background:none; border:none; font:inherit; font-size:14px; font-weight:600; color:var(--purple); cursor:pointer; padding:0.3rem 0; margin-bottom:0.6rem; }
+.el-card { background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.4rem 1.3rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); display:flex; flex-direction:column; gap:1rem; }
+.el-plan { display:flex; align-items:center; gap:1rem; }
+.el-plan img { height:calc(30px * var(--lgx, 1)); width:auto; max-width:calc(120px * var(--lgx, 1)); object-fit:contain; flex-shrink:0; }
+.el-k { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--green-dark); }
+.el-nom { font-family:'Inter',sans-serif; font-size:19px; font-weight:800; color:var(--purple-dark); line-height:1.25; }
+.el-precio { font-size:14px; color:var(--muted); }
+.el-aviso { background:var(--green-light); color:#0B4A38; border-radius:16px; padding:0.9rem 1rem; font-size:15px; line-height:1.55; }
+.el-aviso b { display:block; margin-bottom:0.2rem; }
+.el-form label, .el-campos label { display:block; font-size:13.5px; font-weight:600; color:var(--purple-dark); margin-bottom:0.35rem; }
+.el-tel { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:14px; background:var(--bg); overflow:hidden; }
+.el-tel span { padding:0 0.6rem 0 0.9rem; font-weight:700; color:var(--muted); }
+.el-tel input { flex:1; min-width:0; border:none; background:none; outline:none; font:inherit; font-size:18px; font-weight:700; color:var(--purple-dark); padding:0.8rem 0.9rem 0.8rem 0; }
+.el-tel:focus-within, .el-campos input:focus, .el-campos select:focus { border-color:var(--purple); box-shadow:0 0 0 4px rgba(83,74,183,.12); }
+.el-err { color:#B4444A; font-size:13.5px; margin-top:0.4rem; }
+.el-btn { display:flex; align-items:center; justify-content:center; gap:0.5rem; width:100%; margin-top:0.8rem; border:none; border-radius:999px; background:var(--purple); color:#fff; font:inherit; font-size:16px; font-weight:700; padding:0.85rem 1rem; cursor:pointer; }
+.el-btn.verde { background:var(--green); }
+.el-btn[disabled] { opacity:.65; cursor:wait; }
+.el-priv { font-size:12.5px; color:var(--muted); text-align:center; margin-top:0.5rem; }
+.el-ok-t { display:flex; align-items:center; gap:0.5rem; font-family:'Inter',sans-serif; font-size:18px; font-weight:800; color:#0B4A38; }
+.el-ok-t svg { width:26px; height:26px; color:#fff; background:var(--green); border-radius:50%; padding:5px; flex-shrink:0; }
+.el-datos { margin-top:1rem; border-top:1px dashed var(--border); padding-top:1rem; }
+.el-datos-t { font-family:'Inter',sans-serif; font-size:17px; font-weight:800; color:var(--purple-dark); }
+.el-datos-t em { font-style:normal; font-weight:500; color:var(--muted); font-size:14px; }
+.el-datos-p { font-size:14px; color:var(--muted); margin:0.25rem 0 0.8rem; }
+.el-campos { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; }
+.el-campos .ancho { grid-column:1 / -1; }
+.el-campos input, .el-campos select { display:block; width:100%; margin-top:0.3rem; border:1.5px solid var(--border); border-radius:12px; background:var(--bg); font:inherit; font-size:15px; font-weight:500; color:var(--text); padding:0.65rem 0.75rem; outline:none; }
+@media (max-width:480px) { .el-campos { grid-template-columns:1fr; } }
+footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25rem 2rem; }
+.planes.uno { grid-template-columns:1fr; max-width:560px; margin:0 auto; }
+@media (max-width:900px) { .planes { grid-template-columns:1fr; max-width:560px; margin:0 auto; } }
+@media (max-width:560px) { .hero h1 { font-size:27px; } .hero-in { padding:1.6rem 1rem 1.8rem; } main { padding:1.25rem 1rem 2.5rem; } .top img { height:34px; } }
+</style>
+</head>
+<body>
+<div class="top"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp" width="170" height="42"><span>Propuesta PR4E6D</span></div>
+<section class="hero"><div class="hero-in">
+  <div class="hero-fila"><div class="hero-txt">
+  <p class="hero-k">Tu propuesta de Isapre</p>
+  <h1>Paola, estos son los planes que te recomendamos</h1>
+  <p>Los elegimos con lo que nos contaste: los tres tienen cobertura preferente en Clínica Santa María, que hoy tu plan no te da. En la tabla te mostramos dónde tienes GES, CAEC y copago fijo de urgencia con cada uno.</p>
+  <div class="perfil"><span>55 a 64 años</span><span>Solo tú</span><span>Clínica: Clínica Santa María</span></div>
+  </div>
+  <aside class="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/></svg><p>Contrata en octubre y comienza a usar tu nuevo plan desde el <b>1 de diciembre de 2026</b>.<small>Se mantiene tu cobertura actual hasta el 30 de noviembre.</small></p></aside>
+  </div>
+</div></section>
+<main>
+  <section class="el" id="eleccion" hidden aria-live="polite">
+    <button class="el-volver" type="button" id="el-volver">← Volver a los planes</button>
+    <div class="el-card">
+      <div class="el-plan"><img id="el-logo" src="" alt="" width="94" height="31"><div><p class="el-k">Elegiste</p><p class="el-nom" id="el-nom"></p><p class="el-precio" id="el-precio"></p></div></div>
+      <div class="el-aviso"><b>Dentro del día te contactará un ejecutivo de <span class="el-isa"></span>, inscrito en la Superintendencia de Salud.</b> Te ayudará con la contratación y, después, en la postventa: dudas y orientación para usar tu plan.</div>
+      <form class="el-form" id="el-form" novalidate>
+        <button class="el-btn verde" type="submit" id="el-enviar"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Confirmar mi elección</button>
+        <p class="el-priv">Se abre tu WhatsApp, en el mismo chat, con tu elección escrita. Solo tienes que enviarla.</p>
+      </form>
+      <div class="el-ok" id="el-ok" hidden>
+        <div class="el-ok-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>¡Listo, Paola! Envía el mensaje en WhatsApp y seguimos por ahí.</span></div>
+        <div class="el-datos">
+          <p class="el-datos-t">Agiliza tu ingreso <em>(opcional)</em></p>
+          <p class="el-datos-p">Son los datos que la Isapre pide para la afiliación. Puedes enviarlos ahora o dárselos después al ejecutivo: de todas formas los vas a necesitar.</p>
+          <div class="el-campos">
+            <label>RUT<input id="d-rut" type="text" autocomplete="off" placeholder="12.345.678-9"></label>
+            <label>Fecha de nacimiento<input id="d-nac" type="date"></label>
+            <label class="ancho">Correo electrónico<input id="d-correo" type="email" autocomplete="email" placeholder="nombre@correo.cl"></label>
+            <label class="ancho">Dirección (calle, número y comuna)<input id="d-dir" type="text" autocomplete="street-address"></label>
+            <label class="ancho">Tipo de trabajador<select id="d-tipo"><option value="">Elige una opción</option><option>Dependiente</option><option>Independiente</option><option>Pensionado</option></select></label>
+            <label>Empresa donde trabajas<input id="d-emp" type="text" autocomplete="organization"></label>
+            <label>RUT de la empresa<input id="d-emprut" type="text" autocomplete="off" placeholder="76.543.210-K"></label>
+          </div>
+          <p class="el-err" id="d-err" hidden></p>
+          <button class="el-btn verde" type="button" id="d-enviar"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Enviar mis datos por WhatsApp</button>
+          <p class="el-priv">Se envían desde tu WhatsApp a Planiapp y se los pasamos a tu ejecutivo. No quedan guardados en esta página.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="planes">
+    <article class="pl">
+      <header class="pl-top">
+        <img class="lg-vida-tres" src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24">
+        <span class="pl-cod">VPG260457</span>
+      </header>
+      <h2 class="pl-nom">Vanguardia Plus Gold</h2>
+      <div class="pl-precio">
+        <div><strong>$200.900</strong><span>al mes · 4,87 UF</span></div>
+        <p class="pl-exc"><b>Por unos $40.900 más al mes</b> de lo que pagas hoy</p>
+      </div>
+      <div class="pl-uc">
+        <p class="pl-t">En Clínica Santa María</p>
+        <div class="pl-uc-nums"><div><b>50%</b><span>Consultas y exámenes</span></div><div><b>70%</b><span>Hospitalización</span></div></div>
+        <p class="pl-uc-urg">Copago fijo en Clínica Santa María y en Clínica Dávila y Dávila Vespucio</p>
+      </div>
+      <dl class="pl-datos">
+        <div><dt>Hospitalización al 90%</dt><dd>Clínica Dávila, Dávila Vespucio y Clínica RedSalud Santiago (80% en Indisa y Clínica RedSalud Providencia)</dd></div>
+        <div><dt>Consultas y exámenes al 70%</dt><dd>Clínica Dávila, Dávila Vespucio, Centros Médicos Red Dávila, Integramédica, Vidaintegra y Clínica RedSalud Santiago</dd></div>
+        <div><dt>En enfermedades graves</dt><dd>GES y CAEC en Clínica Santa María. Prótesis sin tope en hospitalización; medicamentos, materiales y quimioterapia hasta 800 UF al año.</dd></div>
+      </dl>
+      <div class="pl-urg">
+        <p class="pl-urg-t">Urgencia con copago fijo</p>
+        <table class="pl-urg-tb"><thead><tr><th scope="col">Clínica</th><th scope="col">Simple</th><th scope="col">Compleja</th></tr></thead><tbody>
+          <tr><th scope="row">Santa María</th><td><b>1,9 UF</b><small>$78.400</small></td><td><b>7,5 UF</b><small>$309.300</small></td></tr>
+          <tr><th scope="row">Dávila<small>Recoleta y Vespucio</small></th><td><b>1 UF</b><small>$41.200</small></td><td><b>3,8 UF</b><small>$156.700</small></td></tr>
+        </tbody></table>
+        <details class="pl-urg-info"><summary>¿Qué es un copago fijo?</summary><p>Un copago fijo significa que la atención de urgencia tiene ese valor fijo e incluye todo lo que te hagan ahí. En los planes sin copago fijo, la Isapre bonifica cada prestación por separado y, con los topes, la urgencia puede salir muy cara.</p></details>
+      </div>
+      <ul class="pl-lista">
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>La única de las tres con GES y CAEC en Clínica Santa María</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Copago fijo de urgencia en Santa María y en Dávila Vespucio</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Su Arancel Vanguardia cubre prestaciones nuevas, como cirugía robótica y radiocirugía</span></li>
+        <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Kinesiología con tope de 3,9 UF al año</span></li>
+      </ul>
+      <div class="pl-acc">
+        <a class="pl-pdf" href="/planes/vida-tres-vpg260457.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PR4E6D',isapre:'Vida Tres',plan:'VPG260457'})">Ver el plan completo (PDF)</a>
+        <a class="pl-wsp" data-plan="0" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PR4E6D%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Vanguardia%20Plus%20Gold%20de%20Vida%20Tres%20(VPG260457).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PR4E6D',isapre:'Vida Tres',plan:'VPG260457'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+      </div>
+    </article>
+    <article class="pl">
+      <header class="pl-top">
+        <img class="lg-nueva-masvida" src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29">
+        <span class="pl-cod">PS260911</span>
+      </header>
+      <h2 class="pl-nom">Pleno Salud</h2>
+      <div class="pl-precio">
+        <div><strong>$180.900</strong><span>al mes · 4,39 UF</span></div>
+        <p class="pl-exc"><b>Por unos $20.900 más al mes</b> de lo que pagas hoy</p>
+      </div>
+      <div class="pl-uc">
+        <p class="pl-t">En Clínica Santa María</p>
+        <div class="pl-uc-nums"><div><b>60%</b><span>Consultas y exámenes</span></div><div><b>60%</b><span>Hospitalización</span></div></div>
+        <p class="pl-uc-urg">Copago fijo en Clínica Santa María. En Dávila Vespucio no tiene copago fijo: se cubre como atención ambulatoria (80%)</p>
+      </div>
+      <dl class="pl-datos">
+        <div><dt>Hospitalización al 100%</dt><dd>Clínica Cordillera y Hospital del Profesor (90% en Bupa Santiago y Clínicas RedSalud Providencia y Santiago; 80% en Dávila y Dávila Vespucio)</dd></div>
+        <div><dt>Consultas y exámenes al 80%</dt><dd>Clínica Dávila, Dávila Vespucio, Bupa Santiago, Integramédica, Clínica Cordillera y Hospital del Profesor</dd></div>
+        <div><dt>En enfermedades graves</dt><dd>Prótesis hasta 15 UF, quimioterapia hasta 100 UF y medicamentos hasta 200 UF al año.</dd></div>
+      </dl>
+      <div class="pl-urg">
+        <p class="pl-urg-t">Urgencia con copago fijo</p>
+        <table class="pl-urg-tb"><thead><tr><th scope="col">Clínica</th><th scope="col">Simple</th><th scope="col">Compleja</th></tr></thead><tbody>
+          <tr><th scope="row">Santa María</th><td><b>1,2 UF</b><small>$49.500</small></td><td><b>3 UF</b><small>$123.700</small></td></tr>
+        </tbody></table>
+        <details class="pl-urg-info"><summary>¿Qué es un copago fijo?</summary><p>Un copago fijo significa que la atención de urgencia tiene ese valor fijo e incluye todo lo que te hagan ahí. En los planes sin copago fijo, la Isapre bonifica cada prestación por separado y, con los topes, la urgencia puede salir muy cara.</p></details>
+      </div>
+      <ul class="pl-lista">
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>El copago fijo de urgencia más bajo en Santa María: 1,2 UF la simple y 3 UF la compleja</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>El precio más bajo de los tres</span></li>
+        <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>No tiene GES ni CAEC en Clínica Santa María</span></li>
+        <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Sus topes en enfermedades graves son bajos: prótesis hasta 15 UF y quimioterapia hasta 100 UF al año</span></li>
+      </ul>
+      <div class="pl-acc">
+        <a class="pl-pdf" href="/planes/nueva-masvida-ps260911.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PR4E6D',isapre:'Nueva Masvida',plan:'PS260911'})">Ver el plan completo (PDF)</a>
+        <a class="pl-wsp" data-plan="1" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PR4E6D%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Pleno%20Salud%20de%20Nueva%20Masvida%20(PS260911).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PR4E6D',isapre:'Nueva Masvida',plan:'PS260911'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+      </div>
+    </article>
+    <article class="pl">
+      <header class="pl-top">
+        <img class="lg-colmena" src="/logos/colmena.png" alt="Isapre Colmena" width="114" height="30">
+        <span class="pl-cod">EL1264040</span>
+      </header>
+      <h2 class="pl-nom">Colmena Elite</h2>
+      <div class="pl-precio">
+        <div><strong>$187.900</strong><span>al mes · 4,56 UF</span></div>
+        <p class="pl-exc"><b>Por unos $27.900 más al mes</b> de lo que pagas hoy</p>
+      </div>
+      <div class="pl-uc">
+        <p class="pl-t">En Clínica Santa María</p>
+        <div class="pl-uc-nums"><div><b>40%</b><span>Consultas y exámenes</span></div><div><b>40%</b><span>Hospitalización</span></div></div>
+        <p class="pl-uc-urg">En Clínica Santa María y en Dávila Vespucio no tiene copago fijo: se cubre como atención ambulatoria (40% y 60%)</p>
+      </div>
+      <dl class="pl-datos">
+        <div><dt>Hospitalización al 60%</dt><dd>Clínica Dávila Recoleta, Dávila Vespucio y Bupa Santiago (50% en Indisa, Hospital Clínico UC y Clínica UC)</dd></div>
+        <div><dt>Consultas y exámenes al 60%</dt><dd>Clínica Dávila Recoleta, Dávila Vespucio, Bupa Santiago e Integramédica</dd></div>
+        <div><dt>En enfermedades graves</dt><dd>Medicamentos, materiales y quimioterapia hasta 800 UF al año. Prótesis solo por libre elección, hasta 51 UF al año.</dd></div>
+      </dl>
+      <ul class="pl-lista">
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Medicamentos, materiales y quimioterapia hasta 800 UF al año en hospitalización</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Copago fijo de urgencia en Dávila Recoleta, Indisa, Hospital Clínico UC y San Carlos de Apoquindo</span></li>
+        <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Urgencias en Clínica Santa María: aplica la cobertura ambulatoria, con topes, así que no se puede definir el valor a pagar.</span></li>
+        <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>No tiene GES ni CAEC en Clínica Santa María</span></li>
+      </ul>
+      <div class="pl-acc">
+        <a class="pl-pdf" href="/planes/colmena-el1264040.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_pdf',{propuesta:'PR4E6D',isapre:'Colmena',plan:'EL1264040'})">Ver el plan completo (PDF)</a>
+        <a class="pl-wsp" data-plan="2" href="https://wa.me/56966450103?text=Hola%2C%20vi%20mi%20propuesta%20PR4E6D%20en%20Planiapp%20y%20me%20interesa%20el%20plan%20Colmena%20Elite%20de%20Colmena%20(EL1264040).%20%C2%BFC%C3%B3mo%20seguimos%3F" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_me_interesa',{propuesta:'PR4E6D',isapre:'Colmena',plan:'EL1264040'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Me interesa este plan</a>
+      </div>
+    </article>
+  </div>
+
+  <section class="comp">
+    <h2>Comparación entre planes, según tu prestador</h2>
+    <p class="cmp-prest"><span>Tu prestador: <b>Clínica Santa María</b></span><a href="/clinica-santa-maria" target="_blank" rel="noopener">Conoce Clínica Santa María en Planiapp →</a></p>
+
+    <div class="cmp-leyenda"><span><span class="cmp-ico bien" aria-hidden="true">✓</span>Cubre bien</span><span><span class="cmp-ico mal" aria-hidden="true">!</span>Cubre poco o con límites</span><span>Sin color: intermedio o dato informativo</span></div>
+    <p class="cmp-hint">Desliza la tabla para ver los 3 planes →</p>
+    <div class="comp-scroll">
+      <table>
+        <thead><tr><th scope="col" class="cmp-kh">Cobertura</th><th scope="col"><img class="lg-vida-tres" src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><small>Vanguardia Plus Gold</small></th><th scope="col"><img class="lg-nueva-masvida" src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><small>Pleno Salud</small></th><th scope="col"><img class="lg-colmena" src="/logos/colmena.png" alt="Isapre Colmena" width="114" height="30"><small>Colmena Elite</small></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Precio para ti</th><td><b>$200.900</b> al mes (4,87 UF)</td><td><b>$180.900</b> al mes (4,39 UF)</td><td><b>$187.900</b> al mes (4,56 UF)</td></tr>          <tr><th scope="row">Comparado con lo que pagas hoy</th><td><b>$40.900</b> más al mes</td><td><b>$20.900</b> más al mes</td><td><b>$27.900</b> más al mes</td></tr>
+          <tr><th scope="row">Hospitalización en Clínica Santa María</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>70%, sin tope</td><td>60%, sin tope</td><td>40%, sin tope</td></tr>
+          <tr><th scope="row">Consultas y exámenes en Clínica Santa María</th><td>50%, sin tope</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>60%, sin tope</td><td>40%, sin tope</td></tr>
+          <tr><th scope="row">GES y CAEC en Clínica Santa María</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, los dos en Clínica Santa María</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No: van en otros prestadores de su red</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No: van en otros prestadores de su red</td></tr>
+          <tr><th scope="row">Copago fijo en urgencias</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí, en Santa María (1,9 / 7,5 UF) y en Dávila y Dávila Vespucio (1 / 3,8 UF)</td><td>Sí, en Santa María (1,2 / 3 UF). En Dávila Vespucio no: se cubre como atención ambulatoria (80%)</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No en Santa María ni en Dávila Vespucio: se cubre como atención ambulatoria (40% y 60%)</td></tr>
+          <tr><th scope="row">Procedimientos sin código Fonasa</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí: su Arancel Vanguardia incluye procedimientos nuevos, como cirugía robótica, radiocirugía e implante coclear</td><td>Cubre lo que está en el Arancel Nueva Masvida</td><td>Cubre lo que está en el Arancel Colmena</td></tr>
+          <tr><th scope="row">Otros prestadores del plan</th><td>Clínica Dávila, Dávila Vespucio, Clínicas RedSalud Santiago y Providencia, Indisa, Meds y Hospital Clínico UC</td><td>Clínica Cordillera, Hospital del Profesor, Bupa Santiago, Clínicas RedSalud Providencia, Santiago y Vitacura, Dávila, Dávila Vespucio, Indisa, Hospital Clínico UC Christus y Meds</td><td>Clínica Dávila Recoleta, Dávila Vespucio, Bupa Santiago, Indisa, Hospital Clínico UC, Clínica UC, San Carlos de Apoquindo, Meds e Integramédica</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="estad">
+    <h2>Reclamos y licencias médicas de cada Isapre</h2>
+    <div class="estad-grid">
+      <details class="estad-i bien"><summary><img class="lg-vida-tres" src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><span>Ver reclamos y licencias</span></summary>
+        <div class="estad-c"><p><b>8,5</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>85%</b> y rechazó el 15%</p></div></details>
+      <details class="estad-i mal"><summary><img class="lg-nueva-masvida" src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><span>Ver reclamos y licencias</span></summary>
+        <div class="estad-c"><p><b>12,5</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>76%</b> y rechazó el 24%</p></div></details>
+      <details class="estad-i"><summary><img class="lg-colmena" src="/logos/colmena.png" alt="Isapre Colmena" width="114" height="30"><span>Ver reclamos y licencias</span></summary>
+        <div class="estad-c"><p><b>10,7</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>79%</b> y rechazó el 21%</p></div></details>
+    </div>
+    <p class="estad-f">Datos publicados por la Superintendencia de Salud (Radiografía de Isapres, segundo trimestre de 2025). <a href="/isapre-con-menos-reclamos" target="_blank" rel="noopener">Ver las 7 Isapres →</a></p>
+  </section>
+
+  <section class="porque">
+    <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>¿Por qué estos tres planes?</h2>
+    <p>Los seleccionamos porque, según tu perfil, te dan cobertura preferente en Clínica Santa María por un precio cercano al que pagas hoy.</p>
+    <p>Si quieres ver más opciones, pídeselo a tu ejecutivo y te prepara otras. Y si te acomoda pagar un poco más para mejorar tus coberturas, cuéntanos cuánto y te seguimos armando propuestas con ese presupuesto.</p>
+  </section>
+
+  <section class="notas">
+    <h2>Para que lo tengas claro</h2>
+    <ul>
+      <li>Los precios son referenciales, con la UF de hoy ($41.200). El precio de cada plan es su precio base por tu factor de edad (2) más el GES de cada Isapre, y se paga en UF.</li>
+      <li>La cobertura preferente rige en los prestadores indicados en cada plan, con médicos del staff y usando bonos. Fuera de ellos, rige la cobertura de libre elección.</li>
+      <li>Para entrar a cualquier Isapre se completa una declaración de salud, y la aceptación depende de ella.</li>
+      <li>El detalle completo de cada plan está en su PDF. Ante cualquier duda, te lo explicamos por WhatsApp.</li>
+    </ul>
+  </section>
+
+  <section class="cierre">
+    <strong>¿Quieres cotizar otro plan o mejorar tus coberturas?</strong>
+    <p>Si quieres cotizar otro plan, o agregar un monto para mejorar tus coberturas, conversa con tu ejecutivo en el mismo chat de WhatsApp.</p>
+    <a href="https://wa.me/56966450103" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','propuesta_duda',{propuesta:'PR4E6D'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.5 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 22c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.7.9 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>Continuar con mi ejecutivo por WhatsApp</a>
+  </section>
+</main>
+<footer>Planiapp · Asesoría con ejecutivos inscritos en la Superintendencia de Salud · Propuesta preparada el 29 de octubre de 2026</footer>
+<script>if (typeof gtag === 'function') gtag('event', 'propuesta_vista', { propuesta: 'PR4E6D' });</script>
+<script>
+// Elegir un plan: pantalla de confirmación (sin pedir el WhatsApp ni pasar por Make). Al confirmar se abre el mismo chat de WhatsApp
+// con el plan y el precio escritos; los datos de afiliación, si los completa, también los manda la persona desde su WhatsApp.
+(function () {
+  const PLANES = [{"isapre":"Vida Tres","plan":"Vanguardia Plus Gold","cod":"VPG260457","logo":"/logos/vida-tres.png","lg":"lg-vida-tres","lw":123,"lh":24,"precio":"$200.900 al mes · 4,87 UF"},{"isapre":"Nueva Masvida","plan":"Pleno Salud","cod":"PS260911","logo":"/logos/nueva-masvida.png","lg":"lg-nueva-masvida","lw":99,"lh":29,"precio":"$180.900 al mes · 4,39 UF"},{"isapre":"Colmena","plan":"Colmena Elite","cod":"EL1264040","logo":"/logos/colmena.png","lg":"lg-colmena","lw":114,"lh":30,"precio":"$187.900 al mes · 4,56 UF"}];
+  const $ = id => document.getElementById(id);
+  const lista = document.querySelector('.planes'), seguro = document.querySelector('.seguro'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), estad = document.querySelector('.estad'), cierre = document.querySelector('.cierre'), el = $('eleccion');
+  let elegido = null;
+  document.querySelectorAll('.pl-wsp[data-plan]').forEach(a => a.addEventListener('click', e => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault();
+    elegido = PLANES[+a.dataset.plan];
+    $('el-logo').src = elegido.logo; $('el-logo').className = elegido.lg; $('el-logo').alt = 'Isapre ' + elegido.isapre; $('el-logo').width = elegido.lw; $('el-logo').height = elegido.lh;
+    $('el-nom').textContent = elegido.plan + ' · ' + elegido.isapre; $('el-precio').textContent = elegido.precio;
+    document.querySelectorAll('.el-isa').forEach(s => s.textContent = elegido.isapre);
+    [lista, comp, seguro, estad, porque, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+  $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, seguro, estad, porque, notas, cierre].forEach(x => x && (x.hidden = false)); });
+  $('el-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const texto = 'Hola, elegí el plan ' + elegido.plan + ' de ' + elegido.isapre + ' (' + elegido.cod + ') en mi propuesta PR4E6D, a ' + elegido.precio + '. ¿Cómo seguimos?';
+    if (typeof gtag === 'function' && !(typeof planiappInterno !== 'undefined' && planiappInterno)) gtag('event', 'propuesta_eleccion', { propuesta: 'PR4E6D', isapre: elegido.isapre, plan: elegido.cod });
+    window.open('https://wa.me/56966450103?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+    $('el-form').hidden = true; $('el-ok').hidden = false;
+  });
+  // RUT chileno: dígito verificador (módulo 11)
+  const rutOk = r => { const s = r.replace(/[^0-9kK]/g, '').toUpperCase(); if (s.length < 2) return false; const c = s.slice(0, -1), dv = s.slice(-1); let m = 0, f = 2; for (let i = c.length - 1; i >= 0; i--) { m += +c[i] * f; f = f === 7 ? 2 : f + 1; } const e = 11 - (m % 11); return dv === (e === 11 ? '0' : e === 10 ? 'K' : String(e)); };
+  $('d-enviar').addEventListener('click', () => {
+    const v = id => $(id).value.trim();
+    const err = m => { $('d-err').textContent = m; $('d-err').hidden = false; };
+    if (v('d-rut') && !rutOk(v('d-rut'))) return err('Revisa tu RUT: el dígito verificador no calza.');
+    if (v('d-emprut') && !rutOk(v('d-emprut'))) return err('Revisa el RUT de la empresa: el dígito verificador no calza.');
+    if (v('d-correo') && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('d-correo'))) return err('Revisa tu correo electrónico.');
+    const nac = v('d-nac') ? v('d-nac').split('-').reverse().join('-') : '';
+    const filas = [['RUT', v('d-rut')], ['Fecha de nacimiento', nac], ['Correo', v('d-correo')], ['Dirección', v('d-dir')], ['Tipo de trabajador', v('d-tipo')], ['Empresa', v('d-emp')], ['RUT de la empresa', v('d-emprut')]].filter(x => x[1]);
+    if (!filas.length) return err('Completa al menos un dato, o déjalo para cuando te contacte el ejecutivo.');
+    $('d-err').hidden = true;
+    const texto = 'Mis datos para la afiliación al plan ' + elegido.plan + ' de ' + elegido.isapre + ' (propuesta PR4E6D):\n' + filas.map(x => '• ' + x[0] + ': ' + x[1]).join('\n');
+    if (typeof gtag === 'function' && !(typeof planiappInterno !== 'undefined' && planiappInterno)) gtag('event', 'propuesta_datos_wsp', { propuesta: 'PR4E6D' });
+    window.open('https://wa.me/56966450103?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>
