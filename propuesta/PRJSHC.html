@@ -158,6 +158,10 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .estad-i summary img { height:calc(24px * var(--lgx, 1)); width:auto; max-width:calc(110px * var(--lgx, 1)); object-fit:contain; }
 .estad-i summary span { font-size:13px; font-weight:700; color:var(--purple); background:var(--purple-light); border-radius:999px; padding:0.3rem 0.7rem; white-space:nowrap; }
 .estad-i[open] summary span { background:var(--purple); color:#fff; }
+.estad-i.mal { background:#FDF3F3; border-color:#F6DADB; }
+.estad-i.mal summary span { background:#F8E1E2; color:#8A3A3F; }
+.estad-i.mal[open] summary span { background:#F1C9CB; color:#7A2E33; }
+.estad-i.mal .estad-c { border-top-color:#F1C9CB; }
 .estad-c { border-top:1px solid var(--border); padding:0.75rem 0.9rem; display:flex; flex-direction:column; gap:0.35rem; font-size:14px; }
 .estad-c b { font-family:'Inter',sans-serif; font-weight:800; color:var(--purple-dark); }
 .estad-f { font-size:12.5px; color:var(--muted); margin-top:0.6rem; }
@@ -399,7 +403,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
     <div class="estad-grid">
       <details class="estad-i"><summary><img class="lg-consalud" src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><span>Ver reclamos y licencias</span></summary>
         <div class="estad-c"><p><b>11,3</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>81%</b> y rechazó el 19%</p></div></details>
-      <details class="estad-i"><summary><img class="lg-nueva-masvida" src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><span>Ver reclamos y licencias</span></summary>
+      <details class="estad-i mal"><summary><img class="lg-nueva-masvida" src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><span>Ver reclamos y licencias</span></summary>
         <div class="estad-c"><p><b>12,5</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>76%</b> y rechazó el 24%</p></div></details>
       <details class="estad-i"><summary><img class="lg-vida-tres" src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><span>Ver reclamos y licencias</span></summary>
         <div class="estad-c"><p><b>8,5</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>85%</b> y rechazó el 15%</p></div></details>
