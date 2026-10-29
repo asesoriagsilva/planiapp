@@ -69,6 +69,14 @@ body { font-family:'DM Sans',sans-serif; color:var(--text); background:var(--bg)
 .perfil { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.2rem; }
 .perfil span { font-size:13.5px; font-weight:600; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:0.4rem 0.85rem; }
 .perfil b { color:#4BE3A3; font-weight:700; }
+.hero-fila { display:flex; align-items:center; gap:2rem; }
+.hero-txt { flex:1; min-width:0; }
+.inicio { flex:0 0 250px; display:flex; gap:0.65rem; align-items:flex-start; background:rgba(255,255,255,.08); border:1px solid rgba(75,227,163,.45); border-radius:16px; padding:0.8rem 0.95rem; }
+.inicio svg { flex-shrink:0; width:20px; height:20px; color:#4BE3A3; margin-top:1px; }
+.hero .inicio p { font-size:13.5px; font-weight:600; color:#fff; line-height:1.4; }
+.hero .inicio p b { color:#4BE3A3; }
+.hero .inicio p small { display:block; font-size:12px; font-weight:500; color:rgba(255,255,255,.7); margin-top:0.3rem; }
+@media (max-width:860px) { .hero-fila { flex-direction:column; align-items:flex-start; gap:1.1rem; } .inicio { flex-basis:auto; max-width:340px; } }
 main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .planes { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.1rem; align-items:start; }
 .pl { background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.25rem 1.2rem 1.2rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); display:flex; flex-direction:column; gap:0.9rem; }
@@ -98,6 +106,7 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .pl-urg-tb thead th { border-top:none; font-size:11.5px; font-weight:600; color:var(--green-dark); padding-top:0; }
 .pl-urg-tb tbody th { font-weight:600; color:#0B4A38; }
 .pl-urg-tb small { display:block; font-size:12px; font-weight:500; color:var(--green-dark); }
+.pl-urg-tb td b, .pl-urg-tb td small { white-space:nowrap; }
 .pl-urg-tb td b { font-family:'Inter',sans-serif; font-weight:800; color:#0B4A38; }
 .pl-urg-info { margin-top:0.45rem; }
 .pl-urg-info summary { display:inline-flex; align-items:center; gap:0.3rem; list-style:none; cursor:pointer; font-size:12.5px; font-weight:700; color:var(--green-dark); background:#fff; border:1px solid #BDE7D7; border-radius:999px; padding:0.2rem 0.65rem; }
@@ -202,10 +211,14 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 <body>
 <div class="top"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp" width="170" height="42"><span>Propuesta PLY9N9</span></div>
 <section class="hero"><div class="hero-in">
+  <div class="hero-fila"><div class="hero-txt">
   <p class="hero-k">Tu propuesta de Isapre</p>
   <h1>Fernando, estos son los planes que te recomendamos</h1>
   <p>Los elegimos con lo que nos contaste en la calculadora: los tres caben en tu 7%, sin poner plata extra, y tienen cobertura preferente en UC Christus.</p>
   <div class="perfil"><span>25 a 34 años</span><span>Solo tú</span><span>Tu 7%: <b>$120.400</b></span><span>Clínica: UC Christus</span><span>Buscas: Consultas y exámenes</span></div>
+  </div>
+  <aside class="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/></svg><p>Contrata en octubre y comienza a usar tu nuevo plan desde el <b>1 de diciembre de 2026</b>.<small>Se mantiene tu cobertura actual hasta el 30 de noviembre.</small></p></aside>
+  </div>
 </div></section>
 <main>
   <section class="el" id="eleccion" hidden aria-live="polite">
@@ -247,8 +260,8 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       </header>
       <h2 class="pl-nom">Life Focus 190 Light</h2>
       <div class="pl-precio">
-        <div><strong>$117.100</strong><span>al mes · 2,84 UF</span></div>
-        <p class="pl-exc">Con tu 7% te quedan unos <b>$3.300</b> de excedente al mes</p>
+        <div><strong>$117.200</strong><span>al mes · 2,84 UF</span></div>
+        <p class="pl-exc">Con tu 7% te quedan unos <b>$3.200</b> de excedente al mes</p>
       </div>
       <div class="pl-uc">
         <p class="pl-t">En UC Christus</p>
@@ -263,7 +276,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       <div class="pl-urg">
         <p class="pl-urg-t">Urgencia con copago fijo</p>
         <table class="pl-urg-tb"><thead><tr><th scope="col">Clínica</th><th scope="col">Simple</th><th scope="col">Compleja</th></tr></thead><tbody>
-          <tr><th scope="row">Hospital Clínico UC</th><td><b>1,17 UF</b><small>$48.200</small></td><td><b>3,45 UF</b><small>$142.200</small></td></tr>
+          <tr><th scope="row">Hospital Clínico UC</th><td><b>1,17 UF</b><small>$48.200</small></td><td><b>3,45 UF</b><small>$142.300</small></td></tr>
         </tbody></table>
         <details class="pl-urg-info"><summary>¿Qué es un copago fijo?</summary><p>Un copago fijo significa que la atención de urgencia tiene ese valor fijo e incluye todo lo que te hagan ahí. En los planes sin copago fijo, la Isapre bonifica cada prestación por separado y, con los topes, la urgencia puede salir muy cara.</p></details>
       </div>
@@ -284,8 +297,8 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       </header>
       <h2 class="pl-nom">Pleno Max</h2>
       <div class="pl-precio">
-        <div><strong>$116.400</strong><span>al mes · 2,82 UF</span></div>
-        <p class="pl-exc">Con tu 7% te quedan unos <b>$4.000</b> de excedente al mes</p>
+        <div><strong>$116.500</strong><span>al mes · 2,82 UF</span></div>
+        <p class="pl-exc">Con tu 7% te quedan unos <b>$3.900</b> de excedente al mes</p>
       </div>
       <div class="pl-uc">
         <p class="pl-t">En UC Christus</p>
@@ -321,8 +334,8 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       </header>
       <h2 class="pl-nom">Vanguardia Plus Platinum</h2>
       <div class="pl-precio">
-        <div><strong>$115.900</strong><span>al mes · 2,81 UF</span></div>
-        <p class="pl-exc">Con tu 7% te quedan unos <b>$4.500</b> de excedente al mes</p>
+        <div><strong>$116.000</strong><span>al mes · 2,81 UF</span></div>
+        <p class="pl-exc">Con tu 7% te quedan unos <b>$4.400</b> de excedente al mes</p>
       </div>
       <div class="pl-uc">
         <p class="pl-t">En UC Christus</p>
@@ -357,7 +370,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       <table>
         <thead><tr><th scope="col" class="cmp-kh">Cobertura</th><th scope="col"><img class="lg-consalud" src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><small>Life Focus 190 Light</small></th><th scope="col"><img class="lg-nueva-masvida" src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><small>Pleno Max</small></th><th scope="col"><img class="lg-vida-tres" src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><small>Vanguardia Plus Platinum</small></th></tr></thead>
         <tbody>
-          <tr><th scope="row">Precio para ti</th><td><b>$117.100</b> al mes (2,84 UF)</td><td><b>$116.400</b> al mes (2,82 UF)</td><td><b>$115.900</b> al mes (2,81 UF)</td></tr>
+          <tr><th scope="row">Precio para ti</th><td><b>$117.200</b> al mes (2,84 UF)</td><td><b>$116.500</b> al mes (2,82 UF)</td><td><b>$116.000</b> al mes (2,81 UF)</td></tr>
           <tr><th scope="row">Hospitalización en UC Christus</th><td>60% en el Hospital Clínico UC, sin tope (con médicos del staff)</td><td>60% en el Hospital Clínico UC y Clínica UC, sin tope (con médicos del staff)</td><td>60% en el Hospital Clínico UC, sin tope (con médicos del staff)</td></tr>
           <tr><th scope="row">Consultas y exámenes en UC Christus</th><td>70% en Red de Salud UC Christus, sin tope</td><td>60% en el Hospital Clínico, Clínica UC y Centros Médicos UC Christus, sin tope</td><td>60% en el Hospital Clínico UC (Lira y Marcoleta) y Centros Médicos Red UC, sin tope</td></tr>
           <tr><th scope="row">Kinesiología en UC Christus</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>70%, sin tope</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>60%, con tope de 7,5 UF al año</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>60%, con tope de 4,2 UF al año</td></tr>
@@ -411,7 +424,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 // Elegir un plan: pantalla de confirmación (sin pedir el WhatsApp ni pasar por Make). Al confirmar se abre el mismo chat de WhatsApp
 // con el plan y el precio escritos; los datos de afiliación, si los completa, también los manda la persona desde su WhatsApp.
 (function () {
-  const PLANES = [{"isapre":"Consalud","plan":"Life Focus 190 Light","cod":"13-FCL197L-26","logo":"/logos/consalud.png","lg":"lg-consalud","lw":94,"lh":31,"precio":"$117.100 al mes · 2,84 UF"},{"isapre":"Nueva Masvida","plan":"Pleno Max","cod":"PM261012","logo":"/logos/nueva-masvida.png","lg":"lg-nueva-masvida","lw":99,"lh":29,"precio":"$116.400 al mes · 2,82 UF"},{"isapre":"Vida Tres","plan":"Vanguardia Plus Platinum","cod":"VPP260866","logo":"/logos/vida-tres.png","lg":"lg-vida-tres","lw":123,"lh":24,"precio":"$115.900 al mes · 2,81 UF"}];
+  const PLANES = [{"isapre":"Consalud","plan":"Life Focus 190 Light","cod":"13-FCL197L-26","logo":"/logos/consalud.png","lg":"lg-consalud","lw":94,"lh":31,"precio":"$117.200 al mes · 2,84 UF"},{"isapre":"Nueva Masvida","plan":"Pleno Max","cod":"PM261012","logo":"/logos/nueva-masvida.png","lg":"lg-nueva-masvida","lw":99,"lh":29,"precio":"$116.500 al mes · 2,82 UF"},{"isapre":"Vida Tres","plan":"Vanguardia Plus Platinum","cod":"VPP260866","logo":"/logos/vida-tres.png","lg":"lg-vida-tres","lw":123,"lh":24,"precio":"$116.000 al mes · 2,81 UF"}];
   const $ = id => document.getElementById(id);
   const lista = document.querySelector('.planes'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), estad = document.querySelector('.estad'), cierre = document.querySelector('.cierre'), el = $('eleccion');
   let elegido = null;
