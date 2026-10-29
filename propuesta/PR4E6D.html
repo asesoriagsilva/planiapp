@@ -105,6 +105,9 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .pl-datos { display:flex; flex-direction:column; gap:0.55rem; }
 .pl-datos dt { font-size:13px; font-weight:700; color:var(--purple-dark); }
 .pl-datos dd { font-size:13.5px; color:var(--muted); line-height:1.45; }
+.pl-datos .mal { background:#FBECEC; border:1px solid #F1C9CB; border-radius:10px; padding:0.5rem 0.65rem; }
+.pl-datos .mal dt, .pl-datos .mal dd { color:#7A2E33; }
+.pl-datos .mal dd { font-weight:600; }
 .pl-urg { background:var(--green-light); border-radius:16px; padding:0.75rem 0.85rem; }
 .pl-urg-t { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--green-dark); margin-bottom:0.4rem; }
 .pl-urg-tb { width:100%; border-collapse:collapse; font-size:13.5px; }
@@ -365,7 +368,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       <dl class="pl-datos">
         <div><dt>Hospitalización al 100%</dt><dd>Clínica Cordillera y Hospital del Profesor (90% en Bupa Santiago y Clínicas RedSalud Providencia y Santiago; 80% en Dávila y Dávila Vespucio)</dd></div>
         <div><dt>Consultas y exámenes al 80%</dt><dd>Clínica Dávila, Dávila Vespucio, Bupa Santiago, Integramédica, Clínica Cordillera y Hospital del Profesor</dd></div>
-        <div><dt>En enfermedades graves</dt><dd>Prótesis hasta 15 UF, quimioterapia hasta 100 UF y medicamentos hasta 200 UF al año.</dd></div>
+        <div class="mal"><dt>En enfermedades graves</dt><dd>Prótesis hasta 15 UF, quimioterapia hasta 100 UF y medicamentos hasta 200 UF al año.</dd></div>
       </dl>
       <div class="pl-urg">
         <p class="pl-urg-t">Urgencia con copago fijo</p>
