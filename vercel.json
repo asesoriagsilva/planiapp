@@ -406,8 +406,16 @@
       "destination": "/calculadora-isapre.html"
     },
     {
-      "source": "/propuesta/:codigo",
+      "source": "/propuesta/:codigo(PLY9N9|PLCJKT|PLDQFV)",
       "destination": "/propuesta/:codigo.html"
+    },
+    {
+      "source": "/propuesta/:codigo",
+      "destination": "https://isapre-crm.vercel.app/p/:codigo"
+    },
+    {
+      "source": "/planes/:archivo",
+      "destination": "https://nlihfsmnyxqlvvxknhkd.supabase.co/storage/v1/object/public/planes/:archivo"
     }
   ],
   "headers": [
