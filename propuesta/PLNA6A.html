@@ -156,6 +156,29 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .cmp-prest a.cmp-art:hover { background:var(--purple-deep); }
 .cmp-art-nota { font-size:13px; color:var(--muted); line-height:1.4; }
 .seguro { margin-top:2rem; background:var(--purple-light); border:1px solid #DCD8FB; border-radius:22px; padding:1.4rem 1.3rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); }
+.emb { margin-top:2rem; background:var(--white); border:1px solid var(--border); border-radius:22px; padding:1.4rem 1.3rem; box-shadow:0 22px 44px -34px rgba(38,33,92,.45); }
+.emb h2 { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); line-height:1.2; margin:0.2rem 0 0.4rem; }
+.emb-intro { font-size:15px; color:var(--muted); max-width:720px; }
+.emb-paso { font-size:14.5px; font-weight:700; color:var(--purple-dark); margin:1rem 0 0.5rem; }
+.emb-meses { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.emb-meses button { font:inherit; font-size:13.5px; font-weight:700; color:var(--purple); background:var(--white); border:1.5px solid #DCD8FB; border-radius:999px; padding:0.4rem 0.85rem; cursor:pointer; }
+.emb-meses button:hover { border-color:var(--purple-mid); }
+.emb-meses button[aria-pressed="true"] { background:var(--purple); border-color:var(--purple); color:#fff; }
+.emb-res { margin-top:1rem; background:var(--bg); border:1px solid var(--border); border-radius:16px; padding:0.9rem 1rem; }
+.emb-top { display:flex; flex-wrap:wrap; align-items:baseline; gap:0.2rem 0.5rem; }
+.emb-top strong { font-family:'Inter',sans-serif; font-size:28px; font-weight:900; color:var(--purple-dark); }
+.emb-top span { font-size:14px; color:var(--muted); }
+.emb-barra { height:8px; background:#E4E1FB; border-radius:999px; overflow:hidden; margin:0.45rem 0 0.8rem; }
+.emb-barra i { display:block; height:100%; background:var(--purple); border-radius:999px; transition:width .3s; }
+.emb-pl { list-style:none; display:flex; flex-direction:column; gap:0.45rem; }
+.emb-pl li { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:0.7rem; background:var(--white); border-radius:12px; padding:0.55rem 0.75rem; }
+.emb-pl img { height:calc(22px * var(--lgx, 1)); width:auto; max-width:calc(96px * var(--lgx, 1)); object-fit:contain; }
+.emb-pl span { display:flex; flex-direction:column; font-size:12.5px; color:var(--muted); }
+.emb-pl b { font-family:'Inter',sans-serif; font-size:16px; font-weight:800; color:var(--green-dark); }
+.emb-pl .emb-tu { text-align:right; }
+.emb-pl .emb-tu b { color:var(--purple-dark); }
+.emb-nota { font-size:12.5px; color:var(--muted); margin-top:0.8rem; line-height:1.5; }
+.emb-flex { margin-top:0.7rem; background:var(--green-light); border:1px solid #BDE7D7; border-radius:12px; padding:0.65rem 0.85rem; font-size:14px; font-weight:600; color:#0B4A38; line-height:1.5; }
 .seg-k { font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:#0B8A84; }
 .seguro h2 { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:var(--purple-dark); line-height:1.2; margin:0.2rem 0 0.4rem; }
 .seg-intro { font-size:15px; color:var(--muted); max-width:680px; }
@@ -218,12 +241,12 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .cmp-ico { display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border-radius:50%; font-size:10px; font-weight:700; color:#fff; line-height:1; vertical-align:-3px; margin-right:0.3rem; flex-shrink:0; }
 .cmp-ico.bien { background:#1D9E75; }
 .cmp-ico.mal { background:#C2565B; }
-.cmp-urg-t { font-weight:700; color:var(--purple-dark); margin-bottom:0.3rem; }
-.cmp-urg-v { display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:0.55rem; }
+.cmp-urg-t { font-size:13px; font-weight:700; color:var(--purple-dark); margin-bottom:0.25rem; }
+.cmp-urg-v { display:flex; flex-wrap:wrap; gap:0.3rem; margin-bottom:0.45rem; }
 .cmp-urg-v:last-child { margin-bottom:0; }
-.cmp-urg-v span { display:flex; flex-direction:column; flex:1 1 66px; min-width:66px; max-width:120px; background:rgba(255,255,255,.75); border:1px solid var(--border); border-radius:10px; padding:0.3rem 0.55rem; font-size:12px; color:var(--muted); line-height:1.3; }
-.cmp-urg-v b { font-family:'Inter',sans-serif; font-size:14.5px; font-weight:800; color:var(--purple-dark); }
-.cmp-urg-v small { font-size:12px; color:var(--muted); }
+.cmp-urg-v span { display:flex; flex-direction:column; flex:0 1 auto; min-width:58px; background:rgba(255,255,255,.75); border:1px solid var(--border); border-radius:8px; padding:0.15rem 0.45rem; font-size:11px; color:var(--muted); line-height:1.3; }
+.cmp-urg-v b { font-family:'Inter',sans-serif; font-size:13px; font-weight:800; color:var(--purple-dark); }
+.cmp-urg-v small { font-size:11px; color:var(--muted); }
 .cmp-kh { font-size:12px; font-weight:600; color:var(--muted) !important; text-transform:uppercase; letter-spacing:0.04em; }
 @media (max-width:680px) { .cmp-hint { display:block; } .comp table { font-size:12.5px; min-width:640px; } .comp th[scope="row"], .comp thead th:first-child { width:112px; } }
 .porque { margin-top:2rem; background:var(--green-light); border:1px solid #BDE7D7; border-left:5px solid var(--green); border-radius:18px; padding:1.2rem 1.25rem; display:flex; flex-direction:column; gap:0.55rem; }
@@ -336,7 +359,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       <div class="pl-uc">
         <p class="pl-t">En Clínica Santa María</p>
         <div class="pl-uc-nums"><div><b>80%</b><span>Consultas y exámenes</span></div><div><b>100%</b><span>Hospitalización</span></div></div>
-        <p class="pl-uc-urg">Copago fijo en Clínica Santa María, también en la urgencia de maternidad</p>
+        <p class="pl-uc-urg">Copago fijo en Clínica Santa María, Las Condes y Dávila</p>
       </div>
       <dl class="pl-datos">
 
@@ -346,7 +369,6 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
         <p class="pl-urg-t">Urgencia con copago fijo</p>
         <table class="pl-urg-tb"><thead><tr><th scope="col">Clínica</th><th scope="col">Simple</th><th scope="col">Compleja</th></tr></thead><tbody>
           <tr><th scope="row">Santa María</th><td><b>0,8 UF</b><small>$33.000</small></td><td><b>3 UF</b><small>$123.900</small></td></tr>
-          <tr><th scope="row">Santa María<small>Urgencia de maternidad</small></th><td><b>0,9 UF</b><small>$37.200</small></td><td><b>3,5 UF</b><small>$144.500</small></td></tr>
           <tr><th scope="row">Las Condes</th><td><b>0,8 UF</b><small>$33.000</small></td><td><b>2,2 UF</b><small>$90.900</small></td></tr>
           <tr><th scope="row">Dávila<small>Recoleta y Vespucio</small></th><td><b>0,7 UF</b><small>$28.900</small></td><td><b>2,5 UF</b><small>$103.200</small></td></tr>
         </tbody></table>
@@ -354,7 +376,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       </div>
       <ul class="pl-lista">
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>100% en hospitalización en Clínica Santa María, también en el parto y la sala cuna</span></li>
-        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Copago fijo de urgencia en Santa María, incluida la urgencia de maternidad</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Copago fijo de urgencia en Santa María: 0,8 UF la simple y 3 UF la compleja</span></li>
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Su Arancel Vanguardia cubre prestaciones nuevas, como cirugía robótica y radiocirugía</span></li>
         <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Kinesiología con tope de 6,5 UF al año</span></li>
       </ul>
@@ -376,7 +398,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       <div class="pl-uc">
         <p class="pl-t">En Clínica Santa María</p>
         <div class="pl-uc-nums"><div><b>80%</b><span>Consultas y exámenes</span></div><div><b>100%</b><span>Hospitalización</span></div></div>
-        <p class="pl-uc-urg">Copago fijo en Clínica Santa María, también en la urgencia de maternidad</p>
+        <p class="pl-uc-urg">Copago fijo en Clínica Santa María, Las Condes y Dávila</p>
       </div>
       <dl class="pl-datos">
 
@@ -386,7 +408,6 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
         <p class="pl-urg-t">Urgencia con copago fijo</p>
         <table class="pl-urg-tb"><thead><tr><th scope="col">Clínica</th><th scope="col">Simple</th><th scope="col">Compleja</th></tr></thead><tbody>
           <tr><th scope="row">Santa María</th><td><b>0,8 UF</b><small>$33.000</small></td><td><b>3 UF</b><small>$123.900</small></td></tr>
-          <tr><th scope="row">Santa María<small>Urgencia de maternidad</small></th><td><b>0,9 UF</b><small>$37.200</small></td><td><b>3,5 UF</b><small>$144.500</small></td></tr>
           <tr><th scope="row">Las Condes</th><td><b>0,8 UF</b><small>$33.000</small></td><td><b>2,2 UF</b><small>$90.900</small></td></tr>
           <tr><th scope="row">Dávila<small>Recoleta y Vespucio</small></th><td><b>0,7 UF</b><small>$28.900</small></td><td><b>2,5 UF</b><small>$103.200</small></td></tr>
         </tbody></table>
@@ -394,7 +415,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
       </div>
       <ul class="pl-lista">
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>100% en hospitalización en Clínica Santa María, también en el parto y la sala cuna</span></li>
-        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Copago fijo de urgencia en Santa María, incluida la urgencia de maternidad</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Copago fijo de urgencia en Santa María: 0,8 UF la simple y 3 UF la compleja</span></li>
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Medicamentos, materiales y quimioterapia hasta 1.200 UF al año</span></li>
         <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Kinesiología con tope de 6,5 UF al año</span></li>
       </ul>
@@ -459,16 +480,49 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
           <tr><th scope="row">Consultas y exámenes en Clínica Santa María</th><td>80%, sin tope</td><td>80%, sin tope</td><td>80%, sin tope</td></tr>
           <tr><th scope="row">Parto y maternidad en Clínica Santa María</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>100%, sin tope: parto, cesárea, sala cuna e incubadora</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>100%, sin tope: parto, cesárea, sala cuna e incubadora</td><td>90%, sin tope: parto, cesárea y sala cuna</td></tr>
           <tr><th scope="row">Red GES y CAEC</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>En Clínica Santa María y Clínica Universidad de los Andes</td><td>En Clínica Dávila y, en algunos casos, en Clínica Santa María</td><td>En Clínicas RedSalud</td></tr>
-          <tr><th scope="row">Copago fijo de urgencia en Clínica Santa María</th><td class="bien"><div class="cmp-urg"><p class="cmp-urg-t"><span class="cmp-ico bien" aria-hidden="true">✓</span>Urgencia adulto</p><div class="cmp-urg-v"><span>Simple<b>0,8 UF</b><small>$33.000</small></span><span>Compleja<b>3 UF</b><small>$123.900</small></span></div><p class="cmp-urg-t">Urgencia de maternidad</p><div class="cmp-urg-v"><span>Simple<b>0,9 UF</b><small>$37.200</small></span><span>Compleja<b>3,5 UF</b><small>$144.500</small></span></div></div></td><td class="bien"><div class="cmp-urg"><p class="cmp-urg-t"><span class="cmp-ico bien" aria-hidden="true">✓</span>Urgencia adulto</p><div class="cmp-urg-v"><span>Simple<b>0,8 UF</b><small>$33.000</small></span><span>Compleja<b>3 UF</b><small>$123.900</small></span></div><p class="cmp-urg-t">Urgencia de maternidad</p><div class="cmp-urg-v"><span>Simple<b>0,9 UF</b><small>$37.200</small></span><span>Compleja<b>3,5 UF</b><small>$144.500</small></span></div></div></td><td><div class="cmp-urg"><p class="cmp-urg-t">Urgencia adulto</p><div class="cmp-urg-v"><span>Simple<b>0,91 UF</b><small>$37.600</small></span><span>Compleja<b>2,97 UF</b><small>$122.600</small></span></div></div></td></tr>
+          <tr><th scope="row">Copago fijo de urgencia en Clínica Santa María</th><td><div class="cmp-urg"><p class="cmp-urg-t">Urgencia adulto</p><div class="cmp-urg-v"><span>Simple<b>0,8 UF</b><small>$33.000</small></span><span>Compleja<b>3 UF</b><small>$123.900</small></span></div></div></td><td><div class="cmp-urg"><p class="cmp-urg-t">Urgencia adulto</p><div class="cmp-urg-v"><span>Simple<b>0,8 UF</b><small>$33.000</small></span><span>Compleja<b>3 UF</b><small>$123.900</small></span></div></div></td><td><div class="cmp-urg"><p class="cmp-urg-t">Urgencia adulto</p><div class="cmp-urg-v"><span>Simple<b>0,91 UF</b><small>$37.600</small></span><span>Compleja<b>2,97 UF</b><small>$122.600</small></span></div></div></td></tr>
           <tr><th scope="row">Kinesiología</th><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Con tope de 6,5 UF al año</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Con tope de 6,5 UF al año</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>80%, sin tope</td></tr>
           <tr><th scope="row">Prótesis y órtesis en Clínica Santa María</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>100% en hospitalización, sin tope</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>100% en hospitalización, sin tope</td><td>90% en hospitalización, hasta 150 UF al año</td></tr>
           <tr><th scope="row">Procedimientos sin código Fonasa</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sí: su Arancel Vanguardia incluye procedimientos nuevos, como cirugía robótica y radiocirugía</td><td>Cubre lo que está en el Arancel Banmédica</td><td>Cubre lo que está en el Arancel Consalud</td></tr>
-          <tr><th scope="row">Otros prestadores del plan</th><td>Clínica Dávila, Dávila Vespucio, Clínicas RedSalud Santiago y Providencia, Indisa, Meds, Hospital Clínico UC, Las Condes, San Carlos de Apoquindo y Universidad de los Andes</td><td>Clínica Dávila, Dávila Vespucio, Clínicas RedSalud Santiago y Providencia, Indisa, Meds, Hospital Clínico UC, Las Condes, San Carlos de Apoquindo y Universidad de los Andes</td><td>Clínicas RedSalud Vitacura, Providencia y Santiago, Hospital Clínico UC, Indisa Maipú y Providencia, Bupa Santiago, San Carlos de Apoquindo, Meds, Las Condes y Universidad de los Andes</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
+  <section class="emb" id="emb">
+    <p class="seg-k">Si estás embarazada al contratar</p>
+    <h2>Cuánto te cubre cada plan el parto en Clínica Santa María</h2>
+    <p class="emb-intro">La Isapre cubre el parto con la regla de los novenos: los meses que tu plan va a estar vigente hasta el parto, divididos por 9. Los beneficios parten el mes siguiente a la firma: si contratas en noviembre, desde el 1 de enero.</p>
+    <p class="emb-paso">¿En qué mes de embarazo partirían tus beneficios?</p>
+    <div class="emb-meses" role="group" aria-label="Mes de embarazo en que parten los beneficios"><button type="button" data-mes="0">Antes del embarazo</button><button type="button" data-mes="1">Mes 1</button><button type="button" data-mes="2">Mes 2</button><button type="button" data-mes="3">Mes 3</button><button type="button" data-mes="4">Mes 4</button><button type="button" data-mes="5">Mes 5</button><button type="button" data-mes="6">Mes 6</button><button type="button" data-mes="7">Mes 7</button><button type="button" data-mes="8">Mes 8</button></div>
+    <div class="emb-res" id="emb-res" hidden aria-live="polite">
+      <div class="emb-top"><strong id="emb-pct"></strong><span id="emb-frac"></span></div>
+      <div class="emb-barra"><i id="emb-barra"></i></div>
+      <ul class="emb-pl">
+        <li><img class="lg-vida-tres" src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><span>Plan al 100%, cubre<b id="emb-cub-0"></b></span><span class="emb-tu">Pagas tú<b id="emb-tu-0"></b></span></li>
+        <li><img class="lg-banmedica" src="/logos/banmedica.png" alt="Isapre Banmédica" width="114" height="30"><span>Plan al 100%, cubre<b id="emb-cub-1"></b></span><span class="emb-tu">Pagas tú<b id="emb-tu-1"></b></span></li>
+        <li><img class="lg-consalud" src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><span>Plan al 90%, cubre<b id="emb-cub-2"></b></span><span class="emb-tu">Pagas tú<b id="emb-tu-2"></b></span></li>
+      </ul>
+    </div>
+    <p class="emb-nota">Calculado sobre un parto en Clínica Santa María de unos $5.000.000, valor referencial: la cuenta real puede ser distinta, y una complicación la sube. Es la cobertura mínima que exige la norma. Tu bebé no está afecto a los novenos: recibe la cobertura de tu plan desde que nace, si lo inscribes a tiempo.</p>
+    <p class="emb-flex">Vida Tres y Banmédica a veces son más flexibles con los novenos y otorgan la cobertura completa del parto. No es seguro: depende de cada caso, y lo revisamos contigo antes de contratar.</p>
+  </section>
+  <script>
+  (function () {
+    const D = [{"pct":100},{"pct":100},{"pct":90}], V = 5000000, caja = document.getElementById('emb'), $ = id => document.getElementById(id);
+    const pesos = x => '$' + String(Math.round(x / 1000) * 1000).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    caja.querySelectorAll('[data-mes]').forEach(b => b.addEventListener('click', () => {
+      const m = +b.dataset.mes, partes = m === 0 ? 9 : 10 - m, f = partes / 9;
+      caja.querySelectorAll('[data-mes]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      $('emb-pct').textContent = Math.round(f * 100) + '%';
+      $('emb-frac').textContent = 'del parto queda bajo la cobertura de tu plan (' + partes + ' de 9 partes)';
+      $('emb-barra').style.width = Math.round(f * 100) + '%';
+      D.forEach((d, i) => { const c = V * f * d.pct / 100; $('emb-cub-' + i).textContent = pesos(c); $('emb-tu-' + i).textContent = pesos(V - c); });
+      $('emb-res').hidden = false;
+      if (typeof gtag === 'function') gtag('event', 'propuesta_novenos', { propuesta: 'PLNA6A', mes: m });
+    }));
+  })();
+  </script>
   <section class="estad">
     <h2>Reclamos y licencias médicas de cada Isapre</h2>
     <div class="estad-grid">
@@ -484,7 +538,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 
   <section class="porque">
     <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>¿Por qué estos tres planes?</h2>
-    <p>Vida Tres y Banmédica pertenecen al mismo holding que controla Clínica Santa María, por eso tienen más beneficios ahí: 100% en hospitalización y parto, y copago fijo de urgencia, incluida la de maternidad.</p>
+    <p>Vida Tres y Banmédica pertenecen al mismo holding que controla Clínica Santa María, por eso tienen más beneficios ahí: 100% en hospitalización y parto, y copago fijo de urgencia.</p>
     <p>Consalud tiene un buen convenio en Clínica Santa María para lo que ofrece el mercado: 90% en hospitalización y parto. Además, su kinesiología no tiene tope anual.</p>
     <p>Si quieres ver más opciones, pídeselo a tu ejecutivo y te prepara otras. Y si te acomoda pagar un poco más para mejorar tus coberturas, cuéntanos cuánto y te seguimos armando propuestas con ese presupuesto.</p>
   </section>
@@ -522,7 +576,7 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
 (function () {
   const PLANES = [{"isapre":"Vida Tres","plan":"Vanguardia Premium Platinum 1010","cod":"VPRP26061010","logo":"/logos/vida-tres.png","lg":"lg-vida-tres","lw":123,"lh":24,"precio":"$210.700 al mes · 5,10 UF"},{"isapre":"Banmédica","plan":"Salud Preferente Platinum 1010","cod":"BPP26061010","logo":"/logos/banmedica.png","lg":"lg-banmedica","lw":114,"lh":30,"precio":"$208.500 al mes · 5,05 UF"},{"isapre":"Consalud","plan":"Select Full 90","cod":"13-SF97-26","logo":"/logos/consalud.png","lg":"lg-consalud","lw":94,"lh":31,"precio":"$208.600 al mes · 5,05 UF"}];
   const $ = id => document.getElementById(id);
-  const lista = document.querySelector('.planes'), seguro = document.querySelector('.seguro'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), noEleg = document.querySelector('.no-eleg'), estad = document.querySelector('.estad'), cierre = document.querySelector('.cierre'), el = $('eleccion');
+  const lista = document.querySelector('.planes'), seguro = document.querySelector('.seguro'), comp = document.querySelector('.comp'), notas = document.querySelector('.notas'), porque = document.querySelector('.porque'), noEleg = document.querySelector('.no-eleg'), emb = document.querySelector('.emb'), estad = document.querySelector('.estad'), cierre = document.querySelector('.cierre'), el = $('eleccion');
   let elegido = null;
   document.querySelectorAll('.pl-wsp[data-plan]').forEach(a => a.addEventListener('click', e => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
@@ -531,10 +585,10 @@ footer { text-align:center; font-size:12.5px; color:var(--muted); padding:0 1.25
     $('el-logo').src = elegido.logo; $('el-logo').className = elegido.lg; $('el-logo').alt = 'Isapre ' + elegido.isapre; $('el-logo').width = elegido.lw; $('el-logo').height = elegido.lh;
     $('el-nom').textContent = elegido.plan + ' · ' + elegido.isapre; $('el-precio').textContent = elegido.precio;
     document.querySelectorAll('.el-isa').forEach(s => s.textContent = elegido.isapre);
-    [lista, comp, seguro, estad, porque, noEleg, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
+    [lista, comp, seguro, emb, estad, porque, noEleg, notas, cierre].forEach(x => x && (x.hidden = true)); el.hidden = false;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }));
-  $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, seguro, estad, porque, noEleg, notas, cierre].forEach(x => x && (x.hidden = false)); });
+  $('el-volver').addEventListener('click', () => { el.hidden = true; [lista, comp, seguro, emb, estad, porque, noEleg, notas, cierre].forEach(x => x && (x.hidden = false)); });
   $('el-form').addEventListener('submit', e => {
     e.preventDefault();
     const texto = 'Hola, elegí el plan ' + elegido.plan + ' de ' + elegido.isapre + ' (' + elegido.cod + ') en mi propuesta PLNA6A, a ' + elegido.precio + '. ¿Cómo seguimos?';
