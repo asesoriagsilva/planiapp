@@ -321,6 +321,32 @@ h1 span { color:var(--purple); }
 .lp-wsp { display:flex; width:100%; margin-top:1rem; font-size:16.5px; text-align:center; padding-left:1rem; padding-right:1rem; }
 .lp-wsp-nota { text-align:center; font-size:12.5px; color:var(--muted); margin-top:0.45rem; }
 .lp-escriban { color:var(--purple); margin-top:0.5rem; }
+/* Después del resultado: por qué conviene la asesoría y un ejemplo de cómo se ve la propuesta */
+.lp-valor { margin-top:0.9rem; }
+.lp-valor[hidden] { display:none; }
+.lp-letra { background:var(--purple-light); color:var(--purple-deep); border-radius:16px; padding:0.85rem 1rem; font-size:14.5px; line-height:1.5; }
+.lp-letra strong { display:block; font-size:15.5px; margin-bottom:0.1rem; }
+.lp-ejemplo { margin-top:0.8rem; }
+.lp-ejemplo-t { display:flex; align-items:center; gap:0.45rem; font-size:13.5px; font-weight:700; color:var(--purple-dark); margin-bottom:0.45rem; }
+.lp-ejemplo-t span { font-size:11px; font-weight:700; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-radius:999px; padding:1px 8px; }
+.lp-tabla { border:1px solid var(--border); border-radius:14px; overflow:hidden; font-size:13px; }
+.lp-tabla div { display:grid; grid-template-columns:1fr 1.2fr 1fr; padding:0.5rem 0.8rem; border-top:1px solid var(--border); }
+.lp-tabla div:first-child { border-top:none; background:var(--bg); font-size:12px; font-weight:600; color:var(--muted); }
+.lp-tabla b { color:var(--purple-dark); font-weight:700; }
+.lp-tabla .bien { color:var(--green-dark); font-weight:700; }
+.lp-tabla .mal { color:#A33F45; font-weight:700; }
+.lp-ejemplo-n { font-size:12.5px; color:var(--muted); margin-top:0.4rem; }
+.lp-exc { margin-top:0.4rem; }
+.lp-exc summary { cursor:pointer; font-size:13px; font-weight:600; color:var(--purple); list-style:none; }
+.lp-exc summary::-webkit-details-marker { display:none; }
+.lp-exc p { font-size:12.5px; color:var(--muted); margin-top:0.3rem; }
+/* Región en un toque; la lista aparece solo con "Otra región" */
+.lp-region-ops { display:flex; flex-wrap:wrap; gap:0.45rem; }
+#lp-region-caja { margin-top:0.5rem; }
+#lp-region-caja[hidden] { display:none; }
+.lp-cob-abrir { display:block; margin-top:0.9rem; background:none; border:none; cursor:pointer; font-size:14px; font-weight:600; color:var(--purple); padding:0.2rem 0; text-align:left; }
+.lp-cob-abrir em { font-style:normal; font-weight:500; color:var(--muted); }
+.lp-cob-abrir[hidden] { display:none; }
 
 .lp-form { display:grid; gap:0.75rem; }
 .lp-form label { display:block; font-size:13.5px; font-weight:600; color:var(--purple-dark); margin-bottom:0.3rem; }
@@ -407,6 +433,9 @@ h1 span { color:var(--purple); }
 .embed [data-paso="resultado"] .lp-cta { position:sticky; bottom:0; z-index:5; margin:0.8rem -1rem 0; padding:0.6rem 1rem 0.4rem; background:linear-gradient(to top, var(--white) 80%, rgba(255,255,255,0)); }
 .embed .lp-cta .lp-btn { white-space:nowrap; }
 .embed #lp-cta-nota { font-size:11.5px; margin-top:0.25rem; }
+.embed .lp-letra { padding:0.65rem 0.8rem; font-size:13.5px; }
+.embed .lp-letra strong { font-size:14.5px; }
+.embed .lp-tabla div { padding:0.4rem 0.7rem; }
 </style>
 <script>if (/[?&]embed=1(&|$)/.test(location.search)) { document.documentElement.classList.add('embed'); var b = document.createElement('base'); b.target = '_top'; document.head.appendChild(b); }</script>
 </head>
@@ -594,15 +623,28 @@ h1 span { color:var(--purple); }
         <label class="lp-campo chico" id="lp-extra-caja"><span>$</span><input id="lp-extra-monto" type="text" inputmode="numeric" autocomplete="off" placeholder="Ingresa lo que puedes aportar" aria-label="Monto adicional al mes"></label>
         <p class="lp-extra-total" id="lp-extra-total" hidden></p>
       </div>
+      <div class="lp-valor" id="lp-valor">
+        <div class="lp-letra"><strong>El precio no lo es todo.</strong>Por el mismo precio hay planes que cubren el 100% en clínica y otros con topes bajos en hospitalización. La diferencia está en la letra chica.</div>
+        <div class="lp-ejemplo">
+          <p class="lp-ejemplo-t">Así se ve tu propuesta <span>Ejemplo</span></p>
+          <div class="lp-tabla" aria-hidden="true">
+            <div><span></span><span>Hospitalización</span><span>Consultas</span></div>
+            <div><b>Plan 1</b><span class="bien">100%</span><span>70%</span></div>
+            <div><b>Plan 2</b><span>90%</span><span>80%</span></div>
+            <div><b>Plan 3</b><span class="mal">Tope bajo</span><span>70%</span></div>
+          </div>
+          <p class="lp-ejemplo-n">En tu propuesta comparamos 3 planes reales, con la clínica que elijas.</p>
+        </div>
+      </div>
       <div class="lp-cta" id="lp-cta">
-        <button class="lp-btn verde lp-wsp" type="button" id="lp-a-propuestas">Quiero recibir propuestas →</button>
-        <p class="lp-wsp-nota" id="lp-cta-nota">Gratis y sin compromiso.</p>
+        <button class="lp-btn verde lp-wsp" type="button" id="lp-a-propuestas">Quiero mis 3 planes gratis →</button>
+        <p class="lp-wsp-nota" id="lp-cta-nota">Te los envía un ejecutivo inscrito, por WhatsApp.</p>
       </div>
       <button class="lp-otra" type="button" id="lp-otra">Volver a calcular</button>
     </div>
 
     <div class="lp-paso" data-paso="propuestas">
-      <p class="lp-q">Para enviarte propuestas a tu medida</p>
+      <p class="lp-q">Para armar tus 3 planes</p>
       <div class="lp-explica" id="lp-explica" hidden>
         <strong>Así funciona el plan compensado</strong>
         <p>Cada uno toma un plan con su propio 7%, pero uno puede compensar al otro para que los dos queden con el mismo plan. No es obligatorio.</p>
@@ -612,15 +654,20 @@ h1 span { color:var(--purple); }
       </div>
       <p class="lp-nota-datos"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Estos datos solo los pedimos para complementar tu perfil y enviarte propuestas ajustadas a ti.</span></p>
       <div class="lp-bloque">
-        <label class="lp-mini" for="lp-region">¿En qué región vives?</label>
-        <div class="lp-campo texto" id="lp-region-caja"><select id="lp-region"><option value="">Elige tu región...</option><option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option><option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Aysén</option><option>Magallanes</option></select></div>
+        <p class="lp-mini">¿En qué región vives?</p>
+        <div class="lp-region-ops" id="lp-region-ops">
+          <button class="lp-chipb" type="button" data-region="Metropolitana">Región Metropolitana</button>
+          <button class="lp-chipb" type="button" data-region="otra">Otra región</button>
+        </div>
+        <div class="lp-campo texto" id="lp-region-caja" hidden><select id="lp-region" aria-label="Tu región"><option value="">Elige tu región...</option><option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option><option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Aysén</option><option>Magallanes</option></select></div>
       </div>
       <div class="lp-bloque" id="lp-clin-bloque" hidden>
         <p class="lp-mini">¿En qué clínicas te gustaría atenderte? <em>(puedes marcar varias)</em></p>
         <div class="lp-chips" id="lp-clinicas"></div>
         <div class="lp-campo texto" id="lp-clinica-otra" hidden style="margin-top:0.5rem"><input id="lp-clinica" type="text" autocomplete="off" placeholder="¿Cuál? Escribe el nombre"></div>
       </div>
-      <div class="lp-bloque lp-zona-cob">
+      <button class="lp-cob-abrir" type="button" id="lp-cob-abrir" aria-expanded="false">+ Agregar coberturas que buscas <em>(opcional)</em></button>
+      <div class="lp-bloque lp-zona-cob" id="lp-cob-bloque" hidden>
         <p class="lp-mini">¿Qué cobertura buscas? <em>(opcional, puedes marcar varias)</em></p>
         <div class="lp-chips" id="lp-importa"></div>
       </div>
@@ -645,7 +692,7 @@ h1 span { color:var(--purple); }
       </div>
       <p class="lp-err" id="lp-prop-err" hidden></p>
       <p class="lp-ejecutivo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg><span>Un <b>ejecutivo personal</b> te enviará las propuestas. Con él puedes hacer todas tus preguntas y comparar planes y coberturas: es una persona, no una IA con respuestas genéricas.</span></p>
-      <a class="lp-btn verde lp-wsp" id="lp-wsp-btn" href="https://wa.me/56966450103" target="_blank" rel="noopener">💬 Pedir propuestas por WhatsApp</a>
+      <a class="lp-btn verde lp-wsp" id="lp-wsp-btn" href="https://wa.me/56966450103" target="_blank" rel="noopener">💬 Recibir mis 3 planes por WhatsApp</a>
       <p class="lp-wsp-nota">Se abre WhatsApp con tus respuestas listas. Es gratis y no compartimos tus datos.</p>
       <button class="lp-otra lp-escriban" type="button" id="lp-a-datos">Prefiero que me escriban →</button>
       <div class="lp-nav"><button class="lp-atras" type="button" data-atras>← Atrás</button></div>
@@ -734,6 +781,8 @@ const variante = params.get('v') === 'b' ? 'b' : 'a'; // prueba A/B del título:
 let entrada = ['fonasa', 'isapre', 'pareja'].includes(params.get('desde')) ? params.get('desde') : null;
 const INICIO = [$('lp-h1').innerHTML, $('lp-sub').textContent]; // título de quien llega sin anuncio
 const D = { desde: null, isapre: '', tramo: null, cargas: null, pareja: null, hijos: [], tramo2: null, sueldo: 0, sueldo2: 0, pcob: '', suma: 0, pago: 0, pagoUF: 0, adic: 0, pref: '', noSabe: false, extra: 0, veredicto: '' };
+// Línea bajo el botón del resultado (sin monto adicional)
+const NOTA_CTA = 'Te los envía un ejecutivo inscrito, por WhatsApp.';
 let pasos = [], actual = '';
 let empezo = false;
 
@@ -1033,16 +1082,27 @@ $('lp-region').addEventListener('change', () => {
     if (otra && c.dataset.clinica === 'Otra') $('lp-clinica').focus();
   }));
 });
+// Región en un toque: Metropolitana directo; "Otra región" abre la lista
+document.querySelectorAll('[data-region]').forEach(c => c.addEventListener('click', () => {
+  document.querySelectorAll('[data-region]').forEach(x => x.classList.toggle('on', x === c));
+  const otra = c.dataset.region === 'otra';
+  $('lp-region-caja').hidden = !otra;
+  $('lp-region').value = otra ? '' : c.dataset.region;
+  $('lp-region').dispatchEvent(new Event('change'));
+  if (otra) $('lp-region').focus();
+}));
+// Coberturas plegadas: son opcionales
+$('lp-cob-abrir').addEventListener('click', () => { $('lp-cob-bloque').hidden = false; $('lp-cob-abrir').hidden = true; $('lp-cob-abrir').setAttribute('aria-expanded', 'true'); });
 const sinClinica = () => !!document.querySelector('[data-clinica="Ninguna"].on');
 const clinicasElegidas = () => [...document.querySelectorAll('[data-clinica].on')].filter(c => c.dataset.clinica !== 'Ninguna')
   .map(c => (c.dataset.clinica === 'Otra' ? $('lp-clinica').value.trim().slice(0, 60) : c.dataset.clinica)).filter(Boolean);
 // La región es lo único obligatorio para pedir propuestas
 function okPropuestas() {
   if ($('lp-region').value) return true;
-  $('lp-region-caja').classList.add('err');
+  if (!$('lp-region-caja').hidden) $('lp-region-caja').classList.add('err');
   $('lp-prop-err').textContent = 'Elige tu región para saber qué clínicas y planes enviarte.';
   $('lp-prop-err').hidden = false;
-  $('lp-region-caja').scrollIntoView({ block: 'center', behavior: 'smooth' });
+  $('lp-region-ops').scrollIntoView({ block: 'center', behavior: 'smooth' });
   return false;
 }
 // Monto adicional (cuando el plan más bajo cuesta más que su 7%): las propuestas se ajustan a 7% + ese monto
@@ -1052,7 +1112,7 @@ function pintaExtra() {
   $('lp-extra-total').innerHTML = (D.desde === 'pareja' ? 'Les enviamos propuestas de hasta <b>' : 'Te enviamos propuestas de hasta <b>') + pesos(base7() + D.extra) + '</b> al mes (' + (D.desde === 'pareja' ? 'sus dos 7%' : 'tu 7%') + ' + ' + pesos(D.extra) + ').';
   document.querySelectorAll('[data-extra]').forEach(c => c.classList.toggle('on', +c.dataset.extra === D.extra));
   // El botón queda fijo abajo: la línea bajo él repite el total, por si el aviso verde quedó fuera de la pantalla
-  $('lp-cta-nota').innerHTML = D.extra ? 'Propuestas de hasta <b>' + pesos(base7() + D.extra) + '</b> al mes · Gratis y sin compromiso' : 'Gratis y sin compromiso.';
+  $('lp-cta-nota').innerHTML = D.extra ? 'Planes de hasta <b>' + pesos(base7() + D.extra) + '</b> al mes · Gratis y sin compromiso' : NOTA_CTA;
 }
 $('lp-extra-monto').addEventListener('input', e => { D.extra = monto(e.target); pintaExtra(); });
 // Montos rápidos: primero lo justo que falta, luego dos montos más holgados (redondeados a diez mil)
@@ -1141,9 +1201,9 @@ function bloquePlanes(ops, titulo, plural, conUF) {
   return '<div class="lp-planes"><p class="lp-planes-t">' + (titulo || 'Planes que puedes elegir con tu 7%') + '</p>'
     + ops.map(o => '<div class="lp-plan"><span class="lp-plan-pct">' + pct(o.p) + '</span><span class="lp-plan-txt">Plan de ' + (o.p === 7 ? 'hasta ' : 'unos ') + '<b>' + pesos(o.precio) + '</b> al mes' + (conUF ? ' <small class="lp-plan-uf">(' + fmtUF(o.precio / UF) + ' UF)</small>' : '') + '</span>'
       + '<span class="lp-plan-exc' + (o.exc ? ' si' : '') + '">' + (o.exc ? (plural ? 'Les quedan ' : 'Te quedan ') + pesos(o.exc) + ' al mes de excedente' : (plural ? 'Usan todo su 7% en el plan' : 'Usas todo tu 7% en el plan')) + '</span></div>').join('')
-    + '<p class="lp-planes-nota">' + (plural
-      ? 'Los excedentes no se eliminaron: hoy se restringen a un monto lo más cercano posible a sus 7%. Lo que les quede de excedente queda a su favor en su cuenta de la Isapre.'
-      : 'Los excedentes no se eliminaron: hoy se restringen a un monto lo más cercano posible a tu 7%. Lo que te quede de excedente queda a tu favor en tu cuenta de la Isapre.') + '</p></div>';
+    + '<details class="lp-exc"><summary>¿Qué es el excedente?</summary><p>' + (plural
+      ? 'Es la diferencia entre lo que suman sus 7% y el precio del plan. Los excedentes no se eliminaron: hoy se restringen a un monto lo más cercano posible a sus 7%. Lo que les quede de excedente queda a su favor en su cuenta de la Isapre.'
+      : 'Es la diferencia entre tu 7% y el precio del plan. Los excedentes no se eliminaron: hoy se restringen a un monto lo más cercano posible a tu 7%. Lo que te quede de excedente queda a tu favor en tu cuenta de la Isapre.') + '</p></details></div>';
 }
 // Color según cuánto le falta comparado con su 7% (en pareja, con lo que suman):
 // menos de la mitad, verde; entre 50% y 60%, amarillo; más de 60%, rojo (es lo que pagaría de su bolsillo)
@@ -1298,10 +1358,10 @@ function resultado() {
   $('lp-res').innerHTML = h;
   $('lp-res').querySelectorAll('[data-n]').forEach(sube);
   // Renta baja: sin botones de contacto, solo la guía de Fonasa con seguro complementario
-  $('lp-cta').hidden = D.veredicto === 'conviene_fonasa';
+  $('lp-cta').hidden = $('lp-valor').hidden = D.veredicto === 'conviene_fonasa';
   $('lp-extra').hidden = !['aporte', 'familia_aporte', 'pareja_aporte'].includes(D.veredicto);
   if (!$('lp-extra').hidden) { montosRapidos(D.falta); pintaExtra(); }
-  else $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
+  else $('lp-cta-nota').textContent = NOTA_CTA;
   marca('calc_resultado', { veredicto: D.veredicto, tramo: TRAMOS[D.tramo] });
   ir('resultado');
 }
@@ -1383,11 +1443,12 @@ function limpiar() {
   D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-nose').checked = false; $('lp-pago').disabled = false; $('lp-pago-ok').textContent = 'Ver mi resultado →'; $('lp-sueldo-ok').textContent = 'Continuar →'; $('lp-liq').hidden = true; $('lp-ver-liq').textContent = '¿Dónde lo veo? Ver una liquidación de ejemplo'; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
   D.tramo2 = null; $('pp-sueldo2').value = ''; $('pp-perfil').innerHTML = ''; $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
-  $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = 'Gratis y sin compromiso.';
-  $('lp-region').value = ''; $('lp-clinicas').innerHTML = ''; $('lp-clin-bloque').hidden = true; $('lp-prop-err').hidden = true;
+  $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = NOTA_CTA;
+  $('lp-region').value = ''; $('lp-region-caja').hidden = true; $('lp-clinicas').innerHTML = ''; $('lp-clin-bloque').hidden = true; $('lp-prop-err').hidden = true;
+  $('lp-cob-bloque').hidden = true; $('lp-cob-abrir').hidden = false; $('lp-cob-abrir').setAttribute('aria-expanded', 'false');
   $('lp-hijos').innerHTML = ''; $('lp-fam').hidden = true; $('lp-fam-ok').hidden = true;
   $('lp-siete-vivo').hidden = true;
-  document.querySelectorAll('.lp-op, #lp-importa .lp-chipb, [data-mas]').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.lp-op, #lp-importa .lp-chipb, [data-mas], [data-region]').forEach(b => b.classList.remove('on'));
   $('lp-mas-monto').value = ''; $('lp-mas-otro').hidden = true; $('lp-mas-total').hidden = true;
 }
 $('lp-otra').addEventListener('click', () => {
