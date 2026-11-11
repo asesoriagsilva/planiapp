@@ -434,12 +434,8 @@ if (!planiappInterno) gtag('event', 'conversion', {
   'transaction_id': codigo || ''
 });
 
-/* GA4 - lead generado */
-gtag('event', 'generate_lead', {
-  currency: 'CLP',
-  value: VALOR_LEAD,
-  transaction_id: codigo || ''
-});
+/* GA4: el generate_lead se envía en el formulario (portada y calculadora), antes de llegar aquí.
+   No se repite en esta página: contaría cada lead dos veces. */
 </script>
 </body>
 </html>
