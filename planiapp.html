@@ -332,6 +332,10 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .pf-btn-next { background: var(--purple); color: #fff; border: none; border-radius: 24px; padding: 0.55rem 1.4rem; font-size: 14px; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; opacity: 0.4; pointer-events: none; transition: all 0.2s; }
 .pf-btn-next.ready { opacity: 1; pointer-events: all; }
 .pf-btn-next:hover { background: var(--purple-deep); }
+/* El boton de enviar siempre responde: si falta algo, sSubmit() lo marca. Sin transparencia: en celular queda fijo abajo y el texto del formulario se veia a traves */
+#s-submit { opacity: 1; pointer-events: auto; }
+.form-inline #s-submit:not(.ready) { background: #B9B4E6; }
+.form-inline #s-submit:not(.ready):hover { background: #C9C5EE; }
 .pf-info-box { background: var(--purple-light); border-left: 3px solid var(--purple); border-radius: 0 10px 10px 0; padding: 0.85rem 1rem; margin-top: 0.75rem; }
 .pf-info-box-title { font-size: 12px; font-weight: 600; color: var(--purple-deep); margin-bottom: 0.35rem; }
 .pf-info-box-list { list-style: none; }
