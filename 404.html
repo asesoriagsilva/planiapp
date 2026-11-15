@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Página no encontrada | Planiapp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads + Analytics (sin evento de conversion: ese va solo en gracias.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+  /* Origen del visitante: la última fuente externa (buscador, anuncio, red social o enlace con utm). Los formularios lo envían con el lead. */
+  try {
+    (function () {
+      var q = new URLSearchParams(location.search), r = document.referrer, h = '', o = '';
+      try { h = r ? new URL(r).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+      var us = q.get('utm_source') || '', pago = /cpc|ppc|paid|ads/.test((q.get('utm_medium') || '').toLowerCase());
+      var may = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+      if (q.get('gclid') || q.get('gbraid') || q.get('wbraid')) o = 'Google Ads';
+      else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
+      else if (q.get('fbclid')) o = 'Facebook o Instagram';
+      else if (h && h !== location.hostname.replace(/^www\./, '')) {
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+          : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
+          : /instagram\./.test(h) ? 'Instagram'
+          : /facebook\.|fb\.me/.test(h) ? 'Facebook'
+          : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
+          : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
+          : 'Otro sitio: ' + h;
+      }
+      var antes = localStorage.getItem('planiapp_origen');
+      if (o || !antes) localStorage.setItem('planiapp_origen', JSON.stringify({ o: o || 'Directo', p: location.pathname, t: Date.now() }));
+    })();
+  } catch (e) {}
+  window.planiappOrigen = function () { try { var g = JSON.parse(localStorage.getItem('planiapp_origen') || 'null'); return g ? g.o + ' · entró por ' + (g.p === '/' ? 'la portada' : g.p) : 'Directo'; } catch (e) { return ''; } };
+</script>
+<script>
+  /* Qué dirección rota se pidió, para poder arreglar el enlace que la trajo */
+  if (typeof gtag === 'function' && !planiappInterno) gtag('event', 'pagina_404', { ruta: location.pathname.slice(0, 100), desde: document.referrer.slice(0, 100) });
+</script>
+
+<style>
+:root { --purple:#534AB7; --purple-light:#EEEDFE; --purple-dark:#26215C; --purple-deep:#3C3489; --green:#1D9E75; --green-dark:#0F6E56; --text:#1a1830; --muted:#6b6b8a; --border:#E7E5F5; --bg:#f8f7ff; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; display:flex; flex-direction:column; }
+header { padding:0.9rem 1.25rem; background:#fff; border-bottom:1px solid var(--border); }
+header img { height:52px; width:auto; display:block; }
+main { flex:1; display:flex; align-items:center; justify-content:center; padding:2.5rem 1.25rem; }
+.caja { max-width:520px; text-align:center; }
+.num { display:inline-block; font-family:'Inter',sans-serif; font-size:13px; font-weight:800; letter-spacing:0.06em; color:var(--purple); background:var(--purple-light); border-radius:999px; padding:5px 14px; margin-bottom:1rem; }
+h1 { font-family:'Inter',sans-serif; font-size:30px; font-weight:900; color:var(--purple-dark); letter-spacing:-0.02em; line-height:1.2; }
+p { font-size:16px; color:var(--muted); line-height:1.6; margin-top:0.8rem; }
+.botones { display:grid; gap:0.6rem; margin-top:1.6rem; }
+.btn { display:block; border-radius:999px; padding:0.9rem 1.4rem; font-size:16px; font-weight:600; text-decoration:none; transition:background .2s; }
+.btn.verde { background:var(--green); color:#fff; }
+.btn.verde:hover { background:var(--green-dark); }
+.btn.claro { background:#fff; color:var(--purple-deep); border:1.5px solid var(--border); }
+.btn.claro:hover { background:var(--purple-light); }
+footer { padding:1.2rem; text-align:center; font-size:13px; color:var(--muted); border-top:1px solid var(--border); }
+footer a { color:var(--purple); font-weight:600; text-decoration:none; }
+@media (max-width:560px) { h1 { font-size:25px; } header img { height:44px; } }
+</style>
+</head>
+<body>
+<header><a href="/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp" width="160" height="52"></a></header>
+<main>
+  <div class="caja">
+    <span class="num">ERROR 404</span>
+    <h1>No encontramos esta página</h1>
+    <p>Puede que el enlace esté mal escrito o que la página ya no exista. Desde acá puedes seguir:</p>
+    <div class="botones">
+      <a class="btn verde" href="/calculadora-isapre">Calcular qué plan me da mi 7% →</a>
+      <a class="btn claro" href="/mejor-isapre">Comparar las 7 Isapres</a>
+      <a class="btn claro" href="/">Ir al inicio</a>
+    </div>
+  </div>
+</main>
+<footer><a href="/">planiapp.cl</a></footer>
+</body>
+</html>
