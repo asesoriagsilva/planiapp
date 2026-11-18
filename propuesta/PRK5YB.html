@@ -235,6 +235,7 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .estad-i.bien .estad-c { border-top-color:#C5E8D1; }
 .estad-c { border-top:1px solid var(--border); padding:0.75rem 0.9rem; display:flex; flex-direction:column; gap:0.35rem; font-size:14px; }
 .estad-c b { font-family:'Inter',sans-serif; font-weight:800; color:var(--purple-dark); }
+.estad-nota { margin-top:0.2rem; padding-top:0.45rem; border-top:1px dashed #F1C9CB; font-size:13.5px; font-weight:600; color:#7A2E33; line-height:1.45; }
 @media (max-width:420px) { .estad-i summary { padding:0.7rem 0.75rem; } .estad-i summary img { max-width:86px; } .estad-i summary span { font-size:12.5px; padding:0.3rem 0.6rem; } }
 .estad-f { font-size:12.5px; color:var(--muted); margin-top:0.6rem; }
 .estad-f a { color:var(--purple); font-weight:600; }
@@ -430,6 +431,7 @@ main:has(.planes.cuatro), body:has(.planes.cuatro) .top, body:has(.planes.cuatro
       </div>
       <ul class="pl-lista">
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Los topes más altos de los tres: prótesis sin tope y hasta 1.200 UF en medicamentos y quimioterapia</span></li>
+        <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>GES y CAEC en Clínica Santa María</span></li>
         <li class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Mantiene el 80% en consultas en Indisa y Santa María</span></li>
         <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Hospitalización al 90% en Santa María</span></li>
         <li class="ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Kinesiología ambulatoria con tope de 5 UF al año</span></li>
@@ -490,6 +492,7 @@ main:has(.planes.cuatro), body:has(.planes.cuatro) .top, body:has(.planes.cuatro
           <tr><th scope="row">Precio para ti</th><td class="hoy">Lo que pagas hoy</td><td><b>$160.100</b> al mes (3,87 UF)</td><td><b>$160.100</b> al mes (3,87 UF)</td><td><b>$160.700</b> al mes (3,89 UF)</td></tr>          <tr><th scope="row">Ahorro comparado con hoy</th><td class="hoy"></td><td><b>$1.200</b> al mes</td><td><b>$1.200</b> al mes</td><td>Lo mismo que hoy</td></tr>
           <tr><th scope="row">Clínica Indisa Maipú</th><td class="hoy">100% en hospitalización y 80% en consultas</td><td>100% en hospitalización y 70% en consultas</td><td>100% en hospitalización y 80% en consultas</td><td>100% en hospitalización y 60% en consultas</td></tr>
           <tr><th scope="row">Clínica Santa María</th><td class="hoy">100% en hospitalización y 80% en consultas</td><td>90% en hospitalización y 70% en consultas</td><td>90% en hospitalización y 80% en consultas</td><td>90% en hospitalización y 50% en consultas</td></tr>
+          <tr><th scope="row">Red GES y CAEC</th><td class="hoy">En otros prestadores de su red, no en Santa María</td><td>En Clínicas RedSalud</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span><b>En Clínica Santa María</b> y Clínica Universidad de los Andes</td><td>En otros prestadores de su red, no en Santa María</td></tr>
           <tr><th scope="row">Copago fijo de urgencia (simple / compleja)</th><td class="hoy"><b>Indisa y Santa María: 1,2 / 3 UF</b></td><td><b>Indisa: 1,17 / 3,41 UF. Santa María: 1,36 / 4,45 UF.</b> Hospital Clínico UC y Meds: 1,16 / 3,52 UF</td><td><b>Santa María: 0,8 / 3 UF.</b> En Indisa no tiene. Las Condes: 1,6 / 4,4 UF. U. de los Andes: 1,9 / 6,1 UF. Dávila: 0,7 / 2,5 UF</td><td><b>Indisa: 1,5 / 4 UF.</b> En Santa María no tiene. Hospital Clínico UC y San Carlos: 1 / 3,5 UF. Dávila Recoleta: 1 / 2,8 UF</td></tr>
           <tr><th scope="row">Medicamentos y materiales en hospitalización</th><td class="hoy">Medicamentos hasta 660 UF y materiales hasta 640 UF al año</td><td>Hasta 700 UF al año cada uno</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Hasta 1.200 UF al año cada uno</td><td>Hasta 800 UF al año cada uno</td></tr>
           <tr><th scope="row">Quimioterapia</th><td class="hoy mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Hasta 100 UF al año</td><td>Hasta 700 UF al año</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Hasta 1.200 UF al año</td><td>Hasta 800 UF al año</td></tr>
@@ -509,6 +512,8 @@ main:has(.planes.cuatro), body:has(.planes.cuatro) .top, body:has(.planes.cuatro
         <div class="estad-c"><p><b>8,5</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>85%</b> y rechazó el 15%</p></div></details>
       <details class="estad-i"><summary><img class="lg-colmena" src="/logos/colmena.png" alt="Isapre Colmena" width="114" height="30"><span>Ver reclamos y licencias</span></summary>
         <div class="estad-c"><p><b>10,7</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>79%</b> y rechazó el 21%</p></div></details>
+      <details class="estad-i mal"><summary><img class="lg-nueva-masvida" src="/logos/nueva-masvida.png" alt="Isapre Nueva Masvida" width="99" height="29"><span>Ver reclamos y licencias</span></summary>
+        <div class="estad-c"><p><b>12,5</b> reclamos por cada 1.000 cotizantes</p><p>Licencias médicas: aprobó el <b>76%</b> y rechazó el 24%</p><p class="estad-nota">Lo que más vemos en sus afiliados: problemas en reembolsos y en el pago de cirugías.</p></div></details>
     </div>
     <p class="estad-f">Datos publicados por la Superintendencia de Salud (Radiografía de Isapres, segundo trimestre de 2025). <a href="/isapre-con-menos-reclamos" target="_blank" rel="noopener">Ver las 7 Isapres →</a></p>
   </section>
