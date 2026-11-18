@@ -1380,6 +1380,7 @@ function textoWsp() {
     const cl = clinicasElegidas();
     if (cl.length) lp.push('• Clínicas: ' + cl.join(', ')); else if (sinClinica()) lp.push('• No tenemos clínica de preferencia');
     if (marcadas.length) lp.push('• Buscamos: ' + marcadas.join(', '));
+    lp.push('• Código: ' + D.codWsp);
     lp.push('¿Qué opciones tenemos?');
     return lp.join('\n');
   }
@@ -1404,14 +1405,21 @@ function textoWsp() {
   if (clinicas.length) l.push('• Clínicas: ' + clinicas.join(', '));
   else if (sinClinica()) l.push('• No tengo clínica de preferencia');
   if (marcadas.length) l.push('• Busco: ' + marcadas.join(', '));
+  l.push('• Código: ' + D.codWsp);
   l.push(D.desde === 'fonasa' ? '¿Qué opciones tengo?' : '¿Me ayudan a revisar mi plan?');
   return l.join('\n');
 }
 $('lp-wsp-btn').addEventListener('click', e => {
   if (!okPropuestas()) { e.preventDefault(); return; }
+  if (!D.codWsp) D.codWsp = codigo();
   e.currentTarget.href = 'https://wa.me/56966450103?text=' + encodeURIComponent(textoWsp());
   marca('whatsapp_click', { veredicto: D.veredicto });
   if (typeof fbq === 'function') fbq('track', 'Contact');
+  // También queda en la planilla y avisa por CallMeBot, una sola vez: su número llega recién cuando escribe, y su mensaje trae el mismo código
+  if (!D.wspAvisado) {
+    D.wspAvisado = true;
+    fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datosLead(D.codWsp, { origen: 'calculadora-whatsapp', tipo: 'Calculadora Planiapp (WhatsApp)', nombre: 'Sin nombre (abrió WhatsApp)', whatsapp: '', canal: 'Escribe él por WhatsApp', horario: '' })) }).catch(() => {});
+  }
 });
 // A quien ya le alcanza con su 7% (puerta Fonasa) se le ofrece, opcional, cotizar con un monto adicional para mejores coberturas.
 // A quien no le alcanza, el monto adicional ya se le preguntó en el resultado.
@@ -1441,6 +1449,7 @@ document.querySelectorAll('[data-pref]').forEach(c => c.addEventListener('click'
 $('lp-a-datos').addEventListener('click', () => { if (!okPropuestas()) return; marca('calc_quiere_asesoria', { veredicto: D.veredicto }); ir('datos'); });
 function limpiar() {
   D.tramo = null; D.cargas = null; D.pareja = null; D.hijos = []; D.isapre = ''; D.sueldo = 0; D.pago = 0; D.noSabe = false; D.extra = 0; D.planFam = 0; D.adic = 0; D.pagoUF = 0; D.pref = ''; $('lp-adic').value = ''; $('lp-pago-vivo').hidden = true; $('lp-pago-nose').checked = false; $('lp-pago').disabled = false; $('lp-pago-ok').textContent = 'Ver mi resultado →'; $('lp-sueldo-ok').textContent = 'Continuar →'; $('lp-liq').hidden = true; $('lp-ver-liq').textContent = '¿Dónde lo veo? Ver una liquidación de ejemplo'; document.querySelectorAll('[data-pref]').forEach(c => c.classList.remove('on')); D.sueldo2 = 0; D.pcob = ''; D.suma = 0;
+  D.codWsp = ''; D.wspAvisado = false;
   D.tramo2 = null; $('pp-sueldo2').value = ''; $('pp-perfil').innerHTML = ''; $('pp-hijos').innerHTML = ''; numeraCargasPareja(); $('pp-siete').hidden = true;
   ['lp-sueldo', 'lp-pago', 'lp-edad-pareja', 'lp-extra-monto', 'lp-clinica'].forEach(id => $(id).value = '');
   $('lp-extra-total').hidden = true; $('lp-clinica-otra').hidden = true; $('lp-cta-nota').textContent = NOTA_CTA;
@@ -1503,6 +1512,15 @@ $('lp-form').addEventListener('submit', async e => {
   if (enviando) return;
   enviando = true;
   const b = $('lp-enviar'); b.disabled = true; b.textContent = 'Enviando...';
+  const datos = datosLead(cod, { origen: 'landing-calculadora', tipo: 'Calculadora Planiapp', nombre: nombre, whatsapp: '+569' + tel, canal: 'WhatsApp', horario: 'Lo antes posible' });
+  marca('lead_enviado', { form_name: 'calculadora', sistema: datos.sistema, veredicto: D.veredicto });
+  marca('generate_lead', { form_name: 'calculadora', lead_source: typeof planiappOrigen === 'function' ? planiappOrigen() : '' }); // nombre estándar de Google para el evento clave
+  if (typeof fbq === 'function') fbq('track', 'Lead');
+  try { await fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) }); } catch (err) {}
+  (EMBED ? window.top : window).location.href = '/gracias.html?codigo=' + cod + '&tipo=simple';
+});
+// Lo que llega a la planilla: el formulario y el botón de WhatsApp mandan los mismos campos; c trae lo propio de cada uno
+function datosLead(cod, c) {
   const pareja = D.desde === 'pareja';
   const s = pareja ? D.suma : siete();
   const importa = [...document.querySelectorAll('#lp-importa .lp-chipb.on')].map(c => c.textContent);
@@ -1525,15 +1543,15 @@ $('lp-form').addEventListener('submit', async e => {
     .concat(variante === 'b' ? ['Variante: b'] : [])
     .concat(fuente ? ['Fuente: ' + fuente] : [])
     .concat(typeof planiappOrigen === 'function' ? ['Origen: ' + planiappOrigen()] : []).join(' | ');
-  const datos = {
-    origen: 'landing-calculadora',
+  return {
+    origen: c.origen,
     fecha: new Date().toLocaleString('es-CL'),
     codigo: cod,
-    tipo_asesoria: 'Calculadora Planiapp',
-    nombre: nombre,
-    whatsapp: '+569' + tel,
-    canal: 'WhatsApp',
-    horario: 'Lo antes posible',
+    tipo_asesoria: c.tipo,
+    nombre: c.nombre,
+    whatsapp: c.whatsapp,
+    canal: c.canal,
+    horario: c.horario,
     sistema: pareja ? 'Pareja: ' + (D.pcob || 'sin indicar') : D.desde === 'fonasa' ? 'Fonasa' : (D.isapre && D.isapre !== 'Otra' ? D.isapre : 'Isapre'),
     motivo: (pareja ? 'Plan compensado en pareja' : D.desde === 'fonasa' ? 'Entrar a una Isapre' : 'Revisar mi plan') + (importa.length ? ' | Busca: ' + importa.join(', ') : ''),
     coberturas: resumen + adicional + (clinica ? ' | Clínicas: ' + clinica : sinClinica() ? ' | Sin clínica de preferencia' : ''),
@@ -1544,12 +1562,7 @@ $('lp-form').addEventListener('submit', async e => {
     region: $('lp-region').value,
     clinica: clinica || (sinClinica() ? 'No tiene' : '')
   };
-  marca('lead_enviado', { form_name: 'calculadora', sistema: datos.sistema, veredicto: D.veredicto });
-  marca('generate_lead', { form_name: 'calculadora', lead_source: typeof planiappOrigen === 'function' ? planiappOrigen() : '' }); // nombre estándar de Google para el evento clave
-  if (typeof fbq === 'function') fbq('track', 'Lead');
-  try { await fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) }); } catch (err) {}
-  (EMBED ? window.top : window).location.href = '/gracias.html?codigo=' + cod + '&tipo=simple';
-});
+}
 
 // Entrada: con ?desde=fonasa o ?desde=isapre se salta la primera pregunta (y ?v=b cambia el título)
 (function () {
