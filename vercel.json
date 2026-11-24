@@ -31,6 +31,11 @@
       "permanent": true
     },
     {
+      "source": "/tea-isapre.html",
+      "destination": "/tea-isapre",
+      "permanent": true
+    },
+    {
       "source": "/fonasa-y-seguro-complementario.html",
       "destination": "/fonasa-y-seguro-complementario",
       "permanent": true
@@ -300,6 +305,10 @@
     {
       "source": "/preexistencias-isapre",
       "destination": "/preexistencias-isapre.html"
+    },
+    {
+      "source": "/tea-isapre",
+      "destination": "/tea-isapre.html"
     },
     {
       "source": "/fonasa-y-seguro-complementario",
