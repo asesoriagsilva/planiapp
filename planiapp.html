@@ -235,7 +235,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .form-progress-label { font-size: 11px; color: var(--text-muted); text-align: right; margin-bottom: 1.25rem; }
 
 /* ===== FORMULARIO VISIBLE EN EL HERO (panel morado) ===== */
-.form-inline { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border: none; border-radius: var(--radius-lg); padding: 1.6rem 1.5rem 1.75rem; box-shadow: 0 16px 42px -18px rgba(38,33,92,0.6); }
+.form-inline { background: linear-gradient(160deg, #7469DA 0%, #5F55C8 100%); border: none; border-radius: var(--radius-lg); padding: 1.6rem 1.5rem 1.75rem; box-shadow: 0 16px 42px -18px rgba(38,33,92,0.6); }
 .form-inline .form-header { text-align: left; margin-bottom: 1.25rem; }
 .form-head-top { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
 .form-logo-mark { flex-shrink: 0; display: block; }
@@ -248,7 +248,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 .pf-tel-input { flex: 1; min-width: 0; border: none; outline: none; background: transparent; padding: 0.8rem 1rem; font-size: 16px; font-family: 'DM Sans', sans-serif; color: var(--text); }
 .form-inline .pf-question { color: #fff; }
 .form-inline .pf-hint { color: rgba(255,255,255,0.78); }
-.form-inline .pf-label { color: rgba(255,255,255,0.88); font-weight: 500; }
+.form-inline .pf-label { color: #fff; font-weight: 500; }
 .form-inline .pf-input, .form-inline .pf-select { border-color: transparent; }
 .form-inline .pf-input:focus, .form-inline .pf-select:focus { border-color: #fff; }
 .form-inline .pf-calc { background: rgba(255,255,255,0.16); border-color: rgba(255,255,255,0.35); color: #fff; font-weight: 600; cursor: default; }
@@ -288,7 +288,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
 @media (max-width: 768px) {
   .form-section { margin-top: 1.75rem; padding: 0 1rem; }
   .form-inline { padding: 1.25rem 1rem 1.5rem; }
-  .form-inline #s-submit { box-shadow: 0 -12px 18px -6px #443CA0; }
+  .form-inline #s-submit { box-shadow: 0 -12px 18px -6px #5F55C8; }
   /* Acortamos el trecho hasta el formulario: fuera el segundo parrafo y los
      4 pasos en dos columnas, sin los conectores verticales. */
   .hero-sub2 { display: none; }
@@ -965,6 +965,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   .inf-tx, .inf-doc { position:relative; z-index:1; }
   .inf-sello { display:inline-flex; align-items:center; gap:.45rem; font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.3rem .85rem; margin-bottom:.9rem; }
   .inf-sello b { color:#9FF0CF; font-weight:700; }
+  .inf-nuevo { background:#FFD23F; color:#3A2E00; font-weight:800; letter-spacing:.06em; border-radius:999px; padding:.1rem .5rem; margin:0 .15rem 0 -.45rem; }
   .inf-banner h2 { font-family:'Inter',sans-serif; font-size:34px; font-weight:900; letter-spacing:-.02em; line-height:1.12; color:#fff; margin:0 0 .7rem; }
   .inf-banner p { font-size:16.5px; line-height:1.6; color:rgba(255,255,255,.9); margin:0 0 1.25rem; }
   .inf-cta { display:inline-flex; align-items:center; background:#fff; color:var(--purple-dark); font-weight:800; font-size:16px; text-decoration:none; border-radius:999px; padding:.85rem 1.5rem; box-shadow:0 14px 28px -16px rgba(0,0,0,.6); transition:transform .15s; }
@@ -1001,7 +1002,7 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   <section class="inf-wrap" id="informe">
     <div class="inf-banner">
       <div class="inf-tx">
-        <span class="inf-sello">Informe Planiapp · <b>Solo para Isapres</b></span>
+        <span class="inf-sello"><span class="inf-nuevo">Nuevo</span>Informe Planiapp · <b>Solo para Isapres</b></span>
         <h2>¿Tu plan de Isapre te conviene?</h2>
         <p>El Informe Planiapp analiza tu plan actual, lo compara con otros planes del mercado y te dice con datos si te conviene cambiarte o quedarte como estás.</p>
         <a class="inf-cta" href="/informe-planiapp" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'compara_plan',origen:'portada_banner'})">Pedir mi informe gratis →</a>

@@ -423,14 +423,50 @@ footer a { color: var(--text-muted); }
 .cp-ok-wsp { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 15px; text-decoration: none; color: #0F6E56; border: 1.5px solid #BDE6D2; background: #EDF9F3; border-radius: 999px; padding: 0.65rem 1.25rem; margin-top: 0.3rem; }
 
 /* Banner con un informe de ejemplo */
-.cp-banner { position: relative; overflow: hidden; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.75rem; align-items: center; background: linear-gradient(135deg, #2E2775 0%, #534AB7 58%, #7166DA 100%); color: #fff; border-radius: 24px; padding: 2.2rem 2rem; margin: 0.25rem 0 2.4rem; box-shadow: 0 34px 60px -42px rgba(38,33,92,0.9); }
-.cp-banner::before, .cp-banner::after { content: ''; position: absolute; border-radius: 50%; pointer-events: none; }
-.cp-banner::before { width: 340px; height: 340px; right: -100px; top: -130px; background: radial-gradient(circle, rgba(255,255,255,0.17), transparent 70%); }
-.cp-banner::after { width: 280px; height: 280px; left: -110px; bottom: -160px; background: radial-gradient(circle, rgba(29,158,117,0.4), transparent 70%); }
-.cp-banner-tx, .cp-doc { position: relative; z-index: 1; }
+/* Franja de borde a borde (como el inicio de la portada), no un recuadro */
+.cp-hero { position: relative; overflow: hidden; background: linear-gradient(135deg, #2E2775 0%, #534AB7 58%, #7166DA 100%); color: #fff; }
+.cp-hero::before, .cp-hero::after { content: ''; position: absolute; border-radius: 50%; pointer-events: none; }
+.cp-hero::before { width: 520px; height: 520px; right: -140px; top: -200px; background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%); }
+.cp-hero::after { width: 420px; height: 420px; left: -160px; bottom: -240px; background: radial-gradient(circle, rgba(29,158,117,0.38), transparent 70%); }
+.cp-hero-in { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 3.25rem; }
+.cp-hero .miga, .cp-hero .miga a { color: rgba(255,255,255,0.75); }
+.cp-hero .miga a:hover { color: #fff; }
+.cp-banner { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 3rem; align-items: center; }
+.cp-doc { justify-self: center; width: 100%; max-width: 380px; }
 .cp-banner .sello { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.28); color: #fff; }
 .cp-banner .sello b { color: #9FF0CF; }
-.cp-banner h1 { color: #fff; font-size: 34px; line-height: 1.12; margin: 0 0 0.7rem; }
+.cp-nuevo { background: #FFD23F; color: #3A2E00; font-weight: 800; letter-spacing: 0.06em; border-radius: 999px; padding: 0.1rem 0.5rem; margin: 0 0.15rem 0 -0.45rem; }
+.cp-banner h1 { color: #fff; font-size: 40px; line-height: 1.1; margin: 0 0 0.75rem; }
+.art.cp { padding-top: 2.5rem; }
+@media (max-width: 900px) { .cp-banner { grid-template-columns: 1fr; gap: 1.8rem; } }
+
+/* El formulario en morado, para que destaque */
+.cp-card { background: linear-gradient(160deg, #7469DA 0%, #5F55C8 100%); border: 0; box-shadow: 0 26px 50px -30px rgba(38,33,92,0.85); color: #fff; }
+.cp-card .cp-paso legend, .cp-card .cp-campo > label, .cp-card .cp-lab { color: #fff; }
+.cp-card .cp-lab small, .cp-card .cp-campo > label small { color: rgba(255,255,255,0.78); }
+.cp-card .cp-num { background: #fff; color: var(--purple); }
+.cp-card .cp-ayuda, .cp-card .cp-pie, .cp-card .cp-priv { color: rgba(255,255,255,0.85); }
+.cp-card .cp-priv svg { color: #fff; }
+.cp-card .cp-acepto { color: #fff; }
+.cp-card .cp-acepto input { accent-color: #1D9E75; }
+.cp-card .cp-op { background: #fff; border-color: transparent; }
+.cp-card .cp-op.on { background: var(--purple-light); border-color: #fff; box-shadow: inset 0 0 0 2px var(--purple), 0 0 0 2px #fff; }
+.cp-card .cp-in { border-color: transparent; }
+.cp-card .cp-in:focus-within { border-color: #fff; box-shadow: 0 0 0 3px rgba(255,255,255,0.35); }
+.cp-card .cp-modos { background: rgba(255,255,255,0.18); }
+.cp-card .cp-modo { color: rgba(255,255,255,0.88); }
+.cp-card .cp-modo.on { color: var(--purple-dark); }
+.cp-card .cp-drop { background: rgba(255,255,255,0.96); border-color: rgba(255,255,255,0.7); }
+.cp-card .cp-isa { border-color: transparent; }
+.cp-card .cp-isa.on { box-shadow: inset 0 0 0 2px var(--purple), 0 0 0 2px #fff; }
+.cp-card .cp-donde { background: rgba(255,255,255,0.96); border-color: transparent; color: var(--text); }
+.cp-card .cp-enviar { background: #fff; color: var(--purple-dark); box-shadow: 0 14px 28px -16px rgba(0,0,0,0.55); }
+.cp-card .cp-enviar:hover { background: var(--purple-light); }
+.cp-card .cp-enviar.cargando::before { border-color: rgba(83,74,183,0.3); border-top-color: var(--purple); }
+.cp-card .cp-aviso-arch { color: #FFE1DC; }
+.cp-card .cp-ojo, .cp-card .cp-arch li { color: var(--text); }
+.cp-card.cp-ok h2, .cp-card.cp-ok p { color: #fff; }
+.cp-card .err.cp-ops, .cp-card .err.cp-chips, .cp-card .err.cp-isas { outline-color: #FFB4A9; }
 .cp-banner p { color: rgba(255,255,255,0.9); font-size: 16.5px; line-height: 1.6; margin: 0 0 1.25rem; }
 .cp-cta { display: inline-flex; align-items: center; background: #fff; color: var(--purple-dark); font-weight: 800; font-size: 16px; text-decoration: none; border-radius: 999px; padding: 0.85rem 1.5rem; box-shadow: 0 14px 28px -16px rgba(0,0,0,0.6); transition: transform .15s; }
 .cp-cta:hover { transform: translateY(-1px); }
@@ -485,8 +521,10 @@ footer a { color: var(--text-muted); }
 .cp-caso-nota { font-size: 12.5px; color: var(--text-muted); margin: 0.5rem 0 2.4rem; text-align: center; }
 
 @media (max-width: 680px) {
-  .cp-banner { grid-template-columns: 1fr; padding: 1.6rem 1.2rem 1.4rem; border-radius: 20px; gap: 1.4rem; }
-  .cp-banner h1 { font-size: 28px; }
+  .cp-hero-in { padding: 1.1rem 1rem 2.2rem; }
+  .cp-banner { grid-template-columns: 1fr; gap: 1.6rem; }
+  .cp-banner h1 { font-size: 29px; }
+  .art.cp { padding-top: 2rem; }
   .cp-doc { transform: none; }
   .cp-h2 { font-size: 21px; }
   .cp-inc { grid-template-columns: 1fr; }
@@ -527,12 +565,13 @@ footer a { color: var(--text-muted); }
   <a class="nav-cta" href="/#opciones">Cotizar<span class="nav-cta-extra"> gratis</span></a>
 </nav>
 
-<main class="art cp">
+<section class="cp-hero">
+  <div class="cp-hero-in">
   <div class="miga"><a href="/">Inicio</a> › Informe Planiapp</div>
 
-  <section class="cp-banner">
+  <div class="cp-banner">
     <div class="cp-banner-tx">
-      <span class="sello">Informe Planiapp · <b>Solo para Isapres</b></span>
+      <span class="sello"><span class="cp-nuevo">Nuevo</span>Informe Planiapp · <b>Solo para Isapres</b></span>
       <h1>¿Qué es el Informe Planiapp?</h1>
       <p>Es un análisis de tu plan de Isapre que te dice, con datos, si te conviene cambiarte o quedarte como estás. Incluye:</p>
       <ol class="cp-lista">
@@ -559,8 +598,11 @@ footer a { color: var(--text-muted); }
       </div>
       <div class="cp-doc-pie"><span class="cp-doc-chip">Recomendado: Opción 1</span></div>
     </div>
-  </section>
+  </div>
+  </div>
+</section>
 
+<main class="art cp">
   <h2 class="cp-h2">Un caso real</h2>
   <div class="cp-caso">
     <div class="cp-caso-col antes">
