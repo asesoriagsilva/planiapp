@@ -273,7 +273,7 @@ footer a { color: var(--text-muted); }
      "name": "¿Qué incluye el Informe Planiapp?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Un análisis de las coberturas más importantes de tu plan, con sus topes y beneficios, y un cuadro comparativo con otros planes del mercado. Comparamos tu clínica preferente, la red GES y la CAEC, y te decimos si te conviene cambiarte o quedarte."
+      "text": "Un análisis de las coberturas más importantes de tu plan, con sus topes y beneficios; un cuadro comparativo con otros planes del mercado en tu clínica preferente, la red GES y la CAEC; las estadísticas de reclamos y licencias de cada Isapre; qué Isapres no te convienen y por qué, y al final las ofertas que tienes para cambiarte o si te conviene quedarte."
      }
     },
     {
@@ -434,6 +434,10 @@ footer a { color: var(--text-muted); }
 .cp-banner p { color: rgba(255,255,255,0.9); font-size: 16.5px; line-height: 1.6; margin: 0 0 1.25rem; }
 .cp-cta { display: inline-flex; align-items: center; background: #fff; color: var(--purple-dark); font-weight: 800; font-size: 16px; text-decoration: none; border-radius: 999px; padding: 0.85rem 1.5rem; box-shadow: 0 14px 28px -16px rgba(0,0,0,0.6); transition: transform .15s; }
 .cp-cta:hover { transform: translateY(-1px); }
+.cp-lista { list-style: none; counter-reset: inc; margin: -0.4rem 0 1.4rem; padding: 0; }
+.cp-lista li { counter-increment: inc; position: relative; padding: 0.28rem 0 0.28rem 2.1rem; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.9); }
+.cp-lista li::before { content: counter(inc); position: absolute; left: 0; top: 0.32rem; width: 23px; height: 23px; border-radius: 50%; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.32); color: #fff; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.cp-lista b { color: #fff; }
 .cp-micro { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; margin: 0.95rem 0 0; padding: 0; font-size: 13.5px; color: rgba(255,255,255,0.88); }
 .cp-micro li::before { content: '✓'; color: #9FF0CF; font-weight: 800; margin-right: 0.35rem; }
 .cp-doc { background: #fff; color: var(--text); border-radius: 16px; padding: 0.95rem 0.95rem 0.85rem; box-shadow: 0 26px 50px -24px rgba(10,8,40,0.65); transform: rotate(1.8deg); }
@@ -529,8 +533,15 @@ footer a { color: var(--text-muted); }
   <section class="cp-banner">
     <div class="cp-banner-tx">
       <span class="sello">Informe Planiapp · <b>Solo para Isapres</b></span>
-      <h1>¿Tu plan de Isapre te conviene?</h1>
-      <p>El Informe Planiapp analiza tu plan actual, lo compara con otros planes del mercado y te dice con datos si te conviene cambiarte o quedarte como estás.</p>
+      <h1>¿Qué es el Informe Planiapp?</h1>
+      <p>Es un análisis de tu plan de Isapre que te dice, con datos, si te conviene cambiarte o quedarte como estás. Incluye:</p>
+      <ol class="cp-lista">
+        <li><b>Tu plan en claro:</b> sus coberturas más importantes, topes y los beneficios a los que puedes acceder.</li>
+        <li><b>Comparación con el mercado:</b> tu plan frente a otros planes, en tu clínica preferente, la red GES y la CAEC.</li>
+        <li><b>Reclamos y licencias:</b> las estadísticas de cada Isapre, según la Superintendencia de Salud.</li>
+        <li><b>Qué Isapres no te convienen:</b> y por qué, para que no elijas a ciegas.</li>
+        <li><b>Tu decisión:</b> las ofertas que tienes para cambiarte, o si te conviene quedarte donde estás.</li>
+      </ol>
       <a class="cp-cta" href="#cp-pedir" onclick="if(typeof gtag==='function')gtag('event','informe_cta',{origen:'banner'})">Pedir mi informe gratis →</a>
       <ul class="cp-micro"><li>Gratis</li><li>Solo nombre y WhatsApp</li><li>Sin compromiso</li></ul>
     </div>
@@ -544,19 +555,11 @@ footer a { color: var(--text-muted); }
         <span class="cp-doc-k">Red GES</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span>
         <span class="cp-doc-k">CAEC</span><span><i class="d-si" aria-label="Cubre bien">✓</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
         <span class="cp-doc-k">Reembolso</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+        <span class="cp-doc-k">Reclamos</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span>
       </div>
       <div class="cp-doc-pie"><span class="cp-doc-chip">Recomendado: Opción 1</span></div>
     </div>
   </section>
-
-  <h2 class="cp-h2">¿Qué es el Informe Planiapp?</h2>
-  <p class="cp-lead">Es un análisis de tu plan de Isapre con las coberturas que más importan. Te detallamos sus topes y los beneficios a los que puedes acceder, y lo comparamos en un cuadro con otros planes del mercado que podrían bajarte el costo o mejorar tu cobertura.</p>
-  <div class="cp-inc">
-    <div class="cp-inc-c"><span class="cp-inc-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 11h6"/></svg></span><div><b>Tu plan, en claro</b><p>Las coberturas más importantes de tu plan, con sus topes y los beneficios a los que puedes acceder y quizás no estás usando.</p></div></div>
-    <div class="cp-inc-c"><span class="cp-inc-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16M15 4v16"/></svg></span><div><b>Cuadro comparativo</b><p>Tu plan frente a otros planes del mercado, con opciones que pueden bajar el costo o mejorar tu cobertura.</p></div></div>
-    <div class="cp-inc-c"><span class="cp-inc-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V7l7-4 7 4v14"/><path d="M12 8v6M9 11h6"/><path d="M2 21h20"/></svg></span><div><b>Tu clínica, GES y CAEC</b><p>Comparamos topes y beneficios en tu clínica preferente, y dónde te atenderías por GES y por CAEC.</p></div></div>
-    <div class="cp-inc-c"><span class="cp-inc-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>Una recomendación honesta</b><p>Si el cambio te conviene, te proponemos planes concretos. Si tu plan actual es mejor, te lo decimos para que no te cambies y pierdas beneficios.</p></div></div>
-  </div>
 
   <h2 class="cp-h2">Un caso real</h2>
   <div class="cp-caso">
@@ -761,7 +764,7 @@ footer a { color: var(--text-muted); }
   <section class="faq">
     <h2>Preguntas frecuentes</h2>
     <h3>¿Qué incluye el Informe Planiapp?</h3>
-    <p>Un análisis de las coberturas más importantes de tu plan, con sus topes y beneficios, y un cuadro comparativo con otros planes del mercado. Comparamos tu clínica preferente, la red GES y la CAEC, y te decimos si te conviene cambiarte o quedarte.</p>
+    <p>Un análisis de las coberturas más importantes de tu plan, con sus topes y beneficios; un cuadro comparativo con otros planes del mercado en tu clínica preferente, la red GES y la CAEC; las estadísticas de reclamos y licencias de cada Isapre; qué Isapres no te convienen y por qué, y al final las ofertas que tienes para cambiarte o si te conviene quedarte.</p>
     <h3>¿Tiene costo revisar mi plan?</h3>
     <p>No. La revisión es gratis y sin compromiso.</p>
     <h3>¿Qué hacen con mi plan?</h3>

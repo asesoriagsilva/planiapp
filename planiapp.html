@@ -165,23 +165,6 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,255,0.92)
 /* Formulario con los pasos a su derecha */
 .form-pasos { position: sticky; top: 1.5rem; padding-top: 0.4rem; }
 .form-pasos-t { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; margin: 0 0 1rem; }
-/* Recuadro "Compara mi plan actual" (página aparte, no es la calculadora) */
-.cmp-plan { display: block; margin-top: 1.4rem; background: linear-gradient(135deg, #E6F9F0 0%, #D3F2E3 100%); border: 1px solid #BDE6D2; border-radius: 18px; padding: 1rem 1.15rem 1.05rem; text-decoration: none; color: #0B4A38; box-shadow: 0 18px 32px -26px rgba(15,110,86,.8); transition: border-color .15s, transform .2s; -webkit-tap-highlight-color: transparent; }
-@media (hover: hover) { .cmp-plan:hover { border-color: #1D9E75; transform: translateY(-1px); } .cmp-plan:hover .cmp-plan-btn { background: #0F6E56; } }
-.cmp-plan:focus-visible { outline: 3px solid #1D9E75; outline-offset: 2px; }
-.cmp-plan-k { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: #1D9E75; border-radius: 999px; padding: 0.28rem 0.75rem; }
-.cmp-plan b { display: block; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 800; color: var(--purple-dark); line-height: 1.25; margin: 0.55rem 0 0.3rem; }
-.cmp-plan-p { display: block; font-size: 13.5px; color: #2F5D50; line-height: 1.5; margin-bottom: 0.75rem; }
-.cmp-plan-btn { display: inline-flex; align-items: center; background: #1D9E75; color: #fff; font-weight: 700; font-size: 14px; border-radius: 999px; padding: 0.55rem 1.1rem; box-shadow: 0 10px 20px -12px rgba(29,158,117,.9); transition: background .2s; }
-/* En computador, los pasos y el recuadro quedan cuadrados con el formulario: arriba con el título y abajo con el recuadro */
-@media (min-width: 901px) {
-  .form-section > .form-pasos { align-self: stretch; }
-  .form-pasos { position: static; padding-top: 0; display: flex; flex-direction: column; }
-  .form-pasos-t { line-height: 1.2; margin-bottom: 0.8rem; }
-  .pasos-flow { flex: 1; justify-content: space-between; gap: 8px !important; padding: 0 !important; }
-  .pasos-flow > :not(.sc) { display: none !important; }
-  .form-pasos .cmp-plan { margin-top: 1rem; }
-}
 @media (max-width: 900px) {
   .calc-card { max-width: none; margin-left: 0; }
   .form-section { grid-template-columns: 1fr !important; max-width: 620px !important; gap: 1.75rem !important; }
@@ -969,14 +952,76 @@ footer { background: #1a1730; padding: 2rem 3rem; display: grid; grid-template-c
   </div>
 
 </div>
-    <a class="cmp-plan" href="/informe-planiapp" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'compara_plan',origen:'portada_recuadro'})">
-      <span class="cmp-plan-k"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>Informe Planiapp · Solo Isapres</span>
-      <b>¿Tu plan actual te conviene?</b>
-      <span class="cmp-plan-p">Contrastamos tu plan con el mercado para ver si puedes bajar el precio, mejorar coberturas o quedarte igual. Solo nombre y WhatsApp, sin datos sensibles.</span>
-      <span class="cmp-plan-btn">Revisar mi plan →</span>
-    </a>
   </aside>
   </div>
+
+  <!-- INFORME PLANIAPP -->
+  <style>
+  .inf-wrap { max-width:1000px; margin:3.5rem auto 0; padding:0 1.5rem; }
+  .inf-banner { position:relative; overflow:hidden; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr); gap:2.25rem; align-items:center; background:linear-gradient(135deg,#2E2775 0%,#534AB7 58%,#7166DA 100%); color:#fff; border-radius:24px; padding:2.5rem 2.75rem; box-shadow:0 34px 60px -42px rgba(38,33,92,.9); }
+  .inf-banner::before, .inf-banner::after { content:''; position:absolute; border-radius:50%; pointer-events:none; }
+  .inf-banner::before { width:380px; height:380px; right:-110px; top:-150px; background:radial-gradient(circle,rgba(255,255,255,.17),transparent 70%); }
+  .inf-banner::after { width:300px; height:300px; left:-120px; bottom:-170px; background:radial-gradient(circle,rgba(29,158,117,.4),transparent 70%); }
+  .inf-tx, .inf-doc { position:relative; z-index:1; }
+  .inf-sello { display:inline-flex; align-items:center; gap:.45rem; font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.3rem .85rem; margin-bottom:.9rem; }
+  .inf-sello b { color:#9FF0CF; font-weight:700; }
+  .inf-banner h2 { font-family:'Inter',sans-serif; font-size:34px; font-weight:900; letter-spacing:-.02em; line-height:1.12; color:#fff; margin:0 0 .7rem; }
+  .inf-banner p { font-size:16.5px; line-height:1.6; color:rgba(255,255,255,.9); margin:0 0 1.25rem; }
+  .inf-cta { display:inline-flex; align-items:center; background:#fff; color:var(--purple-dark); font-weight:800; font-size:16px; text-decoration:none; border-radius:999px; padding:.85rem 1.5rem; box-shadow:0 14px 28px -16px rgba(0,0,0,.6); transition:transform .15s; }
+  .inf-cta:hover { transform:translateY(-1px); }
+  .inf-cta:focus-visible { outline:3px solid #9FF0CF; outline-offset:3px; }
+  .inf-micro { list-style:none; display:flex; flex-wrap:wrap; gap:.35rem 1rem; margin:.95rem 0 0; padding:0; font-size:13.5px; color:rgba(255,255,255,.88); }
+  .inf-micro li::before { content:'✓'; color:#9FF0CF; font-weight:800; margin-right:.35rem; }
+  .inf-doc { justify-self:center; width:100%; max-width:360px; background:#fff; color:var(--text); border-radius:16px; padding:.95rem .95rem .85rem; box-shadow:0 26px 50px -24px rgba(10,8,40,.65); transform:rotate(1.8deg); }
+  .inf-doc-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:.7rem; }
+  .inf-doc-logo { font-family:'Inter',sans-serif; font-weight:900; font-size:13.5px; color:var(--purple-dark); }
+  .inf-doc-ej { font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); background:#F1F0FA; border-radius:999px; padding:.12rem .5rem; }
+  .inf-tabla { display:grid; grid-template-columns:1.15fr repeat(3,1fr); align-items:center; font-size:12.5px; }
+  .inf-tabla > span { padding:.42rem .2rem; border-bottom:1px solid #EFEDF8; text-align:center; }
+  .inf-tabla > span:nth-last-child(-n+4) { border-bottom:0; }
+  .inf-tabla .inf-k { text-align:left; color:var(--text-muted); font-weight:600; }
+  .inf-h { font-weight:800; color:var(--purple-dark); font-size:11.5px; }
+  .inf-tabla .rec { background:#EFFAF5; }
+  .inf-h.rec { border-radius:8px 8px 0 0; color:#0F6E56; }
+  .inf-tabla i { display:inline-flex; width:19px; height:19px; border-radius:50%; align-items:center; justify-content:center; font-style:normal; font-weight:800; font-size:11px; color:#fff; }
+  .inf-tabla .d-si { background:#1D9E75; } .inf-tabla .d-ojo { background:#E0A526; } .inf-tabla .d-no { background:#C9C6DA; }
+  .inf-tabla .d-txt { font-size:11.5px; color:var(--text-muted); } .inf-tabla .d-baja { color:#0F6E56; }
+  .inf-doc-pie { margin-top:.7rem; text-align:right; }
+  .inf-chip { font-size:11.5px; font-weight:700; color:#0F6E56; background:#E1F5EE; border:1px solid #CFEEE3; border-radius:999px; padding:.2rem .65rem; }
+  @media (max-width:900px){
+    .inf-banner { grid-template-columns:1fr; gap:1.5rem; padding:2rem 1.6rem; }
+  }
+  @media (max-width:680px){
+    .inf-wrap { margin-top:2.5rem; padding:0 1rem; }
+    .inf-banner { padding:1.6rem 1.2rem 1.4rem; border-radius:20px; }
+    .inf-banner h2 { font-size:26px; }
+    .inf-doc { transform:none; }
+  }
+  </style>
+  <section class="inf-wrap" id="informe">
+    <div class="inf-banner">
+      <div class="inf-tx">
+        <span class="inf-sello">Informe Planiapp · <b>Solo para Isapres</b></span>
+        <h2>¿Tu plan de Isapre te conviene?</h2>
+        <p>El Informe Planiapp analiza tu plan actual, lo compara con otros planes del mercado y te dice con datos si te conviene cambiarte o quedarte como estás.</p>
+        <a class="inf-cta" href="/informe-planiapp" onclick="if(typeof gtag==='function')gtag('event','articulo_click',{articulo:'compara_plan',origen:'portada_banner'})">Pedir mi informe gratis →</a>
+        <ul class="inf-micro"><li>Gratis</li><li>Solo nombre y WhatsApp</li><li>Sin compromiso</li></ul>
+      </div>
+      <div class="inf-doc" aria-hidden="true">
+        <div class="inf-doc-top"><span class="inf-doc-logo">Informe Planiapp</span><span class="inf-doc-ej">Ejemplo</span></div>
+        <div class="inf-tabla">
+          <span></span><span class="inf-h">Tu plan</span><span class="inf-h rec">Opción 1</span><span class="inf-h">Opción 2</span>
+          <span class="inf-k">Precio</span><span><b class="d-txt">Hoy</b></span><span class="rec"><b class="d-txt d-baja">↓ Menos</b></span><span><b class="d-txt">Igual</b></span>
+          <span class="inf-k">Tu clínica</span><span><i class="d-ojo">!</i></span><span class="rec"><i class="d-si">✓</i></span><span><i class="d-si">✓</i></span>
+          <span class="inf-k">Urgencia</span><span><i class="d-no">–</i></span><span class="rec"><i class="d-si">✓</i></span><span><i class="d-si">✓</i></span>
+          <span class="inf-k">Red GES</span><span><i class="d-ojo">!</i></span><span class="rec"><i class="d-si">✓</i></span><span><i class="d-ojo">!</i></span>
+          <span class="inf-k">CAEC</span><span><i class="d-si">✓</i></span><span class="rec"><i class="d-si">✓</i></span><span><i class="d-si">✓</i></span>
+          <span class="inf-k">Reembolso</span><span><i class="d-ojo">!</i></span><span class="rec"><i class="d-si">✓</i></span><span><i class="d-si">✓</i></span>
+        </div>
+        <div class="inf-doc-pie"><span class="inf-chip">Recomendado: Opción 1</span></div>
+      </div>
+    </div>
+  </section>
 
   <!-- CÓMO ES CADA ISAPRE -->
   <style>
