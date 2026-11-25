@@ -8,7 +8,7 @@
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Informe Planiapp: ¿tu plan de Isapre te conviene? | Planiapp</title>
-<meta name="description" content="Sube tu plan de Isapre y te decimos si puedes pagar menos por algo similar, tener mejor cobertura por lo mismo o si te conviene quedarte. Gratis, por WhatsApp.">
+<meta name="description" content="El Informe Planiapp analiza tu plan de Isapre, lo compara con otros planes del mercado en tu clínica, la red GES y la CAEC, y te dice si te conviene cambiarte o quedarte. Gratis, por WhatsApp.">
 <link rel="canonical" href="https://planiapp.cl/informe-planiapp">
 <meta property="og:title" content="Informe Planiapp: ¿tu plan de Isapre te conviene?">
 <meta property="og:description" content="Sube tu plan de Isapre y te decimos si puedes pagar menos o tener mejor cobertura por lo mismo.">
@@ -123,6 +123,11 @@ p { font-size: 16px; margin-bottom: 1rem; }
 .lista.isa li::before { color: var(--purple); }
 .lista strong { color: var(--text); }
 
+/* Respuesta directa arriba (para las personas y para que las IAs tengan qué citar) */
+.en-corto { background: var(--purple-light); border-left: 3px solid var(--purple); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; margin: -0.75rem 0 1.5rem; }
+.en-corto-t { display: block; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+.en-corto-t span { font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--text-muted); }
+.en-corto p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text); }
 .ojo { background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin: 1rem 0; }
 .ojo p { font-size: 15px; margin-bottom: 0.6rem; }
 .ojo p:last-child { margin-bottom: 0; }
@@ -226,7 +231,7 @@ footer a { color: var(--text-muted); }
    "@id": "https://planiapp.cl/informe-planiapp#pagina",
    "url": "https://planiapp.cl/informe-planiapp",
    "name": "Informe Planiapp: ¿tu plan de Isapre te conviene? | Planiapp",
-   "description": "Sube tu plan de Isapre y te decimos si puedes pagar menos por algo similar, tener mejor cobertura por lo mismo o si te conviene quedarte. Gratis, por WhatsApp.",
+   "description": "El Informe Planiapp analiza tu plan de Isapre, lo compara con otros planes del mercado en tu clínica, la red GES y la CAEC, y te dice si te conviene cambiarte o quedarte. Gratis, por WhatsApp.",
    "inLanguage": "es-CL",
    "isPartOf": {
     "@type": "WebSite",
@@ -263,6 +268,14 @@ footer a { color: var(--text-muted); }
    "@id": "https://planiapp.cl/informe-planiapp#preguntas",
    "url": "https://planiapp.cl/informe-planiapp",
    "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Qué incluye el Informe Planiapp?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Un análisis de las coberturas más importantes de tu plan, con sus topes y beneficios, y un cuadro comparativo con otros planes del mercado. Comparamos tu clínica preferente, la red GES y la CAEC, y te decimos si te conviene cambiarte o quedarte."
+     }
+    },
     {
      "@type": "Question",
      "name": "¿Tiene costo revisar mi plan?",
@@ -409,7 +422,72 @@ footer a { color: var(--text-muted); }
 .cp-ok .cp-ojo { text-align: left; max-width: 460px; margin: 0 auto 1rem; }
 .cp-ok-wsp { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 15px; text-decoration: none; color: #0F6E56; border: 1.5px solid #BDE6D2; background: #EDF9F3; border-radius: 999px; padding: 0.65rem 1.25rem; margin-top: 0.3rem; }
 
+/* Banner con un informe de ejemplo */
+.cp-banner { position: relative; overflow: hidden; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.75rem; align-items: center; background: linear-gradient(135deg, #2E2775 0%, #534AB7 58%, #7166DA 100%); color: #fff; border-radius: 24px; padding: 2.2rem 2rem; margin: 0.25rem 0 2.4rem; box-shadow: 0 34px 60px -42px rgba(38,33,92,0.9); }
+.cp-banner::before, .cp-banner::after { content: ''; position: absolute; border-radius: 50%; pointer-events: none; }
+.cp-banner::before { width: 340px; height: 340px; right: -100px; top: -130px; background: radial-gradient(circle, rgba(255,255,255,0.17), transparent 70%); }
+.cp-banner::after { width: 280px; height: 280px; left: -110px; bottom: -160px; background: radial-gradient(circle, rgba(29,158,117,0.4), transparent 70%); }
+.cp-banner-tx, .cp-doc { position: relative; z-index: 1; }
+.cp-banner .sello { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.28); color: #fff; }
+.cp-banner .sello b { color: #9FF0CF; }
+.cp-banner h1 { color: #fff; font-size: 34px; line-height: 1.12; margin: 0 0 0.7rem; }
+.cp-banner p { color: rgba(255,255,255,0.9); font-size: 16.5px; line-height: 1.6; margin: 0 0 1.25rem; }
+.cp-cta { display: inline-flex; align-items: center; background: #fff; color: var(--purple-dark); font-weight: 800; font-size: 16px; text-decoration: none; border-radius: 999px; padding: 0.85rem 1.5rem; box-shadow: 0 14px 28px -16px rgba(0,0,0,0.6); transition: transform .15s; }
+.cp-cta:hover { transform: translateY(-1px); }
+.cp-micro { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; margin: 0.95rem 0 0; padding: 0; font-size: 13.5px; color: rgba(255,255,255,0.88); }
+.cp-micro li::before { content: '✓'; color: #9FF0CF; font-weight: 800; margin-right: 0.35rem; }
+.cp-doc { background: #fff; color: var(--text); border-radius: 16px; padding: 0.95rem 0.95rem 0.85rem; box-shadow: 0 26px 50px -24px rgba(10,8,40,0.65); transform: rotate(1.8deg); }
+.cp-doc-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.7rem; }
+.cp-doc-logo { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 13.5px; color: var(--purple-dark); }
+.cp-doc-ej { font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); background: #F1F0FA; border-radius: 999px; padding: 0.12rem 0.5rem; }
+.cp-doc-tabla { display: grid; grid-template-columns: 1.15fr repeat(3, 1fr); align-items: center; font-size: 12.5px; }
+.cp-doc-tabla > span { padding: 0.42rem 0.2rem; border-bottom: 1px solid #EFEDF8; text-align: center; }
+.cp-doc-tabla > span:nth-last-child(-n+4) { border-bottom: 0; }
+.cp-doc-tabla .cp-doc-k { text-align: left; color: var(--text-muted); font-weight: 600; }
+.cp-doc-h { font-weight: 800; color: var(--purple-dark); font-size: 11.5px; }
+.cp-doc-tabla .rec { background: #EFFAF5; }
+.cp-doc-h.rec { border-radius: 8px 8px 0 0; color: #0F6E56; }
+.cp-doc-tabla i { display: inline-flex; width: 19px; height: 19px; border-radius: 50%; align-items: center; justify-content: center; font-style: normal; font-weight: 800; font-size: 11px; color: #fff; }
+.d-si { background: #1D9E75; } .d-ojo { background: #E0A526; } .d-no { background: #C9C6DA; }
+.d-txt { font-size: 11.5px; color: var(--text-muted); } .d-txt.d-baja { color: #0F6E56; }
+.cp-doc-pie { margin-top: 0.7rem; text-align: right; }
+.cp-doc-chip { font-size: 11.5px; font-weight: 700; color: #0F6E56; background: #E1F5EE; border: 1px solid #CFEEE3; border-radius: 999px; padding: 0.2rem 0.65rem; }
+
+/* Qué es y qué incluye */
+.cp-h2 { font-size: 24px; margin: 0 0 0.6rem; scroll-margin-top: 90px; }
+.cp-lead { font-size: 16.5px; color: var(--text-muted); line-height: 1.65; margin: 0 0 1.2rem; }
+.cp-inc { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 2.4rem; }
+.cp-inc-c { display: flex; gap: 0.85rem; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 1rem 1.05rem; }
+.cp-inc-i { flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; background: var(--purple-light); color: var(--purple); display: flex; align-items: center; justify-content: center; }
+.cp-inc-c b { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; color: var(--purple-dark); margin-bottom: 0.2rem; }
+.cp-inc-c p { font-size: 14.5px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+
+/* Caso de ejemplo */
+.cp-caso { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 1.1rem; box-shadow: 0 22px 44px -36px rgba(38,33,92,0.55); }
+.cp-caso-col { border-radius: 14px; padding: 0.95rem 1rem; }
+.cp-caso-col.antes { background: #FBF7F4; border: 1px solid #F1E4DA; }
+.cp-caso-col.despues { background: #EFFAF5; border: 1px solid #CFEEE3; }
+.cp-caso-et { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; border-radius: 999px; padding: 0.15rem 0.6rem; margin-bottom: 0.55rem; }
+.antes .cp-caso-et { background: #F6E3D6; color: #9A4A1C; }
+.despues .cp-caso-et { background: #CFEEE3; color: #0F6E56; }
+.cp-caso ul { list-style: none; margin: 0; padding: 0; }
+.cp-caso li { position: relative; padding-left: 1.35rem; font-size: 14.5px; line-height: 1.5; margin-bottom: 0.4rem; }
+.antes li::before { content: '•'; position: absolute; left: 0.35rem; color: #C2703F; font-weight: 800; }
+.despues li::before { content: '✓'; position: absolute; left: 0.1rem; color: #1D9E75; font-weight: 800; }
+.cp-caso-flecha { display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--purple-mid); font-weight: 800; }
+.cp-caso-ahorro { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 0.5rem; background: linear-gradient(135deg, #1D9E75, #13805D); color: #fff; border-radius: 14px; padding: 0.85rem 1rem; text-align: center; }
+.cp-caso-ahorro span { font-size: 15px; opacity: 0.92; }
+.cp-caso-ahorro b { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 900; }
+.cp-caso-nota { font-size: 12.5px; color: var(--text-muted); margin: 0.5rem 0 2.4rem; text-align: center; }
+
 @media (max-width: 680px) {
+  .cp-banner { grid-template-columns: 1fr; padding: 1.6rem 1.2rem 1.4rem; border-radius: 20px; gap: 1.4rem; }
+  .cp-banner h1 { font-size: 28px; }
+  .cp-doc { transform: none; }
+  .cp-h2 { font-size: 21px; }
+  .cp-inc { grid-template-columns: 1fr; }
+  .cp-caso { grid-template-columns: 1fr; }
+  .cp-caso-flecha { transform: rotate(90deg); font-size: 20px; }
   .cp-card { padding: 1.25rem 1rem 1.1rem; border-radius: 18px; }
   .cp-ops { grid-template-columns: 1fr; }
   .cp-fila, .cp-fila.dos { grid-template-columns: 1fr; gap: 0; }
@@ -448,11 +526,62 @@ footer a { color: var(--text-muted); }
 <main class="art cp">
   <div class="miga"><a href="/">Inicio</a> › Informe Planiapp</div>
 
-  <span class="sello">Informe Planiapp · <b>Solo para Isapres</b></span>
-  <h1>¿Tu plan de Isapre te conviene?</h1>
-  <p class="bajada">Contrastamos tu plan con el mercado para ver si puedes bajar el precio, mejorar coberturas o quedarte igual.</p>
+  <section class="cp-banner">
+    <div class="cp-banner-tx">
+      <span class="sello">Informe Planiapp · <b>Solo para Isapres</b></span>
+      <h1>¿Tu plan de Isapre te conviene?</h1>
+      <p>El Informe Planiapp analiza tu plan actual, lo compara con otros planes del mercado y te dice con datos si te conviene cambiarte o quedarte como estás.</p>
+      <a class="cp-cta" href="#cp-pedir" onclick="if(typeof gtag==='function')gtag('event','informe_cta',{origen:'banner'})">Pedir mi informe gratis →</a>
+      <ul class="cp-micro"><li>Gratis</li><li>Solo nombre y WhatsApp</li><li>Sin compromiso</li></ul>
+    </div>
+    <div class="cp-doc" aria-hidden="true">
+      <div class="cp-doc-top"><span class="cp-doc-logo">Informe Planiapp</span><span class="cp-doc-ej">Ejemplo</span></div>
+      <div class="cp-doc-tabla">
+        <span></span><span class="cp-doc-h">Tu plan</span><span class="cp-doc-h rec">Opción 1</span><span class="cp-doc-h">Opción 2</span>
+        <span class="cp-doc-k">Precio</span><span><b class="d-txt">Hoy</b></span><span class="rec"><b class="d-txt d-baja">↓ Menos</b></span><span><b class="d-txt">Igual</b></span>
+        <span class="cp-doc-k">Tu clínica</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+        <span class="cp-doc-k">Urgencia</span><span><i class="d-no" aria-label="No tiene">–</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+        <span class="cp-doc-k">Red GES</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span>
+        <span class="cp-doc-k">CAEC</span><span><i class="d-si" aria-label="Cubre bien">✓</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+        <span class="cp-doc-k">Reembolso</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+      </div>
+      <div class="cp-doc-pie"><span class="cp-doc-chip">Recomendado: Opción 1</span></div>
+    </div>
+  </section>
 
-  <h2 class="cp-h">Lo que te podemos responder</h2>
+  <h2 class="cp-h2">¿Qué es el Informe Planiapp?</h2>
+  <p class="cp-lead">Es un análisis de tu plan de Isapre con las coberturas que más importan. Te detallamos sus topes y los beneficios a los que puedes acceder, y lo comparamos en un cuadro con otros planes del mercado que podrían bajarte el costo o mejorar tu cobertura.</p>
+  <div class="cp-inc">
+    <div class="cp-inc-c"><span class="cp-inc-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 11h6"/></svg></span><div><b>Tu plan, en claro</b><p>Las coberturas más importantes de tu plan, con sus topes y los beneficios a los que puedes acceder y quizás no estás usando.</p></div></div>
+    <div class="cp-inc-c"><span class="cp-inc-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16M15 4v16"/></svg></span><div><b>Cuadro comparativo</b><p>Tu plan frente a otros planes del mercado, con opciones que pueden bajar el costo o mejorar tu cobertura.</p></div></div>
+    <div class="cp-inc-c"><span class="cp-inc-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V7l7-4 7 4v14"/><path d="M12 8v6M9 11h6"/><path d="M2 21h20"/></svg></span><div><b>Tu clínica, GES y CAEC</b><p>Comparamos topes y beneficios en tu clínica preferente, y dónde te atenderías por GES y por CAEC.</p></div></div>
+    <div class="cp-inc-c"><span class="cp-inc-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>Una recomendación honesta</b><p>Si el cambio te conviene, te proponemos planes concretos. Si tu plan actual es mejor, te lo decimos para que no te cambies y pierdas beneficios.</p></div></div>
+  </div>
+
+  <h2 class="cp-h2">Un caso real</h2>
+  <div class="cp-caso">
+    <div class="cp-caso-col antes">
+      <span class="cp-caso-et">Antes</span>
+      <ul>
+        <li>Tenía un plan preferente de <strong>Nueva Masvida</strong> y se atendía en <strong>Clínica Alemana</strong>, que no estaba en su red preferente.</li>
+        <li>En la Alemana se atendía por libre elección, con topes bajos: por ejemplo, 8 UF por día cama.</li>
+        <li>Pagaba <strong>12 UF al mes</strong> (unos $494.000), y en 5 años nunca apeló las alzas.</li>
+      </ul>
+    </div>
+    <div class="cp-caso-flecha" aria-hidden="true">→</div>
+    <div class="cp-caso-col despues">
+      <span class="cp-caso-et">Con el informe</span>
+      <ul>
+        <li><strong>Clínica Alemana como preferente</strong>, con cobertura sin tope.</li>
+        <li>Reembolso en línea.</li>
+        <li>Paga <strong>unos $374.000 al mes</strong>.</li>
+      </ul>
+    </div>
+    <div class="cp-caso-ahorro"><span>Ahorra</span><b>$120.000 al mes</b><span>y con mejor cobertura</span></div>
+  </div>
+  <p class="cp-caso-nota">Caso real, sin datos personales. Los montos en pesos son aproximados, con la UF de hoy.</p>
+
+  <h2 class="cp-h2">Tres respuestas posibles</h2>
   <div class="resp">
     <div class="resp-c baja">
       <span class="resp-i" aria-hidden="true">↓</span>
@@ -472,6 +601,8 @@ footer a { color: var(--text-muted); }
   </div>
   <p class="cp-salud"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg><span>Si tienes alguna enfermedad, lo revisamos contigo antes de que te cambies.</span></p>
 
+  <h2 class="cp-h2" id="cp-pedir">Pide tu informe</h2>
+  <p class="cp-lead">Toma un par de minutos. Te lo enviamos por WhatsApp.</p>
   <form class="cp-card" id="cp-form" novalidate>
     <fieldset class="cp-paso">
       <legend><span class="cp-num">1</span>¿Qué buscas?</legend>
@@ -629,6 +760,8 @@ footer a { color: var(--text-muted); }
 
   <section class="faq">
     <h2>Preguntas frecuentes</h2>
+    <h3>¿Qué incluye el Informe Planiapp?</h3>
+    <p>Un análisis de las coberturas más importantes de tu plan, con sus topes y beneficios, y un cuadro comparativo con otros planes del mercado. Comparamos tu clínica preferente, la red GES y la CAEC, y te decimos si te conviene cambiarte o quedarte.</p>
     <h3>¿Tiene costo revisar mi plan?</h3>
     <p>No. La revisión es gratis y sin compromiso.</p>
     <h3>¿Qué hacen con mi plan?</h3>
