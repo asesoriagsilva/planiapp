@@ -276,6 +276,11 @@
       "permanent": true
     },
     {
+      "source": "/compara-tu-plan.html",
+      "destination": "/compara-tu-plan",
+      "permanent": true
+    },
+    {
       "source": "/fonasa",
       "destination": "/calculadora-isapre?desde=fonasa&utm_source=instagram",
       "permanent": false
@@ -413,6 +418,10 @@
     {
       "source": "/calculadora-isapre",
       "destination": "/calculadora-isapre.html"
+    },
+    {
+      "source": "/compara-tu-plan",
+      "destination": "/compara-tu-plan.html"
     },
     {
       "source": "/propuesta/:codigo(PLY9N9|PLCJKT|PLDQFV|PRJSHC|PRK35Z|PR4E6D|PR6FEG|PLNA6A|PL7MVF|PRJSMU|EJEMPLO|PR2LRA|PRKYKJ|PRK5YB|PLLQJ8|PLRFKM|PLPMNT)",
