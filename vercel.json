@@ -1,6 +1,26 @@
 {
   "redirects": [
     {
+      "source": "/tea-isapre",
+      "destination": "/autismo-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/tea-isapre.html",
+      "destination": "/autismo-isapre",
+      "permanent": true
+    },
+    {
+      "source": "/compara-tu-plan",
+      "destination": "/informe-planiapp",
+      "permanent": true
+    },
+    {
+      "source": "/compara-tu-plan.html",
+      "destination": "/informe-planiapp",
+      "permanent": true
+    },
+    {
       "source": "/planiapp.html",
       "destination": "/",
       "permanent": true
@@ -31,8 +51,8 @@
       "permanent": true
     },
     {
-      "source": "/tea-isapre.html",
-      "destination": "/tea-isapre",
+      "source": "/autismo-isapre.html",
+      "destination": "/autismo-isapre",
       "permanent": true
     },
     {
@@ -276,8 +296,8 @@
       "permanent": true
     },
     {
-      "source": "/compara-tu-plan.html",
-      "destination": "/compara-tu-plan",
+      "source": "/informe-planiapp.html",
+      "destination": "/informe-planiapp",
       "permanent": true
     },
     {
@@ -312,8 +332,8 @@
       "destination": "/preexistencias-isapre.html"
     },
     {
-      "source": "/tea-isapre",
-      "destination": "/tea-isapre.html"
+      "source": "/autismo-isapre",
+      "destination": "/autismo-isapre.html"
     },
     {
       "source": "/fonasa-y-seguro-complementario",
@@ -420,8 +440,8 @@
       "destination": "/calculadora-isapre.html"
     },
     {
-      "source": "/compara-tu-plan",
-      "destination": "/compara-tu-plan.html"
+      "source": "/informe-planiapp",
+      "destination": "/informe-planiapp.html"
     },
     {
       "source": "/propuesta/:codigo(PLY9N9|PLCJKT|PLDQFV|PRJSHC|PRK35Z|PR4E6D|PR6FEG|PLNA6A|PL7MVF|PRJSMU|EJEMPLO|PR2LRA|PRKYKJ|PRK5YB|PLLQJ8|PLRFKM|PLPMNT)",
