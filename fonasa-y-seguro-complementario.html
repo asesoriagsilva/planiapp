@@ -123,6 +123,11 @@ p { font-size: 16px; margin-bottom: 1rem; }
 .lista.isa li::before { color: var(--purple); }
 .lista strong { color: var(--text); }
 
+/* Respuesta directa arriba (para las personas y para que las IAs tengan qué citar) */
+.en-corto { background: var(--purple-light); border-left: 3px solid var(--purple); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; margin: -0.75rem 0 1.5rem; }
+.en-corto-t { display: block; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+.en-corto-t span { font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--text-muted); }
+.en-corto p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text); }
 .ojo { background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin: 1rem 0; }
 .ojo p { font-size: 15px; margin-bottom: 0.6rem; }
 .ojo p:last-child { margin-bottom: 0; }
@@ -235,7 +240,7 @@ footer a { color: var(--text-muted); }
     "https://planiapp.cl/img/fonasa-y-seguro-complementario-og.jpg"
    ],
    "datePublished": "2026-09-17",
-   "dateModified": "2026-09-17",
+   "dateModified": "2026-11-25",
    "inLanguage": "es-CL",
    "mainEntityOfPage": "https://planiapp.cl/fonasa-y-seguro-complementario",
    "author": {
@@ -350,6 +355,12 @@ footer a { color: var(--text-muted); }
 
   <h1>Fonasa + seguro complementario: la verdad detrás de esta combinación</h1>
   <p class="bajada">Se vende como la alternativa barata a una Isapre. Puede servir, pero tiene reglas que casi nadie lee antes de contratar. Te las explicamos con dos pólizas reales y ejercicios con números.</p>
+
+  <div class="en-corto">
+    <span class="en-corto-t">En corto <span>· Actualizado el <time datetime="2026-11-25">25 de noviembre de 2026</time></span></span>
+    <p>Un seguro complementario te reembolsa parte de lo que Fonasa no cubrió, con deducible y topes, y suele costar entre $30.000 y $50.000 al mes por persona. Ayuda en lo ambulatorio, pero en una hospitalización en clínica privada muchas veces no se cumple la bonificación mínima que exige (BMI) y reembolsa bastante menos de lo esperado. No reemplaza a una Isapre.</p>
+  </div>
+
 
   <img class="cabecera" src="img/fonasa-y-seguro-complementario.webp" alt="Pareja preocupada revisando una cuenta en la cocina de su casa" width="1000" height="450" fetchpriority="high" decoding="async">
 
