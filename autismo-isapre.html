@@ -339,6 +339,11 @@ ol.pasos { list-style: none; counter-reset: paso; margin: 0.5rem 0 1rem; }
 ol.pasos li { counter-increment: paso; position: relative; padding: 0.75rem 0 0.75rem 2.6rem; border-bottom: 1px solid var(--border); font-size: 15.5px; }
 ol.pasos li:last-child { border-bottom: none; }
 ol.pasos li::before { content: counter(paso); position: absolute; left: 0; top: 0.7rem; width: 28px; height: 28px; border-radius: 50%; background: var(--purple-light); color: var(--purple); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+/* Respuesta directa arriba (para las personas y para que las IAs tengan qué citar) */
+.en-corto { background: var(--purple-light); border-left: 3px solid var(--purple); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; margin: -0.75rem 0 1.5rem; }
+.en-corto-t { display: block; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+.en-corto-t span { font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--text-muted); }
+.en-corto p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text); }
 /* Ejemplo: dos planes con el mismo % y distinto tope por sesión */
 .ej-tabla { width: 100%; border-collapse: collapse; margin: 0.75rem 0 0.4rem; font-size: 15px; background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
 .ej-tabla th, .ej-tabla td { padding: 0.6rem 0.8rem; text-align: right; border-bottom: 1px solid var(--border); }
@@ -378,7 +383,12 @@ ol.pasos li::before { content: counter(paso); position: absolute; left: 0; top: 
   <div class="miga"><a href="/">Inicio</a> › Autismo e Isapres</div>
 
   <h1>Autismo e Isapres: terapias sin tope anual, a cualquier edad</h1>
-  <p class="bajada">Desde mayo de 2026, las Isapres no pueden aplicar el tope anual a las terapias de las personas con autismo (TEA). Y los menores de 6 años ya tenían una protección parecida, sin necesidad de diagnóstico. Te explicamos qué cubre, cómo revisar cuánto te cubre tu plan y cómo pedirlo.</p>
+  <p class="bajada">Lo que cambió en 2026, lo que ya tenían los menores de 6 años, cómo revisar cuánto te cubre tu plan y cómo pedir la cobertura.</p>
+
+  <div class="en-corto">
+    <span class="en-corto-t">En corto <span>· Actualizado el <time datetime="2026-11-25">25 de noviembre de 2026</time></span></span>
+    <p>Desde mayo de 2026, las Isapres no pueden aplicar el tope anual a la psiquiatría, psicología, kinesiología, terapia ocupacional y fonoaudiología de las personas con autismo (TEA), a cualquier edad (Circular IF/528 de la Superintendencia de Salud). Basta una orden o certificado del médico tratante. Se mantienen el porcentaje de cobertura y el tope por sesión de tu plan.</p>
+  </div>
 
   <img class="cabecera" src="img/autismo-isapre.webp" alt="Ilustración: terapias para personas con autismo sin tope anual en las Isapres" width="1000" height="450" fetchpriority="high" decoding="async">
 
