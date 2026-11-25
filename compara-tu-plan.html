@@ -348,7 +348,10 @@ footer a { color: var(--text-muted); }
 .cp-ayuda { font-size: 13px; color: var(--text-muted); margin: 0.35rem 0 0; line-height: 1.45; }
 
 /* El plan: subir, código o datos a mano */
-.cp-modos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.35rem; background: #F1F0FA; padding: 0.3rem; border-radius: 14px; margin-bottom: 1rem; }
+.cp-caminos { margin-bottom: 1rem; }
+.cp-tag { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--purple); background: #fff; border: 1px solid #DCD8FA; border-radius: 999px; padding: 0.1rem 0.55rem; margin-bottom: 0.4rem; }
+.cp-tag.rapido { color: #0F6E56; border-color: #BDE6D2; }
+.cp-modos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.35rem; background: #F1F0FA; padding: 0.3rem; border-radius: 14px; margin-bottom: 1rem; }
 .cp-modo { font: inherit; font-size: 14px; font-weight: 600; line-height: 1.25; border: 0; background: transparent; border-radius: 10px; padding: 0.6rem 0.4rem; color: var(--text-muted); cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .cp-modo.on { background: #fff; color: var(--purple-dark); box-shadow: 0 2px 8px rgba(38,33,92,0.13); }
 .cp-drop { position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.3rem; border: 2px dashed #C9C4F0; border-radius: 16px; background: #FBFAFF; padding: 1.3rem 1rem 1.2rem; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; }
@@ -447,24 +450,24 @@ footer a { color: var(--text-muted); }
 
   <span class="sello">Informe Planiapp · <b>Solo para Isapres</b></span>
   <h1>Compara tu plan</h1>
-  <p class="bajada">Sube tu plan y te decimos si puedes pagar menos o tener mejor cobertura por lo mismo.</p>
+  <p class="bajada">Contrastamos tu plan con el mercado para ver si puedes bajar el precio, mejorar coberturas o quedarte igual.</p>
 
   <h2 class="cp-h">Lo que te podemos responder</h2>
   <div class="resp">
     <div class="resp-c baja">
       <span class="resp-i" aria-hidden="true">↓</span>
-      <div class="resp-t">Pagar menos por algo similar</div>
-      <p>Si hoy pagas sobre tu 7%, buscamos un plan parecido al tuyo que cueste menos.</p>
+      <div class="resp-t">Bajar el precio, misma cobertura</div>
+      <p>Planes con coberturas similares a las tuyas, pagando menos.</p>
     </div>
     <div class="resp-c mejora">
       <span class="resp-i" aria-hidden="true">↑</span>
       <div class="resp-t">Mejor cobertura sin pagar de más</div>
-      <p>Con lo que pagas hoy, buscamos un plan con mejores coberturas o mejores clínicas.</p>
+      <p>Mejores coberturas, topes o beneficios con el mismo presupuesto.</p>
     </div>
     <div class="resp-c igual">
       <span class="resp-i" aria-hidden="true">✓</span>
       <div class="resp-t">Quedarte como estás</div>
-      <p>Si tu plan ya te conviene, te lo decimos tal cual.</p>
+      <p>Si tu plan ya es el indicado, te lo decimos, sin empujarte a cambios innecesarios.</p>
     </div>
   </div>
   <p class="cp-salud"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg><span>Si tienes alguna enfermedad, lo revisamos contigo antes de que te cambies.</span></p>
@@ -473,8 +476,8 @@ footer a { color: var(--text-muted); }
     <fieldset class="cp-paso">
       <legend><span class="cp-num">1</span>¿Qué buscas?</legend>
       <div class="cp-ops" id="cp-busca" data-grupo="busca" role="radiogroup" aria-label="¿Qué buscas?">
-        <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Pagar menos por algo similar"><b>Pagar menos</b><small>por un plan parecido al mío</small></button>
-        <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Mejorar el plan pagando lo mismo"><b>Mejorar mi plan</b><small>pagando lo mismo que hoy</small></button>
+        <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Bajar el precio manteniendo la cobertura"><b>Bajar el precio</b><small>con una cobertura parecida a la mía</small></button>
+        <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Mejorar la cobertura pagando lo mismo"><b>Mejorar mi cobertura</b><small>pagando lo mismo que hoy</small></button>
       </div>
     </fieldset>
 
@@ -506,10 +509,14 @@ footer a { color: var(--text-muted); }
 
     <fieldset class="cp-paso">
       <legend><span class="cp-num">3</span>Tu plan actual</legend>
-      <div class="cp-modos" data-grupo="modo" role="radiogroup" aria-label="Cómo nos muestras tu plan">
-        <button type="button" class="cp-modo on" role="radio" aria-checked="true" data-v="subir">Subir mi plan</button>
-        <button type="button" class="cp-modo" role="radio" aria-checked="false" data-v="codigo">Tengo el código</button>
-        <button type="button" class="cp-modo" role="radio" aria-checked="false" data-v="manual">No lo tengo a mano</button>
+      <div class="cp-ops cp-caminos" id="cp-camino" data-grupo="camino" role="radiogroup" aria-label="Cómo nos muestras tu plan">
+        <button type="button" class="cp-op on" role="radio" aria-checked="true" data-v="preciso"><span class="cp-tag">Más preciso</span><b>Tengo mi plan</b><small>Súbelo en PDF o fotos, o escribe su código</small></button>
+        <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="rapido"><span class="cp-tag rapido">Rápido</span><b>No lo tengo a mano</b><small>Tu Isapre, cuánto pagas y tus clínicas</small></button>
+      </div>
+
+      <div class="cp-modos" id="cp-sub" data-grupo="sub" role="radiogroup" aria-label="Subir el plan o escribir su código">
+        <button type="button" class="cp-modo on" role="radio" aria-checked="true" data-v="subir">Subir el archivo</button>
+        <button type="button" class="cp-modo" role="radio" aria-checked="false" data-v="codigo">Escribir el código</button>
       </div>
 
       <div id="cp-p-subir">
@@ -548,9 +555,19 @@ footer a { color: var(--text-muted); }
 
       <div id="cp-p-manual" hidden>
         <div class="cp-campo">
-          <label for="cp-paga">¿Cuánto pagas hoy por tu plan? <small>(opcional)</small></label>
+          <span class="cp-lab" id="cp-rango-lab">¿Cuánto pagas hoy por tu plan, más o menos?</span>
+          <div class="cp-chips" id="cp-rango" data-grupo="rango" role="radiogroup" aria-labelledby="cp-rango-lab">
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Menos de $100 mil">Menos de $100 mil</button>
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="$100 a $150 mil">$100 a $150 mil</button>
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="$150 a $250 mil">$150 a $250 mil</button>
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Más de $250 mil">Más de $250 mil</button>
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="No sé">No sé</button>
+          </div>
+        </div>
+        <div class="cp-campo">
+          <label for="cp-paga">¿Sabes el monto exacto? <small>(opcional)</small></label>
           <div class="cp-in" id="cp-paga-caja"><input id="cp-paga" type="text" inputmode="decimal" autocomplete="off" placeholder="Ej: 3,2"><span id="cp-unidades" style="padding:0;background:none" data-grupo="unidad" role="radiogroup" aria-label="Unidad"><button type="button" class="cp-u on" role="radio" aria-checked="true" data-v="UF">UF</button><button type="button" class="cp-u" role="radio" aria-checked="false" data-v="$">$</button></span></div>
-          <p class="cp-ayuda" id="cp-paga-vivo">Aparece en tu contrato o en la carta de adecuación. Si no lo sabes, déjalo en blanco.</p>
+          <p class="cp-ayuda" id="cp-paga-vivo">Aparece en tu contrato o en la carta de adecuación.</p>
         </div>
         <div class="cp-campo">
           <label for="cp-clinicas">Clínicas que te interesan <small>(opcional)</small></label>
@@ -561,7 +578,7 @@ footer a { color: var(--text-muted); }
       <details class="cp-donde" id="cp-donde">
         <summary>¿Dónde encuentro mi plan?</summary>
         <div>
-          <p>Entra a la sucursal virtual de tu Isapre y descarga tu plan o tu contrato en PDF. También sirve una foto del plan en papel, con la tabla de coberturas y los topes a la vista.</p>
+          <p>Lo descargas desde la sucursal virtual de tu Isapre, como plan o contrato en PDF. También sirve una foto del plan en papel, con la tabla de coberturas y los topes a la vista.</p>
           <div class="cp-suc">
             <a href="https://login.isaprebanmedica.cl/login" target="_blank" rel="noopener nofollow">Banmédica</a>
             <a href="https://www.colmena.cl/afiliados/#/login/" target="_blank" rel="noopener nofollow">Colmena</a>
@@ -594,8 +611,8 @@ footer a { color: var(--text-muted); }
 
     <div class="cp-hp" aria-hidden="true"><label>No llenar <input type="text" id="cp-hp" name="hp" tabindex="-1" autocomplete="off"></label></div>
     <p class="cp-err" id="cp-err" role="alert" hidden></p>
-    <button type="submit" class="cp-enviar" id="cp-enviar">Enviar mi plan →</button>
-    <p class="cp-pie">Revisamos tu plan y te escribimos por WhatsApp.</p>
+    <button type="submit" class="cp-enviar" id="cp-enviar">Pedir mi informe →</button>
+    <p class="cp-pie">Revisamos tu plan y te enviamos tu informe personalizado por WhatsApp.</p>
   </form>
 
   <div class="cp-card cp-ok" id="cp-ok" hidden tabindex="-1">
@@ -604,7 +621,7 @@ footer a { color: var(--text-muted); }
     <p style="margin-bottom:0.3rem">Tu código es</p>
     <div class="cp-cod" id="cp-ok-cod">PL0000</div>
     <p class="cp-ojo" id="cp-ok-falla" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7791F" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:0.15rem"><path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg><span>Tu archivo no alcanzó a llegar. Te lo pediremos por WhatsApp.</span></p>
-    <p id="cp-ok-p">Revisamos tu plan y te escribimos por WhatsApp. Guarda el código por si nos escribes antes.</p>
+    <p id="cp-ok-p">Revisamos tu plan y te enviamos tu informe personalizado por WhatsApp. Guarda el código por si nos escribes antes.</p>
     <a class="cp-ok-wsp" id="cp-ok-wsp" href="https://wa.me/56966450103" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 1.9 1.1 2.7 1.1 1.6 2.5 2.9 4.2 3.7.5.2 1 .4 1.4.5.6.2 1.1.2 1.7.1.5-.1 1.5-.6 1.7-1.2.2-.5.2-1 .1-1.2l-.4-.3z"/></svg>¿Quieres agregar algo? Escríbenos</a>
   </div>
 
@@ -646,7 +663,7 @@ const WSP = "56966450103";
     if (v > 30000 && v < 80000) { UF = v; pintaSiete(); pintaPaga(); }
   }).catch(function () {});
 
-  var D = { busca: '', cargas: '', modo: 'subir', isapre: '', unidad: 'UF', archivos: [] };
+  var D = { busca: '', cargas: '', camino: 'preciso', sub: 'subir', modo: 'subir', isapre: '', rango: '', unidad: 'UF', archivos: [] };
   var form = $('cp-form'), empezo = false, enviando = false;
 
   function marca(ev, datos) {
@@ -671,12 +688,15 @@ const WSP = "56966450103";
   });
   function cambio(k) {
     if (k === 'cargas') $('cp-edades-campo').hidden = D.cargas !== 'cargas';
-    if (k === 'modo') {
+    // Dos puertas: "Tengo mi plan" (subir el archivo o escribir el código) y "No lo tengo a mano" (Isapre, cuánto paga y clínicas)
+    if (k === 'camino' || k === 'sub' || k === 'modo') {
+      D.modo = D.camino === 'rapido' ? 'manual' : D.sub;
+      $('cp-sub').hidden = D.camino === 'rapido';
+      $('cp-donde').hidden = D.camino === 'rapido';
       $('cp-p-subir').hidden = D.modo !== 'subir';
       $('cp-p-isapre').hidden = D.modo === 'subir';
       $('cp-p-codigo').hidden = D.modo !== 'codigo';
       $('cp-p-manual').hidden = D.modo !== 'manual';
-      $('cp-enviar').textContent = D.modo === 'subir' ? 'Enviar mi plan →' : 'Enviar mis datos →';
     }
     if (k === 'unidad') { $('cp-paga').placeholder = D.unidad === 'UF' ? 'Ej: 3,2' : 'Ej: 150.000'; $('cp-paga').value = ''; pintaPaga(); $('cp-paga').focus(); }
   }
@@ -712,13 +732,14 @@ const WSP = "56966450103";
   });
   function pintaPaga() {
     var v = pagaNum(), p = $('cp-paga-vivo');
-    if (!v) { p.textContent = 'Aparece en tu contrato o en la carta de adecuación. Si no lo sabes, déjalo en blanco.'; return; }
+    if (!v) { p.textContent = 'Aparece en tu contrato o en la carta de adecuación.'; return; }
     p.textContent = D.unidad === 'UF' ? 'Unos ' + pesos(v * UF) + ' al mes.' : 'Unas ' + fmtUF(v / UF) + ' UF al mes.';
   }
+  // El monto exacto si lo escribió; si no, el rango aproximado que marcó
   function pagaTexto() {
     var v = pagaNum();
-    if (!v) return '';
-    return D.unidad === 'UF' ? fmtUF(v) + ' UF (' + pesos(v * UF) + ')' : pesos(v) + ' (' + fmtUF(v / UF) + ' UF)';
+    if (v) return D.unidad === 'UF' ? fmtUF(v) + ' UF (' + pesos(v * UF) + ')' : pesos(v) + ' (' + fmtUF(v / UF) + ' UF)';
+    return D.rango === 'No sé' ? 'No sabe' : D.rango ? 'Aprox. ' + D.rango : '';
   }
 
   // Archivos: PDF tal cual, fotos achicadas en el navegador
@@ -880,7 +901,7 @@ const WSP = "56966450103";
   });
   function falla(t) {
     enviando = false;
-    var b = $('cp-enviar'); b.disabled = false; b.classList.remove('cargando'); cambio('modo');
+    var b = $('cp-enviar'); b.disabled = false; b.classList.remove('cargando'); b.textContent = 'Pedir mi informe →';
     $('cp-err').textContent = t; $('cp-err').hidden = false;
     $('cp-err').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
@@ -895,7 +916,7 @@ const WSP = "56966450103";
     $('cp-ok-t').textContent = conArchivo && !falto ? '¡Recibimos tu plan!' : '¡Recibimos tus datos!';
     $('cp-ok-cod').textContent = cod;
     $('cp-ok-falla').hidden = !falto;
-    $('cp-ok-p').textContent = (conArchivo && !falto ? 'Revisamos tu plan y te escribimos por WhatsApp' : 'Revisamos tu caso y te escribimos por WhatsApp') + (wsp ? ' al +56 9 ' + wsp.slice(0, 4) + ' ' + wsp.slice(4) : '') + '. Guarda el código por si nos escribes antes.';
+    $('cp-ok-p').textContent = (conArchivo && !falto ? 'Revisamos tu plan y te enviamos tu informe personalizado por WhatsApp' : 'Revisamos tu caso y te enviamos tu informe personalizado por WhatsApp') + (wsp ? ' al +56 9 ' + wsp.slice(0, 4) + ' ' + wsp.slice(4) : '') + '. Guarda el código por si nos escribes antes.';
     $('cp-ok-wsp').href = 'https://wa.me/' + WSP + '?text=' + encodeURIComponent('Hola Planiapp, envié mi plan para compararlo. Mi código es ' + cod + '.');
     var ok = $('cp-ok'); ok.hidden = false; ok.focus({ preventScroll: true });
     ok.scrollIntoView({ behavior: 'smooth', block: 'start' });
