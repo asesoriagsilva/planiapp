@@ -453,7 +453,7 @@
       "destination": "/informe.html"
     },
     {
-      "source": "/propuesta/:codigo(PLY9N9|PLCJKT|PLDQFV|PRJSHC|PRK35Z|PR4E6D|PR6FEG|PLNA6A|PL7MVF|PRJSMU|EJEMPLO|PR2LRA|PRKYKJ|PRK5YB|PLLQJ8|PLRFKM|PLPMNT|PL3EJK)",
+      "source": "/propuesta/:codigo(PLY9N9|PLCJKT|PLDQFV|PRJSHC|PRK35Z|PR4E6D|PR6FEG|PLNA6A|PL7MVF|PRJSMU|EJEMPLO|PR2LRA|PRKYKJ|PRK5YB|PLLQJ8|PLRFKM|PLPMNT|PL3EJK|PRRQG9)",
       "destination": "/propuesta/:codigo.html"
     },
     {
