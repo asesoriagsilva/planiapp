@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Revisa tu plan de Isapre gratis | Informe Planiapp</title>
+<meta name="description" content="Mándanos tu plan de Isapre y te decimos por WhatsApp si puedes pagar menos, tener mejor cobertura por lo mismo o quedarte como estás. Gratis.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://planiapp.cl/informe">
+<meta property="og:title" content="Revisa tu plan de Isapre gratis">
+<meta property="og:description" content="Mándanos tu plan de Isapre y te decimos por WhatsApp si puedes pagar menos, tener mejor cobertura por lo mismo o quedarte como estás. Gratis.">
+<meta property="og:url" content="https://planiapp.cl/informe">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://planiapp.cl/img/fonasa-o-isapre-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mujer revisando un documento en la mesa de su cocina">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads + Analytics (sin evento de conversion: ese va solo en gracias.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18388610233"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18388610233');
+  /* Trafico interno: entrar una vez con ?interno=1 marca este navegador y ?interno=0 lo desmarca */
+  var planiappInterno = false;
+  try {
+    if (/[?&]interno=1(&|$)/.test(location.search)) localStorage.setItem('planiapp_interno', '1');
+    if (/[?&]interno=0(&|$)/.test(location.search)) localStorage.removeItem('planiapp_interno');
+    planiappInterno = localStorage.getItem('planiapp_interno') === '1';
+  } catch (e) {}
+  gtag('config', 'G-L8TDJPFVRM', planiappInterno ? { traffic_type: 'internal' } : {});
+  /* Origen del visitante: la última fuente externa (buscador, anuncio, red social o enlace con utm). Los formularios lo envían con el lead. */
+  try {
+    (function () {
+      var q = new URLSearchParams(location.search), r = document.referrer, h = '', o = '';
+      try { h = r ? new URL(r).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+      var us = q.get('utm_source') || '', pago = /cpc|ppc|paid|ads/.test((q.get('utm_medium') || '').toLowerCase());
+      var may = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+      if (q.get('gclid') || q.get('gbraid') || q.get('wbraid')) o = 'Google Ads';
+      else if (us) o = pago ? 'Anuncio ' + may(us) : may(us) + ' (enlace)';
+      else if (q.get('fbclid')) o = 'Facebook o Instagram';
+      else if (h && h !== location.hostname.replace(/^www\./, '')) {
+        o = /gemini\.google\./.test(h) ? 'Gemini'
+          : /(^|\.)google\./.test(h) || /googlequicksearchbox/.test(r) ? 'Google (SEO)'
+          : /bing\.|yahoo\.|duckduckgo\.|ecosia\./.test(h) ? 'Otro buscador (SEO)'
+          : /instagram\./.test(h) ? 'Instagram'
+          : /facebook\.|fb\.me/.test(h) ? 'Facebook'
+          : /whatsapp|wa\.me/.test(h) ? 'WhatsApp'
+          : /chatgpt\.|openai\./.test(h) ? 'ChatGPT'
+          : /perplexity\./.test(h) ? 'Perplexity'
+          : /copilot\.microsoft\./.test(h) ? 'Copilot'
+          : /(^|\.)claude\.ai$/.test(h) ? 'Claude'
+          : 'Otro sitio: ' + h;
+      }
+      var antes = localStorage.getItem('planiapp_origen');
+      if (o || !antes) localStorage.setItem('planiapp_origen', JSON.stringify({ o: o || 'Directo', p: location.pathname, t: Date.now() }));
+    })();
+  } catch (e) {}
+  window.planiappOrigen = function () { try { var g = JSON.parse(localStorage.getItem('planiapp_origen') || 'null'); return g ? g.o + ' · entró por ' + (g.p === '/' ? 'la portada' : g.p) : 'Directo'; } catch (e) { return ''; } };
+</script>
+
+<style>
+:root {
+  --purple: #534AB7; --purple-light: #EEEDFE; --purple-mid: #7F77DD;
+  --purple-dark: #26215C; --purple-deep: #3C3489;
+  --blue: #185FA5; --blue-light: #E6F1FB;
+  --text: #1a1830; --text-muted: #6b6b8a; --border: #E7E5F5;
+  --bg: #f8f7ff; --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+a { color: var(--purple); }
+
+nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--border); }
+.nav-logo img { height: 64px; width: auto; display: block; }
+.nav-cta { background: var(--purple); color: #fff; text-decoration: none; border-radius: 24px; padding: 0.55rem 1.2rem; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.nav-cta:hover { background: var(--purple-deep); }
+
+/* Carrusel de logos de Isapres en la barra superior */
+.nav-carrusel { flex: 1; min-width: 0; overflow: hidden; margin: 0 1.5rem; padding: 0 1rem; border-left: 1px solid rgba(83,74,183,0.15); border-right: 1px solid rgba(83,74,183,0.15); }
+.nav-tk { display: inline-flex; align-items: center; animation: ticker 24s linear infinite; }
+.nav-tk img { flex-shrink: 0; margin-right: 2rem; opacity: 0.85; }
+.nav-carrusel:hover .nav-tk { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .nav-tk { animation: none; } }
+@media (max-width: 680px) { .nav-carrusel { margin: 0 0.6rem; padding: 0 0.6rem; } .nav-tk img { margin-right: 1.25rem; } }
+@media (max-width: 420px) { .nav-cta-extra { display: none; } }
+
+.art { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.miga { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
+.miga a { color: var(--text-muted); text-decoration: none; }
+.miga a:hover { color: var(--purple); }
+h1 { font-family: 'Inter', sans-serif; font-size: 38px; font-weight: 900; color: var(--purple-dark); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.9rem; }
+.bajada { font-size: 18px; color: var(--text-muted); margin-bottom: 1.75rem; }
+h2 { font-family: 'Inter', sans-serif; font-size: 25px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.01em; line-height: 1.25; margin: 2.5rem 0 0.9rem; }
+p { font-size: 16px; margin-bottom: 1rem; }
+
+/* Tabla comparativa */
+.cmp { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 1.25rem 0 0.5rem; }
+.cmp-row, .cmp-head { display: grid; grid-template-columns: 170px 1fr 1fr; }
+.cmp-head div { padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px; }
+.cmp-head .h-fon { background: var(--blue-light); color: var(--blue); }
+.cmp-head .h-isa { background: var(--purple-light); color: var(--purple); }
+.cmp-row { border-top: 1px solid var(--border); }
+.cmp-row > div { padding: 0.8rem 1rem; font-size: 14px; line-height: 1.5; }
+.cmp-k { font-weight: 600; color: var(--purple-dark); background: #FBFAFF; }
+.cmp-nota { font-size: 12px; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Listas de "cuando conviene" */
+.lista { list-style: none; margin: 0.25rem 0 1rem; }
+.lista li { position: relative; padding: 0.7rem 0 0.7rem 1.9rem; border-bottom: 1px solid var(--border); font-size: 15.5px; }
+.lista li:last-child { border-bottom: none; }
+.lista li::before { content: '✓'; position: absolute; left: 0.25rem; top: 0.7rem; font-weight: 700; }
+.lista.fon li::before { color: var(--blue); }
+.lista.isa li::before { color: var(--purple); }
+.lista strong { color: var(--text); }
+
+/* Respuesta directa arriba (para las personas y para que las IAs tengan qué citar) */
+.en-corto { background: var(--purple-light); border-left: 3px solid var(--purple); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; margin: -0.75rem 0 1.5rem; }
+.en-corto-t { display: block; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+.en-corto-t span { font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--text-muted); }
+.en-corto p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text); }
+.ojo { background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin: 1rem 0; }
+.ojo p { font-size: 15px; margin-bottom: 0.6rem; }
+.ojo p:last-child { margin-bottom: 0; }
+.ojo.fon { background: #EEF5FC; border-left-color: #185FA5; }
+
+.cierre { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.9rem 1.75rem; margin-top: 2.75rem; color: #fff; text-align: center; }
+.cierre h2 { color: #fff; margin: 0 0 0.6rem; }
+.cierre p { color: rgba(255,255,255,0.88); max-width: 560px; margin: 0 auto 1.3rem; }
+.cierre a { display: inline-block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.8rem 1.7rem; font-size: 15px; }
+.cierre a:hover { background: var(--purple-light); }
+
+.aviso { font-size: 12px; color: var(--text-muted); margin-top: 2rem; line-height: 1.55; }
+footer { text-align: center; font-size: 13px; color: var(--text-muted); padding: 1.5rem; border-top: 1px solid var(--border); background: var(--white); }
+footer a { color: var(--text-muted); }
+
+.relacionado { margin-top: 2rem; padding: 1rem 1.2rem; background: var(--white); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; }
+.relacionado a { font-weight: 600; text-decoration: none; }
+
+.cabecera { display: block; width: 100%; height: auto; aspect-ratio: 20 / 9; object-fit: cover; border-radius: 16px; margin: 0 0 1.5rem; background: var(--purple-light); }
+
+/* Las 3 respuestas de la Isapre */
+.resp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 1.25rem 0 1rem; }
+.resp-c { background: var(--white); border: 1px solid var(--border); border-top: 4px solid; border-radius: 14px; padding: 1rem 1.1rem; }
+.resp-c.si { border-top-color: #1D9E75; }
+.resp-c.res { border-top-color: #E0A526; }
+.resp-c.no { border-top-color: #D93025; }
+.resp-i { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 0.5rem; }
+.resp-c.si .resp-i { background: #1D9E75; }
+.resp-c.res .resp-i { background: #B7791F; }
+.resp-c.no .resp-i { background: #D93025; }
+.resp-t { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800; color: var(--purple-dark); line-height: 1.25; margin-bottom: 0.35rem; }
+.resp-c p { font-size: 14.5px; line-height: 1.5; margin: 0; }
+
+.faq h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin: 1.4rem 0 0.35rem; }
+.faq p { font-size: 15.5px; }
+
+@media (max-width: 680px) {
+  .resp { grid-template-columns: 1fr; }
+  nav { padding: 0.6rem 1rem; }
+  .nav-logo img { height: 46px; }
+  .nav-cta { font-size: 13px; padding: 0.5rem 0.95rem; }
+  .art { padding: 1.75rem 1.1rem 2.5rem; }
+  h1 { font-size: 29px; }
+  .bajada { font-size: 16.5px; }
+  h2 { font-size: 21px; margin-top: 2rem; }
+  /* En celular: la etiqueta ocupa el ancho y debajo van Fonasa | Isapre */
+  .cmp-head { grid-template-columns: 1fr 1fr; }
+  .cmp-head .h-vacio { display: none; }
+  .cmp-row { grid-template-columns: 1fr 1fr; }
+  .cmp-k { grid-column: 1 / -1; padding-bottom: 0.35rem !important; }
+  .cmp-row > div { font-size: 13.5px; padding: 0.6rem 0.8rem; }
+  .cierre { padding: 1.6rem 1.2rem; }
+}
+/* relacionados:inicio */
+.rel { margin-top: 2.75rem; }
+.rel h2 { margin: 0 0 1rem; }
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.rel-c { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+.rel-c:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(83,74,183,0.13); }
+.rel-c img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--purple-light); }
+.rel-tx { padding: 0.85rem 0.95rem 1rem; }
+.rel-t { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+.rel-c:hover .rel-t { color: var(--purple); }
+.rel-p { display: block; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+.lateral { display: none; }
+@media (min-width: 1100px) {
+  .pagina { display: grid; grid-template-columns: minmax(0, 760px) 300px; gap: 3rem; justify-content: center; padding: 0 1.5rem; }
+  .pagina > .art { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .lateral { display: block; padding: 2.5rem 0 3rem; }
+  .lateral-in { position: sticky; top: 1.25rem; }
+}
+.lat-cta { background: linear-gradient(160deg, #534AB7 0%, #3C3489 100%); border-radius: 18px; padding: 1.4rem 1.3rem; color: #fff; text-align: center; box-shadow: 0 12px 28px rgba(60,52,137,0.25); }
+.lat-cta-t { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.25; margin-bottom: 0.45rem; }
+.lat-cta p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 1rem; }
+.lat-cta a { display: block; background: #fff; color: var(--purple-deep); text-decoration: none; font-weight: 600; border-radius: 24px; padding: 0.7rem 1rem; font-size: 15px; }
+.lat-cta a:hover { background: var(--purple-light); }
+.lat-rel { margin-top: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 1.15rem 1.1rem 0.4rem; }
+.lat-rel-t { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 0.4rem; }
+.lat-i { display: flex; gap: 0.8rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--border); text-decoration: none; }
+.lat-i:first-of-type { border-top: none; }
+.lat-i img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--purple-light); }
+.lat-i-t { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: var(--purple-dark); line-height: 1.3; }
+.lat-i:hover .lat-i-t { color: var(--purple); }
+.lat-i-p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12.5px; color: var(--text-muted); line-height: 1.45; margin-top: 0.15rem; }
+@media (max-width: 680px) {
+  .rel-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rel-c { flex-direction: row; align-items: center; }
+  .rel-c img { width: 104px; height: 104px; aspect-ratio: auto; flex-shrink: 0; }
+  .rel-tx { padding: 0.7rem 0.85rem; }
+  .rel-t { font-size: 14.5px; }
+  .rel-p { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+/* relacionados:fin */
+</style>
+<style>
+[hidden] { display: none !important; }
+.cp { padding-bottom: 2.5rem; }
+.sello { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--purple); background: var(--purple-light); border: 1px solid #DCD8FA; border-radius: 999px; padding: 0.3rem 0.85rem; margin-bottom: 0.9rem; }
+.sello b { color: #0F6E56; font-weight: 700; }
+.cp h1 { margin-bottom: 0.6rem; }
+.cp .bajada { margin-bottom: 1.5rem; max-width: 600px; }
+.cp-h { font-size: 19px; margin: 0 0 0.75rem; }
+.cp .resp { margin-top: 0; }
+.resp-c.baja { border-top-color: #1D9E75; } .resp-c.baja .resp-i { background: #1D9E75; }
+.resp-c.mejora { border-top-color: #534AB7; } .resp-c.mejora .resp-i { background: #534AB7; }
+.resp-c.igual { border-top-color: #185FA5; } .resp-c.igual .resp-i { background: #185FA5; }
+.cp-salud { display: flex; gap: 0.55rem; align-items: flex-start; font-size: 14.5px; color: #2F5D50; background: #EDF9F3; border: 1px solid #CDEBDD; border-radius: 12px; padding: 0.7rem 0.9rem; margin: 0 0 1.75rem; }
+.cp-salud svg { flex-shrink: 0; margin-top: 0.15rem; color: #1D9E75; }
+
+/* Formulario */
+.cp-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 1.5rem 1.4rem 1.3rem; box-shadow: 0 22px 44px -32px rgba(38,33,92,0.5); }
+.cp-paso { border: 0; padding: 0; margin: 0 0 1.6rem; min-width: 0; }
+.cp-paso legend { display: flex; align-items: center; gap: 0.6rem; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 17px; color: var(--purple-dark); padding: 0; margin-bottom: 0.75rem; line-height: 1.3; }
+.cp-num { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--purple-light); color: var(--purple); font-size: 13.5px; display: inline-flex; align-items: center; justify-content: center; }
+.cp-ops { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; border-radius: 16px; }
+.cp-op { font: inherit; text-align: left; background: #FBFAFF; border: 1.5px solid var(--border); border-radius: 14px; padding: 0.8rem 0.95rem; cursor: pointer; color: var(--text); -webkit-tap-highlight-color: transparent; transition: border-color .15s, background .15s; }
+.cp-op b { display: block; font-size: 15.5px; color: var(--purple-dark); line-height: 1.3; }
+.cp-op small { display: block; font-size: 13px; color: var(--text-muted); line-height: 1.4; margin-top: 0.15rem; }
+.cp-op.on { border-color: var(--purple); background: var(--purple-light); box-shadow: inset 0 0 0 1px var(--purple); }
+@media (hover: hover) { .cp-op:hover { border-color: var(--purple-mid); } }
+.cp-op:focus-visible, .cp-isa:focus-visible, .cp-modo:focus-visible, .cp-u:focus-visible { outline: 3px solid var(--purple-mid); outline-offset: 2px; }
+.cp-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cp-chips .cp-op { padding: 0.55rem 1rem; border-radius: 999px; font-weight: 600; font-size: 14.5px; color: var(--purple-dark); }
+.cp-fila { display: grid; grid-template-columns: 150px 1fr; gap: 0.9rem; }
+.cp-fila.dos { grid-template-columns: 1fr 1fr; }
+.cp-campo { margin-top: 1rem; }
+.cp-fila .cp-campo { margin-top: 0; }
+.cp-campo > label, .cp-lab { display: block; font-weight: 600; font-size: 14.5px; color: var(--purple-dark); margin-bottom: 0.35rem; }
+.cp-lab small, .cp-campo > label small { font-weight: 500; color: var(--text-muted); }
+.cp-in { display: flex; align-items: stretch; border: 1.5px solid #DAD7EE; border-radius: 12px; background: #fff; overflow: hidden; transition: border-color .15s, box-shadow .15s; }
+.cp-in > span { display: flex; align-items: center; padding: 0 0.75rem; color: var(--text-muted); font-weight: 600; font-size: 15px; background: #F6F5FD; white-space: nowrap; }
+.cp-in > span:first-child { border-right: 1px solid var(--border); }
+.cp-in > span:last-child:not(:first-child) { border-left: 1px solid var(--border); }
+.cp-in input { flex: 1; min-width: 0; border: 0; outline: 0; font: inherit; font-size: 16px; padding: 0.72rem 0.8rem; background: transparent; color: var(--text); }
+.cp-in:focus-within { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(83,74,183,0.15); }
+.err.cp-in, .err.cp-ops, .err.cp-chips, .err.cp-isas, .err.cp-drop, .err.cp-acepto { border-color: #D93025 !important; box-shadow: 0 0 0 3px rgba(217,48,37,0.13); }
+.err.cp-ops, .err.cp-chips, .err.cp-isas { outline: 2px solid #D93025; outline-offset: 4px; box-shadow: none; }
+.cp-siete { margin: 0.75rem 0 0; font-size: 14.5px; line-height: 1.5; color: #2F5D50; background: #EDF9F3; border: 1px solid #CDEBDD; border-radius: 12px; padding: 0.65rem 0.85rem; }
+.cp-siete b { color: #0B4A38; }
+.cp-ayuda { font-size: 13px; color: var(--text-muted); margin: 0.35rem 0 0; line-height: 1.45; }
+
+/* El plan: subir, código o datos a mano */
+.cp-caminos { margin-bottom: 1rem; }
+.cp-tag { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--purple); background: #fff; border: 1px solid #DCD8FA; border-radius: 999px; padding: 0.1rem 0.55rem; margin-bottom: 0.4rem; }
+.cp-tag.rapido { color: #0F6E56; border-color: #BDE6D2; }
+.cp-modos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.35rem; background: #F1F0FA; padding: 0.3rem; border-radius: 14px; margin-bottom: 1rem; }
+.cp-modo { font: inherit; font-size: 14px; font-weight: 600; line-height: 1.25; border: 0; background: transparent; border-radius: 10px; padding: 0.6rem 0.4rem; color: var(--text-muted); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.cp-modo.on { background: #fff; color: var(--purple-dark); box-shadow: 0 2px 8px rgba(38,33,92,0.13); }
+.cp-drop { position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.3rem; border: 2px dashed #C9C4F0; border-radius: 16px; background: #FBFAFF; padding: 1.3rem 1rem 1.2rem; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; }
+.cp-drop.over, .cp-drop:focus-within { border-color: var(--purple); background: var(--purple-light); }
+.cp-drop input { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.cp-drop svg { color: var(--purple); }
+.cp-drop b { font-size: 15.5px; color: var(--purple-dark); }
+.cp-drop .cp-boton { display: inline-block; margin-top: 0.3rem; background: var(--purple); color: #fff; font-weight: 600; font-size: 14.5px; border-radius: 999px; padding: 0.55rem 1.2rem; }
+.cp-drop small { font-size: 12.5px; color: var(--text-muted); }
+.cp-arch { list-style: none; margin: 0; }
+.cp-arch li { display: flex; align-items: center; gap: 0.65rem; padding: 0.55rem 0.7rem; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 0.5rem; font-size: 14px; background: #fff; }
+.cp-arch .ico { flex-shrink: 0; width: 42px; height: 34px; border-radius: 9px; background: var(--purple-light); color: var(--purple); font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.cp-arch .nom { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cp-arch .nom small { display: block; color: var(--text-muted); font-size: 12px; }
+.cp-arch button { font: inherit; font-size: 13px; color: #B3261E; background: none; border: 0; cursor: pointer; padding: 0.3rem; }
+.cp-aviso-arch { font-size: 13.5px; color: #B3261E; margin: 0.5rem 0 0; }
+.cp-ojo { display: flex; gap: 0.55rem; align-items: flex-start; font-size: 13.5px; line-height: 1.5; background: #FFF8E6; border-left: 3px solid #E0A526; border-radius: 0 10px 10px 0; padding: 0.6rem 0.8rem; margin: 0.75rem 0 0; }
+.cp-isas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.45rem; border-radius: 12px; }
+.cp-isa { display: flex; align-items: center; justify-content: center; height: 50px; font: inherit; font-size: 14px; font-weight: 600; color: var(--purple-dark); background: #fff; border: 1.5px solid var(--border); border-radius: 12px; cursor: pointer; padding: 0.35rem 0.5rem; -webkit-tap-highlight-color: transparent; }
+.cp-isa img { max-width: 100%; height: auto; max-height: 24px; }
+.cp-isa.on { border-color: var(--purple); background: var(--purple-light); box-shadow: inset 0 0 0 1px var(--purple); }
+.cp-u { font: inherit; font-size: 14px; font-weight: 700; border: 0; background: #F6F5FD; color: var(--text-muted); padding: 0 0.85rem; cursor: pointer; border-left: 1px solid var(--border); }
+.cp-u.on { background: var(--purple); color: #fff; }
+.cp-donde { margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; background: #FBFAFF; }
+.cp-donde summary { cursor: pointer; font-weight: 600; font-size: 14.5px; color: var(--purple); padding: 0.7rem 0.9rem; list-style: none; }
+.cp-donde summary::-webkit-details-marker { display: none; }
+.cp-donde summary::before { content: '?'; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--purple-light); font-size: 12px; font-weight: 800; margin-right: 0.5rem; }
+.cp-donde > div { padding: 0 0.9rem 0.85rem; }
+.cp-donde p { font-size: 14px; margin-bottom: 0.6rem; line-height: 1.55; }
+.cp-suc { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.cp-suc a { font-size: 13.5px; font-weight: 600; text-decoration: none; background: #fff; border: 1px solid #DCD8FA; border-radius: 999px; padding: 0.3rem 0.75rem; }
+.cp-suc a:hover { border-color: var(--purple); }
+
+/* Contacto */
+.cp-acepto { display: flex; gap: 0.6rem; align-items: flex-start; margin-top: 1rem; font-size: 14px; line-height: 1.45; cursor: pointer; border: 1.5px solid transparent; border-radius: 10px; padding: 0.3rem; }
+.cp-acepto input { width: 20px; height: 20px; margin-top: 0.05rem; flex-shrink: 0; accent-color: var(--purple); }
+.cp-priv { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0.75rem 0 0; }
+.cp-priv svg { flex-shrink: 0; margin-top: 0.15rem; color: var(--purple); }
+.cp-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.cp-err { font-size: 14px; color: #B3261E; background: #FDECEA; border-radius: 10px; padding: 0.6rem 0.85rem; margin: 0 0 0.85rem; }
+.cp-enviar { display: flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; font: inherit; font-size: 16.5px; font-weight: 700; color: #fff; background: var(--purple); border: 0; border-radius: 999px; padding: 0.95rem 1.2rem; cursor: pointer; box-shadow: 0 14px 26px -16px rgba(83,74,183,0.95); transition: background .2s; }
+.cp-enviar:hover { background: var(--purple-deep); }
+.cp-enviar:disabled { opacity: 0.85; cursor: wait; }
+.cp-enviar.cargando::before { content: ''; width: 17px; height: 17px; border: 2.5px solid rgba(255,255,255,0.4); border-top-color: #fff; border-radius: 50%; animation: cpGira .8s linear infinite; }
+@keyframes cpGira { to { transform: rotate(360deg); } }
+.cp-pie { text-align: center; font-size: 13.5px; color: var(--text-muted); margin: 0.7rem 0 0; }
+.cp-alt { text-align: center; font-size: 14px; color: var(--text-muted); margin: 1.1rem 0 0; }
+
+/* Confirmación */
+.cp-ok { text-align: center; padding: 2rem 1.4rem 1.6rem; }
+.cp-ok-i { width: 58px; height: 58px; border-radius: 50%; background: #1D9E75; color: #fff; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.8rem; box-shadow: 0 12px 24px -12px rgba(29,158,117,0.9); }
+.cp-ok h2 { margin: 0 0 0.5rem; }
+.cp-cod { display: inline-block; font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: 0.08em; color: var(--purple-dark); background: var(--purple-light); border: 1.5px dashed #BDB6F2; border-radius: 14px; padding: 0.35rem 1.1rem; margin: 0.2rem 0 1rem; }
+.cp-ok p { max-width: 460px; margin-left: auto; margin-right: auto; }
+.cp-ok .cp-ojo { text-align: left; max-width: 460px; margin: 0 auto 1rem; }
+.cp-ok-wsp { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 15px; text-decoration: none; color: #0F6E56; border: 1.5px solid #BDE6D2; background: #EDF9F3; border-radius: 999px; padding: 0.65rem 1.25rem; margin-top: 0.3rem; }
+
+/* Banner con un informe de ejemplo */
+/* Franja de borde a borde (como el inicio de la portada), no un recuadro */
+.cp-hero { position: relative; overflow: hidden; background: linear-gradient(135deg, #2E2775 0%, #534AB7 58%, #7166DA 100%); color: #fff; }
+.cp-hero::before, .cp-hero::after { content: ''; position: absolute; border-radius: 50%; pointer-events: none; }
+.cp-hero::before { width: 520px; height: 520px; right: -140px; top: -200px; background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%); }
+.cp-hero::after { width: 420px; height: 420px; left: -160px; bottom: -240px; background: radial-gradient(circle, rgba(29,158,117,0.38), transparent 70%); }
+.cp-hero-in { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 3.25rem; }
+.cp-hero .miga, .cp-hero .miga a { color: rgba(255,255,255,0.75); }
+.cp-hero .miga a:hover { color: #fff; }
+.cp-banner { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 3rem; align-items: center; }
+.cp-doc { justify-self: center; width: 100%; max-width: 380px; }
+.cp-banner .sello { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.28); color: #fff; }
+.cp-banner .sello b { color: #9FF0CF; }
+.cp-nuevo { background: #FFD23F; color: #3A2E00; font-weight: 800; letter-spacing: 0.06em; border-radius: 999px; padding: 0.1rem 0.5rem; margin: 0 0.15rem 0 -0.45rem; }
+.cp-banner h1 { color: #fff; font-size: 40px; line-height: 1.1; margin: 0 0 0.75rem; }
+.art.cp { padding-top: 2.5rem; }
+@media (max-width: 900px) { .cp-banner { grid-template-columns: 1fr; gap: 1.8rem; } }
+
+/* El formulario en morado, para que destaque */
+.cp-card { background: linear-gradient(160deg, #7469DA 0%, #5F55C8 100%); border: 0; box-shadow: 0 26px 50px -30px rgba(38,33,92,0.85); color: #fff; }
+.cp-card .cp-paso legend, .cp-card .cp-campo > label, .cp-card .cp-lab { color: #fff; }
+.cp-card .cp-lab small, .cp-card .cp-campo > label small { color: rgba(255,255,255,0.78); }
+.cp-card .cp-num { background: #fff; color: var(--purple); }
+.cp-card .cp-ayuda, .cp-card .cp-pie, .cp-card .cp-priv { color: rgba(255,255,255,0.85); }
+.cp-card .cp-priv svg { color: #fff; }
+.cp-card .cp-acepto { color: #fff; }
+.cp-card .cp-acepto input { accent-color: #1D9E75; }
+.cp-card .cp-op { background: #fff; border-color: transparent; }
+.cp-card .cp-op.on { background: var(--purple-light); border-color: #fff; box-shadow: inset 0 0 0 2px var(--purple), 0 0 0 2px #fff; }
+.cp-card .cp-in { border-color: transparent; }
+.cp-card .cp-in:focus-within { border-color: #fff; box-shadow: 0 0 0 3px rgba(255,255,255,0.35); }
+.cp-card .cp-modos { background: rgba(255,255,255,0.18); }
+.cp-card .cp-modo { color: rgba(255,255,255,0.88); }
+.cp-card .cp-modo.on { color: var(--purple-dark); }
+.cp-card .cp-drop { background: rgba(255,255,255,0.96); border-color: rgba(255,255,255,0.7); }
+.cp-card .cp-isa { border-color: transparent; }
+.cp-card .cp-isa.on { box-shadow: inset 0 0 0 2px var(--purple), 0 0 0 2px #fff; }
+.cp-card .cp-donde { background: rgba(255,255,255,0.96); border-color: transparent; color: var(--text); }
+.cp-card .cp-enviar { background: #fff; color: var(--purple-dark); box-shadow: 0 14px 28px -16px rgba(0,0,0,0.55); }
+.cp-card .cp-enviar:hover { background: var(--purple-light); }
+.cp-card .cp-enviar.cargando::before { border-color: rgba(83,74,183,0.3); border-top-color: var(--purple); }
+.cp-card .cp-aviso-arch { color: #FFE1DC; }
+.cp-card .cp-ojo, .cp-card .cp-arch li { color: var(--text); }
+.cp-card.cp-ok h2, .cp-card.cp-ok p { color: #fff; }
+.cp-card .err.cp-ops, .cp-card .err.cp-chips, .cp-card .err.cp-isas { outline-color: #FFB4A9; }
+.cp-banner p { color: rgba(255,255,255,0.9); font-size: 16.5px; line-height: 1.6; margin: 0 0 1.25rem; }
+.cp-cta { display: inline-flex; align-items: center; background: #fff; color: var(--purple-dark); font-weight: 800; font-size: 16px; text-decoration: none; border-radius: 999px; padding: 0.85rem 1.5rem; box-shadow: 0 14px 28px -16px rgba(0,0,0,0.6); transition: transform .15s; }
+.cp-cta:hover { transform: translateY(-1px); }
+.cp-lista { list-style: none; counter-reset: inc; margin: -0.4rem 0 1.4rem; padding: 0; }
+.cp-lista li { counter-increment: inc; position: relative; padding: 0.28rem 0 0.28rem 2.1rem; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.9); }
+.cp-lista li::before { content: counter(inc); position: absolute; left: 0; top: 0.32rem; width: 23px; height: 23px; border-radius: 50%; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.32); color: #fff; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.cp-lista b { color: #fff; }
+.cp-micro { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; margin: 0.95rem 0 0; padding: 0; font-size: 13.5px; color: rgba(255,255,255,0.88); }
+.cp-micro li::before { content: '✓'; color: #9FF0CF; font-weight: 800; margin-right: 0.35rem; }
+.cp-doc { background: #fff; color: var(--text); border-radius: 16px; padding: 0.95rem 0.95rem 0.85rem; box-shadow: 0 26px 50px -24px rgba(10,8,40,0.65); transform: rotate(1.8deg); }
+.cp-doc-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.7rem; }
+.cp-doc-logo { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 13.5px; color: var(--purple-dark); }
+.cp-doc-ej { font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); background: #F1F0FA; border-radius: 999px; padding: 0.12rem 0.5rem; }
+.cp-doc-tabla { display: grid; grid-template-columns: 1.15fr repeat(3, 1fr); align-items: center; font-size: 12.5px; }
+.cp-doc-tabla > span { padding: 0.42rem 0.2rem; border-bottom: 1px solid #EFEDF8; text-align: center; }
+.cp-doc-tabla > span:nth-last-child(-n+4) { border-bottom: 0; }
+.cp-doc-tabla .cp-doc-k { text-align: left; color: var(--text-muted); font-weight: 600; }
+.cp-doc-h { font-weight: 800; color: var(--purple-dark); font-size: 11.5px; }
+.cp-doc-tabla .rec { background: #EFFAF5; }
+.cp-doc-h.rec { border-radius: 8px 8px 0 0; color: #0F6E56; }
+.cp-doc-tabla i { display: inline-flex; width: 19px; height: 19px; border-radius: 50%; align-items: center; justify-content: center; font-style: normal; font-weight: 800; font-size: 11px; color: #fff; }
+.d-si { background: #1D9E75; } .d-ojo { background: #E0A526; } .d-no { background: #C9C6DA; }
+.d-txt { font-size: 11.5px; color: var(--text-muted); } .d-txt.d-baja { color: #0F6E56; }
+.cp-doc-pie { margin-top: 0.7rem; text-align: right; }
+.cp-doc-chip { font-size: 11.5px; font-weight: 700; color: #0F6E56; background: #E1F5EE; border: 1px solid #CFEEE3; border-radius: 999px; padding: 0.2rem 0.65rem; }
+
+/* Qué es y qué incluye */
+.cp-h2 { font-size: 24px; margin: 0 0 0.6rem; scroll-margin-top: 90px; }
+.cp-lead { font-size: 16.5px; color: var(--text-muted); line-height: 1.65; margin: 0 0 1.2rem; }
+.cp-inc { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 2.4rem; }
+.cp-inc-c { display: flex; gap: 0.85rem; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 1rem 1.05rem; }
+.cp-inc-i { flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; background: var(--purple-light); color: var(--purple); display: flex; align-items: center; justify-content: center; }
+.cp-inc-c b { display: block; font-family: 'Inter', sans-serif; font-size: 15.5px; color: var(--purple-dark); margin-bottom: 0.2rem; }
+.cp-inc-c p { font-size: 14.5px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+
+/* Caso de ejemplo */
+.cp-caso { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 1.1rem; box-shadow: 0 22px 44px -36px rgba(38,33,92,0.55); }
+.cp-caso-plan { grid-column: 1 / -1; margin: 0 0 0.25rem; }
+.cp-caso-plan img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); }
+.cp-caso-plan figcaption { font-size: 14px; line-height: 1.55; color: var(--text-muted); margin-top: 0.6rem; }
+.cp-caso-plan figcaption b { color: var(--purple-dark); }
+.cp-n { display: inline-flex; width: 19px; height: 19px; border-radius: 50%; background: #E5484D; color: #fff; font-size: 11.5px; font-weight: 800; align-items: center; justify-content: center; margin: 0 0.15rem; vertical-align: 1px; }
+.cp-caso-col { border-radius: 14px; padding: 0.95rem 1rem; }
+.cp-caso-col.antes { background: #FBF7F4; border: 1px solid #F1E4DA; }
+.cp-caso-col.despues { background: #EFFAF5; border: 1px solid #CFEEE3; }
+.cp-caso-et { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; border-radius: 999px; padding: 0.15rem 0.6rem; margin-bottom: 0.55rem; }
+.antes .cp-caso-et { background: #F6E3D6; color: #9A4A1C; }
+.despues .cp-caso-et { background: #CFEEE3; color: #0F6E56; }
+.cp-caso ul { list-style: none; margin: 0; padding: 0; }
+.cp-caso li { position: relative; padding-left: 1.35rem; font-size: 14.5px; line-height: 1.5; margin-bottom: 0.4rem; }
+.antes li::before { content: '•'; position: absolute; left: 0.35rem; color: #C2703F; font-weight: 800; }
+.despues li::before { content: '✓'; position: absolute; left: 0.1rem; color: #1D9E75; font-weight: 800; }
+.cp-caso-flecha { display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--purple-mid); font-weight: 800; }
+.cp-caso-ahorro { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 0.5rem; background: linear-gradient(135deg, #1D9E75, #13805D); color: #fff; border-radius: 14px; padding: 0.85rem 1rem; text-align: center; }
+.cp-caso-ahorro span { font-size: 15px; opacity: 0.92; }
+.cp-caso-ahorro b { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 900; }
+.cp-caso-nota { font-size: 12.5px; color: var(--text-muted); margin: 0.5rem 0 2.4rem; text-align: center; }
+
+@media (max-width: 680px) {
+  .cp-hero-in { padding: 1.1rem 1rem 2.2rem; }
+  .cp-banner { grid-template-columns: 1fr; gap: 1.6rem; }
+  .cp-banner h1 { font-size: 29px; }
+  .art.cp { padding-top: 2rem; }
+  .cp-doc { transform: none; }
+  .cp-h2 { font-size: 21px; }
+  .cp-inc { grid-template-columns: 1fr; }
+  .cp-caso { grid-template-columns: 1fr; }
+  .cp-caso-flecha { transform: rotate(90deg); font-size: 20px; }
+  .cp-card { padding: 1.25rem 1rem 1.1rem; border-radius: 18px; }
+  .cp-ops { grid-template-columns: 1fr; }
+  .cp-fila, .cp-fila.dos { grid-template-columns: 1fr; gap: 0; }
+  .cp-fila .cp-campo { margin-top: 1rem; }
+  .cp-fila .cp-campo:first-child { margin-top: 0; }
+  .cp-isas { grid-template-columns: repeat(2, 1fr); }
+  .cp-modo { font-size: 13px; padding: 0.55rem 0.25rem; }
+}
+</style>
+<style>
+.lp-pasos { list-style: none; margin: 0 0 2.4rem; padding: 0; display: grid; gap: 0.7rem; }
+.lp-pasos li { display: flex; gap: 0.85rem; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 1rem 1.05rem; }
+.lp-pasos li.lp-priv { background: #EDF9F3; border-color: #CDEBDD; }
+.lp-n { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--purple); color: #fff; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center; }
+.lp-priv .lp-n { background: #1D9E75; }
+.lp-pasos b { display: block; font-family: 'Inter', sans-serif; font-size: 16px; color: var(--purple-dark); margin-bottom: 0.15rem; }
+.lp-pasos p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--text-muted); }
+.lp-priv p { color: #2F5D50; }
+.lp-hero .cp-hero-in { padding-top: 2rem; }
+.lp-resp { list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.3rem; padding: 0; }
+.lp-resp li { font-size: 14px; font-weight: 600; color: #fff; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); border-radius: 999px; padding: 0.3rem 0.8rem; }
+.lp-fijo { display: none; }
+@media (max-width: 680px) {
+  .lp-hero .cp-hero-in { padding-top: 1.3rem; }
+  .lp-fijo { display: flex; position: fixed; left: 1rem; right: 1rem; bottom: calc(0.9rem + env(safe-area-inset-bottom)); z-index: 60; justify-content: center; background: #1D9E75; color: #fff; font-weight: 800; font-size: 16px; text-decoration: none; border-radius: 999px; padding: 0.95rem 1rem; box-shadow: 0 14px 30px -12px rgba(10,60,40,0.75); transform: translateY(160%); visibility: hidden; transition: transform .25s ease, visibility 0s linear .25s; }
+  .lp-fijo.on { transform: none; visibility: visible; transition: transform .25s ease; }
+  .lp .faq { padding-bottom: 4.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMzUgNDUgNDMwIDEwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8dGl0bGU+UGxhbmlBcHAgTG9nbyBBPC90aXRsZT4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjEwMCIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjgiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI1MiwxMDAgNjUsMTAwIDc0LDc3IDgzLDEyMyA5Miw4NSAxMDEsMTExIDEwOCwxMDAgMTI4LDEwMCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzUzNEFCNyIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjYxIiByPSIxNiIgZmlsbD0iIzFEOUU3NSIvPgogIDxyZWN0IHg9IjExOCIgeT0iNTQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMiIgcng9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNCIvPgogIDxyZWN0IHg9IjExNSIgeT0iNjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iI2ZmZiIvPgogIDxsaW5lIHgxPSIxMjEiIHkxPSI1NyIgeDI9IjEzMyIgeTI9IjU3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CiAgPGxpbmUgeDE9IjEyMSIgeTE9IjYwIiB4Mj0iMTI5IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjYiLz4KICA8dGV4dCB4PSIxNTgiIHk9Ijg4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSI1MDAiIGxldHRlci1zcGFjaW5nPSItMC41Ij4KICAgIDx0c3BhbiBmaWxsPSIjMUQ5RTc1Ij5QbGFuaTwvdHNwYW4+PHRzcGFuIGZpbGw9IiM1MzRBQjciPkFwcDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjE1OCIgeT0iMTEzIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiM4ODg3ODAiIGxldHRlci1zcGFjaW5nPSIxLjIiPkFTRVNPUsONQSBESUdJVEFMIFBBUkEgVFUgUExBTjwvdGV4dD4KICA8dGV4dCB4PSIxNTgiIHk9IjEzMiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSIjMUQ5RTc1IiBsZXR0ZXItc3BhY2luZz0iMS4yIj5JU0FQUkUgKyBJQTwvdGV4dD4KPC9zdmc+" alt="Planiapp"/></a>
+  <div class="nav-carrusel" aria-hidden="true">
+    <div class="nav-tk">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+      <img src="/logos/mini/banmedica.png" alt="" width="85" height="22">
+      <img src="/logos/mini/colmena.png" alt="" width="95" height="20">
+      <img src="/logos/mini/consalud.png" alt="" width="76" height="25">
+      <img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20">
+      <img src="/logos/mini/esencial.png" alt="" width="94" height="20">
+      <img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24">
+      <img src="/logos/mini/vida-tres.png" alt="" width="100" height="19">
+    </div>
+  </div>
+  <a class="nav-cta" href="#cp-pedir">Pedir<span class="nav-cta-extra"> informe</span></a>
+</nav>
+
+<section class="cp-hero lp-hero">
+  <div class="cp-hero-in">
+  <div class="cp-banner">
+    <div class="cp-banner-tx">
+      <span class="sello"><span class="cp-nuevo">Nuevo</span>Informe Planiapp · <b>Gratis</b></span>
+      <h1>¿Tu plan de Isapre te conviene?</h1>
+      <p>Mándanos tu plan y te decimos por WhatsApp si puedes pagar menos, tener mejor cobertura por lo mismo o si te conviene quedarte como estás.</p>
+      <ul class="lp-resp"><li>↓ Pagar menos</li><li>↑ Mejor cobertura</li><li>✓ Quedarte</li></ul>
+      <a class="cp-cta" href="#cp-pedir" onclick="if(typeof gtag==='function')gtag('event','informe_cta',{origen:'landing'})">Pedir mi informe gratis →</a>
+      <ul class="cp-micro"><li>Gratis</li><li>Sin datos de salud</li><li>Por WhatsApp</li></ul>
+    </div>
+    <div class="cp-doc" aria-hidden="true">
+      <div class="cp-doc-top"><span class="cp-doc-logo">Informe Planiapp</span><span class="cp-doc-ej">Ejemplo</span></div>
+      <div class="cp-doc-tabla">
+        <span></span><span class="cp-doc-h">Tu plan</span><span class="cp-doc-h rec">Opción 1</span><span class="cp-doc-h">Opción 2</span>
+        <span class="cp-doc-k">Precio</span><span><b class="d-txt">Hoy</b></span><span class="rec"><b class="d-txt d-baja">↓ Menos</b></span><span><b class="d-txt">Igual</b></span>
+        <span class="cp-doc-k">Tu clínica</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+        <span class="cp-doc-k">Urgencia</span><span><i class="d-no" aria-label="No tiene">–</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+        <span class="cp-doc-k">Red GES</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span>
+        <span class="cp-doc-k">CAEC</span><span><i class="d-si" aria-label="Cubre bien">✓</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+        <span class="cp-doc-k">Reembolso</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-si" aria-label="Cubre bien">✓</i></span>
+        <span class="cp-doc-k">Reclamos</span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span><span class="rec"><i class="d-si" aria-label="Cubre bien">✓</i></span><span><i class="d-ojo" aria-label="Cubre poco">!</i></span>
+      </div>
+      <div class="cp-doc-pie"><span class="cp-doc-chip">Recomendado: Opción 1</span></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<main class="art cp lp">
+  <h2 class="cp-h2">Así funciona</h2>
+  <ol class="lp-pasos">
+    <li><span class="lp-n">1</span><div><b>Nos mandas tu plan</b><p>Solo tu plan, tu nombre y tu WhatsApp. No pedimos RUT, claves ni datos médicos.</p></div></li>
+    <li><span class="lp-n">2</span><div><b>Te enviamos tu informe</b><p>Por WhatsApp: si te conviene cambiarte, mejorar tu plan o quedarte como estás.</p></div></li>
+    <li class="lp-priv"><span class="lp-n">3</span><div><b>Tú decides</b><p>Solo si decides cambiarte, la declaración de salud se hace con la Isapre, con un agente de ventas inscrito en la Superintendencia de Salud. Si te quedas, no entregas nada más.</p></div></li>
+  </ol>
+
+  <h2 class="cp-h2">Un caso real</h2>
+  <div class="cp-caso">
+    <figure class="cp-caso-plan">
+      <a href="img/caso-plan-nueva-masvida.webp" target="_blank" rel="noopener"><img src="img/caso-plan-nueva-masvida.webp" alt="Plan preferente PLPL 174 de Nueva Masvida: su cobertura preferente es en Vespucio, RedSalud, Dávila, Indisa, Bupa, MEDS y Santa María, sin Clínica Alemana; por libre elección, el día cama tiene tope de 8 UF" width="882" height="557" loading="lazy" decoding="async"></a>
+      <figcaption><b>¿Tienes este plan?</b> Es el que tenía: el plan preferente PLPL 174 de Nueva Masvida. <span class="cp-n">1</span> Su red preferente no incluye Clínica Alemana. <span class="cp-n">2</span> En la Alemana se atendía por libre elección, con un tope de 8 UF por día cama.</figcaption>
+    </figure>
+    <div class="cp-caso-col antes">
+      <span class="cp-caso-et">Antes</span>
+      <ul>
+        <li>Tenía un plan preferente de <strong>Nueva Masvida</strong> y se atendía en <strong>Clínica Alemana</strong>, que no estaba en su red preferente.</li>
+        <li>En la Alemana se atendía por libre elección, con topes bajos: por ejemplo, 8 UF por día cama.</li>
+        <li>Pagaba <strong>12 UF al mes</strong> (unos $494.000), y en 5 años nunca apeló las alzas.</li>
+      </ul>
+    </div>
+    <div class="cp-caso-flecha" aria-hidden="true">→</div>
+    <div class="cp-caso-col despues">
+      <span class="cp-caso-et">Con el informe</span>
+      <ul>
+        <li><strong>Clínica Alemana como preferente</strong>, con cobertura sin tope.</li>
+        <li>Reembolso en línea.</li>
+        <li>Paga <strong>unos $374.000 al mes</strong>.</li>
+      </ul>
+    </div>
+    <div class="cp-caso-ahorro"><span>Ahorra</span><b>$120.000 al mes</b><span>y con mejor cobertura</span></div>
+  </div>
+  <p class="cp-caso-nota">Caso real, sin datos personales. Los montos en pesos son aproximados, con la UF de hoy.</p>
+
+  <h2 class="cp-h2" id="cp-pedir">Pide tu informe</h2>
+  <p class="cp-lead">Toma un par de minutos. Te lo enviamos por WhatsApp.</p>
+  <form class="cp-card" id="cp-form" novalidate>
+    <fieldset class="cp-paso">
+      <legend><span class="cp-num">1</span>¿Qué buscas?</legend>
+      <div class="cp-ops" id="cp-busca" data-grupo="busca" role="radiogroup" aria-label="¿Qué buscas?">
+        <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Bajar el precio manteniendo la cobertura"><b>Bajar el precio</b><small>con una cobertura parecida a la mía</small></button>
+        <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Mejorar la cobertura pagando lo mismo"><b>Mejorar mi cobertura</b><small>pagando lo mismo que hoy</small></button>
+      </div>
+    </fieldset>
+
+    <fieldset class="cp-paso">
+      <legend><span class="cp-num">2</span>Sobre ti</legend>
+      <div class="cp-fila">
+        <div class="cp-campo">
+          <label for="cp-edad">Tu edad</label>
+          <div class="cp-in" id="cp-edad-caja"><input id="cp-edad" type="text" inputmode="numeric" maxlength="2" autocomplete="off" placeholder="Ej: 38"><span>años</span></div>
+        </div>
+        <div class="cp-campo">
+          <label for="cp-sueldo">Sueldo imponible <small>(sin descuentos)</small></label>
+          <div class="cp-in" id="cp-sueldo-caja"><span>$</span><input id="cp-sueldo" type="text" inputmode="numeric" autocomplete="off" placeholder="1.200.000"></div>
+        </div>
+      </div>
+      <p class="cp-siete" id="cp-siete" hidden></p>
+      <div class="cp-campo">
+        <span class="cp-lab" id="cp-cargas-lab">¿Quiénes están en tu plan?</span>
+        <div class="cp-chips" id="cp-cargas" data-grupo="cargas" role="radiogroup" aria-labelledby="cp-cargas-lab">
+          <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="solo">Solo yo</button>
+          <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="cargas">Yo y mis cargas</button>
+        </div>
+      </div>
+      <div class="cp-campo" id="cp-edades-campo" hidden>
+        <label for="cp-edades">Edades de tus cargas <small>(opcional)</small></label>
+        <div class="cp-in"><input id="cp-edades" type="text" autocomplete="off" maxlength="60" placeholder="Ej: 36, 8 y 3"></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="cp-paso">
+      <legend><span class="cp-num">3</span>Tu plan actual</legend>
+      <div class="cp-ops cp-caminos" id="cp-camino" data-grupo="camino" role="radiogroup" aria-label="Cómo nos muestras tu plan">
+        <button type="button" class="cp-op on" role="radio" aria-checked="true" data-v="preciso"><span class="cp-tag">Más preciso</span><b>Tengo mi plan</b><small>Súbelo en PDF o fotos, o escribe su código</small></button>
+        <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="rapido"><span class="cp-tag rapido">Rápido</span><b>No lo tengo a mano</b><small>Tu Isapre, cuánto pagas y tus clínicas</small></button>
+      </div>
+
+      <div class="cp-modos" id="cp-sub" data-grupo="sub" role="radiogroup" aria-label="Subir el plan o escribir su código">
+        <button type="button" class="cp-modo on" role="radio" aria-checked="true" data-v="subir">Subir el archivo</button>
+        <button type="button" class="cp-modo" role="radio" aria-checked="false" data-v="codigo">Escribir el código</button>
+      </div>
+
+      <div id="cp-p-subir">
+        <ul class="cp-arch" id="cp-arch"></ul>
+        <label class="cp-drop" id="cp-drop">
+          <input id="cp-archivo" type="file" accept="application/pdf,image/*" multiple>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 17v-6"/><path d="M9.5 13.5 12 11l2.5 2.5"/></svg>
+          <b id="cp-drop-t">Sube tu plan en PDF o con fotos</b>
+          <span class="cp-boton" id="cp-drop-b">Elegir archivo</span>
+          <small>Hasta 3 archivos, 10 MB en total. Las fotos se achican solas.</small>
+        </label>
+        <p class="cp-aviso-arch" id="cp-aviso-arch" role="alert" hidden></p>
+        <p class="cp-ojo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7791F" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:0.15rem"><path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg><span><strong>No subas tu declaración de salud.</strong> Usamos tu plan solo para esta revisión.</span></p>
+      </div>
+
+      <div id="cp-p-isapre" hidden>
+        <span class="cp-lab" id="cp-isa-lab">¿En qué Isapre estás?</span>
+        <div class="cp-isas" id="cp-isas" data-grupo="isapre" role="radiogroup" aria-labelledby="cp-isa-lab">
+          <button type="button" class="cp-isa" role="radio" aria-checked="false" data-v="Banmédica" aria-label="Banmédica"><img src="/logos/mini/banmedica.png" alt="" width="85" height="22"></button>
+          <button type="button" class="cp-isa" role="radio" aria-checked="false" data-v="Colmena" aria-label="Colmena"><img src="/logos/mini/colmena.png" alt="" width="95" height="20"></button>
+          <button type="button" class="cp-isa" role="radio" aria-checked="false" data-v="Consalud" aria-label="Consalud"><img src="/logos/mini/consalud.png" alt="" width="76" height="25"></button>
+          <button type="button" class="cp-isa" role="radio" aria-checked="false" data-v="Cruz Blanca" aria-label="Cruz Blanca"><img src="/logos/mini/cruz-blanca.png" alt="" width="96" height="20"></button>
+          <button type="button" class="cp-isa" role="radio" aria-checked="false" data-v="Esencial" aria-label="Esencial"><img src="/logos/mini/esencial.png" alt="" width="94" height="20"></button>
+          <button type="button" class="cp-isa" role="radio" aria-checked="false" data-v="Nueva Masvida" aria-label="Nueva Masvida"><img src="/logos/mini/nueva-masvida.png" alt="" width="80" height="24"></button>
+          <button type="button" class="cp-isa" role="radio" aria-checked="false" data-v="Vida Tres" aria-label="Vida Tres"><img src="/logos/mini/vida-tres.png" alt="" width="100" height="19"></button>
+          <button type="button" class="cp-isa" role="radio" aria-checked="false" data-v="Otra">Otra</button>
+        </div>
+      </div>
+
+      <div id="cp-p-codigo" hidden>
+        <div class="cp-campo">
+          <label for="cp-codplan">Código de tu plan</label>
+          <div class="cp-in" id="cp-codplan-caja"><input id="cp-codplan" type="text" autocomplete="off" autocapitalize="characters" maxlength="40" placeholder="Como aparece en tu plan o en tu contrato"></div>
+        </div>
+      </div>
+
+      <div id="cp-p-manual" hidden>
+        <div class="cp-campo">
+          <span class="cp-lab" id="cp-rango-lab">¿Cuánto pagas hoy por tu plan, más o menos?</span>
+          <div class="cp-chips" id="cp-rango" data-grupo="rango" role="radiogroup" aria-labelledby="cp-rango-lab">
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Menos de $100 mil">Menos de $100 mil</button>
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="$100 a $150 mil">$100 a $150 mil</button>
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="$150 a $250 mil">$150 a $250 mil</button>
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="Más de $250 mil">Más de $250 mil</button>
+            <button type="button" class="cp-op" role="radio" aria-checked="false" data-v="No sé">No sé</button>
+          </div>
+        </div>
+        <div class="cp-campo">
+          <label for="cp-paga">¿Sabes el monto exacto? <small>(opcional)</small></label>
+          <div class="cp-in" id="cp-paga-caja"><input id="cp-paga" type="text" inputmode="decimal" autocomplete="off" placeholder="Ej: 3,2"><span id="cp-unidades" style="padding:0;background:none" data-grupo="unidad" role="radiogroup" aria-label="Unidad"><button type="button" class="cp-u on" role="radio" aria-checked="true" data-v="UF">UF</button><button type="button" class="cp-u" role="radio" aria-checked="false" data-v="$">$</button></span></div>
+          <p class="cp-ayuda" id="cp-paga-vivo">Aparece en tu contrato o en la carta de adecuación.</p>
+        </div>
+        <div class="cp-campo">
+          <label for="cp-clinicas">Clínicas que te interesan <small>(opcional)</small></label>
+          <div class="cp-in"><input id="cp-clinicas" type="text" autocomplete="off" maxlength="150" placeholder="Ej: Clínica Alemana, Indisa"></div>
+        </div>
+      </div>
+
+      <details class="cp-donde" id="cp-donde">
+        <summary>¿Dónde encuentro mi plan?</summary>
+        <div>
+          <p>Lo descargas desde la sucursal virtual de tu Isapre, como plan o contrato en PDF. También sirve una foto del plan en papel, con la tabla de coberturas y los topes a la vista.</p>
+          <div class="cp-suc">
+            <a href="https://login.isaprebanmedica.cl/login" target="_blank" rel="noopener nofollow">Banmédica</a>
+            <a href="https://www.colmena.cl/afiliados/#/login/" target="_blank" rel="noopener nofollow">Colmena</a>
+            <a href="https://clientes.consalud.cl/#/login" target="_blank" rel="noopener nofollow">Consalud</a>
+            <a href="https://sitio.cruzblanca.cl/MICRUZBLANCA/login.aspx" target="_blank" rel="noopener nofollow">Cruz Blanca</a>
+            <a href="https://sucursalvirtual.somosesencial.cl/" target="_blank" rel="noopener nofollow">Esencial</a>
+            <a href="https://sv.nuevamasvida.cl/" target="_blank" rel="noopener nofollow">Nueva Masvida</a>
+            <a href="https://login.isaprevidatres.cl/login" target="_blank" rel="noopener nofollow">Vida Tres</a>
+          </div>
+          <p style="margin:0.7rem 0 0">¿No lo encuentras? Elige <strong>No lo tengo a mano</strong> y envía igual.</p>
+        </div>
+      </details>
+    </fieldset>
+
+    <fieldset class="cp-paso">
+      <legend><span class="cp-num">4</span>¿A quién le escribimos?</legend>
+      <div class="cp-fila dos">
+        <div class="cp-campo">
+          <label for="cp-nombre">Tu nombre</label>
+          <div class="cp-in" id="cp-nombre-caja"><input id="cp-nombre" type="text" autocomplete="given-name" maxlength="60" placeholder="Nombre"></div>
+        </div>
+        <div class="cp-campo">
+          <label for="cp-wsp">WhatsApp</label>
+          <div class="cp-in" id="cp-wsp-caja"><span>+56 9</span><input id="cp-wsp" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="16" placeholder="1234 5678"></div>
+        </div>
+      </div>
+      <label class="cp-acepto" id="cp-acepto-caja"><input type="checkbox" id="cp-acepto"><span>Acepto que Planiapp use mi plan y estos datos solo para revisar mi caso y escribirme por WhatsApp.</span></label>
+      <p class="cp-priv"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Solo pedimos tu nombre y WhatsApp; no pedimos RUT, claves de sucursal virtual ni datos médicos o bancarios.</span></p>
+    </fieldset>
+
+    <div class="cp-hp" aria-hidden="true"><label>No llenar <input type="text" id="cp-hp" name="hp" tabindex="-1" autocomplete="off"></label></div>
+    <p class="cp-err" id="cp-err" role="alert" hidden></p>
+    <button type="submit" class="cp-enviar" id="cp-enviar">Pedir mi informe →</button>
+    <p class="cp-pie">Revisamos tu plan y te enviamos tu informe personalizado por WhatsApp.</p>
+  </form>
+
+  <div class="cp-card cp-ok" id="cp-ok" hidden tabindex="-1">
+    <span class="cp-ok-i"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+    <h2 id="cp-ok-t">¡Recibimos tu plan!</h2>
+    <p style="margin-bottom:0.3rem">Tu código es</p>
+    <div class="cp-cod" id="cp-ok-cod">PL0000</div>
+    <p class="cp-ojo" id="cp-ok-falla" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7791F" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:0.15rem"><path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg><span>Tu archivo no alcanzó a llegar. Te lo pediremos por WhatsApp.</span></p>
+    <p id="cp-ok-p">Revisamos tu plan y te enviamos tu informe personalizado por WhatsApp. Guarda el código por si nos escribes antes.</p>
+    <a class="cp-ok-wsp" id="cp-ok-wsp" href="https://wa.me/56966450103" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 1.9 1.1 2.7 1.1 1.6 2.5 2.9 4.2 3.7.5.2 1 .4 1.4.5.6.2 1.1.2 1.7.1.5-.1 1.5-.6 1.7-1.2.2-.5.2-1 .1-1.2l-.4-.3z"/></svg>¿Quieres agregar algo? Escríbenos</a>
+  </div>
+
+  <p class="cp-alt">¿Estás en Fonasa, o prefieres calcular sin dejar tus datos? <a href="/calculadora-isapre">Usa la calculadora</a>.</p>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿Tiene costo revisar mi plan?</h3>
+    <p>No. La revisión es gratis y sin compromiso.</p>
+    <h3>¿Qué hacen con mi plan?</h3>
+    <p>Lo usamos solo para esta revisión. Queda en una carpeta privada y lo eliminamos a los 6 meses.</p>
+    <h3>¿Tengo que entregar datos de salud?</h3>
+    <p>No. Para el informe solo necesitamos tu plan, tu nombre y tu WhatsApp. La declaración de salud se hace solo si decides cambiarte, con la Isapre.</p>
+    <h3>¿Por qué piden mi sueldo?</h3>
+    <p>Porque tu 7% define cuánto puedes pagar sin poner plata de tu bolsillo. Bajar el precio de tu plan solo te sirve si hoy pagas más que tu 7%.</p>
+    <h3>¿Me tengo que cambiar de plan?</h3>
+    <p>No. Si tu plan ya te conviene, te lo decimos y no tienes que hacer nada.</p>
+  </section>
+</main>
+<a class="lp-fijo" id="lp-fijo" href="#cp-pedir">Pedir mi informe gratis →</a>
+
+<footer>
+  <div style="line-height:1.9;margin-bottom:0.35rem"><strong>Sucursales virtuales:</strong> <a href="https://login.isaprebanmedica.cl/login" target="_blank" rel="noopener nofollow">Banmédica</a> · <a href="https://www.colmena.cl/afiliados/#/login/" target="_blank" rel="noopener nofollow">Colmena</a> · <a href="https://clientes.consalud.cl/#/login" target="_blank" rel="noopener nofollow">Consalud</a> · <a href="https://sitio.cruzblanca.cl/MICRUZBLANCA/login.aspx" target="_blank" rel="noopener nofollow">Cruz Blanca</a> · <a href="https://sucursalvirtual.somosesencial.cl/" target="_blank" rel="noopener nofollow">Esencial</a> · <a href="https://sv.nuevamasvida.cl/" target="_blank" rel="noopener nofollow">Nueva Masvida</a> · <a href="https://login.isaprevidatres.cl/login" target="_blank" rel="noopener nofollow">Vida Tres</a></div>
+  <div style="line-height:1.9;margin-bottom:0.85rem"><strong>Superintendencia de Salud:</strong> <a href="https://www.superdesalud.gob.cl/" target="_blank" rel="noopener">Sitio oficial</a> · <a href="https://reclamos.superdesalud.gob.cl/" target="_blank" rel="noopener">Ingresar un reclamo</a> · <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/" target="_blank" rel="noopener">Orientación en salud</a></div>
+  <a href="/">Planiapp</a> · Asesoría en Isapres · Agente inscrito en la Superintendencia de Salud
+</footer>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpZ66vRaSse2VdseeOcZt6r61foyrT9-ofDvgRN88JRST10Yy13NXzewu1Ehp2w-Io/exec";
+const WEBHOOK = "https://hook.eu1.make.com/0kmah46kxiwotfaim1s3ua6fqr47pc7u";
+const WSP = "56966450103";
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var pesos = function (n) { return '$' + Math.round(n).toLocaleString('es-CL'); };
+  var fmtUF = function (v) { return v.toLocaleString('es-CL', { maximumFractionDigits: 2 }); };
+  var digitos = function (v) { return String(v || '').replace(/\D/g, ''); };
+  var limpio = function (v, n) { return String(v || '').replace(/\s+/g, ' ').trim().slice(0, n); };
+  var TOPE_UF = 90, MAX_TOTAL = 10 * 1024 * 1024, MAX_ARCH = 3;
+  var UF = 41190; // respaldo; se reemplaza por la UF del día
+  fetch('https://mindicador.cl/api/uf').then(function (r) { return r.json(); }).then(function (j) {
+    var v = j && j.serie && j.serie[0] && j.serie[0].valor;
+    if (v > 30000 && v < 80000) { UF = v; pintaSiete(); pintaPaga(); }
+  }).catch(function () {});
+
+  var D = { busca: '', cargas: '', camino: 'preciso', sub: 'subir', modo: 'subir', isapre: '', rango: '', unidad: 'UF', archivos: [] };
+  var form = $('cp-form'), empezo = false, enviando = false;
+
+  function marca(ev, datos) {
+    if (typeof gtag === 'function' && !(typeof planiappInterno !== 'undefined' && planiappInterno)) gtag('event', ev, Object.assign({ form_name: 'compara_plan' }, datos || {}));
+  }
+  function empieza() { if (!empezo) { empezo = true; marca('plan_inicio'); } }
+  form.addEventListener('focusin', empieza);
+  form.addEventListener('click', empieza);
+
+  function sinError(el) { if (el) el.classList.remove('err'); $('cp-err').hidden = true; }
+
+  // Grupos de botones (una sola opción)
+  document.querySelectorAll('[data-grupo]').forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-v]');
+      if (!b || !g.contains(b)) return;
+      g.querySelectorAll('button[data-v]').forEach(function (x) { var on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-checked', on ? 'true' : 'false'); });
+      D[g.dataset.grupo] = b.dataset.v;
+      sinError(g);
+      cambio(g.dataset.grupo);
+    });
+  });
+  function cambio(k) {
+    if (k === 'cargas') $('cp-edades-campo').hidden = D.cargas !== 'cargas';
+    // Dos puertas: "Tengo mi plan" (subir el archivo o escribir el código) y "No lo tengo a mano" (Isapre, cuánto paga y clínicas)
+    if (k === 'camino' || k === 'sub' || k === 'modo') {
+      D.modo = D.camino === 'rapido' ? 'manual' : D.sub;
+      $('cp-sub').hidden = D.camino === 'rapido';
+      $('cp-donde').hidden = D.camino === 'rapido';
+      $('cp-p-subir').hidden = D.modo !== 'subir';
+      $('cp-p-isapre').hidden = D.modo === 'subir';
+      $('cp-p-codigo').hidden = D.modo !== 'codigo';
+      $('cp-p-manual').hidden = D.modo !== 'manual';
+    }
+    if (k === 'unidad') { $('cp-paga').placeholder = D.unidad === 'UF' ? 'Ej: 3,2' : 'Ej: 150.000'; $('cp-paga').value = ''; pintaPaga(); $('cp-paga').focus(); }
+  }
+
+  // Edad, sueldo y 7%
+  $('cp-edad').addEventListener('input', function () { this.value = digitos(this.value).slice(0, 2); sinError($('cp-edad-caja')); });
+  function sueldo() { return Number(digitos($('cp-sueldo').value)) || 0; }
+  function siete() { return Math.round(Math.min(sueldo(), TOPE_UF * UF) * 0.07 / 100) * 100; }
+  $('cp-sueldo').addEventListener('input', function () {
+    var n = Number(digitos(this.value).slice(0, 9)) || 0;
+    this.value = n ? n.toLocaleString('es-CL') : '';
+    sinError($('cp-sueldo-caja'));
+    pintaSiete();
+  });
+  function pintaSiete() {
+    var s = sueldo(), p = $('cp-siete');
+    if (s < 100000) { p.hidden = true; return; }
+    p.innerHTML = 'Tu 7% es <b>' + pesos(siete()) + '</b> al mes' + (s > TOPE_UF * UF ? ' (con el tope imponible)' : '') + '. Bajar el precio de tu plan solo te sirve si hoy pagas más que eso.';
+    p.hidden = false;
+  }
+
+  // Lo que paga hoy, en UF o en pesos (si escribe pesos con la UF marcada, se cambia solo)
+  function pagaNum() { return D.unidad === 'UF' ? parseFloat($('cp-paga').value.replace(',', '.')) || 0 : Number(digitos($('cp-paga').value)) || 0; }
+  $('cp-paga').addEventListener('input', function () {
+    if (D.unidad === 'UF') {
+      this.value = this.value.replace(/[^\d.,]/g, '').slice(0, 6);
+      if (pagaNum() > 100) { var v = digitos(this.value); document.querySelector('#cp-unidades [data-v="$"]').click(); this.value = Number(v).toLocaleString('es-CL'); }
+    } else {
+      var n = Number(digitos(this.value).slice(0, 8)) || 0;
+      this.value = n ? n.toLocaleString('es-CL') : '';
+    }
+    pintaPaga();
+  });
+  function pintaPaga() {
+    var v = pagaNum(), p = $('cp-paga-vivo');
+    if (!v) { p.textContent = 'Aparece en tu contrato o en la carta de adecuación.'; return; }
+    p.textContent = D.unidad === 'UF' ? 'Unos ' + pesos(v * UF) + ' al mes.' : 'Unas ' + fmtUF(v / UF) + ' UF al mes.';
+  }
+  // El monto exacto si lo escribió; si no, el rango aproximado que marcó
+  function pagaTexto() {
+    var v = pagaNum();
+    if (v) return D.unidad === 'UF' ? fmtUF(v) + ' UF (' + pesos(v * UF) + ')' : pesos(v) + ' (' + fmtUF(v / UF) + ' UF)';
+    return D.rango === 'No sé' ? 'No sabe' : D.rango ? 'Aprox. ' + D.rango : '';
+  }
+
+  // Archivos: PDF tal cual, fotos achicadas en el navegador
+  var inp = $('cp-archivo'), drop = $('cp-drop');
+  function total() { return D.archivos.reduce(function (s, a) { return s + a.blob.size; }, 0); }
+  function avisoArch(t) { var p = $('cp-aviso-arch'); p.textContent = t; p.hidden = !t; }
+  inp.addEventListener('change', function () { agregar([].slice.call(inp.files)); inp.value = ''; });
+  ['dragenter', 'dragover'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+  ['dragleave', 'drop'].forEach(function (ev) { drop.addEventListener(ev, function () { drop.classList.remove('over'); }); });
+  drop.addEventListener('drop', function (e) { e.preventDefault(); empieza(); agregar([].slice.call(e.dataTransfer.files)); });
+  async function agregar(files) {
+    avisoArch('');
+    sinError(drop);
+    for (var i = 0; i < files.length; i++) {
+      var f = files[i];
+      if (D.archivos.length >= MAX_ARCH) { avisoArch('Puedes subir hasta 3 archivos.'); break; }
+      var esPdf = f.type === 'application/pdf' || /\.pdf$/i.test(f.name);
+      var esImg = /^image\//.test(f.type) || /\.(jpe?g|png|webp|heic|heif)$/i.test(f.name);
+      if (!esPdf && !esImg) { avisoArch('Solo aceptamos PDF o fotos.'); continue; }
+      var blob = f;
+      if (esImg) {
+        $('cp-drop-b').textContent = 'Preparando la foto…';
+        try { blob = await achica(f); } catch (e) { avisoArch('No pudimos abrir la foto ' + f.name + '. Prueba con otra foto o con el PDF.'); continue; }
+        finally { $('cp-drop-b').textContent = 'Elegir archivo'; }
+      }
+      if (total() + blob.size > MAX_TOTAL) { avisoArch(esPdf ? 'Ese PDF pasa los 10 MB en total. Prueba con fotos de las páginas del plan.' : 'Entre todos tus archivos no pueden pasar de 10 MB.'); continue; }
+      D.archivos.push({ nombre: f.name || (esPdf ? 'plan.pdf' : 'foto.jpg'), blob: blob, pdf: esPdf });
+    }
+    pinta();
+  }
+  function achica(f) {
+    return new Promise(function (ok, mal) {
+      var url = URL.createObjectURL(f), img = new Image();
+      img.onload = function () {
+        URL.revokeObjectURL(url);
+        var w = img.naturalWidth, h = img.naturalHeight, max = 2200;
+        if (!w || !h) return mal(new Error('vacía'));
+        if (Math.max(w, h) <= max && f.size <= 1.5 * 1024 * 1024 && /^image\/(jpeg|png|webp)$/.test(f.type)) return ok(f);
+        var k = Math.min(1, max / Math.max(w, h)), c = document.createElement('canvas');
+        c.width = Math.round(w * k); c.height = Math.round(h * k);
+        var x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); x.drawImage(img, 0, 0, c.width, c.height);
+        c.toBlob(function (b) { b ? ok(b) : mal(new Error('canvas')); }, 'image/jpeg', 0.82);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); mal(new Error('foto')); };
+      img.src = url;
+    });
+  }
+  function tam(b) { return b >= 1048576 ? (b / 1048576).toLocaleString('es-CL', { maximumFractionDigits: 1 }) + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB'; }
+  function pinta() {
+    var ul = $('cp-arch');
+    ul.innerHTML = '';
+    D.archivos.forEach(function (a, i) {
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="ico">' + (a.pdf ? 'PDF' : 'FOTO') + '</span><span class="nom"></span><button type="button">Quitar</button>';
+      li.querySelector('.nom').textContent = a.nombre;
+      var s = document.createElement('small'); s.textContent = tam(a.blob.size); li.querySelector('.nom').appendChild(s);
+      li.querySelector('button').addEventListener('click', function () { D.archivos.splice(i, 1); avisoArch(''); pinta(); });
+      ul.appendChild(li);
+    });
+    drop.hidden = D.archivos.length >= MAX_ARCH;
+    $('cp-drop-t').textContent = D.archivos.length ? '¿Tu plan tiene más páginas?' : 'Sube tu plan en PDF o con fotos';
+    $('cp-drop-b').textContent = D.archivos.length ? 'Agregar otro archivo' : 'Elegir archivo';
+  }
+  function aBase64(blob) {
+    return new Promise(function (ok, mal) {
+      var r = new FileReader();
+      r.onload = function () { ok(String(r.result).split(',')[1] || ''); };
+      r.onerror = function () { mal(r.error); };
+      r.readAsDataURL(blob);
+    });
+  }
+
+  // Contacto
+  function tel() { var d = digitos($('cp-wsp').value); if (d.length === 11 && d.indexOf('569') === 0) d = d.slice(3); if (d.length === 9 && d[0] === '9') d = d.slice(1); return d; }
+  $('cp-nombre').addEventListener('input', function () { sinError($('cp-nombre-caja')); });
+  // Si escribe el número completo (+56 9 o 9 adelante), se queda con los 8 dígitos y los muestra como 1234 5678
+  $('cp-wsp').addEventListener('input', function () {
+    var d = digitos(this.value);
+    if (d.length > 8 && d.indexOf('569') === 0) d = d.slice(3);
+    if (d.length > 8 && d[0] === '9') d = d.slice(1);
+    d = d.slice(0, 8);
+    this.value = d.length > 4 ? d.slice(0, 4) + ' ' + d.slice(4) : d;
+    sinError($('cp-wsp-caja'));
+  });
+  $('cp-codplan').addEventListener('input', function () { sinError($('cp-codplan-caja')); });
+  $('cp-acepto').addEventListener('change', function () { sinError($('cp-acepto-caja')); });
+
+  function codigo() { var c = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', r = 'PL'; for (var i = 0; i < 4; i++) r += c[Math.floor(Math.random() * c.length)]; return r; }
+  function cargasTexto() { if (D.cargas === 'solo') return 'Solo yo'; var e = limpio($('cp-edades').value, 60); return 'Con cargas' + (e ? ' (edades: ' + e + ')' : ' (sin edades)'); }
+  function origen() { return typeof planiappOrigen === 'function' ? planiappOrigen() : ''; }
+
+  function validar() {
+    var f = [], edad = Number($('cp-edad').value);
+    if (!D.busca) f.push(['cp-busca', 'qué buscas']);
+    if (!(edad >= 18 && edad <= 99)) f.push(['cp-edad-caja', 'tu edad']);
+    if (sueldo() < 100000) f.push(['cp-sueldo-caja', 'tu sueldo imponible']);
+    if (!D.cargas) f.push(['cp-cargas', 'quiénes están en tu plan']);
+    if (D.modo === 'subir' && !D.archivos.length) f.push(['cp-drop', 'tu plan (o elige otra opción)']);
+    if (D.modo !== 'subir' && !D.isapre) f.push(['cp-isas', 'tu Isapre']);
+    if (D.modo === 'codigo' && limpio($('cp-codplan').value, 40).length < 2) f.push(['cp-codplan-caja', 'el código de tu plan']);
+    if (limpio($('cp-nombre').value, 60).length < 3) f.push(['cp-nombre-caja', 'tu nombre']);
+    if (tel().length !== 8) f.push(['cp-wsp-caja', 'tu WhatsApp (8 dígitos después del 9)']);
+    if (!$('cp-acepto').checked) f.push(['cp-acepto-caja', 'que aceptes el uso de tus datos']);
+    return f;
+  }
+
+  // Si el Apps Script no responde, el lead llega igual a Make (ruta 1), sin el archivo
+  function leadMake(d, falto) {
+    return {
+      origen: 'compara-plan', fecha: new Date().toLocaleString('es-CL'), codigo: d.codigo, tipo_asesoria: 'Compara tu plan actual',
+      nombre: d.nombre, whatsapp: '+569' + d.whatsapp, canal: 'WhatsApp', horario: 'Lo antes posible',
+      sistema: d.isapre ? 'Isapre ' + d.isapre : 'Isapre (sin indicar)', motivo: 'Compara tu plan: ' + d.busca,
+      renta: d.renta, cargas: d.cargas, edad: d.edad,
+      coberturas: ['Compara tu plan', '7%: ' + d.siete, d.codigoPlan ? 'Código del plan: ' + d.codigoPlan : '', d.paga ? 'Paga hoy: ' + d.paga : '',
+        d.clinicas ? 'Clínicas: ' + d.clinicas : '', falto ? 'No se pudo subir el archivo: pedírselo por WhatsApp' : 'Sin archivo', d.origenWeb ? 'Origen: ' + d.origenWeb : ''].filter(Boolean).join(' | ')
+    };
+  }
+  async function subir(datos) {
+    if (!SCRIPT_URL) throw new Error('sin url');
+    var r = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(datos) }); // texto plano: sin preflight
+    return JSON.parse(await r.text());
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (enviando) return;
+    document.querySelectorAll('#cp-form .err').forEach(function (x) { x.classList.remove('err'); });
+    var f = validar();
+    if (f.length) {
+      f.forEach(function (x) { $(x[0]).classList.add('err'); });
+      $('cp-err').textContent = 'Nos falta ' + f.map(function (x) { return x[1]; }).join(', ').replace(/, ([^,]*)$/, ' y $1') + '.';
+      $('cp-err').hidden = false;
+      $(f[0][0]).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    var cod = codigo();
+    if ($('cp-hp').value) { listo(cod, true, false, ''); return; } // trampa para robots
+    enviando = true;
+    var b = $('cp-enviar'), conArchivo = D.modo === 'subir' && D.archivos.length > 0;
+    b.disabled = true; b.classList.add('cargando'); b.textContent = conArchivo ? 'Subiendo tu plan…' : 'Enviando…';
+    var d = {
+      codigo: cod, busca: D.busca, edad: $('cp-edad').value + ' años', renta: sueldo().toLocaleString('es-CL'), siete: pesos(siete()), cargas: cargasTexto(),
+      modo: D.modo, isapre: D.modo === 'subir' ? '' : D.isapre, codigoPlan: D.modo === 'codigo' ? limpio($('cp-codplan').value, 40) : '',
+      paga: D.modo === 'manual' ? pagaTexto() : '', clinicas: D.modo === 'manual' ? limpio($('cp-clinicas').value, 150) : '',
+      nombre: limpio($('cp-nombre').value, 60), whatsapp: tel(), origenWeb: origen(), hp: ''
+    };
+    var r = null;
+    try {
+      var archivos = conArchivo ? await Promise.all(D.archivos.map(function (a) { return aBase64(a.blob).then(function (x) { return { nombre: a.nombre, datos: x }; }); })) : [];
+      r = await subir(Object.assign({ archivos: archivos }, d));
+    } catch (err) { r = null; }
+    if (r && r.ok) { listo(r.codigo || cod, conArchivo, false, d.whatsapp); return; }
+    if (r && r.error) { falla(r.error); return; }
+    try {
+      var m = await fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(leadMake(d, conArchivo)) });
+      if (!m.ok) throw new Error('make');
+      listo(cod, conArchivo, conArchivo, d.whatsapp);
+    } catch (err) { falla('No pudimos enviar tus datos. Revisa tu conexión e intenta de nuevo, o escríbenos por WhatsApp.'); }
+  });
+  function falla(t) {
+    enviando = false;
+    var b = $('cp-enviar'); b.disabled = false; b.classList.remove('cargando'); b.textContent = 'Pedir mi informe →';
+    $('cp-err').textContent = t; $('cp-err').hidden = false;
+    $('cp-err').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function listo(cod, conArchivo, falto, wsp) {
+    if (wsp) {
+      marca('lead_enviado', { busca: D.busca, modo: D.modo, archivo: conArchivo && !falto ? 'si' : 'no' });
+      marca('generate_lead', { lead_source: origen() }); // el evento clave de GA4
+      if (typeof fbq === 'function') fbq('track', 'Lead');
+    }
+    form.hidden = true;
+    document.querySelector('.cp-alt').hidden = true;
+    $('cp-ok-t').textContent = conArchivo && !falto ? '¡Recibimos tu plan!' : '¡Recibimos tus datos!';
+    $('cp-ok-cod').textContent = cod;
+    $('cp-ok-falla').hidden = !falto;
+    $('cp-ok-p').textContent = (conArchivo && !falto ? 'Revisamos tu plan y te enviamos tu informe personalizado por WhatsApp' : 'Revisamos tu caso y te enviamos tu informe personalizado por WhatsApp') + (wsp ? ' al +56 9 ' + wsp.slice(0, 4) + ' ' + wsp.slice(4) : '') + '. Guarda el código por si nos escribes antes.';
+    $('cp-ok-wsp').href = 'https://wa.me/' + WSP + '?text=' + encodeURIComponent('Hola Planiapp, envié mi plan para compararlo. Mi código es ' + cod + '.');
+    var ok = $('cp-ok'); ok.hidden = false; ok.focus({ preventScroll: true });
+    ok.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+})();
+</script>
+<script>
+(function () {
+  var b = document.getElementById('lp-fijo'), hero = document.querySelector('.cp-hero'), form = document.getElementById('cp-form');
+  if (!b || !hero || !form || !('IntersectionObserver' in window)) return;
+  var v = { hero: true, form: false };
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) { v[e.target === hero ? 'hero' : 'form'] = e.isIntersecting; });
+    b.classList.toggle('on', !v.hero && !v.form && !form.hidden);
+  }).observe(hero);
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) { v.form = e.isIntersecting; });
+    b.classList.toggle('on', !v.hero && !v.form && !form.hidden);
+  }).observe(form);
+  b.addEventListener('click', function () { if (typeof gtag === 'function') gtag('event', 'informe_cta', { origen: 'landing_fijo' }); });
+})();
+</script>
+
+</body>
+</html>

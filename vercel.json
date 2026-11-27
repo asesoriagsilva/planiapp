@@ -301,6 +301,11 @@
       "permanent": true
     },
     {
+      "source": "/informe.html",
+      "destination": "/informe",
+      "permanent": true
+    },
+    {
       "source": "/fonasa",
       "destination": "/calculadora-isapre?desde=fonasa&utm_source=instagram",
       "permanent": false
@@ -442,6 +447,10 @@
     {
       "source": "/informe-planiapp",
       "destination": "/informe-planiapp.html"
+    },
+    {
+      "source": "/informe",
+      "destination": "/informe.html"
     },
     {
       "source": "/propuesta/:codigo(PLY9N9|PLCJKT|PLDQFV|PRJSHC|PRK35Z|PR4E6D|PR6FEG|PLNA6A|PL7MVF|PRJSMU|EJEMPLO|PR2LRA|PRKYKJ|PRK5YB|PLLQJ8|PLRFKM|PLPMNT|PL3EJK)",
