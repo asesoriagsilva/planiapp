@@ -216,6 +216,19 @@ main { max-width:1100px; margin:0 auto; padding:1.75rem 1.25rem 3rem; }
 .seg-sum-grid em { font-style:normal; font-size:13px; font-weight:700; color:var(--green-dark); background:var(--green-light); border-radius:999px; padding:0.2rem 0.65rem; margin-top:0.25rem; }
 .seg-notas { margin-top:0.9rem; padding-left:1.1rem; font-size:13px; color:var(--muted); display:flex; flex-direction:column; gap:0.25rem; }
 .seg-pdf { display:inline-flex; margin-top:0.85rem; font-size:14px; font-weight:700; color:var(--purple); text-decoration:none; background:var(--white); border:1.5px solid #DCD8FB; border-radius:999px; padding:0.5rem 1rem; }
+.segs-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:0.8rem; margin-top:1rem; }
+.segs-c { display:flex; flex-direction:column; gap:0.3rem; }
+.segs-cl { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#0B8A84; }
+.seguro .segs-c h3 { margin-bottom:0; }
+.segs-em { font-size:12.5px; color:var(--muted); }
+.segs .seg-cubre { grid-template-columns:1fr; margin-top:0.45rem; gap:0.45rem; }
+.segs .seg-cubre b { font-size:17px; }
+.segs-precio { font-size:13px; color:var(--text); margin-top:0.4rem; line-height:1.45; }
+.segs-c .seg-pdf { align-self:flex-start; margin-top:auto; font-size:13px; padding:0.4rem 0.9rem; }
+.segs-c .segs-precio + .seg-pdf { margin-top:0.6rem; }
+.cuanto .cmp-intro { font-size:14.5px; color:var(--muted); margin:0 0 0.8rem; max-width:760px; }
+.comp .cmp-grupo th { position:sticky; left:0; z-index:1; background:var(--purple-light); color:var(--purple-dark); font-weight:800; font-size:12.5px; text-transform:uppercase; letter-spacing:.04em; border-right:1px solid var(--border); }
+.comp .cmp-grupo td { background:var(--purple-light); }
 .estad { margin-top:2rem; background:var(--purple-light); border:1px solid #DCD9FB; border-radius:20px; padding:1.2rem 1.25rem; }
 .estad h2 { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; color:var(--purple-dark); margin-bottom:0.8rem; }
 .estad-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(310px, 100%), 1fr)); gap:0.7rem; align-items:start; }
@@ -504,17 +517,71 @@ main:has(.planes.cuatro), body:has(.planes.cuatro) .top, body:has(.planes.cuatro
           <tr><th scope="row">Precio para ti</th><td><b>$583.200</b> al mes (14,08 UF)</td><td><b>$592.100</b> al mes (14,30 UF)</td><td><b>$632.100</b> al mes (15,26 UF)</td></tr>
           <tr><th scope="row">Cobertura hospitalaria</th><td><div class="cmp-chips"><span class="cmp-chip"><b>60%</b>San Carlos</span><span class="cmp-chip"><b>70%</b>Hospital Clínico UC</span><span class="cmp-chip"><b>60%</b>Las Condes</span><span class="cmp-chip"><b>60%</b>Los Andes</span></div></td><td><div class="cmp-chips"><span class="cmp-chip"><b>60%</b>San Carlos</span><span class="cmp-chip"><b>60%</b>Hospital Clínico UC</span><span class="cmp-chip"><b>60%</b>Las Condes</span><span class="cmp-chip"><b>60%</b>Los Andes</span></div></td><td><div class="cmp-chips"><span class="cmp-chip"><b>50%</b>San Carlos</span><span class="cmp-chip"><b>50%</b>Hospital Clínico UC</span><span class="cmp-chip"><b>50%</b>Las Condes</span><span class="cmp-chip"><b>50%</b>Los Andes</span></div></td></tr>
           <tr><th scope="row">Cobertura ambulatoria (consultas y exámenes)</th><td><div class="cmp-chips"><span class="cmp-chip"><b>50%</b>San Carlos</span><span class="cmp-chip"><b>70%</b>UC Christus</span><span class="cmp-chip"><b>50%</b>Las Condes</span><span class="cmp-chip"><b>50%</b>Los Andes</span></div></td><td><div class="cmp-chips"><span class="cmp-chip"><b>60%</b>San Carlos</span><span class="cmp-chip"><b>60%</b>UC Christus</span><span class="cmp-chip"><b>50%</b>Las Condes</span><span class="cmp-chip"><b>50%</b>Los Andes</span></div></td><td><div class="cmp-chips"><span class="cmp-chip"><b>50%</b>San Carlos</span><span class="cmp-chip"><b>50%</b>UC Christus</span><span class="cmp-chip"><b>50%</b>Las Condes</span><span class="cmp-chip"><b>50%</b>Los Andes</span></div></td></tr>
-          <tr><th scope="row">Urgencia con copago fijo (simple / compleja)</th><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>No tiene en San Carlos ni en la UC. Sí en <b>Las Condes: 1,7 / 6,8 UF</b> (niños: 1,4 / 5,3) y <b>Los Andes: 2,3 / 7,4 UF</b> (niños: 2,2 / 6,1)</td><td><b>San Carlos: 2 / 5,36 UF</b> (niños: 1,69 / 3,66). <b>UC: 1,52 / 4,58 UF</b> (niños: 1,45 / 3,16). <b>Los Andes: 3,11 / 8,19 UF</b> (niños: 2,77 / 7,2). No tiene en Las Condes</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span><b>San Carlos y UC: 1 / 3,5 UF</b> (niños: 0,8 / 1,8). <b>Las Condes: 1,25 / 3,2 UF</b> (niños: 1,2 / 2,3). No tiene en Los Andes</td></tr>
+          <tr><th scope="row">Urgencia con copago fijo (simple / compleja)</th><td>San Carlos y UC: sin copago fijo, se cubre al 50% y 70%. <b>Las Condes: 1,7 / 6,8 UF</b> (niños: 1,4 / 5,3). <b>Los Andes: 2,3 / 7,4 UF</b> (niños: 2,2 / 6,1)</td><td><b>San Carlos: 2 / 5,36 UF</b> (niños: 1,69 / 3,66). <b>UC: 1,52 / 4,58 UF</b> (niños: 1,45 / 3,16). <b>Los Andes: 3,11 / 8,19 UF</b> (niños: 2,77 / 7,2). Las Condes: sin copago fijo, se cubre al 50%</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span><b>San Carlos y UC: 1 / 3,5 UF</b> (niños: 0,8 / 1,8). <b>Las Condes: 1,25 / 3,2 UF</b> (niños: 1,2 / 2,3). Los Andes: sin copago fijo, se cubre al 50%</td></tr>
           <tr><th scope="row">Kinesiología</th><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Ambulatoria con tope de 4,95 UF al año</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope en sus prestadores preferentes</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Solo libre elección, con tope de 5 UF al año</td></tr>
           <tr><th scope="row">Medicamentos, materiales y quimioterapia en hospitalización</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Materiales y quimioterapia sin tope; medicamentos hasta 1.200 UF al año</td><td>Hasta 800 UF al año cada uno</td><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Hasta 1.000 UF al año cada uno: un tope alto comparado con otras Isapres</td></tr>
           <tr><th scope="row">Prótesis y órtesis en hospitalización</th><td class="bien"><span class="cmp-ico bien" aria-hidden="true">✓</span>Sin tope</td><td>Hasta 150 UF al año</td><td class="mal"><span class="cmp-ico mal" aria-hidden="true">!</span>Solo libre elección, hasta 60 UF al año</td></tr>
-          <tr><th scope="row">Hospitalización con seguro catastrófico (deducible de 50 UF)</th><td>La Isapre cubre el <b>60%</b> (70% en la UC) y el seguro el resto: pagas hasta <b>50 UF ($2.071.000)</b> por evento</td><td>La Isapre cubre el <b>60%</b> y el seguro el resto: pagas hasta <b>50 UF ($2.071.000)</b> por evento</td><td>La Isapre cubre el <b>50%</b> y el seguro el resto: pagas hasta <b>50 UF ($2.071.000)</b> por evento</td></tr>
-          <tr><th scope="row">Consulta médica: lo que pagas</th><td><div class="cmp-chips"><span class="cmp-chip"><b>$35.000</b>San Carlos</span><span class="cmp-chip"><b>$34.200</b>Las Condes</span><span class="cmp-chip"><b>$30.400</b>Los Andes</span></div></td><td><div class="cmp-chips"><span class="cmp-chip"><b>$28.000</b>San Carlos</span><span class="cmp-chip"><b>$34.200</b>Las Condes</span><span class="cmp-chip"><b>$30.400</b>Los Andes</span></div></td><td><div class="cmp-chips"><span class="cmp-chip"><b>$35.000</b>San Carlos</span><span class="cmp-chip"><b>$34.200</b>Las Condes</span><span class="cmp-chip"><b>$30.400</b>Los Andes</span></div></td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
+  <section class="seguro segs">
+    <p class="seg-k">Complemento para tus clínicas</p>
+    <h2>Seguros catastróficos de tus clínicas</h2>
+    <p class="seg-intro">Con cualquiera de estos planes puedes sumar el seguro catastrófico de tu clínica: la Isapre paga su parte y el seguro cubre el resto de los gastos de alto costo, después del deducible. El precio de cada seguro depende de la edad, de cuántas personas aseguras y del deducible que elijas.</p>
+    <div class="segs-grid">
+      <article class="seg-box segs-c">
+        <p class="segs-cl">San Carlos de Apoquindo y Red UC Christus</p>
+        <h3>Seguro Catastrófico UC Christus</h3>
+        <p class="segs-em">Seguros de Vida y Salud UC Christus</p>
+        <div class="seg-cubre"><div><b>Hasta UF 30.000</b><span>para gastos médicos en UC Christus, por enfermedad o accidente</span></div><div><b>50, 100 o 150 UF</b><span>de deducible por evento, a elección</span></div><div><b>UF 0</b><span>de deducible hasta los 70 años en 7 enfermedades, como cáncer o enfermedades cardiovasculares</span></div></div>
+        <p class="segs-precio">Desde <b>UF 0,17 al mes</b>.</p>
+        <a class="seg-pdf" href="https://www.segurosucchristus.cl/seguros/seguro-catastrofico" target="_blank" rel="noopener">Ver el seguro en su sitio</a>
+      </article>
+      <article class="seg-box segs-c">
+        <p class="segs-cl">Clínica Las Condes</p>
+        <h3>Seguro Vive CLC Isapre</h3>
+        <p class="segs-em">Seguros CLC</p>
+        <div class="seg-cubre"><div><b>Hasta UF 30.000</b><span>al año por persona, en gastos de alto costo en Clínica Las Condes</span></div><div><b>25 o 65 UF</b><span>de deducible al año, por persona y por evento</span></div><div><b>Hasta 70%</b><span>del copago en consultas y exámenes, hasta UF 50 al año, sin deducible</span></div></div>
+        <p class="segs-precio">Desde <b>UF 0,39 al mes</b>.</p>
+        <a class="seg-pdf" href="https://segurosclc.cl/Seguros/Catastroficos/Seguro-Vive-CLC-Isapre" target="_blank" rel="noopener">Ver el seguro en su sitio</a>
+      </article>
+      <article class="seg-box segs-c">
+        <p class="segs-cl">Clínica Universidad de los Andes</p>
+        <h3>Seguro SURA de alto costo</h3>
+        <p class="segs-em">Seguros SURA con Clínica UANDES</p>
+        <div class="seg-cubre"><div><b>50 UF</b><span>de deducible fijo por toda la vigencia del seguro</span></div><div><b>$0</b><span>de deducible en 17 enfermedades</span></div><div><b>10% y 20%</b><span>de descuento en el copago de hospitalizaciones, y de consultas y kinesiología</span></div></div>
+        <p class="segs-precio"><b>UF 1,2356 al mes</b>, valor de referencia para un titular solo de 45 a 50 años.</p>
+        <a class="seg-pdf" href="https://www.clinicauandes.cl/seguros/seguros-sura-contratar" target="_blank" rel="noopener">Ver el seguro en su sitio</a>
+      </article>
+    </div>
+  </section>
+  <section class="comp cuanto">
+    <h2>Cuánto pagarías en cada clínica</h2>
+    <p class="cmp-intro">Con el seguro catastrófico de cada clínica, en una hospitalización pagas como máximo el deducible. En consultas y urgencias pagas el copago de tu plan.</p>
+    <p class="cmp-hint">Desliza la tabla para ver los 3 planes →</p>
+    <div class="comp-scroll">
+      <table>
+        <thead><tr><th scope="col" class="cmp-kh">En cada clínica</th><th scope="col"><img class="lg-vida-tres" src="/logos/vida-tres.png" alt="Isapre Vida Tres" width="123" height="24"><small>Vanguardia Premium Platinum B 34</small></th><th scope="col"><img class="lg-consalud" src="/logos/consalud.png" alt="Isapre Consalud" width="94" height="31"><small>Select Focus 40 Light</small></th><th scope="col"><img class="lg-colmena" src="/logos/colmena.png" alt="Isapre Colmena" width="114" height="30"><small>Colmena Master 3265050</small></th></tr></thead>
+        <tbody>
+          <tr class="cmp-grupo"><th scope="rowgroup">Clínica San Carlos de Apoquindo</th><td colspan="3"></td></tr>
+          <tr><th scope="row">Hospitalización, con el seguro UC Christus</th><td>Isapre <b>60%</b> + seguro: pagas como máximo el deducible, <b>50 UF</b> ($2.071.000)</td><td>Isapre <b>60%</b> + seguro: pagas como máximo el deducible, <b>50 UF</b> ($2.071.000)</td><td>Isapre <b>50%</b> + seguro: pagas como máximo el deducible, <b>50 UF</b> ($2.071.000)</td></tr>
+          <tr><th scope="row">Consulta médica (desde $70.000)</th><td><b>$35.000</b> (Isapre 50%)</td><td><b>$28.000</b> (Isapre 60%)</td><td><b>$35.000</b> (Isapre 50%)</td></tr>
+          <tr><th scope="row">Urgencia</th><td>Sin copago fijo: se cubre al 50%</td><td><div class="cmp-urg"><p class="cmp-urg-t">Adultos</p><div class="cmp-urg-v"><span>Simple<b>2 UF</b><small>$82.800</small></span><span>Compleja<b>5,36 UF</b><small>$222.000</small></span></div><p class="cmp-urg-t">Niños</p><div class="cmp-urg-v"><span>Simple<b>1,69 UF</b><small>$70.000</small></span><span>Compleja<b>3,66 UF</b><small>$151.600</small></span></div></div></td><td><div class="cmp-urg"><p class="cmp-urg-t">Adultos</p><div class="cmp-urg-v"><span>Simple<b>1 UF</b><small>$41.400</small></span><span>Compleja<b>3,5 UF</b><small>$145.000</small></span></div><p class="cmp-urg-t">Niños</p><div class="cmp-urg-v"><span>Simple<b>0,8 UF</b><small>$33.100</small></span><span>Compleja<b>1,8 UF</b><small>$74.600</small></span></div></div></td></tr>
+          <tr class="cmp-grupo"><th scope="rowgroup">Clínica Las Condes</th><td colspan="3"></td></tr>
+          <tr><th scope="row">Hospitalización, con el seguro Vive CLC</th><td>Isapre <b>60%</b> + seguro: pagas como máximo el deducible, <b>25 o 65 UF</b> ($1.035.500 o $2.692.200)</td><td>Isapre <b>60%</b> + seguro: pagas como máximo el deducible, <b>25 o 65 UF</b> ($1.035.500 o $2.692.200)</td><td>Isapre <b>50%</b> + seguro: pagas como máximo el deducible, <b>25 o 65 UF</b> ($1.035.500 o $2.692.200)</td></tr>
+          <tr><th scope="row">Consulta médica (desde $68.468)</th><td><b>$34.200</b> (Isapre 50%)</td><td><b>$34.200</b> (Isapre 50%)</td><td><b>$34.200</b> (Isapre 50%)</td></tr>
+          <tr><th scope="row">Urgencia</th><td><div class="cmp-urg"><p class="cmp-urg-t">Adultos</p><div class="cmp-urg-v"><span>Simple<b>1,7 UF</b><small>$70.400</small></span><span>Compleja<b>6,8 UF</b><small>$281.700</small></span></div><p class="cmp-urg-t">Niños</p><div class="cmp-urg-v"><span>Simple<b>1,4 UF</b><small>$58.000</small></span><span>Compleja<b>5,3 UF</b><small>$219.500</small></span></div></div></td><td>Sin copago fijo: se cubre al 50%</td><td><div class="cmp-urg"><p class="cmp-urg-t">Adultos</p><div class="cmp-urg-v"><span>Simple<b>1,25 UF</b><small>$51.800</small></span><span>Compleja<b>3,2 UF</b><small>$132.500</small></span></div><p class="cmp-urg-t">Niños</p><div class="cmp-urg-v"><span>Simple<b>1,2 UF</b><small>$49.700</small></span><span>Compleja<b>2,3 UF</b><small>$95.300</small></span></div></div></td></tr>
+          <tr class="cmp-grupo"><th scope="rowgroup">Clínica Universidad de los Andes</th><td colspan="3"></td></tr>
+          <tr><th scope="row">Hospitalización, con el seguro SURA</th><td>Isapre <b>60%</b> + seguro: pagas como máximo el deducible, <b>50 UF</b> ($2.071.000)</td><td>Isapre <b>60%</b> + seguro: pagas como máximo el deducible, <b>50 UF</b> ($2.071.000)</td><td>Isapre <b>50%</b> + seguro: pagas como máximo el deducible, <b>50 UF</b> ($2.071.000)</td></tr>
+          <tr><th scope="row">Consulta médica (desde $60.780)</th><td><b>$30.400</b> (Isapre 50%)</td><td><b>$30.400</b> (Isapre 50%)</td><td><b>$30.400</b> (Isapre 50%)</td></tr>
+          <tr><th scope="row">Urgencia</th><td><div class="cmp-urg"><p class="cmp-urg-t">Adultos</p><div class="cmp-urg-v"><span>Simple<b>2,3 UF</b><small>$95.300</small></span><span>Compleja<b>7,4 UF</b><small>$306.500</small></span></div><p class="cmp-urg-t">Niños</p><div class="cmp-urg-v"><span>Simple<b>2,2 UF</b><small>$91.100</small></span><span>Compleja<b>6,1 UF</b><small>$252.700</small></span></div></div></td><td><div class="cmp-urg"><p class="cmp-urg-t">Adultos</p><div class="cmp-urg-v"><span>Simple<b>3,11 UF</b><small>$128.800</small></span><span>Compleja<b>8,19 UF</b><small>$339.200</small></span></div><p class="cmp-urg-t">Niños</p><div class="cmp-urg-v"><span>Simple<b>2,77 UF</b><small>$114.700</small></span><span>Compleja<b>7,2 UF</b><small>$298.200</small></span></div></div></td><td>Sin copago fijo: se cubre al 50%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="seg-notas"><li>Hospitalización: si lo que no cubre la Isapre es menor que el deducible, pagas solo eso. En el seguro SURA el deducible de 50 UF es uno solo por toda la vigencia; en UC Christus y Vive CLC es por evento.</li><li>Consulta médica en horario hábil, según los aranceles que publican las clínicas: San Carlos de Apoquindo desde $70.000 (pediatría $75.000), Las Condes desde $68.468 y Universidad de los Andes desde $60.780 (pediatría $81.411). Son valores referenciales: lo que pagas depende del convenio de cada Isapre.</li><li>Urgencia: el copago fijo incluye todo lo que te hagan en la atención. Sin copago fijo, la Isapre cubre el porcentaje ambulatorio de cada prestación.</li></ul>
+  </section>
   <section class="estad">
     <h2>Reclamos y licencias médicas de cada Isapre</h2>
     <div class="estad-grid">
@@ -530,9 +597,9 @@ main:has(.planes.cuatro), body:has(.planes.cuatro) .top, body:has(.planes.cuatro
 
   <section class="porque">
     <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>¿Por qué estos tres planes?</h2>
-    <p>Los tres cubren Clínica San Carlos de Apoquindo, la Red UC Christus, Clínica Las Condes y Clínica Universidad de los Andes, y están pensados para sumarles un seguro catastrófico. La Isapre cubre su porcentaje y el seguro cubre el resto después del deducible: así, en una hospitalización pagas como máximo el deducible.</p>
+    <p>Los tres cubren Clínica San Carlos de Apoquindo, la Red UC Christus, Clínica Las Condes y Clínica Universidad de los Andes, y están pensados para sumarles el seguro catastrófico de tu clínica. Más abajo están los seguros de UC Christus, Clínica Las Condes y Clínica Universidad de los Andes, y cuánto pagarías en cada clínica con cada plan.</p>
     <p>Vida Tres es el más barato. Cubre el 60% en hospitalización en San Carlos, Las Condes y Los Andes, y el 70% en el Hospital Clínico UC, con prótesis, materiales y quimioterapia sin tope. Tiene copago fijo de urgencia en Las Condes y Los Andes, pero no en San Carlos ni en la UC, y la kinesiología tiene tope de 4,95 UF al año.</p>
-    <p>Consalud cubre el 60% en hospitalización en las cuatro clínicas, y el 60% en consultas y exámenes en San Carlos y la Red UC Christus. Tiene kinesiología sin tope y copago fijo de urgencia en San Carlos, la UC y Los Andes, también para niños, pero no en Las Condes.</p>
+    <p>Consalud cubre el 60% en hospitalización en las cuatro clínicas, y el 60% en consultas y exámenes en San Carlos y la Red UC Christus. Tiene kinesiología sin tope y copago fijo de urgencia en San Carlos, la UC y Los Andes, también para niños; en Las Condes la urgencia se cubre al 50%.</p>
     <p>Colmena tiene los copagos de urgencia más bajos en San Carlos, la UC y Las Condes, y medicamentos, materiales y quimioterapia hasta 1.000 UF al año, un tope alto comparado con otras Isapres. Cubre el 50% en hospitalización y en consultas en las cuatro clínicas. Sus topes más bajos: prótesis solo por libre elección, hasta 60 UF al año, y kinesiología solo por libre elección, hasta 5 UF al año.</p>
     <p>Si quieres ver más opciones, pídeselo a tu ejecutivo y te prepara otras.</p>
   </section>
@@ -552,8 +619,6 @@ main:has(.planes.cuatro), body:has(.planes.cuatro) .top, body:has(.planes.cuatro
       <li>Los precios son referenciales, con la UF de hoy ($41.400). El precio de cada plan es su precio base por la suma de los factores de tu grupo (4) más el GES de cada Isapre por cada beneficiario que paga, y se paga en UF.</li>
       <li>La cobertura preferente rige en los prestadores indicados en cada plan, con médicos del staff y usando bonos. Fuera de ellos, rige la cobertura de libre elección.</li>
       <li>Para entrar a cualquier Isapre se completa una declaración de salud, y la aceptación depende de ella.</li>
-      <li>Para la fila del seguro simulamos un seguro catastrófico que cubre el 100% de lo que no cubre la Isapre, después de un deducible de 50 UF. Cada clínica tiene el suyo: Seguro Catastrófico UC Christus (deducible a elección de 50, 100 o 150 UF por evento, en la red UC Christus), Seguros SURA con Clínica Universidad de los Andes (deducible fijo de 50 UF por toda la vigencia) y Seguro Vive CLC Isapre (deducible de 25 o 65 UF al año, por persona y por evento). Su precio depende de la edad y de cuántas personas aseguras.</li>
-      <li>Consulta médica en horario hábil, según los aranceles que publican las clínicas: Clínica San Carlos de Apoquindo desde $70.000 (pediatría $75.000), Clínica Las Condes desde $68.468 (también pediatría) y Clínica Universidad de los Andes desde $60.780 (pediatría $81.411). Son valores referenciales: lo que pagas depende del convenio de cada Isapre.</li>
       <li>El detalle completo de cada plan está en su PDF. Ante cualquier duda, te lo explicamos por WhatsApp.</li>
     </ul>
   </section>
